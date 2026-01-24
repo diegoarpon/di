@@ -1,0 +1,397 @@
+/* Generales */
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+}
+
+section{
+    overflow: hidden;
+}
+
+a.link {
+    color: #0099FF;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a.link:hover {
+    text-decoration: underline;
+}
+
+.btn-principal {
+    display: inline-block;
+    box-shadow: none;
+    text-align: center;
+    font-size: 14px;
+    background-color: #339900;
+    padding: 14px 20px;
+    border-radius: 4px;
+    line-height: 24px;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 400;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    -webkit-transition: .2s all;
+    -moz-transition: .2s all;
+    -o-transition: .2s all;
+    transition: .2s all;
+}
+
+.btn-principal:hover,
+.btn-principal:focus {
+    background-color: #78c259;
+}
+
+.btn-secundario {
+    font-weight: 400;
+    font-size: 14px;
+    color: #666666;
+    background-color: transparent;
+    border: 1px solid #666666;
+    border-radius: 4px;
+    text-transform: uppercase;
+    padding: 14px 20px;
+    display: inline-block;
+    -webkit-transition: .2s all;
+    -moz-transition: .2s all;
+    -o-transition: .2s all;
+    transition: .2s all;
+    cursor: pointer;
+}
+
+.btn-secundario:hover,
+.btn-secundario:focus {
+    background-color: rgba(192, 192, 192, .4);
+}
+
+.titulo-xl{
+    font-size: 65px;
+    font-weight: 700;
+    line-height: 1.12;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Roboto condensed';
+}
+
+.titulo-l{
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.16;
+    font-family: 'Roboto condensed';
+}
+
+.titulo-s {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.32;
+    color: #000000;
+    font-family: 'Roboto condensed';
+}
+
+.titulo-xm {
+    font-size: 45px;
+    font-weight: 400;
+    line-height: 1.17;
+    font-family: 'Roboto condensed';
+}
+
+.titulo-xs {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.25;
+    text-transform: uppercase;
+    font-family: 'Roboto condensed';
+}
+
+.bajada-m{
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 1.4;
+    margin-bottom: 0;
+    color: #333333;
+}
+
+.texto-m{
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.62;
+    color: #333333;
+    margin-bottom: 0;
+}
+
+.titulo-xl~.bajada-m {
+    margin-top: 10px;
+}
+
+.titulo-l~.bajada-m {
+    margin-top: 25px;
+}
+
+/* Especificos*/
+
+#menu{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#header{
+    height: 743px;
+    background: url(imgs/hosting-vacio-header-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #ffffff;
+    padding: 0 30px;
+}
+
+#header .bajada-m{
+  color: #ffffff;
+  text-align: center;
+}
+
+
+#header .texto-m{
+    margin-top: 50px;
+    max-width: 777px;
+    color: #ffffff;
+    text-align: center;
+}
+
+#producto-destacado{
+    padding: 200px 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#producto-destacado .cont-texto{
+    max-width: 609px;
+    margin-right: 130px;
+}
+
+#producto-destacado .cont-img img{
+    display: block;
+    width: 500px;
+    height: auto;
+}
+
+#producto-destacado .btn-secundario{
+    margin-top: 60px;
+}
+
+#columnas{
+    background-color: #f1f1f1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 150px 30px;
+}
+
+#columnas .item-columna{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin: 25px 35px;
+    text-align: center;
+}
+
+
+#columnas .item-columna .titulo-s{
+  margin: 25px 0;
+}
+
+#asesoramiento{
+    padding: 150px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#asesoramiento .cont-texto{
+    display: flex;
+    flex-direction: column;
+    max-width: 496px;
+    margin-right: 130px;
+}
+
+#asesoramiento .cont-texto .titulo-xl{
+    text-align: left;
+    margin-bottom: 35px;
+}
+
+#asesoramiento .cont-texto .btn-principal{
+   width: max-content;
+}
+
+#footer{
+    padding: 110px 30px;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+#footer .item{
+    max-width: 340px;
+    margin-right: 100px;
+}
+
+#footer .item .logo{
+    width: 125px;
+}
+
+#footer .item .donweb{
+    font-weight: 300;
+    line-height: 24px;
+    font-size: 14px;
+   margin-top: 15px;
+}
+
+#footer .listado{
+    display: flex;
+    flex-direction: column;
+    margin-right: 100px;
+}
+
+#footer .titulo-xs{
+    color: #FF6600;
+    margin-bottom: 20px;
+}
+
+#footer .link{
+    font-size: 14px;
+    font-weight: 300;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+@media(max-width:1200px) {
+
+    #producto-destacado{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    #producto-destacado .cont-texto{
+        margin: 0 0 100px 0;
+    }
+
+    #asesoramiento{
+        flex-direction: column;
+    }
+
+    #asesoramiento .cont-texto{
+        align-items: center;
+        margin-right: 0;
+        margin-bottom: 100px;
+    }
+
+    #asesoramiento .cont-texto .titulo-xl{
+        text-align: center;
+    }
+
+}
+
+@media(max-width:1000px) {
+
+    #footer{
+        flex-wrap: wrap;
+        justify-content: left;
+    }
+
+    #footer .item{
+        margin-bottom: 50px;
+    }
+
+    #footer .listado{
+        margin-bottom: 50px;
+    }
+
+}
+
+@media(max-width:768px) {
+    .titulo-xl {
+        font-size: 50px;
+    }
+
+    .titulo-l {
+        font-size: 40px;
+    }
+
+    .titulo-xm {
+        font-size: 35px;
+    }
+
+    #columnas .item-columna{
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+@media(max-width:576px) {
+
+    .titulo-xl {
+        font-size: 40px;
+    }
+
+    .titulo-l {
+        font-size: 30px;
+    }
+
+    #menu .logo{
+        width: 125px;
+    }
+
+    #header{
+        height: 600px;
+    }
+
+    #producto-destacado{
+        padding: 100px 30px;
+    }
+
+    #producto-destacado .cont-img img{
+        width: 300px;
+    }
+
+    #columnas{
+        padding: 100px 30px;
+    }
+
+    #columnas .item-columna{
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+    #columnas .item-columna img{
+        width: 250px;
+    }
+
+    #asesoramiento{
+        padding: 100px 30px;
+    }
+
+    #asesoramiento .cont-img img{
+        width: 280px;
+    }
+    
+}
