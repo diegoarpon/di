@@ -1,6 +1,8 @@
 /* CSS Variables */
 :root {
-  --default-font: "Helvetica Neue", "Helvetica", "Roboto", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --default-font:
+    "Helvetica Neue", "Helvetica", "Roboto", Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --darkest-background: rgba(0, 0, 0, 1);
   --darkest-color: rgb(0, 0, 0);
   --main-color: rgba(255, 117, 24, 1);
@@ -8,7 +10,7 @@
   --grayest: #eeeeee;
   --blackest: #000000;
   --gold: #b39b6d;
-  --meta: #A1D000;
+  --meta: #a1d000;
   --ponti: #192852;
 }
 
@@ -48,7 +50,6 @@ header .links span span {
 
 /* Container Breakpoints */
 @media (min-width: 576px) {
-
   .container,
   .container-sm {
     max-width: 540px;
@@ -56,7 +57,6 @@ header .links span span {
 }
 
 @media (min-width: 768px) {
-
   .container,
   .container-md,
   .container-sm {
@@ -65,7 +65,6 @@ header .links span span {
 }
 
 @media (min-width: 992px) {
-
   .container,
   .container-lg,
   .container-md,
@@ -75,7 +74,6 @@ header .links span span {
 }
 
 @media (min-width: 1400px) {
-
   .container,
   .container-lg,
   .container-md,
@@ -208,7 +206,7 @@ img.full {
 }
 
 /* Links */
-.links>div {
+.links > div {
   height: 40px;
   font-size: 1.25rem;
   font-weight: 500;
@@ -378,7 +376,7 @@ img.full {
 }
 
 .virtualmind-bg {
-  background-color: #2FB4E9;
+  background-color: #2fb4e9;
 }
 
 /* Hamburger Menu */
@@ -401,7 +399,7 @@ img.full {
   opacity: 1;
   left: 0;
   transform: rotate(0deg);
-  transition: .25s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 
 .hamburger span:nth-child(1) {
@@ -449,7 +447,6 @@ img.full {
   opacity: 1;
   visibility: visible;
   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
 }
 
 /* Carousel */
@@ -499,7 +496,7 @@ img.full {
 }
 
 .option::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -4px;
   left: 0;
@@ -528,7 +525,7 @@ img.full {
 }
 
 .tile-xl a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -15px;
   left: 50%;
@@ -567,7 +564,7 @@ a:hover::after {
 /* Mobile Tile Pulse Dots */
 @media (max-width: 767px) {
   .tile:not(.carousel):not(.tile-xl):not(.tile-end):not(.tile-message)::before {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 10px;
     right: 10px;
@@ -617,7 +614,6 @@ a:hover::after {
   .bg-right {
     background-position: 25% center;
   }
-
 }
 
 @media (max-width: 767px) {
@@ -707,7 +703,6 @@ a:hover::after {
     max-height: 250px;
     height: auto;
   }
-
 }
 
 /* Desktop Styles */
@@ -720,5 +715,4 @@ a:hover::after {
 .border-blackest {
   /* NOT THAT BLACKEST */
   border-color: rgba(213, 85, 0, 0.9);
-
 }

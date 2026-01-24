@@ -1,12 +1,14 @@
 /* CSS Variables */
 :root {
-  --default-font: "Helvetica Neue", "Helvetica", "Roboto", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --default-font:
+    "Helvetica Neue", "Helvetica", "Roboto", Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --main-color: rgba(255, 117, 24, 1);
   --whitest: #ffffff;
   --grayest: #eeeeee;
   --blackest: #000000;
-  --meta: #A1D000;
-  --manteca: #F5F5DC;
+  --meta: #a1d000;
+  --manteca: #f5f5dc;
 
   /* Additional colors */
   --deep-blue: #192852;
@@ -121,21 +123,18 @@ body {
 }
 
 .col-4 .tile-xl img {
-
   max-width: 70%;
   max-height: 90%;
   object-fit: contain;
 }
 
 .col-6 .tile-xl img {
-
   max-width: 70%;
   max-height: 70%;
   object-fit: contain;
 }
 
 .col-8 .tile-xl img {
-
   max-width: 70%;
   max-height: 70%;
   object-fit: contain;
@@ -174,7 +173,7 @@ img.full {
 }
 
 /* Links */
-.links>div {
+.links > div {
   height: 40px;
   font-size: 1.25rem;
   font-weight: 500;
@@ -274,7 +273,7 @@ img.full {
 }
 
 .meta-bg-opa::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -283,7 +282,9 @@ img.full {
   background: url(../img/visuals/meta/meta-bg-opa.svg);
   background-size: 150%;
   opacity: 0.3;
-  transition: background-size 2s cubic-bezier(0.1, 0.7, 0.1, 1), opacity 2s cubic-bezier(0.1, 0.7, 0.1, 1);
+  transition:
+    background-size 2s cubic-bezier(0.1, 0.7, 0.1, 1),
+    opacity 2s cubic-bezier(0.1, 0.7, 0.1, 1);
   z-index: 0;
 }
 
@@ -309,7 +310,7 @@ img.full {
 }
 
 .nestseekers-bg-flatiron::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   right: 0;
@@ -319,18 +320,24 @@ img.full {
   background-position: right center;
   background-size: 120%;
   opacity: 0.4;
-  transition: background-size 2s cubic-bezier(0.7, 0.7, 0.1, 1), opacity 2s cubic-bezier(0.1, 0.7, 0.1, 1);
+  transition:
+    background-size 2s cubic-bezier(0.7, 0.7, 0.1, 1),
+    opacity 2s cubic-bezier(0.1, 0.7, 0.1, 1);
   z-index: 0;
 }
 
 .nestseekers-bg-flatiron::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   right: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, var(--gold-brown) 0%, var(--brown-dark) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--gold-brown) 0%,
+    var(--brown-dark) 100%
+  );
   opacity: 0;
   transition: opacity 2s cubic-bezier(0.1, 0.7, 0.1, 1);
   z-index: -1;
@@ -352,7 +359,7 @@ img.full {
 }
 
 .insolito-bg-asset1::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -362,7 +369,9 @@ img.full {
   background-size: 90%;
   background-position: center;
   opacity: 0.2;
-  transition: background-size 2s cubic-bezier(0.1, 0.7, 0.1, 1), opacity 2s cubic-bezier(0.1, 0.7, 0.1, 1);
+  transition:
+    background-size 2s cubic-bezier(0.1, 0.7, 0.1, 1),
+    opacity 2s cubic-bezier(0.1, 0.7, 0.1, 1);
   z-index: 0;
 }
 
@@ -384,7 +393,7 @@ img.full {
 }
 
 .eg-bg::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -394,7 +403,9 @@ img.full {
   background-size: 150%;
   filter: invert(1);
   opacity: 0;
-  transition: opacity 2s cubic-bezier(0.1, 0.7, 0.1, 1), background-size 2s cubic-bezier(0.1, 0.7, 0.1, 1);
+  transition:
+    opacity 2s cubic-bezier(0.1, 0.7, 0.1, 1),
+    background-size 2s cubic-bezier(0.1, 0.7, 0.1, 1);
   z-index: 0;
 }
 
@@ -421,7 +432,7 @@ img.full {
 }
 
 .eg-bg-lines-only::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -430,7 +441,9 @@ img.full {
   background: url(../img/visuals/eg/bg-lines-opa10.svg);
   background-size: 150%;
   opacity: 0.3;
-  transition: background-size 2s cubic-bezier(0.1, 0.7, 0.1, 1), opacity 2s cubic-bezier(0.1, 0.7, 0.1, 1);
+  transition:
+    background-size 2s cubic-bezier(0.1, 0.7, 0.1, 1),
+    opacity 2s cubic-bezier(0.1, 0.7, 0.1, 1);
   z-index: 0;
 }
 
@@ -442,8 +455,6 @@ img.full {
   background-size: 180%;
   opacity: 0.8;
 }
-
-
 
 .nestseekers-bg-1 {
   background: url(../img/visuals/nestseekers/print-poster-99-john-deco-lofts-condominium-ad-subway-new-york-ny-couple.jpg);
@@ -464,7 +475,7 @@ img.full {
 }
 
 .nestseekers-bg-4::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -474,7 +485,9 @@ img.full {
   background-size: cover;
   filter: invert(1);
   opacity: 0;
-  transition: opacity 2s cubic-bezier(0.1, 0.7, 0.1, 1), background-size 2s cubic-bezier(0.1, 0.7, 0.1, 1);
+  transition:
+    opacity 2s cubic-bezier(0.1, 0.7, 0.1, 1),
+    background-size 2s cubic-bezier(0.1, 0.7, 0.1, 1);
   z-index: 0;
 }
 
@@ -506,7 +519,7 @@ img.full {
   border-radius: 2px;
   opacity: 1;
   transform: rotate(0deg);
-  transition: .25s ease-in-out;
+  transition: 0.25s ease-in-out;
   transform-origin: center;
 }
 
@@ -540,7 +553,6 @@ img.full {
   opacity: 1;
   visibility: visible;
   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
 }
 
 /* Carousel */
@@ -590,7 +602,7 @@ img.full {
 }
 
 .option::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -4px;
   left: 0;
@@ -619,7 +631,7 @@ img.full {
 }
 
 .tile-xl a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -15px;
   left: 50%;
@@ -658,7 +670,7 @@ a:hover::after {
 /* Mobile Tile Pulse Dots */
 @media (max-width: 767px) {
   .tile:not(.carousel):not(.tile-xl):not(.tile-end):not(.tile-message)::before {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 10px;
     right: 10px;
@@ -708,7 +720,6 @@ a:hover::after {
   .bg-right {
     background-position: 25% center;
   }
-
 }
 
 @media (max-width: 767px) {
@@ -797,8 +808,8 @@ a:hover::after {
 }
 
 /* Desktop Styles */
-@media (min-width: 768px) {}
-
+@media (min-width: 768px) {
+}
 
 .sidebar-nav-btn {
   width: 100% !important;
@@ -811,7 +822,7 @@ a:hover::after {
 }
 
 .sidebar-nav-btn::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -4px;
   left: 0;
@@ -965,7 +976,7 @@ a:hover::after {
 }
 
 .product-hover::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -979,7 +990,7 @@ a:hover::after {
 }
 
 .product-hover::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   right: 0;
@@ -1007,7 +1018,7 @@ a:hover::after {
 
 /* Product Hover Blue */
 .product-hover-blue::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -1021,7 +1032,7 @@ a:hover::after {
 }
 
 .product-hover-blue::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   right: 0;
@@ -1049,7 +1060,7 @@ a:hover::after {
 
 /* Product Hover Green */
 .product-hover-green::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -1063,7 +1074,7 @@ a:hover::after {
 }
 
 .product-hover-green::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   right: 0;
@@ -1091,21 +1102,21 @@ a:hover::after {
 
 /* Product Hover Purple */
 .product-hover-purple::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 0;
   height: 0;
   border-radius: 50%;
-  background: #6B5B95;
+  background: #6b5b95;
   transform: scale(0);
   transition: transform 0.5s ease;
   z-index: -1;
 }
 
 .product-hover-purple::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   right: 0;
@@ -1138,7 +1149,6 @@ a:hover::after {
   right: 20px;
   z-index: 9999;
 }
-
 
 #brand-creation .tile:not(.carousel),
 #brand-creation .tile-xl:not(.carousel) {
@@ -1190,7 +1200,7 @@ a:hover::after {
 }
 
 #brand-creation .tile-xl .brand-hover-text::after {
-  content: '→';
+  content: "→";
   position: absolute;
   bottom: -30px;
   left: 0;
@@ -1217,7 +1227,6 @@ a:hover::after {
 }
 
 @media (max-width: 767px) {
-
   #brand-creation .tile:not(.carousel).active .brand-hover-overlay,
   #brand-creation .tile-xl:not(.carousel).active .brand-hover-overlay {
     opacity: 0.9;
@@ -1229,9 +1238,6 @@ a:hover::after {
     opacity: 1;
   }
 }
-
-
-
 
 /* Optimized classes using Bootstrap equivalents */
 .bg-beige {
