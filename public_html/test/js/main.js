@@ -59,6 +59,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
+    // Update brand creation hover texts
+    addCol4Panels();
+
     // Update language button states
     document
       .querySelectorAll("#lang-en, #lang-es")

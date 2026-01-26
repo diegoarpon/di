@@ -33,17 +33,17 @@ const translations = {
     projects: {
       "logo-si-salud-integral.svg": {
         name: "SI Salud Integral",
-        industry: "Healthcare brand identity",
+        industry: "Comprehensive health center focused on the harmony between body, mind and emotion",
       },
       "logo-juliana-oppici.svg": {
         name: "Juliana Oppici",
-        industry: "Personal professional brand",
+        industry: "Aesthetic physician, director of Essenza, Advanced Aesthetics Center",
       },
       "logo-ponti-tosi.svg": {
         name: "Ponti Tosi",
-        industry: "Consulting firm identity",
+        industry: "Brand for outreach society on Functional Dermatology with PNIE orientation",
       },
-      "logo-meta.svg": { name: "Meta", industry: "Technology rebrand" },
+      "logo-meta.svg": { name: "Meta", industry: "Aesthetic Medicine, Technology & Antiaging Congress of Uruguay" },
       "logo-upmid-white.svg": {
         name: "Upmid",
         industry: "Digital solutions brand",
@@ -83,7 +83,7 @@ const translations = {
       },
       "logo-corvalius.svg": {
         name: "Corvalius",
-        industry: "Consulting firm identity",
+        industry: "Design and optimization of technological products and services that address business from the user perspective",
       },
       "logo-courtside.svg": {
         name: "Courtside",
@@ -132,7 +132,7 @@ const translations = {
       },
       "logo-zlatar-nario.svg": {
         name: "Zlatar Nario",
-        industry: "Luxury jewelry brand",
+        industry: "Law firm",
       },
       "logo-ambrosia.svg": {
         name: "Ambrosia",
@@ -140,7 +140,7 @@ const translations = {
       },
       "logo-art-climate.svg": {
         name: "Art Climate",
-        industry: "Environmental art project",
+        industry: "A Bay Area platform supporting artists, cultural producers, and arts organizations committed to imagining and realizing climate resilient futures",
       },
     },
   },
@@ -176,19 +176,19 @@ const translations = {
     projects: {
       "logo-si-salud-integral.svg": {
         name: "SI Salud Integral",
-        industry: "Identidad de marca de salud",
+        industry: "Centro de salud integral, enfocado en la armonía entre cuerpo, mente y emoción",
       },
       "logo-juliana-oppici.svg": {
         name: "Juliana Oppici",
-        industry: "Marca personal profesional",
+        industry: "Médica estética, directora de Essenza, Centro de estética avanzada",
       },
       "logo-ponti-tosi.svg": {
         name: "Ponti Tosi",
-        industry: "Identidad de consultora",
+        industry: "Marca para sociedad de divulgación sobre Dermatología Funcional con Orientación en PNIE",
       },
       "logo-meta.svg": {
         name: "Meta",
-        industry: "Cambio de marca tecnológico",
+        industry: "Congreso de Medicina Estética, Tecnología & Antiaging de Uruguay",
       },
       "logo-upmid-white.svg": {
         name: "Upmid",
@@ -232,7 +232,7 @@ const translations = {
       },
       "logo-corvalius.svg": {
         name: "Corvalius",
-        industry: "Identidad de consultora",
+        industry: "Diseño y optimización de productos y servicios tecnológicos que atienden el negocio desde la perspectiva del usuario",
       },
       "logo-courtside.svg": {
         name: "Courtside",
@@ -284,7 +284,7 @@ const translations = {
       },
       "logo-zlatar-nario.svg": {
         name: "Zlatar Nario",
-        industry: "Marca de joyería de lujo",
+        industry: "Estudio jurídico",
       },
       "logo-ambrosia.svg": {
         name: "Ambrosia",
@@ -292,7 +292,7 @@ const translations = {
       },
       "logo-art-climate.svg": {
         name: "Art Climate",
-        industry: "Proyecto de arte ambiental",
+        industry: "Plataforma del área de la Bahía que apoya a artistas, productores culturales y organizaciones artísticas comprometidas con imaginar y realizar futuros resilientes al clima",
       },
     },
   },

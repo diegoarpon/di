@@ -134,6 +134,12 @@ body {
   object-fit: contain;
 }
 
+.col-12 .tile-xl img {
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+}
+
 .col-8 .tile-xl img {
   max-width: 70%;
   max-height: 70%;
@@ -173,7 +179,7 @@ img.full {
 }
 
 /* Links */
-.links > div {
+.links>div {
   height: 40px;
   font-size: 1.25rem;
   font-weight: 500;
@@ -312,16 +318,19 @@ img.full {
 .nestseekers-bg-flatiron::before {
   content: "";
   position: absolute;
-  bottom: 0;
-  right: 0;
+  top: 50%;
+  left: 50%;
   width: 100%;
   height: 100%;
-  background: url(../img/visuals/nestseekers/Asset\ 1.svg);
-  background-position: right center;
-  background-size: 120%;
-  opacity: 0.4;
+  background: url(../img/logos/logo-nestseekers-icons.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 0%;
+  opacity: 0.1;
+  filter: invert(1);
+  transform: translate(-50%, -50%);
   transition:
-    background-size 2s cubic-bezier(0.7, 0.7, 0.1, 1),
+    background-size 2s cubic-bezier(0.1, 0.7, 0.1, 1),
     opacity 2s cubic-bezier(0.1, 0.7, 0.1, 1);
   z-index: 0;
 }
@@ -333,11 +342,9 @@ img.full {
   right: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    180deg,
-    var(--gold-brown) 0%,
-    var(--brown-dark) 100%
-  );
+  background: linear-gradient(180deg,
+      var(--gold-brown) 0%,
+      var(--brown-dark) 100%);
   opacity: 0;
   transition: opacity 2s cubic-bezier(0.1, 0.7, 0.1, 1);
   z-index: -1;
@@ -348,8 +355,8 @@ img.full {
 }
 
 .nestseekers-bg-flatiron:hover::before {
-  background-size: 180%;
-  opacity: 1;
+  background-size: 120%;
+  opacity: 0.3;
 }
 
 .insolito-bg-asset1 {
@@ -808,8 +815,7 @@ a:hover::after {
 }
 
 /* Desktop Styles */
-@media (min-width: 768px) {
-}
+@media (min-width: 768px) {}
 
 .sidebar-nav-btn {
   width: 100% !important;
@@ -916,12 +922,6 @@ a:hover::after {
   .content-area .d-block.d-lg-none {
     padding-left: 0 !important;
     padding-right: 0 !important;
-  }
-
-  .col-4,
-  .col-6,
-  .col-8 {
-    width: 100%;
   }
 }
 
@@ -1202,7 +1202,7 @@ a:hover::after {
 #brand-creation .tile-xl .brand-hover-text::after {
   content: "→";
   position: absolute;
-  bottom: -30px;
+  bottom: -50px;
   left: 0;
   font-size: 2.5rem;
   color: var(--blackest);
@@ -1227,6 +1227,7 @@ a:hover::after {
 }
 
 @media (max-width: 767px) {
+
   #brand-creation .tile:not(.carousel).active .brand-hover-overlay,
   #brand-creation .tile-xl:not(.carousel).active .brand-hover-overlay {
     opacity: 0.9;
