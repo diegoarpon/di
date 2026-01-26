@@ -156,12 +156,14 @@ img.full {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  will-change: transform;
 }
 
 .tile-xl:not(.carousel) {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  will-change: transform;
 }
 
 .tile-end .option::after {

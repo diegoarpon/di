@@ -46,40 +46,40 @@ const translations = {
       "logo-meta.svg": { name: "Meta", industry: "Aesthetic Medicine, Technology & Antiaging Congress of Uruguay" },
       "logo-upmid-white.svg": {
         name: "Upmid",
-        industry: "Digital solutions brand",
+        industry: "Advanced aesthetic medicine course for the upper and middle facial third by EG Marketing",
       },
       "logo-virtualmind-color.png": {
         name: "Virtualmind",
         industry: "Software development brand",
       },
-      "logo-reale.svg": { name: "Reale", industry: "Insurance brand identity" },
+      "logo-reale.svg": { name: "Reale", industry: "Aesthetic medicine specialist" },
       "logo-eg-white.svg": {
         name: "EG Marketing",
-        industry: "Marketing agency brand",
+        industry: "Consulting firm specialized in medicine, creator and organizer of events for the professional community",
       },
       "logo-farolatino-icon-white.svg": {
         name: "Faro Latino",
-        industry: "Cultural media brand",
+        industry: "Founded in 1995 as the first Latin American digital distributor, protecting and empowering the intellectual property of musicians and content creators",
       },
       "logo-farolatino-white.svg": {
         name: "Faro Latino",
-        industry: "Cultural media brand",
+        industry: "Founded in 1995 as the first Latin American digital distributor, protecting and empowering the intellectual property of musicians and content creators",
       },
       "logo-banegas-day.svg": {
         name: "Banegas Day",
-        industry: "Real estate development brand",
+        industry: "Live cadaveric dissection day with applications and talks",
       },
       "logo-banegas-day-full.svg": {
         name: "Banegas Day",
-        industry: "Real estate development brand",
+        industry: "Live cadaveric dissection day with applications and talks",
       },
       "logo-bronx-gym.svg": {
-        name: "Bronx Gym",
-        industry: "Fitness gym brand",
+        name: "Bronx",
+        industry: "Functional training gym",
       },
       "logo-comoyacomo.svg": {
         name: "Como Ya Como",
-        industry: "Restaurant brand identity",
+        industry: "Food delivery app (Buenos Aires, Argentina)",
       },
       "logo-corvalius.svg": {
         name: "Corvalius",
@@ -87,48 +87,48 @@ const translations = {
       },
       "logo-courtside.svg": {
         name: "Courtside",
-        industry: "Restaurant brand (Idaho)",
+        industry: "Restaurant brand (Idaho, US)",
       },
-      "logo-duarte.svg": { name: "Duarte", industry: "Legal services brand" },
-      "flitzz.svg": { name: "Flitzz", industry: "Technology brand" },
+      "logo-duarte.svg": { name: "Duarte & Asociados", industry: "Accounting firm from Rosario, Santa Fe, Argentina" },
+      "flitzz.svg": { name: "Flitzz", industry: "Easy way to buy news articles à la carte or in curated collections from US/Canada news publishers" },
       "logo-food-traders.svg": {
         name: "Food Traders",
-        industry: "Food industry brand",
+        industry: "Online news and digital magazine dedicated to the international food trader community",
       },
       "logo-form-stream.svg": {
         name: "Form Stream",
-        industry: "Digital workflow platform",
+        industry: "Ultimate solution designed to handle the challenges of getting data to and from complex forms",
       },
       "logo-fx-prom.svg": {
         name: "FX Prom",
-        industry: "Financial services brand",
+        industry: "Women's Online Formalwear Boutique (Jefferson City, Tennessee)",
       },
       "logo-hit-pr.svg": {
-        name: "Hit PR",
+        name: "Hit",
         industry: "Public relations agency",
       },
-      "logo-iblum.svg": { name: "iBlum", industry: "Technology brand" },
-      "logo-IMD.svg": { name: "IMD", industry: "Medical services brand" },
-      "logo-kamea.svg": { name: "Kamea", industry: "Luxury brand identity" },
+      "logo-iblum.svg": { name: "iBlum", industry: "Software consulting firm (Rosario, Argentina)" },
+      "logo-IMD.svg": { name: "IMD", industry: "Full service model and product development house (Culver City, California)" },
+      "logo-kamea.svg": { name: "Kamea", industry: "NYC based indie pop band" },
       "logo-lu-maria.svg": {
         name: "Lu María",
-        industry: "Lifestyle consultant brand",
+        industry: "Singer-songwriter from Buenos Aires, Argentina",
       },
       "logo-mena-lombard.svg": {
         name: "Mena Lombard",
-        industry: "Legal services brand",
+        industry: "Fashion designer and educator",
       },
       "logo-nestseekers.svg": {
         name: "Nestseekers",
-        industry: "Real estate brand",
+        industry: "Global real estate brokerage at the nexus of technology and media",
       },
       "logo-players.svg": {
         name: "Players",
-        industry: "Restaurant brand (Idaho)",
+        industry: "Restaurant brand (Idaho, US)",
       },
       "logo-zoom.svg": {
         name: "Zoom",
-        industry: "Video conferencing platform",
+        industry: "Communication and design agency",
       },
       "logo-zlatar-nario.svg": {
         name: "Zlatar Nario",
@@ -136,7 +136,7 @@ const translations = {
       },
       "logo-ambrosia.svg": {
         name: "Ambrosia",
-        industry: "Restaurant brand identity",
+        industry: "Pastry business brand identity",
       },
       "logo-art-climate.svg": {
         name: "Art Climate",
@@ -192,43 +192,40 @@ const translations = {
       },
       "logo-upmid-white.svg": {
         name: "Upmid",
-        industry: "Marca de soluciones digitales",
+        industry: "Curso avanzado de medicina estética para el tercio superior y medio facial by EG Marketing",
       },
       "logo-virtualmind-color.png": {
         name: "Virtualmind",
         industry: "Marca de desarrollo de software",
       },
-      "logo-reale.svg": {
-        name: "Reale",
-        industry: "Identidad de marca de seguros",
-      },
+      "logo-reale.svg": { name: "Reale", industry: "Especialista en medicina estética" },
       "logo-eg-white.svg": {
         name: "EG Marketing",
-        industry: "Marca de agencia de marketing",
+        industry: "Consultora especializada en Medicina, creadora y organizadora de eventos para la comunidad profesional",
       },
       "logo-farolatino-icon-white.svg": {
         name: "Faro Latino",
-        industry: "Marca de medios culturales",
+        industry: "Fundada en 1995 como la primera distribuidora digital latinoamericana, protege y potencia la propiedad intelectual de músicos y creadores de contenido",
       },
       "logo-farolatino-white.svg": {
         name: "Faro Latino",
-        industry: "Marca de medios culturales",
+        industry: "Fundada en 1995 como la primera distribuidora digital latinoamericana, protege y potencia la propiedad intelectual de músicos y creadores de contenido",
       },
       "logo-banegas-day.svg": {
         name: "Banegas Day",
-        industry: "Marca de desarrollo inmobiliario",
+        industry: "Jornada de disección cadavérica live con aplicaciones y charlas",
       },
       "logo-banegas-day-full.svg": {
         name: "Banegas Day",
-        industry: "Marca de desarrollo inmobiliario",
+        industry: "Jornada de disección cadavérica live con aplicaciones y charlas",
       },
       "logo-bronx-gym.svg": {
-        name: "Bronx Gym",
-        industry: "Marca de gimnasio",
+        name: "Bronx",
+        industry: "Gimnasio entrenamiento funcional",
       },
       "logo-comoyacomo.svg": {
         name: "Como Ya Como",
-        industry: "Identidad de marca de restaurante",
+        industry: "App de delivery de comida en Bs As Argentina",
       },
       "logo-corvalius.svg": {
         name: "Corvalius",
@@ -236,51 +233,51 @@ const translations = {
       },
       "logo-courtside.svg": {
         name: "Courtside",
-        industry: "Marca de restaurante (Idaho)",
+        industry: "Marca de restaurante (Idaho, US)",
       },
       "logo-duarte.svg": {
-        name: "Duarte",
-        industry: "Marca de servicios legales",
+        name: "Duarte & Asociados",
+        industry: "Estudio contable de la ciudad de Rosario, Santa Fe, Argentina",
       },
-      "flitzz.svg": { name: "Flitzz", industry: "Marca tecnológica" },
+      "flitzz.svg": { name: "Flitzz", industry: "Manera fácil para que cualquiera compre artículos de noticias a la carta o en colecciones curadas de editores de noticias de EE.UU./Canadá" },
       "logo-food-traders.svg": {
         name: "Food Traders",
-        industry: "Marca de industria alimentaria",
+        industry: "Revista digital y noticias online dedicada a la comunidad internacional de comercio de alimentos",
       },
       "logo-form-stream.svg": {
         name: "Form Stream",
-        industry: "Plataforma de flujos digitales",
+        industry: "Solución definitiva diseñada para manejar los desafíos de obtener y enviar datos desde y hacia formularios complejos",
       },
       "logo-fx-prom.svg": {
         name: "FX Prom",
-        industry: "Marca de servicios financieros",
+        industry: "Boutique online de ropa formal para mujeres (Jefferson City, Tennessee)",
       },
       "logo-hit-pr.svg": {
-        name: "Hit PR",
+        name: "Hit",
         industry: "Agencia de relaciones públicas",
       },
-      "logo-iblum.svg": { name: "iBlum", industry: "Marca tecnológica" },
-      "logo-IMD.svg": { name: "IMD", industry: "Marca de servicios médicos" },
-      "logo-kamea.svg": { name: "Kamea", industry: "Marca de lujo" },
+      "logo-iblum.svg": { name: "iBlum", industry: "Consultora de software en Rosario, Argentina" },
+      "logo-IMD.svg": { name: "IMD", industry: "Casa de desarrollo de modelos y productos de servicio completo (Culver City, California)" },
+      "logo-kamea.svg": { name: "Kamea", industry: "Banda de indie pop basada en NYC" },
       "logo-lu-maria.svg": {
         name: "Lu María",
-        industry: "Marca de consultora de estilo",
+        industry: "Identidad para cantautora de Bs As, Argentina",
       },
       "logo-mena-lombard.svg": {
         name: "Mena Lombard",
-        industry: "Marca de servicios legales",
+        industry: "Diseñadora y educadora de moda",
       },
       "logo-nestseekers.svg": {
         name: "Nestseekers",
-        industry: "Marca inmobiliaria",
+        industry: "Correduría inmobiliaria global en el nexo de la tecnología y los medios",
       },
       "logo-players.svg": {
         name: "Players",
-        industry: "Marca de restaurante (Idaho)",
+        industry: "Marca de restaurante (Idaho, US)",
       },
       "logo-zoom.svg": {
         name: "Zoom",
-        industry: "Plataforma de videoconferencia",
+        industry: "Agencia de comunicación y diseño",
       },
       "logo-zlatar-nario.svg": {
         name: "Zlatar Nario",
@@ -288,7 +285,7 @@ const translations = {
       },
       "logo-ambrosia.svg": {
         name: "Ambrosia",
-        industry: "Identidad de marca de restaurante",
+        industry: "Identidad para emprendimiento de pastelería",
       },
       "logo-art-climate.svg": {
         name: "Art Climate",
