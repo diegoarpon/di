@@ -2,7 +2,8 @@ backend:
   name: github
   repo: diegoarpon/di
   branch: main
-  base_url: https://courageous-sunshine-83253c.netlify.app
+  base_url: https://di-livid-eight.vercel.app
+  auth_endpoint: api/auth
 
 media_folder: public_html/test/img/logos
 public_folder: img/logos
