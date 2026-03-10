@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: ok-computer/Di
+  repo: diegoarpon/di
   branch: main
   base_url: https://courageous-sunshine-83253c.netlify.app
 
