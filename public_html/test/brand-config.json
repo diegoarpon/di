@@ -1,0 +1,52 @@
+{
+  "tiles": [
+    { "src": "img/logos/logo-si-salud-integral.svg", "alt": "SI Salud Integral", "size": "tile-xl", "span": 4 },
+    { "src": "img/logos/logo-juliana-oppici.svg",     "alt": "Juliana Oppici",    "size": "tile-xl", "span": 4 },
+    { "src": "img/logos/logo-ponti-tosi.svg",         "alt": "Ponti Tosi",        "size": "tile-xl", "span": 4 },
+    { "src": "img/logos/logo-meta.svg",               "alt": "Meta",              "size": "tile-xl", "span": 8 },
+    { "stack": [
+        { "src": "img/logos/logo-courtside.svg",  "alt": "Courtside", "size": "tile" },
+        { "src": "img/logos/logo-players.svg",    "alt": "Players",   "size": "tile" }
+      ], "span": 4 },
+    { "stack": [
+        { "src": "img/logos/logo-fx-prom.svg",    "alt": "FX Prom",    "size": "tile" },
+        { "src": "img/logos/logo-nestseekers.svg","alt": "Nestseekers","size": "tile" }
+      ], "span": 4 },
+    { "src": "img/logos/logo-upmid-white.svg",        "alt": "Upmid",             "size": "tile-xl", "span": 4 },
+    { "stack": [
+        { "src": "img/logos/logo-kamea.svg",  "alt": "Kamea",  "size": "tile" },
+        { "src": "img/logos/logo-hit-pr.svg", "alt": "Hit PR", "size": "tile" }
+      ], "span": 4 },
+    { "src": "img/logos/logo-virtualmind-color.png",  "alt": "Virtualmind",       "size": "tile-xl", "span": 4 },
+    { "stack": [
+        { "src": "img/logos/logo-duarte.svg",       "alt": "Duarte",       "size": "tile" },
+        { "src": "img/logos/logo-food-traders.svg", "alt": "Food Traders", "size": "tile" }
+      ], "span": 4 },
+    { "src": "img/logos/logo-reale.svg",              "alt": "Reale",             "size": "tile-xl", "span": 4 },
+    { "stack": [
+        { "src": "img/logos/logo-IMD.svg",       "alt": "IMD",      "size": "tile" },
+        { "src": "img/logos/logo-bronx-gym.svg", "alt": "Bronx Gym","size": "tile" }
+      ], "span": 4 },
+    { "src": "img/logos/logo-eg-white.svg",           "alt": "EG",                "size": "tile-xl", "span": 8 },
+    { "src": "img/logos/flitzz.svg",                  "alt": "Flitzz",            "size": "tile",    "span": 4 },
+    { "src": "img/logos/logo-mena-lombard.svg",       "alt": "Mena Lombard",      "size": "tile",    "span": 4 },
+    { "src": "img/logos/logo-ambrosia.svg",           "alt": "Ambrosia",          "size": "tile",    "span": 4 },
+    { "stack": [
+        { "src": "img/logos/logo-comoyacomo.svg",           "alt": "Como Ya Como", "size": "tile" },
+        { "src": "img/logos/logo-farolatino-icon-white.svg","alt": "Farolatino",   "size": "tile-xl", "multi": "img/logos/logo-farolatino-white.svg" }
+      ], "span": 4 },
+    { "stack": [
+        { "src": "img/logos/logo-zoom.svg",     "alt": "Zoom",     "size": "tile" },
+        { "src": "img/logos/logo-iblum.svg",    "alt": "iBlum",    "size": "tile" },
+        { "src": "img/logos/logo-corvalius.svg","alt": "Corvalius","size": "tile" }
+      ], "span": 4 },
+    { "stack": [
+        { "src": "img/logos/logo-banegas-day.svg", "alt": "Banegas Day", "size": "tile-xl", "multi": "img/logos/logo-banegas-day-full.svg" },
+        { "src": "img/logos/logo-lu-maria.svg",    "alt": "Lu María",    "size": "tile" }
+      ], "span": 4 },
+    { "src": "img/logos/logo-zlatar-nario.svg",       "alt": "Zlatar Nario",      "size": "tile",    "span": 4 },
+    { "src": "img/logos/logo-art-climate.svg",        "alt": "Art Climate",       "size": "tile",    "span": 4 },
+    { "src": "img/logos/logo-conception.svg",         "alt": "Conception",        "size": "tile",    "span": 4 },
+    { "src": "img/logos/logo-ambar.svg",              "alt": "Ambar",             "size": "tile",    "span": 4 }
+  ]
+}

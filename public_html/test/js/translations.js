@@ -50,7 +50,7 @@ const translations = {
       },
       "logo-virtualmind-color.png": {
         name: "Virtualmind",
-        industry: "Software development brand",
+        industry: "Software house that provides software development services to boost product engineering and digital transformation capabilities",
       },
       "logo-reale.svg": { name: "Reale", industry: "Aesthetic medicine specialist" },
       "logo-eg-white.svg": {
@@ -196,7 +196,7 @@ const translations = {
       },
       "logo-virtualmind-color.png": {
         name: "Virtualmind",
-        industry: "Marca de desarrollo de software",
+        industry: "Casa de software que proporciona servicios de desarrollo de software para impulsar las capacidades de ingeniería de productos y transformación digital",
       },
       "logo-reale.svg": { name: "Reale", industry: "Especialista en medicina estética" },
       "logo-eg-white.svg": {

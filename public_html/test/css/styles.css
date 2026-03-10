@@ -55,7 +55,7 @@ body {
   border-right: 1px solid var(--blackest);
   border-left: 1px solid var(--blackest);
   height: 130vh;
-  width: calc(100% - 1.5rem);
+  width: 100%;
   position: absolute;
   top: -5%;
 }

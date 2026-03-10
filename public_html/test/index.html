@@ -49,6 +49,136 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
     <script src="js/translations.js"></script>
+    <style>
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(12, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        .brand-grid-item {
+            min-width: 0;
+        }
+
+        .brand-grid-item.span-4 {
+            grid-column: span 4;
+        }
+
+        .brand-grid-item.span-8 {
+            grid-column: span 8;
+        }
+
+        .brand-grid-stack {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .brand-grid-stack.two-up {
+            grid-template-rows: repeat(2, minmax(0, 1fr));
+            height: 100%;
+        }
+
+        .brand-grid-guide-bottom {
+            position: relative;
+        }
+
+        .brand-grid-logo-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            padding: 3rem;
+        }
+
+        .brand-grid-logo-wrap.no-padding {
+            padding: 0;
+        }
+
+        .brand-grid-logo-wrap.responsive-padding {
+            padding: 0;
+        }
+
+        .brand-grid-logo-wrap.multi-logo {
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .brand-grid-logo-wrap img {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+
+        @media (min-width: 576px) {
+            .brand-grid-logo-wrap.responsive-padding {
+                padding: 3rem;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+
+            .brand-grid-item.span-4,
+            .brand-grid-item.span-8 {
+                grid-column: span 6;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .brand-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .brand-grid-item.span-4,
+            .brand-grid-item.span-8 {
+                grid-column: span 1;
+            }
+        }
+
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(12, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        .brand-grid-item {
+            min-width: 0;
+            position: relative;
+        }
+
+        .brand-grid-stack {
+            display: grid;
+            gap: 1.5rem;
+            height: 100%;
+        }
+
+        .brand-grid-stack>.position-relative+.position-relative {
+            margin-top: 0;
+        }
+
+        @media (max-width: 767.98px) {
+            .brand-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1rem;
+            }
+
+            .brand-grid-item {
+                position: relative;
+            }
+
+            .brand-grid-stack>.position-relative+.position-relative {
+                margin-top: 0;
+            }
+
+            .brand-grid-item.span-4,
+            .brand-grid-item.span-8 {
+                grid-column: span 1;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -150,362 +280,7 @@
                     <div class="tab-intro">
                         <h1 id="intro-text" class="display-4 fw-light" data-i18n="intro"></h1>
                     </div>
-                    <div class="row mb-5">
-                        <div class="col-6 col-lg-4 position-relative mb-4">
-                            <div class="guide-h-double-100"></div>
-                            <div class="guide-v-double-100"></div>
-
-                            <!-- Work #1 -->
-                            <div class="tile tile-xl">
-                                <div
-                                    class="d-flex flex-column justify-content-center align-items-center w-100 h-100 p-5">
-                                    <img src="img/logos/logo-si-salud-integral.svg" class="filter-dark" loading="lazy" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-lg-4 position-relative mb-4">
-                            <div class="guide-h-double-100"></div>
-                            <div class="guide-v-double-100"></div>
-
-                            <!-- Work #2 -->
-                            <div class="tile tile-xl">
-                                <div
-                                    class="d-flex flex-column justify-content-center align-items-center w-100 h-100 p-5">
-                                    <img src="img/logos/logo-juliana-oppici.svg" class="filter-dark" loading="lazy" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-lg-4 position-relative mb-4">
-                            <div class="guide-h-double-100"></div>
-                            <div class="guide-v-double-100"></div>
-
-                            <!-- Work #3 -->
-                            <div class="tile tile-xl">
-                                <div class="d-flex flex-column justify-content-center align-items-center h-100 p-5">
-                                    <img src="img/logos/logo-ponti-tosi.svg" class="filter-dark" loading="lazy" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-lg-8 position-relative mb-4">
-                            <div class="guide-h-double-100"></div>
-                            <div class="guide-v-double-100"></div>
-
-                            <!-- Work #4 -->
-                            <div class="tile tile-xl">
-                                <div class="d-flex align-items-center justify-content-center w-100 h-100 p-0 p-sm-5">
-                                    <img src="img/logos/logo-meta.svg" class="filter-dark" loading="lazy" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-lg-4 position-relative mb-4">
-                            <div class="guide-v-double-100"></div>
-
-                            <!-- Work #5 -->
-                            <div class="position-relative">
-                                <div class="tile mb-4">
-                                    <img src="" />
-                                </div>
-                                <div class="guide-h-double-100"></div>
-                            </div>
-
-                            <!-- Work #6 -->
-                            <div class="position-relative">
-                                <div class="guide-h-double-100"></div>
-                                <div class="tile">
-                                    <img src="" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-lg-4 position-relative mb-4">
-                            <div class="guide-v-double-100"></div>
-
-                            <!-- Work #7 -->
-                            <div class="position-relative">
-                                <div class="tile mb-4">
-                                    <img src="" />
-                                </div>
-                                <div class="guide-h-double-100"></div>
-                            </div>
-
-                            <!-- Work #8 -->
-                            <div class="position-relative">
-                                <div class="guide-h-double-100"></div>
-                                <div class="tile">
-                                    <img src="" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-lg-4 position-relative mb-4">
-                            <div class="guide-h-double-100"></div>
-                            <div class="guide-v-double-100"></div>
-                            <!-- Work #9 -->
-                            <div class="tile tile-xl">
-                                <div
-                                    class="d-flex flex-column justify-content-center align-items-center w-100 h-100 p-5">
-                                    <img src="img/logos/logo-upmid-white.svg" class="filter-dark" loading="lazy" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-lg-4 position-relative mb-4">
-                            <div class="guide-v-double-100"></div>
-
-                            <!-- Work #10 -->
-                            <div class="position-relative">
-                                <div class="tile mb-4">
-                                    <img src="" />
-                                </div>
-                                <div class="guide-h-double-100"></div>
-                            </div>
-
-                            <!-- Work #11 -->
-                            <div class="position-relative">
-                                <div class="guide-h-double-100"></div>
-                                <div class="tile">
-                                    <img src="" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-lg-4 position-relative mb-4">
-                            <div class="guide-h-double-100"></div>
-                            <div class="guide-v-double-100"></div>
-                            <!-- Work #12 -->
-                            <div class="tile tile-xl">
-                                <div
-                                    class="d-flex flex-column justify-content-center align-items-center w-100 h-100 p-5">
-                                    <img src="img/logos/logo-virtualmind-color.png" loading="lazy" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-lg-4 position-relative mb-4">
-                            <div class="guide-v-double-100"></div>
-
-                            <!-- Work #13 -->
-                            <div class="position-relative">
-                                <div class="tile mb-4">
-                                    <img src="" />
-                                </div>
-                                <div class="guide-h-double-100"></div>
-                            </div>
-
-                            <!-- Work #14 -->
-                            <div class="position-relative">
-                                <div class="guide-h-double-100"></div>
-                                <div class="tile">
-                                    <img src="" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-lg-4 position-relative mb-4">
-                            <div class="guide-h-double-100"></div>
-                            <div class="guide-v-double-100"></div>
-
-                            <!-- Work #15 -->
-                            <div class="tile tile-xl">
-                                <div
-                                    class="d-flex flex-column justify-content-center align-items-center w-100 h-100 p-5">
-                                    <img src="img/logos/logo-reale.svg" class="filter-dark" loading="lazy" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-lg-4 position-relative mb-4">
-                            <div class="guide-v-double-100"></div>
-
-                            <!-- Work #16 -->
-                            <div class="position-relative">
-                                <div class="tile mb-4">
-                                    <img src="" />
-                                </div>
-                                <div class="guide-h-double-100"></div>
-                            </div>
-
-                            <!-- Work #17 -->
-                            <div class="position-relative">
-                                <div class="guide-h-double-100"></div>
-                                <div class="tile">
-                                    <img src="" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-lg-8 position-relative mb-4">
-                            <div class="guide-h-double-100"></div>
-                            <div class="guide-v-double-100"></div>
-                            <!-- Work #18 -->
-                            <div class="tile tile-xl">
-                                <div class="d-flex align-items-center justify-content-center w-100 h-100 p-0 p-sm-5">
-                                    <img src="img/logos/logo-eg-white.svg" class="filter-dark" loading="lazy" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-lg-4 position-relative mb-4">
-                            <div class="guide-v-double-100"></div>
-                            <div class="guide-h-double-100"></div>
-
-                            <!-- Work #19 -->
-                            <div class="position-relative">
-                                <div class="tile">
-                                    <img src="" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-lg-4 position-relative mb-4">
-                            <div class="guide-v-double-100"></div>
-                            <div class="guide-h-double-100"></div>
-
-                            <!-- Work #20 -->
-                            <div class="position-relative">
-                                <div class="tile">
-                                    <img src="" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-lg-4 position-relative mb-4">
-                            <div class="guide-v-double-100"></div>
-                            <div class="guide-h-double-100"></div>
-
-                            <!-- Work #21 -->
-                            <div class="position-relative">
-                                <div class="tile">
-                                    <img src="" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-lg-4 position-relative">
-                            <div class="guide-v-double-100"></div>
-
-                            <!-- Work #22 -->
-                            <div class="position-relative">
-                                <div class="guide-h-double-100"></div>
-                                <div class="tile mb-4">
-                                    <img src="" />
-                                </div>
-                            </div>
-
-                            <!-- Work #23 -->
-                            <div class="position-relative">
-                                <div class="tile tile-xl">
-                                    <div
-                                        class="d-flex flex-wrap align-items-center justify-content-center w-100 h-100 p-5">
-                                        <img src="img/logos/logo-farolatino-icon-white.svg" class="filter-dark" loading="lazy" />
-                                        <img src="img/logos/logo-farolatino-white.svg" class="filter-dark" loading="lazy" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-lg-4 position-relative">
-                            <div class="guide-v-double-100"></div>
-
-                            <!-- Work #24 -->
-                            <div class="position-relative">
-                                <div class="guide-h-double-100"></div>
-                                <div class="tile mb-4">
-                                    <img src="" />
-                                </div>
-                            </div>
-
-                            <!-- Work #25 -->
-                            <div class="position-relative">
-                                <div class="guide-h-double-100"></div>
-                                <div class="tile mb-4">
-                                    <img src="" />
-                                </div>
-                            </div>
-
-                            <!-- Work #26 -->
-                            <div class="position-relative">
-                                <div class="guide-h-double-100"></div>
-                                <div class="tile mb-4">
-                                    <img src="" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-lg-4 position-relative">
-                            <div class="guide-v-double-100"></div>
-
-                            <!-- Work #27 -->
-                            <div class="position-relative mb-4">
-                                <div class="tile tile-xl">
-                                    <div
-                                        class="d-flex flex-wrap align-items-center justify-content-center w-100 h-100 p-5">
-                                        <img src="img/logos/logo-banegas-day.svg" class="filter-dark" loading="lazy" />
-                                        <img src="img/logos/logo-banegas-day-full.svg" class="filter-dark" loading="lazy" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Work #28 -->
-                            <div class="position-relative">
-                                <div class="tile mb-4">
-                                    <img src="" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-lg-4 position-relative mb-4">
-                            <div class="guide-v-double-100"></div>
-                            <div class="guide-h-double-100"></div>
-
-                            <!-- Work #29 -->
-                            <div class="position-relative">
-                                <div class="tile">
-                                    <img src="" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-lg-4 position-relative mb-4">
-                            <div class="guide-v-double-100"></div>
-                            <div class="guide-h-double-100"></div>
-
-                            <!-- Work #30 -->
-                            <div class="position-relative">
-                                <div class="tile">
-                                    <img src="" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-lg-4 position-relative mb-4">
-                            <div class="guide-v-double-100"></div>
-                            <div class="guide-h-double-100"></div>
-
-                            <!-- Work #31 -->
-                            <div class="position-relative">
-                                <div class="tile">
-                                    <img src="" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-lg-4 position-relative mb-4">
-                            <div class="guide-v-double-100"></div>
-                            <div class="guide-h-double-100"></div>
-
-                            <!-- Work #32 -->
-                            <div class="position-relative">
-                                <div class="tile">
-                                    <img src="" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div id="brand-creation-grid" class="brand-grid mb-5"></div>
                 </div>
 
                 <!-- ========== BRAND DEVELOPMENT TAB CONTENT STARTS HERE ========== -->
@@ -643,8 +418,9 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
+        <script src="js/brand-config.js"></script>
         <script src="js/main.js"></script>
-    </div>
+        <script src="js/tile-manager.js"></script>
 </body>
 
 </html>

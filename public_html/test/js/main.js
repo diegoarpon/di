@@ -150,84 +150,15 @@ const brandCreationLogos = [
 ];
 
 function randomizeBrandCreationLogos() {
-  const tilesToRandomize = Array.from(
-    document.querySelectorAll(
-      "#brand-creation .row .tile img:not(.tile-end img)",
-    ),
-  ).filter((img) => !img.closest(".carousel") && !img.closest(".tile-xl"));
-
-  const shuffledLogos = [
-    ...brandCreationLogos.filter((logo) => !logo.includes("zoom")),
-  ].sort(() => Math.random() - 0.5);
-  shuffledLogos.push("img/logos/logo-zoom.svg");
-
-  tilesToRandomize.forEach((img, index) => {
-    img.src = index < shuffledLogos.length ? shuffledLogos[index] : "";
-  });
-
-  requestAnimationFrame(() => addCol4Panels());
+  return;
 }
 
-// Add panels to tiles
 function addPanelsToTiles() {
-  document
-    .querySelectorAll("#brand-creation .tile:not(.carousel):not(.tile-xl)")
-    .forEach((tile) => {
-      if (tile.querySelector(".tile-panel")) return;
-
-      const img = tile.querySelector("img");
-      if (!img || !img.src) return;
-
-      const filename = img.src.split("/").pop();
-      const content = getProjectContent(filename, currentLang) || {
-        name: "Project",
-        industry: "Brand Design",
-        year: "2023",
-      };
-      const panelHTML = content.year
-        ? `<h3>${content.name}</h3><p>${content.industry}</p><p>${content.year}</p>`
-        : `<h3>${content.name}</h3><p>${content.industry}</p>`;
-
-      const panel = document.createElement("div");
-      panel.className = "tile-panel";
-      panel.innerHTML = panelHTML;
-      tile.appendChild(panel);
-
-      tile.addEventListener(
-        "click",
-        function handleTileClick() {
-          if (window.innerWidth <= 767) {
-            tile.classList.toggle("active");
-          }
-        },
-        { once: false },
-      );
-    });
+  return;
 }
 
-// Update panel content based on current logos
 function updatePanelContent() {
-  document
-    .querySelectorAll("#brand-creation .tile:not(.carousel):not(.tile-xl)")
-    .forEach((tile) => {
-      const img = tile.querySelector("img");
-      const panel = tile.querySelector(".tile-panel");
-
-      if (img && panel && img.src) {
-        const filename = img.src.split("/").pop();
-        const content = getProjectContent(filename, currentLang) || {
-          name: "Project",
-          industry: "Brand Design",
-          year: "2023",
-        };
-
-        const panelHTML = content.year
-          ? `<h3>${content.name}</h3><p>${content.industry}</p><p>${content.year}</p>`
-          : `<h3>${content.name}</h3><p>${content.industry}</p>`;
-
-        panel.innerHTML = panelHTML;
-      }
-    });
+  return;
 }
 
 // Add panels to col-4 elements
@@ -240,9 +171,9 @@ function addCol4Panels() {
         .forEach((el) => el.remove());
 
       const img = tile.querySelector("img");
-      if (!img || !img.src) return;
+      if (!img || !img.getAttribute("src")) return;
 
-      const filename = img.src.split("/").pop();
+      const filename = img.getAttribute("src").split("/").pop();
       const content = getProjectContent(filename, currentLang) || {
         name: "Project",
         industry: "Brand Design",
@@ -275,7 +206,7 @@ function showContent(category) {
     .querySelectorAll(".sidebar-nav-btn")
     .forEach((btn) => btn.classList.remove("active"));
   const activeBtn = document.querySelector(
-    `[onclick="showContent('${category}')\"]`,
+    `[onclick="showContent('${category}')"]`,
   );
   if (activeBtn) activeBtn.classList.add("active");
 
@@ -285,7 +216,7 @@ function showContent(category) {
   });
 
   if (category === "brand-creation") {
-    randomizeBrandCreationLogos();
+    renderBrandCreationGrid(brandCreationItems);
     requestAnimationFrame(() => addCol4Panels());
   }
 }
@@ -315,4 +246,111 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = `project-${projectName}.html`;
     });
   });
+});
+
+function createBrandGuide(className) {
+  const guide = document.createElement("div");
+  guide.className = className;
+  guide.setAttribute("aria-hidden", "true");
+  return guide;
+}
+
+function createBrandLogo(logo) {
+    const img = document.createElement("img");
+    img.src = logo.src;
+    img.alt = logo.alt || "";
+    img.loading = logo.loading || "lazy";
+    if (logo.className) {
+        img.className = logo.className;
+    }
+    return img;
+}
+
+function createBrandTile(tileConfig) {
+  const tile = document.createElement("div");
+  tile.className = tileConfig.tileClass;
+
+  const inner = document.createElement("div");
+  inner.className = tileConfig.innerClass || "brand-grid-logo-wrap";
+
+  if (!tileConfig.placeholder) {
+    (tileConfig.logos || []).forEach((logo) => {
+      inner.appendChild(createBrandLogo(logo));
+    });
+  }
+
+  tile.appendChild(inner);
+  return tile;
+}
+
+function createBrandSingleItem(item) {
+  const wrapper = document.createElement("article");
+  wrapper.className = `brand-grid-item span-${item.span}`;
+
+  const hGuide = createBrandGuide("guide-h-double-100");
+  wrapper.appendChild(hGuide);
+
+  if (item.guides && item.guides.includes("left")) {
+    const vGuide = createBrandGuide("guide-v-double-100");
+    wrapper.appendChild(vGuide);
+  }
+
+  const shell = document.createElement("div");
+  shell.className = "brand-grid-shell position-relative";
+
+  shell.appendChild(createBrandTile(item));
+  wrapper.appendChild(shell);
+  return wrapper;
+}
+
+function createBrandStackedItem(item) {
+  const wrapper = document.createElement("article");
+  wrapper.className = `brand-grid-item span-${item.span}`;
+
+  const hGuide = createBrandGuide("guide-h-double-100");
+  wrapper.appendChild(hGuide);
+
+  if (item.guides && item.guides.includes("left")) {
+    const vGuide = createBrandGuide("guide-v-double-100");
+    wrapper.appendChild(vGuide);
+  }
+
+  const shell = document.createElement("div");
+  shell.className = "brand-grid-shell position-relative";
+
+  const stack = document.createElement("div");
+  stack.className = "brand-grid-stack";
+
+  (item.tiles || []).forEach((tileConfig) => {
+    const slot = document.createElement("div");
+    slot.className = "brand-grid-slot position-relative";
+
+    slot.appendChild(createBrandTile(tileConfig));
+    stack.appendChild(slot);
+  });
+
+  shell.appendChild(stack);
+  wrapper.appendChild(shell);
+  return wrapper;
+}
+
+function renderBrandCreationGrid(items) {
+    const container = document.getElementById("brand-creation-grid");
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    items.forEach((item) => {
+        const element = item.layout === "stacked"
+            ? createBrandStackedItem(item)
+            : createBrandSingleItem(item);
+
+        container.appendChild(element);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (document.getElementById("brand-creation-grid")) {
+    // grid se inicializa desde brand-config.js via fetch
+  }
 });
