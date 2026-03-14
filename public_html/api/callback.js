@@ -11,7 +11,15 @@ export default async function handler(req, res) {
     });
     const { access_token, error } = await response.json();
     if (error || !access_token) {
-        return res.status(400).send(`<script>window.opener.postMessage('authorization:github:error:${error}','*');window.close();</script>`);
+        return res.send(`<script>
+  const msg = 'authorization:github:error:${error}';
+  if (window.opener) { window.opener.postMessage(msg, '*'); window.close(); }
+  else { window.location = '/test/admin/'; }
+</script>`);
     }
-    res.send(`<script>window.opener.postMessage('authorization:github:success:{"token":"${access_token}","provider":"github"}','*');window.close();</script>`);
+    res.send(`<script>
+  const msg = 'authorization:github:success:{"token":"${access_token}","provider":"github"}';
+  if (window.opener) { window.opener.postMessage(msg, '*'); window.close(); }
+  else { localStorage.setItem('decap-cms-auth', msg); window.location = '/test/admin/'; }
+</script>`);
 }

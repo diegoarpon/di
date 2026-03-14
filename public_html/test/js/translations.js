@@ -17,7 +17,7 @@ const translations = {
 
     // Main intro
     intro:
-      "Hi, I'm Diego — most people call me D.<br>Designer with 20 years of experience in branding, web and product design.<br>I help brands grow, evolve and build meaningful digital experiences.<br>More human than any AI.<br>Available for freelance work → <a href='mailto:hello@disenod.com' class='fw-bold link' target='_blank' rel=''>hello@disenod.com</a>",
+      "Hi, I'm Diego — most people call me D.<br>Designer with 20 years of experience in branding, web and product design, specialized in the medical and healthcare sector.<br>I help brands grow, evolve and build meaningful digital experiences.<br>More human than any AI.<br>Available for freelance work → <a href='mailto:hello@disenod.com' class='fw-bold link' target='_blank' rel=''>hello@disenod.com</a>",
 
     // Tab intros
     brandDevelopmentIntro:
@@ -160,7 +160,7 @@ const translations = {
 
     // Main intro
     intro:
-      "Hola, soy Diego — la mayoría me dice D.<br>Diseñador con 20 años de experiencia en branding, web y diseño de producto.<br>Ayudo a las marcas a crecer, evolucionar y construir experiencias digitales significativas.<br>Más humano que cualquier IA.<br>Disponible para trabajo freelance → <a href='mailto:hello@disenod.com' class='fw-bold link' target='_blank' rel=''>hello@disenod.com</a>",
+      "Hola, soy Diego — la mayoría me dice D.<br>Diseñador con 20 años de experiencia en branding, web y diseño de producto, especializado en el sector médico y de salud.<br>Ayudo a las marcas a crecer, evolucionar y construir experiencias digitales significativas.<br>Más humano que cualquier IA.<br>Disponible para trabajo freelance → <a href='mailto:hello@disenod.com' class='fw-bold link' target='_blank' rel=''>hello@disenod.com</a>",
 
     // Tab intros
     brandDevelopmentIntro:

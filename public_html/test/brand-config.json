@@ -1,52 +1,579 @@
 {
   "tiles": [
-    { "src": "img/logos/logo-si-salud-integral.svg", "alt": "SI Salud Integral", "size": "tile-xl", "span": 4 },
-    { "src": "img/logos/logo-juliana-oppici.svg",     "alt": "Juliana Oppici",    "size": "tile-xl", "span": 4 },
-    { "src": "img/logos/logo-ponti-tosi.svg",         "alt": "Ponti Tosi",        "size": "tile-xl", "span": 4 },
-    { "src": "img/logos/logo-meta.svg",               "alt": "Meta",              "size": "tile-xl", "span": 8 },
-    { "stack": [
-        { "src": "img/logos/logo-courtside.svg",  "alt": "Courtside", "size": "tile" },
-        { "src": "img/logos/logo-players.svg",    "alt": "Players",   "size": "tile" }
-      ], "span": 4 },
-    { "stack": [
-        { "src": "img/logos/logo-fx-prom.svg",    "alt": "FX Prom",    "size": "tile" },
-        { "src": "img/logos/logo-nestseekers.svg","alt": "Nestseekers","size": "tile" }
-      ], "span": 4 },
-    { "src": "img/logos/logo-upmid-white.svg",        "alt": "Upmid",             "size": "tile-xl", "span": 4 },
-    { "stack": [
-        { "src": "img/logos/logo-kamea.svg",  "alt": "Kamea",  "size": "tile" },
-        { "src": "img/logos/logo-hit-pr.svg", "alt": "Hit PR", "size": "tile" }
-      ], "span": 4 },
-    { "src": "img/logos/logo-virtualmind-color.png",  "alt": "Virtualmind",       "size": "tile-xl", "span": 4 },
-    { "stack": [
-        { "src": "img/logos/logo-duarte.svg",       "alt": "Duarte",       "size": "tile" },
-        { "src": "img/logos/logo-food-traders.svg", "alt": "Food Traders", "size": "tile" }
-      ], "span": 4 },
-    { "src": "img/logos/logo-reale.svg",              "alt": "Reale",             "size": "tile-xl", "span": 4 },
-    { "stack": [
-        { "src": "img/logos/logo-IMD.svg",       "alt": "IMD",      "size": "tile" },
-        { "src": "img/logos/logo-bronx-gym.svg", "alt": "Bronx Gym","size": "tile" }
-      ], "span": 4 },
-    { "src": "img/logos/logo-eg-white.svg",           "alt": "EG",                "size": "tile-xl", "span": 8 },
-    { "src": "img/logos/flitzz.svg",                  "alt": "Flitzz",            "size": "tile",    "span": 4 },
-    { "src": "img/logos/logo-mena-lombard.svg",       "alt": "Mena Lombard",      "size": "tile",    "span": 4 },
-    { "src": "img/logos/logo-ambrosia.svg",           "alt": "Ambrosia",          "size": "tile",    "span": 4 },
-    { "stack": [
-        { "src": "img/logos/logo-comoyacomo.svg",           "alt": "Como Ya Como", "size": "tile" },
-        { "src": "img/logos/logo-farolatino-icon-white.svg","alt": "Farolatino",   "size": "tile-xl", "multi": "img/logos/logo-farolatino-white.svg" }
-      ], "span": 4 },
-    { "stack": [
-        { "src": "img/logos/logo-zoom.svg",     "alt": "Zoom",     "size": "tile" },
-        { "src": "img/logos/logo-iblum.svg",    "alt": "iBlum",    "size": "tile" },
-        { "src": "img/logos/logo-corvalius.svg","alt": "Corvalius","size": "tile" }
-      ], "span": 4 },
-    { "stack": [
-        { "src": "img/logos/logo-banegas-day.svg", "alt": "Banegas Day", "size": "tile-xl", "multi": "img/logos/logo-banegas-day-full.svg" },
-        { "src": "img/logos/logo-lu-maria.svg",    "alt": "Lu María",    "size": "tile" }
-      ], "span": 4 },
-    { "src": "img/logos/logo-zlatar-nario.svg",       "alt": "Zlatar Nario",      "size": "tile",    "span": 4 },
-    { "src": "img/logos/logo-art-climate.svg",        "alt": "Art Climate",       "size": "tile",    "span": 4 },
-    { "src": "img/logos/logo-conception.svg",         "alt": "Conception",        "size": "tile",    "span": 4 },
-    { "src": "img/logos/logo-ambar.svg",              "alt": "Ambar",             "size": "tile",    "span": 4 }
+
+    {
+      "order": 1,
+      "src": "img/logos/logo-si-salud-integral.svg",
+      "alt": "SI Salud Integral",
+      "size": "tile-xl",
+      "span": 4,
+      "logoSize": 300,
+      "label": {
+        "es": { "name": "SI Salud Integral", "industry": "Centro de salud integral, enfocado en la armonía entre cuerpo, mente y emoción" },
+        "en": { "name": "SI Salud Integral", "industry": "Comprehensive health center focused on the harmony between body, mind and emotion" }
+      }
+    },
+
+    {
+      "order": 2,
+      "src": "img/logos/Oppici-logo.svg",
+      "alt": "Juliana Oppici",
+      "size": "tile-xl",
+      "span": 4,
+      "logoSize": 250,
+      "label": {
+        "es": { "name": "Juliana Oppici", "industry": "Médica estética, directora de Essenza, Centro de estética avanzada" },
+        "en": { "name": "Juliana Oppici", "industry": "Aesthetic physician, director of Essenza, Advanced Aesthetics Center" }
+      }
+    },
+
+    {
+      "order": 3,
+      "src": "img/logos/Ponti -Tosi-logo.svg",
+      "alt": "Ponti Tosi",
+      "size": "tile-xl",
+      "span": 4,
+      "logoSize": 200,
+      "label": {
+        "es": { "name": "Ponti Tosi", "industry": "Marca para sociedad de divulgación sobre Dermatología Funcional con Orientación en PNIE" },
+        "en": { "name": "Ponti Tosi", "industry": "Brand for outreach society on Functional Dermatology with PNIE orientation" }
+      }
+    },
+
+    {
+      "order": 4,
+      "src": "img/logos/logo-meta.svg",
+      "alt": "Meta",
+      "size": "tile-xl",
+      "span": 8,
+      "logoSize": 500,
+      "label": {
+        "es": { "name": "Meta", "industry": "Congreso de Medicina Estética, Tecnología & Antiaging de Uruguay" },
+        "en": { "name": "Meta", "industry": "Aesthetic Medicine, Technology & Antiaging Congress of Uruguay" }
+      }
+    },
+
+    {
+      "order": 5,
+      "span": 4,
+      "stack": [
+        {
+          "src": "img/logos/logo-courtside.svg",
+          "alt": "Courtside",
+          "size": "tile",
+          "logoSize": 200,
+          "label": {
+            "es": { "name": "Courtside", "industry": "Marca de restaurante (Idaho, US)" },
+            "en": { "name": "Courtside", "industry": "Restaurant brand (Idaho, US)" }
+          }
+        },
+        {
+          "src": "img/logos/logo-players.svg",
+          "alt": "Players",
+          "size": "tile",
+          "logoSize": 100,
+          "label": {
+            "es": { "name": "Players", "industry": "Marca de restaurante (Idaho, US)" },
+            "en": { "name": "Players", "industry": "Restaurant brand (Idaho, US)" }
+          }
+        }
+      ]
+    },
+
+    {
+      "order": 6,
+      "span": 4,
+      "stack": [
+        {
+          "src": "img/logos/logo-fx-prom.svg",
+          "alt": "FX Prom",
+          "size": "tile",
+          "logoSize": 100,
+          "label": {
+            "es": { "name": "FX Prom", "industry": "Boutique online de ropa formal para mujeres (Jefferson City, Tennessee)" },
+            "en": { "name": "FX Prom", "industry": "Women's Online Formalwear Boutique (Jefferson City, Tennessee)" }
+          }
+        },
+        {
+          "src": "img/logos/logo-nestseekers.svg",
+          "alt": "Nestseekers",
+          "size": "tile",
+          "logoSize": 100,
+          "label": {
+            "es": { "name": "Nestseekers", "industry": "Correduría inmobiliaria global en el nexo de la tecnología y los medios" },
+            "en": { "name": "Nestseekers", "industry": "Global real estate brokerage at the nexus of technology and media" }
+          }
+        }
+      ]
+    },
+
+    {
+      "order": 7,
+      "src": "img/logos/logo-upmid-white.svg",
+      "alt": "Upmid",
+      "size": "tile-xl",
+      "span": 4,
+      "logoSize": 120,
+      "label": {
+        "es": { "name": "Upmid", "industry": "Curso avanzado de medicina estética para el tercio superior y medio facial by EG Marketing" },
+        "en": { "name": "Upmid", "industry": "Advanced aesthetic medicine course for the upper and middle facial third by EG Marketing" }
+      }
+    },
+
+    {
+      "order": 8,
+      "span": 4,
+      "stack": [
+        {
+          "src": "img/logos/logo-kamea.svg",
+          "alt": "Kamea",
+          "size": "tile",
+          "logoSize": 100,
+          "label": {
+            "es": { "name": "Kamea", "industry": "Banda de indie pop basada en NYC" },
+            "en": { "name": "Kamea", "industry": "NYC based indie pop band" }
+          }
+        },
+        {
+          "src": "img/logos/logo-hit-pr.svg",
+          "alt": "Hit PR",
+          "size": "tile",
+          "logoSize": 100,
+          "label": {
+            "es": { "name": "Hit", "industry": "Agencia de relaciones públicas" },
+            "en": { "name": "Hit", "industry": "Public relations agency" }
+          }
+        }
+      ]
+    },
+
+    {
+      "order": 9,
+      "src": "img/logos/logo-virtualmind-color.png",
+      "alt": "Virtualmind",
+      "size": "tile-xl",
+      "span": 4,
+      "logoSize": 120,
+      "label": {
+        "es": { "name": "Virtualmind", "industry": "Casa de software que proporciona servicios de desarrollo de software para impulsar las capacidades de ingeniería de productos y transformación digital" },
+        "en": { "name": "Virtualmind", "industry": "Software house that provides software development services to boost product engineering and digital transformation capabilities" }
+      }
+    },
+
+    {
+      "order": 10,
+      "span": 4,
+      "stack": [
+        {
+          "src": "img/logos/logo-duarte.svg",
+          "alt": "Duarte",
+          "size": "tile",
+          "logoSize": 100,
+          "label": {
+            "es": { "name": "Duarte & Asociados", "industry": "Estudio contable de la ciudad de Rosario, Santa Fe, Argentina" },
+            "en": { "name": "Duarte & Asociados", "industry": "Accounting firm from Rosario, Santa Fe, Argentina" }
+          }
+        },
+        {
+          "src": "img/logos/logo-food-traders.svg",
+          "alt": "Food Traders",
+          "size": "tile",
+          "logoSize": 100,
+          "label": {
+            "es": { "name": "Food Traders", "industry": "Revista digital y noticias online dedicada a la comunidad internacional de comercio de alimentos" },
+            "en": { "name": "Food Traders", "industry": "Online news and digital magazine dedicated to the international food trader community" }
+          }
+        }
+      ]
+    },
+
+    {
+      "order": 11,
+      "src": "img/logos/logo-reale.svg",
+      "alt": "Reale",
+      "size": "tile-xl",
+      "span": 4,
+      "logoSize": 120,
+      "label": {
+        "es": { "name": "Reale", "industry": "Especialista en medicina estética" },
+        "en": { "name": "Reale", "industry": "Aesthetic medicine specialist" }
+      }
+    },
+
+    {
+      "order": 12,
+      "span": 4,
+      "stack": [
+        {
+          "src": "img/logos/logo-IMD.svg",
+          "alt": "IMD",
+          "size": "tile",
+          "logoSize": 100,
+          "label": {
+            "es": { "name": "IMD", "industry": "Casa de desarrollo de modelos y productos de servicio completo (Culver City, California)" },
+            "en": { "name": "IMD", "industry": "Full service model and product development house (Culver City, California)" }
+          }
+        },
+        {
+          "src": "img/logos/logo-bronx-gym.svg",
+          "alt": "Bronx Gym",
+          "size": "tile",
+          "logoSize": 100,
+          "label": {
+            "es": { "name": "Bronx", "industry": "Gimnasio entrenamiento funcional" },
+            "en": { "name": "Bronx", "industry": "Functional training gym" }
+          }
+        }
+      ]
+    },
+
+    {
+      "order": 13,
+      "src": "img/logos/logo-eg-white.svg",
+      "alt": "EG",
+      "size": "tile-xl",
+      "span": 8,
+      "logoSize": 180,
+      "label": {
+        "es": { "name": "EG Marketing", "industry": "Consultora especializada en Medicina, creadora y organizadora de eventos para la comunidad profesional" },
+        "en": { "name": "EG Marketing", "industry": "Consulting firm specialized in medicine, creator and organizer of events for the professional community" }
+      }
+    },
+
+    {
+      "order": 14,
+      "src": "img/logos/flitzz.svg",
+      "alt": "Flitzz",
+      "size": "tile",
+      "span": 4,
+      "logoSize": 100,
+      "label": {
+        "es": { "name": "Flitzz", "industry": "Manera fácil para que cualquiera compre artículos de noticias a la carta o en colecciones curadas de editores de EE.UU./Canadá" },
+        "en": { "name": "Flitzz", "industry": "Easy way to buy news articles à la carte or in curated collections from US/Canada news publishers" }
+      }
+    },
+
+    {
+      "order": 15,
+      "src": "img/logos/logo-mena-lombard.svg",
+      "alt": "Mena Lombard",
+      "size": "tile",
+      "span": 4,
+      "logoSize": 100,
+      "label": {
+        "es": { "name": "Mena Lombard", "industry": "Diseñadora y educadora de moda" },
+        "en": { "name": "Mena Lombard", "industry": "Fashion designer and educator" }
+      }
+    },
+
+    {
+      "order": 16,
+      "src": "img/logos/logo-ambrosia.svg",
+      "alt": "Ambrosia",
+      "size": "tile",
+      "span": 4,
+      "logoSize": 100,
+      "label": {
+        "es": { "name": "Ambrosia", "industry": "Identidad para emprendimiento de pastelería" },
+        "en": { "name": "Ambrosia", "industry": "Pastry business brand identity" }
+      }
+    },
+
+    {
+      "order": 17,
+      "span": 4,
+      "stack": [
+        {
+          "src": "img/logos/logo-comoyacomo.svg",
+          "alt": "Como Ya Como",
+          "size": "tile",
+          "logoSize": 100,
+          "label": {
+            "es": { "name": "Como Ya Como", "industry": "App de delivery de comida en Bs As Argentina" },
+            "en": { "name": "Como Ya Como", "industry": "Food delivery app (Buenos Aires, Argentina)" }
+          }
+        },
+        {
+          "src": "img/logos/logo-farolatino-icon-white.svg",
+          "alt": "Farolatino",
+          "size": "tile-xl",
+          "multi": "img/logos/logo-farolatino-white.svg",
+          "logoSize": 200,
+          "label": {
+            "es": { "name": "Faro Latino", "industry": "Fundada en 1995 como la primera distribuidora digital latinoamericana, protege y potencia la propiedad intelectual de músicos y creadores de contenido" },
+            "en": { "name": "Faro Latino", "industry": "Founded in 1995 as the first Latin American digital distributor, protecting and empowering the intellectual property of musicians and content creators" }
+          }
+        }
+      ]
+    },
+
+    {
+      "order": 18,
+      "span": 4,
+      "stack": [
+        {
+          "src": "img/logos/logo-zoom.svg",
+          "alt": "Zoom",
+          "size": "tile",
+          "logoSize": 100,
+          "label": {
+            "es": { "name": "Zoom", "industry": "Agencia de comunicación y diseño" },
+            "en": { "name": "Zoom", "industry": "Communication and design agency" }
+          }
+        },
+        {
+          "src": "img/logos/logo-iblum.svg",
+          "alt": "iBlum",
+          "size": "tile",
+          "logoSize": 100,
+          "label": {
+            "es": { "name": "iBlum", "industry": "Consultora de software en Rosario, Argentina" },
+            "en": { "name": "iBlum", "industry": "Software consulting firm (Rosario, Argentina)" }
+          }
+        },
+        {
+          "src": "img/logos/logo-corvalius.svg",
+          "alt": "Corvalius",
+          "size": "tile",
+          "logoSize": 100,
+          "label": {
+            "es": { "name": "Corvalius", "industry": "Diseño y optimización de productos y servicios tecnológicos que atienden el negocio desde la perspectiva del usuario" },
+            "en": { "name": "Corvalius", "industry": "Design and optimization of technological products and services that address business from the user perspective" }
+          }
+        }
+      ]
+    },
+
+    {
+      "order": 19,
+      "span": 4,
+      "stack": [
+        {
+          "src": "img/logos/logo-banegas-day.svg",
+          "alt": "Banegas Day",
+          "size": "tile-xl",
+          "multi": "img/logos/logo-banegas-day-full.svg",
+          "logoSize": 100,
+          "label": {
+            "es": { "name": "Banegas Day", "industry": "Jornada de disección cadavérica live con aplicaciones y charlas" },
+            "en": { "name": "Banegas Day", "industry": "Live cadaveric dissection day with applications and talks" }
+          }
+        },
+        {
+          "src": "img/logos/logo-lu-maria.svg",
+          "alt": "Lu María",
+          "size": "tile",
+          "logoSize": 100,
+          "label": {
+            "es": { "name": "Lu María", "industry": "Identidad para cantautora de Bs As, Argentina" },
+            "en": { "name": "Lu María", "industry": "Singer-songwriter from Buenos Aires, Argentina" }
+          }
+        }
+      ]
+    },
+
+    {
+      "order": 20,
+      "src": "img/logos/logo-zlatar-nario.svg",
+      "alt": "Zlatar Nario",
+      "size": "tile",
+      "span": 4,
+      "logoSize": 100,
+      "label": {
+        "es": { "name": "Zlatar Nario", "industry": "Estudio jurídico" },
+        "en": { "name": "Zlatar Nario", "industry": "Law firm" }
+      }
+    },
+
+    {
+      "order": 21,
+      "src": "img/logos/logo-art-climate.svg",
+      "alt": "Art Climate",
+      "size": "tile",
+      "span": 4,
+      "logoSize": 100,
+      "label": {
+        "es": { "name": "Art Climate", "industry": "Plataforma del área de la Bahía que apoya a artistas, productores culturales y organizaciones artísticas comprometidas con imaginar y realizar futuros resilientes al clima" },
+        "en": { "name": "Art Climate", "industry": "A Bay Area platform supporting artists, cultural producers, and arts organizations committed to imagining and realizing climate resilient futures" }
+      }
+    },
+
+    {
+      "order": 22,
+      "src": "img/logos/logo-conception.svg",
+      "alt": "Conception",
+      "size": "tile",
+      "span": 4,
+      "logoSize": 100,
+      "label": {
+        "es": { "name": "Conception", "industry": "Brand Design" },
+        "en": { "name": "Conception", "industry": "Brand Design" }
+      }
+    },
+
+    {
+      "order": 23,
+      "src": "img/logos/logo-zoom.svg",
+      "alt": "Ambar",
+      "size": "tile",
+      "span": 4,
+      "logoSize": 100,
+      "label": {
+        "es": { "name": "Ambar", "industry": "Brand Design" },
+        "en": { "name": "Ambar", "industry": "Brand Design" }
+      }
+    }
+
+  ],
+
+  "brandDevelopment": [
+
+    {
+      "order": 1,
+      "src": "img/logos/logo-eg.svg",
+      "alt": "EG",
+      "size": "tile-xl",
+      "span": 6,
+      "logoSize": 180,
+      "bgColor": "bg-petrol-blue",
+      "bgImage": "img/visuals/eg/bg-lines-opa10.svg",
+      "project": "eg",
+      "label": {
+        "es": { "name": "EG Marketing", "industry": "Consultora especializada en Medicina, creadora y organizadora de eventos para la comunidad profesional" },
+        "en": { "name": "EG Marketing", "industry": "Consulting firm specialized in medicine, creator and organizer of events for the professional community" }
+      },
+      "gallery": [
+        { "type": "color", "cols": 3, "bg": "var(--petrol-blue)", "text": { "es": "Identidad visual, sistema de comunicación y material gráfico para EG Marketing, consultora especializada en eventos médicos.", "en": "Visual identity, communication system and graphic material for EG Marketing, a consulting firm specialized in medical events." } },
+        { "src": "img/visuals/eg/mobile.webp", "caption": { "es": "App móvil", "en": "Mobile app" }, "cols": 2 },
+        { "src": "img/visuals/eg/eg-logo-lines.svg", "caption": { "es": "Sistema de líneas", "en": "Lines system" }, "cols": 1 },
+        { "src": "img/visuals/eg/eg-logo-iso.svg", "caption": { "es": "Isotipo", "en": "Isotype" }, "cols": 1 }
+      ]
+    },
+
+    {
+      "order": 2,
+      "src": "img/logos/logo-meta.svg",
+      "alt": "Meta",
+      "size": "tile-xl",
+      "span": 6,
+      "logoSize": 180,
+      "bgColor": "bg-meta",
+      "bgImage": "img/visuals/meta/meta-bg-opa.svg",
+      "project": "meta",
+      "label": {
+        "es": { "name": "Meta", "industry": "Congreso de Medicina Estética, Tecnología & Antiaging de Uruguay" },
+        "en": { "name": "Meta", "industry": "Aesthetic Medicine, Technology & Antiaging Congress of Uruguay" }
+      },
+      "gallery": [
+        { "type": "color", "cols": 3, "bg": "var(--meta)", "text": { "es": "Identidad y sistema gráfico para el Congreso de Medicina Estética, Tecnología & Antiaging de Uruguay.", "en": "Identity and graphic system for the Aesthetic Medicine, Technology & Antiaging Congress of Uruguay." } },
+        { "src": "img/visuals/meta/meta-congreso-1.webp", "caption": { "es": "Congreso 1", "en": "Congress 1" }, "cols": 3 },
+        { "src": "img/visuals/meta/meta-congreso-2.webp", "caption": { "es": "Congreso 2", "en": "Congress 2" }, "cols": 2 },
+        { "src": "img/visuals/meta/meta-congreso-3.webp", "caption": { "es": "Congreso 3", "en": "Congress 3" }, "cols": 1 },
+        { "src": "img/visuals/meta/meta-congreso-4.webp", "caption": { "es": "Congreso 4", "en": "Congress 4" }, "cols": 2 },
+        { "src": "img/visuals/meta/icons.svg", "caption": { "es": "Iconografía", "en": "Iconography" }, "cols": 1 },
+         { "type": "color", "cols": 3, "bg": "var(--meta)", "text": { "es": "Identidad y sistema gráfico para el Congreso de Medicina Estética, Tecnología & Antiaging de Uruguay.", "en": "Identity and graphic system for the Aesthetic Medicine, Technology & Antiaging Congress of Uruguay." } },
+        { "src": "img/visuals/meta/meta-congreso-1.webp", "caption": { "es": "Congreso 1", "en": "Congress 1" }, "cols": 3 },
+        { "src": "img/visuals/meta/meta-congreso-2.webp", "caption": { "es": "Congreso 2", "en": "Congress 2" }, "cols": 2 },
+        { "src": "img/visuals/meta/meta-congreso-3.webp", "caption": { "es": "Congreso 3", "en": "Congress 3" }, "cols": 1 },
+        { "src": "img/visuals/meta/meta-congreso-4.webp", "caption": { "es": "Congreso 4", "en": "Congress 4" }, "cols": 2 },
+        { "src": "img/visuals/meta/icons.svg", "caption": { "es": "Iconografía", "en": "Iconography" }, "cols": 1 }
+
+      ]
+    },
+
+    {
+      "order": 3,
+      "src": "img/logos/logo-nestseekers.svg",
+      "alt": "Nestseekers",
+      "size": "tile-xl",
+      "span": 6,
+      "logoSize": 180,
+      "bgColor": "bg-gold-brown",
+      "bgImage": "img/logos/logo-nestseekers-icons.svg",
+      "project": "nestseekers",
+      "label": {
+        "es": { "name": "Nestseekers", "industry": "Correduría inmobiliaria global en el nexo de la tecnología y los medios" },
+        "en": { "name": "Nestseekers", "industry": "Global real estate brokerage at the nexus of technology and media" }
+      },
+      "gallery": [
+        { "type": "color", "cols": 3, "bg": "", "text": { "es": "Campaña de lanzamiento para 99 John Street, un edificio residencial de lujo en el bajo Manhattan. Identidad visual, avisos de prensa y material impreso.", "en": "Launch campaign for 99 John Street, a luxury residential building in lower Manhattan. Visual identity, press ads and print material." } },
+        { "src": "img/visuals/nestseekers/99john-ads-condominium-20.webp", "caption": { "es": "Aviso 99 John — 20", "en": "99 John ad — 20" }, "cols": 1 },
+        { "src": "img/visuals/nestseekers/99john-ads-condominium-18.webp", "caption": { "es": "Aviso 99 John — 18", "en": "99 John ad — 18" }, "cols": 1 },
+        { "src": "img/visuals/nestseekers/99john-ads-condominium-19.webp", "caption": { "es": "Aviso 99 John — 19", "en": "99 John ad — 19" }, "cols": 1 },
+        { "src": "img/visuals/nestseekers/creation_2573028448.webp", "caption": { "es": "Material impreso", "en": "Print material" }, "cols": 2 },
+        { "src": "img/visuals/nestseekers/creation_2572929025.webp", "caption": { "es": "Material impreso", "en": "Print material" }, "cols": 1 },
+        { "src": "img/visuals/nestseekers/creation_2573038221.webp", "caption": { "es": "Material impreso", "en": "Print material" }, "cols": 1 },
+        { "type": "color", "cols": 1, "bg": "", "text": { "es": "Campaña de lanzamiento para 99 John Street, un edificio residencial de lujo en el bajo Manhattan. Identidad visual, avisos de prensa y material impreso.", "en": "Launch campaign for 99 John Street, a luxury residential building in lower Manhattan. Visual identity, press ads and print material." } },
+        { "src": "img/visuals/nestseekers/327W11THst-back.webp", "caption": { "es": "Material impreso", "en": "Print material" }, "cols": 2 },
+        { "src": "img/visuals/nestseekers/327W11THst-front.webp", "caption": { "es": "Material impreso", "en": "Print material" }, "cols": 1 },
+        { "src": "img/visuals/nestseekers/439W21THst-back.webp", "caption": { "es": "Material impreso", "en": "Print material" }, "cols": 2 },
+        { "src": "img/visuals/nestseekers/439W21THst-front.webp", "caption": { "es": "Material impreso", "en": "Print material" }, "cols": 1 }
+        
+      ]
+    },
+
+    {
+      "order": 4,
+      "src": "img/logos/logo-insolito.svg",
+      "alt": "Insólito",
+      "size": "tile-xl",
+      "span": 6,
+      "logoSize": 180,
+      "bgColor": "bg-terracotta-dark",
+      "bgImage": "img/visuals/insolito/Asset%202.svg",
+      "project": "insolito",
+      "label": {
+        "es": { "name": "Insólito", "industry": "Identidad de marca para restaurante de autor" },
+        "en": { "name": "Insólito", "industry": "Brand identity for a signature restaurant" }
+      },
+      "gallery": [
+        { "type": "color", "cols": 3, "bg": "var(--terracotta-dark)", "text": { "es": "Identidad de marca para restaurante de autor. Concepto visual, papelería y aplicaciones.", "en": "Brand identity for a signature restaurant. Visual concept, stationery and applications." } },
+        { "src": "img/visuals/insolito/Asset 1.svg", "caption": { "es": "Isotipo", "en": "Isotype" }, "cols": 1 },
+        { "src": "img/visuals/insolito/Asset 2.svg", "caption": { "es": "Marca", "en": "Brand mark" }, "cols": 2 }
+      ]
+    }
+
+  ],
+
+  "productDesign": [
+
+    {
+      "order": 1,
+      "src": "img/logos/logo-quik.svg",
+      "logoSize": 40,
+      "span": 6,
+      "hoverColor": "var(--gold-yellow)",
+      "title": { "es": "QuikForms App", "en": "QuikForms App" },
+      "subtitle": { "es": "Diseño de producto digital", "en": "Digital product design" },
+      "year": "2025",
+      "tool": "Figma"
+    },
+
+    {
+      "order": 2,
+      "src": "img/logos/logo-quik.svg",
+      "logoSize": 80,
+      "span": 6,
+      "hoverColor": "var(--petrol-blue)",
+      "title": { "es": "QuikForms Manager App", "en": "QuikForms Manager App" },
+      "subtitle": { "es": "Diseño de producto digital", "en": "Digital product design" },
+      "year": "2025",
+      "tool": "Figma"
+    },
+
+    {
+      "order": 3,
+      "src": "img/logos/logo-quik.svg",
+      "logoSize": 100,
+      "span": 6,
+      "hoverColor": "var(--meta)",
+      "secondaryLogo": "img/logos/logo-form-stream.svg",
+      "secondaryLogoSize": 300,
+      "subtitle": { "es": "Diseño de producto digital", "en": "Digital product design" },
+      "year": "2025",
+      "tool": "Figma"
+    }
+
   ]
+
 }
