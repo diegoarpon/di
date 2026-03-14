@@ -221,6 +221,7 @@
 
             if (item.type === "color") {
               figure.style.background = item.bg || "var(--manteca)";
+              figure.style.zIndex = 11;
               if (item.text) {
                 const p = document.createElement("p");
                 p.className = "project-masonry-color-text";

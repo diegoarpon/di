@@ -497,17 +497,17 @@
       },
       "gallery": [
         { "type": "color", "cols": 3, "bg": "", "text": { "es": "Campaña de lanzamiento para 99 John Street, un edificio residencial de lujo en el bajo Manhattan. Identidad visual, avisos de prensa y material impreso.", "en": "Launch campaign for 99 John Street, a luxury residential building in lower Manhattan. Visual identity, press ads and print material." } },
-        { "src": "img/visuals/nestseekers/99john-ads-condominium-20.webp", "caption": { "es": "Aviso 99 John — 20", "en": "99 John ad — 20" }, "cols": 1 },
-        { "src": "img/visuals/nestseekers/99john-ads-condominium-18.webp", "caption": { "es": "Aviso 99 John — 18", "en": "99 John ad — 18" }, "cols": 1 },
-        { "src": "img/visuals/nestseekers/99john-ads-condominium-19.webp", "caption": { "es": "Aviso 99 John — 19", "en": "99 John ad — 19" }, "cols": 1 },
-        { "src": "img/visuals/nestseekers/creation_2573028448.webp", "caption": { "es": "Material impreso", "en": "Print material" }, "cols": 2 },
-        { "src": "img/visuals/nestseekers/creation_2572929025.webp", "caption": { "es": "Material impreso", "en": "Print material" }, "cols": 1 },
-        { "src": "img/visuals/nestseekers/creation_2573038221.webp", "caption": { "es": "Material impreso", "en": "Print material" }, "cols": 1 },
-        { "type": "color", "cols": 1, "bg": "", "text": { "es": "Campaña de lanzamiento para 99 John Street, un edificio residencial de lujo en el bajo Manhattan. Identidad visual, avisos de prensa y material impreso.", "en": "Launch campaign for 99 John Street, a luxury residential building in lower Manhattan. Visual identity, press ads and print material." } },
+        { "src": "img/visuals/nestseekers/99john-ads-condominium-bike.webp", "caption": { "es": "Aviso 99 John — 20", "en": "99 John ad — 20" }, "cols": 1 },
+        { "src": "img/visuals/nestseekers/99john-ads-condominium-shop.webp", "caption": { "es": "Aviso 99 John — 18", "en": "99 John ad — 18" }, "cols": 1 },
+        { "src": "img/visuals/nestseekers/99john-ads-condominium-couple.webp", "caption": { "es": "Aviso 99 John — 19", "en": "99 John ad — 19" }, "cols": 1 },
+        { "src": "img/visuals/nestseekers/99john-ads-nyc-subway-solo.webp", "caption": { "es": "Material impreso", "en": "Print material" }, "cols": 2 },
+        { "src": "img/visuals/nestseekers/99john-ads-nyc-subway-rain.webp", "caption": { "es": "Material impreso", "en": "Print material" }, "cols": 1 },
+        { "src": "img/visuals/nestseekers/99john-ads-nyc-subway-fulton.webp", "caption": { "es": "Material impreso", "en": "Print material" }, "cols": 1 },
+        { "type": "color", "cols": 3, "bg": "", "text": { "es": "Campaña de lanzamiento para 99 John Street, un edificio residencial de lujo en el bajo Manhattan. Identidad visual, avisos de prensa y material impreso.", "en": "Launch campaign for 99 John Street, a luxury residential building in lower Manhattan. Visual identity, press ads and print material." } },
         { "src": "img/visuals/nestseekers/327W11THst-back.webp", "caption": { "es": "Material impreso", "en": "Print material" }, "cols": 2 },
         { "src": "img/visuals/nestseekers/327W11THst-front.webp", "caption": { "es": "Material impreso", "en": "Print material" }, "cols": 1 },
-        { "src": "img/visuals/nestseekers/439W21THst-back.webp", "caption": { "es": "Material impreso", "en": "Print material" }, "cols": 2 },
-        { "src": "img/visuals/nestseekers/439W21THst-front.webp", "caption": { "es": "Material impreso", "en": "Print material" }, "cols": 1 }
+        { "src": "img/visuals/nestseekers/439W21THst-back.webp", "caption": { "es": "Material impreso", "en": "Print material" }, "cols": 1 },
+        { "src": "img/visuals/nestseekers/439W21THst-front.webp", "caption": { "es": "Material impreso", "en": "Print material" }, "cols": 2 }
         
       ]
     },
