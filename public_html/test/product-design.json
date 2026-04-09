@@ -1,0 +1,58 @@
+{
+  "productDesign": [
+    {
+      "order": 1,
+      "src": "img/visuals/logos/quik-logo.svg",
+      "span": 6,
+      "logoSize": 100,
+      "invertLogo": false,
+      "hoverColor": "var(--gold-yellow)",
+      "title": {
+        "es": "QuikForms App",
+        "en": "QuikForms App"
+      },
+      "subtitle": {
+        "es": "Diseño de producto digital",
+        "en": "Digital product design"
+      },
+      "year": "2025",
+      "tool": "Figma"
+    },
+    {
+      "order": 2,
+      "src": "img/visuals/logos/quik-logo.svg",
+      "span": 6,
+      "logoSize": 100,
+      "invertLogo": false,
+      "hoverColor": "var(--petrol-blue)",
+      "title": {
+        "es": "QuikForms Manager App",
+        "en": "QuikForms Manager App"
+      },
+      "subtitle": {
+        "es": "Diseño de producto digital",
+        "en": "Digital product design"
+      },
+      "year": "2025",
+      "tool": "Figma"
+    },
+    {
+      "order": 3,
+      "src": "img/visuals/logos/quik-logo.svg",
+      "span": 6,
+      "logoSize": 100,
+      "invertLogo": false,
+      "hoverColor": "var(--meta)",
+      "secondaryLogo": "img/logos/logo-form-stream.svg",
+      "secondaryLogoSize": 300,
+      "subtitle": {
+        "es": "Diseño de producto digital",
+        "en": "Digital product design"
+      },
+      "year": "2025",
+      "tool": "Figma"
+    }
+  ],
+  "tiles": [],
+  "brandDevelopment": []
+}

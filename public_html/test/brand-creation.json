@@ -1,0 +1,769 @@
+{
+  "tiles": [
+    {
+      "order": 1,
+      "src": "img/logos/si-salud-integral-logo.svg",
+      "alt": "SI Salud Integral",
+      "size": "tile-xl",
+      "span": 4,
+      "logoSize": 300,
+      "invertLogo": false,
+      "bgImage": "",
+      "tag": [
+        "Medicine"
+      ],
+      "label": {
+        "es": {
+          "name": "SI Salud Integral",
+          "industry": "Centro de salud integral, enfocado en la armonía entre cuerpo, mente y emoción"
+        },
+        "en": {
+          "name": "SI Salud Integral",
+          "industry": "Comprehensive health center focused on the harmony between body, mind and emotion"
+        }
+      }
+    },
+    {
+      "order": 2,
+      "src": "img/logos/juliana-oppici-logo.svg",
+      "alt": "Juliana Oppici",
+      "size": "tile-xl",
+      "span": 4,
+      "logoSize": 250,
+      "invertLogo": false,
+      "bgImage": "",
+      "tag": [
+        "Medicine"
+      ],
+      "label": {
+        "es": {
+          "name": "Juliana Oppici",
+          "industry": "Médica estética, directora de Essenza, Centro de estética avanzada"
+        },
+        "en": {
+          "name": "Juliana Oppici",
+          "industry": "Aesthetic physician, director of Essenza, Advanced Aesthetics Center"
+        }
+      }
+    },
+    {
+      "order": 3,
+      "src": "img/logos/ponti-tosi-logo.svg",
+      "alt": "Ponti Tosi",
+      "size": "tile-xl",
+      "span": 4,
+      "logoSize": 200,
+      "invertLogo": false,
+      "bgImage": "img/test-3.png",
+      "tag": [
+        "Medicine"
+      ],
+      "label": {
+        "es": {
+          "name": "Ponti Tosi",
+          "industry": "Marca para sociedad de divulgación sobre Dermatología Funcional con Orientación en PNIE"
+        },
+        "en": {
+          "name": "Ponti Tosi",
+          "industry": "Brand for outreach society on Functional Dermatology with PNIE orientation"
+        }
+      }
+    },
+    {
+      "order": 4,
+      "src": "img/logos/meta-logo.svg",
+      "alt": "Meta",
+      "size": "tile-xl",
+      "span": 8,
+      "logoSize": 500,
+      "invertLogo": false,
+      "bgImage": "img/meta-bg-green.svg",
+      "tag": [
+        "Medicine", "Uruguay"
+      ],
+      "label": {
+        "es": {
+          "name": "Meta",
+          "industry": "Congreso de Medicina Estética, Tecnología & Antiaging de Uruguay"
+        },
+        "en": {
+          "name": "Meta",
+          "industry": "Aesthetic Medicine, Tech & Antiaging Congress of Uruguay"
+        }
+      }
+    },
+    {
+      "order": 5,
+      "span": 4,
+      "stack": [
+        {
+          "src": "img/logos/players-logo.svg",
+          "alt": "Players",
+          "size": "tile",
+          "logoSize": 200,
+          "invertLogo": false,
+          "bgImage": "",
+          "tag": [
+            "Food"
+          ],
+          "label": {
+            "es": {
+              "name": "Players",
+              "industry": "Marca de restaurante (Idaho, US)"
+            },
+            "en": {
+              "name": "Players",
+              "industry": "Restaurant brand (Idaho, US)"
+            }
+          }
+        },
+        {
+          "src": "img/logos/hit-pr-logo.svg",
+          "alt": "Hit PR",
+          "size": "tile",
+          "logoSize": 300,
+          "invertLogo": false,
+          "bgImage": "img/test-4.png",
+          "tag": [
+            "Corporate"
+          ],
+          "label": {
+            "es": {
+              "name": "Hit PR",
+              "industry": "Agencia de relaciones públicas"
+            },
+            "en": {
+              "name": "Hit PR",
+              "industry": "Public relations agency"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "span": 4,
+      "stack": [
+        {
+          "src": "img/logos/zlatar-nario-logo.svg",
+          "alt": "Zlatar Nario",
+          "size": "tile",
+          "logoSize": 200,
+          "invertLogo": false,
+          "bgImage": "",
+          "tag": [
+            "Corporate"
+          ],
+          "label": {
+            "es": {
+              "name": "Zlatar Nario",
+              "industry": "Estudio jurídico"
+            },
+            "en": {
+              "name": "Zlatar Nario",
+              "industry": "Law firm"
+            }
+          }
+        },
+        {
+          "src": "img/logos/nestseekers-full-logo.svg",
+          "alt": "Nestseekers",
+          "size": "tile",
+          "logoSize": 300,
+          "invertLogo": false,
+          "bgImage": "",
+          "tag": [
+            "Real Estate"
+          ],
+          "label": {
+            "es": {
+              "name": "Nestseekers",
+              "industry": "Correduría inmobiliaria global en el nexo de la tecnología y los medios"
+            },
+            "en": {
+              "name": "Nestseekers",
+              "industry": "Global real estate brokerage at the nexus of Tech and media"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "src": "img/logos/up-mid-face-logo.svg",
+      "alt": "Upmid",
+      "size": "tile-xl",
+      "span": 4,
+      "logoSize": 300,
+      "invertLogo": true,
+      "bgImage": "img/test-5.jpg",
+      "tag": [
+        "Medicine"
+      ],
+      "label": {
+        "es": {
+          "name": "Upmid",
+          "industry": "Curso avanzado de medicina estética para el tercio superior y medio facial by EG Marketing"
+        },
+        "en": {
+          "name": "Upmid",
+          "industry": "Advanced aesthetic medicine course for the upper and middle facial third by EG Marketing"
+        }
+      }
+    },
+    {
+      "order": 8,
+      "span": 4,
+      "stack": [
+        {
+          "src": "img/logos/lu-maria-logo.svg",
+          "alt": "Lu Maria",
+          "size": "tile",
+          "logoSize": 200,
+          "invertLogo": false,
+          "bgImage": "",
+          "tag": [
+            "Music"
+          ],
+          "label": {
+            "es": {
+              "name": "Lu Maria",
+              "industry": "Banda de indie pop basada en NYC"
+            },
+            "en": {
+              "name": "Lu Maria",
+              "industry": "NYC based indie pop band"
+            }
+          }
+        },
+        {
+          "src": "img/logos/art-climate-logo.svg",
+          "alt": "Art Climate",
+          "size": "tile",
+          "logoSize": 200,
+          "invertLogo": false,
+          "bgImage": "",
+          "tag": [
+            "NGO"
+          ],
+          "label": {
+            "es": {
+              "name": "Art Climate",
+              "industry": "Plataforma del área de la Bahía que apoya a artistas, productores culturales y organizaciones artísticas comprometidas con imaginar y realizar futuros resilientes al clima"
+            },
+            "en": {
+              "name": "Art Climate",
+              "industry": "A Bay Area platform supporting artists, cultural producers, and arts organizations committed to imagining and realizing climate resilient futures"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "src": "img/logos/eg-monograma-logo.svg",
+      "alt": "EG",
+      "size": "tile-xl",
+      "span": 4,
+      "logoSize": 200,
+      "invertLogo": false,
+      "bgImage": "",
+      "tag": [
+        "Medicine"
+      ],
+      "label": {
+        "es": {
+          "name": "EG Marketing",
+          "industry": "Consultora especializada en Medicina, creadora y organizadora de eventos para la comunidad profesional"
+        },
+        "en": {
+          "name": "EG Marketing",
+          "industry": "Consulting firm specialized in medicine, creator and organizer of events for the professional community"
+        }
+      }
+    },
+    {
+      "order": 10,
+      "span": 4,
+      "stack": [
+        {
+          "src": "img/logos/mariela-reale-logo.svg",
+          "alt": "Mariela Reale",
+          "size": "tile",
+          "logoSize": 150,
+          "invertLogo": false,
+          "bgImage": "",
+          "tag": [
+            "Medicine"
+          ],
+          "label": {
+            "es": {
+              "name": "Mariela Reale",
+              "industry": "Especialista en medicina estética"
+            },
+            "en": {
+              "name": "Mariela Reale",
+              "industry": "Aesthetic medicine specialist"
+            }
+          }
+        },
+        {
+          "src": "img/logos/formstream-logo.svg",
+          "alt": "Formstream",
+          "size": "tile",
+          "logoSize": 300,
+          "invertLogo": false,
+          "bgImage": "",
+          "tag": [
+            "Tech"
+          ],
+          "label": {
+            "es": {
+              "name": "Formstream",
+              "industry": "Revista digital y noticias online dedicada a la comunidad internacional de comercio de alimentos"
+            },
+            "en": {
+              "name": "Formstream",
+              "industry": "Online news and digital magazine dedicated to the international food trader community"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "src": "img/logos/international-food-trader-logo.svg",
+      "alt": "International Food Trader",
+      "size": "tile-xl",
+      "span": 4,
+      "logoSize": 250,
+      "invertLogo": false,
+      "bgImage": "",
+      "tag": [
+        "Corporate"
+      ],
+      "label": {
+        "es": {
+          "name": "International Food Trader",
+          "industry": "Revista digital y noticias online dedicada a la comunidad internacional de comercio de alimentos"
+        },
+        "en": {
+          "name": "International Food Trader",
+          "industry": "Online news and digital magazine dedicated to the international food trader community"
+        }
+      }
+    },
+    {
+      "order": 12,
+      "src": "img/logos/flittz-icon-logo.svg",
+      "alt": "Flitzz",
+      "size": "tile-xl",
+      "span": 4,
+      "logoSize": 200,
+      "invertLogo": true,
+      "multi": "img/logos/flittz-logo.svg",
+      "multiLogoSize": 150,
+      "bgImage": "img/test.jpg",
+      "tag": [
+        "Tech"
+      ],
+      "label": {
+        "es": {
+          "name": "Flitzz",
+          "industry": "Manera fácil para que cualquiera compre artículos de noticias a la carta o en colecciones curadas de editores de EE.UU./Canadá"
+        },
+        "en": {
+          "name": "Flitzz",
+          "industry": "Easy way to buy news articles à la carte or in curated collections from US/Canada news publishers"
+        }
+      }
+    },
+    {
+      "order": 13,
+      "src": "img/logos/virtualmind-full-logo.png",
+      "alt": "Virtualmind",
+      "size": "tile-xl",
+      "span": 4,
+      "logoSize": 300,
+      "invertLogo": false,
+      "bgImage": "",
+      "tag": [
+        "Tech"
+      ],
+      "label": {
+        "es": {
+          "name": "Virtualmind",
+          "industry": "Casa de software que proporciona servicios de desarrollo de software para impulsar las capacidades de ingeniería de productos y transformación digital"
+        },
+        "en": {
+          "name": "Virtualmind",
+          "industry": "Software house that provides software development services to boost product engineering and digital transformation capabilities"
+        }
+      }
+    },
+    {
+      "order": 14,
+      "src": "img/logos/farolatino-icon-logo.svg",
+      "alt": "Faro Latino",
+      "size": "tile-xl",
+      "span": 4,
+      "logoSize": 175,
+      "invertLogo": false,
+      "multi": "img/logos/farolatino-logo.svg",
+      "multiLogoSize": 250,
+      "bgImage": "",
+      "tag": [
+        "Music"
+      ],
+      "label": {
+        "es": {
+          "name": "Faro Latino",
+          "industry": "Fundada en 1995 como la primera distribuidora digital latinoamericana, protege y potencia la propiedad intelectual de músicos y creadores de contenido"
+        },
+        "en": {
+          "name": "Faro Latino",
+          "industry": "Founded in 1995 as the first Latin American digital distributor, protecting and empowering the intellectual property of musicians and content creators"
+        }
+      }
+    },
+    {
+      "order": 15,
+      "src": "img/logos/bronx-gym-logo.svg",
+      "alt": "Bronx Gym",
+      "size": "tile",
+      "span": 4,
+      "logoSize": 200,
+      "invertLogo": false,
+      "bgImage": "",
+      "tag": [
+        "Fitness"
+      ],
+      "label": {
+        "es": {
+          "name": "Bronx Gym",
+          "industry": "Gimnasio entrenamiento funcional"
+        },
+        "en": {
+          "name": "Bronx Gym",
+          "industry": "Functional training gym"
+        }
+      }
+    },
+    {
+      "order": 16,
+      "src": "img/logos/corvalius-logo.svg",
+      "alt": "Corvalius",
+      "size": "tile",
+      "span": 4,
+      "logoSize": 150,
+      "invertLogo": false,
+      "bgImage": "",
+      "tag": [
+        "Tech"
+      ],
+      "label": {
+        "es": {
+          "name": "Corvalius",
+          "industry": "Diseño y optimización de productos y servicios tecnológicos que atienden el negocio desde la perspectiva del usuario"
+        },
+        "en": {
+          "name": "Corvalius",
+          "industry": "Design and optimization of technological products and services that address business from the user perspective"
+        }
+      }
+    },
+    {
+      "order": 17,
+      "src": "img/logos/fxprom-logo.svg",
+      "alt": "FX Prom",
+      "size": "tile",
+      "span": 4,
+      "logoSize": 250,
+      "invertLogo": false,
+      "bgImage": "",
+      "tag": [
+        "Fashion"
+      ],
+      "label": {
+        "es": {
+          "name": "FX Prom",
+          "industry": "Boutique online de ropa formal para mujeres (Jefferson City, Tennessee)"
+        },
+        "en": {
+          "name": "FX Prom",
+          "industry": "Women's Online Formalwear Boutique (Jefferson City, Tennessee)"
+        }
+      }
+    },
+    {
+      "order": 18,
+      "src": "img/logos/banegas-day-monograma-logo.svg",
+      "alt": "Banegas Day Monograma",
+      "size": "tile-xl",
+      "span": 4,
+      "logoSize": 175,
+      "invertLogo": false,
+      "multi": "img/logos/banegas-day-logo.svg",
+      "multiLogoSize": 275,
+      "bgImage": "",
+      "tag": [
+        "Medicine"
+      ],
+      "label": {
+        "es": {
+          "name": "Banegas Day",
+          "industry": "Jornada de disección cadavérica live con aplicaciones y charlas"
+        },
+        "en": {
+          "name": "Banegas Day",
+          "industry": "Live cadaveric dissection day with applications and talks"
+        }
+      }
+    },
+    {
+      "order": 19,
+      "span": 4,
+      "stack": [
+        {
+          "src": "img/logos/kamea-logo.svg",
+          "alt": "Kamea",
+          "size": "tile",
+          "logoSize": 200,
+          "invertLogo": false,
+          "bgImage": "",
+          "tag": [
+            "Music"
+          ],
+          "label": {
+            "es": {
+              "name": "Kamea",
+              "industry": "Banda de indie pop basada en NYC"
+            },
+            "en": {
+              "name": "Kamea",
+              "industry": "NYC based indie pop band"
+            }
+          }
+        },
+        {
+          "src": "img/logos/courtside-logo.svg",
+          "alt": "Courtside",
+          "size": "tile",
+          "logoSize": 220,
+          "invertLogo": false,
+          "bgImage": "img/test.jpg",
+          "tag": [
+            "Food"
+          ],
+          "label": {
+            "es": {
+              "name": "Courtside",
+              "industry": "Marca de restaurante (Idaho, US)"
+            },
+            "en": {
+              "name": "Courtside",
+              "industry": "Restaurant brand (Idaho, US)"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "order": 20,
+      "span": 4,
+      "stack": [
+        {
+          "src": "img/logos/imd-logo.svg",
+          "alt": "IMD",
+          "size": "tile",
+          "logoSize": 200,
+          "invertLogo": false,
+          "bgImage": "",
+          "tag": [],
+          "label": {
+            "es": {
+              "name": "IMD",
+              "industry": "Casa de desarrollo de modelos y productos de servicio completo (Culver City, California)"
+            },
+            "en": {
+              "name": "IMD",
+              "industry": "Full service model and product development house (Culver City, California)"
+            }
+          }
+        },
+        {
+          "src": "img/logos/iblum-alt-logo.svg",
+          "alt": "iBlum",
+          "size": "tile",
+          "logoSize": 250,
+          "invertLogo": false,
+          "bgImage": "",
+          "tag": [],
+          "label": {
+            "es": {
+              "name": "iBlum",
+              "industry": "Consultora de software en Rosario, Argentina"
+            },
+            "en": {
+              "name": "iBlum",
+              "industry": "Software consulting firm (Rosario, Argentina)"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "order": 21,
+      "span": 4,
+      "stack": [
+        {
+          "src": "img/logos/duarte-asociados-logo.svg",
+          "alt": "Duarte & Asociados",
+          "size": "tile",
+          "logoSize": 250,
+          "invertLogo": false,
+          "bgImage": "",
+          "tag": [],
+          "label": {
+            "es": {
+              "name": "Duarte & Asociados",
+              "industry": "Estudio contable de la ciudad de Rosario, Santa Fe, Argentina"
+            },
+            "en": {
+              "name": "Duarte & Asociados",
+              "industry": "Accounting firm from Rosario, Santa Fe, Argentina"
+            }
+          }
+        },
+        {
+          "src": "img/logos/lucia-marafuschi-monograma-logo.svg",
+          "alt": "Lucia Marafuschi",
+          "size": "tile",
+          "logoSize": 175,
+          "invertLogo": false,
+          "bgImage": "",
+          "tag": [],
+          "label": {
+            "es": {
+              "name": "Lucia Marafuschi",
+              "industry": "Gimnasio entrenamiento funcional"
+            },
+            "en": {
+              "name": "Lucia Marafuschi",
+              "industry": "Functional training gym"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "order": 22,
+      "span": 4,
+      "stack": [
+        {
+          "src": "img/logos/mena-lombard-logo.svg",
+          "alt": "Mena Lombard",
+          "size": "tile",
+          "logoSize": 250,
+          "invertLogo": false,
+          "bgImage": "",
+          "tag": [],
+          "label": {
+            "es": {
+              "name": "Mena Lombard",
+              "industry": "Diseñadora y educadora de moda"
+            },
+            "en": {
+              "name": "Mena Lombard",
+              "industry": "Fashion designer and educator"
+            }
+          }
+        },
+        {
+          "src": "img/logos/ambrosia-logo.svg",
+          "alt": "Ambrosia",
+          "size": "tile",
+          "logoSize": 200,
+          "invertLogo": false,
+          "bgImage": "",
+          "tag": [],
+          "label": {
+            "es": {
+              "name": "Ambrosia",
+              "industry": ""
+            },
+            "en": {
+              "name": "Ambrosia",
+              "industry": ""
+            }
+          }
+        }
+      ]
+    },
+    {
+      "order": 23,
+      "src": "img/logos/lafleur-logo.svg",
+      "alt": "La Fleur",
+      "size": "tile-xl",
+      "span": 4,
+      "logoSize": 250,
+      "invertLogo": false,
+      "bgImage": "",
+      "tag": [],
+      "label": {
+        "es": {
+          "name": "La Fleur",
+          "industry": "Fundada en 1995 como la primera distribuidora digital latinoamericana, protege y potencia la propiedad intelectual de músicos y creadores de contenido"
+        },
+        "en": {
+          "name": "La Fleur",
+          "industry": "Founded in 1995 as the first Latin American digital distributor, protecting and empowering the intellectual property of musicians and content creators"
+        }
+      }
+    },
+    {
+      "order": 24,
+      "src": "img/logos/conception-logo.svg",
+      "alt": "Conception",
+      "size": "tile",
+      "span": 4,
+      "logoSize": 300,
+      "invertLogo": false,
+      "bgImage": "",
+      "tag": [],
+      "label": {
+        "es": {
+          "name": "Conception",
+          "industry": "Brand Design"
+        },
+        "en": {
+          "name": "Conception",
+          "industry": "Brand Design"
+        }
+      }
+    },
+    {
+      "order": 25,
+      "src": "img/logos/zoom-logo.svg",
+      "alt": "Zoom",
+      "size": "tile",
+      "span": 4,
+      "logoSize": 300,
+      "invertLogo": false,
+      "bgImage": "",
+      "tag": [],
+      "label": {
+        "es": {
+          "name": "Zoom",
+          "industry": "Brand Design"
+        },
+        "en": {
+          "name": "Zoom",
+          "industry": "Brand Design"
+        }
+      }
+    }
+  ],
+  "brandDevelopment": [],
+  "productDesign": []
+}

@@ -1,0 +1,452 @@
+{
+  "brandDevelopment": [
+    {
+      "order": 1,
+      "src": "img/logos/eg-full-logo.svg",
+      "alt": "EG",
+      "size": "tile-xl",
+      "span": 6,
+      "logoSize": 300,
+      "invertLogo": true,
+      "bgColor": "",
+      "bgImage": "img/test-12.jpg",
+      "hoverColor": "var(--main-color)",
+      "project": "eg",
+      "title": {
+        "es": "branding 360",
+        "en": "Identity & System"
+      },
+      "label": {
+        "es": {
+          "name": "EG Marketing",
+          "industry": "Para consultora especializada en marketing médico."
+        },
+        "en": {
+          "name": "EG Marketing",
+          "industry": "Consulting firm specialized in medicine, creator and organizer of events for the professional community"
+        }
+      },
+      "gallery": [
+        {
+          "type": "color",
+          "cols": 3,
+          "bg": "",
+          "text": {
+            "es": "Identidad visual, sistema de comunicación y material gráfico para EG Marketing, consultora especializada en eventos médicos.",
+            "en": "Visual identity, communication system and graphic material for EG Marketing, a consulting firm specialized in medical events."
+          }
+        },
+        {
+          "src": "img/visuals/eg/eg-website-mobile-1.png",
+          "caption": {
+            "es": "App móvil",
+            "en": "Mobile app"
+          },
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/eg/eg-mobile-2.png",
+          "caption": {
+            "es": "App móvil",
+            "en": "Mobile app"
+          },
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/eg/eg-mobile-3.png",
+          "caption": {
+            "es": "App móvil",
+            "en": "Mobile app"
+          },
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/eg/eg-cuaderno.webp",
+          "caption": {
+            "es": "App móvil",
+            "en": "Mobile app"
+          },
+          "cols": 2
+        },
+        {
+          "src": "img/visuals/eg/ponti-tosi-web.png",
+          "caption": {
+            "es": "App móvil",
+            "en": "Mobile app"
+          },
+          "cols": 2
+        },
+        {
+          "src": "img/visuals/eg/instagram-banegas-day.png",
+          "caption": {
+            "es": "Sistema de líneas",
+            "en": "Lines system"
+          },
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/eg/eg-website-branding.png",
+          "caption": {
+            "es": "App móvil",
+            "en": "Mobile app"
+          },
+          "cols": 2
+        },
+        {
+          "src": "img/visuals/eg/instagram-ponti-tosi.png",
+          "caption": {
+            "es": "Sistema de líneas",
+            "en": "Lines system"
+          },
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/eg/cronograma-ponti-tosi.png",
+          "caption": {
+            "es": "Isotipo",
+            "en": "Isotype"
+          },
+          "cols": 2
+        },
+        {
+          "src": "img/visuals/eg/up-mid-face.mp4",
+          "caption": {
+            "es": "Isotipo",
+            "en": "Isotype"
+          },
+          "cols": 1
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "src": "img/logos/meta-logo.svg",
+      "alt": "Meta",
+      "size": "tile-xl",
+      "span": 6,
+      "logoSize": 250,
+      "invertLogo": true,
+      "bgColor": "",
+      "bgImage": "img/test-13.jpg",
+      "hoverColor": "var(--main-color)",
+      "project": "meta",
+      "title": {
+        "es": "dirección creativa",
+        "en": "Identity & Congress"
+      },
+      "label": {
+        "es": {
+          "name": "Meta",
+          "industry": "Para el primer Congreso de Medicina Estética de Uruguay."
+        },
+        "en": {
+          "name": "Meta",
+          "industry": "Aesthetic Medicine, Technology & Antiaging Congress of Uruguay."
+        }
+      },
+      "gallery": [
+        {
+          "type": "color",
+          "cols": 3,
+          "bg": "var(--meta)",
+          "text": {
+            "es": "Identidad y sistema gráfico para el Congreso de Medicina Estética, Tecnología & Antiaging de Uruguay.",
+            "en": "Identity and graphic system for the Aesthetic Medicine, Technology & Antiaging Congress of Uruguay."
+          }
+        },
+        {
+          "src": "img/visuals/meta/meta-congreso-1.webp",
+          "caption": {
+            "es": "Congreso 1",
+            "en": "Congress 1"
+          },
+          "cols": 3
+        },
+        {
+          "src": "img/visuals/meta/meta-congreso-2.webp",
+          "caption": {
+            "es": "Congreso 2",
+            "en": "Congress 2"
+          },
+          "cols": 2
+        },
+        {
+          "src": "img/visuals/meta/meta-congreso-3.webp",
+          "caption": {
+            "es": "Congreso 3",
+            "en": "Congress 3"
+          },
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/meta/meta-congreso-4.webp",
+          "caption": {
+            "es": "Congreso 4",
+            "en": "Congress 4"
+          },
+          "cols": 2
+        },
+        {
+          "src": "img/visuals/meta/icons.svg",
+          "caption": {
+            "es": "Iconografía",
+            "en": "Iconography"
+          },
+          "cols": 1
+        },
+        {
+          "type": "color",
+          "cols": 3,
+          "bg": "var(--meta)",
+          "text": {
+            "es": "Identidad y sistema gráfico para el Congreso de Medicina Estética, Tecnología & Antiaging de Uruguay.",
+            "en": "Identity and graphic system for the Aesthetic Medicine, Technology & Antiaging Congress of Uruguay."
+          }
+        },
+        {
+          "src": "img/visuals/meta/meta-congreso-1.webp",
+          "caption": {
+            "es": "Congreso 1",
+            "en": "Congress 1"
+          },
+          "cols": 3
+        },
+        {
+          "src": "img/visuals/meta/meta-congreso-2.webp",
+          "caption": {
+            "es": "Congreso 2",
+            "en": "Congress 2"
+          },
+          "cols": 2
+        },
+        {
+          "src": "img/visuals/meta/meta-congreso-3.webp",
+          "caption": {
+            "es": "Congreso 3",
+            "en": "Congress 3"
+          },
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/meta/meta-congreso-4.webp",
+          "caption": {
+            "es": "Congreso 4",
+            "en": "Congress 4"
+          },
+          "cols": 2
+        },
+        {
+          "src": "img/visuals/meta/icons.svg",
+          "caption": {
+            "es": "Iconografía",
+            "en": "Iconography"
+          },
+          "cols": 1
+        },
+        {
+          "type": "carousel",
+          "cols": 2,
+          "slides": [
+            {
+              "src": "img/visuals/meta/meta-congreso-3.webp",
+              "caption": {
+                "es": "Congreso 1",
+                "en": "Congress 1"
+              }
+            },
+            {
+              "src": "img/visuals/meta/meta-congreso-4.webp",
+              "caption": {
+                "es": "Congreso 2",
+                "en": "Congress 2"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "src": "img/logos/nestseekers-full-logo.svg",
+      "alt": "Nestseekers",
+      "size": "tile-xl",
+      "span": 6,
+      "logoSize": 250,
+      "invertLogo": true,
+      "bgColor": "",
+      "bgImage": "img/test-14.jpg",
+      "hoverColor": "var(--main-color)",
+      "project": "nestseekers",
+      "title": {
+        "es": "dirección creativa",
+        "en": "Campaign & Print"
+      },
+      "label": {
+        "es": {
+          "name": "Nestseekers",
+          "industry": "Para agencia inmobiliaria de propiedades de lujo con base en NYC."
+        },
+        "en": {
+          "name": "Nestseekers",
+          "industry": "Global real estate brokerage at the nexus of technology and media"
+        }
+      },
+      "gallery": [
+        {
+          "type": "color",
+          "cols": 3,
+          "bg": "",
+          "text": {
+            "es": "Campaña de lanzamiento para 99 John Street, un edificio residencial de lujo en el bajo Manhattan. Identidad visual, avisos de prensa y material impreso.",
+            "en": "Launch campaign for 99 John Street, a luxury residential building in lower Manhattan. Visual identity, press ads and print material."
+          }
+        },
+        {
+          "src": "img/visuals/nestseekers/99john-ads-condominium-bike.webp",
+          "caption": {
+            "es": "Aviso 99 John — 20",
+            "en": "99 John ad — 20"
+          },
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/nestseekers/99john-ads-condominium-shop.webp",
+          "caption": {
+            "es": "Aviso 99 John — 18",
+            "en": "99 John ad — 18"
+          },
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/nestseekers/99john-ads-condominium-couple.webp",
+          "caption": {
+            "es": "Aviso 99 John — 19",
+            "en": "99 John ad — 19"
+          },
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/nestseekers/99john-ads-nyc-subway-solo.webp",
+          "caption": {
+            "es": "Material impreso",
+            "en": "Print material"
+          },
+          "cols": 2
+        },
+        {
+          "src": "img/visuals/nestseekers/99john-ads-nyc-subway-rain.webp",
+          "caption": {
+            "es": "Material impreso",
+            "en": "Print material"
+          },
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/nestseekers/99john-ads-nyc-subway-fulton.webp",
+          "caption": {
+            "es": "Material impreso",
+            "en": "Print material"
+          },
+          "cols": 1
+        },
+        {
+          "type": "color",
+          "cols": 3,
+          "bg": "",
+          "text": {
+            "es": "Campaña de lanzamiento para 99 John Street, un edificio residencial de lujo en el bajo Manhattan. Identidad visual, avisos de prensa y material impreso.",
+            "en": "Launch campaign for 99 John Street, a luxury residential building in lower Manhattan. Visual identity, press ads and print material."
+          }
+        },
+        {
+          "src": "img/visuals/nestseekers/327W11THst-back.webp",
+          "caption": {
+            "es": "Material impreso",
+            "en": "Print material"
+          },
+          "cols": 2
+        },
+        {
+          "src": "img/visuals/nestseekers/327W11THst-front.webp",
+          "caption": {
+            "es": "Material impreso",
+            "en": "Print material"
+          },
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/nestseekers/439W21THst-back.webp",
+          "caption": {
+            "es": "Material impreso",
+            "en": "Print material"
+          },
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/nestseekers/439W21THst-front.webp",
+          "caption": {
+            "es": "Material impreso",
+            "en": "Print material"
+          },
+          "cols": 2
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "src": "img/visuals/logos/insolito-logo.svg",
+      "alt": "Insólito",
+      "size": "tile-xl",
+      "span": 6,
+      "logoSize": 200,
+      "invertLogo": true,
+      "bgColor": "",
+      "bgImage": "img/test-11.jpg",
+      "hoverColor": "var(--main-color)",
+      "project": "insolito",
+      "title": {
+        "es": "ampliación de marca",
+        "en": "Brand Identity"
+      },
+      "label": {
+        "es": {
+          "name": "Insólito",
+          "industry": "Para café de especialidad."
+        },
+        "en": {
+          "name": "Insólito",
+          "industry": "Brand identity for a signature restaurant"
+        }
+      },
+      "gallery": [
+        {
+          "type": "color",
+          "cols": 3,
+          "bg": "var(--terracotta-dark)",
+          "text": {
+            "es": "Identidad de marca para restaurante de autor. Concepto visual, papelería y aplicaciones.",
+            "en": "Brand identity for a signature restaurant. Visual concept, stationery and applications."
+          }
+        },
+        {
+          "src": "img/visuals/insolito/Asset 1.svg",
+          "caption": {
+            "es": "Isotipo",
+            "en": "Isotype"
+          },
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/insolito/Asset 2.svg",
+          "caption": {
+            "es": "Marca",
+            "en": "Brand mark"
+          },
+          "cols": 2
+        }
+      ]
+    }
+  ],
+  "tiles": [],
+  "productDesign": []
+}

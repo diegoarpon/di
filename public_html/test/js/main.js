@@ -49,14 +49,9 @@ function addCol4Panels() {
 
       const text = document.createElement("div");
       text.className = "brand-hover-text";
-      text.innerHTML = `<strong>${content.name}</strong>${content.industry}`;
+      const tag = tile.dataset.tag ? `<span class="brand-hover-tags">${JSON.parse(tile.dataset.tag).map(t => `<span class="brand-hover-tag">#${t}</span>`).join('')}</span>` : '';
+      text.innerHTML = `<strong>${content.name}</strong>${content.industry}${tag}`;
       tile.appendChild(text);
-
-      tile.onclick = function () {
-        if (window.innerWidth <= 767 && tileConfig.project) {
-          window.location.href = `project-${tileConfig.project}.html`;
-        }
-      };
     });
 
   if (typeof window.initGsapHovers === "function") window.initGsapHovers();
@@ -75,7 +70,7 @@ function showContent(category) {
     tab.classList.toggle("tab-hidden", tab.id !== category);
   });
 
-  if (category === "brand-creation") {
+  if (category === "brand-creation" && typeof brandCreationItems !== "undefined" && brandCreationItems.length) {
     renderBrandCreationGrid(brandCreationItems);
     requestAnimationFrame(() => addCol4Panels());
   }
@@ -119,9 +114,10 @@ function createBrandLogo(logo) {
     img.loading = logo.loading || "lazy";
     if (logo.className) img.className = logo.className;
     if (logo.logoSize) {
-      img.style.setProperty("--logo-size", `min(${logo.logoSize}px, 80%)`);
+      img.style.setProperty("--logo-size", `min(${logo.logoSize}px, 100%)`);
       img.classList.add("logo-sized");
     }
+    if (logo.invertLogo) img.style.filter = "brightness(0) invert(1)";
     return img;
 }
 
@@ -137,6 +133,7 @@ function createBrandTile(tileConfig) {
     tile.appendChild(s);
   }
   if (tileConfig.label) tile.dataset.label = JSON.stringify(tileConfig.label);
+  if (tileConfig.tag) tile.dataset.tag = tileConfig.tag;
   if (tileConfig.project) {
     tile.dataset.project = tileConfig.project;
     tile.classList.add("cursor-pointer");
@@ -155,7 +152,31 @@ function createBrandTile(tileConfig) {
     });
   }
 
-  tile.appendChild(inner);
+  if (tileConfig.showLabel && tileConfig.label) {
+    const content = tileConfig.label[currentLang] || tileConfig.label.es;
+    const title = tileConfig.title?.[currentLang] || tileConfig.title?.es || "";
+    const devInner = document.createElement("div");
+    devInner.className = "d-flex flex-column justify-content-between h-100 w-100 p-2rem";
+    const logoWrap = document.createElement("div");
+    logoWrap.className = "d-flex justify-content-start align-items-start flex-grow-1";
+    (tileConfig.logos || []).forEach(logo => logoWrap.appendChild(createBrandLogo(logo)));
+    devInner.appendChild(logoWrap);
+    const bottom = document.createElement("div");
+    const h4 = document.createElement("h4");
+    h4.className = "fw-bold mb-2 display-5";
+    h4.textContent = title;
+    const meta = document.createElement("div");
+    meta.className = "d-flex gap-2";
+    meta.textContent = content.industry;
+    bottom.appendChild(h4);
+    bottom.appendChild(meta);
+    devInner.appendChild(bottom);
+    tile.appendChild(devInner);
+  } else {
+    tile.appendChild(inner);
+  }
+
+
   return tile;
 }
 
@@ -273,3 +294,4 @@ function renderBrandCreationGrid(items, containerId = "brand-creation-grid") {
 }
 
 
+window.addCol4Panels = addCol4Panels;

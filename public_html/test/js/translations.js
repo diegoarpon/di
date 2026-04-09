@@ -17,7 +17,7 @@ const translations = {
 
     // Main intro
     intro:
-      "Hi, I'm Diego — most people call me D.<br>Designer with 20 years of experience in branding, web and product design, specialized in the medical and healthcare sector.<br>I help brands grow, evolve and build meaningful digital experiences.<br>More human than any AI.<br>Available for freelance work → <a href='mailto:hello@disenod.com' class='fw-bold link' target='_blank' rel=''>hello@disenod.com</a>",
+      "Hi, I'm Diego (D) — Designer with 20 years of experience in branding, web and product design.<br>I work on real problems: brands that aren't understood, products that don't scale, interfaces that don't work.<br>In recent years I've specialized in branding for the medical sector.<br>I design clear, usable and sustainable solutions. More human than any AI.<br>Available for freelance work → <a href='mailto:hello@disenod.com' class='fw-bold link' target='_blank' rel=''>hello@disenod.com</a>",
 
     // Tab intros
     brandDevelopmentIntro:
@@ -27,6 +27,7 @@ const translations = {
 
     // Footer
     end: "There's more work available upon request.",
+    back: "back",
     test: "To complicate is easy. To simplify is difficult.",
 
     // Project descriptions
@@ -160,7 +161,7 @@ const translations = {
 
     // Main intro
     intro:
-      "Hola, soy Diego — la mayoría me dice D.<br>Diseñador con 20 años de experiencia en branding, web y diseño de producto, especializado en el sector médico y de salud.<br>Ayudo a las marcas a crecer, evolucionar y construir experiencias digitales significativas.<br>Más humano que cualquier IA.<br>Disponible para trabajo freelance → <a href='mailto:hello@disenod.com' class='fw-bold link' target='_blank' rel=''>hello@disenod.com</a>",
+      "Hola, soy Diego (D) — Diseñador gráfico, con experiencia en marcas, web y diseño de producto. Especializado en branding médico.<br>Resuelvo problemas reales con soluciones claras, escalables y sostenibles en el tiempo. Más humano que cualquier IA.<br>Disponible para trabajo freelance → <a href='mailto:hello@disenod.com' class='fw-bold link' target='_blank' rel=''>hello@disenod.com</a>",
 
     // Tab intros
     brandDevelopmentIntro:
@@ -170,6 +171,7 @@ const translations = {
 
     // Footer
     end: "Más trabajos disponibles para mostrar a pedido.",
+    back: "volver",
     test: "Complicar es fácil. Simplificar es difícil.",
 
     // Project descriptions
