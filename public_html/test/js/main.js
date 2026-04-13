@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Cerrar sidebar al tocar el overlay
   const overlay = document.getElementById("menu-overlay");
   if (overlay) overlay.addEventListener("click", () => toggleSidebar());
+  initSwipeClose();
 
   // Initialize language and UI
   window.switchLanguage(currentLang);
@@ -35,9 +36,11 @@ function addCol4Panels() {
   document
     .querySelectorAll("#brand-creation .tile, #brand-creation .tile-xl")
     .forEach((tile) => {
+      const wasActive = tile.classList.contains("pixel-active");
       tile
-        .querySelectorAll(".brand-hover-overlay, .brand-hover-text")
+        .querySelectorAll(".brand-hover-overlay, .brand-hover-text, .pixel-grid")
         .forEach((el) => el.remove());
+      if (wasActive) tile.classList.remove("pixel-active");
 
       const labelData = tile.dataset.label ? JSON.parse(tile.dataset.label) : null;
       const content = (labelData && labelData[currentLang]) ||
@@ -49,7 +52,9 @@ function addCol4Panels() {
 
       const text = document.createElement("div");
       text.className = "brand-hover-text";
-      const tag = tile.dataset.tag ? `<span class="brand-hover-tags">${JSON.parse(tile.dataset.tag).map(t => `<span class="brand-hover-tag">#${t}</span>`).join('')}</span>` : '';
+      if (tile.dataset.labelSize) text.style.fontSize = tile.dataset.labelSize;
+      if (tile.classList.contains("pixel-active")) text.style.opacity = "1";
+      const tag = tile.dataset.tag ? `<span class="brand-hover-tags">${JSON.parse(tile.dataset.tag).map(t => `<span class="brand-hover-tag"${tile.dataset.labelSize ? ` style="font-size:${tile.dataset.labelSize}"` : ''}>#${t}</span>`).join('')}</span>` : '';
       text.innerHTML = `<strong>${content.name}</strong>${content.industry}${tag}`;
       tile.appendChild(text);
     });
@@ -60,6 +65,9 @@ function showContent(category) {
   const validTabs = ["brand-creation", "brand-development", "product-design"];
   if (!validTabs.includes(category)) category = "brand-creation";
   localStorage.setItem("activeTab", category);
+
+  const sidebar = document.getElementById("sidebar");
+  if (sidebar?.classList.contains("open")) toggleSidebar();
 
   document.querySelectorAll(".sidebar-nav-btn").forEach((btn) => {
     btn.classList.toggle("active", btn.dataset.tab === category);
@@ -98,6 +106,36 @@ function toggleSidebar() {
   toggle.classList.toggle("open", isOpen);
   toggle.setAttribute("aria-expanded", isOpen);
   overlay.classList.toggle("active", isOpen);
+
+  if (isOpen) {
+    const items = sidebar.querySelectorAll(".sidebar-nav-btn, .contact-link, .lang-selector");
+    items.forEach((el, i) => {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(1rem)";
+      el.style.transition = "none";
+      setTimeout(() => {
+        el.style.transition = `opacity 0.3s ease ${i * 0.07}s, transform 0.3s ease ${i * 0.07}s`;
+        el.style.opacity = "1";
+        el.style.transform = "translateY(0)";
+      }, 20);
+    });
+  }
+
+  const isTablet = window.innerWidth >= 768 && window.innerWidth <= 1024;
+  const toggleContainer = document.querySelector(".mobile-menu-toggle-container");
+  if (isTablet && toggleContainer) {
+    toggleContainer.style.transition = "right 0.3s ease";
+    toggleContainer.style.right = isOpen ? "calc(20vw + 1.25rem)" : "1.25rem";
+  }
+}
+
+function initSwipeClose() {
+  const sidebar = document.getElementById("sidebar");
+  let startX = 0;
+  sidebar.addEventListener("touchstart", e => { startX = e.touches[0].clientX; }, { passive: true });
+  sidebar.addEventListener("touchend", e => {
+    if (startX - e.changedTouches[0].clientX > 60) toggleSidebar();
+  }, { passive: true });
 }
 
 function createBrandGuide(className) {
@@ -134,6 +172,7 @@ function createBrandTile(tileConfig) {
   }
   if (tileConfig.label) tile.dataset.label = JSON.stringify(tileConfig.label);
   if (tileConfig.tag) tile.dataset.tag = tileConfig.tag;
+  if (tileConfig.labelSize) tile.dataset.labelSize = tileConfig.labelSize;
   if (tileConfig.project) {
     tile.dataset.project = tileConfig.project;
     tile.classList.add("cursor-pointer");
@@ -161,6 +200,10 @@ function createBrandTile(tileConfig) {
     logoWrap.className = "d-flex justify-content-start align-items-start flex-grow-1";
     (tileConfig.logos || []).forEach(logo => logoWrap.appendChild(createBrandLogo(logo)));
     devInner.appendChild(logoWrap);
+    const arrow = document.createElement("div");
+    arrow.className = "brand-dev-arrow";
+    arrow.textContent = "→";
+    devInner.appendChild(arrow);
     const bottom = document.createElement("div");
     const h4 = document.createElement("h4");
     h4.className = "fw-bold mb-2 display-5";
@@ -250,13 +293,18 @@ function renderProductDesignGrid(items) {
         tile.appendChild(s);
 
         const inner = document.createElement("div");
-        inner.className = "d-flex flex-column justify-content-between h-100 w-100 p-4";
+        inner.className = "d-flex flex-column justify-content-between h-100 w-100 p-2rem";
 
         const logoWrap = document.createElement("div");
         logoWrap.className = "d-flex justify-content-start align-items-start flex-grow-1";
         const img = createBrandLogo({ src: item.src, loading: "lazy", alt: item.src, logoSize: item.logoSize });
         logoWrap.appendChild(img);
         inner.appendChild(logoWrap);
+
+        const arrow = document.createElement("div");
+        arrow.className = "brand-dev-arrow";
+        arrow.textContent = "→";
+        inner.appendChild(arrow);
 
         const bottom = document.createElement("div");
         if (item.secondaryLogo) {
@@ -266,7 +314,7 @@ function renderProductDesignGrid(items) {
         const title = item.title?.[currentLang] || item.title?.es || "";
         const subtitle = item.subtitle?.[currentLang] || item.subtitle?.es || "";
         const h4 = document.createElement("h4");
-        h4.className = "fw-bold mb-2 display-4";
+        h4.className = "fw-bold mb-2 display-5";
         h4.textContent = title;
         bottom.appendChild(h4);
         const meta = document.createElement("div");

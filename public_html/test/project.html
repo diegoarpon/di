@@ -22,10 +22,19 @@
 </head>
 
 <body>
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <filter id="pencil" x="-5%" y="-5%" width="110%" height="110%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.065" numOctaves="3" seed="2" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.2" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+  </svg>
   <div class="overlay" id="menu-overlay"></div>
 
   <div class="d-block d-xl-none mobile-menu-toggle-container">
-    <button class="mobile-menu-toggle" onclick="toggleSidebar()" aria-label="Abrir menú" aria-expanded="false" aria-controls="sidebar">
+    <button class="mobile-menu-toggle" onclick="toggleSidebar()" aria-label="Abrir menú" aria-expanded="false"
+      aria-controls="sidebar">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -35,7 +44,8 @@
 
       <div class="col-auto sidebar-container" id="sidebar">
         <div class="d-flex flex-column h-100 pt-5 px-3 pb-5">
-          <div class="position-relative logo cursor-pointer" onclick="window.location.href='index.html?tab=brand-development'">
+          <div class="position-relative logo cursor-pointer"
+            onclick="window.location.href='index.html?tab=brand-development'">
             <div class="guide-h-double-100"></div>
             <div class="row">
               <div class="col-auto position-relative">
@@ -54,19 +64,21 @@
               <button class="btn btn-link text-start p-0 fw-bold sidebar-nav-btn nav-button"
                 onclick="window.location.href='index.html'" data-i18n="brandCreation">brand creation</button>
               <button class="btn btn-link text-start p-0 fw-bold sidebar-nav-btn nav-button active"
-                onclick="window.location.href='index.html?tab=brand-development'" data-i18n="brandDevelopment">brand development</button>
+                onclick="window.location.href='index.html?tab=brand-development'" data-i18n="brandDevelopment">brand
+                development</button>
               <button class="btn btn-link text-start p-0 fw-bold sidebar-nav-btn nav-button"
-                onclick="window.location.href='index.html?tab=product-design'" data-i18n="productDesign">product design</button>
+                onclick="window.location.href='index.html?tab=product-design'" data-i18n="productDesign">product
+                design</button>
             </div>
           </div>
 
           <div class="mt-auto">
             <div class="mb-3">
               <div class="d-flex flex-column gap-2">
-                <a href="https://wa.me/+5491134604766?text=Hola%20D!%20Tengo%20una%20consulta"
-                  target="_blank" rel="noopener noreferrer" class="option fw-bold contact-link">whatsapp.</a>
-                <a href="https://www.linkedin.com/in/diegofabbriarpon/" target="_blank"
-                  rel="noopener noreferrer" class="option fw-bold contact-link">linkedin.</a>
+                <a href="https://wa.me/+5491134604766?text=Hola%20D!%20Tengo%20una%20consulta" target="_blank"
+                  rel="noopener noreferrer" class="option fw-bold contact-link">whatsapp.</a>
+                <a href="https://www.linkedin.com/in/diegofabbriarpon/" target="_blank" rel="noopener noreferrer"
+                  class="option fw-bold contact-link">linkedin.</a>
               </div>
             </div>
             <div>
@@ -81,7 +93,8 @@
 
       <div class="col content-area px-3">
         <div class="d-block d-xl-none pt-5 px-0">
-          <div class="position-relative logo cursor-pointer" onclick="window.location.href='index.html?tab=brand-development'">
+          <div class="position-relative logo cursor-pointer"
+            onclick="window.location.href='index.html?tab=brand-development'">
             <div class="guide-h-double-100"></div>
             <div class="row">
               <div class="col-auto position-relative">
@@ -98,9 +111,10 @@
 
         <div class="project-header fade-in">
           <div class="d-flex align-items-baseline justify-content-between">
-            <h1 class="display-4 project-title" id="project-name"></h1>
-            <a class="project-back" href="index.html?tab=brand-development"><img src="img/arrow-left.svg" class="project-back-arrow" aria-hidden="true" /><span data-i18n="back">volver</span></a>
+            <h1 class="display-4 project-title mb-3" id="project-name"></h1>
+            <a class="project-back" href="index.html?tab=brand-development">←</a>
           </div>
+          <p id="project-description" class="fw-light project-description"></p>
         </div>
 
         <div id="project-gallery" class="project-masonry mb-5"></div>
@@ -125,8 +139,6 @@
     const projectId = params.get("p");
 
     document.addEventListener("DOMContentLoaded", () => {
-      const overlay = document.getElementById("menu-overlay");
-      if (overlay) overlay.addEventListener("click", () => toggleSidebar());
 
       document.querySelectorAll("a[href]").forEach(a => {
         const href = a.getAttribute("href");
@@ -160,7 +172,7 @@
       const gallery = document.getElementById("project-gallery");
       const items = Array.from(gallery.querySelectorAll(".project-masonry-item"));
       if (!items.length) return;
-      const numCols = window.innerWidth <= 767 ? 1 : window.innerWidth <= 1024 ? 2 : 3;
+      const numCols = window.innerWidth <= 767 ? 1 : window.innerWidth <= 1024 ? 2 : 4;
       const gap = 24;
       const totalWidth = gallery.offsetWidth;
       const colWidth = (totalWidth - gap * (numCols - 1)) / numCols;
@@ -198,8 +210,9 @@
           if (!project) { window.location.href = "index.html?tab=brand-development"; return; }
 
           const label = project.label?.[currentLang] || project.label?.es;
-          document.title = `${label.name} — diseño d.`;
-          document.getElementById("project-name").textContent = label.name;
+          const projectName = project.projectName || label.name;
+          document.title = `${projectName} — diseño d.`;
+          document.getElementById("project-name").textContent = projectName;
 
           const gallery = document.getElementById("project-gallery");
           gallery.classList.remove("fade-in");
@@ -209,6 +222,11 @@
           void document.querySelector(".project-header").offsetWidth;
           document.querySelector(".project-header").classList.add("fade-in");
           gallery.innerHTML = "";
+
+          const description = project.description?.[currentLang] || project.description?.es || "";
+          const descEl = document.getElementById("project-description");
+          descEl.textContent = description;
+          descEl.classList.toggle("hidden", !description);
 
           (project.gallery || []).forEach(item => {
             const figure = document.createElement("figure");

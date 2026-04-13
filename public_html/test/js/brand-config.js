@@ -20,6 +20,7 @@ function buildBrandCreationItems(logos) {
                         label: t.label,
                         tag: JSON.stringify(t.tag || []),
                         bgImage: t.bgImage || "",
+                        labelSize: t.labelSize || "",
                         ...(i > 0 && { separatorBefore: true })
                     };
                 })

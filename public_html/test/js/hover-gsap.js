@@ -32,32 +32,36 @@ function initPixelHover(tile) {
   gsap.set(overlay, { opacity: 0 });
   gsap.set(text, { opacity: 0 });
 
-  tile.addEventListener("mouseenter", () => {
+  let active = false;
+
+  function activate() {
+    active = true;
     createPixelGrid(tile, 14);
     const cells = Array.from(tile.querySelectorAll(".pixel-grid div"));
     gsap.killTweensOf(cells);
     gsap.killTweensOf(text);
-    gsap.to(cells, {
-      opacity: 0.95,
-      duration: 0.03,
-      stagger: { each: 0.001, from: "random" },
-      ease: "none"
-    });
+    gsap.to(cells, { opacity: 0.95, duration: 0.03, stagger: { each: 0.001, from: "random" }, ease: "none" });
     gsap.to(text, { opacity: 1, duration: 0.1, ease: "none", delay: 0.12 });
-  });
+  }
 
-  tile.addEventListener("mouseleave", () => {
+  function deactivate() {
+    active = false;
     const cells = Array.from(tile.querySelectorAll(".pixel-grid div"));
     gsap.killTweensOf(cells);
     gsap.killTweensOf(text);
     gsap.to(text, { opacity: 0, duration: 0.05, ease: "power2.in",
-      onComplete: () => gsap.to(cells, {
-        opacity: 0,
-        duration: 0.01,
-        stagger: { each: 0.0003, from: "random" },
-        ease: "none"
-      })
+      onComplete: () => gsap.to(cells, { opacity: 0, duration: 0.01, stagger: { each: 0.0003, from: "random" }, ease: "none" })
     });
+  }
+
+  tile.addEventListener("click", () => {
+    if (active) { deactivate(); tile.classList.remove("pixel-active"); }
+    else {
+      document.querySelectorAll("#brand-creation-grid .tile.pixel-active").forEach(t => {
+        if (t !== tile) t.click();
+      });
+      activate(); tile.classList.add("pixel-active");
+    }
   });
 }
 

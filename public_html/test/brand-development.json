@@ -6,12 +6,17 @@
       "alt": "EG",
       "size": "tile-xl",
       "span": 6,
-      "logoSize": 300,
+      "logoSize": 250,
       "invertLogo": true,
       "bgColor": "",
       "bgImage": "img/test-12.jpg",
       "hoverColor": "var(--main-color)",
       "project": "eg",
+      "projectName": "EG Marketing",
+      "description": {
+        "es": "Construcción de identidad de marca abarcando lo visual, comunicacional, digital y físico para EG, consultora especializada en marketing y producción de eventos del sector médico. Selección de trabajos realizados desde 2023 a la fecha.",
+        "en": "Brand identity construction encompassing visual, communicational, digital and physical aspects for EG, a consulting firm specialized in marketing and event production for the medical sector. Selection of works carried out from 2023 to date."
+      },
       "title": {
         "es": "branding 360",
         "en": "Identity & System"
@@ -27,15 +32,6 @@
         }
       },
       "gallery": [
-        {
-          "type": "color",
-          "cols": 3,
-          "bg": "",
-          "text": {
-            "es": "Identidad visual, sistema de comunicación y material gráfico para EG Marketing, consultora especializada en eventos médicos.",
-            "en": "Visual identity, communication system and graphic material for EG Marketing, a consulting firm specialized in medical events."
-          }
-        },
         {
           "src": "img/visuals/eg/eg-website-mobile-1.png",
           "caption": {
@@ -130,6 +126,11 @@
       "bgImage": "img/test-13.jpg",
       "hoverColor": "var(--main-color)",
       "project": "meta",
+      "projectName": "Congreso META",
+      "description": {
+        "es": "Identidad y sistema gráfico y comunicacional para el primer Congreso de Medicina Estética, Tecnología & Antiaging de Uruguay. Tuvo lugar en febrero '25 en Punta del Este, con participación de destacados profesionales del sector a nivel nacional e internacional. El proyecto abarcó desde la creación de la marca, su aplicación en piezas gráficas y digitales, hasta el diseño de la escenografía del evento.",
+        "en": "Identity and graphic and communicational system for the first Aesthetic Medicine, Technology & Antiaging Congress of Uruguay. It took place in February '25 in Punta del Este, with the participation of prominent professionals in the sector at both national and international levels. The project encompassed everything from brand creation, its application in graphic and digital pieces, to the design of the event's scenography."
+      },
       "title": {
         "es": "dirección creativa",
         "en": "Identity & Congress"
@@ -277,6 +278,11 @@
       "bgImage": "img/test-14.jpg",
       "hoverColor": "var(--main-color)",
       "project": "nestseekers",
+      "projectName": "EG Marketing",
+      "description": {
+        "es": "Dirección y coordinación de campañas de lanzamiento para edificios residenciales de lujo en Nueva York. Desarrollo de identidad visual, diseño de avisos de prensa y material impreso para la promoción de los inmuebles en el mercado local.",
+        "en": "Direction and coordination of launch campaigns for luxury residential buildings in New York. Development of visual identity, design of press ads and print material for the promotion of the properties in the local market."
+      },
       "title": {
         "es": "dirección creativa",
         "en": "Campaign & Print"
@@ -293,15 +299,6 @@
       },
       "gallery": [
         {
-          "type": "color",
-          "cols": 3,
-          "bg": "",
-          "text": {
-            "es": "Campaña de lanzamiento para 99 John Street, un edificio residencial de lujo en el bajo Manhattan. Identidad visual, avisos de prensa y material impreso.",
-            "en": "Launch campaign for 99 John Street, a luxury residential building in lower Manhattan. Visual identity, press ads and print material."
-          }
-        },
-        {
           "src": "img/visuals/nestseekers/99john-ads-condominium-bike.webp",
           "caption": {
             "es": "Aviso 99 John — 20",
@@ -314,6 +311,14 @@
           "caption": {
             "es": "Aviso 99 John — 18",
             "en": "99 John ad — 18"
+          },
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/nestseekers/99john-ads-condominium-couple.webp",
+          "caption": {
+            "es": "Aviso 99 John — 19",
+            "en": "99 John ad — 19"
           },
           "cols": 1
         },
@@ -348,15 +353,6 @@
             "en": "Print material"
           },
           "cols": 1
-        },
-        {
-          "type": "color",
-          "cols": 3,
-          "bg": "",
-          "text": {
-            "es": "Campaña de lanzamiento para 99 John Street, un edificio residencial de lujo en el bajo Manhattan. Identidad visual, avisos de prensa y material impreso.",
-            "en": "Launch campaign for 99 John Street, a luxury residential building in lower Manhattan. Visual identity, press ads and print material."
-          }
         },
         {
           "src": "img/visuals/nestseekers/327W11THst-back.webp",
@@ -404,9 +400,14 @@
       "bgImage": "img/test-11.jpg",
       "hoverColor": "var(--main-color)",
       "project": "insolito",
+      "projectName": "insólito café de especialidad",
+      "description": {
+        "es": "Expansión del branding de este café de especialidad, continuándolo y desarrolando nuevos códigos visuales y aplicaciones para la marca. El proyecto incluye desarrollos digitales para su sister-brand, Lapanaderi. Selección de trabajos realizados desde 2025 a la fecha.",
+        "en": "Expansion of the branding for this specialty coffee shop, continuing it and developing new visual codes and applications for the brand. The project includes digital developments for its sister-brand, Lapanaderi."
+      },
       "title": {
         "es": "ampliación de marca",
-        "en": "Brand Identity"
+        "en": "Brand Id. entity"
       },
       "label": {
         "es": {
@@ -425,7 +426,7 @@
           "bg": "var(--terracotta-dark)",
           "text": {
             "es": "Identidad de marca para restaurante de autor. Concepto visual, papelería y aplicaciones.",
-            "en": "Brand identity for a signature restaurant. Visual concept, stationery and applications."
+            "en": "Brand idvvventity for a signature restaurant. Visual concept, stationery and applications."
           }
         },
         {

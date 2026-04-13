@@ -22,10 +22,25 @@
   const SELECTORS = 'a, button, .tile, .tile-xl, [class*="cursor-pointer"]';
   const TILE_SELECTORS = '.tile, .tile-xl';
 
+  document.addEventListener('click', e => {
+    const tile = e.target.closest(TILE_SELECTORS);
+    if (tile?.closest('#brand-creation-grid')) {
+      dot.style.color = tile.classList.contains('pixel-active') ? 'var(--whitest)' : 'var(--main-color)';
+    }
+  });
+
   document.addEventListener('mouseover', e => {
     if (e.target.closest(SELECTORS)) {
       rotation = 45;
-      if (e.target.closest(TILE_SELECTORS)) dot.style.color = 'var(--whitest)';
+      const tile = e.target.closest(TILE_SELECTORS);
+      if (tile) {
+        const inBrandCreation = tile.closest('#brand-creation-grid');
+        if (inBrandCreation && !tile.classList.contains('pixel-active')) {
+          dot.style.color = 'var(--main-color)';
+        } else {
+          dot.style.color = 'var(--whitest)';
+        }
+      }
       dot.style.transform = dot.style.transform.replace(/rotate\([^)]+\)/, `rotate(${rotation}deg)`);
     }
   });

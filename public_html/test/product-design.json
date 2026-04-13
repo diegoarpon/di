@@ -15,7 +15,7 @@
         "es": "Diseño de producto digital",
         "en": "Digital product design"
       },
-      "year": "2025",
+      "year": "2024",
       "tool": "Figma"
     },
     {
@@ -43,7 +43,7 @@
       "logoSize": 100,
       "invertLogo": false,
       "hoverColor": "var(--meta)",
-      "secondaryLogo": "img/logos/logo-form-stream.svg",
+      "secondaryLogo": "img/logos/formstream-logo.svg",
       "secondaryLogoSize": 300,
       "subtitle": {
         "es": "Diseño de producto digital",
