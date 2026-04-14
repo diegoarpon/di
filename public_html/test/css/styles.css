@@ -117,7 +117,12 @@ body {
   position: absolute;
   left: -100%;
   top: 0;
-  filter: url(#pencil);
+}
+
+@media (min-width: 1025px) {
+  .guide-h-double-100 {
+    filter: url(#pencil);
+  }
 }
 
 .guide-v-double-100 {
@@ -127,7 +132,12 @@ body {
   width: 100%;
   position: absolute;
   top: -10%;
-  filter: url(#pencil);
+}
+
+@media (min-width: 1025px) {
+  .guide-v-double-100 {
+    filter: url(#pencil);
+  }
 }
 
 .guide-v-short {
@@ -233,8 +243,6 @@ body {
   position: fixed;
   inset: 0;
   background-color: var(--black-50);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
   z-index: var(--z-overlay);
   opacity: 0;
   visibility: hidden;
