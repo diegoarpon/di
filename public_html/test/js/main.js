@@ -109,8 +109,10 @@ function toggleSidebar() {
 
   const dots = toggle.querySelectorAll("span");
   const hiddenDots = [1, 3, 5, 7];
-  dots.forEach((dot, i) => {
-    dot.style.opacity = (isOpen && hiddenDots.includes(i)) ? "0" : "1";
+  requestAnimationFrame(() => {
+    dots.forEach((dot, i) => {
+      dot.style.opacity = (isOpen && hiddenDots.includes(i)) ? "0" : "1";
+    });
   });
 
   if (isOpen) {
