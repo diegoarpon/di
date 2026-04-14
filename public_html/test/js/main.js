@@ -107,6 +107,12 @@ function toggleSidebar() {
   toggle.setAttribute("aria-expanded", isOpen);
   overlay.classList.toggle("active", isOpen);
 
+  const dots = toggle.querySelectorAll("span");
+  const hiddenDots = [1, 3, 5, 7];
+  dots.forEach((dot, i) => {
+    dot.style.opacity = (isOpen && hiddenDots.includes(i)) ? "0" : "1";
+  });
+
   if (isOpen) {
     const items = sidebar.querySelectorAll(".sidebar-nav-btn, .contact-link, .lang-selector");
     items.forEach((el, i) => {
