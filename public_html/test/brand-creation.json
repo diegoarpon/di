@@ -207,7 +207,7 @@
       "span": 4,
       "logoSize": 300,
       "invertLogo": true,
-      "bgImage": "img/test-5.jpg",
+      "bgImage": "img/test-5.webp",
       "tag": [
         "Health",
         "Education",
@@ -383,7 +383,7 @@
       "invertLogo": true,
       "multi": "img/logos/flittz-logo.svg",
       "multiLogoSize": 150,
-      "bgImage": "img/test.jpg",
+      "bgImage": "img/test.webp",
       "tag": [
         "Tech",
         "USA"
@@ -401,7 +401,7 @@
     },
     {
       "order": 13,
-      "src": "img/logos/virtualmind-full-logo.png",
+      "src": "img/logos/virtualmind-full-logo.webp",
       "alt": "Virtualmind",
       "size": "tile-xl",
       "span": 4,
@@ -582,7 +582,7 @@
           "size": "tile",
           "logoSize": 220,
           "invertLogo": false,
-          "bgImage": "img/test.jpg",
+          "bgImage": "img/test.webp",
           "tag": [
             "Food",
             "USA"

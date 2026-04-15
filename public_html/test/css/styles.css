@@ -45,9 +45,9 @@
   --blackest: #000000;
   --manteca: #f5f5dc;
 
-  --meta: #a1d000;
-  --petrol-blue: #00515f;
-  --gold-yellow: #d1a104;
+  --meta: #1ba165;
+  --petrol-blue: #0a6dca;
+  --gold-yellow: #ffb700;
   --terracotta-dark: #ad4025;
 
   --graphite: #596275;
@@ -228,7 +228,9 @@ body {
 .mobile-menu-toggle.open span:nth-child(2),
 .mobile-menu-toggle.open span:nth-child(4),
 .mobile-menu-toggle.open span:nth-child(6),
-.mobile-menu-toggle.open span:nth-child(8) { opacity: 0 !important; }
+.mobile-menu-toggle.open span:nth-child(8) {
+  opacity: 0 !important;
+}
 
 /* Overlay */
 .overlay {
@@ -315,35 +317,6 @@ body {
   text-decoration: none;
 }
 
-/* Fade In/Out Animation */
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 0.4s ease-out forwards;
-}
-
-.fade-out {
-  animation: fadeOut 0.3s ease forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
-}
 
 /* Mobile Styles */
 @media (max-width: 767px) {
@@ -527,11 +500,12 @@ body {
     transform: translateX(-100%);
     min-width: 100vw;
     border-right: none;
-    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.3);
+    box-shadow: none;
   }
 
   .sidebar-container.open {
     transform: translateX(0);
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.3);
   }
 
   @media (max-width: 767px) {
@@ -583,7 +557,12 @@ body {
   z-index: var(--z-content);
   position: relative;
   background-color: var(--manteca);
-  transition: margin-left 0.3s ease;
+  transition: margin-left 0.3s ease, opacity 0.5s ease;
+}
+
+
+.content-area.fading {
+  opacity: 0;
 }
 
 .tab-visible {
@@ -759,9 +738,25 @@ body {
   color: var(--whitest);
 }
 
+#product-design-grid .tile .p-2rem,
+#product-design-grid .tile-xl .p-2rem {
+  position: relative;
+  z-index: var(--z-tile-text);
+}
+
 #product-design-grid .tile:hover .brand-dev-arrow,
 #product-design-grid .tile-xl:hover .brand-dev-arrow {
   opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  #product-design-grid .brand-dev-arrow {
+    opacity: 1;
+  }
+  #brand-development-grid .brand-dev-arrow {
+    opacity: 1;
+    color: var(--whitest);
+  }
 }
 
 .brand-grid {
@@ -1025,12 +1020,15 @@ body {
 
 /* Gooey cursor */
 #cursor-dot {
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
   font-size: var(--fs-cursor);
   line-height: 1;
   color: var(--main-color);
   pointer-events: none;
-  transition: transform 0.05s;
+  z-index: 99999;
+  will-change: transform;
 }
 
 * {
@@ -1047,6 +1045,41 @@ body {
 .brand-hover-tags {
   display: block;
   margin-top: 0.5rem;
+}
+
+.project-loader {
+  position: absolute;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--manteca);
+  transition: opacity 0.5s ease;
+}
+
+.project-loader.dismiss {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.project-loader-dot {
+  width: 2rem;
+  height: 2rem;
+  background: var(--blackest);
+  animation: loader-blink 1s ease-in-out infinite;
+}
+
+@keyframes loader-blink {
+
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
 .p-2rem {

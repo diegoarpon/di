@@ -127,17 +127,126 @@ function initPixelHoverVariant(tile, variant) {
   });
 }
 
+function initPixelHoverSimple(tile, locked) {
+  if (tile._pixelHoverInit) return;
+  tile._pixelHoverInit = true;
+  const color = tile.dataset.hoverColor || tile.dataset.pixelColor || "var(--main-color)";
+
+  if (locked) {
+    const applyLocked = () => {
+      if (!tile.offsetWidth) return requestAnimationFrame(applyLocked);
+      createPixelGrid(tile, 14, color);
+      tile.querySelectorAll(".pixel-grid div").forEach(c => c.style.opacity = "0.95");
+    };
+    applyLocked();
+    return;
+  }
+
+  tile.addEventListener("mouseenter", () => {
+    createPixelGrid(tile, 14, color);
+    const cells = Array.from(tile.querySelectorAll(".pixel-grid div"));
+    gsap.killTweensOf(cells);
+    gsap.to(cells, { opacity: 0.95, duration: 0.03, stagger: { each: 0.001, from: "random" }, ease: "none" });
+  });
+
+  tile.addEventListener("mouseleave", () => {
+    const cells = Array.from(tile.querySelectorAll(".pixel-grid div"));
+    gsap.killTweensOf(cells);
+    gsap.to(cells, { opacity: 0, duration: 0.01, stagger: { each: 0.0003, from: "random" }, ease: "none" });
+  });
+}
+
+/* --- Gradient pixel helpers --- */
+
+function resolveColor(raw) {
+  const tmp = document.createElement("div");
+  tmp.style.color = raw;
+  document.body.appendChild(tmp);
+  const rgb = getComputedStyle(tmp).color;
+  tmp.remove();
+  return rgb;
+}
+
+function parseRGB(str) {
+  const m = str.match(/[\d.]+/g);
+  return m ? m.map(Number) : [0, 0, 0];
+}
+
+function lerpColor(a, b, t) {
+  return `rgb(${a.map((v, i) => Math.round(v + (b[i] - v) * t)).join(",")})`;
+}
+
+function createGradientPixelGrid(tile, cols, colorTop, colorBottom, mode) {
+  if (tile.querySelector(".pixel-grid")) return;
+  const { offsetWidth: w, offsetHeight: h } = tile;
+  const cellSize = w / cols;
+  const rows = Math.ceil(h / cellSize);
+  const rgbTop = parseRGB(resolveColor(colorTop));
+  const rgbBottom = parseRGB(resolveColor(colorBottom));
+  const pg = document.createElement("div");
+  pg.className = "pixel-grid";
+  Object.assign(pg.style, {
+    position: "absolute", inset: "0",
+    display: "grid",
+    gridTemplateColumns: `repeat(${cols}, 1fr)`,
+    gridTemplateRows: `repeat(${rows}, 1fr)`,
+    zIndex: "var(--z-tile-overlay)",
+    pointerEvents: "none"
+  });
+  for (let i = 0; i < cols * rows; i++) {
+    const row = Math.floor(i / cols);
+    const t = rows > 1 ? row / (rows - 1) : 0;
+    const cell = document.createElement("div");
+    cell.style.opacity = "0";
+    if (mode === "color-gradient") {
+      cell.style.backgroundColor = lerpColor(rgbTop, rgbBottom, t);
+      cell.dataset.targetOpa = "0.95";
+    } else if (mode === "opacity-gradient") {
+      cell.style.backgroundColor = colorTop;
+      cell.dataset.targetOpa = (0.3 + 0.65 * t).toFixed(2);
+    } else if (mode === "full-gradient") {
+      cell.style.backgroundColor = lerpColor(rgbTop, rgbBottom, t);
+      cell.dataset.targetOpa = (0.4 + 0.55 * t).toFixed(2);
+    }
+    pg.appendChild(cell);
+  }
+  tile.appendChild(pg);
+  return pg;
+}
+
+function initPixelHoverGradient(tile, mode) {
+  if (tile._pixelHoverInit) return;
+  tile._pixelHoverInit = true;
+  const color = tile.dataset.hoverColor || tile.dataset.pixelColor || "var(--main-color)";
+  const colorEnd = "var(--blackest)";
+
+  tile.addEventListener("mouseenter", () => {
+    createGradientPixelGrid(tile, 14, color, colorEnd, mode);
+    const cells = Array.from(tile.querySelectorAll(".pixel-grid div"));
+    gsap.killTweensOf(cells);
+    cells.forEach(c => {
+      gsap.to(c, { opacity: parseFloat(c.dataset.targetOpa), duration: 0.03, delay: Math.random() * 0.05, ease: "none" });
+    });
+  });
+
+  tile.addEventListener("mouseleave", () => {
+    const cells = Array.from(tile.querySelectorAll(".pixel-grid div"));
+    gsap.killTweensOf(cells);
+    gsap.to(cells, { opacity: 0, duration: 0.01, stagger: { each: 0.0003, from: "random" }, ease: "none" });
+  });
+}
+
 function initGsapHovers() {
   const grid = document.getElementById("brand-creation-grid");
   if (grid) grid.querySelectorAll(".tile").forEach(initPixelHover);
 
+  const isMobile = window.innerWidth <= 1024;
+
   const devGrid = document.getElementById("brand-development-grid");
-  if (devGrid) {
-    const variants = ["burst", "burst", "burst", "burst"];
-    devGrid.querySelectorAll(".tile, .tile-xl").forEach((tile, i) => {
-      initPixelHoverVariant(tile, variants[i] || "brandColor");
-    });
-  }
+  if (devGrid) devGrid.querySelectorAll(".tile, .tile-xl").forEach(t => { if (!isMobile) initPixelHoverSimple(t); });
+
+  const pdGrid = document.getElementById("product-design-grid");
+  if (pdGrid) pdGrid.querySelectorAll(".tile, .tile-xl").forEach(t => initPixelHoverSimple(t, isMobile));
 }
 
 window.initGsapHovers = initGsapHovers;

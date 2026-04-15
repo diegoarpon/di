@@ -79,4 +79,6 @@ Promise.all([
         const pdItems = [...pdData.productDesign].sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
         renderProductDesignGrid(pdItems);
     }
+    if (typeof window.initGsapHovers === "function") window.initGsapHovers();
+    if (typeof window.signalDataReady === "function") window.signalDataReady();
 });

@@ -12,7 +12,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title>diseño d.</title>
-  <link rel="icon" type="image/svg+xml" href="logo-diseno-d.png" />
+  <link rel="icon" type="image/svg+xml" href="logo-diseno-d.webp" />
   <meta name="theme-color" content="#FF7518" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
@@ -47,7 +47,7 @@
       <div class="col-auto sidebar-container" id="sidebar">
         <div class="d-flex flex-column h-100 pt-5 px-3 pb-5">
           <div class="position-relative logo cursor-pointer"
-            onclick="window.location.href='index.html?tab=brand-development'">
+            onclick="fadeNavigate('index.html?tab=brand-development')">
             <div class="guide-h-double-100"></div>
             <div class="row">
               <div class="col-auto position-relative">
@@ -64,12 +64,12 @@
           <div class="mt-4">
             <div class="d-flex flex-column gap-2">
               <button class="btn btn-link text-start p-0 fw-bold sidebar-nav-btn nav-button"
-                onclick="window.location.href='index.html'" data-i18n="brandCreation">brand creation</button>
+                onclick="fadeNavigate('index.html')" data-i18n="brandCreation">brand creation</button>
               <button class="btn btn-link text-start p-0 fw-bold sidebar-nav-btn nav-button active"
-                onclick="window.location.href='index.html?tab=brand-development'" data-i18n="brandDevelopment">brand
+                onclick="fadeNavigate('index.html?tab=brand-development')" data-i18n="brandDevelopment">brand
                 development</button>
               <button class="btn btn-link text-start p-0 fw-bold sidebar-nav-btn nav-button"
-                onclick="window.location.href='index.html?tab=product-design'" data-i18n="productDesign">product
+                onclick="fadeNavigate('index.html?tab=product-design')" data-i18n="productDesign">product
                 design</button>
             </div>
           </div>
@@ -93,10 +93,13 @@
         </div>
       </div>
 
-      <div class="col content-area px-3">
+      <div class="col content-area px-3 fading">
+
+        <div class="project-loader" id="project-loader"><div class="project-loader-dot"></div></div>
+
         <div class="d-block d-xl-none pt-5 px-0">
           <div class="position-relative logo cursor-pointer"
-            onclick="window.location.href='index.html?tab=brand-development'">
+            onclick="fadeNavigate('index.html?tab=brand-development')">
             <div class="guide-h-double-100"></div>
             <div class="row">
               <div class="col-auto position-relative">
@@ -111,10 +114,10 @@
           </div>
         </div>
 
-        <div class="project-header fade-in">
+        <div class="project-header">
           <div class="d-flex align-items-baseline justify-content-between">
             <h1 class="display-4 project-title mb-3" id="project-name"></h1>
-            <a class="project-back" href="index.html?tab=brand-development">←</a>
+            <a class="project-back" href="#" onclick="event.preventDefault(); fadeNavigate('index.html?tab=brand-development')">←</a>
           </div>
           <p id="project-description" class="fw-light project-description"></p>
         </div>
@@ -137,21 +140,15 @@
   <script src="js/main.js"></script>
   <script src="js/cursor.js"></script>
   <script>
+    function fadeNavigate(url) {
+      document.querySelector('.content-area').classList.add('fading');
+      setTimeout(() => { window.location.href = url; }, 500);
+    }
+
     const params = new URLSearchParams(window.location.search);
     const projectId = params.get("p");
 
     document.addEventListener("DOMContentLoaded", () => {
-
-      document.querySelectorAll("a[href]").forEach(a => {
-        const href = a.getAttribute("href");
-        if (!href || href.startsWith("http") || href.startsWith("#")) return;
-        a.addEventListener("click", e => {
-          e.preventDefault();
-          document.body.classList.add("fade-out");
-          setTimeout(() => window.location.href = href, 300);
-        });
-      });
-
       switchLanguage(currentLang);
       window.addEventListener("resize", layoutMasonry);
     });
@@ -217,12 +214,6 @@
           document.getElementById("project-name").textContent = projectName;
 
           const gallery = document.getElementById("project-gallery");
-          gallery.classList.remove("fade-in");
-          void gallery.offsetWidth;
-          gallery.classList.add("fade-in");
-          document.querySelector(".project-header").classList.remove("fade-in");
-          void document.querySelector(".project-header").offsetWidth;
-          document.querySelector(".project-header").classList.add("fade-in");
           gallery.innerHTML = "";
 
           const description = project.description?.[currentLang] || project.description?.es || "";
@@ -313,12 +304,29 @@
             gallery.appendChild(figure);
           });
 
-          // esperar que las imágenes y videos carguen para calcular alturas correctas
           const images = gallery.querySelectorAll("img");
           const videos = gallery.querySelectorAll("video");
           let pending = images.length + videos.length;
-          const onLoad = () => { if (--pending <= 0) layoutMasonry(); };
-          if (!pending) { layoutMasonry(); }
+          const onLoad = () => {
+            if (--pending <= 0) {
+              layoutMasonry();
+              const loader = document.getElementById("project-loader");
+              if (loader) {
+                loader.classList.add("dismiss");
+                loader.addEventListener("transitionend", () => loader.remove(), { once: true });
+              }
+              document.querySelector(".content-area").classList.remove("fading");
+            }
+          };
+          if (!pending) {
+            layoutMasonry();
+            const loader = document.getElementById("project-loader");
+            if (loader) {
+              loader.classList.add("dismiss");
+              loader.addEventListener("transitionend", () => loader.remove(), { once: true });
+            }
+            document.querySelector(".content-area").classList.remove("fading");
+          }
           else {
             images.forEach(img => { if (img.complete) onLoad(); else { img.onload = onLoad; img.onerror = onLoad; } });
             videos.forEach(v => { if (v.readyState >= 1) onLoad(); else { v.onloadedmetadata = onLoad; v.onerror = onLoad; } });

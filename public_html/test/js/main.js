@@ -1,15 +1,20 @@
+let _dataReady = false;
+let _resolveData;
+const dataReadyPromise = new Promise(r => { _resolveData = r; });
+window.signalDataReady = () => { _dataReady = true; _resolveData(); };
+
 document.addEventListener("DOMContentLoaded", function () {
-  // Cerrar sidebar al tocar el overlay
   const overlay = document.getElementById("menu-overlay");
   if (overlay) overlay.addEventListener("click", () => toggleSidebar());
   initSwipeClose();
 
-  // Initialize language and UI
   window.switchLanguage(currentLang);
 
-  // Leer ?tab= de la URL
-  const urlTab = new URLSearchParams(window.location.search).get("tab");
-  showContent(urlTab || "brand-creation");
+  const hasGridTabs = document.getElementById("brand-creation");
+  if (hasGridTabs) {
+    const urlTab = new URLSearchParams(window.location.search).get("tab");
+    showContent(urlTab || "brand-creation", true);
+  }
 });
 
 window.switchLanguage = function (lang) {
@@ -61,9 +66,11 @@ function addCol4Panels() {
 
   if (typeof window.initGsapHovers === "function") window.initGsapHovers();
 }
-function showContent(category) {
+function showContent(category, isInitial) {
   const validTabs = ["brand-creation", "brand-development", "product-design"];
   if (!validTabs.includes(category)) category = "brand-creation";
+
+  const currentTab = localStorage.getItem("activeTab");
   localStorage.setItem("activeTab", category);
 
   const sidebar = document.getElementById("sidebar");
@@ -73,14 +80,38 @@ function showContent(category) {
     btn.classList.toggle("active", btn.dataset.tab === category);
   });
 
-  document.querySelectorAll(".tab-content").forEach((tab) => {
-    tab.classList.toggle("tab-visible", tab.id === category);
-    tab.classList.toggle("tab-hidden", tab.id !== category);
-  });
+  const contentArea = document.querySelector(".content-area");
+  const needsFade = currentTab && currentTab !== category;
 
-  if (category === "brand-creation" && typeof brandCreationItems !== "undefined" && brandCreationItems.length) {
-    renderBrandCreationGrid(brandCreationItems);
-    requestAnimationFrame(() => addCol4Panels());
+  function applyTab() {
+    document.querySelectorAll(".tab-content").forEach((tab) => {
+      tab.classList.toggle("tab-visible", tab.id === category);
+      tab.classList.toggle("tab-hidden", tab.id !== category);
+    });
+    if (category === "brand-creation" && typeof brandCreationItems !== "undefined" && brandCreationItems.length) {
+      renderBrandCreationGrid(brandCreationItems);
+      requestAnimationFrame(() => addCol4Panels());
+    }
+    contentArea.scrollTop = 0;
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  function reveal() {
+    applyTab();
+    contentArea.classList.remove("fading");
+  }
+
+  if (isInitial) {
+    dataReadyPromise.then(() => {
+      applyTab();
+      setTimeout(() => contentArea.classList.remove("fading"), 50);
+    });
+  } else if (needsFade && contentArea) {
+    contentArea.classList.add("fading");
+    setTimeout(reveal, 500);
+  } else {
+    applyTab();
   }
 
   // Cerrar sidebar en mobile al seleccionar tab
@@ -185,8 +216,9 @@ function createBrandTile(tileConfig) {
     tile.dataset.project = tileConfig.project;
     tile.classList.add("cursor-pointer");
     tile.addEventListener("click", () => {
-      document.body.classList.add("fade-out");
-      setTimeout(() => window.location.href = `project.html?p=${tileConfig.project}`, 300);
+      const ca = document.querySelector(".content-area");
+      ca.classList.add("fading");
+      setTimeout(() => { window.location.href = `project.html?p=${tileConfig.project}`; }, 500);
     });
   }
 
@@ -297,7 +329,8 @@ function renderProductDesignGrid(items) {
         s.textContent = `.${uid}::before { background: ${item.hoverColor}; }`;
 
         const tile = document.createElement("div");
-        tile.className = `tile tile-xl product-hover-custom ${uid}`;
+        tile.className = `tile tile-xl ${uid}`;
+        if (item.hoverColor) tile.dataset.hoverColor = item.hoverColor;
         tile.appendChild(s);
 
         const inner = document.createElement("div");
@@ -311,7 +344,7 @@ function renderProductDesignGrid(items) {
 
         const arrow = document.createElement("div");
         arrow.className = "brand-dev-arrow";
-        arrow.textContent = "→";
+        arrow.textContent = "↗";
         inner.appendChild(arrow);
 
         const bottom = document.createElement("div");
