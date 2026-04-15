@@ -355,7 +355,7 @@
           "cols": 1
         },
         {
-          "src": "img/visuals/nestseekers/327W11THst-back.webp",
+          "src": "img/visuals/nestseekers/327w11thst-back.webp",
           "caption": {
             "es": "Material impreso",
             "en": "Print material"
@@ -363,7 +363,7 @@
           "cols": 2
         },
         {
-          "src": "img/visuals/nestseekers/327W11THst-front.webp",
+          "src": "img/visuals/nestseekers/327w11thst-front.webp",
           "caption": {
             "es": "Material impreso",
             "en": "Print material"
@@ -371,7 +371,7 @@
           "cols": 1
         },
         {
-          "src": "img/visuals/nestseekers/439W21THst-back.webp",
+          "src": "img/visuals/nestseekers/439w21thst-back.webp",
           "caption": {
             "es": "Material impreso",
             "en": "Print material"
@@ -379,7 +379,7 @@
           "cols": 1
         },
         {
-          "src": "img/visuals/nestseekers/439W21THst-front.webp",
+          "src": "img/visuals/nestseekers/439w21thst-front.webp",
           "caption": {
             "es": "Material impreso",
             "en": "Print material"
@@ -430,7 +430,7 @@
           }
         },
         {
-          "src": "img/visuals/insolito/Asset 1.svg",
+          "src": "img/visuals/insolito/asset-1.svg",
           "caption": {
             "es": "Isotipo",
             "en": "Isotype"
@@ -438,7 +438,7 @@
           "cols": 1
         },
         {
-          "src": "img/visuals/insolito/Asset 2.svg",
+          "src": "img/visuals/insolito/asset-2.svg",
           "caption": {
             "es": "Marca",
             "en": "Brand mark"
