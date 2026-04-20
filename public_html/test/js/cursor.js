@@ -1,18 +1,34 @@
 // Custom cursor
 (function () {
   if (window.matchMedia('(pointer: coarse)').matches) return;
+  if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
+    document.documentElement.classList.add('safari-browser');
+    return;
+  }
 
   const dot = document.createElement('div');
   dot.id = 'cursor-dot';
   dot.textContent = '↗';
   document.body.appendChild(dot);
 
-  let mx = -100, my = -100, rotation = 0;
+  let mx = -100, my = -100, rotation = 0, rafPending = false;
+
+  function updateDot() {
+    dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%) rotate(${rotation}deg)`;
+    rafPending = false;
+  }
+
+  function scheduleUpdate() {
+    if (!rafPending) {
+      rafPending = true;
+      requestAnimationFrame(updateDot);
+    }
+  }
 
   window.addEventListener('mousemove', e => {
     mx = e.clientX;
     my = e.clientY;
-    dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%) rotate(${rotation}deg)`;
+    scheduleUpdate();
   });
 
   const SELECTORS = 'a, button, .tile, .tile-xl, [class*="cursor-pointer"]';
@@ -33,7 +49,7 @@
         const inBrandCreation = tile.closest('#brand-creation-grid');
         dot.style.color = (inBrandCreation && !tile.classList.contains('pixel-active')) ? 'var(--main-color)' : 'var(--whitest)';
       }
-      dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%) rotate(${rotation}deg)`;
+      scheduleUpdate();
     }
   });
 
@@ -41,7 +57,7 @@
     if (e.target.closest(SELECTORS) && !e.relatedTarget?.closest(SELECTORS)) {
       rotation = 0;
       dot.style.color = '';
-      dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%) rotate(${rotation}deg)`;
+      scheduleUpdate();
     }
   });
 })();

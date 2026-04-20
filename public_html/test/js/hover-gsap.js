@@ -71,7 +71,7 @@ function initPixelHoverVariant(tile, variant) {
     sweep:      { cols: 20, color: "var(--main-color)", from: "start",  dur: 0.02,  each: 0.0008, outEach: 0.0002 },
     burst:      { cols: 8,  color: "var(--main-color)", from: "center", dur: 0.04,  each: 0.008,  outEach: 0.004  },
     glitch:     { cols: 18, color: "var(--main-color)", from: "random", dur: 0.015, each: 0.0006, outEach: 0.0002, isGlitch: true, bgImage: "img/visuals/meta/meta-bg-opa.svg" },
-    dissolve:   { cols: 16, color: "var(--main-color)", from: "random", dur: 0.25,  each: 0.004,  outEach: 0.002, ease: "power1.out" },
+    dissolve:   { cols: 16, color: "var(--main-color)", from: "random", dur: 0.15,  each: 0.002,  outEach: 0.001, ease: "power1.out" },
   };
   const v = { ...variants[variant] || variants.brandColor };
   if (tile.dataset.hoverColor) v.color = tile.dataset.hoverColor;
@@ -243,10 +243,13 @@ function initGsapHovers() {
   const isMobile = window.innerWidth <= 1024;
 
   const devGrid = document.getElementById("brand-development-grid");
-  if (devGrid) devGrid.querySelectorAll(".tile, .tile-xl").forEach(t => { if (!isMobile) initPixelHoverSimple(t); });
+  if (devGrid) devGrid.querySelectorAll(".tile, .tile-xl").forEach(t => { if (!isMobile) initPixelHoverVariant(t, "dissolve"); });
 
   const pdGrid = document.getElementById("product-design-grid");
-  if (pdGrid) pdGrid.querySelectorAll(".tile, .tile-xl").forEach(t => initPixelHoverSimple(t, isMobile));
+  if (pdGrid) pdGrid.querySelectorAll(".tile, .tile-xl").forEach(t => {
+    if (isMobile) initPixelHoverSimple(t, true);
+    else initPixelHoverVariant(t, "dissolve");
+  });
 }
 
 window.initGsapHovers = initGsapHovers;

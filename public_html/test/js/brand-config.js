@@ -12,7 +12,7 @@ function buildBrandCreationItems(logos) {
                 tiles: entry.stack.map((t, i) => {
                     const isXl = t.size === "tile-xl";
                     const logos = [{ src: t.src, loading: "lazy", alt: t.alt, logoSize: t.logoSize, invertLogo: t.invertLogo }];
-                    if (t.multi) logos.push({ src: t.multi, loading: "lazy", alt: t.alt, logoSize: t.multiLogoSize ?? t.logoSize });
+                    if (t.multi) logos.push({ src: t.multi, loading: "lazy", alt: t.alt, logoSize: t.multiLogoSize ?? t.logoSize, invertLogo: t.invertLogo });
                     return {
                         tileClass: isXl ? "tile tile-xl" : "tile",
                         innerClass: t.multi ? "brand-grid-logo-wrap multi-logo" : "brand-grid-logo-wrap",
@@ -29,7 +29,7 @@ function buildBrandCreationItems(logos) {
         const isXl = entry.size === "tile-xl";
         const isWide = entry.span === 8 || entry.span === 6;
         const singleLogos = [{ src: entry.src, loading: "lazy", alt: entry.alt, logoSize: entry.logoSize, invertLogo: entry.invertLogo }];
-        if (entry.multi) singleLogos.push({ src: entry.multi, loading: "lazy", alt: entry.alt, logoSize: entry.multiLogoSize ?? entry.logoSize });
+        if (entry.multi) singleLogos.push({ src: entry.multi, loading: "lazy", alt: entry.alt, logoSize: entry.multiLogoSize ?? entry.logoSize, invertLogo: entry.invertLogo });
         return {
             layout: "single",
             span: entry.span,
@@ -41,6 +41,7 @@ function buildBrandCreationItems(logos) {
             tag: JSON.stringify(entry.tag || []),
             bgColor: entry.bgColor,
             bgImage: entry.bgImage,
+            bgVideo: entry.bgVideo || "",
             project: entry.project,
             showLabel: entry.showLabel,
             title: entry.title

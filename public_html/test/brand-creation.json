@@ -55,8 +55,8 @@
       "size": "tile-xl",
       "span": 4,
       "logoSize": 200,
-      "invertLogo": false,
-      "bgImage": "",
+      "invertLogo": true,
+      "bgImage": "img/backgrounds/pontitosi.webp",
       "tag": [
         "Health",
         "Education",
@@ -80,8 +80,9 @@
       "size": "tile-xl",
       "span": 8,
       "logoSize": 500,
-      "invertLogo": false,
-      "bgImage": "img/meta-bg-green.svg",
+      "invertLogo": true,
+      "bgImage": "",
+      "bgVideo": "img/backgrounds/meta.mp4",
       "tag": [
         "Health",
         "Uruguay"
@@ -207,7 +208,7 @@
       "span": 4,
       "logoSize": 300,
       "invertLogo": true,
-      "bgImage": "img/test-5.webp",
+      "bgImage": "img/backgrounds/upmidface3.webp",
       "tag": [
         "Health",
         "Education",
@@ -233,8 +234,8 @@
           "alt": "Lu Maria",
           "size": "tile",
           "logoSize": 200,
-          "invertLogo": false,
-          "bgImage": "",
+          "invertLogo": true,
+          "bgImage": "img/backgrounds/lumaria.webp",
           "tag": [
             "Music",
             "Argentina"
@@ -282,8 +283,8 @@
       "size": "tile-xl",
       "span": 4,
       "logoSize": 200,
-      "invertLogo": false,
-      "bgImage": "",
+      "invertLogo": true,
+      "bgImage": "img/backgrounds/eg.webp",
       "tag": [
         "Health",
         "Marketing"
@@ -375,27 +376,28 @@
     },
     {
       "order": 12,
-      "src": "img/logos/flittz-icon-logo.svg",
-      "alt": "Flitzz",
+      "src": "img/logos/farolatino-icon-logo.svg",
+      "alt": "Faro Latino",
       "size": "tile-xl",
       "span": 4,
-      "logoSize": 200,
+      "logoSize": 175,
       "invertLogo": true,
-      "multi": "img/logos/flittz-logo.svg",
-      "multiLogoSize": 150,
-      "bgImage": "img/test.webp",
+      "multi": "img/logos/farolatino-logo.svg",
+      "multiLogoSize": 250,
+      "bgImage": "img/backgrounds/farolatino.webp",
       "tag": [
-        "Tech",
-        "USA"
+        "Music",
+        "Corporate",
+        "LATAM"
       ],
       "label": {
         "es": {
-          "name": "Flitzz",
-          "industry": "Branding para plataforma de análisis de comportamiento de consumidores y lectores."
+          "name": "FaroLatino",
+          "industry": "Rebranding para empresa pionera de distribución digital de música y entretenimiento en Latinoamérica, enfocada en proteger y potenciar la propiedad intelectual de músicos y creadores."
         },
         "en": {
-          "name": "Flitzz",
-          "industry": "Branding for a consumer and reader behavior analytics platform."
+          "name": "FaroLatino",
+          "industry": "Rebranding for a pioneering Latin American digital music and entertainment distribution company focused on protecting and expanding the intellectual property of musicians and content creators."
         }
       }
     },
@@ -426,28 +428,27 @@
     },
     {
       "order": 14,
-      "src": "img/logos/farolatino-icon-logo.svg",
-      "alt": "Faro Latino",
+      "src": "img/logos/flittz-icon-logo.svg",
+      "alt": "Flittz",
       "size": "tile-xl",
       "span": 4,
       "logoSize": 175,
-      "invertLogo": false,
-      "multi": "img/logos/farolatino-logo.svg",
-      "multiLogoSize": 250,
-      "bgImage": "",
+      "invertLogo": true,
+      "multi": "img/logos/flittz-logo.svg",
+      "multiLogoSize": 150,
+      "bgImage": "img/backgrounds/flittz.webp",
       "tag": [
-        "Music",
-        "Corporate",
-        "LATAM"
+        "Tech",
+        "USA"
       ],
       "label": {
         "es": {
-          "name": "FaroLatino",
-          "industry": "Rebranding para empresa pionera de distribución digital de música y entretenimiento en Latinoamérica, enfocada en proteger y potenciar la propiedad intelectual de músicos y creadores."
+          "name": "Flittz",
+          "industry": "Branding para plataforma de análisis de comportamiento de consumidores y lectores."
         },
         "en": {
-          "name": "FaroLatino",
-          "industry": "Rebranding for a pioneering Latin American digital music and entertainment distribution company focused on protecting and expanding the intellectual property of musicians and content creators."
+          "name": "Flittz",
+          "industry": "Branding for a consumer and reader behavior analytics platform."
         }
       }
     },
@@ -530,10 +531,10 @@
       "size": "tile-xl",
       "span": 4,
       "logoSize": 175,
-      "invertLogo": false,
+      "invertLogo": true,
       "multi": "img/logos/banegas-day-logo.svg",
-      "multiLogoSize": 275,
-      "bgImage": "",
+      "multiLogoSize": 300,
+      "bgImage": "img/backgrounds/banegas2.webp",
       "tag": [
         "Health",
         "Education",
@@ -559,8 +560,8 @@
           "alt": "Kamea",
           "size": "tile",
           "logoSize": 200,
-          "invertLogo": false,
-          "bgImage": "",
+          "invertLogo": true,
+          "bgImage": "img/backgrounds/kamea.webp",
           "tag": [
             "Music",
             "USA"
@@ -681,8 +682,8 @@
           "alt": "Lucia Marafuschi",
           "size": "tile",
           "logoSize": 175,
-          "invertLogo": false,
-          "bgImage": "",
+          "invertLogo": true,
+          "bgImage": "img/backgrounds/lucia.webp",
           "tag": [
             "Health",
             "Argentina"
@@ -731,8 +732,8 @@
           "alt": "Ambrosia",
           "size": "tile",
           "logoSize": 200,
-          "invertLogo": false,
-          "bgImage": "",
+          "invertLogo": true,
+          "bgImage": "img/backgrounds/ambrosia2.webp",
           "labelSize": "1rem",
           "tag": [
             "Food",
@@ -806,8 +807,9 @@
       "size": "tile",
       "span": 4,
       "logoSize": 300,
-      "invertLogo": false,
+      "invertLogo": true,
       "bgImage": "",
+      "bgVideo": "img/backgrounds/zoom3.mp4",
       "tag": [
         "Design Studio",
         "Argentina"

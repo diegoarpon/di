@@ -113,17 +113,6 @@ function showContent(category, isInitial) {
   } else {
     applyTab();
   }
-
-  // Cerrar sidebar en mobile al seleccionar tab
-  if (window.innerWidth <= 1024) {
-    const sidebar = document.getElementById("sidebar");
-    const toggle = document.querySelector(".mobile-menu-toggle");
-    if (sidebar && sidebar.classList.contains("open")) {
-      sidebar.classList.remove("open");
-      toggle?.classList.remove("open");
-      toggle?.setAttribute("aria-expanded", false);
-    }
-  }
 }
 
 // Mobile sidebar toggle
@@ -208,6 +197,17 @@ function createBrandTile(tileConfig) {
     const s = document.createElement("style");
     s.textContent = `.${uid}::before { background-image: url(${tileConfig.bgImage}); }`;
     tile.appendChild(s);
+  }
+  if (tileConfig.bgVideo) {
+    tile.classList.add("tile-has-video");
+    const video = document.createElement("video");
+    video.src = tileConfig.bgVideo;
+    video.autoplay = true;
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+    video.className = "tile-bg-video";
+    tile.appendChild(video);
   }
   if (tileConfig.label) tile.dataset.label = JSON.stringify(tileConfig.label);
   if (tileConfig.tag) tile.dataset.tag = tileConfig.tag;
