@@ -13,13 +13,9 @@
       "hoverColor": "var(--main-color)",
       "project": "eg",
       "projectName": "EG Marketing",
-      "description": {
-        "es": "Construcción de identidad de marca abarcando lo visual, comunicacional, digital y físico para EG, consultora especializada en marketing y producción de eventos del sector médico. <br>Selección de trabajos realizados desde 2023 a la fecha.",
-        "en": "Brand identity construction encompassing visual, communicational, digital and physical aspects for EG, a consulting firm specialized in marketing and event production for the medical sector. Selection of works carried out from 2023 to date."
-      },
       "title": {
         "es": "branding 360",
-        "en": "Identity & System"
+        "en": "branding 360"
       },
       "label": {
         "es": {
@@ -28,7 +24,7 @@
         },
         "en": {
           "name": "EG Marketing",
-          "industry": "Consulting firm specialized in medicine, creator and organizer of events for the professional community"
+          "industry": "For a consulting agency specialized in medical marketing."
         }
       },
       "gallery": [
@@ -128,13 +124,9 @@
       "hoverColor": "var(--main-color)",
       "project": "meta",
       "projectName": "Congreso META",
-      "description": {
-        "es": "Identidad y sistema gráfico y comunicacional para el primer Congreso de Medicina Estética, Tecnología & Antiaging de Uruguay. Tuvo lugar en febrero '25 en Punta del Este, con participación de destacados profesionales del sector a nivel nacional e internacional. El proyecto abarcó desde la creación de la marca, su aplicación en piezas gráficas y digitales, hasta el diseño de la escenografía del evento.",
-        "en": "Identity and graphic and communicational system for the first Aesthetic Medicine, Technology & Antiaging Congress of Uruguay. It took place in February '25 in Punta del Este, with the participation of prominent professionals in the sector at both national and international levels. The project encompassed everything from brand creation, its application in graphic and digital pieces, to the design of the event's scenography."
-      },
       "title": {
         "es": "dirección creativa",
-        "en": "Identity & Congress"
+        "en": "creative direction"
       },
       "label": {
         "es": {
@@ -143,7 +135,7 @@
         },
         "en": {
           "name": "Meta",
-          "industry": "Aesthetic Medicine, Technology & Antiaging Congress of Uruguay."
+          "industry": "For the first Aesthetic Medicine Congress of Uruguay."
         }
       },
       "gallery": [
@@ -280,22 +272,18 @@
       "hoverColor": "var(--main-color)",
       "project": "nestseekers",
       "projectName": "EG Marketing",
-      "description": {
-        "es": "Dirección y coordinación de campañas de lanzamiento para edificios residenciales de lujo en Nueva York. Desarrollo de identidad visual, diseño de avisos de prensa y material impreso para la promoción de los inmuebles en el mercado local.",
-        "en": "Direction and coordination of launch campaigns for luxury residential buildings in New York. Development of visual identity, design of press ads and print material for the promotion of the properties in the local market."
-      },
       "title": {
         "es": "dirección creativa",
-        "en": "Campaign & Print"
+        "en": "creative direction"
       },
       "label": {
         "es": {
           "name": "Nestseekers",
-          "industry": "Para agencia inmobiliaria de propiedades de lujo con base en NYC."
+          "industry": "Para inmobiliaria de propiedades de lujo con base en NYC"
         },
         "en": {
           "name": "Nestseekers",
-          "industry": "Global real estate brokerage at the nexus of technology and media"
+          "industry": "For a luxury real estate firm based in NYC"
         }
       },
       "gallery": [
@@ -402,22 +390,18 @@
       "hoverColor": "var(--main-color)",
       "project": "insolito",
       "projectName": "insólito café de especialidad",
-      "description": {
-        "es": "Expansión del branding de este café de especialidad, continuándolo y desarrolando nuevos códigos visuales y aplicaciones para la marca. El proyecto incluye desarrollos digitales para su sister-brand, Lapanaderi. Selección de trabajos realizados desde 2025 a la fecha.",
-        "en": "Expansion of the branding for this specialty coffee shop, continuing it and developing new visual codes and applications for the brand. The project includes digital developments for its sister-brand, Lapanaderi."
-      },
       "title": {
         "es": "ampliación de marca",
-        "en": "Brand Id. entity"
+        "en": "brand expansion"
       },
       "label": {
         "es": {
           "name": "Insólito",
-          "industry": "Para café de especialidad."
+          "industry": "Para café de especialidad"
         },
         "en": {
           "name": "Insólito",
-          "industry": "Brand identity for a signature restaurant"
+          "industry": "For a specialty coffee shop"
         }
       },
       "gallery": [
@@ -447,6 +431,26 @@
           "cols": 2
         }
       ]
+    },
+    {
+      "order": 5,
+      "type": "text",
+      "size": "tile-xl",
+      "span": 6,
+      "text": {
+        "es": "Lapanaderí <br> En proceso <br> Mayo 2026",
+        "en": "Lapanaderí <br> In the works <br> May, 2026."
+      }
+    },
+    {
+      "order": 6,
+      "type": "text",
+      "size": "tile-xl",
+      "span": 6,
+      "text": {
+        "es": "SI. Salud Integral <br> En proceso <br> Mayo 2026",
+        "en": "SI. Salud Integral <br> In the works <br> May, 2026."
+      }
     }
   ],
   "tiles": [],

@@ -12,11 +12,10 @@
         "en": "QuikForms App"
       },
       "subtitle": {
-        "es": "Diseño de producto digital",
-        "en": "Digital product design"
+        "es": "Desktop App para gestión de formularios digitales",
+        "en": "Desktop application for managing digital forms"
       },
-      "year": "2024",
-      "tool": "Figma"
+      "year": "2024"
     },
     {
       "order": 2,
@@ -24,17 +23,16 @@
       "span": 6,
       "logoSize": 100,
       "invertLogo": false,
-      "hoverColor": "var(--petrol-blue)",
+      "hoverColor": "var(--teal)",
       "title": {
         "es": "QuikForms Manager App",
         "en": "QuikForms Manager App"
       },
       "subtitle": {
-        "es": "Diseño de producto digital",
-        "en": "Digital product design"
+        "es": "Desktop App para gestión y creación de formularios digitales ",
+        "en": "Desktop application for managing and creating digital forms"
       },
-      "year": "2025",
-      "tool": "Figma"
+      "year": "2025"
     },
     {
       "order": 3,
@@ -42,15 +40,31 @@
       "span": 6,
       "logoSize": 100,
       "invertLogo": false,
-      "hoverColor": "var(--meta)",
+      "hoverColor": "var(--mint)",
       "secondaryLogo": "img/logos/formstream-logo.svg",
       "secondaryLogoSize": 300,
       "subtitle": {
-        "es": "Diseño de producto digital",
-        "en": "Digital product design"
+        "es": "Desktop App para completar formularios digitales",
+        "en": "Desktop application for completing digital forms"
       },
-      "year": "2025",
-      "tool": "Figma"
+      "year": "2025"
+    },
+    {
+      "order": 4,
+      "src": "img/visuals/logos/trio-logo.svg",
+      "span": 6,
+      "logoSize": 75,
+      "invertLogo": false,
+      "hoverColor": "var(--bubblegum)",
+      "title": {
+        "es": "Trio Rewards App",
+        "en": "Trio Rewards App"
+      },
+      "subtitle": {
+        "es": "Plataforma de marketing comunitario para restaurantes locales",
+        "en": "Community marketing platform for local restaurants"
+      },
+      "year": "2022"
     }
   ],
   "tiles": [],

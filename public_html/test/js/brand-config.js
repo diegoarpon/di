@@ -4,6 +4,17 @@
 
 function buildBrandCreationItems(logos) {
     return logos.map(entry => {
+        if (entry.type === "text") {
+            return {
+                layout: "single",
+                span: entry.span,
+                guides: ["top", "left"],
+                type: "text",
+                size: entry.size || "tile",
+                text: entry.text,
+                panelImage: entry.panelImage
+            };
+        }
         if (entry.stack) {
             return {
                 layout: "stacked",
@@ -18,9 +29,12 @@ function buildBrandCreationItems(logos) {
                         innerClass: t.multi ? "brand-grid-logo-wrap multi-logo" : "brand-grid-logo-wrap",
                         logos,
                         label: t.label,
+                        name: t.alt,
                         tag: JSON.stringify(t.tag || []),
                         bgImage: t.bgImage || "",
                         labelSize: t.labelSize || "",
+                        workType: t.workType,
+                        year: t.year,
                         ...(i > 0 && { separatorBefore: true })
                     };
                 })
@@ -38,18 +52,27 @@ function buildBrandCreationItems(logos) {
             guides: ["top", "left"],
             logos: singleLogos,
             label: entry.label,
+            name: entry.alt,
             tag: JSON.stringify(entry.tag || []),
             bgColor: entry.bgColor,
             bgImage: entry.bgImage,
             bgVideo: entry.bgVideo || "",
             project: entry.project,
             showLabel: entry.showLabel,
-            title: entry.title
+            title: entry.title,
+            panelImage: entry.panelImage,
+            panelImageSize: entry.panelImageSize,
+            workType: entry.workType,
+            year: entry.year,
+            pixelColor: entry.pixelColor || entry.gallery?.find(g => g.type === "color")?.bg,
+            hoverColor: entry.hoverColor
         };
     });
 }
 
 let brandCreationItems = [];
+let brandDevItems = [];
+let brandPdItems = [];
 
 Promise.all([
     fetch("brand-creation.json").then(r => r.json()),
@@ -64,21 +87,13 @@ Promise.all([
     }
     if (document.getElementById("brand-development-grid") && devData.brandDevelopment) {
         const sortedDev = [...devData.brandDevelopment].sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
-        const devItems = buildBrandCreationItems(sortedDev.map(e => ({ ...e, showLabel: true })));
-        renderBrandCreationGrid(devItems, "brand-development-grid");
-        const devGrid = document.getElementById("brand-development-grid");
-        devGrid.querySelectorAll(".tile, .tile-xl").forEach((tile, i) => {
-            const colorEntry = sortedDev[i]?.gallery?.find(g => g.type === "color");
-            const color = sortedDev[i]?.pixelColor || colorEntry?.bg;
-            if (color) tile.dataset.pixelColor = color;
-            const hoverColor = sortedDev[i]?.hoverColor;
-            if (hoverColor) tile.dataset.hoverColor = hoverColor;
-        });
+        brandDevItems = buildBrandCreationItems(sortedDev.map(e => ({ ...e, showLabel: true })));
+        renderBrandCreationGrid(brandDevItems, "brand-development-grid");
         if (typeof window.initGsapHovers === "function") window.initGsapHovers();
     }
     if (document.getElementById("product-design-grid") && pdData.productDesign) {
-        const pdItems = [...pdData.productDesign].sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
-        renderProductDesignGrid(pdItems);
+        brandPdItems = [...pdData.productDesign].sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+        renderProductDesignGrid(brandPdItems);
     }
     if (typeof window.initGsapHovers === "function") window.initGsapHovers();
     if (typeof window.signalDataReady === "function") window.signalDataReady();

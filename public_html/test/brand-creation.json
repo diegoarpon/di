@@ -8,19 +8,26 @@
       "span": 4,
       "logoSize": 300,
       "invertLogo": false,
-      "bgImage": "",
-      "tag": [
-        "Health",
-        "Rosario"
-      ],
+      "workType": "Branding",
+      "year": "2026",
+      "tag": {
+        "es": [
+          "Salud",
+          "Medicina Estética"
+        ],
+        "en": [
+          "Health",
+          "Aesthetic Medicine"
+        ]
+      },
       "label": {
         "es": {
           "name": "SI Salud Integral",
-          "industry": "Desarrollo de marca, sistema de identidad y aplicaciones para centro de salud enfocado en la integración de cuerpo, mente y emoción."
+          "industry": "Centro de salud que aborda el bienestar desde una mirada integral: cuerpo, mente y emoción en equilibrio."
         },
         "en": {
           "name": "SI Salud Integral",
-          "industry": "Brand development, identity system, and applications for a health center focused on the integration of body, mind, and emotions."
+          "industry": "Holistic health center focused on aligning body, mind, and emotions for complete well-being."
         }
       }
     },
@@ -32,19 +39,26 @@
       "span": 4,
       "logoSize": 250,
       "invertLogo": false,
-      "bgImage": "",
-      "tag": [
-        "Health",
-        "Usuhaia"
-      ],
+      "workType": "Branding",
+      "year": "2026",
+      "tag": {
+        "es": [
+          "Salud",
+          "Medicina Estética"
+        ],
+        "en": [
+          "Health",
+          "Aesthetic Medicine"
+        ]
+      },
       "label": {
         "es": {
-          "name": "Juliana Oppici",
-          "industry": "Desarrollo de marca y aplicaciones para médica estética y directora de centro de estética avanzada."
+          "name": "Dra. Juliana Oppici",
+          "industry": "Médica estética especializada en tratamientos corporales, con enfoque en resultados naturales y bienestar integral."
         },
         "en": {
-          "name": "Juliana Oppici",
-          "industry": "Brand development and applications for an aesthetic physician and director of an advanced aesthetics center."
+          "name": "Dra. Juliana Oppici",
+          "industry": "Aesthetic physician focused on body treatments that enhance natural results and overall well-being."
         }
       }
     },
@@ -57,19 +71,26 @@
       "logoSize": 200,
       "invertLogo": true,
       "bgImage": "img/backgrounds/pontitosi.webp",
-      "tag": [
-        "Health",
-        "Education",
-        "LATAM"
-      ],
+      "workType": "Branding",
+      "year": "2025",
+      "tag": {
+        "es": [
+          "Salud",
+          "Dermatologia"
+        ],
+        "en": [
+          "Health",
+          "Dermatology"
+        ]
+      },
       "label": {
         "es": {
           "name": "Ponti Tosi",
-          "industry": "Desarrollo de marca, sistema visual y diseño web para sociedad de divulgación en Dermatología Funcional con enfoque en PNIE, con aval universitario."
+          "industry": "Plataforma de divulgación en Dermatología Funcional con enfoque en PNIE, respaldada por instituciones académicas."
         },
         "en": {
           "name": "Ponti Tosi",
-          "industry": "Brand development, visual system, and web design for an outreach organization focused on Functional Dermatology with a PNIE approach, backed by a university."
+          "industry": "Functional dermatology platform grounded in psychoneuroimmunoendocrinology (PNIE), supported by academic institutions."
         }
       }
     },
@@ -81,20 +102,27 @@
       "span": 8,
       "logoSize": 500,
       "invertLogo": true,
-      "bgImage": "",
       "bgVideo": "img/backgrounds/meta.mp4",
-      "tag": [
-        "Health",
-        "Uruguay"
-      ],
+      "workType": "Branding",
+      "year": "2025",
+      "tag": {
+        "es": [
+          "Salud",
+          "Medicina Estética"
+        ],
+        "en": [
+          "Health",
+          "Aesthetic Medicine"
+        ]
+      },
       "label": {
         "es": {
           "name": "Meta",
-          "industry": "Desarrollo de marca multiplataforma, aplicaciones espaciales, piezas de comunicación y diseño web para el primer congreso de Medicina Estética, Tecnología y Antiaging de Uruguay."
+          "industry": "Congreso internacional que reúne innovación, tecnología y tendencias en medicina estética y antiaging."
         },
         "en": {
           "name": "Meta",
-          "industry": "Multiplatform brand development, spatial applications, communication assets, and web design for Uruguay’s first Aesthetic Medicine, Technology & Anti-aging Congress."
+          "industry": "International conference bringing together cutting-edge innovation, technology, and trends in aesthetic medicine and anti-aging."
         }
       }
     },
@@ -104,24 +132,21 @@
       "stack": [
         {
           "src": "img/logos/players-logo.svg",
-          "alt": "Players",
+          "alt": "Players Sports Grill",
           "size": "tile",
           "logoSize": 200,
           "invertLogo": false,
-          "bgImage": "",
-          "tag": [
-            "Food",
-            "USA"
-          ],
-          "label": {
-            "es": {
-              "name": "Players",
-              "industry": "Rebranding para restaurante en Idaho."
-            },
-            "en": {
-              "name": "Players",
-              "industry": "Restaurant rebranding (Idaho, USA)."
-            }
+          "workType": "reBranding",
+          "year": "2014",
+          "tag": {
+            "es": [
+              "Gastronomía",
+              "Restaurant"
+            ],
+            "en": [
+              "Gastronomy",
+              "Restaurant"
+            ]
           }
         },
         {
@@ -130,20 +155,15 @@
           "size": "tile",
           "logoSize": 300,
           "invertLogo": false,
-          "bgImage": "",
-          "tag": [
-            "Corporate",
-            "Argentina"
-          ],
-          "label": {
-            "es": {
-              "name": "Hit PR",
-              "industry": "Desarrollo de marca para agencia de relaciones públicas."
-            },
-            "en": {
-              "name": "Hit PR",
-              "industry": "Brand development for a public relations agency."
-            }
+          "workType": "Branding",
+          "year": "2020",
+          "tag": {
+            "es": [
+              "Agencia de Relaciones Públicas"
+            ],
+            "en": [
+              "Public Relations Agency"
+            ]
           }
         }
       ]
@@ -158,20 +178,15 @@
           "size": "tile",
           "logoSize": 200,
           "invertLogo": false,
-          "bgImage": "",
-          "tag": [
-            "Corporate",
-            "Argentina"
-          ],
-          "label": {
-            "es": {
-              "name": "Zlatar Nario",
-              "industry": "Desarrollo de marca y sistema de identidad para estudio jurídico."
-            },
-            "en": {
-              "name": "Zlatar Nario",
-              "industry": "Brand development and identity system for a law firm."
-            }
+          "workType": "Branding",
+          "year": "2014",
+          "tag": {
+            "es": [
+              "Estudio Juridico"
+            ],
+            "en": [
+              "Law Firm"
+            ]
           }
         },
         {
@@ -180,22 +195,16 @@
           "size": "tile",
           "logoSize": 300,
           "invertLogo": false,
-          "bgImage": "",
           "labelSize": "1rem",
-          "tag": [
-            "Real Estate",
-            "Corporate",
-            "USA"
-          ],
-          "label": {
-            "es": {
-              "name": "Nestseekers",
-              "industry": "Rebranding in-house para empresa de real estate de lujo con sede principal en NYC y presencia global."
-            },
-            "en": {
-              "name": "Nestseekers",
-              "industry": "In-house rebranding for a luxury real estate company headquartered in NYC with a global presence."
-            }
+          "workType": "reBranding",
+          "year": "2011",
+          "tag": {
+            "es": [
+              "Empresa Inmobiliaria de Lujo"
+            ],
+            "en": [
+              "Luxury Real Estate Company"
+            ]
           }
         }
       ]
@@ -203,25 +212,32 @@
     {
       "order": 7,
       "src": "img/logos/up-mid-face-logo.svg",
-      "alt": "Upmid",
+      "alt": "Curso Up Mid Face",
       "size": "tile-xl",
       "span": 4,
       "logoSize": 300,
       "invertLogo": true,
       "bgImage": "img/backgrounds/upmidface3.webp",
-      "tag": [
-        "Health",
-        "Education",
-        "LATAM"
-      ],
+      "workType": "Branding",
+      "year": "2023",
+      "tag": {
+        "es": [
+          "Salud",
+          "Medicina Estética"
+        ],
+        "en": [
+          "Health",
+          "Aesthetic Medicine"
+        ]
+      },
       "label": {
         "es": {
-          "name": "Upmid",
-          "industry": "Branding para programa de formación avanzada en medicina estética enfocado en tercio medio y superior facial, creado por EG Marketing."
+          "name": "Up & Mid Face",
+          "industry": "Programa de formación avanzada en técnicas de rejuvenecimiento facial."
         },
         "en": {
-          "name": "Upmid",
-          "industry": "Branding for an advanced aesthetic medicine training program focused on the mid and upper face, created by EG Marketing."
+          "name": "Up & Mid Face",
+          "industry": "Advanced training program focused on modern facial rejuvenation techniques."
         }
       }
     },
@@ -236,42 +252,34 @@
           "logoSize": 200,
           "invertLogo": true,
           "bgImage": "img/backgrounds/lumaria.webp",
-          "tag": [
-            "Music",
-            "Argentina"
-          ],
-          "label": {
-            "es": {
-              "name": "Lu Maria",
-              "industry": "Identidad para artista y compositora."
-            },
-            "en": {
-              "name": "Lu Maria",
-              "industry": "Brand identity for a music artist and songwriter."
-            }
+          "workType": "Branding",
+          "year": "2025",
+          "tag": {
+            "es": [
+              "Música",
+              "Compositora"
+            ],
+            "en": [
+              "Music",
+              "Composer"
+            ]
           }
         },
         {
           "src": "img/logos/art-climate-logo.svg",
-          "alt": "Art Climate",
+          "alt": "Art + Climate",
           "size": "tile",
           "logoSize": 200,
           "invertLogo": false,
-          "bgImage": "",
-          "labelSize": "1rem",
-          "tag": [
-            "NGO",
-            "USA"
-          ],
-          "label": {
-            "es": {
-              "name": "Art + Climate",
-              "industry": "Marca para plataforma que apoya a artistas, productores culturales y organizaciones comprometidas con el cambio climático."
-            },
-            "en": {
-              "name": "Art + Climate",
-              "industry": "Brand for a platform supporting artists, cultural producers, and organizations committed to climate action."
-            }
+          "workType": "Brand refresh",
+          "year": "2023",
+          "tag": {
+            "es": [
+              "ONG"
+            ],
+            "en": [
+              "NGO"
+            ]
           }
         }
       ]
@@ -285,18 +293,24 @@
       "logoSize": 200,
       "invertLogo": true,
       "bgImage": "img/backgrounds/eg.webp",
-      "tag": [
-        "Health",
-        "Marketing"
-      ],
+      "workType": "Rebranding",
+      "year": "2023",
+      "tag": {
+        "es": [
+          "Agencia"
+        ],
+        "en": [
+          "Consulting Agency"
+        ]
+      },
       "label": {
         "es": {
           "name": "EG Marketing",
-          "industry": "Desarrollo de marca integral para consultora especializada en medicina, creadora y organizadora de eventos para la comunidad profesional."
+          "industry": "Consultora de marketing especializada en el sector médico, creadora de experiencias y eventos para la comunidad profesional."
         },
         "en": {
           "name": "EG Marketing",
-          "industry": "Full brand development for a consulting firm specialized in medicine and the creation and organization of events for the professional community."
+          "industry": "Marketing consultancy for the medical industry, crafting high-impact experiences and events for professional communities."
         }
       }
     },
@@ -306,46 +320,37 @@
       "stack": [
         {
           "src": "img/logos/mariela-reale-logo.svg",
-          "alt": "Mariela Reale",
+          "alt": "Dra. Mariela Reale",
           "size": "tile",
           "logoSize": 150,
           "invertLogo": false,
-          "bgImage": "",
-          "tag": [
-            "Health",
-            "Argentina"
-          ],
-          "label": {
-            "es": {
-              "name": "Dra. Mariela Reale",
-              "industry": "Marca y aplicaciones para especialista en medicina estética."
-            },
-            "en": {
-              "name": "Mariela Reale",
-              "industry": "Brand and applications for an aesthetic medicine specialist."
-            }
+          "workType": "Branding",
+          "year": "2025",
+          "tag": {
+            "es": [
+              "Salud",
+              "Medicina Estética"
+            ],
+            "en": [
+              "Aesthetic Medicine"
+            ]
           }
         },
         {
           "src": "img/logos/formstream-logo.svg",
-          "alt": "Formstream",
+          "alt": "FormStream",
           "size": "tile",
           "logoSize": 300,
           "invertLogo": false,
-          "bgImage": "",
-          "tag": [
-            "Tech",
-            "USA"
-          ],
-          "label": {
-            "es": {
-              "name": "Formstream",
-              "industry": "Marca para plataforma de creación de formularios online para profesionales y empresas."
-            },
-            "en": {
-              "name": "Formstream",
-              "industry": "Brand for an online form-building platform for professionals and businesses."
-            }
+          "workType": "Branding",
+          "year": "2025",
+          "tag": {
+            "es": [
+              "App para gestión de formularios"
+            ],
+            "en": [
+              "Form Management App"
+            ]
           }
         }
       ]
@@ -358,19 +363,24 @@
       "span": 4,
       "logoSize": 250,
       "invertLogo": false,
-      "bgImage": "",
-      "tag": [
-        "Corporate",
-        "USA"
-      ],
+      "workType": "Branding",
+      "year": "2013",
+      "tag": {
+        "es": [
+          "Revista Digital"
+        ],
+        "en": [
+          "Digital Magazine"
+        ]
+      },
       "label": {
         "es": {
           "name": "International Food Trader",
-          "industry": "Desarrollo de marca integral para revista digital dedicada a la comunidad internacional del comercio de alimentos."
+          "industry": "Medio digital especializado en noticias, análisis y tendencias del comercio global de alimentos."
         },
         "en": {
           "name": "International Food Trader",
-          "industry": "Full brand development for a digital publication serving the international food trading community."
+          "industry": "Global digital publication covering news, insights, and trends shaping the global food trade industry."
         }
       }
     },
@@ -385,19 +395,24 @@
       "multi": "img/logos/farolatino-logo.svg",
       "multiLogoSize": 250,
       "bgImage": "img/backgrounds/farolatino.webp",
-      "tag": [
-        "Music",
-        "Corporate",
-        "LATAM"
-      ],
+      "workType": "ReBranding",
+      "year": "2009",
+      "tag": {
+        "es": [
+          "Musica y Entretenimiento"
+        ],
+        "en": [
+          "Music and Entertainment"
+        ]
+      },
       "label": {
         "es": {
           "name": "FaroLatino",
-          "industry": "Rebranding para empresa pionera de distribución digital de música y entretenimiento en Latinoamérica, enfocada en proteger y potenciar la propiedad intelectual de músicos y creadores."
+          "industry": "Empresa pionera en distribución digital de música y contenido de entretenimiento en Latinoamérica."
         },
         "en": {
           "name": "FaroLatino",
-          "industry": "Rebranding for a pioneering Latin American digital music and entertainment distribution company focused on protecting and expanding the intellectual property of musicians and content creators."
+          "industry": "Pioneering digital distributor of music and entertainment content across Latin America."
         }
       }
     },
@@ -409,20 +424,24 @@
       "span": 4,
       "logoSize": 300,
       "invertLogo": false,
-      "bgImage": "",
-      "tag": [
-        "Tech",
-        "Corporate",
-        "LATAM"
-      ],
+      "workType": "Rebranding",
+      "year": "2012",
+      "tag": {
+        "es": [
+          "Ingeniería de Software"
+        ],
+        "en": [
+          "Product Engineering"
+        ]
+      },
       "label": {
         "es": {
           "name": "Virtualmind Software House",
-          "industry": "Branding in-house durante más de 10 años para empresa de staff augmentation tecnológica."
+          "industry": "Empresa latinoamericana de desarrollo de software y staff augmentation, con evolución de marca gestionada in-house durante más de una década."
         },
         "en": {
           "name": "Virtualmind",
-          "industry": "In-house branding for over 10 years for a tech staff augmentation company."
+          "industry": "Latin American custom software and staff augmentation company with over a decade of in-house brand evolution."
         }
       }
     },
@@ -437,18 +456,24 @@
       "multi": "img/logos/flittz-logo.svg",
       "multiLogoSize": 150,
       "bgImage": "img/backgrounds/flittz.webp",
-      "tag": [
-        "Tech",
-        "USA"
-      ],
+      "workType": "Branding",
+      "year": "2019",
+      "tag": {
+        "es": [
+          "Aplicación de Noticias"
+        ],
+        "en": [
+          "News App"
+        ]
+      },
       "label": {
         "es": {
           "name": "Flittz",
-          "industry": "Branding para plataforma de análisis de comportamiento de consumidores y lectores."
+          "industry": "Plataforma de análisis de comportamiento de usuarios aplicada a consumo de contenido y medios digitales."
         },
         "en": {
           "name": "Flittz",
-          "industry": "Branding for a consumer and reader behavior analytics platform."
+          "industry": "Behavior analytics platform for understanding how users consume digital content and media."
         }
       }
     },
@@ -460,20 +485,15 @@
       "span": 4,
       "logoSize": 200,
       "invertLogo": false,
-      "bgImage": "",
-      "tag": [
-        "Fitness",
-        "Uruguay"
-      ],
-      "label": {
-        "es": {
-          "name": "Bronx Gym",
-          "industry": "Logo para gimnasio enfocado en entrenamiento funcional."
-        },
-        "en": {
-          "name": "Bronx Gym",
-          "industry": "Logo for a gym focused on functional training."
-        }
+      "workType": "Branding",
+      "year": "2019",
+      "tag": {
+        "es": [
+          "Fitness"
+        ],
+        "en": [
+          "Fitness"
+        ]
       }
     },
     {
@@ -484,20 +504,15 @@
       "span": 4,
       "logoSize": 150,
       "invertLogo": false,
-      "bgImage": "",
-      "tag": [
-        "Tech",
-        "Argentina"
-      ],
-      "label": {
-        "es": {
-          "name": "Corvalius",
-          "industry": "Diseño integral para startup tecnológica."
-        },
-        "en": {
-          "name": "Corvalius",
-          "industry": "Integrated design for a tech startup."
-        }
+      "workType": "Branding",
+      "year": "2009",
+      "tag": {
+        "es": [
+          "Startup Tecnológico"
+        ],
+        "en": [
+          "Tech Startup"
+        ]
       }
     },
     {
@@ -508,20 +523,15 @@
       "span": 4,
       "logoSize": 250,
       "invertLogo": false,
-      "bgImage": "",
-      "tag": [
-        "Fashion",
-        "USA"
-      ],
-      "label": {
-        "es": {
-          "name": "FX Prom",
-          "industry": "Rebranding para boutique online de ropa formal femenina."
-        },
-        "en": {
-          "name": "FX Prom",
-          "industry": "Rebranding for a women’s formalwear online boutique."
-        }
+      "workType": "Branding",
+      "year": "2016",
+      "tag": {
+        "es": [
+          "Moda"
+        ],
+        "en": [
+          "Fashion"
+        ]
       }
     },
     {
@@ -535,19 +545,26 @@
       "multi": "img/logos/banegas-day-logo.svg",
       "multiLogoSize": 300,
       "bgImage": "img/backgrounds/banegas2.webp",
-      "tag": [
-        "Health",
-        "Education",
-        "LATAM"
-      ],
+      "workType": "Branding",
+      "year": "2025",
+      "tag": {
+        "es": [
+          "Salud",
+          "Medicina Estética"
+        ],
+        "en": [
+          "Health",
+          "Aesthetic Medicine"
+        ]
+      },
       "label": {
         "es": {
           "name": "Banegas Day",
-          "industry": "Branding integral para jornadas de disección cadavérica en vivo, con charlas y workshops a cargo de destacados profesionales de la medicina estética y la cirugía plástica."
+          "industry": "Jornadas intensivas de formación con disección cadavérica en vivo, charlas y workshops liderados por referentes en medicina estética y cirugía plástica."
         },
         "en": {
           "name": "Banegas Day",
-          "industry": "Full branding for live cadaveric dissection events featuring talks and workshops led by leading professionals in aesthetic medicine and plastic surgery."
+          "industry": "High-level medical training event featuring live cadaver dissections, talks, and workshops led by top experts in aesthetic medicine and plastic surgery."
         }
       }
     },
@@ -562,41 +579,37 @@
           "logoSize": 200,
           "invertLogo": true,
           "bgImage": "img/backgrounds/kamea.webp",
-          "tag": [
-            "Music",
-            "USA"
-          ],
-          "label": {
-            "es": {
-              "name": "Kamea",
-              "industry": "Logo para banda de indie pop basada en NYC."
-            },
-            "en": {
-              "name": "Kamea",
-              "industry": "Logo for an NYC-based indie pop band."
-            }
+          "workType": "Branding",
+          "year": "2013",
+          "tag": {
+            "es": [
+              "Música",
+              "Banda de Rock Indie"
+            ],
+            "en": [
+              "Music",
+              "Indie Rock Band"
+            ]
           }
         },
         {
           "src": "img/logos/courtside-logo.svg",
-          "alt": "Courtside",
+          "alt": "Courtside Bar",
           "size": "tile",
           "logoSize": 220,
           "invertLogo": false,
-          "bgImage": "img/test.webp",
-          "tag": [
-            "Food",
-            "USA"
-          ],
-          "label": {
-            "es": {
-              "name": "Courtside",
-              "industry": "Marca para restaurante en Idaho."
-            },
-            "en": {
-              "name": "Courtside",
-              "industry": "Restaurant brand (Idaho, USA)."
-            }
+          "bgImage": "",
+          "workType": "Rebranding",
+          "year": "2015",
+          "tag": {
+            "es": [
+              "Gastronomía",
+              "Restaurant"
+            ],
+            "en": [
+              "Gastronomy",
+              "Restaurant"
+            ]
           }
         }
       ]
@@ -607,24 +620,19 @@
       "stack": [
         {
           "src": "img/logos/imd-logo.svg",
-          "alt": "IMD",
+          "alt": "Industrial Model & Design",
           "size": "tile",
           "logoSize": 200,
           "invertLogo": false,
-          "bgImage": "",
-          "tag": [
-            "Corporate",
-            "USA"
-          ],
-          "label": {
-            "es": {
-              "name": "IMD",
-              "industry": "Rebranding para compañía de diseño industrial."
-            },
-            "en": {
-              "name": "IMD",
-              "industry": "Rebranding for an industrial design company."
-            }
+          "workType": "Branding",
+          "year": "2015",
+          "tag": {
+            "es": [
+              "Diseño Industrial"
+            ],
+            "en": [
+              "Industrial Design"
+            ]
           }
         },
         {
@@ -633,20 +641,15 @@
           "size": "tile",
           "logoSize": 250,
           "invertLogo": false,
-          "bgImage": "",
-          "tag": [
-            "Tech",
-            "Rosario"
-          ],
-          "label": {
-            "es": {
-              "name": "iBlum",
-              "industry": "Branding para startup tecnológica."
-            },
-            "en": {
-              "name": "iBlum",
-              "industry": "Branding for a software consulting firm based in Rosario, Argentina."
-            }
+          "workType": "Branding",
+          "year": "2014",
+          "tag": {
+            "es": [
+              "Startup Tecnológico"
+            ],
+            "en": [
+              "Tech Startup"
+            ]
           }
         }
       ]
@@ -661,42 +664,35 @@
           "size": "tile",
           "logoSize": 250,
           "invertLogo": false,
-          "bgImage": "",
-          "tag": [
-            "Corporate",
-            "Rosario"
-          ],
-          "label": {
-            "es": {
-              "name": "Duarte & Asociados",
-              "industry": "Creación de marca, piezas digitales y sitio web para estudio contable."
-            },
-            "en": {
-              "name": "Duarte & Asociados",
-              "industry": "Brand creation, digital assets, and website design for an accounting firm."
-            }
+          "workType": "Rebranding",
+          "year": "2009",
+          "tag": {
+            "es": [
+              "Estudio Contable"
+            ],
+            "en": [
+              "Accounting Firm"
+            ]
           }
         },
         {
-          "src": "img/logos/lucia-marafuschi-monograma-logo.svg",
-          "alt": "Lucia Marafuschi",
+          "src": "img/logos/lucia-marafuschi-logo.svg",
+          "alt": "Dra. Lucia Marafuschi",
           "size": "tile",
-          "logoSize": 175,
+          "logoSize": 250,
           "invertLogo": true,
           "bgImage": "img/backgrounds/lucia.webp",
-          "tag": [
-            "Health",
-            "Argentina"
-          ],
-          "label": {
-            "es": {
-              "name": "Lucia Marafuschi",
-              "industry": "Rebranding para médica estética especializada en tratamientos faciales y corporales."
-            },
-            "en": {
-              "name": "Lucia Marafuschi",
-              "industry": "Rebranding for an aesthetic physician specializing in facial and body treatments."
-            }
+          "workType": "Rebranding",
+          "year": "2026",
+          "tag": {
+            "es": [
+              "Salud",
+              "Medicina Estética"
+            ],
+            "en": [
+              "Health",
+              "Aesthetic Medicine"
+            ]
           }
         }
       ]
@@ -711,118 +707,112 @@
           "size": "tile",
           "logoSize": 250,
           "invertLogo": false,
-          "bgImage": "",
-          "tag": [
-            "Fashion",
-            "USA"
-          ],
-          "label": {
-            "es": {
-              "name": "Mena Lombard",
-              "industry": "Branding para diseñadora y mentora de ADN creativo en moda."
-            },
-            "en": {
-              "name": "Mena Lombard",
-              "industry": "Branding for a fashion designer and mentor focused on creative DNA in fashion."
-            }
+          "workType": "Branding",
+          "year": "2018",
+          "tag": {
+            "es": [
+              "Asesoría y Diseño de Moda"
+            ],
+            "en": [
+              "Fashion Consulting and Design"
+            ]
           }
         },
         {
-          "src": "img/logos/ambrosia-logo.svg",
-          "alt": "Ambrosia",
+          "src": "img/logos/lafleur-logo.svg",
+          "alt": "Lafleur",
           "size": "tile",
-          "logoSize": 200,
-          "invertLogo": true,
-          "bgImage": "img/backgrounds/ambrosia2.webp",
-          "labelSize": "1rem",
-          "tag": [
-            "Food",
-            "Spain"
-          ],
-          "label": {
-            "es": {
-              "name": "Ambrosia",
-              "industry": "Creación de marca para emprendimiento gastronómico de pastelería saludable y consciente."
-            },
-            "en": {
-              "name": "Ambrosia",
-              "industry": "Brand development for a mindful, health-focused pastry venture."
-            }
+          "logoSize": 250,
+          "invertLogo": false,
+          "bgImage": "",
+          "workType": "Rebranding",
+          "year": "2026",
+          "tag": {
+            "es": [
+              "Salud",
+              "Óptica"
+            ],
+            "en": [
+              "Health",
+              "Optics"
+            ]
           }
         }
       ]
     },
     {
       "order": 23,
-      "src": "img/logos/lafleur-logo.svg",
-      "alt": "La Fleur",
-      "size": "tile-xl",
       "span": 4,
-      "logoSize": 250,
-      "invertLogo": false,
-      "bgImage": "",
-      "tag": [
-        "Health",
-        "Argentina"
-      ],
-      "label": {
-        "es": {
-          "name": "La Fleur",
-          "industry": "Rebranding para centro especializado en contactología y audiología."
+      "stack": [
+        {
+          "src": "img/logos/ambrosia-logo.svg",
+          "alt": "Ambrosia",
+          "size": "tile",
+          "logoSize": 200,
+          "invertLogo": true,
+          "bgImage": "img/backgrounds/ambrosia.webp",
+          "workType": "Branding",
+          "year": "2016",
+          "tag": {
+            "es": [
+              "Gastronomía",
+              "Pastelería Boutique"
+            ],
+            "en": [
+              "Gastronomy",
+              "Boutique Patisserie"
+            ]
+          }
         },
-        "en": {
-          "name": "La Fleur",
-          "industry": "Rebranding for a center specialized in contactology and audiology."
+        {
+          "src": "img/logos/conception-logo.svg",
+          "alt": "Conception",
+          "size": "tile",
+          "logoSize": 300,
+          "invertLogo": false,
+          "workType": "Branding",
+          "year": "2019",
+          "tag": {
+            "es": [
+              "Música",
+              "Banda de Jazz y Funk"
+            ],
+            "en": [
+              "Music",
+              "Jazz and Funk Band"
+            ]
+          }
         }
-      }
-    },
-    {
-      "order": 24,
-      "src": "img/logos/conception-logo.svg",
-      "alt": "Conception",
-      "size": "tile",
-      "span": 4,
-      "logoSize": 300,
-      "invertLogo": false,
-      "bgImage": "",
-      "tag": [
-        "Music",
-        "Argentina"
-      ],
-      "label": {
-        "es": {
-          "name": "Conception Funk & Soul",
-          "industry": "Marca para ensamble musical."
-        },
-        "en": {
-          "name": "Conception Funk & Soul",
-          "industry": "Brand for a music ensemble."
-        }
-      }
+      ]
     },
     {
       "order": 25,
       "src": "img/logos/zoom-logo.svg",
-      "alt": "Zoom",
+      "alt": "ZOom",
       "size": "tile",
       "span": 4,
       "logoSize": 300,
       "invertLogo": true,
-      "bgImage": "",
       "bgVideo": "img/backgrounds/zoom3.mp4",
-      "tag": [
-        "Design Studio",
-        "Argentina"
-      ],
-      "label": {
-        "es": {
-          "name": "ZOom",
-          "industry": "Identidad para estudio de diseño con foco en la creación de marcas y experiencias digitales."
-        },
-        "en": {
-          "name": "ZOom",
-          "industry": "Identity for a design studio focused on creating brands and digital experiences."
-        }
+      "workType": "Branding",
+      "year": "0000",
+      "tag": {
+        "es": [
+          "Estudio de Diseño"
+        ],
+        "en": [
+          "Design Studio"
+        ]
+      }
+    },
+    {
+      "order": 26,
+      "type": "text",
+      "size": "tile",
+      "span": 4,
+      "text": {
+        "es": "3 nuevas identidades en proceso. <br> Mayo 2026",
+        "en": "3 logo projects in the works. <br> May 2026"
       }
     }
   ],

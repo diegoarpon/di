@@ -6,7 +6,7 @@ function createPixelGrid(tile, cols = 14, color = "var(--main-color)", glitch = 
   const pg = document.createElement("div");
   pg.className = "pixel-grid";
   Object.assign(pg.style, {
-    position: "absolute", inset: "0",
+    position: "absolute", top: "0", right: "0", bottom: "0", left: "0",
     display: "grid",
     gridTemplateColumns: `repeat(${cols}, 1fr)`,
     gridTemplateRows: `repeat(${rows}, 1fr)`,
@@ -66,6 +66,8 @@ function initPixelHover(tile) {
 }
 
 function initPixelHoverVariant(tile, variant) {
+  if (tile._pixelHoverInit) return;
+  tile._pixelHoverInit = true;
   const variants = {
     brandColor: { cols: 14, color: "var(--main-color)", from: "random", dur: 0.03,  each: 0.001,  outEach: 0.0003 },
     sweep:      { cols: 20, color: "var(--main-color)", from: "start",  dur: 0.02,  each: 0.0008, outEach: 0.0002 },
@@ -98,7 +100,7 @@ function initPixelHoverVariant(tile, variant) {
           overlay = document.createElement("div");
           overlay.className = "pixel-bg-image";
           Object.assign(overlay.style, {
-            position: "absolute", inset: "0",
+            position: "absolute", top: "0", right: "0", bottom: "0", left: "0",
             backgroundImage: `url(${v.bgImage})`,
             backgroundSize: "cover", backgroundPosition: "center",
             opacity: "0", zIndex: "var(--z-tile-text)", pointerEvents: "none"
@@ -158,12 +160,15 @@ function initPixelHoverSimple(tile, locked) {
 
 /* --- Gradient pixel helpers --- */
 
+const _resolveColorCache = {};
 function resolveColor(raw) {
+  if (_resolveColorCache[raw]) return _resolveColorCache[raw];
   const tmp = document.createElement("div");
   tmp.style.color = raw;
   document.body.appendChild(tmp);
   const rgb = getComputedStyle(tmp).color;
   tmp.remove();
+  _resolveColorCache[raw] = rgb;
   return rgb;
 }
 
@@ -186,7 +191,7 @@ function createGradientPixelGrid(tile, cols, colorTop, colorBottom, mode) {
   const pg = document.createElement("div");
   pg.className = "pixel-grid";
   Object.assign(pg.style, {
-    position: "absolute", inset: "0",
+    position: "absolute", top: "0", right: "0", bottom: "0", left: "0",
     display: "grid",
     gridTemplateColumns: `repeat(${cols}, 1fr)`,
     gridTemplateRows: `repeat(${rows}, 1fr)`,
@@ -214,36 +219,14 @@ function createGradientPixelGrid(tile, cols, colorTop, colorBottom, mode) {
   return pg;
 }
 
-function initPixelHoverGradient(tile, mode) {
-  if (tile._pixelHoverInit) return;
-  tile._pixelHoverInit = true;
-  const color = tile.dataset.hoverColor || tile.dataset.pixelColor || "var(--main-color)";
-  const colorEnd = "var(--blackest)";
-
-  tile.addEventListener("mouseenter", () => {
-    createGradientPixelGrid(tile, 14, color, colorEnd, mode);
-    const cells = Array.from(tile.querySelectorAll(".pixel-grid div"));
-    gsap.killTweensOf(cells);
-    cells.forEach(c => {
-      gsap.to(c, { opacity: parseFloat(c.dataset.targetOpa), duration: 0.03, delay: Math.random() * 0.05, ease: "none" });
-    });
-  });
-
-  tile.addEventListener("mouseleave", () => {
-    const cells = Array.from(tile.querySelectorAll(".pixel-grid div"));
-    gsap.killTweensOf(cells);
-    gsap.to(cells, { opacity: 0, duration: 0.01, stagger: { each: 0.0003, from: "random" }, ease: "none" });
-  });
-}
-
 function initGsapHovers() {
   const grid = document.getElementById("brand-creation-grid");
-  if (grid) grid.querySelectorAll(".tile").forEach(initPixelHover);
+  if (grid) grid.querySelectorAll(".tile:not(.tile-text)").forEach(initPixelHover);
 
   const isMobile = window.innerWidth <= 1024;
 
   const devGrid = document.getElementById("brand-development-grid");
-  if (devGrid) devGrid.querySelectorAll(".tile, .tile-xl").forEach(t => { if (!isMobile) initPixelHoverVariant(t, "dissolve"); });
+  if (devGrid) devGrid.querySelectorAll(".tile:not(.tile-text), .tile-xl:not(.tile-text)").forEach(t => { if (!isMobile) initPixelHoverVariant(t, "dissolve"); });
 
   const pdGrid = document.getElementById("product-design-grid");
   if (pdGrid) pdGrid.querySelectorAll(".tile, .tile-xl").forEach(t => {

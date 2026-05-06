@@ -31,8 +31,8 @@
     scheduleUpdate();
   });
 
-  const SELECTORS = 'a, button, .tile, .tile-xl, [class*="cursor-pointer"]';
-  const TILE_SELECTORS = '.tile, .tile-xl';
+  const SELECTORS = 'a, button, .tile:not(.tile-text), .tile-xl:not(.tile-text), [class*="cursor-pointer"]';
+  const TILE_SELECTORS = '.tile:not(.tile-text), .tile-xl:not(.tile-text)';
 
   document.addEventListener('click', e => {
     const tile = e.target.closest(TILE_SELECTORS);

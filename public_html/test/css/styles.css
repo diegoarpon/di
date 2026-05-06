@@ -45,10 +45,12 @@
   --blackest: #000000;
   --manteca: #f5f5dc;
 
-  --meta: #1ba165;
+  --mint: #1ba165;
   --petrol-blue: #0a6dca;
   --gold-yellow: #ffb700;
   --terracotta-dark: #ad4025;
+  --bubblegum: #F45B69;
+  --teal: #40BCD8;
 
   --graphite: #596275;
 
@@ -168,6 +170,29 @@ body {
   z-index: var(--z-tile);
 }
 
+.tile.tile-text {
+  align-items: flex-start;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+.tile-text-content {
+  padding: 2rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--blackest);
+  margin: 0;
+}
+
+.tile-text-image {
+  display: block;
+  max-width: 60%;
+  max-height: 4rem;
+  object-fit: contain;
+  padding: 0 2rem 2rem;
+}
+
 .tile-xl {
   height: calc(25rem + 1.5rem);
   display: flex;
@@ -235,7 +260,10 @@ body {
 /* Overlay */
 .overlay {
   position: fixed;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-color: var(--black-50);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -278,13 +306,31 @@ body {
 /* Language & Options */
 #lang-en,
 #lang-es {
-  border-bottom: 0.25rem solid transparent;
+  position: relative;
   padding-bottom: 0.1875rem;
+}
+
+#lang-en::after,
+#lang-es::after {
+  content: "";
+  position: absolute;
+  bottom: 0.1rem;
+  left: 0;
+  width: 0;
+  height: 0.25rem;
+  background-color: var(--main-color);
+  transition: width 0.3s ease;
+}
+
+#lang-en.active::after,
+#lang-es.active::after,
+#lang-en:hover::after,
+#lang-es:hover::after {
+  width: 100%;
 }
 
 #lang-en.active,
 #lang-es.active {
-  border-bottom-color: var(--main-color);
   color: var(--main-color);
   cursor: default;
 }
@@ -299,7 +345,7 @@ body {
 .option::after {
   content: "";
   position: absolute;
-  bottom: -0.25rem;
+  bottom: 0.1rem;
   left: 0;
   width: 0;
   height: 0.25rem;
@@ -411,7 +457,7 @@ body {
 
 /* Sidebar Nav Buttons */
 .sidebar-nav-btn {
-  width: 100% !important;
+  width: fit-content !important;
   max-width: 100% !important;
   white-space: normal !important;
   word-break: keep-all !important;
@@ -423,7 +469,7 @@ body {
 .sidebar-nav-btn::after {
   content: "";
   position: absolute;
-  bottom: -0.25rem;
+  bottom: -0.1rem;
   left: 0;
   width: 0;
   height: 0.25rem;
@@ -518,6 +564,7 @@ body {
 }
 
 @media (max-width: 1024px) {
+
   .option::after,
   .sidebar-nav-btn::after {
     display: none;
@@ -575,6 +622,29 @@ body {
   font-size: var(--fs-nav);
 }
 
+.contact-link {
+  position: relative;
+  width: fit-content !important;
+  max-width: fit-content !important;
+  display: inline-block !important;
+  padding-bottom: 0.1875rem;
+}
+
+.contact-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0.1rem;
+  left: 0;
+  width: 0;
+  height: 0.25rem;
+  background-color: var(--main-color);
+  transition: width 0.3s ease;
+}
+
+.contact-link:hover::after {
+  width: 100%;
+}
+
 .nav-button {
   text-transform: lowercase;
 }
@@ -613,7 +683,7 @@ body {
 }
 
 .tab-intro {
-  padding-top: 2.25rem;
+  padding-top: 2.5rem;
   padding-bottom: 3rem;
 }
 
@@ -666,7 +736,10 @@ body {
 
 .brand-hover-overlay {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-color: var(--main-color);
   opacity: 0.95;
   clip-path: circle(0% at 0% 0%);
@@ -679,6 +752,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   color: var(--blackest);
   font-size: var(--fs-tile-text);
   line-height: 1.25;
@@ -688,12 +763,53 @@ body {
   transition: opacity 0.3s ease 0s;
   z-index: var(--z-tile-text);
   padding: 2rem;
+  box-sizing: border-box;
 }
 
-.brand-hover-text strong {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+.brand-hover-name {
+  font-weight: 500;
+  font-size: 1.65rem;
+  margin-bottom: 0.75rem;
   display: block;
+}
+
+.brand-hover-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.tile:not(.tile-xl) .brand-hover-meta {
+  margin-bottom: 1rem;
+}
+
+.brand-hover-worktype,
+.brand-hover-year {
+  font-size: 0.85rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.pd-tile-year {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 0.85rem;
+  font-weight: 400;
+  z-index: var(--z-tile-text);
+}
+
+.brand-hover-tags {
+  display: block;
+  font-size: var(--fs-tile-text);
+  font-weight: 300;
+  margin-bottom: 0.75rem;
+}
+
+.brand-hover-industry {
+  display: block;
+  font-size: var(--fs-tile-text);
+  font-weight: 300;
 }
 
 #brand-creation .tile-xl .brand-hover-text {
@@ -751,6 +867,13 @@ body {
   z-index: var(--z-tile-text);
   opacity: 0;
   transition: opacity 0.2s ease;
+}
+
+.brand-dev-tool-icon {
+  width: 4.5rem;
+  height: 4.5rem;
+  object-fit: contain;
+  opacity: 0.6;
 }
 
 #brand-development-grid .tile:hover .brand-dev-arrow,
@@ -882,45 +1005,12 @@ body {
   background: var(--manteca);
 }
 
-.product-hover-custom::before,
-.product-hover-custom::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  transform: scale(0);
-  transition: transform 0.5s ease;
-  z-index: -1;
-}
-
-.product-hover-custom::before {
-  top: 0;
-  left: 0;
-}
-
-.product-hover-custom::after {
-  bottom: 0;
-  right: 0;
-  background: var(--main-color);
-  opacity: 0.9;
-}
-
-.product-hover-custom:hover::before {
-  width: 62.5rem;
-  height: 62.5rem;
-  transform: scale(1.1);
-}
-
-.product-hover-custom:hover::after {
-  width: 200%;
-  height: 200%;
-  transform: scale(0.8);
-}
-
 .tile-bg-video {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -937,7 +1027,10 @@ body {
 .tile-bg-image::before {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1071,21 +1164,20 @@ body {
   cursor: none !important;
 }
 
-.brand-hover-tag {
-  display: inline;
-  margin-right: 0.4rem;
-  font-size: var(--fs-tile-text);
-  font-weight: 300;
-}
-
-.brand-hover-tags {
+.brand-hover-image {
   display: block;
-  margin-top: 0.5rem;
+  max-width: 50%;
+  max-height: 3rem;
+  object-fit: contain;
+  margin-top: 1rem;
 }
 
 .project-loader {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 10000;
   display: flex;
   align-items: center;
@@ -1126,4 +1218,10 @@ body {
 
 .p-2rem {
   padding: 2rem;
+}
+
+@media (min-width: 1200px) {
+  .display-4 {
+    font-size: 3.25rem;
+  }
 }

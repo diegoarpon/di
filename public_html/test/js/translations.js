@@ -17,13 +17,13 @@ const translations = {
 
     // Main intro
     intro:
-      "Hi, I'm Diego (D) — Designer with 20 years of experience in branding, web and product design.<br>I work on real problems: brands that aren't understood, products that don't scale, interfaces that don't work.<br>I design clear, usable and sustainable solutions. More human than any AI.<br>Available for freelance work <span class='intro-arrow'>→</span> <a href='mailto:hello@disenod.com' class='fw-bold link' target='_blank' rel=''>hello@disenod.com</a>",
+      "Hi, I’m Diego (d) — a graphic designer focused on branding, web, and product. <br> I develop visual systems that bring clarity, structure, and longevity to brands. <br> Designed for humans, by a human. <span class='d-lg-block mt-4'> Available for freelance work <span class='intro-arrow'>→</span> <a href='mailto:hello@disenod.com' class='fw-bold link' target='_blank' rel=''>hello@disenod.com</a></span>",
 
     // Tab intros
     brandDevelopmentIntro:
-      "Comprehensive brand development projects that establish strong visual identities and strategic positioning for businesses across various industries.",
+      "Brand development across contexts: identity, communication, and creative direction applied to products, spaces, and experiences. <br> Systems designed to adapt and perform within their context.",
     productDesignIntro:
-      "User-centered product design solutions that transform complex ideas into intuitive digital experiences and innovative interfaces.",
+      "Product design focused on shaping complex ideas into intuitive and refined digital experiences.",
 
     // Footer
     end: "There's more work available upon request.",
@@ -47,16 +47,14 @@ const translations = {
 
     // Main intro
     intro:
-      "Hola, soy Diego (D) — Diseñador gráfico, con experiencia en marcas, web y diseño de producto.<br>Resuelvo problemas reales con soluciones claras, escalables y sostenibles en el tiempo. Más humano que cualquier IA.<br>Disponible para trabajo freelance <span class='intro-arrow'>→</span> <a href='mailto:hello@disenod.com' class='fw-bold link' target='_blank' rel=''>hello@disenod.com</a>",
-
+      "Hola, soy Diego (d) — diseñador gráfico especializado en branding, web y producto. <br> Resuelvo problemas de comunicación creando sistemas visuales claros, escalables <br class='d-none d-lg-block'>y consistentes. Diseño humano, para humanos. <span class='d-lg-block mt-4'> Disponible para trabajo freelance <span class='intro-arrow'>→</span> <a href='mailto:hello@disenod.com' class='fw-bold link' target='_blank' rel=''>hello@disenod.com</a></span>",
     // Tab intros
     brandDevelopmentIntro:
-      "Proyectos integrales de desarrollo de marca que establecen identidades visuales sólidas y posicionamiento estratégico para empresas de diversas industrias.",
+      "Proyectos de marca en acción: identidad, comunicación y dirección creativa aplicadas a productos, espacios y experiencias. <br> Sistemas que se adaptan y funcionan de acuerdo al contexto.",
     productDesignIntro:
-      "Soluciones de diseño de producto centradas en el usuario que transforman ideas complejas en experiencias digitales intuitivas e interfaces innovadoras.",
+      "Diseño de producto enfocado en transformar ideas complejas en experiencias digitales intuitivas y funcionales.",
 
     // Footer
-    end: "Más trabajos disponibles para mostrar a pedido.",
     back: "volver",
     test: "Complicar es fácil. Simplificar es difícil.",
 

@@ -29,6 +29,14 @@ window.switchLanguage = function (lang) {
 
   addCol4Panels();
 
+  if (typeof brandDevItems !== "undefined" && brandDevItems.length) {
+    renderBrandCreationGrid(brandDevItems, "brand-development-grid");
+    if (typeof window.initGsapHovers === "function") window.initGsapHovers();
+  }
+  if (typeof brandPdItems !== "undefined" && brandPdItems.length) {
+    renderProductDesignGrid(brandPdItems);
+  }
+
   document.querySelectorAll("#lang-en, #lang-es").forEach((btn) => btn.classList.remove("active"));
   const btn = document.getElementById("lang-" + lang);
   if (btn) btn.classList.add("active");
@@ -39,7 +47,7 @@ window.switchLanguage = function (lang) {
 // Add panels to col-4 elements
 function addCol4Panels() {
   document
-    .querySelectorAll("#brand-creation .tile, #brand-creation .tile-xl")
+    .querySelectorAll("#brand-creation .tile:not(.tile-text), #brand-creation .tile-xl:not(.tile-text)")
     .forEach((tile) => {
       const wasActive = tile.classList.contains("pixel-active");
       tile
@@ -48,8 +56,8 @@ function addCol4Panels() {
       if (wasActive) tile.classList.remove("pixel-active");
 
       const labelData = tile.dataset.label ? JSON.parse(tile.dataset.label) : null;
-      const content = (labelData && labelData[currentLang]) ||
-        (labelData && labelData.es) || { name: "Project", industry: "Brand Design" };
+      const content = (labelData && (labelData[currentLang] || labelData.es)) || {};
+      const displayName = content.name || tile.dataset.name || '';
 
       const overlay = document.createElement("div");
       overlay.className = "brand-hover-overlay";
@@ -59,8 +67,12 @@ function addCol4Panels() {
       text.className = "brand-hover-text";
       if (tile.dataset.labelSize) text.style.fontSize = tile.dataset.labelSize;
       if (tile.classList.contains("pixel-active")) text.style.opacity = "1";
-      const tag = tile.dataset.tag ? `<span class="brand-hover-tags">${JSON.parse(tile.dataset.tag).map(t => `<span class="brand-hover-tag"${tile.dataset.labelSize ? ` style="font-size:${tile.dataset.labelSize}"` : ''}>#${t}</span>`).join('')}</span>` : '';
-      text.innerHTML = `<strong>${content.name}</strong>${content.industry}${tag}`;
+      const img = tile.dataset.panelImage ? `<img src="${tile.dataset.panelImage}" class="brand-hover-image" alt="" loading="lazy"${tile.dataset.panelImageSize ? ` style="max-height:${tile.dataset.panelImageSize}px"` : ''}>` : '';
+      const meta = (tile.dataset.workType || tile.dataset.year) ? `<div class="brand-hover-meta"><span class="brand-hover-worktype">${tile.dataset.workType || ''}</span><span class="brand-hover-year">${tile.dataset.year || ''}</span></div>` : '';
+      const tagRaw = tile.dataset.tag ? JSON.parse(tile.dataset.tag) : null;
+      const tagArr = tagRaw ? (Array.isArray(tagRaw) ? tagRaw : (tagRaw[currentLang] || tagRaw.es || [])) : [];
+      const tagText = tagArr.join(' / ');
+      text.innerHTML = `${meta}${displayName ? `<span class="brand-hover-name">${displayName}</span>` : ''}${tagText ? `<span class="brand-hover-tags">${tagText}</span>` : ''}${content.industry ? `<span class="brand-hover-industry">${content.industry}</span>` : ''}${img}`;
       tile.appendChild(text);
     });
 
@@ -89,8 +101,11 @@ function showContent(category, isInitial) {
       tab.classList.toggle("tab-hidden", tab.id !== category);
     });
     if (category === "brand-creation" && typeof brandCreationItems !== "undefined" && brandCreationItems.length) {
-      renderBrandCreationGrid(brandCreationItems);
-      requestAnimationFrame(() => addCol4Panels());
+      const grid = document.getElementById("brand-creation-grid");
+      if (grid && !grid.hasChildNodes()) {
+        renderBrandCreationGrid(brandCreationItems);
+        requestAnimationFrame(() => addCol4Panels());
+      }
     }
     contentArea.scrollTop = 0;
     document.body.scrollTop = 0;
@@ -166,6 +181,35 @@ function initSwipeClose() {
   }, { passive: true });
 }
 
+function createDevInner(logos, title, metaText, arrowText, bottomLogos, showTool) {
+  const inner = document.createElement("div");
+  inner.className = "d-flex flex-column justify-content-between h-100 w-100 p-2rem";
+  const logoWrap = document.createElement("div");
+  logoWrap.className = "d-flex justify-content-start align-items-start flex-grow-1";
+  logos.forEach(logo => logoWrap.appendChild(createBrandLogo(logo)));
+  inner.appendChild(logoWrap);
+  const arrow = document.createElement("div");
+  arrow.className = "brand-dev-arrow d-flex align-items-center gap-2";
+  if (showTool) {
+    arrow.innerHTML = `${arrowText}<img src="img/figma-logo.svg" class="brand-dev-tool-icon" alt="Figma" loading="lazy">`;
+  } else {
+    arrow.textContent = arrowText;
+  }
+  inner.appendChild(arrow);
+  const bottom = document.createElement("div");
+  if (bottomLogos) bottomLogos.forEach(logo => bottom.appendChild(createBrandLogo(logo)));
+  const h4 = document.createElement("h4");
+  h4.className = "fw-bold mb-2 display-5";
+  h4.textContent = title;
+  const meta = document.createElement("div");
+  meta.className = "d-flex gap-2";
+  meta.textContent = metaText;
+  bottom.appendChild(h4);
+  bottom.appendChild(meta);
+  inner.appendChild(bottom);
+  return inner;
+}
+
 function createBrandGuide(className) {
   const guide = document.createElement("div");
   guide.className = className;
@@ -189,14 +233,18 @@ function createBrandLogo(logo) {
 
 function createBrandTile(tileConfig) {
   const tile = document.createElement("div");
-  tile.className = tileConfig.tileClass;
+  tile.className = tileConfig.tileClass || tileConfig.size || "tile";
   if (tileConfig.bgColor) tile.classList.add(tileConfig.bgColor);
   if (tileConfig.bgImage) {
     const uid = `tbg-${Math.random().toString(36).slice(2, 7)}`;
     tile.classList.add("tile-bg-image", uid);
-    const s = document.createElement("style");
-    s.textContent = `.${uid}::before { background-image: url(${tileConfig.bgImage}); }`;
-    tile.appendChild(s);
+    let sheet = document.getElementById("tile-bg-styles");
+    if (!sheet) {
+      sheet = document.createElement("style");
+      sheet.id = "tile-bg-styles";
+      document.head.appendChild(sheet);
+    }
+    sheet.textContent += `.${uid}::before { background-image: url(${tileConfig.bgImage}); }\n`;
   }
   if (tileConfig.bgVideo) {
     tile.classList.add("tile-has-video");
@@ -210,8 +258,13 @@ function createBrandTile(tileConfig) {
     tile.appendChild(video);
   }
   if (tileConfig.label) tile.dataset.label = JSON.stringify(tileConfig.label);
+  if (tileConfig.name) tile.dataset.name = tileConfig.name;
   if (tileConfig.tag) tile.dataset.tag = tileConfig.tag;
   if (tileConfig.labelSize) tile.dataset.labelSize = tileConfig.labelSize;
+  if (tileConfig.panelImage) tile.dataset.panelImage = tileConfig.panelImage;
+  if (tileConfig.panelImageSize) tile.dataset.panelImageSize = tileConfig.panelImageSize;
+  if (tileConfig.workType) tile.dataset.workType = tileConfig.workType;
+  if (tileConfig.year) tile.dataset.year = tileConfig.year;
   if (tileConfig.project) {
     tile.dataset.project = tileConfig.project;
     tile.classList.add("cursor-pointer");
@@ -220,6 +273,26 @@ function createBrandTile(tileConfig) {
       ca.classList.add("fading");
       setTimeout(() => { window.location.href = `project.html?p=${tileConfig.project}`; }, 500);
     });
+  }
+
+  if (tileConfig.pixelColor) tile.dataset.pixelColor = tileConfig.pixelColor;
+  if (tileConfig.hoverColor) tile.dataset.hoverColor = tileConfig.hoverColor;
+
+  if (tileConfig.type === "text") {
+    tile.classList.add("tile-text");
+    const p = document.createElement("p");
+    p.className = "tile-text-content";
+    p.innerHTML = tileConfig.text?.[currentLang] || tileConfig.text?.es || "";
+    tile.appendChild(p);
+    if (tileConfig.panelImage) {
+      const img = document.createElement("img");
+      img.src = tileConfig.panelImage;
+      img.className = "tile-text-image";
+      img.alt = "";
+      img.loading = "lazy";
+      tile.appendChild(img);
+    }
+    return tile;
   }
 
   const inner = document.createElement("div");
@@ -234,27 +307,7 @@ function createBrandTile(tileConfig) {
   if (tileConfig.showLabel && tileConfig.label) {
     const content = tileConfig.label[currentLang] || tileConfig.label.es;
     const title = tileConfig.title?.[currentLang] || tileConfig.title?.es || "";
-    const devInner = document.createElement("div");
-    devInner.className = "d-flex flex-column justify-content-between h-100 w-100 p-2rem";
-    const logoWrap = document.createElement("div");
-    logoWrap.className = "d-flex justify-content-start align-items-start flex-grow-1";
-    (tileConfig.logos || []).forEach(logo => logoWrap.appendChild(createBrandLogo(logo)));
-    devInner.appendChild(logoWrap);
-    const arrow = document.createElement("div");
-    arrow.className = "brand-dev-arrow";
-    arrow.textContent = "→";
-    devInner.appendChild(arrow);
-    const bottom = document.createElement("div");
-    const h4 = document.createElement("h4");
-    h4.className = "fw-bold mb-2 display-5";
-    h4.textContent = title;
-    const meta = document.createElement("div");
-    meta.className = "d-flex gap-2";
-    meta.textContent = content.industry;
-    bottom.appendChild(h4);
-    bottom.appendChild(meta);
-    devInner.appendChild(bottom);
-    tile.appendChild(devInner);
+    tile.appendChild(createDevInner(tileConfig.logos || [], title, content.industry, "→", null, false));
   } else {
     tile.appendChild(inner);
   }
@@ -324,47 +377,25 @@ function renderProductDesignGrid(items) {
         wrapper.appendChild(createBrandGuide("guide-h-double-100"));
         wrapper.appendChild(createBrandGuide("guide-v-double-100"));
 
-        const uid = `ph-${Math.random().toString(36).slice(2, 7)}`;
-        const s = document.createElement("style");
-        s.textContent = `.${uid}::before { background: ${item.hoverColor}; }`;
-
         const tile = document.createElement("div");
-        tile.className = `tile tile-xl ${uid}`;
-        if (item.hoverColor) tile.dataset.hoverColor = item.hoverColor;
-        tile.appendChild(s);
-
-        const inner = document.createElement("div");
-        inner.className = "d-flex flex-column justify-content-between h-100 w-100 p-2rem";
-
-        const logoWrap = document.createElement("div");
-        logoWrap.className = "d-flex justify-content-start align-items-start flex-grow-1";
-        const img = createBrandLogo({ src: item.src, loading: "lazy", alt: item.src, logoSize: item.logoSize });
-        logoWrap.appendChild(img);
-        inner.appendChild(logoWrap);
-
-        const arrow = document.createElement("div");
-        arrow.className = "brand-dev-arrow";
-        arrow.textContent = "↗";
-        inner.appendChild(arrow);
-
-        const bottom = document.createElement("div");
-        if (item.secondaryLogo) {
-            const secImg = createBrandLogo({ src: item.secondaryLogo, className: "mb-3", loading: "lazy", alt: "", logoSize: item.secondaryLogoSize });
-            bottom.appendChild(secImg);
+        tile.className = "tile tile-xl";
+        if (item.hoverColor) {
+          tile.dataset.hoverColor = item.hoverColor;
+          tile.style.setProperty("--tile-hover-color", item.hoverColor);
         }
+
         const title = item.title?.[currentLang] || item.title?.es || "";
         const subtitle = item.subtitle?.[currentLang] || item.subtitle?.es || "";
-        const h4 = document.createElement("h4");
-        h4.className = "fw-bold mb-2 display-5";
-        h4.textContent = title;
-        bottom.appendChild(h4);
-        const meta = document.createElement("div");
-        meta.className = "d-flex gap-2";
-        meta.textContent = [subtitle, item.year, item.tool].filter(Boolean).join(" / ");
-        bottom.appendChild(meta);
-        inner.appendChild(bottom);
-
-        tile.appendChild(inner);
+        const metaText = [subtitle, item.tool].filter(Boolean).join(" / ");
+        const logos = [{ src: item.src, loading: "lazy", alt: item.src, logoSize: item.logoSize }];
+        const bottomLogos = item.secondaryLogo ? [{ src: item.secondaryLogo, className: "mb-3", loading: "lazy", alt: "", logoSize: item.secondaryLogoSize }] : null;
+        tile.appendChild(createDevInner(logos, title, metaText, "↗", bottomLogos, true));
+        if (item.year) {
+          const yearEl = document.createElement("span");
+          yearEl.className = "pd-tile-year";
+          yearEl.textContent = item.year;
+          tile.appendChild(yearEl);
+        }
         wrapper.appendChild(tile);
         container.appendChild(wrapper);
     });
