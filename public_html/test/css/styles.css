@@ -66,7 +66,7 @@
   --fs-tile-xl: 1.25rem;
   --fs-caption: 1rem;
   --fs-product-meta: 1.2rem;
-  --fs-cursor: 3.6rem;
+  --fs-cursor: 3rem;
 
 
   /* Easing */
@@ -179,7 +179,7 @@ body {
 .tile-text-content {
   padding: 2rem;
   font-size: 1.75rem;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.2;
   color: var(--blackest);
   margin: 0;
@@ -698,24 +698,48 @@ body {
 }
 
 .project-header {
-  padding-top: 2.25rem;
+  padding-top: 2.5rem;
   padding-bottom: 3rem;
 }
 
 .project-back {
   display: inline-flex;
   align-items: center;
+  justify-content: flex-end;
   color: inherit;
   text-decoration: none;
-  font-size: var(--fs-nav);
   font-weight: 300;
   line-height: 1;
-  transition: transform 0.2s var(--ease-out);
 }
 
-.project-back:hover {
-  color: inherit;
-  transform: translateX(-0.25rem);
+.project-back-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.4s ease;
+}
+
+.project-back:hover .project-back-inner {
+  transform: translateX(-0.75rem);
+}
+
+.project-back-arrow-large {
+  font-size: 3.25rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.project-back-label {
+  font-size: 1.25rem;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: max-width 0.4s ease;
+  margin-bottom: 0.4rem;
+}
+
+.project-back:hover .project-back-label {
+  max-width: 6rem;
 }
 
 .mobile-menu-toggle-container {
@@ -1224,4 +1248,32 @@ body {
   .display-4 {
     font-size: 3.25rem;
   }
+}
+
+#footer-quote,
+#footer-author {
+  font-size: var(--fs-tile-text);
+}
+
+#footer-author {
+  font-weight: 300;
+}
+
+.project-meta {
+  font-size: var(--fs-tile-text);
+  font-weight: 300;
+}
+
+.project-breadcrumb {
+  font-size: 0.85rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: var(--blackest);
+}
+
+footer * {
+  background-color: var(--manteca);
+  z-index: var(--z-toggle);
+  position: relative;
 }

@@ -1,7 +1,7 @@
 const translations = {
   en: {
     intro:
-      "My name is Diego, but everybody calls me <span class='fw-bold'>D.</span><br><span class='fw-bold'>20</span> years of experience. <span class='fw-bold'>Branding</span>. <span class='fw-bold'>Web Front End</span>. <br class='d-block d-sm-none'>Friendlier than any AI.<br>Available for freelance work. <a href='#' class='fw-bold' target='_blank'>hello@disenod.com</a>",
+      "My name is Diego, but everybody calls me <span class='fw-bold'>D.</span><br><span class='fw-bold'>20</span> years of experience. <span class='fw-bold'>Branding</span>. <span class='fw-bold'>Web Front End</span>. <br class='d-block d-sm-none'>Friendlier than any AI.<br>Available for freelance work. <a href='#' class='fw-bold' target='_blank'>hola@disenod.com</a>",
     test: "To complicate is easy. To simplify is difficult.",
     end: "There's more work available upon request",
     projects: {
@@ -21,7 +21,7 @@ const translations = {
   },
   es: {
     intro:
-      "Mi nombre es Diego, pero todos me llaman <span class='fw-bold'>D.</span><br><span class='fw-bold'>20</span> años de experiencia. <span class='fw-bold'>Branding</span>. <span class='fw-bold'>Desarrollo Front End</span>. <br class='d-block d-sm-none'>Más amigable que cualquier IA.<br>Disponible para trabajo freelance. <a href='#' class='fw-bold' target='_blank'>hello@disenod.com</a>",
+      "Mi nombre es Diego, pero todos me llaman <span class='fw-bold'>D.</span><br><span class='fw-bold'>20</span> años de experiencia. <span class='fw-bold'>Branding</span>. <span class='fw-bold'>Desarrollo Front End</span>. <br class='d-block d-sm-none'>Más amigable que cualquier IA.<br>Disponible para trabajo freelance. <a href='#' class='fw-bold' target='_blank'>hola@disenod.com</a>",
     test: "Complicar es fácil. Simplificar es difícil.",
     end: "Hay más trabajo para mostrar a pedido",
     projects: {

@@ -219,7 +219,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const translations = {
     en: {
       intro:
-        "My name is Diego, but everybody calls me <span class='fw-bold'>D.</span><br><span class='fw-bold'>20</span> years of experience in <span class='fw-bold'>Branding</span> and <span class='fw-bold'>Web Front End Design</span>. <br class='d-block d-sm-none'>Friendlier than any AI.<br>Available for freelance work.<br class='d-block d-sm-none'> <span class='option'><a href='mailto:hola@disenod.com' class='fw-bold link main-color' target='_blank'>hola@disenod.com</a></span>",
+        "My name is Diego, but everybody calls me <span class='fw-bold'>D.</span><br><span class='fw-bold'>20</span> years of experience in <span class='fw-bold'>Branding</span> and <span class='fw-bold'>Web Front End Design</span>. <br class='d-block d-sm-none'>Friendlier than any AI.<br>Available for freelance work.<br class='d-block d-sm-none'> <span class='option'><a href='mailto:hola@disenod.com' class='fw-normal link main-color' target='_blank'>hola@disenod.com</a></span>",
       end: "There's more work available upon request.",
       test: "To complicate is easy. To simplify is difficult.",
       message1:
@@ -307,7 +307,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     es: {
       intro:
-        "Mi nombre es Diego, pero me llaman <span class='fw-bold'>D.</span><br><span class='fw-bold'>20</span> años de experiencia en <span class='fw-bold'>Branding</span> y <span class='fw-bold'>Desarrollo Front End</span>. <br class='d-block d-sm-none'>Más amigable que cualquier IA.<br>Disponible para trabajo freelance.<br class='d-block d-sm-none'> <span class='option'><a href='mailto:hola@disenod.com' class='fw-bold link main-color' target='_blank'>hola@disenod.com</a></span>",
+        "Mi nombre es Diego, pero me llaman <span class='fw-bold'>D.</span><br><span class='fw-bold'>20</span> años de experiencia en <span class='fw-bold'>Branding</span> y <span class='fw-bold'>Desarrollo Front End</span>. <br class='d-block d-sm-none'>Más amigable que cualquier IA.<br>Disponible para trabajo freelance.<br class='d-block d-sm-none'> <span class='option'><a href='mailto:hola@disenod.com' class='fw-normal link main-color' target='_blank'>hola@disenod.com</a></span>",
       end: "Más trabajos disponibles para mostrar a pedido.",
       test: "Complicar es fácil. Simplificar es difícil.",
       message1:

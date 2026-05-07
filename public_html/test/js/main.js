@@ -1,3 +1,28 @@
+const _footerQuotes = {
+  'brand-creation': {
+    es: { quote: 'La creatividad no es improvisación sin método.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' },
+    en: { quote: 'Creativity is not improvisation without method.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' }
+  },
+  'brand-development': {
+    es: { quote: 'La simplicidad es el resultado de un largo trabajo.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' },
+    en: { quote: 'Simplicity is the result of a long process of work.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' }
+  },
+  'product-design': {
+    es: { quote: 'Complicar es fácil, simplificar es difícil.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' },
+    en: { quote: "It's easy to complicate, but hard to simplify.", author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' }
+  }
+};
+
+function updateFooter(category) {
+  const q = document.getElementById('footer-quote');
+  const a = document.getElementById('footer-author');
+  if (!q || !a) return;
+  const data = _footerQuotes[category]?.[currentLang] || _footerQuotes[category]?.es;
+  if (!data) return;
+  q.textContent = `“${data.quote}”`;
+  a.innerHTML = `— ${data.author}`;
+}
+
 let _dataReady = false;
 let _resolveData;
 const dataReadyPromise = new Promise(r => { _resolveData = r; });
@@ -28,7 +53,12 @@ window.switchLanguage = function (lang) {
   });
 
   addCol4Panels();
+  updateFooter(localStorage.getItem('activeTab') || 'brand-creation');
 
+  if (typeof brandCreationItems !== "undefined" && brandCreationItems.length) {
+    renderBrandCreationGrid(brandCreationItems);
+    requestAnimationFrame(() => addCol4Panels());
+  }
   if (typeof brandDevItems !== "undefined" && brandDevItems.length) {
     renderBrandCreationGrid(brandDevItems, "brand-development-grid");
     if (typeof window.initGsapHovers === "function") window.initGsapHovers();
@@ -110,6 +140,7 @@ function showContent(category, isInitial) {
     contentArea.scrollTop = 0;
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
+    updateFooter(category);
   }
 
   function reveal() {
@@ -382,6 +413,10 @@ function renderProductDesignGrid(items) {
         if (item.hoverColor) {
           tile.dataset.hoverColor = item.hoverColor;
           tile.style.setProperty("--tile-hover-color", item.hoverColor);
+        }
+        if (item.URLFigma) {
+          tile.classList.add("cursor-pointer");
+          tile.addEventListener("click", () => window.open(item.URLFigma, "_blank"));
         }
 
         const title = item.title?.[currentLang] || item.title?.es || "";

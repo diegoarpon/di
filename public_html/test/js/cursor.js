@@ -14,7 +14,7 @@
   let mx = -100, my = -100, rotation = 0, rafPending = false;
 
   function updateDot() {
-    dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%) rotate(${rotation}deg)`;
+    dot.style.transform = `translate(${mx}px, ${my}px) translate(-100%, -50%) rotate(${rotation}deg)`;
     rafPending = false;
   }
 
