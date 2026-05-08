@@ -28,13 +28,13 @@ function buildBrandCreationItems(logos) {
                         tileClass: isXl ? "tile tile-xl" : "tile",
                         innerClass: t.multi ? "brand-grid-logo-wrap multi-logo" : "brand-grid-logo-wrap",
                         logos,
-                        label: t.label,
                         name: t.alt,
                         tag: JSON.stringify(t.tag || []),
                         bgImage: t.bgImage || "",
-                        labelSize: t.labelSize || "",
-                        workType: t.workType,
-                        year: t.year,
+                        ...(t.label && { label: t.label }),
+                        ...(t.labelSize && { labelSize: t.labelSize }),
+                        ...(t.workType && { workType: t.workType }),
+                        ...(t.year && { year: t.year }),
                         ...(i > 0 && { separatorBefore: true })
                     };
                 })
@@ -48,24 +48,18 @@ function buildBrandCreationItems(logos) {
             layout: "single",
             span: entry.span,
             tileClass: isXl ? "tile tile-xl" : "tile",
-            innerClass: entry.multi || isWide ? "brand-grid-logo-wrap" + (isWide ? " responsive-padding" : "") + (entry.multi ? " multi-logo" : "") : "brand-grid-logo-wrap",
+            innerClass: "brand-grid-logo-wrap" + (isWide ? " responsive-padding" : "") + (entry.multi ? " multi-logo" : ""),
             guides: ["top", "left"],
             logos: singleLogos,
-            label: entry.label,
             name: entry.alt,
             tag: JSON.stringify(entry.tag || []),
-            bgColor: entry.bgColor,
-            bgImage: entry.bgImage,
-            bgVideo: entry.bgVideo || "",
-            project: entry.project,
-            showLabel: entry.showLabel,
-            title: entry.title,
-            panelImage: entry.panelImage,
-            panelImageSize: entry.panelImageSize,
-            workType: entry.workType,
-            year: entry.year,
             pixelColor: entry.pixelColor || entry.gallery?.find(g => g.type === "color")?.bg,
-            hoverColor: entry.hoverColor
+            ...Object.fromEntries(
+                ['label','bgColor','bgImage','bgVideo','project','showLabel','title',
+                 'panelImage','panelImageSize','workType','year','hoverColor']
+                .filter(k => entry[k] != null)
+                .map(k => [k, entry[k]])
+            )
         };
     });
 }

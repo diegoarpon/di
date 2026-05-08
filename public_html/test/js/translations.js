@@ -25,10 +25,6 @@ const translations = {
     productDesignIntro:
       "    Designing products focused on shaping complex ideas into intuitive and refined <br class='d-none d-lg-block'>digital experiences. <span class='d-lg-block mt-4 fs-2 fw-normal'>Currently in development</span>",
 
-    // Footer
-    end: "There's more work available upon request.",
-    back: "back to projects",
-    test: "To complicate is easy. To simplify is difficult.",
 
   },
   es: {
@@ -52,11 +48,7 @@ const translations = {
     brandDevelopmentIntro:
       "Proyectos de marca en acción: identidad, comunicación y dirección creativa aplicadas a productos, espacios y experiencias. <br> Sistemas que se adaptan y funcionan de acuerdo al contexto.",
     productDesignIntro:
-      "Diseño de producto enfocado en transformar ideas complejas en experiencias digitales intuitivas y funcionales. <span class='d-lg-block mt-4 fs-2 fw-normal'>Actualmente en desarrollo</span>",
-
-    // Footer
-    back: "volver",
-    test: "Complicar es fácil. Simplificar es difícil.",
+      "Diseño de producto enfocado en transformar ideas complejas en experiencias digitales intuitivas y funcionales. <span class='d-lg-block mt-4 fs-2 fw-normal'>Actualmente en desarrollo.</span>",
 
   },
 };
@@ -75,3 +67,28 @@ function t(key) {
 }
 
 
+
+const _footerQuotes = {
+  'brand-creation': {
+    es: { quote: 'La creatividad no es improvisación sin método.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' },
+    en: { quote: 'Creativity is not improvisation without method.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' }
+  },
+  'brand-development': {
+    es: { quote: 'La simplicidad es el resultado de un largo trabajo.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' },
+    en: { quote: 'Simplicity is the result of a long process of work.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' }
+  },
+  'product-design': {
+    es: { quote: 'Complicar es fácil, simplificar es difícil.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' },
+    en: { quote: "It's easy to complicate, but hard to simplify.", author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' }
+  }
+};
+
+function updateFooter(category) {
+  const q = document.getElementById('footer-quote');
+  const a = document.getElementById('footer-author');
+  if (!q || !a) return;
+  const data = _footerQuotes[category]?.[currentLang] || _footerQuotes[category]?.es;
+  if (!data) return;
+  q.textContent = `\u201c${data.quote}\u201d`;
+  a.innerHTML = `\u2014 ${data.author}`;
+}

@@ -136,7 +136,7 @@
           "size": "tile",
           "logoSize": 200,
           "invertLogo": false,
-          "workType": "reBranding",
+          "workType": "Rebranding",
           "year": "2014",
           "tag": {
             "es": [
@@ -196,7 +196,7 @@
           "logoSize": 300,
           "invertLogo": false,
           "labelSize": "1rem",
-          "workType": "reBranding",
+          "workType": "Rebranding",
           "year": "2011",
           "tag": {
             "es": [
@@ -217,7 +217,7 @@
       "span": 4,
       "logoSize": 300,
       "invertLogo": true,
-      "bgImage": "img/backgrounds/upmidface3.webp",
+      "bgImage": "img/backgrounds/upmidface.webp",
       "workType": "Branding",
       "year": "2023",
       "tag": {
@@ -271,7 +271,7 @@
           "size": "tile",
           "logoSize": 200,
           "invertLogo": false,
-          "workType": "Brand refresh",
+          "workType": "Brand Refresh",
           "year": "2023",
           "tag": {
             "es": [
@@ -387,7 +387,7 @@
     {
       "order": 12,
       "src": "img/logos/farolatino-icon-logo.svg",
-      "alt": "Faro Latino",
+      "alt": "FaroLatino",
       "size": "tile-xl",
       "span": 4,
       "logoSize": 175,
@@ -544,7 +544,7 @@
       "invertLogo": true,
       "multi": "img/logos/banegas-day-logo.svg",
       "multiLogoSize": 300,
-      "bgImage": "img/backgrounds/banegas2.webp",
+      "bgImage": "img/backgrounds/banegas.webp",
       "workType": "Branding",
       "year": "2025",
       "tag": {
@@ -793,7 +793,7 @@
       "span": 4,
       "logoSize": 300,
       "invertLogo": true,
-      "bgVideo": "img/backgrounds/zoom3.mp4",
+      "bgVideo": "img/backgrounds/zoom.mp4",
       "workType": "Branding",
       "year": "0000",
       "tag": {
@@ -811,7 +811,7 @@
       "size": "tile",
       "span": 4,
       "text": {
-        "es": "3 nuevas identidades en proceso. <br> Mayo 2026",
+        "es": "3 nuevas identidades en proceso. <br><br> Mayo 2026",
         "en": "3 branding projects in the works. <br> May 2026"
       }
     }

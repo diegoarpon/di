@@ -1,28 +1,3 @@
-const _footerQuotes = {
-  'brand-creation': {
-    es: { quote: 'La creatividad no es improvisación sin método.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' },
-    en: { quote: 'Creativity is not improvisation without method.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' }
-  },
-  'brand-development': {
-    es: { quote: 'La simplicidad es el resultado de un largo trabajo.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' },
-    en: { quote: 'Simplicity is the result of a long process of work.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' }
-  },
-  'product-design': {
-    es: { quote: 'Complicar es fácil, simplificar es difícil.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' },
-    en: { quote: "It's easy to complicate, but hard to simplify.", author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' }
-  }
-};
-
-function updateFooter(category) {
-  const q = document.getElementById('footer-quote');
-  const a = document.getElementById('footer-author');
-  if (!q || !a) return;
-  const data = _footerQuotes[category]?.[currentLang] || _footerQuotes[category]?.es;
-  if (!data) return;
-  q.textContent = `“${data.quote}”`;
-  a.innerHTML = `— ${data.author}`;
-}
-
 let _dataReady = false;
 let _resolveData;
 const dataReadyPromise = new Promise(r => { _resolveData = r; });
@@ -52,19 +27,18 @@ window.switchLanguage = function (lang) {
     if (text && text !== key) el.innerHTML = text;
   });
 
-  addCol4Panels();
-  updateFooter(localStorage.getItem('activeTab') || 'brand-creation');
-
-  if (typeof brandCreationItems !== "undefined" && brandCreationItems.length) {
+  const activeTab = localStorage.getItem('activeTab') || 'brand-creation';
+  updateFooter(activeTab);
+  if (activeTab === 'brand-creation' && typeof brandCreationItems !== "undefined" && brandCreationItems.length) {
     renderBrandCreationGrid(brandCreationItems);
     requestAnimationFrame(() => addCol4Panels());
-  }
-  if (typeof brandDevItems !== "undefined" && brandDevItems.length) {
+  } else if (activeTab === 'brand-development' && typeof brandDevItems !== "undefined" && brandDevItems.length) {
     renderBrandCreationGrid(brandDevItems, "brand-development-grid");
     if (typeof window.initGsapHovers === "function") window.initGsapHovers();
-  }
-  if (typeof brandPdItems !== "undefined" && brandPdItems.length) {
+  } else if (activeTab === 'product-design' && typeof brandPdItems !== "undefined" && brandPdItems.length) {
     renderProductDesignGrid(brandPdItems);
+  } else {
+    addCol4Panels();
   }
 
   document.querySelectorAll("#lang-en, #lang-es").forEach((btn) => btn.classList.remove("active"));
@@ -347,54 +321,34 @@ function createBrandTile(tileConfig) {
   return tile;
 }
 
-function createBrandSingleItem(item) {
+function createBrandWrapper(item) {
   const wrapper = document.createElement("article");
   wrapper.className = `brand-grid-item span-${item.span}`;
-
-  const hGuide = createBrandGuide("guide-h-double-100");
-  wrapper.appendChild(hGuide);
-
-  if (item.guides && item.guides.includes("left")) {
-    const vGuide = createBrandGuide("guide-v-double-100");
-    wrapper.appendChild(vGuide);
-  }
-
+  wrapper.appendChild(createBrandGuide("guide-h-double-100"));
+  if (item.guides && item.guides.includes("left")) wrapper.appendChild(createBrandGuide("guide-v-double-100"));
   const shell = document.createElement("div");
   shell.className = "brand-grid-shell position-relative";
-
-  shell.appendChild(createBrandTile(item));
   wrapper.appendChild(shell);
+  return { wrapper, shell };
+}
+
+function createBrandSingleItem(item) {
+  const { wrapper, shell } = createBrandWrapper(item);
+  shell.appendChild(createBrandTile(item));
   return wrapper;
 }
 
 function createBrandStackedItem(item) {
-  const wrapper = document.createElement("article");
-  wrapper.className = `brand-grid-item span-${item.span}`;
-
-  const hGuide = createBrandGuide("guide-h-double-100");
-  wrapper.appendChild(hGuide);
-
-  if (item.guides && item.guides.includes("left")) {
-    const vGuide = createBrandGuide("guide-v-double-100");
-    wrapper.appendChild(vGuide);
-  }
-
-  const shell = document.createElement("div");
-  shell.className = "brand-grid-shell position-relative";
-
+  const { wrapper, shell } = createBrandWrapper(item);
   const stack = document.createElement("div");
   stack.className = "brand-grid-stack";
-
   (item.tiles || []).forEach((tileConfig) => {
     const slot = document.createElement("div");
     slot.className = "brand-grid-slot position-relative";
-
     slot.appendChild(createBrandTile(tileConfig));
     stack.appendChild(slot);
   });
-
   shell.appendChild(stack);
-  wrapper.appendChild(shell);
   return wrapper;
 }
 

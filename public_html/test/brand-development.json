@@ -9,7 +9,7 @@
       "logoSize": 250,
       "invertLogo": true,
       "bgColor": "",
-      "bgImage": "img/backgrounds/eg-dev2.webp",
+      "bgImage": "img/backgrounds/eg-dev.webp",
       "hoverColor": "var(--main-color)",
       "project": "eg",
       "projectName": "EG Marketing",
@@ -119,7 +119,7 @@
       "logoSize": 250,
       "invertLogo": true,
       "bgColor": "",
-      "bgImage": "img/backgrounds/meta.webp",
+      "bgImage": "img/backgrounds/meta-dev.webp",
       "bgVideo": "",
       "hoverColor": "var(--main-color)",
       "project": "meta",
@@ -268,7 +268,7 @@
       "logoSize": 250,
       "invertLogo": true,
       "bgColor": "",
-      "bgImage": "img/test-14.webp",
+      "bgImage": "img/backgrounds/nestseekers-dev.webp",
       "hoverColor": "var(--main-color)",
       "project": "nestseekers",
       "projectName": "EG Marketing",
@@ -386,7 +386,7 @@
       "logoSize": 200,
       "invertLogo": true,
       "bgColor": "",
-      "bgImage": "img/test-11.webp",
+      "bgImage": "img/backgrounds/insolito-dev.webp",
       "hoverColor": "var(--main-color)",
       "project": "insolito",
       "projectName": "insólito café de especialidad",
@@ -438,8 +438,8 @@
       "size": "tile-xl",
       "span": 6,
       "text": {
-        "es": "Lapanaderi. En proceso. <br> Mayo 2026",
-        "en": "Lapanaderi. In the works. <br> May, 2026."
+        "es": "Lapanaderi<br><br>En proceso. <br> Mayo 2026",
+        "en": "Lapanaderi<br><br>In the works. <br> May, 2026."
       }
     },
     {
@@ -448,8 +448,8 @@
       "size": "tile-xl",
       "span": 6,
       "text": {
-        "es": "SI Salud Integral. En proceso. <br> Mayo 2026",
-        "en": "SI Salud Integral. In the works. <br> May, 2026."
+        "es": "SI Salud Integral<br><br>En proceso. <br> Mayo 2026",
+        "en": "SI Salud Integral<br><br>In the works. <br> May, 2026."
       }
     }
   ],
