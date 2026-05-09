@@ -196,7 +196,7 @@ function createDevInner(logos, title, metaText, arrowText, bottomLogos, showTool
   const arrow = document.createElement("div");
   arrow.className = "brand-dev-arrow d-flex align-items-center gap-2";
   if (showTool) {
-    arrow.innerHTML = `${arrowText}<img src="img/figma-logo.svg" class="brand-dev-tool-icon" alt="Figma" loading="lazy">`;
+    arrow.innerHTML = `${arrowText}<img src="img/visuals/logos/figma-logo.svg" class="brand-dev-tool-icon" alt="Figma" loading="lazy">`;
   } else {
     arrow.textContent = arrowText;
   }

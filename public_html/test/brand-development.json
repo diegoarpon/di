@@ -140,7 +140,7 @@
       },
       "gallery": [
         {
-          "type": "color",
+          "type": "text",
           "cols": 3,
           "bg": "var(--meta)",
           "text": {
@@ -189,7 +189,7 @@
           "cols": 1
         },
         {
-          "type": "color",
+          "type": "text",
           "cols": 3,
           "bg": "var(--meta)",
           "text": {
@@ -271,7 +271,7 @@
       "bgImage": "img/backgrounds/nestseekers-dev.webp",
       "hoverColor": "var(--main-color)",
       "project": "nestseekers",
-      "projectName": "EG Marketing",
+      "projectName": "Nestseekers",
       "title": {
         "es": "dirección creativa",
         "en": "creative direction"
@@ -289,59 +289,43 @@
       "gallery": [
         {
           "src": "img/visuals/nestseekers/99john-ads-condominium-bike.webp",
-          "caption": {
-            "es": "Aviso 99 John — 20",
-            "en": "99 John ad — 20"
-          },
           "cols": 1
         },
         {
           "src": "img/visuals/nestseekers/99john-ads-condominium-shop.webp",
-          "caption": {
-            "es": "Aviso 99 John — 18",
-            "en": "99 John ad — 18"
-          },
           "cols": 1
         },
         {
           "src": "img/visuals/nestseekers/99john-ads-condominium-couple.webp",
-          "caption": {
-            "es": "Aviso 99 John — 19",
-            "en": "99 John ad — 19"
-          },
           "cols": 1
         },
         {
-          "src": "img/visuals/nestseekers/99john-ads-condominium-couple.webp",
-          "caption": {
-            "es": "Aviso 99 John — 19",
-            "en": "99 John ad — 19"
-          },
+          "src": "img/visuals/nestseekers/99john-ads-condominium-fridge.webp",
           "cols": 1
+        },
+        {
+          "type": "text",
+          "cols": 4,
+          "text": {
+            "es": "↓ Tu texto acá.",
+            "en": "Your text here."
+          }
         },
         {
           "src": "img/visuals/nestseekers/99john-ads-nyc-subway-solo.webp",
-          "caption": {
-            "es": "Material impreso",
-            "en": "Print material"
-          },
           "cols": 2
         },
         {
           "src": "img/visuals/nestseekers/99john-ads-nyc-subway-rain.webp",
-          "caption": {
-            "es": "Material impreso",
-            "en": "Print material"
-          },
-          "cols": 1
+          "cols": 2
         },
         {
-          "src": "img/visuals/nestseekers/99john-ads-nyc-subway-fulton.webp",
-          "caption": {
-            "es": "Material impreso",
-            "en": "Print material"
-          },
-          "cols": 1
+          "type": "text",
+          "cols": 4,
+          "text": {
+            "es": "↓ Tu texto acá.",
+            "en": "Your text here."
+          }
         },
         {
           "src": "img/visuals/nestseekers/327w11thst-back.webp",
@@ -357,7 +341,7 @@
             "es": "Material impreso",
             "en": "Print material"
           },
-          "cols": 1
+          "cols": 2
         },
         {
           "src": "img/visuals/nestseekers/439w21thst-back.webp",
@@ -365,7 +349,7 @@
             "es": "Material impreso",
             "en": "Print material"
           },
-          "cols": 1
+          "cols": 2
         },
         {
           "src": "img/visuals/nestseekers/439w21thst-front.webp",
@@ -406,7 +390,7 @@
       },
       "gallery": [
         {
-          "type": "color",
+          "type": "text",
           "cols": 3,
           "bg": "var(--terracotta-dark)",
           "text": {

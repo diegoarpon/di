@@ -1119,11 +1119,23 @@ body {
   position: relative;
   z-index: 1;
   margin: 0;
-  padding: 2rem;
+  padding: 1.5rem;
   font-size: var(--fs-intro);
   font-weight: 300;
   line-height: 1.4;
   color: var(--blackest);
+}
+
+.project-masonry-text-logo {
+  display: block;
+  max-height: 3rem;
+  width: auto !important;
+  max-width: 60%;
+  padding: 1.75rem 1.75rem 0;
+  position: relative;
+  z-index: 1;
+  align-self: flex-start;
+  margin-right: auto;
 }
 
 .carousel-btn {

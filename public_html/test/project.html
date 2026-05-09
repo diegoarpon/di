@@ -285,15 +285,24 @@
               figure.appendChild(prev);
               figure.appendChild(next);
               figure.appendChild(counter);
-              figure.appendChild(figcaption);
-            } else if (item.type === "color") {
+              if (imgEl.alt) figure.appendChild(figcaption);
+            } else if (item.type === "text") {
               figure.style.background = item.bg || "var(--manteca)";
               figure.style.zIndex = 11;
+              if (item.logo) {
+                const logo = document.createElement("img");
+                logo.src = item.logo;
+                logo.className = "project-masonry-text-logo";
+                logo.alt = "";
+                logo.loading = "lazy";
+                if (item.logoSize) logo.style.maxHeight = `${item.logoSize}px`;
+                figure.appendChild(logo);
+              }
               if (item.text) {
-                const p = document.createElement("p");
-                p.className = "project-masonry-color-text";
-                p.textContent = item.text[currentLang] || item.text.es || "";
-                figure.appendChild(p);
+                const textEl = document.createElement("div");
+                textEl.className = "project-masonry-color-text";
+                textEl.textContent = item.text[currentLang] || item.text.es || "";
+                figure.appendChild(textEl);
               }
             } else {
               const caption = item.caption?.[currentLang] || item.caption?.es || "";
@@ -314,7 +323,7 @@
               const figcaption = document.createElement("figcaption");
               figcaption.textContent = caption;
               figure.appendChild(media);
-              figure.appendChild(figcaption);
+              if (caption) figure.appendChild(figcaption);
             }
 
             gallery.appendChild(figure);
