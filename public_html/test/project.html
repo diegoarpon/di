@@ -210,7 +210,7 @@
               .then(html => {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, "text/html");
-                doc.querySelectorAll("script").forEach(el => el.remove());
+                doc.querySelectorAll("nav, script").forEach(el => el.remove());
                 doc.querySelectorAll("[src]").forEach(el => {
                   const val = el.getAttribute("src");
                   if (val && !val.startsWith("http") && !val.startsWith("design-kit/")) {
