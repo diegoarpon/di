@@ -18,6 +18,9 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
   <link href="css/styles.css" rel="stylesheet" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" id="bs3-css" disabled />
+  <link href="https://fonts.googleapis.com/css?family=Exo:200,700i" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i" rel="stylesheet" />
   <script src="js/translations.js"></script>
 </head>
 
@@ -204,7 +207,6 @@
           if (projectId === "virtualmind") {
             gallery.classList.remove("project-gallery");
             gallery.classList.add("project-gallery-embed");
-            // guides
             const hGuide = document.createElement("div");
             hGuide.className = "guide-h-double-100";
             hGuide.setAttribute("aria-hidden", "true");
@@ -213,11 +215,15 @@
             vGuide.setAttribute("aria-hidden", "true");
             gallery.appendChild(hGuide);
             gallery.appendChild(vGuide);
-
-            Promise.all([
-              fetch("design-kit/index.html").then(r => r.text()),
-              fetch("design-kit/main.css").then(r => r.text())
-            ]).then(([html, css]) => {
+            // enable Bootstrap 3 and load design-kit CSS
+            document.getElementById("bs3-css").removeAttribute("disabled");
+            const dkLink = document.createElement("link");
+            dkLink.rel = "stylesheet";
+            dkLink.href = "design-kit/main.css";
+            document.head.appendChild(dkLink);
+            fetch("design-kit/index.html")
+              .then(r => r.text())
+              .then(html => {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, "text/html");
                 doc.querySelectorAll("script").forEach(el => el.remove());
@@ -234,29 +240,6 @@
                   }
                 });
 
-                // scope CSS: prefix every rule with #dk-wrap
-                const scoped = css
-                  .replace(/@import[^;]+;/g, "")
-                  .replace(/([^{}]+)\{/g, (match, selectors) => {
-                    const prefixed = selectors.split(",").map(s => {
-                      s = s.trim();
-                      if (!s || s.startsWith("@")) return s;
-                      if (s === "body" || s === "html") return "#dk-wrap";
-                      return `#dk-wrap ${s}`;
-                    }).join(", ");
-                    return `${prefixed} {`;
-                  });
-
-                const style = document.createElement("style");
-                style.textContent = `
-                  @import url('https://fonts.googleapis.com/css?family=Exo:200,700i');
-                  @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i');
-                  ${scoped}
-                  #dk-wrap { font-family: 'Roboto', sans-serif; font-weight: 300; }
-                  #dk-wrap .navbar-fixed-top { position: sticky; top: 0; z-index: 100; }
-                `;
-                document.head.appendChild(style);
-
                 const wrap = document.createElement("div");
                 wrap.id = "dk-wrap";
                 wrap.innerHTML = doc.body.innerHTML;
@@ -269,8 +252,6 @@
                 }
                 document.querySelector(".content-area").classList.remove("fading");
               });
-            return;
-          }
             return;
           }
 
