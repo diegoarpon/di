@@ -1073,6 +1073,7 @@ body {
 /* Project Gallery — Grid */
 .project-gallery-embed {
   display: block;
+  position: relative;
 }
 
 .project-gallery {

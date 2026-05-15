@@ -204,13 +204,23 @@
           if (projectId === "virtualmind") {
             gallery.classList.remove("project-gallery");
             gallery.classList.add("project-gallery-embed");
-            const shadow = gallery.attachShadow({ mode: "open" });
-            fetch("design-kit/index.html")
-              .then(r => r.text())
-              .then(html => {
+            // guides
+            const hGuide = document.createElement("div");
+            hGuide.className = "guide-h-double-100";
+            hGuide.setAttribute("aria-hidden", "true");
+            const vGuide = document.createElement("div");
+            vGuide.className = "guide-v-double-100";
+            vGuide.setAttribute("aria-hidden", "true");
+            gallery.appendChild(hGuide);
+            gallery.appendChild(vGuide);
+
+            Promise.all([
+              fetch("design-kit/index.html").then(r => r.text()),
+              fetch("design-kit/main.css").then(r => r.text())
+            ]).then(([html, css]) => {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, "text/html");
-                doc.querySelectorAll("nav, script").forEach(el => el.remove());
+                doc.querySelectorAll("script").forEach(el => el.remove());
                 doc.querySelectorAll("[src]").forEach(el => {
                   const val = el.getAttribute("src");
                   if (val && !val.startsWith("http") && !val.startsWith("design-kit/")) {
@@ -224,36 +234,33 @@
                   }
                 });
 
-                // inject static HTML + styles
-                const div = document.createElement("div");
-                div.innerHTML = doc.body.innerHTML;
-
-                [
-                  "https://fonts.googleapis.com/css?family=Exo:200,700i",
-                  "https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i",
-                  "https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css",
-                  "design-kit/main.css"
-                ].forEach(href => {
-                  const link = document.createElement("link");
-                  link.rel = "stylesheet";
-                  link.href = href;
-                  shadow.appendChild(link);
-                });
+                // scope CSS: prefix every rule with #dk-wrap
+                const scoped = css
+                  .replace(/@import[^;]+;/g, "")
+                  .replace(/([^{}]+)\{/g, (match, selectors) => {
+                    const prefixed = selectors.split(",").map(s => {
+                      s = s.trim();
+                      if (!s || s.startsWith("@")) return s;
+                      if (s === "body" || s === "html") return "#dk-wrap";
+                      return `#dk-wrap ${s}`;
+                    }).join(", ");
+                    return `${prefixed} {`;
+                  });
 
                 const style = document.createElement("style");
-                style.textContent = ":host { display: block; border: 1px solid var(--graphite); } body { padding-top: 0 !important; margin: 0; }";
-                shadow.appendChild(style);
-                shadow.appendChild(div);
+                style.textContent = `
+                  @import url('https://fonts.googleapis.com/css?family=Exo:200,700i');
+                  @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i');
+                  ${scoped}
+                  #dk-wrap { font-family: 'Roboto', sans-serif; font-weight: 300; }
+                  #dk-wrap .navbar-fixed-top { position: sticky; top: 0; z-index: 100; }
+                `;
+                document.head.appendChild(style);
 
-                // execute scripts
-                [
-                  "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js",
-                  "https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
-                ].forEach(src => {
-                  const s = document.createElement("script");
-                  s.src = src;
-                  shadow.appendChild(s);
-                });
+                const wrap = document.createElement("div");
+                wrap.id = "dk-wrap";
+                wrap.innerHTML = doc.body.innerHTML;
+                gallery.appendChild(wrap);
 
                 const loader = document.getElementById("project-loader");
                 if (loader) {
@@ -262,6 +269,8 @@
                 }
                 document.querySelector(".content-area").classList.remove("fading");
               });
+            return;
+          }
             return;
           }
 
