@@ -1071,6 +1071,10 @@ body {
 
 
 /* Project Gallery — Grid */
+.project-gallery-embed {
+  display: block;
+}
+
 .project-gallery {
   display: grid;
   grid-template-columns: repeat(12, 1fr);

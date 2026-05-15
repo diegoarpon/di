@@ -202,6 +202,8 @@
           gallery.innerHTML = "";
 
           if (projectId === "virtualmind") {
+            gallery.classList.remove("project-gallery");
+            gallery.classList.add("project-gallery-embed");
             const shadow = gallery.attachShadow({ mode: "open" });
             fetch("design-kit/index.html")
               .then(r => r.text())
@@ -225,7 +227,7 @@
                 shadow.innerHTML = `
                   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
                   <link rel="stylesheet" href="design-kit/main.css">
-                  <style>:host { display: block; } body, :host { margin: 0; padding-top: 1rem; background: #fff; }</style>
+                  <style>:host { display: block; } body, :host { margin: 0; padding-top: 1rem; background: #fff; } #project-gallery { display: block !important; }</style>
                   ${doc.body.innerHTML}
                   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"><\/script>
                   <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"><\/script>
