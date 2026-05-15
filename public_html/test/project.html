@@ -202,55 +202,26 @@
           gallery.innerHTML = "";
 
           if (projectId === "virtualmind") {
-            gallery.classList.remove("project-gallery");
-            gallery.classList.add("dk-content");
-            Promise.all([
-              fetch("design-kit/index.html").then(r => r.text()),
-              fetch("design-kit/main.css").then(r => r.text())
-            ]).then(([html, css]) => {
-              // scope CSS to .dk-content
-              const scoped = css
-                .replace(/\/\*[\s\S]*?\*\//g, "") // strip comments
-                .split("}")
-                .filter(r => r.trim())
-                .map(rule => {
-                  const brace = rule.indexOf("{");
-                  if (brace === -1) return "";
-                  const selectors = rule.slice(0, brace).trim();
-                  const body = rule.slice(brace);
-                  const scoped = selectors.split(",").map(s => {
-                    s = s.trim();
-                    if (!s) return "";
-                    if (s.startsWith("@")) return s;
-                    if (s === "body" || s === "html") return ".dk-content";
-                    return `.dk-content ${s}`;
-                  }).filter(Boolean).join(", ");
-                  return `${scoped}${body}}`;
-                }).join("\n");
-              const style = document.createElement("style");
-              style.id = "dk-scoped-css";
-              style.textContent = scoped;
-              document.head.appendChild(style);
-              // parse and inject HTML
-              const parser = new DOMParser();
-              const doc = parser.parseFromString(html, "text/html");
-              doc.querySelectorAll("nav, footer, script").forEach(el => el.remove());
-              doc.querySelectorAll("[src], [href]").forEach(el => {
-                ["src", "href"].forEach(attr => {
-                  const val = el.getAttribute(attr);
-                  if (val && !val.startsWith("http") && !val.startsWith("#") && !val.startsWith("design-kit/")) {
-                    el.setAttribute(attr, "design-kit/" + val);
-                  }
-                });
+            const shadow = gallery.attachShadow({ mode: "open" });
+            fetch("design-kit/index.html")
+              .then(r => r.text())
+              .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, "text/html");
+                doc.querySelectorAll("nav, script").forEach(el => el.remove());
+                shadow.innerHTML = `
+                  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+                  <link rel="stylesheet" href="design-kit/main.css">
+                  <style>body { margin: 0; padding-top: 1rem; }</style>
+                  ${doc.body.innerHTML}
+                `;
+                const loader = document.getElementById("project-loader");
+                if (loader) {
+                  loader.classList.add("dismiss");
+                  loader.addEventListener("transitionend", () => loader.remove(), { once: true });
+                }
+                document.querySelector(".content-area").classList.remove("fading");
               });
-              gallery.innerHTML = doc.body.innerHTML;
-              const loader = document.getElementById("project-loader");
-              if (loader) {
-                loader.classList.add("dismiss");
-                loader.addEventListener("transitionend", () => loader.remove(), { once: true });
-              }
-              document.querySelector(".content-area").classList.remove("fading");
-            });
             return;
           }
 
@@ -299,7 +270,6 @@
                 imgEl.alt = s.caption?.[currentLang] || s.caption?.es || "";
                 figcaption.textContent = imgEl.alt;
                 counter.textContent = `${current + 1} / ${slides.length}`;
-                layoutMasonry();
               };
               prev.addEventListener("click", () => go(-1));
               next.addEventListener("click", () => go(1));
