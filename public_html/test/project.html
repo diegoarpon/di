@@ -204,13 +204,24 @@
           if (projectId === "virtualmind") {
             gallery.classList.remove("project-gallery");
             gallery.classList.add("project-gallery-embed");
-            const shadow = gallery.attachShadow({ mode: "open" });
+            const figure = document.createElement("figure");
+            figure.className = "project-gallery-item gallery-span-12";
+            const hGuide = document.createElement("div");
+            hGuide.className = "guide-h-double-100";
+            hGuide.setAttribute("aria-hidden", "true");
+            const vGuide = document.createElement("div");
+            vGuide.className = "guide-v-double-100";
+            vGuide.setAttribute("aria-hidden", "true");
+            figure.appendChild(hGuide);
+            figure.appendChild(vGuide);
+            gallery.appendChild(figure);
+            const shadow = figure.attachShadow({ mode: "open" });
             fetch("design-kit/index.html")
               .then(r => r.text())
               .then(html => {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, "text/html");
-                doc.querySelectorAll("nav, script").forEach(el => el.remove());
+                doc.querySelectorAll("script").forEach(el => el.remove());
                 // fix all relative paths
                 doc.querySelectorAll("[src]").forEach(el => {
                   const val = el.getAttribute("src");
