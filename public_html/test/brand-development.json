@@ -405,7 +405,7 @@
       ]
     },
     {
-      "order": 4,
+      "order": 5,
       "src": "img/logos/virtualmind-logo.svg",
       "alt": "Virtualmind",
       "size": "tile-xl",
@@ -433,34 +433,8 @@
       }
     },
     {
-      "order": 4,
-      "src": "img/logos/virtualmind-logo.svg",
-      "alt": "Virtualmind",
-      "size": "tile-xl",
-      "span": 6,
-      "logoSize": 250,
-      "invertLogo": true,
-      "bgColor": "",
-      "bgImage": "img/backgrounds/virtualmind.png",
-      "hoverColor": "var(--main-color)",
-      "project": "virtualmind",
-      "projectName": "Virtualmind",
-      "title": {
-        "es": "In-house branding",
-        "en": "In-house branding"
-      },
-      "label": {
-        "es": {
-          "name": "Virtualmind",
-          "industry": "para Boutique Software House."
-        },
-        "en": {
-          "name": "Virtualmind",
-          "industry": "For a Boutique Software House."
-        }
-      }
-    },
-    {
+      "order": 6,
+      "type": "text",
       "size": "tile-xl",
       "span": 6,
       "text": {
