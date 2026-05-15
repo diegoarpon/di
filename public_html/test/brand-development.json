@@ -289,75 +289,63 @@
       "gallery": [
         {
           "src": "img/visuals/nestseekers/99john-ads-condominium-bike.webp",
-          "cols": 1
+          "cols": 3
         },
         {
           "src": "img/visuals/nestseekers/99john-ads-condominium-shop.webp",
-          "cols": 1
+          "cols": 3
         },
         {
           "src": "img/visuals/nestseekers/99john-ads-condominium-couple.webp",
-          "cols": 1
-        },
-        {
-          "src": "img/visuals/nestseekers/99john-ads-condominium-fridge.webp",
-          "cols": 1
+          "cols": 3
         },
         {
           "type": "text",
           "cols": 4,
           "text": {
-            "es": "↓ Tu texto acá.",
-            "en": "Your text here."
+            "es": "Campaña para 99 John Condominium, propiedad de lujo en NYC. Concepto basado en la idea de 'hogar' como un lugar de conexión y experiencias compartidas. La campaña presenta una serie de imágenes que evocan sentimientos de calidez, confort y unión, destacando el estilo de vida único que ofrece 99 John Condominium.",
+            "en": "Ad campaign for 99 John Condominium, a luxury property in NYC. Concept based on the idea of 'home' as a place for connection and shared experiences. The campaign features a series of images that evoke feelings of warmth, comfort, and togetherness, highlighting the unique lifestyle that 99 John Condominium offers."
           }
         },
         {
-          "src": "img/visuals/nestseekers/99john-ads-nyc-subway-solo.webp",
+          "src": "img/visuals/nestseekers/ok-1.webp",
           "cols": 2
         },
         {
-          "src": "img/visuals/nestseekers/99john-ads-nyc-subway-rain.webp",
+          "src": "img/visuals/nestseekers/ok-2.webp",
           "cols": 2
         },
         {
-          "type": "text",
-          "cols": 4,
-          "text": {
-            "es": "↓ Tu texto acá.",
-            "en": "Your text here."
-          }
+          "src": "img/visuals/nestseekers/nest_seekers_logo_evolution.svg",
+          "cols": 4
         },
         {
-          "src": "img/visuals/nestseekers/327w11thst-back.webp",
+          "src": "img/visuals/nestseekers/relieve.png",
           "caption": {
-            "es": "Material impreso",
+            "es": " ",
+            "en": "Promotional campaign material for meetups and events on 99 John Condominium."
+          },
+          "cols": 4
+        },
+        {
+          "src": "img/visuals/nestseekers/mess-2.png",
+          "caption": {
+            "es": "Promotional Material for brokers",
             "en": "Print material"
           },
           "cols": 2
         },
         {
-          "src": "img/visuals/nestseekers/327w11thst-front.webp",
+          "src": "img/visuals/nestseekers/mess-1.png",
           "caption": {
-            "es": "Material impreso",
+            "es": "Promotional postcards for properties",
             "en": "Print material"
           },
           "cols": 2
         },
         {
-          "src": "img/visuals/nestseekers/439w21thst-back.webp",
-          "caption": {
-            "es": "Material impreso",
-            "en": "Print material"
-          },
-          "cols": 2
-        },
-        {
-          "src": "img/visuals/nestseekers/439w21thst-front.webp",
-          "caption": {
-            "es": "Material impreso",
-            "en": "Print material"
-          },
-          "cols": 2
+          "src": "img/visuals/nestseekers/nest_seekers_showsheet.svg",
+          "cols": 4
         }
       ]
     },
@@ -415,6 +403,34 @@
           "cols": 2
         }
       ]
+    },
+    {
+      "order": 4,
+      "src": "img/logos/virtualmind-logo.svg",
+      "alt": "Virtualmind",
+      "size": "tile-xl",
+      "span": 6,
+      "logoSize": 250,
+      "invertLogo": true,
+      "bgColor": "",
+      "bgImage": "img/backgrounds/virtualmind.png",
+      "hoverColor": "var(--main-color)",
+      "project": "virtualmind",
+      "projectName": "Virtualmind",
+      "title": {
+        "es": "In-house branding",
+        "en": "In-house branding"
+      },
+      "label": {
+        "es": {
+          "name": "Virtualmind",
+          "industry": "para Boutique Software House."
+        },
+        "en": {
+          "name": "Virtualmind",
+          "industry": "For a Boutique Software House."
+        }
+      }
     },
     {
       "order": 5,
