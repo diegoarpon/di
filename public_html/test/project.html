@@ -212,43 +212,24 @@
             vGuide.setAttribute("aria-hidden", "true");
             gallery.appendChild(hGuide);
             gallery.appendChild(vGuide);
-            fetch("design-kit/index.html")
-              .then(r => r.text())
-              .then(html => {
-                // fix relative paths
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, "text/html");
-                doc.querySelectorAll("[src]").forEach(el => {
-                  const val = el.getAttribute("src");
-                  if (val && !val.startsWith("http") && !val.startsWith("design-kit/")) {
-                    el.setAttribute("src", "design-kit/" + val);
-                  }
-                });
-                doc.querySelectorAll("[href]").forEach(el => {
-                  const val = el.getAttribute("href");
-                  if (val && !val.startsWith("http") && !val.startsWith("#") && !val.startsWith("design-kit/")) {
-                    el.setAttribute("href", "design-kit/" + val);
-                  }
-                });
-                html = doc.documentElement.outerHTML;
-                // base tag dinámico para resolver rutas relativas en el iframe
-                const base = window.location.href.replace(/\/[^\/]*$/, '/') + 'design-kit/';
-                html = html.replace('<head>', `<head><base href="${base}">`);
-                const iframe = document.createElement("iframe");
-                iframe.srcdoc = html;
-                iframe.style.cssText = "width:100%;border:none;display:block;";
-                iframe.scrolling = "no";
-                iframe.onload = () => {
-                  iframe.style.height = iframe.contentDocument.body.scrollHeight + "px";
-                  const loader = document.getElementById("project-loader");
-                  if (loader) {
-                    loader.classList.add("dismiss");
-                    loader.addEventListener("transitionend", () => loader.remove(), { once: true });
-                  }
-                  document.querySelector(".content-area").classList.remove("fading");
-                };
-                gallery.appendChild(iframe);
-              });
+            const iframe = document.createElement("iframe");
+            iframe.src = "design-kit/index.html";
+            iframe.style.cssText = "width:100%;border:none;display:block;min-height:100vh;";
+            iframe.scrolling = "no";
+            iframe.onload = () => {
+              try {
+                iframe.style.height = iframe.contentDocument.body.scrollHeight + "px";
+              } catch(e) {
+                iframe.style.height = "100vh";
+              }
+              const loader = document.getElementById("project-loader");
+              if (loader) {
+                loader.classList.add("dismiss");
+                loader.addEventListener("transitionend", () => loader.remove(), { once: true });
+              }
+              document.querySelector(".content-area").classList.remove("fading");
+            };
+            gallery.appendChild(iframe);
             return;
           }
 
