@@ -231,6 +231,9 @@
                   }
                 });
                 html = doc.documentElement.outerHTML;
+                // base tag dinámico para resolver rutas relativas en el iframe
+                const base = window.location.href.replace(/\/[^\/]*$/, '/') + 'design-kit/';
+                html = html.replace('<head>', `<head><base href="${base}">`);
                 const iframe = document.createElement("iframe");
                 iframe.srcdoc = html;
                 iframe.style.cssText = "width:100%;border:none;display:block;";
