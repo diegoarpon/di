@@ -215,11 +215,12 @@
 
             Promise.all([
               fetch("design-kit/index.html").then(r => r.text()),
+              fetch("https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css").then(r => r.text()),
               fetch("design-kit/main.css").then(r => r.text())
-            ]).then(([html, mainCss]) => {
+            ]).then(([html, bs3, mainCss]) => {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, "text/html");
-                doc.querySelectorAll("nav, script").forEach(el => el.remove());
+                doc.querySelectorAll("script").forEach(el => el.remove());
                 doc.querySelectorAll("[src]").forEach(el => {
                   const val = el.getAttribute("src");
                   if (val && !val.startsWith("http") && !val.startsWith("design-kit/")) {
@@ -233,15 +234,6 @@
                   }
                 });
 
-                // Bootstrap 3 como link global (no scopeable sin romperlo)
-                const bs3Link = document.createElement("link");
-                bs3Link.rel = "stylesheet";
-                bs3Link.href = "https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css";
-                bs3Link.id = "dk-bs3";
-                document.head.appendChild(bs3Link);
-                document.body.classList.add("dk-active");
-
-                // main.css scoped a #dk-wrap
                 const scopeCSS = (css) => css
                   .replace(/@import[^;]+;/g, "")
                   .replace(/([^{}/\*]+)\{/g, (match, sel) => {
@@ -255,12 +247,13 @@
                   });
 
                 const style = document.createElement("style");
-                style.id = "dk-style";
                 style.textContent = [
                   "@import url('https://fonts.googleapis.com/css?family=Exo:200,700i');",
                   "@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i');",
+                  scopeCSS(bs3),
                   scopeCSS(mainCss),
-                  "#dk-wrap { font-family: Roboto, sans-serif; font-weight: 300; }"
+                  "#dk-wrap { font-family: Roboto, sans-serif; font-weight: 300; }",
+                  "#dk-wrap .navbar-fixed-top { position: sticky; top: 0; z-index: 100; }"
                 ].join("\n");
                 document.head.appendChild(style);
 

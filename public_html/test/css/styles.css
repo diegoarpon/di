@@ -1076,10 +1076,6 @@ body {
   position: relative;
 }
 
-/* Neutralizar Bootstrap 3 global cuando se carga para Virtualmind */
-body.dk-active .container-fluid { padding: 0; }
-body.dk-active .row { margin: 0; }
-
 .project-gallery {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
