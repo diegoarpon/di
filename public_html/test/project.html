@@ -253,7 +253,10 @@
                   scopeCSS(bs3),
                   scopeCSS(mainCss),
                   "#dk-wrap { font-family: Roboto, sans-serif; font-weight: 300; }",
-                  "#dk-wrap .navbar-fixed-top { position: sticky; top: 0; z-index: 100; }"
+                  "#dk-wrap .navbar { position: relative !important; top: auto !important; }",
+                  "#dk-wrap .clearfix::after { content: ''; display: table; clear: both; }",
+                  "#dk-wrap .pull-left { float: left !important; }",
+                  "#dk-wrap .pull-right { float: right !important; }"
                 ].join("\n");
                 document.head.appendChild(style);
 
