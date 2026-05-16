@@ -1076,6 +1076,11 @@ body {
   position: relative;
 }
 
+.project-gallery-embed .guide-v-double-100 {
+  z-index: 2;
+  pointer-events: none;
+}
+
 .project-gallery {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
