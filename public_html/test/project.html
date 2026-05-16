@@ -212,63 +212,29 @@
             vGuide.setAttribute("aria-hidden", "true");
             gallery.appendChild(hGuide);
             gallery.appendChild(vGuide);
-
-            Promise.all([
-              fetch("design-kit/index.html").then(r => r.text()),
-              fetch("https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css").then(r => r.text()),
-              fetch("design-kit/main.css").then(r => r.text())
-            ]).then(([html, bs3, mainCss]) => {
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, "text/html");
-                doc.querySelectorAll("script").forEach(el => el.remove());
-                doc.querySelectorAll("[src]").forEach(el => {
-                  const val = el.getAttribute("src");
-                  if (val && !val.startsWith("http") && !val.startsWith("design-kit/")) {
-                    el.setAttribute("src", "design-kit/" + val);
+            fetch("design-kit/index.html")
+              .then(r => r.text())
+              .then(html => {
+                // fix relative paths
+                html = html
+                  .replace(/(src|href)="(?!http|#|/\/|design-kit/)([^"]+)"/g, '$1="design-kit/$2"');
+                const iframe = document.createElement("iframe");
+                iframe.srcdoc = html;
+                iframe.style.cssText = "width:100%;border:none;display:block;";
+                iframe.scrolling = "no";
+                iframe.onload = () => {
+                  iframe.style.height = iframe.contentDocument.body.scrollHeight + "px";
+                  const loader = document.getElementById("project-loader");
+                  if (loader) {
+                    loader.classList.add("dismiss");
+                    loader.addEventListener("transitionend", () => loader.remove(), { once: true });
                   }
-                });
-                doc.querySelectorAll("[href]").forEach(el => {
-                  const val = el.getAttribute("href");
-                  if (val && !val.startsWith("http") && !val.startsWith("#") && !val.startsWith("design-kit/")) {
-                    el.setAttribute("href", "design-kit/" + val);
-                  }
-                });
-
-                const scopeCSS = (css) => css
-                  .replace(/@import[^;]+;/g, "")
-                  .replace(/([^{}/\*]+)\{/g, (match, sel) => {
-                    const scoped = sel.trim().split(",").map(s => {
-                      s = s.trim();
-                      if (!s || s.startsWith("@") || s.startsWith("from") || s.startsWith("to") || /^\d/.test(s)) return s;
-                      if (s === "body" || s === "html") return "#dk-wrap";
-                      return `#dk-wrap ${s}`;
-                    }).join(", ");
-                    return `${scoped} {`;
-                  });
-
-                const style = document.createElement("style");
-                style.textContent = [
-                  "@import url('https://fonts.googleapis.com/css?family=Exo:200,700i');",
-                  "@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i');",
-                  scopeCSS(bs3),
-                  scopeCSS(mainCss),
-                  "#dk-wrap { font-family: Roboto, sans-serif; font-weight: 300; background: #fff; }",
-                  "#dk-wrap .navbar { display: none !important; }"
-                ].join("\n");
-                document.head.appendChild(style);
-
-                const wrap = document.createElement("div");
-                wrap.id = "dk-wrap";
-                wrap.innerHTML = doc.body.innerHTML;
-                gallery.appendChild(wrap);
-
-                const loader = document.getElementById("project-loader");
-                if (loader) {
-                  loader.classList.add("dismiss");
-                  loader.addEventListener("transitionend", () => loader.remove(), { once: true });
-                }
-                document.querySelector(".content-area").classList.remove("fading");
+                  document.querySelector(".content-area").classList.remove("fading");
+                };
+                gallery.appendChild(iframe);
               });
+            return;
+          }
             return;
           }
 
