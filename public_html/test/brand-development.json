@@ -29,84 +29,73 @@
       },
       "gallery": [
         {
-          "src": "img/visuals/eg/eg-website-mobile-1.webp",
-          "caption": {
-            "es": "App móvil",
-            "en": "Mobile app"
-          },
+          "src": "img/visuals/eg/eg-web-mobile-1.webp",
           "cols": 1
         },
         {
-          "src": "img/visuals/eg/eg-website-mobile-1.webp",
-          "caption": {
-            "es": "App móvil",
-            "en": "Mobile app"
-          },
+          "src": "img/visuals/eg/eg-web-mobile-3.webp",
           "cols": 1
         },
         {
-          "src": "img/visuals/eg/eg-website-mobile-1.webp",
-          "caption": {
-            "es": "App móvil",
-            "en": "Mobile app"
-          },
+          "src": "img/visuals/eg/eg-web-mobile-2.webp",
           "cols": 1
         },
         {
-          "src": "img/visuals/eg/eg-website-mobile-1.webp",
+          "type": "text",
+          "cols": 1,
+          "textSize": "1.25rem",
+          "text": {
+            "es": "<img src=\"img/www-icon.svg\" alt=\"Website\" class=\"tile-text-image mb-4\"/>  Diseño de una <strong>web institucional</strong> orientada a presentar el universo de la marca, sus servicios y sus propuestas formativas. La página articula <strong>identidad visual, contenido comercial y experiencia de usuario</strong> en una estructura clara, dinámica y adaptable. <br> <br> <span class=\"fw-bold\">↗</span> <a class=\"link\" href=\"https://www.egmarketing.com.ar\" target=\"_blank\">egmarketing.com.ar</a>",
+            "en": "<img src=\"img/www-icon.svg\" alt=\"Website\" class=\"tile-text-image mb-4\"/>    Design of an <strong>institutional website</strong> focused on presenting the brand universe, its services and educational offerings. The page brings together <strong>visual identity, commercial content and user experience</strong> within a clear, dynamic and adaptable structure. <br> <br> <span class=\"fw-bold\">↗</span> <a class=\"link\" href=\"https://www.egmarketing.com.ar\" target=\"_blank\">egmarketing.com.ar</a>"
+          }
+        },
+        {
+          "src": "img/visuals/eg/upmid-1.webp",
+          "cols": 3
+        },
+        {
+          "src": "img/visuals/eg/ceci-1.webp",
+          "cols": 3
+        },
+        {
+          "src": "img/visuals/eg/marisa-1.webp",
+          "cols": 3
+        },
+        {
+          "src": "img/visuals/eg/eg_logo_evolution.webp",
+          "cols": 4
+        },
+        {
+          "src": "img/visuals/eg/cuaderno-eg.webp",
+          "cols": 4,
           "caption": {
-            "es": "App móvil",
-            "en": "Mobile app"
-          },
+            "es": "Cuaderno promocional para eventos y clientes de EG Marketing.",
+            "en": "Promotional notebook for EG Marketing's events and clients."
+          }
+        },
+        {
+          "type": "text",
+          "cols": 2,
+          "text": {
+            "es": "  Diseño de un <strong>sistema visual</strong> para el Curso y la Diplomatura en Dermatología Funcional y PNIE, aplicado en <strong>piezas web, materiales impresos y customización de la plataforma Moodle</strong>. La propuesta organiza contenidos médicos complejos mediante texturas orgánicas, colores vibrantes, jerarquías tipográficas sólidas y layouts flexibles multiformato.<br> <br> <span class=\"fw-bold\">↗</span> <a class=\"link\" href=\"https://www.egmarketing.com.ar\" target=\"_blank\">Landing Curso</a><br> <span class=\"fw-bold\">↗</span> <a class=\"link\" href=\"https://www.egmarketing.com.ar\" target=\"_blank\">Landing Diplomatura</a>",
+            "en": "  Design of a <strong>visual system</strong> for the Course and Diploma Program in Functional Dermatology and PNIE, applied across <strong>web assets, printed materials and Moodle platform customization</strong>. The proposal organizes complex medical content through organic textures, vibrant colors, strong typographic hierarchies and flexible layouts adapted to different formats.<br> <br> <span class=\"fw-bold\">↗</span> <a class=\"link\" href=\"https://www.egmarketing.com.ar\" target=\"_blank\">Landing Course</a><br> <span class=\"fw-bold\">↗</span> <a class=\"link\" href=\"https://www.egmarketing.com.ar\" target=\"_blank\">Landing Postgraduate Diploma</a>"
+          }
+        },
+        {
+          "src": "img/visuals/eg/ponti-2.webp",
           "cols": 1
         },
         {
-          "src": "img/visuals/eg/ponti-tosi-web.webp",
-          "caption": {
-            "es": "App móvil",
-            "en": "Mobile app"
-          },
+          "src": "img/visuals/eg/ponti-1.webp",
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/eg/ponti-3.webp",
           "cols": 2
         },
         {
-          "src": "img/visuals/eg/instagram-banegas-day.webp",
-          "caption": {
-            "es": "Sistema de líneas",
-            "en": "Lines system"
-          },
-          "cols": 1
-        },
-        {
-          "src": "img/visuals/eg/eg-website-branding.webp",
-          "caption": {
-            "es": "App móvil",
-            "en": "Mobile app"
-          },
+          "src": "img/visuals/eg/Frame 35.webp",
           "cols": 2
-        },
-        {
-          "src": "img/visuals/eg/instagram-ponti-tosi.webp",
-          "caption": {
-            "es": "Sistema de líneas",
-            "en": "Lines system"
-          },
-          "cols": 1
-        },
-        {
-          "src": "img/visuals/eg/cronograma-ponti-tosi.webp",
-          "caption": {
-            "es": "Isotipo",
-            "en": "Isotype"
-          },
-          "cols": 2
-        },
-        {
-          "src": "img/visuals/eg/up-mid-face.mp4",
-          "caption": {
-            "es": "Isotipo",
-            "en": "Isotype"
-          },
-          "cols": 1
         }
       ]
     },
@@ -123,7 +112,7 @@
       "bgVideo": "",
       "hoverColor": "var(--main-color)",
       "project": "meta",
-      "projectName": "Congreso META",
+      "projectName": "META",
       "title": {
         "es": "dirección creativa",
         "en": "creative direction"
@@ -140,122 +129,91 @@
       },
       "gallery": [
         {
-          "type": "text",
-          "cols": 3,
-          "bg": "var(--meta)",
-          "text": {
-            "es": "Identidad y sistema gráfico para el Congreso de Medicina Estética, Tecnología & Antiaging de Uruguay.",
-            "en": "Identity and graphic system for the Aesthetic Medicine, Technology & Antiaging Congress of Uruguay."
-          }
+          "src": "img/visuals/meta/meta-banner-screen.webp",
+          "cols": 4
         },
         {
-          "src": "img/visuals/meta/meta-congreso-1.webp",
-          "caption": {
-            "es": "Congreso 1",
-            "en": "Congress 1"
-          },
+          "src": "img/visuals/meta/meta-congreso-salon.webp",
           "cols": 3
         },
         {
-          "src": "img/visuals/meta/meta-congreso-2.webp",
-          "caption": {
-            "es": "Congreso 2",
-            "en": "Congress 2"
-          },
-          "cols": 2
-        },
-        {
-          "src": "img/visuals/meta/meta-congreso-3.webp",
-          "caption": {
-            "es": "Congreso 3",
-            "en": "Congress 3"
-          },
-          "cols": 1
-        },
-        {
-          "src": "img/visuals/meta/meta-congreso-4.webp",
-          "caption": {
-            "es": "Congreso 4",
-            "en": "Congress 4"
-          },
-          "cols": 2
-        },
-        {
-          "src": "img/visuals/meta/icons.svg",
-          "caption": {
-            "es": "Iconografía",
-            "en": "Iconography"
-          },
-          "cols": 1
-        },
-        {
-          "type": "text",
-          "cols": 3,
-          "bg": "var(--meta)",
-          "text": {
-            "es": "Identidad y sistema gráfico para el Congreso de Medicina Estética, Tecnología & Antiaging de Uruguay.",
-            "en": "Identity and graphic system for the Aesthetic Medicine, Technology & Antiaging Congress of Uruguay."
-          }
-        },
-        {
-          "src": "img/visuals/meta/meta-congreso-1.webp",
-          "caption": {
-            "es": "Congreso 1",
-            "en": "Congress 1"
-          },
+          "src": "img/visuals/meta/meta-congreso-welcome.webp",
           "cols": 3
         },
         {
-          "src": "img/visuals/meta/meta-congreso-2.webp",
-          "caption": {
-            "es": "Congreso 2",
-            "en": "Congress 2"
-          },
+          "src": "img/visuals/meta/meta-congreso-people.webp",
+          "cols": 3
+        },
+        {
+          "src": "img/visuals/meta/meta-congreso-people-outside.webp",
+          "cols": 3
+        },
+        {
+          "src": "img/visuals/meta/meta-congreso-reception.webp",
+          "cols": 3
+        },
+        {
+          "src": "img/visuals/meta/meta-congreso-photobooth.webp",
+          "cols": 3
+        },
+        {
+          "src": "img/visuals/meta/meta-brand-evolution.webp",
+          "cols": 4
+        },
+        {
+          "src": "img/visuals/meta/meta-corporeo.webp",
+          "cols": 3
+        },
+        {
+          "src": "img/visuals/meta/meta-icon-plans.svg",
+          "cols": 3
+        },
+        {
+          "src": "img/visuals/meta/meta-icon-uruguay.svg",
+          "cols": 3
+        },
+        {
+          "src": "img/visuals/meta/meta-brochure-pitch-sponsors.webp",
           "cols": 2
         },
         {
-          "src": "img/visuals/meta/meta-congreso-3.webp",
-          "caption": {
-            "es": "Congreso 3",
-            "en": "Congress 3"
-          },
-          "cols": 1
-        },
-        {
-          "src": "img/visuals/meta/meta-congreso-4.webp",
-          "caption": {
-            "es": "Congreso 4",
-            "en": "Congress 4"
-          },
+          "src": "img/visuals/meta/meta-brochure-pitch.webp",
           "cols": 2
         },
         {
-          "src": "img/visuals/meta/icons.svg",
-          "caption": {
-            "es": "Iconografía",
-            "en": "Iconography"
-          },
-          "cols": 1
+          "type": "text",
+          "cols": 4,
+          "textSize": "1.25rem",
+          "text": {
+            "es": "<strong>Sistema de piezas impresas</strong>, desarrollado para acompañar la experiencia del evento en distintos momentos: desde el <strong>pitch comercial</strong> y la <strong>presentación a sponsors</strong> hasta la acreditación, orientación e información para participantes, mediante materiales consistentes y funcionales.",
+            "en": "  <strong>Print system</strong> developed to support the event experience across different touchpoints: from the <strong>commercial pitch</strong> and <strong>sponsor presentations</strong> to accreditation, wayfinding and participant information, through consistent and functional materials."
+          }
         },
         {
-          "type": "carousel",
+          "src": "img/visuals/meta/meta-credenciales.webp",
+          "cols": 3
+        },
+        {
+          "src": "img/visuals/meta/meta-congreso-mercandising.webp",
+          "cols": 3
+        },
+        {
+          "src": "img/visuals/meta/meta-credenciales-sponsor-green.webp",
+          "cols": 3
+        },
+        {
+          "src": "img/visuals/meta/metaweb.mov",
           "cols": 2,
-          "slides": [
-            {
-              "src": "img/visuals/meta/meta-congreso-3.webp",
-              "caption": {
-                "es": "Congreso 1",
-                "en": "Congress 1"
-              }
-            },
-            {
-              "src": "img/visuals/meta/meta-congreso-4.webp",
-              "caption": {
-                "es": "Congreso 2",
-                "en": "Congress 2"
-              }
-            }
-          ]
+          "loop": true
+        },
+        {
+          "type": "text",
+          "cols": 2,
+          "textSize": "1.25rem",
+          "text": {
+            "es": "<img src=\"img/www-icon.svg\" alt=\"Website\" class=\"tile-text-image mb-4 mt-2\" /> Como parte del <strong>sistema visual</strong>, se diseñó el <strong>website para el congreso</strong>, orientado a comunicar el evento y facilitar la inscripción. La experiencia organiza <strong>programa, speakers, workshops y sponsors</strong> mediante una estructura clara, modular y dinámica.<br><br><span class=\"fw-bold\">↗</span> <a class=\"link\" href=\"https://www.congresometa.com\" target=\"_blank\">congresometa.com</a>",
+            "en": "<img src=\"img/www-icon.svg\" alt=\"Website\" class=\"tile-text-image mb-4 mt-2\" /> As part of the <strong>visual system</strong>, the <strong>conference website</strong> was designed to communicate the event and facilitate registration. The experience organizes the <strong>program, speakers, workshops and sponsors</strong> through a clear, modular and dynamic structure.<br><br><span class=\"fw-bold\">↗</span> <a class=\"link\" href=\"https://www.congresometa.com\" target=\"_blank\">congresometa.com</a>"
+          }
         }
       ]
     },
@@ -303,8 +261,8 @@
           "type": "text",
           "cols": 4,
           "text": {
-            "es": "Campaña para 99 John Condominium, propiedad de lujo en NYC. Concepto basado en la idea de 'hogar' como un lugar de conexión y experiencias compartidas. La campaña presenta una serie de imágenes que evocan sentimientos de calidez, confort y unión, destacando el estilo de vida único que ofrece 99 John Condominium.",
-            "en": "Ad campaign for 99 John Condominium, a luxury property in NYC. Concept based on the idea of 'home' as a place for connection and shared experiences. The campaign features a series of images that evoke feelings of warmth, comfort, and togetherness, highlighting the unique lifestyle that 99 John Condominium offers."
+            "es": "  Campaña para <strong>99 John Condominium</strong>, propiedad de lujo en NYC. El concepto parte de la idea de <strong>“hogar” como espacio de conexión y experiencias compartidas</strong>, construyendo una narrativa visual centrada en calidez, confort y sentido de pertenencia.",
+            "en": "  Campaign for <strong>99 John Condominium</strong>, a luxury property in NYC. The concept is built around the idea of <strong>“home” as a place for connection and shared experiences</strong>, creating a visual narrative focused on warmth, comfort and a sense of belonging."
           }
         },
         {
@@ -320,27 +278,23 @@
           "cols": 4
         },
         {
-          "src": "img/visuals/nestseekers/relieve.png",
-          "caption": {
-            "es": " ",
-            "en": "Promotional campaign material for meetups and events on 99 John Condominium."
-          },
+          "src": "img/visuals/nestseekers/relieve.webp",
           "cols": 4
         },
         {
-          "src": "img/visuals/nestseekers/mess-2.png",
-          "caption": {
-            "es": "Promotional Material for brokers",
-            "en": "Print material"
-          },
+          "type": "text",
+          "cols": 4,
+          "text": {
+            "es": "  Diseño de un <strong>sistema cohesivo de piezas impresas</strong> para marketing inmobiliario premium, incluyendo brochures de propiedades, fichas comerciales, tarjetas de presentación para brokers e invitaciones privadas. El sistema acompañó distintas etapas del <strong>proceso comercial</strong> mediante fotografía de alto impacto, jerarquía clara de información y detalles de producción refinados, reforzando el <strong>posicionamiento de lujo</strong> de la marca.",
+            "en": "  Design of a <strong>cohesive print system</strong> for premium real estate marketing, including property brochures, listing sheets, broker presentation cards and private invitations. The system supported different stages of the <strong>sales process</strong> through high-impact photography, clear information hierarchy and refined production details, reinforcing the brand’s <strong>luxury positioning</strong> without losing clarity, functionality or commercial effectiveness."
+          }
+        },
+        {
+          "src": "img/visuals/nestseekers/mess-2.webp",
           "cols": 2
         },
         {
-          "src": "img/visuals/nestseekers/mess-1.png",
-          "caption": {
-            "es": "Promotional postcards for properties",
-            "en": "Print material"
-          },
+          "src": "img/visuals/nestseekers/mess-1.webp",
           "cols": 2
         },
         {
@@ -413,7 +367,7 @@
       "logoSize": 250,
       "invertLogo": true,
       "bgColor": "",
-      "bgImage": "img/backgrounds/virtualmind.png",
+      "bgImage": "img/backgrounds/virtualmind.webp",
       "hoverColor": "var(--main-color)",
       "project": "virtualmind",
       "projectName": "Virtualmind",
@@ -430,6 +384,10 @@
           "name": "Virtualmind",
           "industry": "For a Boutique Software House."
         }
+      },
+      "description": {
+        "es": "En lugar de presentar una década de aplicaciones de marca, este caso destaca el proceso de creación del logo como ejemplo del detalle y la precisión detrás de la evolución de la marca.",
+        "en": "Instead of presenting a decade of brand applications, this case highlights the logo creation process as a focused example of the detail and precision behind the brand's evolution."
       }
     },
     {

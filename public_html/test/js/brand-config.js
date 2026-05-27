@@ -12,6 +12,7 @@ function buildBrandCreationItems(logos) {
                 type: "text",
                 size: entry.size || "tile",
                 text: entry.text,
+                textSize: entry.textSize,
                 panelImage: entry.panelImage
             };
         }
@@ -90,5 +91,8 @@ Promise.all([
         renderProductDesignGrid(brandPdItems);
     }
     if (typeof window.initGsapHovers === "function") window.initGsapHovers();
+    if (typeof window.signalDataReady === "function") window.signalDataReady();
+}).catch(err => {
+    console.error("Error loading project data:", err);
     if (typeof window.signalDataReady === "function") window.signalDataReady();
 });

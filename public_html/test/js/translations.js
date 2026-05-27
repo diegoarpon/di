@@ -25,7 +25,7 @@ const translations = {
     productDesignIntro:
       "    Designing products focused on shaping complex ideas into intuitive and refined <br class='d-none d-lg-block'>digital experiences. <span class='d-lg-block mt-4 fs-2 fw-normal'>Currently in development</span>",
 
-
+    back: "back",
   },
   es: {
     // Navigation
@@ -50,6 +50,7 @@ const translations = {
     productDesignIntro:
       "Diseño de producto enfocado en transformar ideas complejas en experiencias digitales intuitivas y funcionales. <span class='d-lg-block mt-4 fs-2 fw-normal'>Actualmente en desarrollo.</span>",
 
+    back: "volver",
   },
 };
 
@@ -69,26 +70,62 @@ function t(key) {
 
 
 const _footerQuotes = {
-  'brand-creation': {
-    es: { quote: 'La creatividad no es improvisación sin método.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' },
-    en: { quote: 'Creativity is not improvisation without method.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' }
-  },
-  'brand-development': {
-    es: { quote: 'La simplicidad es el resultado de un largo trabajo.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' },
-    en: { quote: 'Simplicity is the result of a long process of work.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' }
-  },
-  'product-design': {
-    es: { quote: 'Complicar es fácil, simplificar es difícil.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' },
-    en: { quote: "It's easy to complicate, but hard to simplify.", author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' }
-  }
+  'brand-creation': [
+    {
+      es: { quote: 'La creatividad no es improvisación sin método.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' },
+      en: { quote: 'Creativity is not improvisation without method.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' }
+    },
+    {
+      es: { quote: 'El diseño responde a una necesidad.', author: 'Charles Eames, <em>Design Q&A</em>, 1972' },
+      en: { quote: 'Design addresses itself to the need.', author: 'Charles Eames, <em>Design Q&A</em>, 1972' }
+    },
+    {
+      es: { quote: 'El buen diseño comunica.', author: 'Paul Rand, <em>A Designer\'s Art</em>, 1985' },
+      en: { quote: 'Good design communicates.', author: 'Paul Rand, <em>A Designer\'s Art</em>, 1985' }
+    }
+  ],
+  'brand-development': [
+    {
+      es: { quote: 'La simplicidad es el resultado de un largo trabajo.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' },
+      en: { quote: 'Simplicity is the result of a long process of work.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' }
+    },
+    {
+      es: { quote: 'El buen diseño es la menor cantidad de diseño posible.', author: 'Dieter Rams, <em>Ten Principles for Good Design</em>, c. 1970s' },
+      en: { quote: 'Good design is as little design as possible.', author: 'Dieter Rams, <em>Ten Principles for Good Design</em>, c. 1970s' }
+    },
+    {
+      es: { quote: 'El buen diseño es honesto.', author: 'Dieter Rams, <em>Ten Principles for Good Design</em>, c. 1970s' },
+      en: { quote: 'Good design is honest.', author: 'Dieter Rams, <em>Ten Principles for Good Design</em>, c. 1970s' }
+    }
+  ],
+  'product-design': [
+    {
+      es: { quote: 'Complicar es fácil, simplificar es difícil.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' },
+      en: { quote: "It's easy to complicate, but hard to simplify.", author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' }
+    },
+    {
+      es: { quote: 'El buen diseño es la menor cantidad de diseño posible.', author: 'Dieter Rams, <em>Ten Principles for Good Design</em>, c. 1970s' },
+      en: { quote: 'Good design is as little design as possible.', author: 'Dieter Rams, <em>Ten Principles for Good Design</em>, c. 1970s' }
+    }
+  ]
 };
 
-function updateFooter(category) {
+const _lastFooterIndex = {};
+
+function updateFooter(category, keepCurrent = false) {
   const q = document.getElementById('footer-quote');
   const a = document.getElementById('footer-author');
   if (!q || !a) return;
-  const data = _footerQuotes[category]?.[currentLang] || _footerQuotes[category]?.es;
-  if (!data) return;
+  const pool = _footerQuotes[category];
+  if (!pool) return;
+  if (!keepCurrent || _lastFooterIndex[category] === undefined) {
+    let idx;
+    do {
+      idx = Math.floor(Math.random() * pool.length);
+    } while (pool.length > 1 && idx === _lastFooterIndex[category]);
+    _lastFooterIndex[category] = idx;
+  }
+  const data = pool[_lastFooterIndex[category]][currentLang] || pool[_lastFooterIndex[category]].es;
   q.textContent = `\u201c${data.quote}\u201d`;
   a.innerHTML = `\u2014 ${data.author}`;
 }

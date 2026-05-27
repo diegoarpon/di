@@ -787,6 +787,25 @@
     },
     {
       "order": 25,
+      "src": "img/logos/iroiro-logo.svg",
+      "alt": "Iro Iro",
+      "size": "tile",
+      "span": 4,
+      "logoSize": 250,
+      "invertLogo": false,
+      "workType": "Rebranding",
+      "year": "2020",
+      "tag": {
+        "es": [
+          "Bazaar Japonés"
+        ],
+        "en": [
+          "Japanese Bazaar"
+        ]
+      }
+    },
+    {
+      "order": 26,
       "src": "img/logos/zoom-logo.svg",
       "alt": "ZOom",
       "size": "tile",
@@ -806,7 +825,7 @@
       }
     },
     {
-      "order": 26,
+      "order": 27,
       "type": "text",
       "size": "tile",
       "span": 4,

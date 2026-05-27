@@ -161,13 +161,14 @@ function initPixelHoverSimple(tile, locked) {
 /* --- Gradient pixel helpers --- */
 
 const _resolveColorCache = {};
+const _colorProbe = document.createElement("div");
+_colorProbe.style.display = "none";
+document.body.appendChild(_colorProbe);
+
 function resolveColor(raw) {
   if (_resolveColorCache[raw]) return _resolveColorCache[raw];
-  const tmp = document.createElement("div");
-  tmp.style.color = raw;
-  document.body.appendChild(tmp);
-  const rgb = getComputedStyle(tmp).color;
-  tmp.remove();
+  _colorProbe.style.color = raw;
+  const rgb = getComputedStyle(_colorProbe).color;
   _resolveColorCache[raw] = rgb;
   return rgb;
 }

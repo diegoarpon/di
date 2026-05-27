@@ -28,7 +28,7 @@ window.switchLanguage = function (lang) {
   });
 
   const activeTab = localStorage.getItem('activeTab') || 'brand-creation';
-  updateFooter(activeTab);
+  updateFooter(activeTab, true);
   if (activeTab === 'brand-creation' && typeof brandCreationItems !== "undefined" && brandCreationItems.length) {
     renderBrandCreationGrid(brandCreationItems);
     requestAnimationFrame(() => addCol4Panels());
@@ -249,7 +249,7 @@ function createBrandTile(tileConfig) {
       sheet.id = "tile-bg-styles";
       document.head.appendChild(sheet);
     }
-    sheet.textContent += `.${uid}::before { background-image: url(${tileConfig.bgImage}); }\n`;
+    sheet.sheet.insertRule(`.${uid}::before { background-image: url(${tileConfig.bgImage}); }`, sheet.sheet.cssRules.length);
   }
   if (tileConfig.bgVideo) {
     tile.classList.add("tile-has-video");
@@ -287,6 +287,7 @@ function createBrandTile(tileConfig) {
     tile.classList.add("tile-text");
     const p = document.createElement("p");
     p.className = "tile-text-content";
+    if (tileConfig.textSize) p.style.fontSize = tileConfig.textSize;
     p.innerHTML = tileConfig.text?.[currentLang] || tileConfig.text?.es || "";
     tile.appendChild(p);
     if (tileConfig.panelImage) {
