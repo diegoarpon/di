@@ -115,7 +115,18 @@ body {
   }
 }
 
-/* Guide Lines */
+.logo {
+  position: relative;
+}
+
+.logo img {
+  height: 44px;
+  width: auto;
+  display: block;
+  bottom: -1px;
+  position: relative;
+}
+
 .guide-h-double-100 {
   border-top: 1px solid var(--graphite);
   border-bottom: 1px solid var(--graphite);

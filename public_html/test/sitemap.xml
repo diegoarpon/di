@@ -16,4 +16,12 @@
     <loc>https://www.disenod.com/project.html?p=nestseekers</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.disenod.com/project.html?p=insolito</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.disenod.com/project.html?p=virtualmind</loc>
+    <priority>0.8</priority>
+  </url>
 </urlset>

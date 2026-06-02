@@ -45,8 +45,8 @@
           "cols": 1,
           "textSize": "1.25rem",
           "text": {
-            "es": "<img src=\"img/www-icon.svg\" alt=\"Website\" class=\"tile-text-image mb-4\"/>  Diseño de una <strong>web institucional</strong> orientada a presentar el universo de la marca, sus servicios y sus propuestas formativas. La página articula <strong>identidad visual, contenido comercial y experiencia de usuario</strong> en una estructura clara, dinámica y adaptable. <br> <br> <span class=\"fw-bold\">↗</span> <a class=\"link\" href=\"https://www.egmarketing.com.ar\" target=\"_blank\">egmarketing.com.ar</a>",
-            "en": "<img src=\"img/www-icon.svg\" alt=\"Website\" class=\"tile-text-image mb-4\"/>    Design of an <strong>institutional website</strong> focused on presenting the brand universe, its services and educational offerings. The page brings together <strong>visual identity, commercial content and user experience</strong> within a clear, dynamic and adaptable structure. <br> <br> <span class=\"fw-bold\">↗</span> <a class=\"link\" href=\"https://www.egmarketing.com.ar\" target=\"_blank\">egmarketing.com.ar</a>"
+            "es": "<img src=\"img/www-icon.svg\" alt=\"Website\" class=\"tile-text-image mb-4 mt-2\"/>  Diseño de una <strong>web institucional</strong> orientada a presentar el universo de la marca, sus servicios y sus propuestas formativas. La página articula <strong>identidad visual, contenido comercial y experiencia de usuario</strong> en una estructura clara, dinámica y adaptable. <br> <br> <span class=\"fw-bold\">↗</span> <a class=\"link\" href=\"https://www.egmarketing.com.ar\" target=\"_blank\">egmarketing.com.ar</a>",
+            "en": "<img src=\"img/www-icon.svg\" alt=\"Website\" class=\"tile-text-image mb-4 mt-2\"/>    Design of an <strong>institutional website</strong> focused on presenting the brand universe, its services and educational offerings. The page brings together <strong>visual identity, commercial content and user experience</strong> within a clear, dynamic and adaptable structure. <br> <br> <span class=\"fw-bold\">↗</span> <a class=\"link\" href=\"https://www.egmarketing.com.ar\" target=\"_blank\">egmarketing.com.ar</a>"
           }
         },
         {
@@ -62,7 +62,7 @@
           "cols": 3
         },
         {
-          "src": "img/visuals/eg/eg_logo_evolution.webp",
+          "src": "img/visuals/eg/eg_logo_evolution.svg",
           "cols": 4
         },
         {
@@ -157,7 +157,7 @@
           "cols": 3
         },
         {
-          "src": "img/visuals/meta/meta-brand-evolution.webp",
+          "src": "img/visuals/meta/meta_evolution.svg",
           "cols": 4
         },
         {
@@ -202,7 +202,7 @@
           "cols": 3
         },
         {
-          "src": "img/visuals/meta/metaweb.mov",
+          "src": "img/visuals/meta/metaweb.mp4",
           "cols": 2,
           "loop": true
         },
@@ -298,7 +298,7 @@
           "cols": 2
         },
         {
-          "src": "img/visuals/nestseekers/nest_seekers_showsheet.svg",
+          "src": "img/visuals/nestseekers/nest_seekers_showsheet.png",
           "cols": 4
         }
       ]
@@ -330,31 +330,67 @@
           "industry": "For a specialty coffee shop"
         }
       },
+      "hideProjectMeta": true,
+      "description": {
+        "es": "Ampliación de marca para un café de especialidad, trabajando sobre una identidad existente para fortalecer su sistema visual y abrir nuevas posibilidades de contacto con sus clientes.<br><br>El proyecto explora nuevos recursos gráficos, direcciones visuales y estrategias de comunicación que permiten consolidar la personalidad de la marca y adaptarla con mayor consistencia a distintos soportes y experiencias.",
+        "en": "Brand expansion for a specialty coffee shop, building on an existing identity to strengthen its visual system and open new ways to connect with its customers.<br><br>The project explores new graphic resources, visual directions, and communication strategies that help consolidate the brand's personality and adapt it with greater consistency across different formats and experiences."
+      },
       "gallery": [
         {
-          "type": "text",
-          "cols": 3,
-          "bg": "var(--terracotta-dark)",
-          "text": {
-            "es": "Identidad de marca para restaurante de autor. Concepto visual, papelería y aplicaciones.",
-            "en": "Brand idvvventity for a signature restaurant. Visual concept, stationery and applications."
-          }
+          "src": "img/visuals/insolito/1.png",
+          "cols": 2
         },
         {
-          "src": "img/visuals/insolito/asset-1.svg",
-          "caption": {
-            "es": "Isotipo",
-            "en": "Isotype"
-          },
+          "src": "img/visuals/insolito/2.png",
+          "cols": 2
+        },
+        {
+          "src": "img/visuals/insolito/insolito-ig-kuki-1.png",
           "cols": 1
         },
         {
-          "src": "img/visuals/insolito/asset-2.svg",
-          "caption": {
-            "es": "Marca",
-            "en": "Brand mark"
-          },
+          "src": "img/visuals/insolito/insolito-ig-kuki-2.png",
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/insolito/insolito-ig-painauchocolat-2.png",
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/insolito/insolito-ig-painauchocolat-1.png",
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/insolito/signageee.png",
           "cols": 2
+        },
+        {
+          "src": "img/visuals/insolito/steeeel.png",
+          "cols": 2
+        },
+        {
+          "type": "text",
+          "cols": 4,
+          "text": {
+            "es": "Desarrollo visual para <strong>Insólito x Le Utthe Coffee Party</strong>, evento de fin de año junto a la marca de ropa.<br>Se diseñó un <strong>sistema gráfico</strong> que combinó la estética de ambas marcas para comunicar la experiencia del evento, aplicado en diferentes piezas de difusión, remeras y merchandising.",
+            "en": "Visual development for <strong>Insólito x Le Utthe Coffee Party</strong>, a year-end event with the clothing brand.<br>A <strong>graphic system</strong> was designed to combine the visual language of both brands and communicate the event experience across different pieces, including promotional materials, T-shirts, and merchandising."
+          }
+        },
+        {
+          "src": "img/visuals/insolito/insolito-leutthe-poster.png",
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/insolito/insolito-blur-2.png",
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/insolito/insolito-blur-3.png",
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/insolito/insolito-blur-1.png",
+          "cols": 1
         }
       ]
     },
@@ -396,18 +432,8 @@
       "size": "tile-xl",
       "span": 6,
       "text": {
-        "es": "Lapanaderi<br><br>En proceso. <br> Mayo 2026",
-        "en": "Lapanaderi<br><br>In the works. <br> May, 2026."
-      }
-    },
-    {
-      "order": 6,
-      "type": "text",
-      "size": "tile-xl",
-      "span": 6,
-      "text": {
-        "es": "SI Salud Integral<br><br>En proceso. <br> Mayo 2026",
-        "en": "SI Salud Integral<br><br>In the works. <br> May, 2026."
+        "es": "Lapanaderi<br><br>En proceso. <br> Junio 2026",
+        "en": "Lapanaderi<br><br>In the works. <br> June, 2026."
       }
     }
   ],

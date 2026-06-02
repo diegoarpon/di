@@ -50,11 +50,7 @@
             <div class="guide-h-double-100"></div>
             <div class="row">
               <div class="col-auto position-relative">
-                <img src="img/logo-diseno-d-1.svg" alt="diseño d." />
-                <div class="guide-v-short"></div>
-              </div>
-              <div class="col-auto position-relative">
-                <img src="img/logo-diseno-d-2.svg" alt="" aria-hidden="true" />
+                <img src="img/logo-estudio-d.svg" alt="estudio d." />
                 <div class="guide-v-short"></div>
               </div>
             </div>
@@ -103,11 +99,7 @@
             <div class="guide-h-double-100"></div>
             <div class="row">
               <div class="col-auto position-relative">
-                <img src="img/logo-diseno-d-1.svg" alt="diseño d." />
-                <div class="guide-v-short"></div>
-              </div>
-              <div class="col-auto position-relative">
-                <img src="img/logo-diseno-d-2.svg" alt="" aria-hidden="true" />
+                <img src="img/logo-estudio-d.svg" alt="estudio d." />
                 <div class="guide-v-short"></div>
               </div>
             </div>
@@ -201,7 +193,7 @@
           const industry = label?.industry || "";
           const titleCap = title ? title.charAt(0).toUpperCase() + title.slice(1) : "";
           const industryLow = industry ? industry.charAt(0).toLowerCase() + industry.slice(1) : "";
-          const metaText = titleCap && industryLow ? `${titleCap} ${industryLow}` : titleCap || industry;
+          const metaText = project.hideProjectMeta ? "" : (titleCap && industryLow ? `${titleCap} ${industryLow}` : titleCap || industry);
           metaEl.textContent = metaText;
           metaEl.classList.toggle("hidden", !metaText);
 
