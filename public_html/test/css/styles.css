@@ -135,12 +135,7 @@ body {
   position: absolute;
   left: -100%;
   top: 0;
-}
-
-@media (min-width: 1025px) {
-  .guide-h-double-100 {
-    filter: url(#pencil);
-  }
+  will-change: auto;
 }
 
 .guide-v-double-100 {
@@ -150,12 +145,6 @@ body {
   width: 100%;
   position: absolute;
   top: -10%;
-}
-
-@media (min-width: 1025px) {
-  .guide-v-double-100 {
-    filter: url(#pencil);
-  }
 }
 
 .guide-v-short {
@@ -234,10 +223,7 @@ body {
   cursor: pointer;
 }
 
-.tile:not(.carousel):not(.tile-xl):hover,
-.tile-xl:not(.carousel):hover {
-  will-change: transform;
-}
+
 
 /* Project Backgrounds — shared pseudo pattern */
 /* Mobile menu toggle */
