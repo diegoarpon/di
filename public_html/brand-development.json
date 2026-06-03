@@ -13,6 +13,7 @@
       "hoverColor": "var(--main-color)",
       "project": "eg",
       "projectName": "EG Marketing",
+      "activeClient": true,
       "title": {
         "es": "branding 360",
         "en": "branding 360"
@@ -316,6 +317,7 @@
       "hoverColor": "var(--main-color)",
       "project": "insolito",
       "projectName": "insólito café de especialidad",
+      "activeClient": true,
       "title": {
         "es": "ampliación de marca",
         "en": "brand expansion"

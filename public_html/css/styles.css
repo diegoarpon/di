@@ -1372,8 +1372,22 @@ body {
   color: var(--blackest);
 }
 
-footer * {
-  background-color: var(--manteca);
-  z-index: var(--z-toggle);
-  position: relative;
+.active-client-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--blackest);
+  background: var(--main-color);
+  padding: 0.2rem 0.5rem;
+  z-index: var(--z-tile-text);
+  pointer-events: none;
+}
+
+.version-label {
+  font-size: var(--fs-caption);
+  opacity: 0.45;
 }

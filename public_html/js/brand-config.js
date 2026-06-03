@@ -60,6 +60,8 @@ function buildBrandCreationItems(logos) {
                  'panelImage','panelImageSize','workType','year','hoverColor']
                 .filter(k => entry[k] != null)
                 .map(k => [k, entry[k]])
+            ),
+            ...(entry.activeClient && { activeClient: true }
             )
         };
     });

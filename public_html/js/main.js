@@ -46,6 +46,7 @@ window.switchLanguage = function (lang) {
   if (btn) btn.classList.add("active");
 
   document.documentElement.lang = lang;
+  updateVersionLabel();
 };
 
 // Add panels to col-4 elements
@@ -270,6 +271,13 @@ function createBrandTile(tileConfig) {
   if (tileConfig.panelImageSize) tile.dataset.panelImageSize = tileConfig.panelImageSize;
   if (tileConfig.workType) tile.dataset.workType = tileConfig.workType;
   if (tileConfig.year) tile.dataset.year = tileConfig.year;
+  if (tileConfig.activeClient) {
+    const badge = document.createElement("span");
+    badge.className = "active-client-badge";
+    badge.textContent = "cliente activo";
+    tile.appendChild(badge);
+  }
+
   if (tileConfig.project) {
     tile.dataset.project = tileConfig.project;
     tile.classList.add("cursor-pointer");

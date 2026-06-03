@@ -1,5 +1,18 @@
 let currentLang = localStorage.getItem("language") || "es";
 
+const APP_VERSION = "7.0";
+
+const _MONTHS_ES = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+const _MONTHS_EN = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+function updateVersionLabel() {
+  const el = document.getElementById("version-label");
+  if (!el) return;
+  const d = new Date();
+  const months = currentLang === "en" ? _MONTHS_EN : _MONTHS_ES;
+  el.textContent = `V ${APP_VERSION} — ${months[d.getMonth()]} ${d.getFullYear()}`;
+}
+
 const translations = {
   en: {
     // Navigation
