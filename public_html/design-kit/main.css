@@ -5,6 +5,7 @@
 body {
   font-family: "Roboto";
   font-weight: 300;
+  padding-bottom: 1px;
 }
 
 .relative {
