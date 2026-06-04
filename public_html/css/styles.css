@@ -499,7 +499,6 @@ body {
   z-index: var(--z-sidebar);
   border-right: 1px solid var(--graphite);
   overflow: hidden;
-  transition: transform 0.3s ease;
 }
 
 @media (min-width: 1025px) {
@@ -598,13 +597,13 @@ body {
     border-right: none;
     box-shadow: none;
     opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
   }
 
   .sidebar-container.open {
     opacity: 1;
-    visibility: visible;
+    pointer-events: auto;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
     padding-left: 1rem;
     padding-right: 1rem;
