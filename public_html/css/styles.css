@@ -504,6 +504,7 @@ body {
 }
 
 @media (min-width: 1366px) {
+
   .mobile-menu-toggle-container,
   .mobile-logo {
     display: none !important;
@@ -529,8 +530,8 @@ body {
   }
 
   .content-area {
-    margin-left: 25.625rem;
-    margin-right: 3.125rem;
+    margin-left: 25.5rem;
+    margin-right: 1rem;
   }
 
   #brand-creation-grid .tile:hover .logo-sized {
@@ -1127,7 +1128,7 @@ body {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 1.5rem;
-  align-items: stretch;
+  align-items: start;
 }
 
 .project-gallery-item {
@@ -1136,7 +1137,6 @@ body {
   border: 1px solid var(--graphite);
   background-color: var(--manteca);
   margin: 0;
-  height: 100%;
 }
 
 .project-gallery-item.gallery-span-3 {
@@ -1223,11 +1223,17 @@ body {
     grid-column: span 1;
   }
 
+  .project-gallery-item.gallery-span-12 {
+    grid-column: span 2;
+  }
+
   .gallery-tablet-spacer {
     display: block;
     grid-column: span 1;
   }
-    grid-column: span 2;
+
+  .project-gallery-item.gallery-item-text {
+    align-self: auto;
   }
 }
 
