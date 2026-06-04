@@ -501,7 +501,14 @@ body {
   overflow: hidden;
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1366px) {
+  .mobile-menu-toggle-container,
+  .mobile-logo {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1366px) {
   .sidebar-container {
     border-right: none;
     padding-left: 1rem;
@@ -594,7 +601,7 @@ body {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1365px) {
   .sidebar-container {
     position: fixed;
     top: 0;
