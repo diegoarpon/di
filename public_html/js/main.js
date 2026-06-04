@@ -3,6 +3,28 @@ let _resolveData;
 const dataReadyPromise = new Promise(r => { _resolveData = r; });
 window.signalDataReady = () => { _dataReady = true; _resolveData(); };
 
+const _videoObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const video = entry.target;
+    if (entry.isIntersecting) {
+      if (!video.src) {
+        video.src = video.dataset.src;
+        video.play();
+      }
+      _videoObserver.unobserve(video);
+    }
+  });
+}, { rootMargin: "200px" });
+
+const _bgObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("tile-bg-loaded");
+      _bgObserver.unobserve(entry.target);
+    }
+  });
+}, { rootMargin: "300px" });
+
 document.addEventListener("DOMContentLoaded", function () {
   const overlay = document.getElementById("menu-overlay");
   if (overlay) overlay.addEventListener("click", () => toggleSidebar());
@@ -244,24 +266,27 @@ function createBrandTile(tileConfig) {
   if (tileConfig.bgImage) {
     const uid = `tbg-${Math.random().toString(36).slice(2, 7)}`;
     tile.classList.add("tile-bg-image", uid);
+    tile.dataset.bgImage = tileConfig.bgImage;
     let sheet = document.getElementById("tile-bg-styles");
     if (!sheet) {
       sheet = document.createElement("style");
       sheet.id = "tile-bg-styles";
       document.head.appendChild(sheet);
     }
-    sheet.sheet.insertRule(`.${uid}::before { background-image: url(${tileConfig.bgImage}); }`, sheet.sheet.cssRules.length);
+    sheet.sheet.insertRule(`.${uid}.tile-bg-loaded::before { background-image: url(${tileConfig.bgImage}); }`, sheet.sheet.cssRules.length);
+    _bgObserver.observe(tile);
   }
   if (tileConfig.bgVideo) {
     tile.classList.add("tile-has-video");
     const video = document.createElement("video");
-    video.src = tileConfig.bgVideo;
-    video.autoplay = true;
     video.muted = true;
     video.loop = true;
     video.playsInline = true;
+    video.preload = "none";
+    video.dataset.src = tileConfig.bgVideo;
     video.className = "tile-bg-video";
     tile.appendChild(video);
+    _videoObserver.observe(video);
   }
   if (tileConfig.label) tile.dataset.label = JSON.stringify(tileConfig.label);
   if (tileConfig.name) tile.dataset.name = tileConfig.name;
