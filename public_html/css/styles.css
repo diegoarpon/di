@@ -597,8 +597,7 @@ body {
     transform: translateY(-100%);
     border-right: none;
     box-shadow: none;
-    height: auto;
-    min-height: fit-content;
+    height: 85vh;
   }
 
   .sidebar-container.open {
