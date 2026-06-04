@@ -257,7 +257,9 @@
             return;
           }
 
-          (project.gallery || []).forEach((item, idx) => {
+          let col3Count = 0;
+
+          (project.gallery || []).forEach((item, idx, arr) => {
             const figure = document.createElement("figure");
             const span = colSpanMap[item.cols] || 3;
             figure.className = `project-gallery-item gallery-span-${span}`;
@@ -351,6 +353,19 @@
             }
 
             gallery.appendChild(figure);
+
+            if (item.cols === 3) {
+              col3Count++;
+            } else {
+              col3Count = 0;
+            }
+            const nextItem = arr[idx + 1];
+            if (col3Count % 2 !== 0 && (!nextItem || nextItem.cols !== 3)) {
+              const spacer = document.createElement("div");
+              spacer.className = "gallery-tablet-spacer";
+              gallery.appendChild(spacer);
+              col3Count = 0;
+            }
           });
 
           const loader = document.getElementById("project-loader");

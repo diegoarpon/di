@@ -1191,6 +1191,11 @@ body {
     grid-column: span 1;
   }
 
+  .gallery-tablet-spacer {
+    display: block;
+    grid-column: span 1;
+  }
+
   .project-gallery-item.gallery-span-12 {
     grid-column: span 2;
   }
