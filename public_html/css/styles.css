@@ -455,12 +455,6 @@ body {
     margin-bottom: 1.5rem !important;
   }
 
-  footer>div {
-    position: relative;
-    z-index: var(--z-content);
-    background: var(--manteca);
-  }
-
   .brand-grid.mb-5 {
     margin-bottom: 1rem !important;
   }
@@ -1355,6 +1349,12 @@ body {
   .display-4 {
     font-size: 3.25rem;
   }
+}
+
+footer>div {
+  position: relative;
+  z-index: var(--z-content);
+  background: var(--manteca);
 }
 
 #footer-quote,
