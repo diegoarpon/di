@@ -147,6 +147,7 @@ body {
 }
 
 @media (min-width: 1025px) {
+
   :root:not(.safari-browser) .guide-h-double-100,
   :root:not(.safari-browser) .guide-v-double-100 {
     filter: url(#pencil);
@@ -1374,20 +1375,24 @@ body {
 
 .active-client-badge {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 0.7rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--blackest);
-  background: var(--main-color);
-  padding: 0.2rem 0.5rem;
+  top: 2rem;
+  right: 2rem;
+  font-size: 0.85rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--whitest);
+  background: none;
+  padding: 0;
   z-index: var(--z-tile-text);
   pointer-events: none;
+  opacity: 1;
+  line-height: 1.2;
+  text-align: right;
 }
 
 .version-label {
   font-size: var(--fs-caption);
   opacity: 0.45;
+
 }

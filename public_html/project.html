@@ -46,7 +46,9 @@
 
       <div class="col-auto sidebar-container" id="sidebar">
         <div class="d-flex flex-column h-100 pt-5 px-3 pb-5">
-          <div class="position-relative logo cursor-pointer" onclick="fadeNavigate('index.html?tab=brand-development')" role="button" tabindex="0" aria-label="Volver al inicio" onkeydown="if(event.key==='Enter')fadeNavigate('index.html?tab=brand-development')">
+          <div class="position-relative logo cursor-pointer" onclick="fadeNavigate('index.html?tab=brand-development')"
+            role="button" tabindex="0" aria-label="Volver al inicio"
+            onkeydown="if(event.key==='Enter')fadeNavigate('index.html?tab=brand-development')">
             <div class="guide-h-double-100"></div>
             <div class="row">
               <div class="col-auto position-relative">
@@ -56,7 +58,7 @@
             </div>
           </div>
 
-          <div class="mt-4">
+          <div class="mt-4 mb-2">
             <div class="d-flex flex-column gap-2">
               <button class="btn btn-link text-start p-0 fw-bold sidebar-nav-btn nav-button"
                 onclick="fadeNavigate('index.html')" data-i18n="brandCreation">brand creation</button>
@@ -83,6 +85,7 @@
                 <button class="option fw-bold lang-selector" onclick="switchLanguage('es')" id="lang-es">es.</button>
                 <button class="option fw-bold lang-selector" onclick="switchLanguage('en')" id="lang-en">en.</button>
               </div>
+              <div class="mt-4 version-label" id="version-label"></div>
             </div>
           </div>
         </div>
@@ -95,7 +98,9 @@
         </div>
 
         <div class="d-block d-xl-none pt-5 px-0">
-          <div class="position-relative logo cursor-pointer" onclick="fadeNavigate('index.html?tab=brand-development')" role="button" tabindex="0" aria-label="Volver al inicio" onkeydown="if(event.key==='Enter')fadeNavigate('index.html?tab=brand-development')">
+          <div class="position-relative logo cursor-pointer" onclick="fadeNavigate('index.html?tab=brand-development')"
+            role="button" tabindex="0" aria-label="Volver al inicio"
+            onkeydown="if(event.key==='Enter')fadeNavigate('index.html?tab=brand-development')">
             <div class="guide-h-double-100"></div>
             <div class="row">
               <div class="col-auto position-relative">
@@ -135,8 +140,8 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous" defer></script>
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"
+    defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
   <script src="js/main.js" defer></script>
   <script src="js/cursor.js" defer></script>
@@ -166,6 +171,7 @@
         document.documentElement.lang = lang;
         loadProject();
         updateFooter(_footerCategory, true);
+        updateVersionLabel();
       };
       switchLanguage(currentLang);
       loadProject();
@@ -223,7 +229,7 @@
             iframe.onload = () => {
               try {
                 iframe.style.height = iframe.contentDocument.body.scrollHeight + "px";
-              } catch(e) {
+              } catch (e) {
                 iframe.style.height = "100vh";
               }
               const loader = document.getElementById("project-loader");

@@ -274,7 +274,7 @@ function createBrandTile(tileConfig) {
   if (tileConfig.activeClient) {
     const badge = document.createElement("span");
     badge.className = "active-client-badge";
-    badge.textContent = "cliente activo";
+    badge.innerHTML = (t("activeClient") || "cliente\nactivo").replace("\n", "<br>");
     tile.appendChild(badge);
   }
 

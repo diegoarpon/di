@@ -2,15 +2,15 @@ let currentLang = localStorage.getItem("language") || "es";
 
 const APP_VERSION = "7.0";
 
-const _MONTHS_ES = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
-const _MONTHS_EN = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const _MONTHS_ES = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+const _MONTHS_EN = ["january","february","march","april","may","june","july","august","september","october","november","december"];
 
 function updateVersionLabel() {
   const el = document.getElementById("version-label");
   if (!el) return;
   const d = new Date();
   const months = currentLang === "en" ? _MONTHS_EN : _MONTHS_ES;
-  el.textContent = `V ${APP_VERSION} — ${months[d.getMonth()]} ${d.getFullYear()}`;
+  el.textContent = `v${APP_VERSION} — ${months[d.getMonth()]} ${d.getFullYear()}`;
 }
 
 const translations = {
@@ -39,6 +39,7 @@ const translations = {
       "    Designing products focused on shaping complex ideas into intuitive and refined <br class='d-none d-lg-block'>digital experiences. <span class='d-lg-block mt-4 fs-2 fw-normal'>Currently in development</span>",
 
     back: "back",
+    activeClient: "active\nclient",
   },
   es: {
     // Navigation
@@ -64,6 +65,7 @@ const translations = {
       "Diseño de producto enfocado en transformar ideas complejas en experiencias digitales intuitivas y funcionales. <span class='d-lg-block mt-4 fs-2 fw-normal'>Actualmente en desarrollo.</span>",
 
     back: "volver",
+    activeClient: "cliente\nactivo",
   },
 };
 
