@@ -177,31 +177,6 @@ function toggleSidebar() {
       dot.style.opacity = (isOpen && hiddenDots.includes(i)) ? "0" : "1";
     });
   });
-
-  if (isOpen) {
-    const items = sidebar.querySelectorAll(".sidebar-nav-btn, .contact-link, .lang-selector");
-    items.forEach((el, i) => {
-      el.style.opacity = "0";
-      el.style.transition = "none";
-      setTimeout(() => {
-        el.style.transition = `opacity 0.3s ease ${i * 0.07}s`;
-        el.style.opacity = "1";
-      }, 20);
-    });
-  } else {
-    const items = sidebar.querySelectorAll(".sidebar-nav-btn, .contact-link, .lang-selector");
-    items.forEach(el => {
-      el.style.opacity = "";
-      el.style.transition = "";
-    });
-  }
-
-  const isTablet = window.innerWidth >= 768 && window.innerWidth <= 1024;
-  const toggleContainer = document.querySelector(".mobile-menu-toggle-container");
-  if (isTablet && toggleContainer) {
-    toggleContainer.style.transition = "";
-    toggleContainer.style.right = "";
-  }
 }
 
 function initSwipeClose() {
