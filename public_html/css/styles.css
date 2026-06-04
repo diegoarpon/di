@@ -383,6 +383,10 @@ body {
     top: 1.25rem;
   }
 
+  .sidebar-container {
+    top: 3.5rem;
+  }
+
   .nav-button,
   .contact-link,
   .lang-selector {
@@ -591,10 +595,10 @@ body {
 @media (max-width: 1024px) {
   .sidebar-container {
     position: fixed;
-    top: 0;
+    top: 3.375rem;
     left: 0;
     width: 100vw;
-    transform: translateY(-100%);
+    transform: translateY(-110%);
     border-right: none;
     box-shadow: none;
     height: 85vh;
