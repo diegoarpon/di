@@ -594,15 +594,14 @@ body {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 85vh;
+    transform: translateY(-100%);
     border-right: none;
     box-shadow: none;
-    display: none;
-    overflow: hidden;
+    height: 85vh;
   }
 
   .sidebar-container.open {
-    display: flex;
+    transform: translateY(0);
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
     padding-left: 1rem;
     padding-right: 1rem;
