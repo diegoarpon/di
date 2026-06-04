@@ -580,6 +580,7 @@ body {
 @media (max-width: 767px) {
   .sidebar-container {
     height: auto;
+    min-height: fit-content;
   }
 
   .tab-intro h1 {
@@ -589,10 +590,15 @@ body {
 
 @media (max-width: 1024px) {
   .sidebar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
     transform: translateY(-100%);
-    min-width: 100vw;
     border-right: none;
     box-shadow: none;
+    height: auto;
+    min-height: fit-content;
   }
 
   .sidebar-container.open {
