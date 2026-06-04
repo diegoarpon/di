@@ -595,15 +595,15 @@ body {
 
 @media (max-width: 1024px) {
   .sidebar-container {
-    transform: translateX(-100%);
+    transform: translateY(-100%);
     min-width: 100vw;
     border-right: none;
     box-shadow: none;
   }
 
   .sidebar-container.open {
-    transform: translateX(0);
-    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.3);
+    transform: translateY(0);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
     padding-left: 1rem;
     padding-right: 1rem;
   }

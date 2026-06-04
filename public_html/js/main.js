@@ -195,8 +195,8 @@ function toggleSidebar() {
   const isTablet = window.innerWidth >= 768 && window.innerWidth <= 1024;
   const toggleContainer = document.querySelector(".mobile-menu-toggle-container");
   if (isTablet && toggleContainer) {
-    toggleContainer.style.transition = "right 0.3s ease";
-    toggleContainer.style.right = isOpen ? "calc(20vw + 1.25rem)" : "1.25rem";
+    toggleContainer.style.transition = "";
+    toggleContainer.style.right = "";
   }
 }
 
