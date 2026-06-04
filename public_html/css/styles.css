@@ -186,6 +186,8 @@ body {
   align-items: flex-start;
   box-sizing: border-box;
   cursor: default;
+  height: 100%;
+  flex: 1;
 }
 
 .tile-text-content {
@@ -962,11 +964,21 @@ body {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 1.5rem;
+  align-items: stretch;
 }
 
 .brand-grid-item {
   min-width: 0;
   position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-grid-shell {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
 }
 
 .brand-grid-item.span-4 {
@@ -1115,7 +1127,7 @@ body {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 1.5rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 .project-gallery-item {
