@@ -354,13 +354,14 @@
 
             gallery.appendChild(figure);
 
-            if (item.cols === 3) {
+            if (span === 4) {
               col3Count++;
             } else {
               col3Count = 0;
             }
             const nextItem = arr[idx + 1];
-            if (col3Count % 2 !== 0 && (!nextItem || nextItem.cols !== 3)) {
+            const nextSpan = nextItem ? (colSpanMap[nextItem.cols] || 3) : null;
+            if (col3Count % 2 !== 0 && nextSpan !== 4) {
               const spacer = document.createElement("div");
               spacer.className = "gallery-tablet-spacer";
               gallery.appendChild(spacer);
