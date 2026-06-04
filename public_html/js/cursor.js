@@ -1,7 +1,6 @@
 // Custom cursor
 (function () {
   if (window.matchMedia('(pointer: coarse)').matches) return;
-  if (document.documentElement.classList.contains('safari-browser')) return;
 
   const dot = document.createElement('div');
   dot.id = 'cursor-dot';

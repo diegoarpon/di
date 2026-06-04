@@ -1284,7 +1284,7 @@ body {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  :root:not(.safari-browser) * {
+  * {
     cursor: none !important;
   }
 }
