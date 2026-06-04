@@ -579,17 +579,11 @@ body {
 
 @media (max-width: 767px) {
   .sidebar-container {
-    height: 85vh;
+    height: auto;
   }
 
   .tab-intro h1 {
     font-size: clamp(1.75rem, 7vw, 2.5rem);
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .sidebar-container {
-    min-width: 80vw;
   }
 }
 
