@@ -1,7 +1,7 @@
 {
   "brandDevelopment": [
     {
-      "order": 1,
+      "order": 2,
       "src": "img/logos/eg-full-logo.svg",
       "alt": "EG",
       "size": "tile-xl",
@@ -101,7 +101,7 @@
       ]
     },
     {
-      "order": 2,
+      "order": 3,
       "src": "img/logos/meta-logo.svg",
       "alt": "Meta",
       "size": "tile-xl",
@@ -219,7 +219,7 @@
       ]
     },
     {
-      "order": 3,
+      "order": 4,
       "src": "img/logos/nestseekers-full-logo.svg",
       "alt": "Nestseekers",
       "size": "tile-xl",
@@ -305,7 +305,7 @@
       ]
     },
     {
-      "order": 4,
+      "order": 1,
       "src": "img/visuals/logos/insolito-logo.svg",
       "alt": "Insólito",
       "size": "tile-xl",
@@ -334,10 +334,38 @@
       },
       "hideProjectMeta": true,
       "description": {
-        "es": "Ampliación de marca para un café de especialidad, trabajando sobre una identidad existente para fortalecer su sistema visual y abrir nuevas posibilidades de contacto con sus clientes.<br><br>El proyecto explora nuevos recursos gráficos, direcciones visuales y estrategias de comunicación que permiten consolidar la personalidad de la marca y adaptarla con mayor consistencia a distintos soportes y experiencias.",
-        "en": "Brand expansion for a specialty coffee shop, building on an existing identity to strengthen its visual system and open new ways to connect with its customers.<br><br>The project explores new graphic resources, visual directions, and communication strategies that help consolidate the brand's personality and adapt it with greater consistency across different formats and experiences."
+        "es": "Ampliación de marca para un café de especialidad, trabajando sobre una identidad existente para fortalecer su sistema visual y abrir nuevas posibilidades de contacto con sus clientes. Se trata de un proceso activo que integra el diseño gráfico con la planificación estratégica de su comunicación.<br><br>Abarca desde la creación de nuevas narrativas y recursos visuales hasta la dirección de arte y fotografía de producto.",
+        "en": "Brand expansion for a specialty coffee shop, building on an existing identity to strengthen its visual system and unlock new touchpoints with its customers. This ongoing process integrates graphic design with strategic communication planning.<br><br>The scope ranges from developing new narratives and visual assets to art direction and product photography."
       },
       "gallery": [
+        {
+          "src": "img/visuals/insolito/insolit-story-especiales-medialuna.png",
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/insolito/insolit-story-especiales-edit.png",
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/insolito/insolit-story-especiales-pan-leche.png",
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/insolito/insolit-story-especiales-luna.png",
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/insolito/insolito-autumn-poster-medialunas.webp",
+          "cols": 3
+        },
+        {
+          "src": "img/visuals/insolito/insolito-autumn-poster-croissant-medialuna.webp",
+          "cols": 3
+        },
+        {
+          "src": "img/visuals/insolito/insolito-autumn-poster-soup.webp",
+          "cols": 3
+        },
         {
           "src": "img/visuals/insolito/1.png",
           "cols": 2
@@ -363,16 +391,16 @@
           "cols": 1
         },
         {
-          "src": "img/visuals/insolito/signageee.png",
-          "cols": 2
-        },
-        {
           "src": "img/visuals/insolito/steeeel.png",
           "cols": 2
         },
         {
+          "src": "img/visuals/insolito/insolito-street-sign.png",
+          "cols": 2
+        },
+        {
           "type": "text",
-          "cols": 4,
+          "cols": 3,
           "text": {
             "es": "Desarrollo visual para <strong>Insólito x Le Utthe Coffee Party</strong>, evento de fin de año junto a la marca de ropa.<br>Se diseñó un <strong>sistema gráfico</strong> que combinó la estética de ambas marcas para comunicar la experiencia del evento, aplicado en diferentes piezas de difusión, remeras y merchandising.",
             "en": "Visual development for <strong>Insólito x Le Utthe Coffee Party</strong>, a year-end event with the clothing brand.<br>A <strong>graphic system</strong> was designed to combine the visual language of both brands and communicate the event experience across different pieces, including promotional materials, T-shirts, and merchandising."
@@ -380,7 +408,11 @@
         },
         {
           "src": "img/visuals/insolito/insolito-leutthe-poster.png",
-          "cols": 1
+          "cols": 3
+        },
+        {
+          "src": "img/visuals/insolito/insolito-leutthe-poster-alternative.webp",
+          "cols": 3
         },
         {
           "src": "img/visuals/insolito/insolito-blur-2.png",
@@ -392,6 +424,31 @@
         },
         {
           "src": "img/visuals/insolito/insolito-blur-1.png",
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/insolito/insolito-leutthe-stickers.png",
+          "cols": 1
+        },
+        {
+          "type": "text",
+          "cols": 1,
+          "textSize": "1.25rem",
+          "text": {
+            "es": "Piezas de comunicación para eventos en Insólito. Selección de campañas diseñadas para distintas activaciones del café, donde se generaron sistemas visuales específicos para cada fecha, aplicados en piezas de difusión digital e impresa.",
+            "en": "Visual identity and communication assets for events at Insólito. A selection of campaigns designed for the coffee shop's various activations, featuring specific visual systems for each date, applied across digital and print media."
+          }
+        },
+        {
+          "src": "img/visuals/insolito/insolito-sessions-spring.webp",
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/insolito/inolito-integra-coffee-rave.webp",
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/insolito/insolito-cava.webp",
           "cols": 1
         }
       ]
