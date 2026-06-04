@@ -1136,6 +1136,7 @@ body {
   border: 1px solid var(--graphite);
   background-color: var(--manteca);
   margin: 0;
+  height: 100%;
 }
 
 .project-gallery-item.gallery-span-3 {
