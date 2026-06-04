@@ -504,6 +504,8 @@ body {
 @media (min-width: 1025px) {
   .sidebar-container {
     border-right: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .sidebar-container::after {
@@ -600,7 +602,7 @@ body {
     padding-right: 1rem;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease;
   }
 
   .sidebar-container.open {
