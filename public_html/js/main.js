@@ -182,13 +182,17 @@ function toggleSidebar() {
     const items = sidebar.querySelectorAll(".sidebar-nav-btn, .contact-link, .lang-selector");
     items.forEach((el, i) => {
       el.style.opacity = "0";
-      el.style.transform = "translateY(1rem)";
       el.style.transition = "none";
       setTimeout(() => {
-        el.style.transition = `opacity 0.3s ease ${i * 0.07}s, transform 0.3s ease ${i * 0.07}s`;
+        el.style.transition = `opacity 0.3s ease ${i * 0.07}s`;
         el.style.opacity = "1";
-        el.style.transform = "translateY(0)";
       }, 20);
+    });
+  } else {
+    const items = sidebar.querySelectorAll(".sidebar-nav-btn, .contact-link, .lang-selector");
+    items.forEach(el => {
+      el.style.opacity = "";
+      el.style.transition = "";
     });
   }
 
