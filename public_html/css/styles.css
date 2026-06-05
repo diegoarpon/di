@@ -286,11 +286,8 @@ body {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.mobile-menu-toggle.open span:nth-child(2),
-.mobile-menu-toggle.open span:nth-child(4),
-.mobile-menu-toggle.open span:nth-child(6),
-.mobile-menu-toggle.open span:nth-child(8) {
-  opacity: 0 !important;
+.mobile-menu-toggle.open span.dot-hide {
+  opacity: 0;
 }
 
 /* Overlay */
@@ -651,7 +648,7 @@ body {
 }
 
 .tab-intro {
-  padding-top: 2.5rem;
+  padding-top: 2rem;
   padding-bottom: 3rem;
 }
 
