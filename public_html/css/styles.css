@@ -278,12 +278,6 @@ body {
   transition: background-color 0.3s ease, padding 0.3s ease;
 }
 
-.mobile-menu-toggle.scrolled {
-  background-color: var(--main-color);
-  padding: 0.2rem;
-  border-radius: 0.1rem;
-}
-
 .mobile-menu-toggle span {
   display: block;
   width: 100%;
@@ -516,7 +510,8 @@ body {
 @media (max-width: 1365px) {
   .sidebar-container {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 85vh;
     border-right: none;
@@ -769,9 +764,9 @@ body {
 .brand-hover-name {
   font-weight: 500;
   font-size: var(--fs-hover-name);
-  margin-bottom: 0.75rem;
+  margin: 0 0 0.75rem 0;
   display: block;
-  margin-top: 0;
+  line-height: 1.25;
 }
 
 .brand-hover-meta {
@@ -1171,7 +1166,7 @@ body {
   padding: 1.5rem;
   font-size: var(--fs-gallery-text);
   font-weight: 300;
-  line-height: 1.4;
+  line-height: 1.2;
   color: var(--blackest);
 }
 
