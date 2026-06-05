@@ -220,7 +220,7 @@
 
           const description = project.description?.[currentLang] || project.description?.es || "";
           const descEl = document.getElementById("project-description");
-          descEl.textContent = description;
+          descEl.innerHTML = description;
           descEl.classList.toggle("hidden", !description);
           document.getElementById("meta-description").content = description;
           document.getElementById("og-description").content = description;
