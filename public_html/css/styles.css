@@ -348,9 +348,6 @@ body {
     min-height: 2.75rem;
   }
 
-  #sidebar .logo+.mt-4 {
-    margin-top: 3rem !important;
-  }
 
   #lang-es,
   #lang-en {
@@ -476,10 +473,6 @@ body {
 
   .sidebar-nav-btn {
     min-height: 2.75rem;
-  }
-
-  #sidebar .logo+.mt-4 {
-    margin-top: 3rem !important;
   }
 
   #sidebar .d-flex.flex-column.gap-2 {
