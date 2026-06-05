@@ -168,6 +168,7 @@ function toggleSidebar() {
   sidebar.classList.toggle("open");
   const isOpen = sidebar.classList.contains("open");
   toggle.classList.toggle("open", isOpen);
+  toggle.classList.remove("scrolled");
   toggle.setAttribute("aria-expanded", isOpen);
   overlay.classList.toggle("active", isOpen);
   document.body.style.overflow = isOpen ? "hidden" : "";
@@ -203,7 +204,6 @@ function initScrollToggle() {
   if (!el) return;
   const onScroll = () => el.classList.toggle("scrolled", document.body.scrollTop > 200);
   document.body.addEventListener("scroll", onScroll, { passive: true });
-  el.addEventListener("click", () => requestAnimationFrame(() => el.classList.remove("scrolled")));
 }
 
 function initSwipeClose() {
