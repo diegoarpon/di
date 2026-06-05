@@ -275,7 +275,6 @@ body {
   background: none;
   border: none;
   padding: 0;
-  transition: background-color 0.3s ease, padding 0.3s ease;
 }
 
 .mobile-menu-toggle span {
