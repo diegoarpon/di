@@ -358,10 +358,6 @@ body {
     margin-top: 3rem !important;
   }
 
-  #sidebar .d-flex.flex-column.gap-2 {
-    gap: 1.5rem !important;
-  }
-
   #lang-es,
   #lang-en {
     min-height: 2.75rem;
