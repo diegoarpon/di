@@ -39,6 +39,9 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="img/square.svg" />
     <link rel="canonical" href="https://www.disenod.com/" />
+    <link rel="alternate" hreflang="es" href="https://www.disenod.com/" />
+    <link rel="alternate" hreflang="en" href="https://www.disenod.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.disenod.com/" />
     <link rel="apple-touch-icon" sizes="180x180" href="img/square.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="img/square.svg" />
     <link rel="icon" type="image/png" sizes="16x16" href="img/square.svg" />
@@ -81,7 +84,7 @@
     <div class="overlay" id="menu-overlay"></div>
 
     <!-- Mobile Menu Toggle -->
-    <div class="d-block d-xl-none mobile-menu-toggle-container">
+    <div class="d-block mobile-menu-toggle-container">
         <button class="mobile-menu-toggle" onclick="toggleSidebar()" aria-label="Abrir menú" aria-expanded="false"
             aria-controls="sidebar">
             <span></span><span></span><span></span>
@@ -92,7 +95,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-auto sidebar-container" id="sidebar">
-                <div class="d-flex flex-column h-100 pt-5 px-lg-3 pb-5">
+                <div class="d-flex flex-column h-100 pt-5 pb-5">
                     <div class="position-relative logo cursor-pointer" onclick="showContent('brand-creation')"
                         role="button" tabindex="0" aria-label="Ir a Brand Creation"
                         onkeydown="if(event.key==='Enter')showContent('brand-creation')">
@@ -154,7 +157,7 @@
             </div>
             <div class="col content-area px-3 fading">
                 <!-- Mobile Logo -->
-                <div class="d-block d-xl-none pt-5 px-0">
+                <div class="d-block mobile-logo pt-5 px-0">
                     <div class="position-relative logo cursor-pointer" onclick="showContent('brand-creation')"
                         role="button" tabindex="0" aria-label="Ir a Brand Creation"
                         onkeydown="if(event.key==='Enter')showContent('brand-creation')">
@@ -171,23 +174,17 @@
                 <!-- Tab Content -->
 
                 <!-- ========== BRAND CREATION TAB CONTENT STARTS HERE ========== -->
-                <div id="brand-creation" class="tab-content tab-hidden">
+                <div id="brand-creation" class="tab-content d-none">
                     <div class="tab-intro">
-                        <h1 id="intro-text" class="display-4 fw-light" data-i18n="intro">Hi, I'm Diego (D) — Designer
-                            with 20 years of experience in branding, web and product design.<br>I work on real problems:
-                            brands that aren't understood, products that don't scale, interfaces that don't work.<br>In
-                            recent years I've specialized in branding for the medical sector.<br>I design clear, usable
-                            and sustainable solutions. More human than any AI.<br>Available for freelance work <span
-                                class="intro-arrow">→</span> <a href='mailto:hola@disenod.com' class='fw-normal link'
-                                target='_blank' rel=''>hola@disenod.com</a></h1>
+                        <h1 id="intro-text" class="tab-heading fw-light" data-i18n="intro">Hola, soy Diego (d) — diseñador gráfico especializado en branding, web y producto.</h1>
                     </div>
                     <div id="brand-creation-grid" class="brand-grid mb-5"></div>
                 </div>
 
                 <!-- ========== BRAND DEVELOPMENT TAB CONTENT STARTS HERE ========== -->
-                <div id="brand-development" class="tab-content tab-hidden">
+                <div id="brand-development" class="tab-content d-none">
                     <div class="tab-intro">
-                        <h1 class="display-4 fw-light" data-i18n="brandDevelopmentIntro">
+                        <h1 class="tab-heading fw-light" data-i18n="brandDevelopmentIntro">
                             Comprehensive brand development projects that establish strong
                             visual identities and strategic positioning for businesses
                             across various industries.
@@ -197,9 +194,9 @@
                 </div>
 
                 <!-- ========== PRODUCT DESIGN TAB CONTENT STARTS HERE ========== -->
-                <div id="product-design" class="tab-content tab-hidden">
+                <div id="product-design" class="tab-content d-none">
                     <div class="tab-intro">
-                        <h1 class="display-4 fw-light" data-i18n="productDesignIntro">
+                        <h1 class="tab-heading fw-light" data-i18n="productDesignIntro">
                             User-centered digital product design focused on creating
                             intuitive interfaces and seamless user experiences for mobile
                             and web applications.

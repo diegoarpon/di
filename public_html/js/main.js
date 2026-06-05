@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const overlay = document.getElementById("menu-overlay");
   if (overlay) overlay.addEventListener("click", () => toggleSidebar());
   initSwipeClose();
+  initScrollToggle();
 
   window.switchLanguage(currentLang);
 
@@ -99,7 +100,7 @@ function addCol4Panels() {
       const tagRaw = tile.dataset.tag ? JSON.parse(tile.dataset.tag) : null;
       const tagArr = tagRaw ? (Array.isArray(tagRaw) ? tagRaw : (tagRaw[currentLang] || tagRaw.es || [])) : [];
       const tagText = tagArr.join(' / ');
-      text.innerHTML = `${meta}${displayName ? `<span class="brand-hover-name">${displayName}</span>` : ''}${tagText ? `<span class="brand-hover-tags">${tagText}</span>` : ''}${content.industry ? `<span class="brand-hover-industry">${content.industry}</span>` : ''}${img}`;
+      text.innerHTML = `${meta}${displayName ? `<h2 class="brand-hover-name">${displayName}</h2>` : ''}${tagText ? `<span class="brand-hover-tags">${tagText}</span>` : ''}${content.industry ? `<span class="brand-hover-industry">${content.industry}</span>` : ''}${img}`;
       tile.appendChild(text);
     });
 
@@ -124,8 +125,8 @@ function showContent(category, isInitial) {
 
   function applyTab() {
     document.querySelectorAll(".tab-content").forEach((tab) => {
-      tab.classList.toggle("tab-visible", tab.id === category);
-      tab.classList.toggle("tab-hidden", tab.id !== category);
+      tab.classList.toggle("d-block", tab.id === category);
+      tab.classList.toggle("d-none", tab.id !== category);
     });
     if (category === "brand-creation" && typeof brandCreationItems !== "undefined" && brandCreationItems.length) {
       const grid = document.getElementById("brand-creation-grid");
@@ -182,22 +183,34 @@ function toggleSidebar() {
     const items = sidebar.querySelectorAll(".sidebar-nav-btn, .contact-link, .lang-selector");
     items.forEach((el, i) => {
       el.style.opacity = "0";
-      el.style.transform = "translateY(1rem)";
       el.style.transition = "none";
       setTimeout(() => {
-        el.style.transition = `opacity 0.3s ease ${i * 0.07}s, transform 0.3s ease ${i * 0.07}s`;
+        el.style.transition = `opacity 0.3s ease ${i * 0.07}s`;
         el.style.opacity = "1";
-        el.style.transform = "translateY(0)";
       }, 20);
+    });
+  } else {
+    const items = sidebar.querySelectorAll(".sidebar-nav-btn, .contact-link, .lang-selector");
+    items.forEach(el => {
+      el.style.opacity = "";
+      el.style.transition = "";
     });
   }
 
   const isTablet = window.innerWidth >= 768 && window.innerWidth <= 1024;
   const toggleContainer = document.querySelector(".mobile-menu-toggle-container");
   if (isTablet && toggleContainer) {
-    toggleContainer.style.transition = "right 0.3s ease";
-    toggleContainer.style.right = isOpen ? "calc(20vw + 1.25rem)" : "1.25rem";
+    toggleContainer.style.transition = "";
+    toggleContainer.style.right = "";
   }
+}
+
+function initScrollToggle() {
+  const el = document.querySelector(".mobile-menu-toggle");
+  if (!el) return;
+  const onScroll = () => el.classList.toggle("scrolled", document.body.scrollTop > 200);
+  document.body.addEventListener("scroll", onScroll, { passive: true });
+  el.addEventListener("click", () => el.classList.remove("scrolled"));
 }
 
 function initSwipeClose() {
@@ -226,13 +239,13 @@ function createDevInner(logos, title, metaText, arrowText, bottomLogos, showTool
   inner.appendChild(arrow);
   const bottom = document.createElement("div");
   if (bottomLogos) bottomLogos.forEach(logo => bottom.appendChild(createBrandLogo(logo)));
-  const h4 = document.createElement("h4");
-  h4.className = "fw-bold mb-2 display-5";
-  h4.textContent = title;
+  const h2 = document.createElement("h2");
+  h2.className = "fw-bold mb-2 display-5";
+  h2.textContent = title;
   const meta = document.createElement("div");
   meta.className = "d-flex gap-2";
   meta.textContent = metaText;
-  bottom.appendChild(h4);
+  bottom.appendChild(h2);
   bottom.appendChild(meta);
   inner.appendChild(bottom);
   return inner;
@@ -350,7 +363,6 @@ function createBrandTile(tileConfig) {
   } else {
     tile.appendChild(inner);
   }
-
 
   return tile;
 }

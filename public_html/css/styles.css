@@ -63,16 +63,48 @@
   --black-20: #00000033;
 
   /* Font sizes */
-  --fs-nav: clamp(1.25rem, 3vw, 2rem);
-  --fs-nav-mobile: 7.5vw;
-  --fs-nav-tablet: clamp(2rem, 4vw, 3rem);
-  --fs-intro: clamp(1rem, 2.5vw, 1.25rem);
-  --fs-tile-text: 1.25rem;
-  --fs-tile-xl: 1.25rem;
-  --fs-caption: 1rem;
-  --fs-product-meta: 1.2rem;
-  --fs-cursor: 3rem;
 
+  /* — Navegación — */
+  --fs-nav: clamp(1.25rem, 3vw, 2rem);
+  /* sidebar desktop */
+  --fs-nav-mobile: 7.5vw;
+  /* sidebar mobile <768px */
+  --fs-nav-tablet: clamp(2rem, 4vw, 3rem);
+  /* sidebar tablet 768px–1024px */
+
+  /* — Headings — */
+  --fs-heading: clamp(1.85rem, 4vw, 2.75rem);
+  /* h1 de cada pestaña y página de proyecto */
+  --fs-h1-mobile: clamp(1.5rem, 5vw, 2.5rem);
+  /* h1 en mobile, override del anterior */
+  --fs-heading-tile: clamp(1.75rem, 3vw, 3rem);
+  /* h2 dentro de tiles brand development */
+  --fs-hover-name: clamp(1.25rem, 2vw, 1.65rem);
+  /* h2 nombre de marca en hover overlay */
+
+  /* — Cuerpo de texto — */
+  --fs-tile-text: clamp(1rem, 1.5vw, 1.25rem);
+  /* texto en overlays, tags, footer, project meta */
+  --fs-tile-body: clamp(1.25rem, 2vw, 1.75rem);
+  /* texto largo en tiles tipo texto */
+  --fs-gallery-text: clamp(1rem, 2.5vw, 1.25rem);
+  /* texto en celdas de color en galería */
+
+  /* — Etiquetas y meta — */
+  --fs-meta-label: clamp(0.75rem, 1vw, 0.85rem);
+  /* etiquetas pequeñas: año, tipo, breadcrumb */
+  --fs-caption: clamp(0.75rem, 1vw, 1rem);
+  /* pie de foto y version label */
+
+  /* — Elementos UI — */
+  --fs-back-arrow: clamp(2rem, 3vw, 3.25rem);
+  /* flecha del botón volver */
+  --fs-back-label: clamp(1rem, 1.5vw, 1.25rem);
+  /* texto del botón volver */
+  --fs-arrow: clamp(7rem, 7vw, 8rem);
+  /* flecha decorativa en tiles */
+  --fs-cursor: clamp(2rem, 3vw, 3rem);
+  /* cursor gooey animado */
 
   /* Easing */
   --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -124,7 +156,6 @@ body {
   width: auto;
   display: block;
   bottom: -1px;
-  position: relative;
 }
 
 .guide-h-double-100 {
@@ -186,11 +217,13 @@ body {
   align-items: flex-start;
   box-sizing: border-box;
   cursor: default;
+  height: 100%;
+  flex: 1;
 }
 
 .tile-text-content {
   padding: 2rem;
-  font-size: 1.75rem;
+  font-size: var(--fs-tile-body);
   font-weight: 400;
   line-height: 1.2;
   color: var(--blackest);
@@ -225,14 +258,10 @@ body {
 }
 
 /* Tile Panels */
-.tile:not(.carousel):not(.tile-xl),
-.tile-xl:not(.carousel) {
+.tile:not(.tile-xl) {
   cursor: pointer;
 }
 
-
-
-/* Project Backgrounds — shared pseudo pattern */
 /* Mobile menu toggle */
 .mobile-menu-toggle {
   cursor: pointer;
@@ -246,6 +275,13 @@ body {
   background: none;
   border: none;
   padding: 0;
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.mobile-menu-toggle.scrolled {
+  background-color: var(--main-color);
+  padding: 0.2rem;
+  border-radius: 0.1rem;
 }
 
 .mobile-menu-toggle span {
@@ -266,10 +302,7 @@ body {
 /* Overlay */
 .overlay {
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   background-color: var(--black-50);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -289,80 +322,6 @@ body {
     visibility 0.5s var(--ease-out);
 }
 
-/* Carousel */
-.carousel-indicators {
-  bottom: 1.25rem;
-}
-
-.carousel-control-next-icon,
-.carousel-control-prev-icon {
-  background-color: var(--black-20);
-  border-radius: 50%;
-  padding: 0.9375rem;
-  width: 3.125rem;
-  height: 3.125rem;
-  background-size: 50%;
-}
-
-.carousel-control-next,
-.carousel-control-prev {
-  margin: 0.625rem;
-}
-
-/* Language & Options */
-#lang-en,
-#lang-es {
-  position: relative;
-  padding-bottom: 0.1875rem;
-}
-
-#lang-en::after,
-#lang-es::after {
-  content: "";
-  position: absolute;
-  bottom: 0.1rem;
-  left: 0;
-  width: 0;
-  height: 0.25rem;
-  background-color: var(--main-color);
-  transition: width 0.3s ease;
-}
-
-#lang-en.active::after,
-#lang-es.active::after,
-#lang-en:hover::after,
-#lang-es:hover::after {
-  width: 100%;
-}
-
-#lang-en.active,
-#lang-es.active {
-  color: var(--main-color);
-  cursor: default;
-}
-
-.option {
-  z-index: var(--z-option);
-  position: relative;
-  cursor: pointer;
-  padding-bottom: 0.1875rem;
-}
-
-.option::after {
-  content: "";
-  position: absolute;
-  bottom: 0.1rem;
-  left: 0;
-  width: 0;
-  height: 0.25rem;
-  background-color: var(--main-color);
-  transition: width 0.3s ease;
-}
-
-.option:hover::after {
-  width: 100%;
-}
-
 /* Links */
 .link {
   color: inherit;
@@ -375,7 +334,6 @@ body {
 .link:active {
   color: var(--main-color);
 }
-
 
 /* Mobile Styles */
 @media (max-width: 767px) {
@@ -419,36 +377,7 @@ body {
     height: 25rem;
   }
 
-  .carousel-indicators {
-    bottom: 0.625rem;
-  }
 
-  .carousel-indicators button {
-    width: 0.5rem;
-    height: 0.5rem;
-  }
-
-  #product-design .carousel-item .d-flex {
-    align-items: flex-start !important;
-  }
-
-  #product-design .text-center {
-    text-align: left !important;
-  }
-
-  #product-design .justify-content-center {
-    justify-content: flex-start !important;
-  }
-
-  #brand-creation .tile:not(.carousel).active .brand-hover-overlay,
-  #brand-creation .tile-xl:not(.carousel).active .brand-hover-overlay {
-    clip-path: circle(150% at 0% 0%);
-  }
-
-  #brand-creation .tile:not(.carousel).active .brand-hover-text,
-  #brand-creation .tile-xl:not(.carousel).active .brand-hover-text {
-    opacity: 1;
-  }
 
   footer {
     margin-top: 1.5rem !important;
@@ -458,8 +387,16 @@ body {
   .brand-grid.mb-5 {
     margin-bottom: 1rem !important;
   }
-}
 
+  .sidebar-container {
+    height: auto;
+    min-height: fit-content;
+  }
+
+  .tab-intro h1 {
+    font-size: var(--fs-h1-mobile);
+  }
+}
 
 /* Sidebar Nav Buttons */
 .sidebar-nav-btn {
@@ -499,12 +436,19 @@ body {
   z-index: var(--z-sidebar);
   border-right: 1px solid var(--graphite);
   overflow: hidden;
-  transition: transform 0.3s ease;
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1366px) {
+
+  .mobile-menu-toggle-container,
+  .mobile-logo {
+    display: none !important;
+  }
+
   .sidebar-container {
     border-right: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .sidebar-container::after {
@@ -519,8 +463,8 @@ body {
   }
 
   .content-area {
-    margin-left: 25.625rem;
-    margin-right: 3.125rem;
+    margin-left: 25.5rem;
+    margin-right: 1rem;
   }
 
   #brand-creation-grid .tile:hover .logo-sized {
@@ -530,15 +474,6 @@ body {
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  .col-4 {
-    flex: 0 0 auto;
-    width: 50%;
-  }
-
-  .col-8 {
-    flex: 0 0 auto;
-    width: 100%;
-  }
 
   .nav-button,
   .contact-link,
@@ -575,37 +510,32 @@ body {
   .sidebar-nav-btn::after {
     display: none;
   }
+
+  #lang-es::after,
+  #lang-en::after {
+    display: block;
+  }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1365px) {
   .sidebar-container {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
     height: 85vh;
-  }
-
-  .tab-intro h1 {
-    font-size: clamp(1.75rem, 7vw, 2.5rem);
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .sidebar-container {
-    min-width: 80vw;
-  }
-}
-
-@media (max-width: 1024px) {
-  .sidebar-container {
-    transform: translateX(-100%);
-    min-width: 100vw;
     border-right: none;
     box-shadow: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
   }
 
   .sidebar-container.open {
-    transform: translateX(0);
-    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.3);
-    padding-left: 1rem;
-    padding-right: 1rem;
+    opacity: 1;
+    pointer-events: auto;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
   }
 
   .content-area {
@@ -666,6 +596,60 @@ body {
   color: inherit;
 }
 
+/* Language underlines */
+#lang-en,
+#lang-es {
+  position: relative;
+  padding-bottom: 0.1875rem;
+}
+
+#lang-en::after,
+#lang-es::after {
+  content: "";
+  position: absolute;
+  bottom: 0.1rem;
+  left: 0;
+  width: 0;
+  height: 0.25rem;
+  background-color: var(--main-color);
+  transition: width 0.3s ease;
+}
+
+#lang-en.active::after,
+#lang-es.active::after,
+#lang-en:hover::after,
+#lang-es:hover::after {
+  width: 100%;
+}
+
+#lang-en.active,
+#lang-es.active {
+  color: var(--main-color);
+  cursor: default;
+}
+
+.option {
+  z-index: var(--z-option);
+  position: relative;
+  cursor: pointer;
+  padding-bottom: 0.1875rem;
+}
+
+.option::after {
+  content: "";
+  position: absolute;
+  bottom: 0.1rem;
+  left: 0;
+  width: 0;
+  height: 0.25rem;
+  background-color: var(--main-color);
+  transition: width 0.3s ease;
+}
+
+.option:hover::after {
+  width: 100%;
+}
+
 /* Content Area */
 .content-area {
   z-index: var(--z-content);
@@ -674,21 +658,8 @@ body {
   transition: margin-left 0.3s ease, opacity 0.5s ease;
 }
 
-
 .content-area.fading {
   opacity: 0;
-}
-
-.tab-visible {
-  display: block;
-}
-
-.tab-hidden {
-  display: none;
-}
-
-.hidden {
-  display: none;
 }
 
 .project-description {
@@ -739,13 +710,13 @@ body {
 }
 
 .project-back-arrow-large {
-  font-size: 3.25rem;
+  font-size: var(--fs-back-arrow);
   line-height: 1;
   flex-shrink: 0;
 }
 
 .project-back-label {
-  font-size: 1.25rem;
+  font-size: var(--fs-back-label);
   max-width: 0;
   overflow: hidden;
   white-space: nowrap;
@@ -765,8 +736,8 @@ body {
 }
 
 /* Brand Creation hover */
-#brand-creation .tile:not(.carousel),
-#brand-creation .tile-xl:not(.carousel) {
+#brand-creation .tile,
+#brand-creation .tile-xl {
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -775,10 +746,7 @@ body {
 
 .brand-hover-overlay {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   background-color: var(--main-color);
   opacity: 0.95;
   clip-path: circle(0% at 0% 0%);
@@ -789,10 +757,7 @@ body {
 
 .brand-hover-text {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   color: var(--blackest);
   font-size: var(--fs-tile-text);
   line-height: 1.25;
@@ -807,9 +772,10 @@ body {
 
 .brand-hover-name {
   font-weight: 500;
-  font-size: 1.65rem;
+  font-size: var(--fs-hover-name);
   margin-bottom: 0.75rem;
   display: block;
+  margin-top: 0;
 }
 
 .brand-hover-meta {
@@ -824,7 +790,7 @@ body {
 
 .brand-hover-worktype,
 .brand-hover-year {
-  font-size: 0.85rem;
+  font-size: var(--fs-meta-label);
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -833,31 +799,28 @@ body {
   position: absolute;
   top: 2rem;
   right: 2rem;
-  font-size: 0.85rem;
+  font-size: var(--fs-meta-label);
   font-weight: 400;
   z-index: var(--z-tile-text);
 }
 
-.brand-hover-tags {
-  display: block;
-  font-size: var(--fs-tile-text);
-  font-weight: 300;
-  margin-bottom: 0.75rem;
-}
-
+.brand-hover-tags,
 .brand-hover-industry {
   display: block;
   font-size: var(--fs-tile-text);
   font-weight: 300;
 }
 
-#brand-creation .tile-xl .brand-hover-text {
-  font-size: var(--fs-tile-xl);
+.brand-hover-tags {
+  margin-bottom: 0.75rem;
 }
 
+#brand-creation .tile-xl .brand-hover-text {
+  font-size: var(--fs-tile-text);
+}
 
-#brand-creation .tile:not(.carousel):hover .brand-hover-overlay,
-#brand-creation .tile-xl:not(.carousel):hover .brand-hover-overlay {
+#brand-creation .tile:hover .brand-hover-overlay,
+#brand-creation .tile-xl:hover .brand-hover-overlay {
   clip-path: circle(150% at 0% 0%);
 }
 
@@ -872,10 +835,6 @@ body {
 #brand-creation-grid .tile:hover .brand-hover-text {
   transition: none !important;
   opacity: unset;
-}
-
-.cursor-pointer {
-  cursor: pointer;
 }
 
 .logo-sized {
@@ -899,7 +858,7 @@ body {
 }
 
 .brand-dev-arrow {
-  font-size: 8rem;
+  font-size: var(--fs-arrow);
   line-height: 1;
   color: var(--blackest);
   position: relative;
@@ -941,16 +900,25 @@ body {
     opacity: 1;
     color: var(--whitest);
   }
+
+  .active-client-badge {
+    display: none;
+  }
 }
 
 .brand-grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 1.5rem;
+  align-items: stretch;
 }
 
 .brand-grid-item {
   min-width: 0;
+  position: relative;
+}
+
+.brand-grid-shell {
   position: relative;
 }
 
@@ -1037,19 +1005,9 @@ body {
   }
 }
 
-/* Product Hover */
-.product-hover-custom {
-  position: relative;
-  overflow: hidden;
-  background: var(--manteca);
-}
-
 .tile-bg-video {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1066,10 +1024,7 @@ body {
 .tile-bg-image::before {
   content: "";
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1082,8 +1037,6 @@ body {
   position: relative;
   z-index: 2;
 }
-
-
 
 /* Project Gallery — Grid */
 .project-gallery-embed {
@@ -1180,6 +1133,10 @@ body {
   }
 }
 
+.gallery-tablet-spacer {
+  display: none;
+}
+
 @media (min-width: 768px) and (max-width: 1024px) {
   .project-gallery {
     grid-template-columns: repeat(2, 1fr);
@@ -1194,6 +1151,15 @@ body {
   .project-gallery-item.gallery-span-12 {
     grid-column: span 2;
   }
+
+  .gallery-tablet-spacer {
+    display: block;
+    grid-column: span 1;
+  }
+
+  .project-gallery-item.gallery-item-text {
+    align-self: auto;
+  }
 }
 
 .project-gallery-item.gallery-item-text {
@@ -1207,7 +1173,7 @@ body {
   z-index: 1;
   margin: 0;
   padding: 1.5rem;
-  font-size: var(--fs-intro);
+  font-size: var(--fs-gallery-text);
   font-weight: 300;
   line-height: 1.4;
   color: var(--blackest);
@@ -1225,47 +1191,20 @@ body {
   margin-right: auto;
 }
 
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: var(--manteca);
-  border: 1px solid var(--blackest);
-  font-size: var(--fs-product-meta);
-  line-height: 1;
-  padding: 0.25rem 0.6rem;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.carousel-prev {
-  left: 0;
-}
-
-.carousel-next {
-  right: 0;
-}
-
-.carousel-counter {
-  position: absolute;
-  bottom: 2.5rem;
-  right: 0.75rem;
-  font-size: var(--fs-caption);
-  z-index: 2;
-  background: var(--manteca);
-  padding: 0 0.25rem;
-}
-
 .pixel-grid {
   border-radius: 1.25rem;
   overflow: hidden;
 }
 
-#brand-development-grid h4,
+#brand-development-grid h2,
 #brand-development-grid .d-flex.gap-2 {
   color: var(--whitest);
   position: relative;
   z-index: var(--z-tile-text);
+}
+
+#brand-development-grid h2 {
+  font-size: var(--fs-heading-tile);
 }
 
 /* Gooey cursor */
@@ -1280,7 +1219,6 @@ body {
   z-index: 99999;
   will-change: transform;
   transform: translateZ(0);
-  -webkit-transform: translateZ(0);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -1299,10 +1237,7 @@ body {
 
 .project-loader {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   z-index: 10000;
   display: flex;
   align-items: center;
@@ -1345,9 +1280,13 @@ body {
   padding: 2rem;
 }
 
+.tab-heading {
+  font-size: var(--fs-heading);
+}
+
 @media (min-width: 1200px) {
-  .display-4 {
-    font-size: 3.25rem;
+  .display-5 {
+    font-size: var(--fs-heading-tile);
   }
 }
 
@@ -1372,7 +1311,7 @@ footer>div {
 }
 
 .project-breadcrumb {
-  font-size: 0.85rem;
+  font-size: var(--fs-meta-label);
   font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
@@ -1383,7 +1322,7 @@ footer>div {
   position: absolute;
   top: 2rem;
   right: 2rem;
-  font-size: 0.85rem;
+  font-size: var(--fs-meta-label);
   font-weight: 400;
   text-transform: none;
   letter-spacing: 0;
@@ -1400,5 +1339,4 @@ footer>div {
 .version-label {
   font-size: var(--fs-caption);
   opacity: 0.45;
-
 }
