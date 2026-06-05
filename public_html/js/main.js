@@ -170,14 +170,7 @@ function toggleSidebar() {
   toggle.classList.toggle("open", isOpen);
   toggle.setAttribute("aria-expanded", isOpen);
   overlay.classList.toggle("active", isOpen);
-
-  const dots = toggle.querySelectorAll("span");
-  const hiddenDots = [1, 3, 5, 7];
-  requestAnimationFrame(() => {
-    dots.forEach((dot, i) => {
-      dot.style.opacity = (isOpen && hiddenDots.includes(i)) ? "0" : "1";
-    });
-  });
+  document.body.style.overflow = isOpen ? "hidden" : "";
 
   if (isOpen) {
     const items = sidebar.querySelectorAll(".sidebar-nav-btn, .contact-link, .lang-selector");
