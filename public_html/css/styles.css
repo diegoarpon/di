@@ -287,7 +287,8 @@ body {
 }
 
 .mobile-menu-toggle.open span.dot-hide {
-  opacity: 0;
+  opacity: 0 !important;
+  transition: none !important;
 }
 
 /* Overlay */
