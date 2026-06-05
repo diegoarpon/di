@@ -67,10 +67,11 @@
   --fs-nav-mobile: 7.5vw;
   --fs-nav-tablet: clamp(2rem, 4vw, 3rem);
   --fs-intro: clamp(1rem, 2.5vw, 1.25rem);
-  --fs-tile-text: 1.25rem;
-  --fs-tile-xl: 1.25rem;
-  --fs-caption: 1rem;
-  --fs-product-meta: 1.2rem;
+  --fs-tile-text: clamp(1rem, 1.5vw, 1.25rem);
+  --fs-tile-xl: clamp(1rem, 1.5vw, 1.25rem);
+  --fs-tile-text-body: clamp(1.25rem, 2vw, 1.75rem);
+  --fs-caption: clamp(0.75rem, 1vw, 1rem);
+  --fs-product-meta: clamp(1rem, 1.2vw, 1.2rem);
   --fs-cursor: 3rem;
 
 
@@ -192,7 +193,7 @@ body {
 
 .tile-text-content {
   padding: 2rem;
-  font-size: 1.75rem;
+  font-size: var(--fs-tile-text-body);
   font-weight: 400;
   line-height: 1.2;
   color: var(--blackest);
@@ -971,15 +972,10 @@ body {
 .brand-grid-item {
   min-width: 0;
   position: relative;
-  display: flex;
-  flex-direction: column;
 }
 
 .brand-grid-shell {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  height: 100%;
+  position: relative;
 }
 
 .brand-grid-item.span-4 {
