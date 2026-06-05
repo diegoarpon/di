@@ -203,7 +203,7 @@ function initScrollToggle() {
   if (!el) return;
   const onScroll = () => el.classList.toggle("scrolled", document.body.scrollTop > 200);
   document.body.addEventListener("scroll", onScroll, { passive: true });
-  el.addEventListener("click", () => el.classList.remove("scrolled"));
+  el.addEventListener("click", () => requestAnimationFrame(() => el.classList.remove("scrolled")));
 }
 
 function initSwipeClose() {
