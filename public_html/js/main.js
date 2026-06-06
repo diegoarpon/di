@@ -265,7 +265,7 @@ function createBrandLogo(logo) {
     return img;
 }
 
-function createBrandTile(tileConfig, isFirst = false) {
+function createBrandTile(tileConfig) {
   const tile = document.createElement("div");
   tile.className = tileConfig.tileClass || tileConfig.size || "tile";
   if (tileConfig.bgColor) tile.classList.add(tileConfig.bgColor);
@@ -344,13 +344,8 @@ function createBrandTile(tileConfig, isFirst = false) {
   inner.className = tileConfig.innerClass || "brand-grid-logo-wrap";
 
   if (!tileConfig.placeholder) {
-    (tileConfig.logos || []).forEach((logo, i) => {
-      const img = createBrandLogo(logo);
-      if (isFirst && i === 0) {
-        img.loading = "eager";
-        img.fetchPriority = "high";
-      }
-      inner.appendChild(img);
+    (tileConfig.logos || []).forEach((logo) => {
+      inner.appendChild(createBrandLogo(logo));
     });
   }
 
@@ -376,20 +371,20 @@ function createBrandWrapper(item) {
   return { wrapper, shell };
 }
 
-function createBrandSingleItem(item, isFirst = false) {
+function createBrandSingleItem(item) {
   const { wrapper, shell } = createBrandWrapper(item);
-  shell.appendChild(createBrandTile(item, isFirst));
+  shell.appendChild(createBrandTile(item));
   return wrapper;
 }
 
-function createBrandStackedItem(item, isFirst = false) {
+function createBrandStackedItem(item) {
   const { wrapper, shell } = createBrandWrapper(item);
   const stack = document.createElement("div");
   stack.className = "brand-grid-stack";
-  (item.tiles || []).forEach((tileConfig, i) => {
+  (item.tiles || []).forEach((tileConfig) => {
     const slot = document.createElement("div");
     slot.className = "brand-grid-slot position-relative";
-    slot.appendChild(createBrandTile(tileConfig, isFirst && i === 0));
+    slot.appendChild(createBrandTile(tileConfig));
     stack.appendChild(slot);
   });
   shell.appendChild(stack);
@@ -438,11 +433,10 @@ function renderBrandCreationGrid(items, containerId = "brand-creation-grid") {
     const container = document.getElementById(containerId);
     if (!container) return;
     container.innerHTML = "";
-    items.forEach((item, index) => {
-        const isFirst = index === 0 && containerId === "brand-creation-grid";
+    items.forEach((item) => {
         const element = item.layout === "stacked"
-            ? createBrandStackedItem(item, isFirst)
-            : createBrandSingleItem(item, isFirst);
+            ? createBrandStackedItem(item)
+            : createBrandSingleItem(item);
         container.appendChild(element);
     });
 }
