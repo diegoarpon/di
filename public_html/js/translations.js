@@ -30,7 +30,7 @@ const translations = {
 
     // Main intro
     intro:
-      "Hi, I’m Diego (d) — a graphic designer focused on branding, web, and product. <br> I develop visual systems that bring clarity, structure, and longevity to brands. <br> Designed for humans, by a human. <span class='d-block mt-4'> Available for freelance work <span class='intro-arrow'>→</span> <a href='mailto:hola@disenod.com' class='fw-normal link' target='_blank' rel=''>hola@disenod.com</a></span>",
+      "Hi, I’m Diego (d) — a graphic designer specializing in branding, web, and product design. I solve communication problems by creating clear, scalable, and consistent visual systems. <br> Designed for humans, by a human. <span class='d-block mt-4'> Available for freelance work <span class='intro-arrow'>→</span> <a href='mailto:hola@estudiod.site' class='fw-bold link' target='_blank' rel=''>hola@estudiod.site</a></span>",
 
     // Tab intros
     brandDevelopmentIntro:
@@ -57,7 +57,7 @@ const translations = {
 
     // Main intro
     intro:
-      "Hola, soy Diego (d) — diseñador gráfico especializado en branding, web y producto. <br> Resuelvo problemas de comunicación creando sistemas visuales claros, escalables y consistentes. Diseño humano, para humanos. <span class='d-block mt-4'> Disponible para trabajo freelance <span class='intro-arrow'>→</span> <a href='mailto:hola@disenod.com' class='fw-normal link' target='_blank' rel=''>hola@disenod.com</a></span>",
+      "Hola, soy Diego (d) — diseñador gráfico especializado en branding, web y producto. <br> Resuelvo problemas de comunicación creando sistemas visuales claros, escalables y consistentes. Diseño humano, para humanos. <span class='d-block mt-4'> Disponible para trabajo freelance <span class='intro-arrow'>→</span> <a href='mailto:hola@estudiod.site' class='fw-bold link' target='_blank' rel=''>hola@estudiod.site</a></span>",
     // Tab intros
     brandDevelopmentIntro:
       "Proyectos de marca en acción: identidad, comunicación y dirección creativa aplicadas a productos, espacios y experiencias. <br> Sistemas que se adaptan y funcionan de acuerdo al contexto.",
