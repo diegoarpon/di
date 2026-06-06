@@ -25,6 +25,18 @@ const _bgObserver = new IntersectionObserver((entries) => {
   });
 }, { rootMargin: "300px" });
 
+let _tileRevealIndex = 0;
+const _tileObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      el.style.transitionDelay = `${(el.dataset.revealIndex || 0) * 60}ms`;
+      el.classList.add("tile-visible");
+      _tileObserver.unobserve(el);
+    }
+  });
+}, { rootMargin: "0px", threshold: 0.05 });
+
 document.addEventListener("DOMContentLoaded", function () {
   const overlay = document.getElementById("menu-overlay");
   if (overlay) overlay.addEventListener("click", () => toggleSidebar());
@@ -363,6 +375,8 @@ function createBrandTile(tileConfig) {
 function createBrandWrapper(item) {
   const wrapper = document.createElement("article");
   wrapper.className = `brand-grid-item span-${item.span}`;
+  wrapper.dataset.revealIndex = _tileRevealIndex++;
+  _tileObserver.observe(wrapper);
   wrapper.appendChild(createBrandGuide("guide-h-double-100"));
   if (item.guides && item.guides.includes("left")) wrapper.appendChild(createBrandGuide("guide-v-double-100"));
   const shell = document.createElement("div");

@@ -1158,6 +1158,14 @@ body {
 .brand-grid-item {
   min-width: 0;
   position: relative;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out);
+}
+
+.brand-grid-item.tile-visible {
+  opacity: 1;
+  transform: none;
 }
 
 .brand-grid-shell {
