@@ -17,18 +17,44 @@
   <meta property="og:site_name" content="diseño d." />
   <meta property="og:title" content="diseño d." id="og-title" />
   <meta property="og:description" content="" id="og-description" />
-  <meta property="og:image" content="https://www.disenod.com/img/og-image.png" />
+  <meta property="og:image" content="https://estudiod.site/img/og-image.png" />
   <meta property="og:url" content="" id="og-url" />
   <link rel="icon" type="image/svg+xml" href="img/square.svg" />
   <link rel="canonical" href="" id="canonical" />
-  <link rel="alternate" hreflang="es" href="https://www.disenod.com/" />
-  <link rel="alternate" hreflang="en" href="https://www.disenod.com/" />
-  <link rel="alternate" hreflang="x-default" href="https://www.disenod.com/" />
+  <link rel="alternate" hreflang="es" href="https://estudiod.site/" />
+  <link rel="alternate" hreflang="en" href="https://estudiod.site/" />
+  <link rel="alternate" hreflang="x-default" href="https://estudiod.site/" />
+  <link rel="preload" href="fonts/WOFF2/FG_FuturistTRIAL-Light.woff2" as="font" type="font/woff2" crossorigin
+    fetchpriority="high" />
   <link rel="preload" href="fonts/WOFF2/FG_FuturistTRIAL-Regular.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="fonts/WOFF2/FG_FuturistTRIAL-Medium.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="img/logo-estudio-d.svg" as="image" />
   <meta name="theme-color" content="#FF7518" />
+  <style>
+    @font-face {
+      font-family: "FG Futurist";
+      src: url("fonts/WOFF2/FG_FuturistTRIAL-Light.woff2") format("woff2");
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap
+    }
 
+    @font-face {
+      font-family: "FG Futurist";
+      src: url("fonts/WOFF2/FG_FuturistTRIAL-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap
+    }
+
+    @font-face {
+      font-family: "FG Futurist";
+      src: url("fonts/WOFF2/FG_FuturistTRIAL-Medium.woff2") format("woff2");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap
+    }
+  </style>
   <link href="css/styles.css" rel="stylesheet" />
   <script>if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) document.documentElement.classList.add('safari-browser');</script>
   <script src="js/translations.js" defer></script>
@@ -48,7 +74,8 @@
   <div class="d-block mobile-menu-toggle-container">
     <button class="mobile-menu-toggle" onclick="toggleSidebar()" aria-label="Abrir menú" aria-expanded="false"
       aria-controls="sidebar">
-      <span></span><span class="dot-hide"></span><span></span><span class="dot-hide"></span><span></span><span class="dot-hide"></span><span></span><span class="dot-hide"></span><span></span>
+      <span></span><span class="dot-hide"></span><span></span><span class="dot-hide"></span><span></span><span
+        class="dot-hide"></span><span></span><span class="dot-hide"></span><span></span>
     </button>
   </div>
 
@@ -202,7 +229,7 @@
           document.title = `${projectName} — diseño d.`;
           document.getElementById("project-name").textContent = projectName;
 
-          const pageUrl = `https://www.disenod.com/project.html?p=${projectId}`;
+          const pageUrl = `https://estudiod.site/project.html?p=${projectId}`;
           document.getElementById("canonical").href = pageUrl;
           document.getElementById("og-url").content = pageUrl;
           document.getElementById("og-title").content = `${projectName} — diseño d.`;
