@@ -23,7 +23,7 @@ const _bgObserver = new IntersectionObserver((entries) => {
       _bgObserver.unobserve(entry.target);
     }
   });
-}, { rootMargin: "300px" });
+}, { rootMargin: "800px" });
 
 document.addEventListener("DOMContentLoaded", function () {
   const overlay = document.getElementById("menu-overlay");
@@ -438,6 +438,15 @@ function renderBrandCreationGrid(items, containerId = "brand-creation-grid") {
             ? createBrandStackedItem(item)
             : createBrandSingleItem(item);
         container.appendChild(element);
+    });
+    requestAnimationFrame(() => {
+        container.querySelectorAll(".tile-bg-image").forEach(tile => {
+            const rect = tile.getBoundingClientRect();
+            if (rect.top < window.innerHeight + 800) {
+                tile.classList.add("tile-bg-loaded");
+                _bgObserver.unobserve(tile);
+            }
+        });
     });
 }
 
