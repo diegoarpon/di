@@ -30,7 +30,7 @@ const translations = {
 
     // Main intro
     intro:
-      "Hi, I’m Diego (d) — a graphic designer specializing in branding, web, and product design. I solve communication problems by creating clear, scalable, and consistent visual systems. <br> Designed for humans, by a human. <span class='d-block mt-4'> Available for freelance work <span class='intro-arrow'>→</span> <a href='mailto:hola@estudiod.site' class='fw-bold link' target='_blank' rel=''>hola@estudiod.site</a></span>",
+      "Hi, I’m Diego (d) — a graphic designer specializing in branding, web, and product design. <br> I solve communication problems by creating clear, scalable, and consistent visual systems. <br> Designed for humans, by a human. <span class='d-block mt-4'> Available for freelance work <span class='intro-arrow'>→</span> <a href='mailto:hola@estudiod.site' class='fw-bold link' target='_blank' rel=''>hola@estudiod.site</a></span>",
 
     // Tab intros
     brandDevelopmentIntro:
