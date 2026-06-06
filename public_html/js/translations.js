@@ -30,13 +30,13 @@ const translations = {
 
     // Main intro
     intro:
-      "Hi, I’m Diego (d) — a graphic designer specializing in branding, web, and product design. I solve communication problems by creating clear, scalable, and consistent visual systems. <br> Designed for humans, by a human. <span class='d-block mt-4'> Available for freelance work <span class='intro-arrow'>→</span> <a href='mailto:hola@estudiod.site' class='fw-bold link' target='_blank' rel=''>hola@estudiod.site</a></span>",
+      "Hi, I’m Diego (d) — a graphic designer specializing in <strong>branding, web, and product design</strong>. I solve communication problems by creating clear, scalable, and consistent visual systems. <br> <strong>Designed for humans, by a human.</strong> <span class='d-block mt-4'> Available for freelance work <span class='intro-arrow'>→</span> <a href='mailto:hola@estudiod.site' class='fw-bold link' target='_blank' rel=''>hola@estudiod.site</a></span>",
 
     // Tab intros
     brandDevelopmentIntro:
-      "Brand development across contexts: identity, communication, and creative direction applied to products, spaces, and experiences. <br> Systems designed to adapt and perform within their context.",
+      "Brand development across contexts: <strong>identity, communication, and creative direction</strong> applied to <strong>products, spaces, and experiences</strong>. <br> Systems designed to adapt and perform within their context.",
     productDesignIntro:
-      "    Designing products focused on shaping complex ideas into intuitive and refined digital experiences. <span class='d-block mt-4 fs-2 fw-normal'>Currently in development</span>",
+      "    Designing products focused on shaping complex ideas into <strong>intuitive and refined digital experiences</strong>. <span class='d-block mt-4 fw-normal' style='font-size:var(--fs-tile-text)'>Currently in development</span>",
 
     back: "back",
     activeClient: "active\nclient",
@@ -57,12 +57,12 @@ const translations = {
 
     // Main intro
     intro:
-      "Hola, soy Diego (d) — diseñador gráfico especializado en branding, web y producto. <br> Resuelvo problemas de comunicación creando sistemas visuales claros, escalables y consistentes. Diseño humano, para humanos. <span class='d-block mt-4'> Disponible para trabajo freelance <span class='intro-arrow'>→</span> <a href='mailto:hola@estudiod.site' class='fw-bold link' target='_blank' rel=''>hola@estudiod.site</a></span>",
+      "Hola, soy Diego (d) — diseñador gráfico especializado en <strong>branding, web y producto</strong>. <br> Resuelvo problemas de comunicación creando sistemas visuales claros, escalables y consistentes. <strong>Diseño humano, para humanos.</strong> <span class='d-block mt-4'> Disponible para trabajo freelance <span class='intro-arrow'>→</span> <a href='mailto:hola@estudiod.site' class='fw-bold link' target='_blank' rel=''>hola@estudiod.site</a></span>",
     // Tab intros
     brandDevelopmentIntro:
-      "Proyectos de marca en acción: identidad, comunicación y dirección creativa aplicadas a productos, espacios y experiencias. <br> Sistemas que se adaptan y funcionan de acuerdo al contexto.",
+      "Proyectos de marca en acción: <strong>identidad, comunicación y dirección creativa</strong> aplicadas a <strong>productos, espacios y experiencias</strong>. <br> Sistemas que se adaptan y funcionan de acuerdo al contexto.",
     productDesignIntro:
-      "Diseño de producto enfocado en transformar ideas complejas en experiencias digitales intuitivas y funcionales. <span class='d-block mt-4 fs-2 fw-normal'>Actualmente en desarrollo.</span>",
+      "Diseño de producto enfocado en transformar ideas complejas en <strong>experiencias digitales intuitivas y funcionales</strong>. <span class='d-block mt-4 fw-normal' style='font-size:var(--fs-tile-text)'>Actualmente en desarrollo.</span>",
 
     back: "volver",
     activeClient: "cliente\nactivo",
