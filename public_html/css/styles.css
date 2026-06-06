@@ -764,18 +764,22 @@ body {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 85vh;
+    height: 100vh;
+    height: 100dvh;
     border-right: none;
     box-shadow: none;
     padding-left: 1rem;
     padding-right: 1rem;
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    overflow-y: auto;
   }
 
   .sidebar-container.open {
     opacity: 1;
+    visibility: visible;
     pointer-events: auto;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
   }
