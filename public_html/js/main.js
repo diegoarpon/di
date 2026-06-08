@@ -31,6 +31,13 @@ document.addEventListener("DOMContentLoaded", function () {
   initSwipeClose();
   initScrollToggle();
 
+  document.addEventListener("touchstart", function resumeVideos() {
+    document.querySelectorAll(".tile-bg-video").forEach(v => {
+      if (v.src && v.paused) v.play().catch(() => {});
+    });
+    document.removeEventListener("touchstart", resumeVideos);
+  }, { once: true, passive: true });
+
   window.switchLanguage(currentLang);
 
   const hasGridTabs = document.getElementById("brand-creation");
