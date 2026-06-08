@@ -9,8 +9,9 @@ const _videoObserver = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       if (!video.src) {
         video.src = video.dataset.src;
-        video.play();
+        video.load();
       }
+      video.play().catch(() => {});
       _videoObserver.unobserve(video);
     }
   });
@@ -290,6 +291,7 @@ function createBrandTile(tileConfig) {
     video.muted = true;
     video.loop = true;
     video.playsInline = true;
+    video.autoplay = true;
     video.preload = "none";
     video.dataset.src = tileConfig.bgVideo;
     video.className = "tile-bg-video";
