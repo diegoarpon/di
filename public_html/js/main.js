@@ -288,9 +288,11 @@ function createBrandTile(tileConfig) {
   if (tileConfig.bgVideo) {
     tile.classList.add("tile-has-video");
     const video = document.createElement("video");
+    video.setAttribute("muted", "");
+    video.setAttribute("loop", "");
+    video.setAttribute("playsinline", "");
+    video.setAttribute("autoplay", "");
     video.muted = true;
-    video.loop = true;
-    video.playsInline = true;
     video.preload = "none";
     video.dataset.src = tileConfig.bgVideo;
     video.className = "tile-bg-video";
