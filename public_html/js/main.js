@@ -9,9 +9,8 @@ const _videoObserver = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       if (!video.src) {
         video.src = video.dataset.src;
-        video.load();
+        video.play();
       }
-      video.play().catch(() => {});
       _videoObserver.unobserve(video);
     }
   });
@@ -288,11 +287,9 @@ function createBrandTile(tileConfig) {
   if (tileConfig.bgVideo) {
     tile.classList.add("tile-has-video");
     const video = document.createElement("video");
-    video.setAttribute("muted", "");
-    video.setAttribute("loop", "");
-    video.setAttribute("playsinline", "");
-    video.setAttribute("autoplay", "");
     video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
     video.preload = "none";
     video.dataset.src = tileConfig.bgVideo;
     video.className = "tile-bg-video";
