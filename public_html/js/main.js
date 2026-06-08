@@ -50,6 +50,8 @@ window.switchLanguage = function (lang) {
     if (text && text !== key) el.innerHTML = text;
   });
 
+  const cvLink = document.getElementById("cv-link");
+  if (cvLink) cvLink.href = lang === "en" ? "cv_diego_fabbri_arpon_en.pdf" : "cv_diego_fabbri_arpon_es.pdf";
   const activeTab = localStorage.getItem('activeTab') || 'brand-creation';
   updateFooter(activeTab, true);
   if (activeTab === 'brand-creation' && typeof brandCreationItems !== "undefined" && brandCreationItems.length) {
