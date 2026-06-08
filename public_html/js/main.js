@@ -9,8 +9,8 @@ const _videoObserver = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       if (!video.src) {
         video.src = video.dataset.src;
+        video.play();
       }
-      video.play().catch(() => {});
       _videoObserver.unobserve(video);
     }
   });
@@ -288,8 +288,6 @@ function createBrandTile(tileConfig) {
     tile.classList.add("tile-has-video");
     const video = document.createElement("video");
     video.muted = true;
-    video.setAttribute("muted", "");
-    video.setAttribute("playsinline", "");
     video.loop = true;
     video.playsInline = true;
     video.preload = "none";
