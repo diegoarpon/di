@@ -289,6 +289,7 @@ function createBrandTile(tileConfig) {
     const video = document.createElement("video");
     video.muted = true;
     video.setAttribute("muted", "");
+    video.setAttribute("playsinline", "");
     video.loop = true;
     video.playsInline = true;
     video.preload = "none";
