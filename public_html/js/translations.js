@@ -39,7 +39,6 @@ const translations = {
       "    Designing products focused on shaping complex ideas into <strong>intuitive and refined digital experiences</strong>. <span class='d-block mt-4 fw-normal' style='font-size:var(--fs-tile-text)'>Currently in development</span>",
 
     back: "back",
-    activeClient: "active\nclient",
   },
   es: {
     // Navigation
@@ -65,7 +64,6 @@ const translations = {
       "Diseño de producto enfocado en transformar ideas complejas en <strong>experiencias digitales intuitivas y funcionales</strong>. <span class='d-block mt-4 fw-normal' style='font-size:var(--fs-tile-text)'>Actualmente en desarrollo.</span>",
 
     back: "volver",
-    activeClient: "cliente\nactivo",
   },
 };
 

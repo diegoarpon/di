@@ -1,7 +1,7 @@
 {
   "tiles": [
     {
-      "order": 1,
+      "order": 3,
       "src": "img/logos/si-salud-integral-logo.svg",
       "alt": "SI Salud Integral",
       "size": "tile-xl",
@@ -32,14 +32,15 @@
       }
     },
     {
-      "order": 2,
-      "src": "img/logos/juliana-oppici-logo.svg",
+      "order": 1,
+      "src": "img/logos/lapanaderi-logo.svg",
       "alt": "Juliana Oppici",
       "size": "tile-xl",
       "span": 4,
-      "logoSize": 250,
-      "invertLogo": false,
+      "logoSize": 300,
+      "invertLogo": true,
       "workType": "Branding",
+      "bgImage": "img/backgrounds/lapanaderi.png",
       "year": "2026",
       "tag": {
         "es": [
@@ -63,34 +64,34 @@
       }
     },
     {
-      "order": 3,
-      "src": "img/logos/ponti-tosi-logo.svg",
-      "alt": "Ponti Tosi",
+      "order": 2,
+      "src": "img/logos/molde-logo.svg",
+      "alt": "Molde",
       "size": "tile-xl",
       "span": 4,
-      "logoSize": 200,
+      "logoSize": 250,
       "invertLogo": true,
-      "bgImage": "img/backgrounds/pontitosi.webp",
+      "bgImage": "img/backgrounds/molde.jpg",
       "workType": "Branding",
-      "year": "2025",
+      "year": "2026",
       "tag": {
         "es": [
-          "Salud",
-          "Dermatologia"
+          "App",
+          "Gastronomía"
         ],
         "en": [
-          "Health",
-          "Dermatology"
+          "App",
+          "Gastronomy"
         ]
       },
       "label": {
         "es": {
-          "name": "Ponti Tosi",
-          "industry": "Plataforma de divulgación en Dermatología Funcional con enfoque en PNIE, respaldada por instituciones académicas."
+          "name": "Up & Mid Face",
+          "industry": "Programa de formación avanzada en técnicas de rejuvenecimiento facial."
         },
         "en": {
-          "name": "Ponti Tosi",
-          "industry": "Functional dermatology platform grounded in psychoneuroimmunoendocrinology (PNIE), supported by academic institutions."
+          "name": "Up & Mid Face",
+          "industry": "Advanced training program focused on modern facial rejuvenation techniques."
         }
       }
     },
@@ -131,10 +132,10 @@
       "span": 4,
       "stack": [
         {
-          "src": "img/logos/players-logo.svg",
+          "src": "img/logos/metodo-logo.svg",
           "alt": "Players Sports Grill",
           "size": "tile",
-          "logoSize": 200,
+          "logoSize": 300,
           "invertLogo": false,
           "workType": "Rebranding",
           "year": "2014",
@@ -211,33 +212,33 @@
     },
     {
       "order": 7,
-      "src": "img/logos/up-mid-face-logo.svg",
-      "alt": "Curso Up Mid Face",
+      "src": "img/logos/ponti-tosi-logo.svg",
+      "alt": "Ponti Tosi",
       "size": "tile-xl",
       "span": 4,
-      "logoSize": 300,
+      "logoSize": 200,
       "invertLogo": true,
-      "bgImage": "img/backgrounds/upmidface.webp",
+      "bgImage": "img/backgrounds/pontitosi.webp",
       "workType": "Branding",
-      "year": "2023",
+      "year": "2025",
       "tag": {
         "es": [
           "Salud",
-          "Medicina Estética"
+          "Dermatologia"
         ],
         "en": [
           "Health",
-          "Aesthetic Medicine"
+          "Dermatology"
         ]
       },
       "label": {
         "es": {
-          "name": "Up & Mid Face",
-          "industry": "Programa de formación avanzada en técnicas de rejuvenecimiento facial."
+          "name": "Ponti Tosi",
+          "industry": "Plataforma de divulgación en Dermatología Funcional con enfoque en PNIE, respaldada por instituciones académicas."
         },
         "en": {
-          "name": "Up & Mid Face",
-          "industry": "Advanced training program focused on modern facial rejuvenation techniques."
+          "name": "Ponti Tosi",
+          "industry": "Functional dermatology platform grounded in psychoneuroimmunoendocrinology (PNIE), supported by academic institutions."
         }
       }
     },
@@ -454,7 +455,7 @@
       "logoSize": 175,
       "invertLogo": true,
       "multi": "img/logos/flittz-logo.svg",
-      "multiLogoSize": 150,
+      "multiLogoSize": 155,
       "bgImage": "img/backgrounds/flittz.webp",
       "workType": "Branding",
       "year": "2019",
@@ -656,89 +657,57 @@
     },
     {
       "order": 21,
+      "src": "img/logos/up-mid-face-logo.svg",
+      "alt": "Curso Up Mid Face",
+      "size": "tile-xl",
       "span": 4,
-      "stack": [
-        {
-          "src": "img/logos/duarte-asociados-logo.svg",
-          "alt": "Duarte & Asociados",
-          "size": "tile",
-          "logoSize": 250,
-          "invertLogo": false,
-          "workType": "Rebranding",
-          "year": "2009",
-          "tag": {
-            "es": [
-              "Estudio Contable"
-            ],
-            "en": [
-              "Accounting Firm"
-            ]
-          }
+      "logoSize": 300,
+      "invertLogo": true,
+      "bgImage": "img/backgrounds/upmidface.webp",
+      "workType": "Branding",
+      "year": "2023",
+      "tag": {
+        "es": [
+          "Salud",
+          "Medicina Estética"
+        ],
+        "en": [
+          "Health",
+          "Aesthetic Medicine"
+        ]
+      },
+      "label": {
+        "es": {
+          "name": "Up & Mid Face",
+          "industry": "Programa de formación avanzada en técnicas de rejuvenecimiento facial."
         },
-        {
-          "src": "img/logos/lucia-marafuschi-logo.svg",
-          "alt": "Dra. Lucia Marafuschi",
-          "size": "tile",
-          "logoSize": 250,
-          "invertLogo": true,
-          "bgImage": "img/backgrounds/lucia.webp",
-          "workType": "Rebranding",
-          "year": "2026",
-          "tag": {
-            "es": [
-              "Salud",
-              "Medicina Estética"
-            ],
-            "en": [
-              "Health",
-              "Aesthetic Medicine"
-            ]
-          }
+        "en": {
+          "name": "Up & Mid Face",
+          "industry": "Advanced training program focused on modern facial rejuvenation techniques."
         }
-      ]
+      }
     },
     {
       "order": 22,
       "span": 4,
-      "stack": [
-        {
-          "src": "img/logos/mena-lombard-logo.svg",
-          "alt": "Mena Lombard",
-          "size": "tile",
-          "logoSize": 250,
-          "invertLogo": false,
-          "workType": "Branding",
-          "year": "2018",
-          "tag": {
-            "es": [
-              "Asesoría y Diseño de Moda"
-            ],
-            "en": [
-              "Fashion Consulting and Design"
-            ]
-          }
-        },
-        {
-          "src": "img/logos/lafleur-logo.svg",
-          "alt": "Lafleur",
-          "size": "tile",
-          "logoSize": 250,
-          "invertLogo": false,
-          "bgImage": "",
-          "workType": "Rebranding",
-          "year": "2026",
-          "tag": {
-            "es": [
-              "Salud",
-              "Óptica"
-            ],
-            "en": [
-              "Health",
-              "Optics"
-            ]
-          }
-        }
-      ]
+      "src": "img/logos/lafleur-logo.svg",
+      "alt": "Lafleur",
+      "size": "tile-xl",
+      "logoSize": 250,
+      "invertLogo": false,
+      "bgImage": "",
+      "workType": "Rebranding",
+      "year": "2026",
+      "tag": {
+        "es": [
+          "Salud",
+          "Óptica"
+        ],
+        "en": [
+          "Health",
+          "Optics"
+        ]
+      }
     },
     {
       "order": 23,
@@ -765,21 +734,19 @@
           }
         },
         {
-          "src": "img/logos/conception-logo.svg",
-          "alt": "Conception",
+          "src": "img/logos/mena-lombard-logo.svg",
+          "alt": "Mena Lombard",
           "size": "tile",
-          "logoSize": 300,
+          "logoSize": 250,
           "invertLogo": false,
           "workType": "Branding",
-          "year": "2019",
+          "year": "2018",
           "tag": {
             "es": [
-              "Música",
-              "Banda de Jazz y Funk"
+              "Asesoría y Diseño de Moda"
             ],
             "en": [
-              "Music",
-              "Jazz and Funk Band"
+              "Fashion Consulting and Design"
             ]
           }
         }
@@ -805,33 +772,129 @@
       }
     },
     {
-      "order": 26,
-      "src": "img/logos/zoom-logo.svg",
-      "alt": "ZOom",
+      "order": 27,
+      "src": "img/logos/lucia-marafuschi-logo.svg",
+      "alt": "Dra. Lucia Marafuschi",
       "size": "tile",
       "span": 4,
-      "logoSize": 300,
+      "logoSize": 250,
       "invertLogo": true,
-      "bgVideo": "img/backgrounds/zoom.mp4",
-      "workType": "Branding",
-      "year": "0000",
+      "bgImage": "img/backgrounds/lucia.webp",
+      "workType": "Rebranding",
+      "year": "2026",
       "tag": {
         "es": [
-          "Estudio de Diseño"
+          "Salud",
+          "Medicina Estética"
         ],
         "en": [
-          "Design Studio"
+          "Health",
+          "Aesthetic Medicine"
         ]
       }
     },
     {
-      "order": 27,
-      "type": "text",
+      "order": 26,
+      "src": "img/logos/players-logo.svg",
+      "alt": "Players Sports Grill",
       "size": "tile",
       "span": 4,
-      "text": {
-        "es": "3 nuevas identidades en proceso. <br><br> Junio 2026",
-        "en": "3 branding projects in the works. <br> June 2026"
+      "logoSize": 200,
+      "invertLogo": false,
+      "workType": "Rebranding",
+      "year": "2014",
+      "tag": {
+        "es": [
+          "Gastronomía",
+          "Restaurant"
+        ],
+        "en": [
+          "Gastronomy",
+          "Restaurant"
+        ]
+      }
+    },
+    {
+      "order": 28,
+      "span": 4,
+      "stack": [
+        {
+          "src": "img/logos/duarte-asociados-logo.svg",
+          "alt": "Duarte & Asociados",
+          "size": "tile",
+          "logoSize": 250,
+          "invertLogo": false,
+          "workType": "Rebranding",
+          "year": "2009",
+          "tag": {
+            "es": [
+              "Estudio Contable"
+            ],
+            "en": [
+              "Accounting Firm"
+            ]
+          }
+        },
+        {
+          "src": "img/logos/zoom-logo.svg",
+          "alt": "ZOom",
+          "size": "tile",
+          "logoSize": 300,
+          "invertLogo": true,
+          "bgVideo": "img/backgrounds/zoom.mp4",
+          "workType": "Branding",
+          "year": "0000",
+          "tag": {
+            "es": [
+              "Estudio de Diseño"
+            ],
+            "en": [
+              "Design Studio"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "order": 27,
+      "src": "img/logos/conception-logo.svg",
+      "alt": "Conception",
+      "size": "tile",
+      "span": 4,
+      "logoSize": 300,
+      "invertLogo": false,
+      "workType": "Branding",
+      "year": "2019",
+      "tag": {
+        "es": [
+          "Música",
+          "Banda de Jazz y Funk"
+        ],
+        "en": [
+          "Music",
+          "Jazz and Funk Band"
+        ]
+      }
+    },
+    {
+      "order": 29,
+      "src": "img/logos/juliana-oppici-2-logo.svg",
+      "alt": "El Método",
+      "size": "tile",
+      "span": 4,
+      "logoSize": 300,
+      "invertLogo": false,
+      "workType": "Branding",
+      "year": "2026",
+      "tag": {
+        "es": [
+          "Marketing",
+          "Curso de Marketing y posicionamiento de marca"
+        ],
+        "en": [
+          "Music",
+          "Jazz and Funk Band"
+        ]
       }
     }
   ],

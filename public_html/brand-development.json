@@ -13,7 +13,6 @@
       "hoverColor": "var(--main-color)",
       "project": "eg",
       "projectName": "EG Marketing",
-      "activeClient": true,
       "title": {
         "es": "branding 360",
         "en": "branding 360"
@@ -314,7 +313,6 @@
       "hoverColor": "var(--main-color)",
       "project": "insolito",
       "projectName": "insólito café de especialidad",
-      "activeClient": true,
       "title": {
         "es": "ampliación de marca",
         "en": "brand expansion"
@@ -465,13 +463,13 @@
       "project": "virtualmind",
       "projectName": "Virtualmind",
       "title": {
-        "es": "In-house branding",
-        "en": "In-house branding"
+        "es": "in-house branding",
+        "en": "in-house branding"
       },
       "label": {
         "es": {
           "name": "Virtualmind",
-          "industry": "para Boutique Software House."
+          "industry": "Para Boutique Software House."
         },
         "en": {
           "name": "Virtualmind",
@@ -485,12 +483,34 @@
     },
     {
       "order": 6,
-      "type": "text",
+      "src": "img/logos/lapanaderi-logo.svg",
+      "alt": "Lapanaderi",
       "size": "tile-xl",
       "span": 6,
-      "text": {
-        "es": "Lapanaderi<br><br>En proceso. <br> Junio 2026",
-        "en": "Lapanaderi<br><br>In the works. <br> June, 2026."
+      "logoSize": 250,
+      "invertLogo": true,
+      "bgColor": "",
+      "bgImage": "img/backgrounds/lapanaderi.webp",
+      "hoverColor": "var(--main-color)",
+      "project": "virtualmind",
+      "projectName": "Lapanaderi",
+      "title": {
+        "es": "rebranding",
+        "en": "rebranding"
+      },
+      "label": {
+        "es": {
+          "name": "Lapanaderi",
+          "industry": "Para Panadería de Autor."
+        },
+        "en": {
+          "name": "Lapanaderi",
+          "industry": "For an Artisan Bakery."
+        }
+      },
+      "description": {
+        "es": "En lugar de presentar una década de aplicaciones de marca, este caso destaca el proceso de creación del logo como ejemplo del detalle y la precisión detrás de la evolución de la marca.",
+        "en": "Instead of presenting a decade of brand applications, this case highlights the logo creation process as a focused example of the detail and precision behind the brand's evolution."
       }
     }
   ],

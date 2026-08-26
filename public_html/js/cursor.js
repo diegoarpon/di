@@ -2,10 +2,13 @@
 (function () {
   if (window.matchMedia('(pointer: coarse)').matches) return;
 
-  const dot = document.createElement('div');
-  dot.id = 'cursor-dot';
-  dot.textContent = '↗';
-  document.body.appendChild(dot);
+  let dot = document.getElementById('cursor-dot');
+  if (!dot) {
+    dot = document.createElement('div');
+    dot.id = 'cursor-dot';
+    dot.textContent = '↗';
+    document.body.appendChild(dot);
+  }
 
   let mx = -100, my = -100, rotation = 0, rafPending = false;
 
