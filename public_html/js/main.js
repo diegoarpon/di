@@ -291,7 +291,7 @@ function createBrandLogo(logo) {
       img.style.setProperty("--logo-size", `min(${logo.logoSize}px, 100%)`);
       img.classList.add("logo-sized");
     }
-    if (logo.invertLogo) img.style.filter = "brightness(0) invert(1)";
+    if (logo.invertLogo) img.classList.add("logo-inverted");
     return img;
 }
 
