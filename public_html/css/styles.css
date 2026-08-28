@@ -85,19 +85,9 @@
   --z-toggle: 9999;
 }
 
-/* Logo inversion */
-.logo-inverted {
-  filter: brightness(0) invert(1);
-}
-
-[data-theme="dark"] .logo-sized:not(.logo-inverted),
-[data-theme="dark"] .brand-grid-logo-wrap img:not(.logo-sized):not(.logo-inverted):not(.brand-dev-tool-icon),
-[data-theme="dark"] .logo img {
-  filter: brightness(0) invert(1);
-}
-
-[data-theme="dark"] .logo-inverted {
-  filter: none;
+[data-theme="dark"] {
+  --bg: #000000;
+  --text: #f6f6e4;
 }
 
 /* =============================================
