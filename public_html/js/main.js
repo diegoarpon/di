@@ -28,6 +28,18 @@ document.addEventListener("DOMContentLoaded", function () {
   initSwipeClose();
   initScrollToggle();
 
+  window.addEventListener("pageshow", function (e) {
+    if (e.persisted) {
+      const contentArea = document.querySelector(".content-area");
+      if (contentArea) contentArea.classList.remove("fading");
+      const grid = document.getElementById("brand-creation-grid");
+      if (!grid || !grid.hasChildNodes()) window.location.reload();
+      if (window.matchMedia('(pointer: fine)').matches) {
+        document.documentElement.style.cursor = 'none';
+        document.body.style.cursor = 'none';
+      }
+    }
+  });
   document.addEventListener("touchstart", function resumeVideos() {
     document.querySelectorAll(".tile-bg-video").forEach(v => {
       if (v.src && v.paused) v.play().catch(() => {});
@@ -274,7 +286,15 @@ function createBrandLogo(logo) {
 function createBrandTile(tileConfig) {
   const tile = document.createElement("div");
   tile.className = tileConfig.tileClass || tileConfig.size || "tile";
-  if (tileConfig.bgColor) tile.classList.add(tileConfig.bgColor);
+  if (tileConfig.bgColor) {
+    if (tileConfig.bgColor.startsWith('#') || tileConfig.bgColor.startsWith('rgb') || tileConfig.bgColor.startsWith('var(')) {
+      tile.style.backgroundColor = tileConfig.bgColor;
+      tile.style.borderRadius = '1.25rem';
+      tile.style.border = 'none';
+    } else {
+      tile.classList.add(tileConfig.bgColor);
+    }
+  }
   if (tileConfig.bgImage) {
     const uid = `tbg-${Math.random().toString(36).slice(2, 7)}`;
     tile.classList.add("tile-bg-image", uid);
@@ -308,13 +328,6 @@ function createBrandTile(tileConfig) {
   if (tileConfig.panelImageSize) tile.dataset.panelImageSize = tileConfig.panelImageSize;
   if (tileConfig.workType) tile.dataset.workType = tileConfig.workType;
   if (tileConfig.year) tile.dataset.year = tileConfig.year;
-  if (tileConfig.activeClient) {
-    const badge = document.createElement("span");
-    badge.className = "active-client-badge";
-    badge.innerHTML = (t("activeClient") || "cliente\nactivo").replace("\n", "<br>");
-    tile.appendChild(badge);
-  }
-
   if (tileConfig.project) {
     tile.dataset.project = tileConfig.project;
     tile.classList.add("cursor-pointer");

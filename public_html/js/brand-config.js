@@ -32,6 +32,7 @@ function buildBrandCreationItems(logos) {
                         name: t.alt,
                         tag: JSON.stringify(t.tag || []),
                         bgImage: t.bgImage || "",
+                        ...(t.bgVideo && { bgVideo: t.bgVideo }),
                         ...(t.label && { label: t.label }),
                         ...(t.labelSize && { labelSize: t.labelSize }),
                         ...(t.workType && { workType: t.workType }),
@@ -60,8 +61,6 @@ function buildBrandCreationItems(logos) {
                  'panelImage','panelImageSize','workType','year','hoverColor']
                 .filter(k => entry[k] != null)
                 .map(k => [k, entry[k]])
-            ),
-            ...(entry.activeClient && { activeClient: true }
             )
         };
     });
