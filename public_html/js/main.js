@@ -3,6 +3,9 @@ let _resolveData;
 const dataReadyPromise = new Promise(r => { _resolveData = r; });
 window.signalDataReady = () => { _dataReady = true; _resolveData(); };
 
+const currentTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', currentTheme);
+
 const _videoObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     const video = entry.target;
@@ -48,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }, { once: true, passive: true });
 
   window.switchLanguage(currentLang);
+  window.switchTheme(currentTheme);
 
   const hasGridTabs = document.getElementById("brand-creation");
   if (hasGridTabs) {
@@ -55,6 +59,14 @@ document.addEventListener("DOMContentLoaded", function () {
     showContent(urlTab || "brand-creation", true);
   }
 });
+
+window.switchTheme = function (theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  document.querySelectorAll('#theme-light, #theme-dark').forEach(btn => btn.classList.remove('active'));
+  const btn = document.getElementById('theme-' + theme);
+  if (btn) btn.classList.add('active');
+};
 
 window.switchLanguage = function (lang) {
   currentLang = lang;

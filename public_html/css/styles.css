@@ -23,6 +23,10 @@
   --black-50: #00000080;
   --black-20: #00000033;
 
+  /* Theme tokens */
+  --bg: #f6f6e4;
+  --text: #000000;
+
   /* Font sizes */
 
   /* — Navegación — */
@@ -79,6 +83,11 @@
   --z-content: 4000;
   --z-sidebar: 6000;
   --z-toggle: 9999;
+}
+
+[data-theme="dark"] {
+  --bg: #000000;
+  --text: #f6f6e4;
 }
 
 /* =============================================
@@ -396,8 +405,9 @@ body {
   font-family: var(--default-font);
   font-size: 1rem;
   line-height: 1.5;
-  background-color: var(--manteca);
-  color: var(--blackest);
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 @media (min-width: 1920px) {
@@ -461,8 +471,9 @@ body {
 .tile-xl {
   position: relative;
   overflow: hidden;
-  background-color: var(--manteca);
+  background-color: var(--bg);
   border: 1px solid var(--graphite);
+  transition: background-color 0.3s ease;
 }
 
 .tile {
@@ -487,7 +498,7 @@ body {
   font-size: var(--fs-tile-body);
   font-weight: 400;
   line-height: 1.2;
-  color: var(--blackest);
+  color: var(--text);
   margin: 0;
 }
 
@@ -542,7 +553,7 @@ body {
   display: block;
   width: 100%;
   height: 100%;
-  background: var(--blackest);
+  background: var(--text);
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -595,7 +606,8 @@ body {
 
   .nav-button,
   .contact-link,
-  .lang-selector {
+  .lang-selector,
+  .theme-selector {
     font-size: var(--fs-nav-mobile) !important;
     min-height: 2.75rem;
     display: flex;
@@ -608,7 +620,9 @@ body {
 
 
   #lang-es,
-  #lang-en {
+  #lang-en,
+  #theme-light,
+  #theme-dark {
     min-height: 2.75rem;
     display: inline-flex;
     align-items: center;
@@ -674,13 +688,14 @@ body {
 .sidebar-container {
   min-width: 25rem;
   height: 100vh;
-  background-color: var(--manteca);
+  background-color: var(--bg);
   position: fixed;
   top: 0;
   left: 0;
   z-index: var(--z-sidebar);
   border-right: 1px solid var(--graphite);
   overflow: hidden;
+  transition: background-color 0.3s ease;
 }
 
 @media (min-width: 1366px) {
@@ -722,7 +737,8 @@ body {
 
   .nav-button,
   .contact-link,
-  .lang-selector {
+  .lang-selector,
+  .theme-selector {
     font-size: var(--fs-nav-tablet) !important;
     min-height: 2.75rem;
     display: flex;
@@ -738,7 +754,9 @@ body {
   }
 
   #lang-es,
-  #lang-en {
+  #lang-en,
+  #theme-light,
+  #theme-dark {
     min-height: 2.75rem;
     display: inline-flex;
     align-items: center;
@@ -798,8 +816,9 @@ body {
 /* Nav / Contact / Lang */
 .nav-button,
 .contact-link,
-.lang-selector {
-  color: var(--blackest) !important;
+.lang-selector,
+.theme-selector {
+  color: var(--text) !important;
   text-decoration: none;
   font-size: var(--fs-nav);
 }
@@ -831,7 +850,8 @@ body {
   text-transform: lowercase;
 }
 
-.lang-selector {
+.lang-selector,
+.theme-selector {
   cursor: pointer;
   background: none;
   border: none;
@@ -842,15 +862,19 @@ body {
   color: inherit;
 }
 
-/* Language underlines */
+/* Language & Theme underlines */
 #lang-en,
-#lang-es {
+#lang-es,
+#theme-light,
+#theme-dark {
   position: relative;
   padding-bottom: 0.1875rem;
 }
 
 #lang-en::after,
-#lang-es::after {
+#lang-es::after,
+#theme-light::after,
+#theme-dark::after {
   content: "";
   position: absolute;
   bottom: 0.1rem;
@@ -863,13 +887,19 @@ body {
 
 #lang-en.active::after,
 #lang-es.active::after,
+#theme-light.active::after,
+#theme-dark.active::after,
 #lang-en:hover::after,
-#lang-es:hover::after {
+#lang-es:hover::after,
+#theme-light:hover::after,
+#theme-dark:hover::after {
   width: 100%;
 }
 
 #lang-en.active,
-#lang-es.active {
+#lang-es.active,
+#theme-light.active,
+#theme-dark.active {
   color: var(--main-color);
   cursor: default;
 }
@@ -900,8 +930,8 @@ body {
 .content-area {
   z-index: var(--z-content);
   position: relative;
-  background-color: var(--manteca);
-  transition: margin-left 0.3s ease, opacity 0.5s ease;
+  background-color: var(--bg);
+  transition: margin-left 0.3s ease, opacity 0.5s ease, background-color 0.3s ease;
 }
 
 .content-area.fading {
@@ -1106,7 +1136,7 @@ body {
 .brand-dev-arrow {
   font-size: var(--fs-arrow);
   line-height: 1;
-  color: var(--blackest);
+  color: var(--text);
   position: relative;
   z-index: var(--z-tile-text);
   opacity: 0;
@@ -1302,8 +1332,9 @@ body {
   position: relative;
   box-sizing: border-box;
   border: 1px solid var(--graphite);
-  background-color: var(--manteca);
+  background-color: var(--bg);
   margin: 0;
+  transition: background-color 0.3s ease;
 }
 
 .project-gallery-item.gallery-span-3 {
@@ -1357,7 +1388,7 @@ body {
   font-size: var(--fs-caption);
   padding: 0.5rem 0.75rem;
   border-top: 1px solid var(--graphite);
-  background: var(--manteca);
+  background: var(--bg);
   position: relative;
   z-index: 1;
 }
@@ -1418,7 +1449,7 @@ body {
   font-size: var(--fs-gallery-text);
   font-weight: 300;
   line-height: 1.2;
-  color: var(--blackest);
+  color: var(--text);
 }
 
 .project-masonry-text-logo {
@@ -1487,7 +1518,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--manteca);
+  background: var(--bg);
   transition: opacity 0.5s ease;
 }
 
@@ -1499,7 +1530,7 @@ body {
 .project-loader-dot {
   width: 2rem;
   height: 2rem;
-  background: var(--blackest);
+  background: var(--text);
   animation: loader-blink 1s ease-in-out infinite;
 }
 
@@ -1538,7 +1569,8 @@ body {
 footer>div {
   position: relative;
   z-index: var(--z-content);
-  background: var(--manteca);
+  background: var(--bg);
+  transition: background-color 0.3s ease;
 }
 
 #footer-quote,
@@ -1560,7 +1592,7 @@ footer>div {
   font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
-  color: var(--blackest);
+  color: var(--text);
 }
 
 

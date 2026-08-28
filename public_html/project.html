@@ -127,6 +127,10 @@
                 <button class="option fw-bold lang-selector" onclick="switchLanguage('en')" id="lang-en">en</button>
                 <button class="option fw-bold lang-selector" onclick="switchLanguage('es')" id="lang-es">es</button>
               </div>
+              <div class="d-flex gap-3 mt-4">
+                <button class="option fw-bold theme-selector" onclick="switchTheme('light')" id="theme-light">☀</button>
+                <button class="option fw-bold theme-selector" onclick="switchTheme('dark')" id="theme-dark">☾</button>
+              </div>
               <div class="mt-4 version-label" id="version-label"></div>
             </div>
           </div>
@@ -195,6 +199,13 @@
     const _footerCategory = _footerCategories[Math.floor(Math.random() * _footerCategories.length)];
 
     document.addEventListener("DOMContentLoaded", () => {
+      window.switchTheme = function (theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        document.querySelectorAll('#theme-light, #theme-dark').forEach(btn => btn.classList.remove('active'));
+        const btn = document.getElementById('theme-' + theme);
+        if (btn) btn.classList.add('active');
+      };
       window.switchLanguage = function (lang) {
         currentLang = lang;
         localStorage.setItem("language", lang);
@@ -210,6 +221,7 @@
         updateFooter(_footerCategory, true);
         updateVersionLabel();
       };
+      switchTheme(localStorage.getItem('theme') || 'light');
       switchLanguage(currentLang);
       loadProject();
       updateFooter(_footerCategory);
