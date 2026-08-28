@@ -34,32 +34,32 @@
     {
       "order": 1,
       "src": "img/logos/lapanaderi-logo.svg",
-      "alt": "Juliana Oppici",
+      "alt": "Lapanaderi",
       "size": "tile-xl",
       "span": 4,
       "logoSize": 300,
       "invertLogo": true,
-      "workType": "Branding",
-      "bgImage": "img/backgrounds/lapanaderi.png",
+      "workType": "Rebranding",
+      "bgImage": "img/backgrounds/lapanaderi.webp",
       "year": "2026",
       "tag": {
         "es": [
-          "Salud",
-          "Medicina Estética"
+          "Gastronomía",
+          "Panadería"
         ],
         "en": [
-          "Health",
-          "Aesthetic Medicine"
+          "Gastronomy",
+          "Bakery"
         ]
       },
       "label": {
         "es": {
-          "name": "Dra. Juliana Oppici",
-          "industry": "Médica estética especializada en tratamientos corporales, con enfoque en resultados naturales y bienestar integral."
+          "name": "Lapanaderi",
+          "industry": "Panadería especializada en productos de masa madre y técnicas de fermentación natural."
         },
         "en": {
-          "name": "Dra. Juliana Oppici",
-          "industry": "Aesthetic physician focused on body treatments that enhance natural results and overall well-being."
+          "name": "Lapanaderi",
+          "industry": "Bakery specialized in sourdough products and natural fermentation techniques."
         }
       }
     },
@@ -71,7 +71,7 @@
       "span": 4,
       "logoSize": 250,
       "invertLogo": true,
-      "bgImage": "img/backgrounds/molde.jpg",
+      "bgImage": "img/backgrounds/molde.webp",
       "workType": "Branding",
       "year": "2026",
       "tag": {
@@ -86,12 +86,12 @@
       },
       "label": {
         "es": {
-          "name": "Up & Mid Face",
-          "industry": "Programa de formación avanzada en técnicas de rejuvenecimiento facial."
+          "name": "Molde",
+          "industry": "App para organizar y expandir proyectos gastronómicos"
         },
         "en": {
-          "name": "Up & Mid Face",
-          "industry": "Advanced training program focused on modern facial rejuvenation techniques."
+          "name": "Molde",
+          "industry": "App for organizing and expanding gastronomic projects"
         }
       }
     },
@@ -133,20 +133,20 @@
       "stack": [
         {
           "src": "img/logos/metodo-logo.svg",
-          "alt": "Players Sports Grill",
+          "alt": "El Método",
           "size": "tile",
           "logoSize": 300,
           "invertLogo": false,
-          "workType": "Rebranding",
-          "year": "2014",
+          "workType": "Branding",
+          "year": "2026",
           "tag": {
             "es": [
-              "Gastronomía",
-              "Restaurant"
+              "Marketing",
+              "Coaching"
             ],
             "en": [
-              "Gastronomy",
-              "Restaurant"
+              "Marketing",
+              "Coaching"
             ]
           }
         },
@@ -753,7 +753,7 @@
       ]
     },
     {
-      "order": 25,
+      "order": 24,
       "src": "img/logos/iroiro-logo.svg",
       "alt": "Iro Iro",
       "size": "tile",
@@ -772,7 +772,7 @@
       }
     },
     {
-      "order": 27,
+      "order": 25,
       "src": "img/logos/lucia-marafuschi-logo.svg",
       "alt": "Dra. Lucia Marafuschi",
       "size": "tile",

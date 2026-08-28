@@ -1,4 +1,4 @@
-let currentLang = localStorage.getItem("language") || "es";
+let currentLang = localStorage.getItem("language") || "en";
 
 const APP_VERSION = "7.0";
 
@@ -70,7 +70,7 @@ const translations = {
 // Función helper para obtener texto traducido
 function t(key) {
   const keys = key.split(".");
-  let obj = translations[currentLang || "es"];
+  let obj = translations[currentLang || "en"];
 
   for (let k of keys) {
     obj = obj[k];

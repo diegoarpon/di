@@ -66,6 +66,47 @@
           "cols": 4
         },
         {
+          "type": "text",
+          "cols": 4,
+          "textSize": "1.25rem",
+          "text": {
+            "es": "En 2026 la marca tipográfica fue actualizada para reforzar su <strong>legibilidad, versatilidad y presencia digital</strong>. Se trabajó sobre la <strong>estructura de la letra, el espaciado y la jerarquía de pesos</strong>, manteniendo la esencia de la identidad original y adaptándola a los nuevos desafíos de comunicación.",
+            "en": "In 2026 the woodmark was updated to strengthen its <strong>legibility, versatility and digital presence</strong>. Work was done on the <strong>structure of the letter, spacing and hierarchy of weights</strong>, maintaining the essence of the original identity and adapting it to the new communication challenges."
+          }
+        },
+        {
+          "src": "img/visuals/eg/eg-brand-refresh-01.webp",
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/eg/eg-brand-refresh-02.webp",
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/eg/eg-brand-refresh-03.webp",
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/eg/eg-brand-refresh-04.webp",
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/eg/eg-brand-refresh-05.webp",
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/eg/eg-brand-refresh-06.webp",
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/eg/eg-brand-refresh-07.webp",
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/eg/eg-brand-refresh-08.webp",
+          "cols": 1
+        },
+        {
           "src": "img/visuals/eg/cuaderno-eg.webp",
           "cols": 4
         },
@@ -234,11 +275,11 @@
       "label": {
         "es": {
           "name": "Nestseekers",
-          "industry": "Para inmobiliaria de propiedades de lujo con base en NYC"
+          "industry": "Para inmobiliaria de propiedades de lujo con base en NYC."
         },
         "en": {
           "name": "Nestseekers",
-          "industry": "For a luxury real estate firm based in NYC"
+          "industry": "For a luxury real estate firm based in NYC."
         }
       },
       "gallery": [
@@ -320,17 +361,17 @@
       "label": {
         "es": {
           "name": "Insólito",
-          "industry": "Para café de especialidad"
+          "industry": "Para café de especialidad."
         },
         "en": {
           "name": "Insólito",
-          "industry": "For a specialty coffee shop"
+          "industry": "For a specialty coffee shop."
         }
       },
       "hideProjectMeta": true,
       "description": {
         "es": "Ampliación de marca para un café de especialidad, trabajando sobre una identidad existente para <strong>fortalecer su sistema visual y abrir nuevas posibilidades de contacto con sus clientes.</strong> Se trata de un proceso activo que <strong>integra el diseño gráfico con la planificación estratégica de su comunicación.</strong><br><br>Abarca desde la creación de nuevas narrativas y recursos visuales hasta la dirección de arte y fotografía de producto.",
-        "en": "Brand expansion for a specialty coffee shop, building on an existing identity to strengthen its visual system and unlock new touchpoints with its customers. This ongoing process integrates graphic design with strategic communication planning.<br><br>The scope ranges from developing new narratives and visual assets to art direction and product photography."
+        "en": "Brand expansion for a specialty coffee shop, building on an existing identity to <strong>strengthen its visual system and unlock new touchpoints with its customers.</strong> This ongoing process <strong>integrates graphic design with strategic communication planning.</strong><br><br>The scope ranges from developing new narratives and visual assets to art direction and product photography."
       },
       "gallery": [
         {
@@ -450,7 +491,7 @@
       ]
     },
     {
-      "order": 5,
+      "order": 6,
       "src": "img/logos/virtualmind-logo.svg",
       "alt": "Virtualmind",
       "size": "tile-xl",
@@ -482,17 +523,17 @@
       }
     },
     {
-      "order": 6,
-      "src": "img/logos/lapanaderi-logo.svg",
+      "order": 5,
+      "src": "img/logos/lapanaderi-solo-logo.svg",
       "alt": "Lapanaderi",
       "size": "tile-xl",
       "span": 6,
-      "logoSize": 250,
+      "logoSize": 200,
       "invertLogo": true,
       "bgColor": "",
-      "bgImage": "img/backgrounds/lapanaderi.webp",
+      "bgImage": "img/backgrounds/lapanaderi-dev.webp",
       "hoverColor": "var(--main-color)",
-      "project": "virtualmind",
+      "project": "lapanaderi",
       "projectName": "Lapanaderi",
       "title": {
         "es": "rebranding",
@@ -508,10 +549,53 @@
           "industry": "For an Artisan Bakery."
         }
       },
+      "hideProjectMeta": true,
       "description": {
-        "es": "En lugar de presentar una década de aplicaciones de marca, este caso destaca el proceso de creación del logo como ejemplo del detalle y la precisión detrás de la evolución de la marca.",
-        "en": "Instead of presenting a decade of brand applications, this case highlights the logo creation process as a focused example of the detail and precision behind the brand's evolution."
-      }
+        "es": "Rebranding para una panadería de autor. El trabajo abarca <strong>desarrollo narrativo, recursos visuales, dirección de arte y fotografía de producto</strong>, todo orientado a <strong>fortalecer la identidad visual de la marca</strong> y abrir nuevas posibilidades de contacto con sus clientes.",
+        "en": "Rebranding for an artisan bakery. The work encompasses <strong>narrative development, visual assets, art direction, and product photography</strong>, all aimed at <strong>enhancing the brand's visual identity</strong> and opening new avenues for customer engagement."
+      },
+      "gallery": [
+        {
+          "src": "img/visuals/lapanaderi/lapanaderi-branding-01.webp",
+          "cols": 3
+        },
+        {
+          "src": "img/visuals/lapanaderi/lapanaderi-branding-02.webp",
+          "cols": 3
+        },
+        {
+          "src": "img/visuals/lapanaderi/lapanaderi-branding-03.webp",
+          "cols": 3
+        },
+        {
+          "src": "img/visuals/lapanaderi/lapanaderi-branding-04.webp",
+          "cols": 3
+        },
+        {
+          "src": "img/visuals/lapanaderi/lapanaderi-branding-06.webp",
+          "cols": 3
+        },
+        {
+          "src": "img/visuals/lapanaderi/lapanaderi-branding-05.webp",
+          "cols": 3
+        },
+        {
+          "src": "img/visuals/lapanaderi/lapanaderi-rebranding.svg",
+          "cols": 4
+        },
+        {
+          "src": "img/visuals/lapanaderi/lapanaderi-facturas-cooler.webp",
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/lapanaderi/lapanaderi-facturas-platos.webp",
+          "cols": 1
+        },
+        {
+          "src": "img/visuals/lapanaderi/lapanaderi-trifold.webp",
+          "cols": 2
+        }
+      ]
     }
   ],
   "tiles": [],
