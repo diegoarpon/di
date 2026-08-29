@@ -63,6 +63,7 @@
         },
         {
           "src": "img/visuals/eg/eg_logo_evolution.svg",
+          "darkBg": true,
           "cols": 4
         },
         {
@@ -196,6 +197,7 @@
         },
         {
           "src": "img/visuals/meta/meta_evolution.svg",
+          "darkBg": true,
           "cols": 4
         },
         {
@@ -204,6 +206,7 @@
         },
         {
           "src": "img/visuals/meta/meta-icon-plans.svg",
+          "darkSrc": "img/visuals/meta/meta-icon-plans-dark.svg",
           "cols": 3
         },
         {
@@ -313,6 +316,7 @@
         },
         {
           "src": "img/visuals/nestseekers/nest_seekers_logo_evolution.svg",
+          "darkBg": true,
           "cols": 4
         },
         {
@@ -337,6 +341,7 @@
         },
         {
           "src": "img/visuals/nestseekers/nest_seekers_showsheet.webp",
+          "darkBg": true,
           "cols": 4
         }
       ]
@@ -581,6 +586,7 @@
         },
         {
           "src": "img/visuals/lapanaderi/lapanaderi-rebranding.svg",
+          "darkBg": true,
           "cols": 4
         },
         {

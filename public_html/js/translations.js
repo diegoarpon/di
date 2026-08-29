@@ -30,7 +30,7 @@ const translations = {
 
     // Main intro
     intro:
-      "Hi, I’m Diego (d) — a graphic designer specializing in <strong>branding, web, and product design</strong>. I solve communication problems by creating clear, scalable, and consistent visual systems. <br> <strong>Designed for humans, by a human.</strong> <span class='d-block mt-4'> Available for freelance work <span class='intro-arrow'>→</span> <a href='mailto:hola@estudiod.site' class='fw-bold link' target='_blank' rel=''>hola@estudiod.site</a></span>",
+      "Hi, I’m Diego (D) — a graphic designer specializing in <strong>branding, web, and product design</strong>. I solve communication problems by creating clear, scalable, and consistent visual systems. <br> <strong>Designed for humans, by a human.</strong> <span class='d-block mt-4'> Available for freelance work <span class='intro-arrow'>→</span> <a href='mailto:hola@estudiod.site' class='fw-bold link' target='_blank' rel=''>hola@estudiod.site</a></span>",
 
     // Tab intros
     brandDevelopmentIntro:
@@ -56,7 +56,7 @@ const translations = {
 
     // Main intro
     intro:
-      "Hola, soy Diego (d) — diseñador gráfico especializado en <strong>branding, web y producto</strong>. <br> Resuelvo problemas de comunicación creando sistemas visuales claros, escalables y consistentes. <strong>Diseño humano, para humanos.</strong> <span class='d-block mt-4'> Disponible para trabajo freelance <span class='intro-arrow'>→</span> <a href='mailto:hola@estudiod.site' class='fw-bold link' target='_blank' rel=''>hola@estudiod.site</a></span>",
+      "Hola, soy Diego (D) — diseñador gráfico especializado en <strong>branding, web y producto</strong>. <br> Resuelvo problemas de comunicación creando sistemas visuales claros, escalables y consistentes. <strong>Diseño humano, para humanos.</strong> <span class='d-block mt-4'> Disponible para trabajo freelance <span class='intro-arrow'>→</span> <a href='mailto:hola@estudiod.site' class='fw-bold link' target='_blank' rel=''>hola@estudiod.site</a></span>",
     // Tab intros
     brandDevelopmentIntro:
       "Proyectos de marca en acción: <strong>identidad, comunicación y dirección creativa</strong> aplicadas a <strong>productos, espacios y experiencias</strong>. <br> Sistemas que se adaptan y funcionan de acuerdo al contexto.",

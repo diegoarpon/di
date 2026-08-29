@@ -1,3 +1,23 @@
+const _ALLOWED_TAGS = new Set(['a','br','img','span','strong','em']);
+const _ALLOWED_ATTRS = { a: ['href','target','rel','class'], img: ['src','alt','class','style'], span: ['class','style'], strong: [], em: [], br: [] };
+
+function sanitizeHTML(html) {
+  const doc = new DOMParser().parseFromString(html, 'text/html');
+  function clean(node) {
+    [...node.childNodes].forEach(child => {
+      if (child.nodeType === Node.TEXT_NODE) return;
+      if (child.nodeType !== Node.ELEMENT_NODE) { child.remove(); return; }
+      const tag = child.tagName.toLowerCase();
+      if (!_ALLOWED_TAGS.has(tag)) { child.replaceWith(...child.childNodes); return; }
+      const allowed = _ALLOWED_ATTRS[tag] || [];
+      [...child.attributes].forEach(attr => { if (!allowed.includes(attr.name)) child.removeAttribute(attr.name); });
+      clean(child);
+    });
+  }
+  clean(doc.body);
+  return doc.body.innerHTML;
+}
+
 let _dataReady = false;
 let _resolveData;
 const dataReadyPromise = new Promise(r => { _resolveData = r; });
@@ -61,11 +81,29 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 window.switchTheme = function (theme) {
-  document.documentElement.setAttribute('data-theme', theme);
+  const html = document.documentElement;
+  html.classList.add('theme-transitioning');
+  html.setAttribute('data-theme', theme);
   localStorage.setItem('theme', theme);
   document.querySelectorAll('#theme-light, #theme-dark').forEach(btn => btn.classList.remove('active'));
   const btn = document.getElementById('theme-' + theme);
   if (btn) btn.classList.add('active');
+  applyDarkSrcSwap();
+  document.querySelectorAll('img[src*="logo-estudio-d"]').forEach(img => {
+    img.src = theme === 'dark' ? 'img/logo-estudio-d-dark.svg' : 'img/logo-estudio-d.svg';
+  });
+  const lightImg = document.querySelector('#theme-light img');
+  const darkImg = document.querySelector('#theme-dark img');
+  if (lightImg && darkImg) {
+    if (theme === 'dark') {
+      lightImg.src = 'img/circle-solid-full.svg';
+      darkImg.src = 'img/circle-regular-full.svg';
+    } else {
+      lightImg.src = 'img/circle-regular-full.svg';
+      darkImg.src = 'img/circle-solid-full.svg';
+    }
+  }
+  setTimeout(() => html.classList.remove('theme-transitioning'), 300);
 };
 
 window.switchLanguage = function (lang) {
@@ -75,7 +113,7 @@ window.switchLanguage = function (lang) {
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
     const text = t(key);
-    if (text && text !== key) el.innerHTML = text;
+    if (text && text !== key) el.innerHTML = sanitizeHTML(text);
   });
 
   const cvLink = document.getElementById("cv-link");
@@ -125,12 +163,50 @@ function addCol4Panels() {
       text.className = "brand-hover-text";
       if (tile.dataset.labelSize) text.style.fontSize = tile.dataset.labelSize;
       if (tile.classList.contains("pixel-active")) text.style.opacity = "1";
-      const img = tile.dataset.panelImage ? `<img src="${tile.dataset.panelImage}" class="brand-hover-image" alt="" loading="lazy"${tile.dataset.panelImageSize ? ` style="max-height:${tile.dataset.panelImageSize}px"` : ''}>` : '';
-      const meta = (tile.dataset.workType || tile.dataset.year) ? `<div class="brand-hover-meta"><span class="brand-hover-worktype">${tile.dataset.workType || ''}</span><span class="brand-hover-year">${tile.dataset.year || ''}</span></div>` : '';
       const tagRaw = tile.dataset.tag ? JSON.parse(tile.dataset.tag) : null;
       const tagArr = tagRaw ? (Array.isArray(tagRaw) ? tagRaw : (tagRaw[currentLang] || tagRaw.es || [])) : [];
       const tagText = tagArr.join(' / ');
-      text.innerHTML = `${meta}${displayName ? `<h2 class="brand-hover-name">${displayName}</h2>` : ''}${tagText ? `<span class="brand-hover-tags">${tagText}</span>` : ''}${content.industry ? `<span class="brand-hover-industry">${content.industry}</span>` : ''}${img}`;
+
+      if (tile.dataset.workType || tile.dataset.year) {
+        const meta = document.createElement('div');
+        meta.className = 'brand-hover-meta';
+        const wt = document.createElement('span');
+        wt.className = 'brand-hover-worktype';
+        wt.textContent = tile.dataset.workType || '';
+        const yr = document.createElement('span');
+        yr.className = 'brand-hover-year';
+        yr.textContent = tile.dataset.year || '';
+        meta.appendChild(wt);
+        meta.appendChild(yr);
+        text.appendChild(meta);
+      }
+      if (displayName) {
+        const h2 = document.createElement('h2');
+        h2.className = 'brand-hover-name';
+        h2.textContent = displayName;
+        text.appendChild(h2);
+      }
+      if (tagText) {
+        const tags = document.createElement('span');
+        tags.className = 'brand-hover-tags';
+        tags.textContent = tagText;
+        text.appendChild(tags);
+      }
+      if (content.industry) {
+        const ind = document.createElement('span');
+        ind.className = 'brand-hover-industry';
+        ind.textContent = content.industry;
+        text.appendChild(ind);
+      }
+      if (tile.dataset.panelImage) {
+        const img = document.createElement('img');
+        img.src = _safeSrc(tile.dataset.panelImage);
+        img.className = 'brand-hover-image';
+        img.alt = '';
+        img.loading = 'lazy';
+        if (tile.dataset.panelImageSize) { const s = _safeSize(tile.dataset.panelImageSize); if (s) img.style.maxHeight = `${s}px`; }
+        text.appendChild(img);
+      }
       tile.appendChild(text);
     });
 
@@ -255,7 +331,13 @@ function createDevInner(logos, title, metaText, arrowText, bottomLogos, showTool
   const arrow = document.createElement("div");
   arrow.className = "brand-dev-arrow d-flex align-items-center gap-2";
   if (showTool) {
-    arrow.innerHTML = `${arrowText}<img src="img/visuals/logos/figma-logo.svg" class="brand-dev-tool-icon" alt="Figma" loading="lazy">`;
+    arrow.textContent = arrowText;
+    const toolImg = document.createElement('img');
+    toolImg.src = 'img/visuals/logos/figma-logo.svg';
+    toolImg.className = 'brand-dev-tool-icon';
+    toolImg.alt = 'Figma';
+    toolImg.loading = 'lazy';
+    arrow.appendChild(toolImg);
   } else {
     arrow.textContent = arrowText;
   }
@@ -281,17 +363,39 @@ function createBrandGuide(className) {
   return guide;
 }
 
+function _safeSrc(src) {
+  if (typeof src !== 'string') return '';
+  const s = src.trim();
+  return /^[a-zA-Z0-9_\-./]+$/.test(s) ? s : '';
+}
+
+function _safeSize(val) {
+  const n = parseInt(val, 10);
+  return n > 0 ? n : null;
+}
+
+function _safeCSSValue(val, allowedPattern) {
+  if (typeof val !== 'string') return '';
+  return allowedPattern.test(val.trim()) ? val.trim() : '';
+}
+
 function createBrandLogo(logo) {
     const img = document.createElement("img");
-    img.src = logo.src;
+    img.src = _safeSrc(logo.src);
     img.alt = logo.alt || "";
     img.loading = logo.loading || "lazy";
     if (logo.className) img.className = logo.className;
-    if (logo.logoSize) {
-      img.style.setProperty("--logo-size", `min(${logo.logoSize}px, 100%)`);
+    const logoSize = parseInt(logo.logoSize, 10);
+    if (logoSize > 0) {
+      img.style.setProperty("--logo-size", `min(${logoSize}px, 100%)`);
       img.classList.add("logo-sized");
     }
+    if (logo.darkSrc) {
+      img.dataset.lightSrc = _safeSrc(logo.src);
+      img.dataset.darkSrc = _safeSrc(logo.darkSrc);
+    }
     if (logo.invertLogo) img.style.filter = "brightness(0) invert(1)";
+    if (logo.noFilterDark) img.classList.add("logo-no-filter-dark");
     return img;
 }
 
@@ -300,7 +404,7 @@ function createBrandTile(tileConfig) {
   tile.className = tileConfig.tileClass || tileConfig.size || "tile";
   if (tileConfig.bgColor) {
     if (tileConfig.bgColor.startsWith('#') || tileConfig.bgColor.startsWith('rgb') || tileConfig.bgColor.startsWith('var(')) {
-      tile.style.backgroundColor = tileConfig.bgColor;
+      tile.style.backgroundColor = _safeCSSValue(tileConfig.bgColor, /^(#[0-9a-fA-F]{3,8}|rgb\([\d,\s.%]+\)|rgba\([\d,\s.%]+\)|var\(--[\w-]+\))$/);
       tile.style.borderRadius = '1.25rem';
       tile.style.border = 'none';
     } else {
@@ -317,7 +421,8 @@ function createBrandTile(tileConfig) {
       sheet.id = "tile-bg-styles";
       document.head.appendChild(sheet);
     }
-    sheet.sheet.insertRule(`.${uid}.tile-bg-loaded::before { background-image: url(${tileConfig.bgImage}); }`, sheet.sheet.cssRules.length);
+    const safeBgImage = _safeSrc(tileConfig.bgImage);
+    if (safeBgImage) sheet.sheet.insertRule(`.${uid}.tile-bg-loaded::before { background-image: url(${safeBgImage}); }`, sheet.sheet.cssRules.length);
     _bgObserver.observe(tile);
   }
   if (tileConfig.bgVideo) {
@@ -327,7 +432,7 @@ function createBrandTile(tileConfig) {
     video.loop = true;
     video.playsInline = true;
     video.preload = "auto";
-    video.src = tileConfig.bgVideo;
+    video.src = _safeSrc(tileConfig.bgVideo);
     video.className = "tile-bg-video";
     tile.appendChild(video);
     _videoObserver.observe(video);
@@ -346,7 +451,7 @@ function createBrandTile(tileConfig) {
     tile.addEventListener("click", () => {
       const ca = document.querySelector(".content-area");
       ca.classList.add("fading");
-      setTimeout(() => { window.location.href = `project.html?p=${tileConfig.project}`; }, 500);
+      setTimeout(() => { window.location.href = `project.html?p=${encodeURIComponent(tileConfig.project)}`; }, 500);
     });
   }
 
@@ -357,12 +462,12 @@ function createBrandTile(tileConfig) {
     tile.classList.add("tile-text");
     const p = document.createElement("p");
     p.className = "tile-text-content";
-    if (tileConfig.textSize) p.style.fontSize = tileConfig.textSize;
-    p.innerHTML = tileConfig.text?.[currentLang] || tileConfig.text?.es || "";
+    if (tileConfig.textSize) p.style.fontSize = _safeCSSValue(tileConfig.textSize, /^[\d.]+(px|rem|em|vw|%)$/);
+    p.innerHTML = sanitizeHTML(tileConfig.text?.[currentLang] || tileConfig.text?.es || "");
     tile.appendChild(p);
     if (tileConfig.panelImage) {
       const img = document.createElement("img");
-      img.src = tileConfig.panelImage;
+      img.src = _safeSrc(tileConfig.panelImage);
       img.className = "tile-text-image";
       img.alt = "";
       img.loading = "lazy";
@@ -440,7 +545,8 @@ function renderProductDesignGrid(items) {
         }
         if (item.URLFigma) {
           tile.classList.add("cursor-pointer");
-          tile.addEventListener("click", () => window.open(item.URLFigma, "_blank"));
+          const safeUrl = _safeSrc(item.URLFigma) || (item.URLFigma?.startsWith('https://') ? item.URLFigma : '');
+          if (safeUrl) tile.addEventListener("click", () => window.open(safeUrl, "_blank", "noopener,noreferrer"));
         }
 
         const title = item.title?.[currentLang] || item.title?.es || "";
@@ -458,6 +564,17 @@ function renderProductDesignGrid(items) {
         wrapper.appendChild(tile);
         container.appendChild(wrapper);
     });
+}
+
+function applyDarkSrcSwap() {
+  const theme = document.documentElement.getAttribute('data-theme') || 'light';
+  const isDark = theme === 'dark';
+  document.querySelectorAll('img[data-light-src]').forEach(img => {
+    img.src = isDark ? img.dataset.darkSrc : img.dataset.lightSrc;
+  });
+  document.querySelectorAll('[data-dark-bg]').forEach(el => {
+    el.style.backgroundColor = isDark ? 'var(--manteca)' : '';
+  });
 }
 
 function renderBrandCreationGrid(items, containerId = "brand-creation-grid") {
@@ -478,6 +595,7 @@ function renderBrandCreationGrid(items, containerId = "brand-creation-grid") {
                 _bgObserver.unobserve(tile);
             }
         });
+        applyDarkSrcSwap();
     });
 }
 

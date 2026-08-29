@@ -268,10 +268,12 @@
         },
         {
           "src": "img/logos/art-climate-logo.svg",
+          "darkSrc": "img/logos/art-climate-dark-logo.svg",
           "alt": "Art + Climate",
           "size": "tile",
           "logoSize": 200,
           "invertLogo": false,
+          "noFilterDark": true,
           "workType": "Brand Refresh",
           "year": "2023",
           "tag": {
@@ -420,11 +422,13 @@
     {
       "order": 13,
       "src": "img/logos/virtualmind-full-logo.webp",
+      "darkSrc": "img/logos/virtualmind-white-logo.svg",
       "alt": "Virtualmind",
       "size": "tile-xl",
       "span": 4,
       "logoSize": 300,
       "invertLogo": false,
+      "noFilterDark": true,
       "workType": "Rebranding",
       "year": "2012",
       "tag": {
@@ -801,6 +805,7 @@
       "span": 4,
       "logoSize": 200,
       "invertLogo": false,
+      "noFilterDark": true,
       "workType": "Rebranding",
       "year": "2014",
       "tag": {
@@ -815,45 +820,23 @@
       }
     },
     {
-      "order": 28,
+      "order": 27,
       "span": 4,
-      "stack": [
-        {
-          "src": "img/logos/duarte-asociados-logo.svg",
-          "alt": "Duarte & Asociados",
-          "size": "tile",
-          "logoSize": 250,
-          "invertLogo": false,
-          "workType": "Rebranding",
-          "year": "2009",
-          "tag": {
-            "es": [
-              "Estudio Contable"
-            ],
-            "en": [
-              "Accounting Firm"
-            ]
-          }
-        },
-        {
-          "src": "img/logos/zoom-logo.svg",
-          "alt": "ZOom",
-          "size": "tile",
-          "logoSize": 300,
-          "invertLogo": true,
-          "bgVideo": "img/backgrounds/zoom.mp4",
-          "workType": "Branding",
-          "year": "0000",
-          "tag": {
-            "es": [
-              "Estudio de Diseño"
-            ],
-            "en": [
-              "Design Studio"
-            ]
-          }
-        }
-      ]
+      "src": "img/logos/duarte-asociados-logo.svg",
+      "alt": "Duarte & Asociados",
+      "size": "tile",
+      "logoSize": 250,
+      "invertLogo": false,
+      "workType": "Rebranding",
+      "year": "2009",
+      "tag": {
+        "es": [
+          "Estudio Contable"
+        ],
+        "en": [
+          "Accounting Firm"
+        ]
+      }
     },
     {
       "order": 27,
@@ -879,7 +862,7 @@
     {
       "order": 29,
       "src": "img/logos/juliana-oppici-2-logo.svg",
-      "alt": "El Método",
+      "alt": "Juliana Oppici",
       "size": "tile",
       "span": 4,
       "logoSize": 300,
@@ -888,12 +871,30 @@
       "year": "2026",
       "tag": {
         "es": [
-          "Marketing",
-          "Curso de Marketing y posicionamiento de marca"
+          "Medicina Estética"
         ],
         "en": [
-          "Music",
-          "Jazz and Funk Band"
+          "Aesthetic Medicine"
+        ]
+      }
+    },
+    {
+      "order": 29,
+      "span": 4,
+      "src": "img/logos/zoom-logo.svg",
+      "alt": "ZOom",
+      "size": "tile",
+      "logoSize": 300,
+      "invertLogo": true,
+      "bgVideo": "img/backgrounds/zoom.mp4",
+      "workType": "Branding",
+      "year": "0000",
+      "tag": {
+        "es": [
+          "Estudio de Diseño"
+        ],
+        "en": [
+          "Design Studio"
         ]
       }
     }

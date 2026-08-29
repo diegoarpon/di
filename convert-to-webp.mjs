@@ -2,16 +2,22 @@ import sharp from 'sharp';
 import fs from 'fs';
 import path from 'path';
 
-const IMG_DIR = './img';
+const IMG_DIR = path.resolve('./img');
+const REF_BASE = path.resolve('.');
 const QUALITY = 90;
 const MAX_WIDTH = 1920;
 const REF_EXTENSIONS = ['.html', '.json', '.js', '.css'];
+
+function isWithin(base, target) {
+  return path.resolve(target).startsWith(base + path.sep) || path.resolve(target) === base;
+}
 
 // Buscar recursivamente JPG/PNG
 function findImages(dir) {
   let results = [];
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    const full = path.join(dir, entry.name);
+    const full = path.resolve(dir, entry.name);
+    if (!isWithin(IMG_DIR, full)) continue;
     if (entry.isDirectory()) results.push(...findImages(full));
     else if (/\.(jpe?g|png)$/i.test(entry.name)) results.push(full);
   }
@@ -22,7 +28,8 @@ function findImages(dir) {
 function findRefFiles(dir, depth = 0) {
   let results = [];
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    const full = path.join(dir, entry.name);
+    const full = path.resolve(dir, entry.name);
+    if (!isWithin(REF_BASE, full)) continue;
     if (entry.isDirectory() && depth < 2 && entry.name !== 'node_modules') {
       results.push(...findRefFiles(full, depth + 1));
     } else if (REF_EXTENSIONS.includes(path.extname(entry.name).toLowerCase())) {
@@ -57,7 +64,7 @@ for (const file of files) {
     console.log(`✓ ${file} → .webp  (${(sizeBefore/1024).toFixed(0)}KB → ${(sizeAfter/1024).toFixed(0)}KB, -${saved}%)`);
 
     converted.push({ oldName: `${name}${ext}`, newName: `${name}.webp` });
-    fs.unlinkSync(file);
+    if (isWithin(IMG_DIR, file)) fs.unlinkSync(file);
   } catch (err) {
     console.error(`✗ ${file}: ${err.message}`);
   }
@@ -72,6 +79,7 @@ const refFiles = findRefFiles('.');
 let updatedCount = 0;
 
 for (const refFile of refFiles) {
+  if (!isWithin(REF_BASE, refFile)) continue;
   let content = fs.readFileSync(refFile, 'utf-8');
   let changed = false;
 
@@ -83,6 +91,7 @@ for (const refFile of refFiles) {
   }
 
   if (changed) {
+    if (!isWithin(REF_BASE, refFile)) continue;
     fs.writeFileSync(refFile, content, 'utf-8');
     updatedCount++;
     console.log(`📝 ${refFile}`);

@@ -35,7 +35,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/square.svg" />
     <meta name="theme-color" content="#FF7518" />
 
-    <script>if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) document.documentElement.classList.add('safari-browser');</script>
+    <script>if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) document.documentElement.classList.add('safari-browser');
+    (function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
     <link rel="preload" href="fonts/WOFF2/FG_FuturistTRIAL-Light.woff2" as="font" type="font/woff2" crossorigin
         fetchpriority="high" />
     <link rel="preload" href="fonts/WOFF2/FG_FuturistTRIAL-Regular.woff2" as="font" type="font/woff2" crossorigin />
@@ -66,7 +67,16 @@
             font-display: swap
         }
     </style>
-    <style>@media (hover: hover) and (pointer: fine) { *, *::before, *::after { cursor: none !important; } }</style>
+    <style>
+        @media (hover: hover) and (pointer: fine) {
+
+            *,
+            *::before,
+            *::after {
+                cursor: none !important;
+            }
+        }
+    </style>
     <link href="css/styles.css" rel="stylesheet" />
     <script src="js/translations.js" defer></script>
     <script type="application/ld+json">
@@ -119,7 +129,7 @@
                         <div class="row">
                             <div class="col-auto position-relative">
                                 <img src="img/logo-estudio-d.svg" alt="estudio d." fetchpriority="high"
-                                    loading="eager" />
+                                    loading="eager" id="logo-sidebar" /><script>(function(){var i=document.getElementById('logo-sidebar');if(i&&localStorage.getItem('theme')==='dark')i.src='img/logo-estudio-d-dark.svg';})();</script>
                                 <div class="guide-v-short"></div>
                             </div>
                         </div>
@@ -168,12 +178,13 @@
                                     id="lang-en">en</button>
                                 <button class="option fw-bold lang-selector" onclick="switchLanguage('es')"
                                     id="lang-es">es</button>
-                            </div>
-                            <div class="d-flex gap-3 mt-4">
+                                <span style="display:inline-block;width:2rem"></span>
                                 <button class="option fw-bold theme-selector" onclick="switchTheme('light')"
-                                    id="theme-light">☀</button>
+                                    id="theme-light"><img src="img/circle-regular-full.svg" alt="light"
+                                        style="height:0.9em;width:auto;vertical-align:middle"></button>
                                 <button class="option fw-bold theme-selector" onclick="switchTheme('dark')"
-                                    id="theme-dark">☾</button>
+                                    id="theme-dark"><img src="img/circle-solid-full.svg" alt="dark"
+                                        style="height:0.9em;width:auto;vertical-align:middle"></button>
                             </div>
                             <div class="mt-4 version-label" id="version-label"></div>
                         </div>
@@ -190,7 +201,7 @@
                         <div class="row">
                             <div class="col-auto position-relative">
                                 <img src="img/logo-estudio-d.svg" alt="estudio d." fetchpriority="high"
-                                    loading="eager" />
+                                    loading="eager" id="logo-mobile" /><script>(function(){var i=document.getElementById('logo-mobile');if(i&&localStorage.getItem('theme')==='dark')i.src='img/logo-estudio-d-dark.svg';})();</script>
                                 <div class="guide-v-short"></div>
                             </div>
                         </div>
@@ -202,7 +213,7 @@
                 <!-- ========== BRAND CREATION TAB CONTENT STARTS HERE ========== -->
                 <div id="brand-creation" class="tab-content d-none">
                     <div class="tab-intro">
-                        <h1 id="intro-text" class="tab-heading fw-light" data-i18n="intro">Hola, soy Diego (d) —
+                        <h1 id="intro-text" class="tab-heading fw-light" data-i18n="intro">Hola, soy Diego (D) —
                             diseñador gráfico especializado en branding, web y producto.</h1>
                     </div>
                     <div id="brand-creation-grid" class="brand-grid mb-5"></div>

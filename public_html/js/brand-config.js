@@ -23,8 +23,8 @@ function buildBrandCreationItems(logos) {
                 guides: ["left"],
                 tiles: entry.stack.map((t, i) => {
                     const isXl = t.size === "tile-xl";
-                    const logos = [{ src: t.src, loading: "lazy", alt: t.alt, logoSize: t.logoSize, invertLogo: t.invertLogo }];
-                    if (t.multi) logos.push({ src: t.multi, loading: "lazy", alt: t.alt, logoSize: t.multiLogoSize ?? t.logoSize, invertLogo: t.invertLogo });
+                    const logos = [{ src: t.src, darkSrc: t.darkSrc, loading: "lazy", alt: t.alt, logoSize: t.logoSize, invertLogo: t.invertLogo, noFilterDark: t.noFilterDark }];
+                    if (t.multi) logos.push({ src: t.multi, darkSrc: t.darkSrc, loading: "lazy", alt: t.alt, logoSize: t.multiLogoSize ?? t.logoSize, invertLogo: t.invertLogo, noFilterDark: t.noFilterDark });
                     return {
                         tileClass: isXl ? "tile tile-xl" : "tile",
                         innerClass: t.multi ? "brand-grid-logo-wrap multi-logo" : "brand-grid-logo-wrap",
@@ -44,8 +44,8 @@ function buildBrandCreationItems(logos) {
         }
         const isXl = entry.size === "tile-xl";
         const isWide = entry.span === 8 || entry.span === 6;
-        const singleLogos = [{ src: entry.src, loading: "lazy", alt: entry.alt, logoSize: entry.logoSize, invertLogo: entry.invertLogo }];
-        if (entry.multi) singleLogos.push({ src: entry.multi, loading: "lazy", alt: entry.alt, logoSize: entry.multiLogoSize ?? entry.logoSize, invertLogo: entry.invertLogo });
+        const singleLogos = [{ src: entry.src, darkSrc: entry.darkSrc, loading: "lazy", alt: entry.alt, logoSize: entry.logoSize, invertLogo: entry.invertLogo, noFilterDark: entry.noFilterDark }];
+        if (entry.multi) singleLogos.push({ src: entry.multi, darkSrc: entry.darkSrc, loading: "lazy", alt: entry.alt, logoSize: entry.multiLogoSize ?? entry.logoSize, invertLogo: entry.invertLogo, noFilterDark: entry.noFilterDark });
         return {
             layout: "single",
             span: entry.span,

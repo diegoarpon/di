@@ -7,7 +7,7 @@
   /* Colors */
   --main-color: #ff7518;
   --whitest: #ffffff;
-  --blackest: #000000;
+  --blackest: #171f25;
   --manteca: #f6f6e4;
   --salmon: #EA685E;
 
@@ -25,7 +25,7 @@
 
   /* Theme tokens */
   --bg: #f6f6e4;
-  --text: #000000;
+  --text: #171f25;
 
   /* Font sizes */
 
@@ -86,8 +86,34 @@
 }
 
 [data-theme="dark"] {
-  --bg: #000000;
+  --bg: #171f25;
   --text: #f6f6e4;
+}
+
+.theme-transitioning,
+.theme-transitioning *,
+.theme-transitioning *::before,
+.theme-transitioning *::after {
+  transition: background-color 0.3s ease, color 0.3s ease, filter 0.3s ease, border-color 0.3s ease !important;
+}
+
+[data-theme="dark"] .theme-selector img {
+  filter: brightness(0) invert(1);
+}
+
+/* Logo inversion in dark mode — only black logos (no inline filter) */
+[data-theme="dark"] .logo-sized:not(.logo-no-filter-dark),
+[data-theme="dark"] .brand-grid-logo-wrap img:not(.brand-dev-tool-icon):not(.logo-no-filter-dark) {
+  filter: brightness(0) invert(1);
+}
+
+.brand-grid-logo-wrap img:not(.brand-dev-tool-icon):not(.logo-no-filter-dark) {
+  transition: filter 0.3s ease;
+}
+
+/* Logos already white via inline filter — keep as-is */
+[data-theme="dark"] img[style*="brightness(0) invert(1)"] {
+  filter: brightness(0) invert(1) !important;
 }
 
 /* =============================================
@@ -505,6 +531,10 @@ body {
 .tile-text-image {
   height: 1.25rem !important;
   width: auto !important;
+}
+
+[data-theme="dark"] .tile-text-image {
+  filter: brightness(0) invert(0.96);
 }
 
 .tile-xl {
@@ -1118,7 +1148,7 @@ body {
   max-height: var(--logo-size);
   width: 100%;
   height: auto;
-  transition: transform 0.2s var(--ease-out);
+  transition: transform 0.2s var(--ease-out), filter 0.3s ease;
 }
 
 #brand-development-grid .tile,
