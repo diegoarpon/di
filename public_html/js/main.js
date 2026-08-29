@@ -463,7 +463,8 @@ function createBrandTile(tileConfig) {
     const p = document.createElement("p");
     p.className = "tile-text-content";
     if (tileConfig.textSize) p.style.fontSize = _safeCSSValue(tileConfig.textSize, /^[\d.]+(px|rem|em|vw|%)$/);
-    p.innerHTML = sanitizeHTML(tileConfig.text?.[currentLang] || tileConfig.text?.es || "");
+    const _parsed = new DOMParser().parseFromString(sanitizeHTML(tileConfig.text?.[currentLang] || tileConfig.text?.es || ""), 'text/html');
+    [..._parsed.body.childNodes].forEach(n => p.appendChild(document.importNode(n, true)));
     tile.appendChild(p);
     if (tileConfig.panelImage) {
       const img = document.createElement("img");

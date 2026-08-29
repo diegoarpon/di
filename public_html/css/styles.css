@@ -801,7 +801,9 @@ body {
   }
 
   #lang-es::after,
-  #lang-en::after {
+  #lang-en::after,
+  #theme-light::after,
+  #theme-dark::after {
     display: block;
   }
 }
@@ -890,6 +892,26 @@ body {
   font-size: var(--fs-nav);
   font-weight: inherit;
   color: inherit;
+}
+
+.lang-theme-divider {
+  display: inline-block;
+  width: 1px;
+  background: var(--graphite);
+  align-self: stretch;
+  margin: 0 0.5rem;
+}
+
+.theme-icon {
+  height: 0.9em;
+  width: auto;
+  vertical-align: middle;
+}
+
+@media (max-width: 767px) {
+  .theme-icon {
+    margin-bottom: -3px;
+  }
 }
 
 /* Language & Theme underlines */

@@ -57,10 +57,19 @@
       font-display: swap
     }
   </style>
-  <style>@media (hover: hover) and (pointer: fine) { *, *::before, *::after { cursor: none !important; } }</style>
+  <style>
+    @media (hover: hover) and (pointer: fine) {
+
+      *,
+      *::before,
+      *::after {
+        cursor: none !important;
+      }
+    }
+  </style>
   <link href="css/styles.css" rel="stylesheet" />
   <script>if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) document.documentElement.classList.add('safari-browser');
-  (function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+    (function () { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); })();</script>
   <script src="js/translations.js" defer></script>
 </head>
 
@@ -93,7 +102,9 @@
             <div class="guide-h-double-100"></div>
             <div class="row">
               <div class="col-auto position-relative">
-                <img src="img/logo-estudio-d.svg" alt="estudio d." fetchpriority="high" loading="eager" id="logo-sidebar" /><script>(function(){var i=document.getElementById('logo-sidebar');if(i&&localStorage.getItem('theme')==='dark')i.src='img/logo-estudio-d-dark.svg';})();</script>
+                <img src="img/logo-estudio-d.svg" alt="estudio d." fetchpriority="high" loading="eager"
+                  id="logo-sidebar" />
+                <script>(function () { var i = document.getElementById('logo-sidebar'); if (i && localStorage.getItem('theme') === 'dark') i.src = 'img/logo-estudio-d-dark.svg'; })();</script>
                 <div class="guide-v-short"></div>
               </div>
             </div>
@@ -127,9 +138,9 @@
               <div class="d-flex gap-3">
                 <button class="option fw-bold lang-selector" onclick="switchLanguage('en')" id="lang-en">en</button>
                 <button class="option fw-bold lang-selector" onclick="switchLanguage('es')" id="lang-es">es</button>
-                <span style="display:inline-block;width:2rem"></span>
-                <button class="option fw-bold theme-selector" onclick="switchTheme('light')" id="theme-light"><img src="img/circle-regular-full.svg" alt="light" style="height:0.9em;width:auto;vertical-align:middle"></button>
-                <button class="option fw-bold theme-selector" onclick="switchTheme('dark')" id="theme-dark"><img src="img/circle-solid-full.svg" alt="dark" style="height:0.9em;width:auto;vertical-align:middle"></button>
+                <span class="lang-theme-divider"></span>
+                <button class="option fw-bold theme-selector" onclick="switchTheme('light')" id="theme-light"><img src="img/circle-regular-full.svg" alt="light" class="theme-icon"></button>
+                <button class="option fw-bold theme-selector" onclick="switchTheme('dark')" id="theme-dark"><img src="img/circle-solid-full.svg" alt="dark" class="theme-icon"></button>
               </div>
               <div class="mt-4 version-label" id="version-label"></div>
             </div>
@@ -149,7 +160,9 @@
             <div class="guide-h-double-100"></div>
             <div class="row">
               <div class="col-auto position-relative">
-                <img src="img/logo-estudio-d.svg" alt="estudio d." fetchpriority="high" loading="eager" id="logo-mobile" /><script>(function(){var i=document.getElementById('logo-mobile');if(i&&localStorage.getItem('theme')==='dark')i.src='img/logo-estudio-d-dark.svg';})();</script>
+                <img src="img/logo-estudio-d.svg" alt="estudio d." fetchpriority="high" loading="eager"
+                  id="logo-mobile" />
+                <script>(function () { var i = document.getElementById('logo-mobile'); if (i && localStorage.getItem('theme') === 'dark') i.src = 'img/logo-estudio-d-dark.svg'; })();</script>
                 <div class="guide-v-short"></div>
               </div>
             </div>
@@ -159,7 +172,8 @@
         <div class="project-header">
           <div class="d-flex align-items-baseline justify-content-between">
             <h1 class="tab-heading project-title mb-3" id="project-name"></h1>
-            <a class="project-back" href="#" onclick="event.preventDefault(); fadeNavigate('index.html?tab=brand-development')">
+            <a class="project-back" href="#"
+              onclick="event.preventDefault(); fadeNavigate('index.html?tab=brand-development')">
               <div class="project-back-inner">
                 <div class="project-back-arrow-large">←</div>
                 <span class="project-back-label" data-i18n="back">volver</span>
@@ -226,165 +240,165 @@
     function loadProject() {
       if (!projectId) { window.location.href = "index.html?tab=brand-development"; return; }
       const doRender = (data) => {
-          const project = data.brandDevelopment.find(p => p.project === projectId);
-          if (!project) { window.location.href = "index.html?tab=brand-development"; return; }
+        const project = data.brandDevelopment.find(p => p.project === projectId);
+        if (!project) { window.location.href = "index.html?tab=brand-development"; return; }
 
-          _projectData = data;
-          const label = project.label?.[currentLang] || project.label?.es;
-          const projectName = project.projectName || label.name;
-          document.title = `${projectName} — diseño d.`;
-          document.getElementById("project-name").textContent = projectName;
+        _projectData = data;
+        const label = project.label?.[currentLang] || project.label?.es;
+        const projectName = project.projectName || label.name;
+        document.title = `${projectName} — diseño d.`;
+        document.getElementById("project-name").textContent = projectName;
 
-          const pageUrl = `https://estudiod.site/project.html?p=${projectId}`;
-          document.getElementById("canonical").href = pageUrl;
-          document.getElementById("og-url").content = pageUrl;
-          document.getElementById("og-title").content = `${projectName} — diseño d.`;
-          document.documentElement.lang = currentLang;
+        const pageUrl = `https://estudiod.site/project.html?p=${projectId}`;
+        document.getElementById("canonical").href = pageUrl;
+        document.getElementById("og-url").content = pageUrl;
+        document.getElementById("og-title").content = `${projectName} — diseño d.`;
+        document.documentElement.lang = currentLang;
 
-          const metaEl = document.getElementById("project-meta");
-          const title = project.title?.[currentLang] || project.title?.es || "";
-          const industry = label?.industry || "";
-          const titleCap = title ? title.charAt(0).toUpperCase() + title.slice(1) : "";
-          const industryLow = industry ? industry.charAt(0).toLowerCase() + industry.slice(1) : "";
-          const metaText = project.hideProjectMeta ? "" : (titleCap && industryLow ? `${titleCap} ${industryLow}` : titleCap || industry);
-          metaEl.textContent = metaText;
-          metaEl.classList.toggle("d-none", !metaText);
+        const metaEl = document.getElementById("project-meta");
+        const title = project.title?.[currentLang] || project.title?.es || "";
+        const industry = label?.industry || "";
+        const titleCap = title ? title.charAt(0).toUpperCase() + title.slice(1) : "";
+        const industryLow = industry ? industry.charAt(0).toLowerCase() + industry.slice(1) : "";
+        const metaText = project.hideProjectMeta ? "" : (titleCap && industryLow ? `${titleCap} ${industryLow}` : titleCap || industry);
+        metaEl.textContent = metaText;
+        metaEl.classList.toggle("d-none", !metaText);
 
-          const gallery = document.getElementById("project-gallery");
-          gallery.innerHTML = "";
+        const gallery = document.getElementById("project-gallery");
+        gallery.innerHTML = "";
 
-          const description = project.description?.[currentLang] || project.description?.es || "";
-          const descEl = document.getElementById("project-description");
-          descEl.innerHTML = description;
-          descEl.classList.toggle("d-none", !description);
-          document.getElementById("meta-description").content = description;
-          document.getElementById("og-description").content = description;
+        const description = project.description?.[currentLang] || project.description?.es || "";
+        const descEl = document.getElementById("project-description");
+        descEl.innerHTML = description;
+        descEl.classList.toggle("d-none", !description);
+        document.getElementById("meta-description").content = description;
+        document.getElementById("og-description").content = description;
 
-          if (projectId === "virtualmind") {
-            gallery.classList.remove("project-gallery");
-            gallery.classList.add("project-gallery-embed");
-            const hGuide = document.createElement("div");
-            hGuide.className = "guide-h-double-100";
-            hGuide.setAttribute("aria-hidden", "true");
-            const vGuide = document.createElement("div");
-            vGuide.className = "guide-v-double-100";
-            vGuide.setAttribute("aria-hidden", "true");
-            gallery.appendChild(hGuide);
-            gallery.appendChild(vGuide);
-            const iframe = document.createElement("iframe");
-            iframe.src = "design-kit/index.html";
-            iframe.style.cssText = "width:100%;border:none;display:block;min-height:100vh;";
-            iframe.scrolling = "no";
-            iframe.onload = () => {
-              try {
-                iframe.style.height = iframe.contentDocument.body.scrollHeight + "px";
-              } catch (e) {
-                iframe.style.height = "100vh";
+        if (projectId === "virtualmind") {
+          gallery.classList.remove("project-gallery");
+          gallery.classList.add("project-gallery-embed");
+          const hGuide = document.createElement("div");
+          hGuide.className = "guide-h-double-100";
+          hGuide.setAttribute("aria-hidden", "true");
+          const vGuide = document.createElement("div");
+          vGuide.className = "guide-v-double-100";
+          vGuide.setAttribute("aria-hidden", "true");
+          gallery.appendChild(hGuide);
+          gallery.appendChild(vGuide);
+          const iframe = document.createElement("iframe");
+          iframe.src = "design-kit/index.html";
+          iframe.style.cssText = "width:100%;border:none;display:block;min-height:100vh;";
+          iframe.scrolling = "no";
+          iframe.onload = () => {
+            try {
+              iframe.style.height = iframe.contentDocument.body.scrollHeight + "px";
+            } catch (e) {
+              iframe.style.height = "100vh";
+            }
+            const loader = document.getElementById("project-loader");
+            if (loader) {
+              loader.classList.add("dismiss");
+              loader.addEventListener("transitionend", () => loader.remove(), { once: true });
+            }
+            document.querySelector(".content-area").classList.remove("fading");
+          };
+          gallery.appendChild(iframe);
+          return;
+        }
+
+        let col3Count = 0;
+
+        (project.gallery || []).forEach((item, idx, arr) => {
+          const figure = document.createElement("figure");
+          const span = colSpanMap[item.cols] || 3;
+          figure.className = `project-gallery-item gallery-span-${span}`;
+
+          const hGuide = document.createElement("div");
+          hGuide.className = "guide-h-double-100";
+          hGuide.setAttribute("aria-hidden", "true");
+          const vGuide = document.createElement("div");
+          vGuide.className = "guide-v-double-100";
+          vGuide.setAttribute("aria-hidden", "true");
+          figure.appendChild(hGuide);
+          figure.appendChild(vGuide);
+
+          if (item.type === "text") {
+            figure.classList.add("gallery-item-text");
+            figure.style.background = item.bg || "var(--bg)";
+            figure.style.zIndex = 11;
+            if (item.logo) {
+              const logo = document.createElement("img");
+              logo.src = item.logo;
+              logo.className = "project-masonry-text-logo";
+              logo.alt = "";
+              logo.loading = "lazy";
+              if (item.logoSize) logo.style.maxHeight = `${item.logoSize}px`;
+              figure.appendChild(logo);
+            }
+            if (item.text) {
+              const textEl = document.createElement("div");
+              textEl.className = "project-masonry-color-text";
+              if (item.textSize) textEl.style.fontSize = item.textSize;
+              textEl.innerHTML = item.text[currentLang] || item.text.es || "";
+              figure.appendChild(textEl);
+            }
+          } else {
+            const caption = item.caption?.[currentLang] || item.caption?.es || "";
+            const isVideo = /\.(mp4|webm|ogg|mov)$/i.test(item.src);
+            let media;
+            if (isVideo) {
+              media = document.createElement("video");
+              media.src = item.src;
+              media.autoplay = true;
+              media.muted = true;
+              media.playsInline = true;
+              media.loop = item.loop ?? true;
+              media.className = "gallery-video";
+            } else {
+              media = document.createElement("img");
+              media.src = item.src;
+              if (item.darkSrc) {
+                media.dataset.lightSrc = item.src;
+                media.dataset.darkSrc = item.darkSrc;
+                if ((localStorage.getItem('theme') || 'light') === 'dark') media.src = item.darkSrc;
               }
-              const loader = document.getElementById("project-loader");
-              if (loader) {
-                loader.classList.add("dismiss");
-                loader.addEventListener("transitionend", () => loader.remove(), { once: true });
+              if (item.darkBg) {
+                figure.dataset.darkBg = '1';
+                if ((localStorage.getItem('theme') || 'light') === 'dark') figure.style.backgroundColor = 'var(--manteca)';
               }
-              document.querySelector(".content-area").classList.remove("fading");
-            };
-            gallery.appendChild(iframe);
-            return;
+              const autoAlt = item.src.split('/').pop().replace(/\.[^.]+$/, '').replace(/[-_]/g, ' ');
+              media.alt = item.alt || caption || autoAlt;
+              media.loading = idx < 2 ? "eager" : "lazy";
+            }
+            const figcaption = document.createElement("figcaption");
+            figcaption.textContent = caption;
+            figure.appendChild(media);
+            if (caption) figure.appendChild(figcaption);
           }
 
-          let col3Count = 0;
+          gallery.appendChild(figure);
 
-          (project.gallery || []).forEach((item, idx, arr) => {
-            const figure = document.createElement("figure");
-            const span = colSpanMap[item.cols] || 3;
-            figure.className = `project-gallery-item gallery-span-${span}`;
-
-            const hGuide = document.createElement("div");
-            hGuide.className = "guide-h-double-100";
-            hGuide.setAttribute("aria-hidden", "true");
-            const vGuide = document.createElement("div");
-            vGuide.className = "guide-v-double-100";
-            vGuide.setAttribute("aria-hidden", "true");
-            figure.appendChild(hGuide);
-            figure.appendChild(vGuide);
-
-            if (item.type === "text") {
-              figure.classList.add("gallery-item-text");
-              figure.style.background = item.bg || "var(--bg)";
-              figure.style.zIndex = 11;
-              if (item.logo) {
-                const logo = document.createElement("img");
-                logo.src = item.logo;
-                logo.className = "project-masonry-text-logo";
-                logo.alt = "";
-                logo.loading = "lazy";
-                if (item.logoSize) logo.style.maxHeight = `${item.logoSize}px`;
-                figure.appendChild(logo);
-              }
-              if (item.text) {
-                const textEl = document.createElement("div");
-                textEl.className = "project-masonry-color-text";
-                if (item.textSize) textEl.style.fontSize = item.textSize;
-                textEl.innerHTML = item.text[currentLang] || item.text.es || "";
-                figure.appendChild(textEl);
-              }
-            } else {
-              const caption = item.caption?.[currentLang] || item.caption?.es || "";
-              const isVideo = /\.(mp4|webm|ogg|mov)$/i.test(item.src);
-              let media;
-              if (isVideo) {
-                media = document.createElement("video");
-                media.src = item.src;
-                media.autoplay = true;
-                media.muted = true;
-                media.playsInline = true;
-                media.loop = item.loop ?? true;
-                media.className = "gallery-video";
-              } else {
-                media = document.createElement("img");
-                media.src = item.src;
-                if (item.darkSrc) {
-                  media.dataset.lightSrc = item.src;
-                  media.dataset.darkSrc = item.darkSrc;
-                  if ((localStorage.getItem('theme') || 'light') === 'dark') media.src = item.darkSrc;
-                }
-                if (item.darkBg) {
-                  figure.dataset.darkBg = '1';
-                  if ((localStorage.getItem('theme') || 'light') === 'dark') figure.style.backgroundColor = 'var(--manteca)';
-                }
-                const autoAlt = item.src.split('/').pop().replace(/\.[^.]+$/, '').replace(/[-_]/g, ' ');
-                media.alt = item.alt || caption || autoAlt;
-                media.loading = idx < 2 ? "eager" : "lazy";
-              }
-              const figcaption = document.createElement("figcaption");
-              figcaption.textContent = caption;
-              figure.appendChild(media);
-              if (caption) figure.appendChild(figcaption);
-            }
-
-            gallery.appendChild(figure);
-
-            if (span === 4) {
-              col3Count++;
-            } else {
-              col3Count = 0;
-            }
-            const nextItem = arr[idx + 1];
-            const nextSpan = nextItem ? (colSpanMap[nextItem.cols] || 3) : null;
-            if (col3Count % 2 !== 0 && nextSpan !== 4) {
-              const spacer = document.createElement("div");
-              spacer.className = "gallery-tablet-spacer";
-              gallery.appendChild(spacer);
-              col3Count = 0;
-            }
-          });
-
-          const loader = document.getElementById("project-loader");
-          if (loader) {
-            loader.classList.add("dismiss");
-            loader.addEventListener("transitionend", () => loader.remove(), { once: true });
+          if (span === 4) {
+            col3Count++;
+          } else {
+            col3Count = 0;
           }
-          document.querySelector(".content-area").classList.remove("fading");
+          const nextItem = arr[idx + 1];
+          const nextSpan = nextItem ? (colSpanMap[nextItem.cols] || 3) : null;
+          if (col3Count % 2 !== 0 && nextSpan !== 4) {
+            const spacer = document.createElement("div");
+            spacer.className = "gallery-tablet-spacer";
+            gallery.appendChild(spacer);
+            col3Count = 0;
+          }
+        });
+
+        const loader = document.getElementById("project-loader");
+        if (loader) {
+          loader.classList.add("dismiss");
+          loader.addEventListener("transitionend", () => loader.remove(), { once: true });
+        }
+        document.querySelector(".content-area").classList.remove("fading");
 
       };
       if (_projectData) { doRender(_projectData); return; }
