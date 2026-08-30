@@ -33,4 +33,4 @@ Disallow: /
 User-agent: PetalBot
 Disallow: /
 
-Sitemap: https://www.disenod.com/sitemap.xml
+Sitemap: https://estudiod.site/sitemap.xml
