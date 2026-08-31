@@ -476,10 +476,6 @@ body {
 
 @media (min-width: 1025px) {
 
-  :root:not(.safari-browser) .guide-h-double-100,
-  :root:not(.safari-browser) .guide-v-double-100 {
-    filter: url(#pencil);
-  }
 }
 
 .guide-v-short {
@@ -749,7 +745,6 @@ body {
     width: 1px;
     height: 100%;
     background: var(--graphite);
-    filter: url(#pencil);
   }
 
   .content-area {
