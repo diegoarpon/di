@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <script defer src="/_vercel/insights/script.js"></script>
@@ -16,14 +16,17 @@
     <meta property="og:title" content="estudio.d | Branding, Visual Identity & Web Design" />
     <meta property="og:description"
         content="Strategic branding and web design by Diego Fabbri Arpon. 20 years shaping brands and visual identities." />
-    <meta property="og:image" content="https://estudiod.site/img/square.webp" />
+    <meta property="og:image" content="https://estudiod.site/img/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
 
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://estudiod.site/" />
     <meta property="twitter:title" content="estudio.d | Branding, Visual Identity & Web Design" />
     <meta property="twitter:description"
         content="Strategic branding and web design by Diego Fabbri Arpon. 20 years shaping brands and visual identities." />
-    <meta property="twitter:image" content="https://estudiod.site/img/square.webp" />
+    <meta property="twitter:image" content="https://estudiod.site/img/og-image.png" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="img/square.svg" />
@@ -31,7 +34,7 @@
     <link rel="alternate" hreflang="es" href="https://estudiod.site/" />
     <link rel="alternate" hreflang="en" href="https://estudiod.site/" />
     <link rel="alternate" hreflang="x-default" href="https://estudiod.site/" />
-    <link rel="apple-touch-icon" sizes="180x180" href="img/square.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="img/square.svg" />
     <link rel="icon" type="image/png" sizes="16x16" href="img/square.svg" />
     <meta name="theme-color" content="#FF7518" />
@@ -83,16 +86,31 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Diego Fabbri Arpon",
-      "alternateName": "estudio.d",
-      "url": "https://estudiod.site",
-      "email": "hola@estudiod.site",
-      "jobTitle": "Brand Designer",
-      "description": "Independent designer with 20 years of experience in branding, visual identity and strategic web design.",
-      "knowsAbout": ["Branding", "Visual Identity", "Web Design", "Product Design", "Typography", "Brand Strategy"],
-      "sameAs": [
-        "https://www.linkedin.com/in/diegofabbriarpon/"
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://estudiod.site/#diego",
+          "name": "Diego Fabbri Arpon",
+          "alternateName": "estudio.d",
+          "url": "https://estudiod.site",
+          "email": "hola@estudiod.site",
+          "jobTitle": "Brand Designer",
+          "description": "Independent designer with 20 years of experience in branding, visual identity and strategic web design.",
+          "knowsAbout": ["Branding", "Visual Identity", "Web Design", "Product Design", "Typography", "Brand Strategy"],
+          "sameAs": ["https://www.linkedin.com/in/diegofabbriarpon/"]
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://estudiod.site/#studio",
+          "name": "estudio.d",
+          "url": "https://estudiod.site",
+          "email": "hola@estudiod.site",
+          "founder": { "@id": "https://estudiod.site/#diego" },
+          "areaServed": "Worldwide",
+          "serviceType": ["Brand Creation", "Brand Development", "Visual Identity", "Web Design", "Product Design"],
+          "priceRange": "$$",
+          "sameAs": ["https://www.linkedin.com/in/diegofabbriarpon/"]
+        }
       ]
     }
     </script>
@@ -205,7 +223,7 @@
                 <!-- Tab Content -->
 
                 <!-- ========== BRAND CREATION TAB CONTENT STARTS HERE ========== -->
-                <div id="brand-creation" class="tab-content d-none">
+                <div id="brand-creation" class="tab-content">
                     <div class="tab-intro">
                         <h1 id="intro-text" class="tab-heading fw-light" data-i18n="intro">Hola, soy Diego (D) —
                             diseñador gráfico especializado en branding, web y producto.</h1>
