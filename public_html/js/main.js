@@ -90,7 +90,7 @@ window.switchTheme = function (theme) {
   if (btn) btn.classList.add('active');
   applyDarkSrcSwap();
   document.querySelectorAll('img[src*="logo-estudio-d"]').forEach(img => {
-    img.src = theme === 'dark' ? 'img/logo-estudio-d-dark.svg' : 'img/logo-estudio-d.svg';
+    img.src = theme === 'dark' ? 'img/logo-estudio-d-dark-alt.svg' : 'img/logo-estudio-d-alt.svg';
   });
   const lightImg = document.querySelector('#theme-light img');
   const darkImg = document.querySelector('#theme-dark img');

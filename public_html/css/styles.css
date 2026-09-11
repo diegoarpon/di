@@ -9,6 +9,10 @@
   --whitest: #ffffff;
   --blackest: #171f25;
   --manteca: #f6f6e4;
+  --manteca-darken: 5%;
+  --manteca-dark: color-mix(in srgb, var(--manteca), black var(--manteca-darken));
+  --blackest-lighten: 5%;
+  --blackest-light: color-mix(in srgb, var(--blackest), white var(--blackest-lighten));
   --salmon: #EA685E;
 
   --mint: #1ba165;
@@ -88,6 +92,7 @@
 [data-theme="dark"] {
   --bg: #171f25;
   --text: #f6f6e4;
+  --manteca-dark: var(--blackest-light);
 }
 
 .theme-transitioning,
@@ -491,7 +496,7 @@ body {
 .tile-xl {
   position: relative;
   overflow: hidden;
-  background-color: var(--bg);
+  background-color: var(--manteca-dark);
   /* border: 1px solid var(--graphite); */
   transition: background-color 0.3s ease;
 }
@@ -643,10 +648,8 @@ body {
   }
 
 
-  #lang-es,
-  #lang-en,
-  #theme-light,
-  #theme-dark {
+  .lang-selector,
+  .theme-selector {
     min-height: 2.75rem;
     display: inline-flex;
     align-items: center;
@@ -682,6 +685,7 @@ body {
 }
 
 /* Sidebar Nav Buttons */
+/* ── 1. Selector de secciones ────────────────────────────── */
 .sidebar-nav-btn {
   width: fit-content !important;
   max-width: 100% !important;
@@ -689,23 +693,99 @@ body {
   word-break: keep-all !important;
   overflow-wrap: break-word !important;
   position: relative;
-  padding-bottom: 0.1875rem;
 }
 
 .sidebar-nav-btn::after {
-  content: "";
+  content: "\2022";
   position: absolute;
-  bottom: -0.1rem;
-  left: 0;
-  width: 0;
-  height: 0.25rem;
-  background-color: var(--main-color);
-  transition: width 0.3s ease;
+  right: -1rem;
+  top: 57.5%;
+  transform: translateY(-50%);
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  color: var(--main-color);
+  font-size: 1.75rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
 }
 
 .sidebar-nav-btn:hover::after,
 .sidebar-nav-btn.active::after {
-  width: 100%;
+  opacity: 1;
+}
+
+.sidebar-nav-btn.active {
+  font-weight: 700;
+}
+
+.sidebar-nav-btn.active::after {
+  font-weight: 400;
+}
+
+/* ── 2. Sección contacto (cv, whatsapp, linkedin) ─────────── */
+.contact-item {
+  z-index: var(--z-option);
+  position: relative;
+  cursor: pointer;
+  padding-right: 1.5rem;
+}
+
+.contact-item::after {
+  content: "\2022";
+  position: absolute;
+  right: 0;
+  top: 57.5%;
+  transform: translateY(-50%);
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  color: var(--main-color);
+  font-size: 1.75rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contact-item:hover::after {
+  opacity: 1;
+}
+
+/* ── 3. ES / EN / Temas ───────────────────────────────────── */
+.lang-selector,
+.theme-selector {
+  position: relative;
+}
+
+.lang-selector::after,
+.theme-selector::after {
+  content: "•";
+  position: absolute;
+  bottom: -1.4rem;
+  left: 50%;
+  transform: translateX(-65%);
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  color: var(--main-color);
+  font-size: 1.75rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.lang-selector.active::after,
+.theme-selector.active::after,
+.lang-selector:hover::after,
+.theme-selector:hover::after {
+  opacity: 1;
+  width: auto;
+}
+
+.lang-selector.active,
+.theme-selector.active {
+  color: var(--main-color);
+  cursor: default;
 }
 
 /* Sidebar */
@@ -718,7 +798,7 @@ body {
   left: 0;
   z-index: var(--z-sidebar);
   /* border-right: 1px solid var(--graphite); */
-  overflow: hidden;
+  overflow: visible;
   transition: background-color 0.3s ease;
 }
 
@@ -776,10 +856,8 @@ body {
     gap: 1.5rem !important;
   }
 
-  #lang-es,
-  #lang-en,
-  #theme-light,
-  #theme-dark {
+  .lang-selector,
+  .theme-selector {
     min-height: 2.75rem;
     display: inline-flex;
     align-items: center;
@@ -788,15 +866,12 @@ body {
 
 @media (max-width: 1024px) {
 
-  .option::after,
   .sidebar-nav-btn::after {
     display: none;
   }
 
-  #lang-es::after,
-  #lang-en::after,
-  #theme-light::after,
-  #theme-dark::after {
+  .lang-selector::after,
+  .theme-selector::after {
     display: block;
   }
 }
@@ -854,22 +929,24 @@ body {
   width: fit-content !important;
   max-width: fit-content !important;
   display: inline-block !important;
-  padding-bottom: 0.1875rem;
+  padding-right: .5rem;
 }
 
 .contact-link::after {
-  content: "";
+  content: "\2022";
   position: absolute;
-  bottom: 0.1rem;
-  left: 0;
-  width: 0;
-  height: 0.25rem;
-  background-color: var(--main-color);
-  transition: width 0.3s ease;
+  left: 100%;
+  top: 57.5%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: var(--main-color);
+  font-size: 1.75rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .contact-link:hover::after {
-  width: 100%;
+  opacity: 1;
 }
 
 .nav-button {
@@ -897,7 +974,7 @@ body {
 }
 
 .theme-icon {
-  height: 0.9em;
+  height: 0.8em;
   width: auto;
   vertical-align: middle;
 }
@@ -909,68 +986,6 @@ body {
 }
 
 /* Language & Theme underlines */
-#lang-en,
-#lang-es,
-#theme-light,
-#theme-dark {
-  position: relative;
-  padding-bottom: 0.1875rem;
-}
-
-#lang-en::after,
-#lang-es::after,
-#theme-light::after,
-#theme-dark::after {
-  content: "";
-  position: absolute;
-  bottom: 0.1rem;
-  left: 0;
-  width: 0;
-  height: 0.25rem;
-  background-color: var(--main-color);
-  transition: width 0.3s ease;
-}
-
-#lang-en.active::after,
-#lang-es.active::after,
-#theme-light.active::after,
-#theme-dark.active::after,
-#lang-en:hover::after,
-#lang-es:hover::after,
-#theme-light:hover::after,
-#theme-dark:hover::after {
-  width: 100%;
-}
-
-#lang-en.active,
-#lang-es.active,
-#theme-light.active,
-#theme-dark.active {
-  color: var(--main-color);
-  cursor: default;
-}
-
-.option {
-  z-index: var(--z-option);
-  position: relative;
-  cursor: pointer;
-  padding-bottom: 0.1875rem;
-}
-
-.option::after {
-  content: "";
-  position: absolute;
-  bottom: 0.1rem;
-  left: 0;
-  width: 0;
-  height: 0.25rem;
-  background-color: var(--main-color);
-  transition: width 0.3s ease;
-}
-
-.option:hover::after {
-  width: 100%;
-}
 
 /* Content Area */
 .content-area {
@@ -1059,7 +1074,12 @@ body {
 
 /* Brand Creation hover */
 #brand-creation .tile,
-#brand-creation .tile-xl {
+#brand-creation .tile-xl,
+#product-design-grid .tile,
+#product-design-grid .tile-xl,
+#brand-development-grid .tile,
+#brand-development-grid .tile-xl {
+  border-radius: .75rem;
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -1329,7 +1349,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 1.25rem;
+  border-radius: .75rem;
   z-index: 0;
   pointer-events: none;
 }
@@ -1346,7 +1366,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: 1.25rem;
+  border-radius: .75rem;
   z-index: 0;
 }
 
@@ -1381,6 +1401,8 @@ body {
   background-color: var(--bg);
   margin: 0;
   transition: background-color 0.3s ease;
+  border-radius: .75rem;
+  overflow: hidden;
 }
 
 .project-gallery-item.gallery-span-3 {
@@ -1491,7 +1513,7 @@ body {
   position: relative;
   z-index: 1;
   margin: 0;
-  padding: 1.5rem;
+  padding: 1.5rem 0 0;
   font-size: var(--fs-gallery-text);
   font-weight: 300;
   line-height: 1.2;
@@ -1511,7 +1533,7 @@ body {
 }
 
 .pixel-grid {
-  border-radius: 1.25rem;
+  border-radius: .75rem;
   overflow: hidden;
 }
 
