@@ -699,7 +699,7 @@ body {
   content: "\2022";
   position: absolute;
   right: -1rem;
-  top: 57.5%;
+  top: 60%;
   transform: translateY(-50%);
   width: auto;
   height: auto;
@@ -708,7 +708,6 @@ body {
   font-size: 1.75rem;
   opacity: 0;
   transition: opacity 0.3s ease;
-  z-index: -1;
 }
 
 .sidebar-nav-btn:hover::after,
@@ -736,7 +735,7 @@ body {
   content: "\2022";
   position: absolute;
   right: 0;
-  top: 57.5%;
+  top: 60%;
   transform: translateY(-50%);
   width: auto;
   height: auto;

@@ -89,6 +89,9 @@ window.switchTheme = function (theme) {
   const btn = document.getElementById('theme-' + theme);
   if (btn) btn.classList.add('active');
   applyDarkSrcSwap();
+  document.querySelectorAll('[data-update-bg]').forEach(el => {
+    el.style.backgroundColor = theme === 'dark' ? 'var(--blackest-light)' : 'var(--manteca-dark)';
+  });
   document.querySelectorAll('img[src*="logo-estudio-d"]').forEach(img => {
     img.src = theme === 'dark' ? 'img/logo-estudio-d-dark-alt.svg' : 'img/logo-estudio-d-alt.svg';
   });

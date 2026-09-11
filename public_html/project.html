@@ -381,6 +381,11 @@
                 figure.dataset.darkBg = '1';
                 if ((localStorage.getItem('theme') || 'light') === 'dark') figure.style.backgroundColor = 'var(--manteca)';
               }
+              if (item.accentBg) {
+                figure.dataset.updateBg = '1';
+                const theme = localStorage.getItem('theme') || 'light';
+                figure.style.backgroundColor = theme === 'dark' ? 'var(--blackest-light)' : 'var(--manteca-dark)';
+              }
               const autoAlt = item.src.split('/').pop().replace(/\.[^.]+$/, '').replace(/[-_]/g, ' ');
               media.alt = item.alt || caption || autoAlt;
               media.loading = idx < 2 ? "eager" : "lazy";

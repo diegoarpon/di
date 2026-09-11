@@ -64,7 +64,8 @@
         {
           "src": "img/visuals/eg/eg_logo_evolution.svg",
           "darkBg": true,
-          "cols": 4
+          "cols": 4,
+          "accentBg": true
         },
         {
           "type": "text",
@@ -198,7 +199,8 @@
         {
           "src": "img/visuals/meta/meta_evolution.svg",
           "darkBg": true,
-          "cols": 4
+          "cols": 4,
+          "accentBg": true
         },
         {
           "src": "img/visuals/meta/meta-corporeo.webp",
@@ -317,7 +319,8 @@
         {
           "src": "img/visuals/nestseekers/nest_seekers_logo_evolution.svg",
           "darkBg": true,
-          "cols": 4
+          "cols": 4,
+          "accentBg": true
         },
         {
           "src": "img/visuals/nestseekers/relieve.webp",
@@ -342,7 +345,9 @@
         {
           "src": "img/visuals/nestseekers/nest_seekers_showsheet.webp",
           "darkBg": true,
-          "cols": 4
+          "accentBg": true,
+          "cols": 4,
+          "accentBg": true
         }
       ]
     },
@@ -587,7 +592,8 @@
         {
           "src": "img/visuals/lapanaderi/lapanaderi-rebranding.svg",
           "darkBg": true,
-          "cols": 4
+          "cols": 4,
+          "accentBg": true
         },
         {
           "src": "img/visuals/lapanaderi/lapanaderi-facturas-cooler.webp",
