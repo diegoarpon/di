@@ -346,8 +346,7 @@
           "src": "img/visuals/nestseekers/nest_seekers_showsheet.webp",
           "darkBg": true,
           "accentBg": true,
-          "cols": 4,
-          "accentBg": true
+          "cols": 4
         }
       ]
     },

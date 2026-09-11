@@ -24,6 +24,7 @@
 
   --graphite: #596275;
 
+  --black-100: #000000;
   --black-50: #00000080;
   --black-20: #00000033;
 
@@ -1448,7 +1449,7 @@ body {
   width: calc(100% - 2rem);
   margin: 1rem;
   border-radius: 0.75rem;
-  border: 10px solid var(--blackest);
+  border: 10px solid var(--black-100);
   box-sizing: border-box;
 }
 
