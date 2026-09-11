@@ -131,8 +131,10 @@
                 <button class="lang-selector fw-normal" onclick="switchLanguage('en')" id="lang-en">en</button>
                 <button class="lang-selector fw-normal" onclick="switchLanguage('es')" id="lang-es">es</button>
                 <span class="lang-theme-divider"></span>
-                <button class="theme-selector fw-normal" onclick="switchTheme('light')" id="theme-light"><img src="img/circle-regular-full.svg" alt="light" class="theme-icon"></button>
-                <button class="theme-selector fw-normal" onclick="switchTheme('dark')" id="theme-dark"><img src="img/circle-solid-full.svg" alt="dark" class="theme-icon"></button>
+                <button class="theme-selector fw-normal" onclick="switchTheme('light')" id="theme-light"><img
+                    src="img/circle-regular-full.svg" alt="light" class="theme-icon"></button>
+                <button class="theme-selector fw-normal" onclick="switchTheme('dark')" id="theme-dark"><img
+                    src="img/circle-solid-full.svg" alt="dark" class="theme-icon"></button>
               </div>
               <div class="mt-4 version-label" id="version-label"></div>
             </div>
@@ -384,7 +386,7 @@
               if (item.accentBg) {
                 figure.dataset.updateBg = '1';
                 const theme = localStorage.getItem('theme') || 'light';
-                figure.style.backgroundColor = theme === 'dark' ? 'var(--blackest-light)' : 'var(--manteca-dark)';
+                figure.style.backgroundColor = theme === 'dark' ? 'var(--manteca)' : 'var(--manteca-dark)';
               }
               const autoAlt = item.src.split('/').pop().replace(/\.[^.]+$/, '').replace(/[-_]/g, ' ');
               media.alt = item.alt || caption || autoAlt;
