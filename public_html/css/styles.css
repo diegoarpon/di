@@ -162,6 +162,7 @@ button {
   border-radius: 0;
   font: inherit;
   -webkit-appearance: button;
+  appearance: button;
 }
 
 /* Headings reset — reemplaza reboot de Bootstrap */
