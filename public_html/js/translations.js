@@ -16,8 +16,8 @@ function updateVersionLabel() {
 const translations = {
   en: {
     // Navigation
-    brandCreation: "Brand Creation",
-    brandDevelopment: "Brand Development",
+    brandCreation: "Brand Collection",
+    brandDevelopment: "Featured Projects",
     productDesign: "Product Design",
 
     // Contact
@@ -42,8 +42,8 @@ const translations = {
   },
   es: {
     // Navigation
-    brandCreation: "Creación de Marca",
-    brandDevelopment: "Desarrollo de Marca",
+    brandCreation: "Colección de Marcas",
+    brandDevelopment: "Proyectos Destacados",
     productDesign: "Diseño de Producto",
 
     // Contact

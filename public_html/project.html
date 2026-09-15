@@ -30,7 +30,7 @@
     fetchpriority="high" />
   <link rel="preload" href="fonts/WOFF2/FG_FuturistTRIAL-Regular.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="fonts/WOFF2/FG_FuturistTRIAL-Medium.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="img/logo-estudio-d.svg" as="image" />
+  <link rel="preload" href="img/logo-estudio-d-alt.svg" as="image" />
   <meta name="theme-color" content="#FF7518" />
   <style>
     @font-face {
@@ -91,12 +91,12 @@
         <div class="d-flex flex-column h-100 pt-5 pb-5">
           <div class="position-relative logo cursor-pointer" onclick="fadeNavigate('index.html')" role="button"
             tabindex="0" aria-label="Volver al inicio" onkeydown="if(event.key==='Enter')fadeNavigate('index.html')">
-            <div class="guide-h-double-100"></div>
+            <div class="guide-h-short"></div>
             <div class="row">
               <div class="col-auto position-relative">
-                <img src="img/logo-estudio-d.svg" alt="estudio d." fetchpriority="high" loading="eager"
+                <img src="img/logo-estudio-d-alt.svg" alt="estudio d." fetchpriority="high" loading="eager"
                   id="logo-sidebar" />
-                <script>(function () { var i = document.getElementById('logo-sidebar'); if (i && localStorage.getItem('theme') === 'dark') i.src = 'img/logo-estudio-d-dark.svg'; })();</script>
+                <script>(function () { var i = document.getElementById('logo-sidebar'); if (i && localStorage.getItem('theme') === 'dark') i.src = 'img/logo-estudio-d-dark-alt.svg'; })();</script>
                 <div class="guide-v-short"></div>
               </div>
             </div>
@@ -154,9 +154,9 @@
             <div class="guide-h-double-100"></div>
             <div class="row">
               <div class="col-auto position-relative">
-                <img src="img/logo-estudio-d.svg" alt="estudio d." fetchpriority="high" loading="eager"
+                <img src="img/logo-estudio-d-alt.svg" alt="estudio d." fetchpriority="high" loading="eager"
                   id="logo-mobile" />
-                <script>(function () { var i = document.getElementById('logo-mobile'); if (i && localStorage.getItem('theme') === 'dark') i.src = 'img/logo-estudio-d-dark.svg'; })();</script>
+                <script>(function () { var i = document.getElementById('logo-mobile'); if (i && localStorage.getItem('theme') === 'dark') i.src = 'img/logo-estudio-d-dark-alt.svg'; })();</script>
                 <div class="guide-v-short"></div>
               </div>
             </div>
@@ -206,22 +206,23 @@
     const _footerCategories = ['brand-creation', 'brand-development', 'product-design'];
     const _footerCategory = _footerCategories[Math.floor(Math.random() * _footerCategories.length)];
 
+    window.switchLanguage = function (lang) {
+      currentLang = lang;
+      localStorage.setItem("language", lang);
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const text = t(el.getAttribute("data-i18n"));
+        if (text) el.innerHTML = text;
+      });
+      document.querySelectorAll("#lang-en, #lang-es").forEach(b => b.classList.remove("active"));
+      const btn = document.getElementById("lang-" + lang);
+      if (btn) btn.classList.add("active");
+      document.documentElement.lang = lang;
+      loadProject();
+      updateFooter(_footerCategory, true);
+      updateVersionLabel();
+    };
+
     document.addEventListener("DOMContentLoaded", () => {
-      window.switchLanguage = function (lang) {
-        currentLang = lang;
-        localStorage.setItem("language", lang);
-        document.querySelectorAll("[data-i18n]").forEach(el => {
-          const text = t(el.getAttribute("data-i18n"));
-          if (text) el.innerHTML = text;
-        });
-        document.querySelectorAll("#lang-en, #lang-es").forEach(b => b.classList.remove("active"));
-        const btn = document.getElementById("lang-" + lang);
-        if (btn) btn.classList.add("active");
-        document.documentElement.lang = lang;
-        loadProject();
-        updateFooter(_footerCategory, true);
-        updateVersionLabel();
-      };
       switchTheme(localStorage.getItem('theme') || 'light');
       switchLanguage(currentLang);
       loadProject();

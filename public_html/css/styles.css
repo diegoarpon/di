@@ -22,7 +22,7 @@
   --bubblegum: #F45B69;
   --teal: #40BCD8;
 
-  --graphite: #596275;
+  --graphite: rgba(89, 98, 117, 0.15);
 
   --black-100: #000000;
   --black-50: #00000080;
@@ -35,7 +35,7 @@
   /* Font sizes */
 
   /* — Navegación — */
-  --fs-nav: clamp(1.25rem, 3vw, 2rem);
+  --fs-nav: clamp(1.25rem, 3vw, 1.9rem);
   /* sidebar desktop */
   --fs-nav-mobile: 7.5vw;
   /* sidebar mobile <768px */
@@ -199,17 +199,6 @@ img {
 }
 
 /* Layout */
-.layout-root {
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.layout-row {
-  display: flex;
-  align-items: stretch;
-  min-height: 100vh;
-}
-
 .col {
   flex: 1 1 0%;
   min-width: 0;
@@ -219,33 +208,6 @@ img {
 .container {
   width: 100%;
   box-sizing: border-box;
-}
-
-/* Sidebar inner */
-.sidebar-inner {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-.logo-row {
-  display: flex;
-  width: fit-content;
-}
-
-.sidebar-tabs {
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.sidebar-bottom {
-  margin-top: auto;
-}
-
-.sidebar-contacts {
-  margin-bottom: 1rem;
 }
 
 /* Flex */
@@ -463,8 +425,8 @@ body {
 }
 
 .guide-h-double-100 {
-  /* border-top: 1px solid var(--graphite); */
-  /* border-bottom: 1px solid var(--graphite); */
+  border-top: 1px solid var(--graphite);
+  border-bottom: 1px solid var(--graphite);
   width: 200vw;
   height: 100%;
   position: absolute;
@@ -473,23 +435,32 @@ body {
 }
 
 .guide-v-double-100 {
-  /* border-right: 1px solid var(--graphite); */
-  /* border-left: 1px solid var(--graphite); */
+  border-right: 1px solid var(--graphite);
+  border-left: 1px solid var(--graphite);
   height: 60vh;
   width: 100%;
   position: absolute;
   top: -10%;
 }
 
-@media (min-width: 1025px) {}
-
 .guide-v-short {
-  /* border-right: 1px solid var(--graphite); */
-  /* border-left: 1px solid var(--graphite); */
+  border-right: 1px solid var(--graphite);
+  border-left: 1px solid var(--graphite);
   height: 200%;
   width: calc(100% - 0rem);
   position: absolute;
   top: -50%;
+  z-index: var(--z-overlay);
+}
+
+.guide-h-short {
+  border-top: 1px solid var(--graphite);
+  border-bottom: 1px solid var(--graphite);
+  height: calc(100% - 0rem);
+  width: 80%;
+  position: absolute;
+  left: -10%;
+  top: 1px;
   z-index: var(--z-overlay);
 }
 
@@ -498,8 +469,8 @@ body {
 .tile-xl {
   position: relative;
   overflow: hidden;
-  background-color: var(--manteca-dark);
-  /* border: 1px solid var(--graphite); */
+  /* background-color: var(--manteca-dark); */
+  border: 1px solid var(--graphite);
   transition: background-color 0.3s ease;
 }
 
@@ -799,8 +770,9 @@ body {
   left: 0;
   z-index: var(--z-sidebar);
   /* border-right: 1px solid var(--graphite); */
-  overflow: visible;
+  overflow: hidden;
   transition: background-color 0.3s ease;
+  margin-right: -1px;
 }
 
 @media (min-width: 1366px) {
@@ -866,10 +838,6 @@ body {
 }
 
 @media (max-width: 1024px) {
-
-  .sidebar-nav-btn::after {
-    display: none;
-  }
 
   .lang-selector::after,
   .theme-selector::after {
@@ -1075,12 +1043,19 @@ body {
 
 /* Brand Creation hover */
 #brand-creation .tile,
-#brand-creation .tile-xl,
+#brand-creation .tile-xl {
+  border-radius: 0;
+  border: 1px solid var(--graphite);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
 #product-design-grid .tile,
 #product-design-grid .tile-xl,
 #brand-development-grid .tile,
 #brand-development-grid .tile-xl {
-  border-radius: .75rem;
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -1101,7 +1076,7 @@ body {
 .brand-hover-text {
   position: absolute;
   inset: 0;
-  color: var(--blackest);
+  color: var(--manteca);
   font-size: var(--fs-tile-text);
   line-height: 1.25;
   font-weight: 300;
@@ -1398,12 +1373,11 @@ body {
 .project-gallery-item {
   position: relative;
   box-sizing: border-box;
-  /* border: 1px solid var(--graphite); */
+  border: 1px solid var(--graphite);
   background-color: var(--bg);
   margin: 0;
   transition: background-color 0.3s ease;
-  border-radius: .75rem;
-  overflow: hidden;
+  /*border-radius: .75rem;*/
 }
 
 .project-gallery-item.gallery-span-3 {
@@ -1655,15 +1629,6 @@ footer>div {
   font-size: var(--fs-tile-text);
   font-weight: 300;
 }
-
-.project-breadcrumb {
-  font-size: var(--fs-meta-label);
-  font-weight: 400;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-  color: var(--text);
-}
-
 
 .version-label {
   font-size: var(--fs-caption);

@@ -1,4 +1,4 @@
-function createPixelGrid(tile, cols = 14, color = "var(--main-color)", glitch = false) {
+function createPixelGrid(tile, cols = 14, color = "var(--blackest)", glitch = false) {
   if (tile.querySelector(".pixel-grid")) return;
   const { offsetWidth: w, offsetHeight: h } = tile;
   const cellSize = w / cols;
@@ -11,11 +11,14 @@ function createPixelGrid(tile, cols = 14, color = "var(--main-color)", glitch = 
     gridTemplateColumns: `repeat(${cols}, 1fr)`,
     gridTemplateRows: `repeat(${rows}, 1fr)`,
     zIndex: "var(--z-tile-overlay)",
-    pointerEvents: "none"
+    pointerEvents: "none",
+    overflow: "hidden"
   });
   for (let i = 0; i < cols * rows; i++) {
     const cell = document.createElement("div");
     cell.style.backgroundColor = color;
+    cell.style.borderRadius = "50%";
+    cell.style.transform = "scale(1.45)";
     cell.style.opacity = "0";
     if (glitch) cell.dataset.glitchOpa = (Math.random() < 0.4 ? 0.4 + Math.random() * 0.3 : 0.85 + Math.random() * 0.1).toFixed(2);
     pg.appendChild(cell);
@@ -40,7 +43,7 @@ function initPixelHover(tile) {
     const cells = Array.from(tile.querySelectorAll(".pixel-grid div"));
     gsap.killTweensOf(cells);
     gsap.killTweensOf(text);
-    gsap.to(cells, { opacity: 0.95, duration: 0.03, stagger: { each: 0.001, from: "random" }, ease: "none" });
+    gsap.to(cells, { opacity: 1, duration: 0.15, stagger: { each: 0.002, from: "random" }, ease: "power1.out" });
     gsap.to(text, { opacity: 1, duration: 0.1, ease: "none", delay: 0.12 });
   }
 
@@ -50,19 +53,26 @@ function initPixelHover(tile) {
     gsap.killTweensOf(cells);
     gsap.killTweensOf(text);
     gsap.to(text, { opacity: 0, duration: 0.05, ease: "power2.in",
-      onComplete: () => gsap.to(cells, { opacity: 0, duration: 0.01, stagger: { each: 0.0003, from: "random" }, ease: "none" })
+      onComplete: () => gsap.to(cells, { opacity: 0, duration: 0.01, stagger: { each: 0.001, from: "random" }, ease: "none" })
     });
   }
 
-  tile.addEventListener("click", () => {
-    if (active) { deactivate(); tile.classList.remove("pixel-active"); }
-    else {
-      document.querySelectorAll("#brand-creation-grid .tile.pixel-active").forEach(t => {
-        if (t !== tile) t.click();
-      });
-      activate(); tile.classList.add("pixel-active");
-    }
-  });
+  const isDesktop = window.matchMedia('(pointer: fine) and (min-width: 1025px)').matches;
+
+  if (isDesktop) {
+    tile.addEventListener("mouseenter", () => { activate(); tile.classList.add("pixel-active"); });
+    tile.addEventListener("mouseleave", () => { deactivate(); tile.classList.remove("pixel-active"); });
+  } else {
+    tile.addEventListener("click", () => {
+      if (active) { deactivate(); tile.classList.remove("pixel-active"); }
+      else {
+        document.querySelectorAll("#brand-creation-grid .tile.pixel-active").forEach(t => {
+          if (t !== tile) t.click();
+        });
+        activate(); tile.classList.add("pixel-active");
+      }
+    });
+  }
 }
 
 function initPixelHoverVariant(tile, variant) {
@@ -73,7 +83,7 @@ function initPixelHoverVariant(tile, variant) {
     sweep:      { cols: 20, color: "var(--main-color)", from: "start",  dur: 0.02,  each: 0.0008, outEach: 0.0002 },
     burst:      { cols: 8,  color: "var(--main-color)", from: "center", dur: 0.04,  each: 0.008,  outEach: 0.004  },
     glitch:     { cols: 18, color: "var(--main-color)", from: "random", dur: 0.015, each: 0.0006, outEach: 0.0002, isGlitch: true, bgImage: "img/visuals/meta/meta-bg-opa.svg" },
-    dissolve:   { cols: 16, color: "var(--main-color)", from: "random", dur: 0.15,  each: 0.002,  outEach: 0.001, ease: "power1.out" },
+    dissolve:   { cols: 16, color: "var(--blackest)", from: "random", dur: 0.15,  each: 0.002,  outEach: 0.001, ease: "power1.out" },
   };
   const v = { ...variants[variant] || variants.brandColor };
   if (tile.dataset.hoverColor) v.color = tile.dataset.hoverColor;
@@ -113,7 +123,7 @@ function initPixelHoverVariant(tile, variant) {
         gsap.delayedCall(totalDur, onFilled);
       }
     } else {
-      gsap.to(cells, { opacity: 0.95, duration: v.dur, stagger: staggerCfg, ease: v.ease || "none", onComplete: onFilled });
+      gsap.to(cells, { opacity: 1, duration: v.dur, stagger: staggerCfg, ease: v.ease || "none", onComplete: onFilled });
     }
   });
 
@@ -197,13 +207,16 @@ function createGradientPixelGrid(tile, cols, colorTop, colorBottom, mode) {
     gridTemplateColumns: `repeat(${cols}, 1fr)`,
     gridTemplateRows: `repeat(${rows}, 1fr)`,
     zIndex: "var(--z-tile-overlay)",
-    pointerEvents: "none"
+    pointerEvents: "none",
+    overflow: "hidden"
   });
   for (let i = 0; i < cols * rows; i++) {
     const row = Math.floor(i / cols);
     const t = rows > 1 ? row / (rows - 1) : 0;
     const cell = document.createElement("div");
     cell.style.opacity = "0";
+    cell.style.borderRadius = "50%";
+    cell.style.transform = "scale(1.4)";
     if (mode === "color-gradient") {
       cell.style.backgroundColor = lerpColor(rgbTop, rgbBottom, t);
       cell.dataset.targetOpa = "0.95";

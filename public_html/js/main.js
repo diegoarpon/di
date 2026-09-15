@@ -90,6 +90,7 @@ window.switchTheme = function (theme) {
   if (btn) btn.classList.add('active');
   applyDarkSrcSwap();
   document.querySelectorAll('[data-update-bg]').forEach(el => {
+    el.style.transition = 'background-color 0.3s ease';
     el.style.backgroundColor = theme === 'dark' ? 'var(--blackest-light)' : 'var(--manteca-dark)';
   });
   document.querySelectorAll('img[src*="logo-estudio-d"]').forEach(img => {
@@ -109,7 +110,7 @@ window.switchTheme = function (theme) {
   setTimeout(() => html.classList.remove('theme-transitioning'), 300);
 };
 
-window.switchLanguage = function (lang) {
+if (!window.switchLanguage) window.switchLanguage = function (lang) {
   currentLang = lang;
   localStorage.setItem("language", lang);
 
