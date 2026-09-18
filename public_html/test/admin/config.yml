@@ -1,0 +1,97 @@
+backend:
+  name: github
+  repo: diegoarpon/di
+  branch: test
+  base_url: https://di-livid-eight.vercel.app
+  auth_endpoint: api/auth
+
+media_folder: public_html/img
+public_folder: img
+
+collections:
+  - name: brand_creation
+    label: Brand Creation
+    files:
+      - name: tiles
+        label: Tiles
+        file: public_html/brand-creation.json
+        fields:
+          - name: tiles
+            label: Tiles
+            label_singular: Tile
+            widget: list
+            summary: "{{fields.order}} — {{fields.label.name}}"
+            fields:
+              - { name: order, label: Orden, widget: number, value_type: int }
+              - name: size
+                label: Tamaño
+                widget: select
+                options: [tile, tile-xl]
+                default: tile-xl
+              - name: span
+                label: Columnas
+                widget: select
+                options: [{ label: "4 col", value: 4 }, { label: "6 col", value: 6 }, { label: "8 col", value: 8 }]
+                default: 4
+
+              # Logo principal
+              - { name: src, label: Logo (src), widget: image, required: false }
+              - { name: alt, label: Nombre (alt), widget: string, required: false }
+              - { name: logoSize, label: Tamaño logo (px), widget: number, required: false }
+              - { name: invertLogo, label: Invertir logo, widget: boolean, default: false }
+              - { name: darkSrc, label: Logo modo oscuro, widget: image, required: false }
+              - { name: noFilterDark, label: Sin filtro en dark mode, widget: boolean, required: false, default: false }
+
+              # Logo secundario (multi)
+              - { name: multi, label: Logo secundario, widget: image, required: false }
+              - { name: multiLogoSize, label: Tamaño logo secundario (px), widget: number, required: false }
+
+              # Fondo
+              - { name: bgImage, label: Imagen de fondo, widget: image, required: false }
+              - { name: bgVideo, label: Video de fondo, widget: string, required: false, hint: "Ruta relativa, ej: img/backgrounds/video.mp4" }
+
+              # Proyecto
+              - { name: project, label: ID de proyecto, widget: string, required: false }
+              - { name: projectLink, label: Link de proyecto, widget: string, required: false }
+
+              # Año y tipo
+              - { name: year, label: Año, widget: string, required: false }
+              - { name: workType, label: Tipo de trabajo, widget: string, required: false }
+
+              # Tags bilingües
+              - name: tag
+                label: Tags
+                widget: object
+                required: false
+                fields:
+                  - name: es
+                    label: Tags ES
+                    widget: list
+                    field: { name: tag, label: Tag, widget: string }
+                  - name: en
+                    label: Tags EN
+                    widget: list
+                    field: { name: tag, label: Tag, widget: string }
+
+              # Label (panel de detalle)
+              - name: label
+                label: Label (panel)
+                widget: object
+                required: false
+                fields:
+                  - { name: name, label: Nombre, widget: string }
+                  - { name: src, label: Logo, widget: image, required: false }
+                  - { name: invertLogo, label: Invertir logo, widget: boolean, default: false }
+                  - { name: logoSize, label: Tamaño logo (px), widget: number, required: false }
+                  - name: es
+                    label: Español
+                    widget: object
+                    fields:
+                      - { name: industry, label: Industria / Descripción, widget: text }
+                      - { name: workType, label: Tipo de trabajo, widget: string }
+                  - name: en
+                    label: Inglés
+                    widget: object
+                    fields:
+                      - { name: industry, label: Industry / Description, widget: text }
+                      - { name: workType, label: Work type, widget: string }
