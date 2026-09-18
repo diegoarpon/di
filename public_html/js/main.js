@@ -18,10 +18,9 @@ function sanitizeHTML(html) {
   return doc.body.innerHTML;
 }
 
-let _dataReady = false;
 let _resolveData;
 const dataReadyPromise = new Promise(r => { _resolveData = r; });
-window.signalDataReady = () => { _dataReady = true; _resolveData(); };
+window.signalDataReady = () => { _resolveData(); };
 
 const currentTheme = localStorage.getItem('theme') || 'light';
 document.documentElement.setAttribute('data-theme', currentTheme);
@@ -82,35 +81,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
 window.switchTheme = function (theme) {
   const html = document.documentElement;
+  const isDark = theme === 'dark';
   html.classList.add('theme-transitioning');
   html.setAttribute('data-theme', theme);
   localStorage.setItem('theme', theme);
+
   document.querySelectorAll('#theme-light, #theme-dark').forEach(btn => btn.classList.remove('active'));
-  const btn = document.getElementById('theme-' + theme);
-  if (btn) btn.classList.add('active');
+  document.getElementById('theme-' + theme)?.classList.add('active');
+
   applyDarkSrcSwap();
+
+  document.querySelectorAll('.brand-hover-logo').forEach(logo => {
+    logo.style.filter = isDark ? 'brightness(0) invert(1)' : (logo.dataset.invertLogo === '1' ? 'brightness(0)' : '');
+  });
+  document.querySelectorAll('#brand-creation-grid .pixel-grid div').forEach(cell => {
+    cell.style.backgroundColor = isDark ? 'var(--blackest)' : 'var(--manteca)';
+  });
   document.querySelectorAll('[data-update-bg]').forEach(el => {
     el.style.transition = 'background-color 0.3s ease';
-    el.style.backgroundColor = theme === 'dark' ? 'var(--blackest-light)' : 'var(--manteca-dark)';
+    el.style.backgroundColor = isDark ? 'var(--blackest-light)' : 'var(--manteca-dark)';
   });
   document.querySelectorAll('img[src*="logo-estudio-d"]').forEach(img => {
-    img.src = theme === 'dark' ? 'img/logo-estudio-d-dark-alt.svg' : 'img/logo-estudio-d-alt.svg';
+    img.src = isDark ? 'img/logo-estudio-d-dark-alt.svg' : 'img/logo-estudio-d-alt.svg';
   });
+
   const lightImg = document.querySelector('#theme-light img');
   const darkImg = document.querySelector('#theme-dark img');
   if (lightImg && darkImg) {
-    if (theme === 'dark') {
-      lightImg.src = 'img/circle-solid-full.svg';
-      darkImg.src = 'img/circle-regular-full.svg';
-    } else {
-      lightImg.src = 'img/circle-regular-full.svg';
-      darkImg.src = 'img/circle-solid-full.svg';
-    }
+    lightImg.src = isDark ? 'img/circle-solid-full.svg' : 'img/circle-regular-full.svg';
+    darkImg.src = isDark ? 'img/circle-regular-full.svg' : 'img/circle-solid-full.svg';
   }
+
   setTimeout(() => html.classList.remove('theme-transitioning'), 300);
 };
 
-if (!window.switchLanguage) window.switchLanguage = function (lang) {
+window.switchLanguage = function (lang) {
   currentLang = lang;
   localStorage.setItem("language", lang);
 
@@ -122,18 +127,23 @@ if (!window.switchLanguage) window.switchLanguage = function (lang) {
 
   const cvLink = document.getElementById("cv-link");
   if (cvLink) cvLink.href = lang === "en" ? "cv_diego_fabbri_arpon_en_2026.pdf" : "cv_diego_fabbri_arpon_es_2026.pdf";
-  const activeTab = localStorage.getItem('activeTab') || 'brand-creation';
-  updateFooter(activeTab, true);
-  if (activeTab === 'brand-creation' && typeof brandCreationItems !== "undefined" && brandCreationItems.length) {
-    renderBrandCreationGrid(brandCreationItems);
-    requestAnimationFrame(() => addCol4Panels());
-  } else if (activeTab === 'brand-development' && typeof brandDevItems !== "undefined" && brandDevItems.length) {
-    renderBrandCreationGrid(brandDevItems, "brand-development-grid");
-    if (typeof window.initGsapHovers === "function") window.initGsapHovers();
-  } else if (activeTab === 'product-design' && typeof brandPdItems !== "undefined" && brandPdItems.length) {
-    renderProductDesignGrid(brandPdItems);
+
+  if (typeof window._onSwitchLanguage === "function") {
+    window._onSwitchLanguage(lang);
   } else {
-    addCol4Panels();
+    const activeTab = localStorage.getItem('activeTab') || 'brand-creation';
+    updateFooter(activeTab, true);
+    if (activeTab === 'brand-creation' && typeof brandCreationItems !== "undefined" && brandCreationItems.length) {
+      renderBrandCreationGrid(brandCreationItems);
+      requestAnimationFrame(() => addCol4Panels());
+    } else if (activeTab === 'brand-development' && typeof brandDevItems !== "undefined" && brandDevItems.length) {
+      renderBrandCreationGrid(brandDevItems, "brand-development-grid");
+      if (typeof window.initGsapHovers === "function") window.initGsapHovers();
+    } else if (activeTab === 'product-design' && typeof brandPdItems !== "undefined" && brandPdItems.length) {
+      renderProductDesignGrid(brandPdItems);
+    } else {
+      addCol4Panels();
+    }
   }
 
   document.querySelectorAll("#lang-en, #lang-es").forEach((btn) => btn.classList.remove("active"));
@@ -144,63 +154,72 @@ if (!window.switchLanguage) window.switchLanguage = function (lang) {
   updateVersionLabel();
 };
 
-// Add panels to col-4 elements
+function _makeSpan(className, text) {
+  const el = document.createElement('span');
+  el.className = className;
+  el.textContent = text;
+  return el;
+}
+
 function addCol4Panels() {
   document
     .querySelectorAll("#brand-creation .tile:not(.tile-text), #brand-creation .tile-xl:not(.tile-text)")
     .forEach((tile) => {
       const wasActive = tile.classList.contains("pixel-active");
-      tile
-        .querySelectorAll(".brand-hover-overlay, .brand-hover-text, .pixel-grid")
-        .forEach((el) => el.remove());
+      tile.querySelectorAll(".brand-hover-text, .pixel-grid").forEach((el) => el.remove());
       if (wasActive) tile.classList.remove("pixel-active");
 
       const labelData = tile.dataset.label ? JSON.parse(tile.dataset.label) : null;
       const content = (labelData && (labelData[currentLang] || labelData.es)) || {};
-      const displayName = content.name || tile.dataset.name || '';
-
-      const overlay = document.createElement("div");
-      overlay.className = "brand-hover-overlay";
-      tile.appendChild(overlay);
+      const displayName = labelData?.name || content.name || tile.dataset.name || '';
+      const workType = content.workType || tile.dataset.workType || '';
+      const labelSrc = labelData?.src || '';
+      const labelInvert = labelData?.invertLogo || false;
+      const labelLogoSize = labelData?.logoSize || null;
 
       const text = document.createElement("div");
       text.className = "brand-hover-text";
       if (tile.dataset.labelSize) text.style.fontSize = tile.dataset.labelSize;
       if (tile.classList.contains("pixel-active")) text.style.opacity = "1";
-      const tagRaw = tile.dataset.tag ? JSON.parse(tile.dataset.tag) : null;
-      const tagArr = tagRaw ? (Array.isArray(tagRaw) ? tagRaw : (tagRaw[currentLang] || tagRaw.es || [])) : [];
-      const tagText = tagArr.join(' / ');
 
-      if (tile.dataset.workType || tile.dataset.year) {
-        const meta = document.createElement('div');
-        meta.className = 'brand-hover-meta';
-        const wt = document.createElement('span');
-        wt.className = 'brand-hover-worktype';
-        wt.textContent = tile.dataset.workType || '';
-        const yr = document.createElement('span');
-        yr.className = 'brand-hover-year';
-        yr.textContent = tile.dataset.year || '';
-        meta.appendChild(wt);
-        meta.appendChild(yr);
-        text.appendChild(meta);
-      }
-      if (displayName) {
-        const h2 = document.createElement('h2');
-        h2.className = 'brand-hover-name';
-        h2.textContent = displayName;
-        text.appendChild(h2);
-      }
-      if (tagText) {
-        const tags = document.createElement('span');
-        tags.className = 'brand-hover-tags';
-        tags.textContent = tagText;
-        text.appendChild(tags);
-      }
-      if (content.industry) {
-        const ind = document.createElement('span');
-        ind.className = 'brand-hover-industry';
-        ind.textContent = content.industry;
-        text.appendChild(ind);
+      const meta = document.createElement('div');
+      meta.className = 'brand-hover-meta';
+      meta.appendChild(_makeSpan('brand-hover-worktype', displayName));
+      meta.appendChild(_makeSpan('brand-hover-year', tile.dataset.year || ''));
+      text.appendChild(meta);
+
+      if (displayName || content.industry || content.concept) {
+        const group = document.createElement('div');
+        group.className = 'brand-hover-label-group';
+        if (labelSrc) {
+          const logo = document.createElement('img');
+          logo.src = _safeSrc(labelSrc);
+          logo.className = 'brand-hover-logo';
+          logo.alt = '';
+          logo.loading = 'eager';
+          logo.dataset.invertLogo = labelInvert ? '1' : '0';
+          const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+          logo.style.filter = isDark ? 'brightness(0) invert(1)' : (labelInvert ? 'brightness(0)' : '');
+          if (labelLogoSize) logo.style.maxHeight = `${labelLogoSize}px`;
+          group.appendChild(logo);
+        }
+        if (content.industry) group.appendChild(_makeSpan('brand-hover-worktype', content.industry));
+        if (workType) group.appendChild(_makeSpan('brand-hover-worktype', workType));
+        if (content.concept) {
+          const con = _makeSpan('brand-hover-worktype', '');
+          const sepIdx = content.concept.indexOf('/ ');
+          if (sepIdx !== -1) {
+            const prefix = document.createElement('span');
+            prefix.style.opacity = '0.5';
+            prefix.textContent = content.concept.slice(0, sepIdx + 2);
+            con.appendChild(prefix);
+            con.appendChild(document.createTextNode(content.concept.slice(sepIdx + 2)));
+          } else {
+            con.textContent = content.concept;
+          }
+          group.appendChild(con);
+        }
+        text.appendChild(group);
       }
       if (tile.dataset.panelImage) {
         const img = document.createElement('img');
@@ -210,6 +229,14 @@ function addCol4Panels() {
         img.loading = 'lazy';
         if (tile.dataset.panelImageSize) { const s = _safeSize(tile.dataset.panelImageSize); if (s) img.style.maxHeight = `${s}px`; }
         text.appendChild(img);
+      }
+      if (tile.dataset.projectLink) {
+        const arrow = document.createElement('a');
+        arrow.className = 'brand-hover-project-arrow';
+        arrow.href = tile.dataset.projectLink;
+        arrow.textContent = '↗';
+        arrow.addEventListener('click', e => e.stopPropagation());
+        text.appendChild(arrow);
       }
       tile.appendChild(text);
     });
@@ -228,6 +255,7 @@ function showContent(category, isInitial) {
 
   document.querySelectorAll(".sidebar-nav-btn").forEach((btn) => {
     btn.classList.toggle("active", btn.dataset.tab === category);
+    btn.setAttribute("aria-selected", btn.dataset.tab === category ? "true" : "false");
   });
 
   const contentArea = document.querySelector(".content-area");
@@ -426,7 +454,8 @@ function createBrandTile(tileConfig) {
       document.head.appendChild(sheet);
     }
     const safeBgImage = _safeSrc(tileConfig.bgImage);
-    if (safeBgImage) sheet.sheet.insertRule(`.${uid}.tile-bg-loaded::before { background-image: url(${safeBgImage}); }`, sheet.sheet.cssRules.length);
+    const bgPos = _safeCSSValue(tileConfig.bgPosition || '', /^(top|bottom|left|right|center)(\s+(top|bottom|left|right|center))?$/) || 'center';
+    if (safeBgImage) sheet.sheet.insertRule(`.${uid}.tile-bg-loaded::before { background-image: url(${safeBgImage}); background-position: ${bgPos}; }`, sheet.sheet.cssRules.length);
     _bgObserver.observe(tile);
   }
   if (tileConfig.bgVideo) {
@@ -449,14 +478,17 @@ function createBrandTile(tileConfig) {
   if (tileConfig.panelImageSize) tile.dataset.panelImageSize = tileConfig.panelImageSize;
   if (tileConfig.workType) tile.dataset.workType = tileConfig.workType;
   if (tileConfig.year) tile.dataset.year = tileConfig.year;
+  if (tileConfig.src) tile.dataset.logoSrc = tileConfig.src;
+  if (tileConfig.logoSize) tile.dataset.logoSize = tileConfig.logoSize;
+  if (tileConfig.projectLink) tile.dataset.projectLink = tileConfig.projectLink;
   if (tileConfig.project) {
     tile.dataset.project = tileConfig.project;
     tile.classList.add("cursor-pointer");
-    tile.addEventListener("click", () => {
-      const ca = document.querySelector(".content-area");
-      ca.classList.add("fading");
-      setTimeout(() => { window.location.href = `project.html?p=${encodeURIComponent(tileConfig.project)}`; }, 500);
-    });
+    const labelData = tileConfig.label;
+    const name = labelData?.name || tileConfig.name || tileConfig.alt || '';
+    if (name) tile.setAttribute('aria-label', `Ver proyecto: ${name}`);
+    tile.setAttribute('role', 'button');
+    tile.setAttribute('tabindex', '0');
   }
 
   if (tileConfig.pixelColor) tile.dataset.pixelColor = tileConfig.pixelColor;

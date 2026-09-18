@@ -48,6 +48,21 @@ collections:
 
               # Fondo
               - { name: bgImage, label: Imagen de fondo, widget: image, required: false }
+              - name: bgPosition
+                label: Posición del fondo
+                widget: select
+                required: false
+                default: center
+                options:
+                  - { label: Center, value: center }
+                  - { label: Top, value: top }
+                  - { label: Bottom, value: bottom }
+                  - { label: Left, value: left }
+                  - { label: Right, value: right }
+                  - { label: Top Left, value: top left }
+                  - { label: Top Right, value: top right }
+                  - { label: Bottom Left, value: bottom left }
+                  - { label: Bottom Right, value: bottom right }
               - { name: bgVideo, label: Video de fondo, widget: string, required: false, hint: "Ruta relativa, ej: img/backgrounds/video.mp4" }
 
               # Proyecto
