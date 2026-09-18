@@ -1,79 +1,62 @@
 {
   "tiles": [
     {
-      "order": 3,
-      "src": "img/logos/si-salud-integral-logo.svg",
-      "alt": "SI Salud Integral",
-      "size": "tile-xl",
-      "span": 4,
-      "logoSize": 300,
-      "invertLogo": false,
-      "workType": "Branding",
-      "year": "2026",
-      "tag": {
-        "es": [
-          "Salud",
-          "Medicina Estética"
-        ],
-        "en": [
-          "Health",
-          "Aesthetic Medicine"
-        ]
-      },
-      "label": {
-        "es": {
-          "name": "SI Salud Integral",
-          "industry": "Centro de salud que aborda el bienestar desde una mirada integral: cuerpo, mente y emoción en equilibrio."
-        },
-        "en": {
-          "name": "SI Salud Integral",
-          "industry": "Holistic health center focused on aligning body, mind, and emotions for complete well-being."
-        }
-      }
-    },
-    {
       "order": 1,
-      "src": "img/logos/lapanaderi-logo.svg",
-      "alt": "Lapanaderi",
       "size": "tile-xl",
       "span": 4,
-      "logoSize": 300,
-      "invertLogo": true,
-      "workType": "Rebranding",
-      "bgImage": "img/backgrounds/lapanaderi.webp",
+      "src": "",
+      "alt": "",
+      "logoSize": 0,
+      "invertLogo": false,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "img/new_visuals/lapanaderi.png",
+      "bgPosition": "center",
+      "bgVideo": "",
+      "workType": "",
       "year": "2026",
+      "project": "lapanaderi",
+      "projectLink": "project.html?p=lapanaderi",
       "tag": {
-        "es": [
-          "Gastronomía",
-          "Panadería"
-        ],
-        "en": [
-          "Gastronomy",
-          "Bakery"
-        ]
+        "es": [],
+        "en": []
       },
       "label": {
+        "name": "Lapanaderi",
+        "src": "img/logos/lapanaderi-solo-logo.svg",
+        "invertLogo": true,
+        "logoSize": 80,
         "es": {
-          "name": "Lapanaderi",
-          "industry": "Panadería especializada en productos de masa madre y técnicas de fermentación natural."
+          "industry": "Gastronomy / Bakery",
+          "workType": "Rebranding"
         },
         "en": {
-          "name": "Lapanaderi",
-          "industry": "Bakery specialized in sourdough products and natural fermentation techniques."
+          "industry": "Gastronomía / Panadería",
+          "workType": "Rebranding"
         }
       }
     },
     {
       "order": 2,
-      "src": "img/logos/molde-logo.svg",
-      "alt": "Molde",
       "size": "tile-xl",
       "span": 4,
+      "src": "img/logos/molde-logo.svg",
+      "alt": "Molde",
       "logoSize": 250,
       "invertLogo": true,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
       "bgImage": "img/backgrounds/molde.webp",
+      "bgPosition": "center",
+      "bgVideo": "",
       "workType": "Branding",
       "year": "2026",
+      "project": "molde",
+      "projectLink": "",
       "tag": {
         "es": [
           "App",
@@ -85,27 +68,39 @@
         ]
       },
       "label": {
+        "name": "Molde",
+        "src": "img/logos/molde-logo.svg",
+        "invertLogo": true,
+        "logoSize": 80,
         "es": {
-          "name": "Molde",
-          "industry": "App para organizar y expandir proyectos gastronómicos"
+          "industry": "App para organizar y expandir proyectos gastronómicos",
+          "workType": "Branding"
         },
         "en": {
-          "name": "Molde",
-          "industry": "App for organizing and expanding gastronomic projects"
+          "industry": "App for organizing and expanding gastronomic projects",
+          "workType": "Branding"
         }
       }
     },
     {
-      "order": 4,
-      "src": "img/logos/meta-logo.svg",
-      "alt": "Meta",
+      "order": 3,
       "size": "tile-xl",
-      "span": 8,
-      "logoSize": 500,
-      "invertLogo": true,
-      "bgVideo": "img/backgrounds/meta.mp4",
+      "span": 4,
+      "src": "",
+      "alt": "",
+      "logoSize": 300,
+      "invertLogo": false,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "img/new_visuals/si-salud-integral.png",
+      "bgPosition": "center",
+      "bgVideo": "",
       "workType": "Branding",
-      "year": "2025",
+      "year": "2026",
+      "project": "",
+      "projectLink": "",
       "tag": {
         "es": [
           "Salud",
@@ -117,110 +112,253 @@
         ]
       },
       "label": {
+        "name": "SI Salud Integral",
+        "src": "img/logos/si-salud-integral-logo.svg",
+        "invertLogo": true,
+        "logoSize": 80,
         "es": {
-          "name": "Meta",
-          "industry": "Congreso internacional que reúne innovación, tecnología y tendencias en medicina estética y antiaging."
+          "industry": "Centro de salud que aborda el bienestar desde una mirada integral: cuerpo, mente y emoción en equilibrio.",
+          "workType": "Branding"
         },
         "en": {
-          "name": "Meta",
-          "industry": "International conference bringing together cutting-edge innovation, technology, and trends in aesthetic medicine and anti-aging."
+          "industry": "Holistic health center focused on aligning body, mind, and emotions for complete well-being.",
+          "workType": "Branding"
+        }
+      }
+    },
+    {
+      "order": 4,
+      "size": "tile-xl",
+      "span": 4,
+      "src": "img/logos/meta-logo.svg",
+      "alt": "Meta",
+      "logoSize": 500,
+      "invertLogo": true,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "",
+      "bgPosition": "center",
+      "bgVideo": "img/backgrounds/meta.mp4",
+      "workType": "Branding",
+      "year": "2025",
+      "project": "meta",
+      "projectLink": "project.html?p=meta",
+      "tag": {
+        "es": [
+          "Salud",
+          "Medicina Estética"
+        ],
+        "en": [
+          "Health",
+          "Aesthetic Medicine"
+        ]
+      },
+      "label": {
+        "name": "Meta",
+        "src": "img/logos/meta-logo.svg",
+        "invertLogo": true,
+        "logoSize": 80,
+        "es": {
+          "industry": "Congreso internacional que reúne innovación, tecnología y tendencias en medicina estética y antiaging.",
+          "workType": "Branding"
+        },
+        "en": {
+          "industry": "International conference bringing together cutting-edge innovation, technology, and trends in aesthetic medicine and anti-aging.",
+          "workType": "Branding"
         }
       }
     },
     {
       "order": 5,
+      "size": "tile-xl",
       "span": 4,
-      "stack": [
-        {
-          "src": "img/logos/metodo-logo.svg",
-          "alt": "El Método",
-          "size": "tile",
-          "logoSize": 300,
-          "invertLogo": false,
-          "workType": "Branding",
-          "year": "2026",
-          "tag": {
-            "es": [
-              "Marketing",
-              "Coaching"
-            ],
-            "en": [
-              "Marketing",
-              "Coaching"
-            ]
-          }
+      "src": "img/logos/metodo-logo.svg",
+      "alt": "El Método",
+      "logoSize": 300,
+      "invertLogo": false,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "",
+      "bgPosition": "center",
+      "bgVideo": "",
+      "workType": "Branding",
+      "year": "2026",
+      "project": "",
+      "projectLink": "",
+      "tag": {
+        "es": [
+          "Marketing",
+          "Coaching"
+        ],
+        "en": [
+          "Marketing",
+          "Coaching"
+        ]
+      },
+      "label": {
+        "name": "El Método",
+        "src": "img/logos/metodo-logo.svg",
+        "invertLogo": false,
+        "logoSize": 80,
+        "es": {
+          "industry": "Marketing",
+          "workType": "Branding"
         },
-        {
-          "src": "img/logos/hit-pr-logo.svg",
-          "alt": "Hit PR",
-          "size": "tile",
-          "logoSize": 300,
-          "invertLogo": false,
-          "workType": "Branding",
-          "year": "2020",
-          "tag": {
-            "es": [
-              "Agencia de Relaciones Públicas"
-            ],
-            "en": [
-              "Public Relations Agency"
-            ]
-          }
+        "en": {
+          "industry": "Marketing",
+          "workType": "Branding"
         }
-      ]
+      }
     },
     {
       "order": 6,
+      "size": "tile-xl",
       "span": 4,
-      "stack": [
-        {
-          "src": "img/logos/zlatar-nario-logo.svg",
-          "alt": "Zlatar Nario",
-          "size": "tile",
-          "logoSize": 200,
-          "invertLogo": false,
-          "workType": "Branding",
-          "year": "2014",
-          "tag": {
-            "es": [
-              "Estudio Juridico"
-            ],
-            "en": [
-              "Law Firm"
-            ]
-          }
+      "src": "",
+      "alt": "",
+      "logoSize": 300,
+      "invertLogo": false,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "img/new_visuals/hit.png",
+      "bgPosition": "center",
+      "bgVideo": "",
+      "workType": "Branding",
+      "year": "2020",
+      "project": "",
+      "projectLink": "",
+      "tag": {
+        "es": [
+          "Agencia de Relaciones Públicas"
+        ],
+        "en": [
+          "Public Relations Agency"
+        ]
+      },
+      "label": {
+        "name": "Hit PR",
+        "src": "img/logos/hit-pr-logo.svg",
+        "invertLogo": false,
+        "logoSize": 80,
+        "es": {
+          "industry": "Agencia de Relaciones Públicas",
+          "workType": "Branding"
         },
-        {
-          "src": "img/logos/nestseekers-full-logo.svg",
-          "alt": "Nestseekers",
-          "size": "tile",
-          "logoSize": 300,
-          "invertLogo": false,
-          "labelSize": "1rem",
-          "workType": "Rebranding",
-          "year": "2011",
-          "tag": {
-            "es": [
-              "Empresa Inmobiliaria de Lujo"
-            ],
-            "en": [
-              "Luxury Real Estate Company"
-            ]
-          }
+        "en": {
+          "industry": "Public Relations Agency",
+          "workType": "Branding"
         }
-      ]
+      }
     },
     {
       "order": 7,
-      "src": "img/logos/ponti-tosi-logo.svg",
-      "alt": "Ponti Tosi",
       "size": "tile-xl",
       "span": 4,
+      "src": "",
+      "alt": "",
+      "logoSize": 0,
+      "invertLogo": false,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "img/new_visuals/zlatar-nario.png",
+      "bgPosition": "center",
+      "bgVideo": "",
+      "workType": "Branding",
+      "year": "2014",
+      "project": "",
+      "projectLink": "",
+      "tag": {
+        "es": [
+          "Estudio Juridico"
+        ],
+        "en": [
+          "Law Firm"
+        ]
+      },
+      "label": {
+        "name": "Zlatar Nario",
+        "src": "img/logos/zlatar-nario-logo.svg",
+        "invertLogo": false,
+        "logoSize": 80,
+        "es": {
+          "industry": "Estudio Jurídico",
+          "workType": "Branding"
+        },
+        "en": {
+          "industry": "Law Firm",
+          "workType": "Branding"
+        }
+      }
+    },
+    {
+      "order": 8,
+      "size": "tile-xl",
+      "span": 4,
+      "src": "",
+      "alt": "",
+      "logoSize": 300,
+      "invertLogo": false,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "img/new_visuals/nestseekers.png",
+      "bgPosition": "center",
+      "bgVideo": "",
+      "workType": "Rebranding",
+      "year": "2011",
+      "project": "nestseekers",
+      "projectLink": "project.html?p=nestseekers",
+      "tag": {
+        "es": [
+          "Empresa Inmobiliaria de Lujo"
+        ],
+        "en": [
+          "Luxury Real Estate Company"
+        ]
+      },
+      "label": {
+        "name": "Nestseekers",
+        "src": "img/logos/nestseekers-full-logo.svg",
+        "invertLogo": false,
+        "logoSize": 80,
+        "es": {
+          "industry": "Empresa Inmobiliaria de Lujo",
+          "workType": "Rebranding"
+        },
+        "en": {
+          "industry": "Luxury Real Estate Company",
+          "workType": "Rebranding"
+        }
+      }
+    },
+    {
+      "order": 9,
+      "size": "tile-xl",
+      "span": 4,
+      "src": "img/logos/ponti-tosi-logo.svg",
+      "alt": "Ponti Tosi",
       "logoSize": 200,
       "invertLogo": true,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
       "bgImage": "img/backgrounds/pontitosi.webp",
+      "bgPosition": "center",
+      "bgVideo": "",
       "workType": "Branding",
       "year": "2025",
+      "project": "",
+      "projectLink": "",
       "tag": {
         "es": [
           "Salud",
@@ -232,72 +370,125 @@
         ]
       },
       "label": {
+        "name": "Ponti Tosi",
+        "src": "img/logos/ponti-tosi-logo.svg",
+        "invertLogo": true,
+        "logoSize": 80,
         "es": {
-          "name": "Ponti Tosi",
-          "industry": "Plataforma de divulgación en Dermatología Funcional con enfoque en PNIE, respaldada por instituciones académicas."
+          "industry": "Plataforma de divulgación en Dermatología Funcional con enfoque en PNIE, respaldada por instituciones académicas.",
+          "workType": "Branding"
         },
         "en": {
-          "name": "Ponti Tosi",
-          "industry": "Functional dermatology platform grounded in psychoneuroimmunoendocrinology (PNIE), supported by academic institutions."
+          "industry": "Functional dermatology platform grounded in psychoneuroimmunoendocrinology (PNIE), supported by academic institutions.",
+          "workType": "Branding"
         }
       }
     },
     {
-      "order": 8,
-      "span": 4,
-      "stack": [
-        {
-          "src": "img/logos/lu-maria-logo.svg",
-          "alt": "Lu Maria",
-          "size": "tile",
-          "logoSize": 200,
-          "invertLogo": true,
-          "bgImage": "img/backgrounds/lumaria.webp",
-          "workType": "Branding",
-          "year": "2025",
-          "tag": {
-            "es": [
-              "Música",
-              "Compositora"
-            ],
-            "en": [
-              "Music",
-              "Composer"
-            ]
-          }
-        },
-        {
-          "src": "img/logos/art-climate-logo.svg",
-          "darkSrc": "img/logos/art-climate-dark-logo.svg",
-          "alt": "Art + Climate",
-          "size": "tile",
-          "logoSize": 200,
-          "invertLogo": false,
-          "noFilterDark": true,
-          "workType": "Brand Refresh",
-          "year": "2023",
-          "tag": {
-            "es": [
-              "ONG"
-            ],
-            "en": [
-              "NGO"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "order": 9,
-      "src": "img/logos/eg-monograma-logo.svg",
-      "alt": "EG",
+      "order": 10,
       "size": "tile-xl",
       "span": 4,
+      "src": "img/logos/lu-maria-logo.svg",
+      "alt": "Lu Maria",
       "logoSize": 200,
       "invertLogo": true,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "img/backgrounds/lumaria.webp",
+      "bgPosition": "center",
+      "bgVideo": "",
+      "workType": "Branding",
+      "year": "2025",
+      "project": "",
+      "projectLink": "",
+      "tag": {
+        "es": [
+          "Música",
+          "Compositora"
+        ],
+        "en": [
+          "Music",
+          "Composer"
+        ]
+      },
+      "label": {
+        "name": "Lu Maria",
+        "src": "img/logos/lu-maria-logo.svg",
+        "invertLogo": true,
+        "logoSize": 80,
+        "es": {
+          "industry": "Música",
+          "workType": "Branding"
+        },
+        "en": {
+          "industry": "Music",
+          "workType": "Branding"
+        }
+      }
+    },
+    {
+      "order": 11,
+      "size": "tile-xl",
+      "span": 4,
+      "src": "img/logos/art-climate-logo.svg",
+      "alt": "Art + Climate",
+      "logoSize": 200,
+      "invertLogo": false,
+      "darkSrc": "img/logos/art-climate-dark-logo.svg",
+      "noFilterDark": true,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "",
+      "bgPosition": "center",
+      "bgVideo": "",
+      "workType": "Brand Refresh",
+      "year": "2023",
+      "project": "",
+      "projectLink": "",
+      "tag": {
+        "es": [
+          "ONG"
+        ],
+        "en": [
+          "NGO"
+        ]
+      },
+      "label": {
+        "name": "Art + Climate",
+        "src": "img/logos/art-climate-logo.svg",
+        "invertLogo": false,
+        "logoSize": 80,
+        "es": {
+          "industry": "ONG",
+          "workType": "Brand Refresh"
+        },
+        "en": {
+          "industry": "NGO",
+          "workType": "Brand Refresh"
+        }
+      }
+    },
+    {
+      "order": 12,
+      "size": "tile-xl",
+      "span": 4,
+      "src": "img/logos/eg-monograma-logo.svg",
+      "alt": "EG",
+      "logoSize": 200,
+      "invertLogo": true,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
       "bgImage": "img/backgrounds/eg.webp",
+      "bgPosition": "center",
+      "bgVideo": "",
       "workType": "Rebranding",
       "year": "2023",
+      "project": "eg",
+      "projectLink": "project.html?p=eg",
       "tag": {
         "es": [
           "Agencia"
@@ -307,67 +498,124 @@
         ]
       },
       "label": {
+        "name": "EG Marketing",
+        "src": "img/logos/eg-monograma-logo.svg",
+        "invertLogo": true,
+        "logoSize": 80,
         "es": {
-          "name": "EG Marketing",
-          "industry": "Consultora de marketing especializada en el sector médico, creadora de experiencias y eventos para la comunidad profesional."
+          "industry": "Consultora de marketing especializada en el sector médico, creadora de experiencias y eventos para la comunidad profesional.",
+          "workType": "Rebranding"
         },
         "en": {
-          "name": "EG Marketing",
-          "industry": "Marketing consultancy for the medical industry, crafting high-impact experiences and events for professional communities."
+          "industry": "Marketing consultancy for the medical industry, crafting high-impact experiences and events for professional communities.",
+          "workType": "Rebranding"
         }
       }
     },
     {
-      "order": 10,
-      "span": 4,
-      "stack": [
-        {
-          "src": "img/logos/mariela-reale-logo.svg",
-          "alt": "Dra. Mariela Reale",
-          "size": "tile",
-          "logoSize": 150,
-          "invertLogo": false,
-          "workType": "Branding",
-          "year": "2025",
-          "tag": {
-            "es": [
-              "Salud",
-              "Medicina Estética"
-            ],
-            "en": [
-              "Aesthetic Medicine"
-            ]
-          }
-        },
-        {
-          "src": "img/logos/formstream-logo.svg",
-          "alt": "FormStream",
-          "size": "tile",
-          "logoSize": 300,
-          "invertLogo": false,
-          "workType": "Branding",
-          "year": "2025",
-          "tag": {
-            "es": [
-              "App para gestión de formularios"
-            ],
-            "en": [
-              "Form Management App"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "order": 11,
-      "src": "img/logos/international-food-trader-logo.svg",
-      "alt": "International Food Trader",
+      "order": 13,
       "size": "tile-xl",
       "span": 4,
+      "src": "img/logos/mariela-reale-logo.svg",
+      "alt": "Dra. Mariela Reale",
+      "logoSize": 150,
+      "invertLogo": false,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "",
+      "bgPosition": "center",
+      "bgVideo": "",
+      "workType": "Branding",
+      "year": "2025",
+      "project": "",
+      "projectLink": "",
+      "tag": {
+        "es": [
+          "Salud",
+          "Medicina Estética"
+        ],
+        "en": [
+          "Aesthetic Medicine"
+        ]
+      },
+      "label": {
+        "name": "Dra. Mariela Reale",
+        "src": "img/logos/mariela-reale-logo.svg",
+        "invertLogo": false,
+        "logoSize": 80,
+        "es": {
+          "industry": "Medicina Estética",
+          "workType": "Branding"
+        },
+        "en": {
+          "industry": "Aesthetic Medicine",
+          "workType": "Branding"
+        }
+      }
+    },
+    {
+      "order": 14,
+      "size": "tile-xl",
+      "span": 4,
+      "src": "img/logos/formstream-logo.svg",
+      "alt": "FormStream",
+      "logoSize": 300,
+      "invertLogo": false,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "",
+      "bgPosition": "center",
+      "bgVideo": "",
+      "workType": "Branding",
+      "year": "2025",
+      "project": "",
+      "projectLink": "",
+      "tag": {
+        "es": [
+          "App para gestión de formularios"
+        ],
+        "en": [
+          "Form Management App"
+        ]
+      },
+      "label": {
+        "name": "FormStream",
+        "src": "img/logos/formstream-logo.svg",
+        "invertLogo": false,
+        "logoSize": 80,
+        "es": {
+          "industry": "App para gestión de formularios",
+          "workType": "Branding"
+        },
+        "en": {
+          "industry": "Form Management App",
+          "workType": "Branding"
+        }
+      }
+    },
+    {
+      "order": 15,
+      "size": "tile-xl",
+      "span": 4,
+      "src": "img/logos/international-food-trader-logo.svg",
+      "alt": "International Food Trader",
       "logoSize": 250,
       "invertLogo": false,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "",
+      "bgPosition": "center",
+      "bgVideo": "",
       "workType": "Branding",
       "year": "2013",
+      "project": "",
+      "projectLink": "",
       "tag": {
         "es": [
           "Revista Digital"
@@ -377,29 +625,39 @@
         ]
       },
       "label": {
+        "name": "International Food Trader",
+        "src": "img/logos/international-food-trader-logo.svg",
+        "invertLogo": false,
+        "logoSize": 80,
         "es": {
-          "name": "International Food Trader",
-          "industry": "Medio digital especializado en noticias, análisis y tendencias del comercio global de alimentos."
+          "industry": "Medio digital especializado en noticias, análisis y tendencias del comercio global de alimentos.",
+          "workType": "Branding"
         },
         "en": {
-          "name": "International Food Trader",
-          "industry": "Global digital publication covering news, insights, and trends shaping the global food trade industry."
+          "industry": "Global digital publication covering news, insights, and trends shaping the global food trade industry.",
+          "workType": "Branding"
         }
       }
     },
     {
-      "order": 12,
-      "src": "img/logos/farolatino-icon-logo.svg",
-      "alt": "FaroLatino",
+      "order": 16,
       "size": "tile-xl",
       "span": 4,
+      "src": "img/logos/farolatino-icon-logo.svg",
+      "alt": "FaroLatino",
       "logoSize": 175,
       "invertLogo": true,
+      "darkSrc": "",
+      "noFilterDark": false,
       "multi": "img/logos/farolatino-logo.svg",
       "multiLogoSize": 250,
       "bgImage": "img/backgrounds/farolatino.webp",
+      "bgPosition": "center",
+      "bgVideo": "",
       "workType": "ReBranding",
       "year": "2009",
+      "project": "",
+      "projectLink": "",
       "tag": {
         "es": [
           "Musica y Entretenimiento"
@@ -409,28 +667,39 @@
         ]
       },
       "label": {
+        "name": "FaroLatino",
+        "src": "img/logos/farolatino-logo.svg",
+        "invertLogo": true,
+        "logoSize": 80,
         "es": {
-          "name": "FaroLatino",
-          "industry": "Empresa pionera en distribución digital de música y contenido de entretenimiento en Latinoamérica."
+          "industry": "Empresa pionera en distribución digital de música y contenido de entretenimiento en Latinoamérica.",
+          "workType": "Rebranding"
         },
         "en": {
-          "name": "FaroLatino",
-          "industry": "Pioneering digital distributor of music and entertainment content across Latin America."
+          "industry": "Pioneering digital distributor of music and entertainment content across Latin America.",
+          "workType": "Rebranding"
         }
       }
     },
     {
-      "order": 13,
-      "src": "img/logos/virtualmind-full-logo.webp",
-      "darkSrc": "img/logos/virtualmind-white-logo.svg",
-      "alt": "Virtualmind",
+      "order": 17,
       "size": "tile-xl",
       "span": 4,
+      "src": "img/logos/virtualmind-full-logo.webp",
+      "alt": "Virtualmind",
       "logoSize": 300,
       "invertLogo": false,
+      "darkSrc": "img/logos/virtualmind-white-logo.svg",
       "noFilterDark": true,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "",
+      "bgPosition": "center",
+      "bgVideo": "",
       "workType": "Rebranding",
       "year": "2012",
+      "project": "virtualmind",
+      "projectLink": "project.html?p=virtualmind",
       "tag": {
         "es": [
           "Ingeniería de Software"
@@ -440,29 +709,39 @@
         ]
       },
       "label": {
+        "name": "Virtualmind",
+        "src": "img/logos/virtualmind-full-logo.webp",
+        "invertLogo": false,
+        "logoSize": 80,
         "es": {
-          "name": "Virtualmind Software House",
-          "industry": "Empresa latinoamericana de desarrollo de software y staff augmentation, con evolución de marca gestionada in-house durante más de una década."
+          "industry": "Empresa latinoamericana de desarrollo de software y staff augmentation, con evolución de marca gestionada in-house durante más de una década.",
+          "workType": "Rebranding"
         },
         "en": {
-          "name": "Virtualmind",
-          "industry": "Latin American custom software and staff augmentation company with over a decade of in-house brand evolution."
+          "industry": "Latin American custom software and staff augmentation company with over a decade of in-house brand evolution.",
+          "workType": "Rebranding"
         }
       }
     },
     {
-      "order": 14,
-      "src": "img/logos/flittz-icon-logo.svg",
-      "alt": "Flittz",
+      "order": 18,
       "size": "tile-xl",
       "span": 4,
+      "src": "img/logos/flittz-icon-logo.svg",
+      "alt": "Flittz",
       "logoSize": 175,
       "invertLogo": true,
+      "darkSrc": "",
+      "noFilterDark": false,
       "multi": "img/logos/flittz-logo.svg",
       "multiLogoSize": 155,
       "bgImage": "img/backgrounds/flittz.webp",
+      "bgPosition": "center",
+      "bgVideo": "",
       "workType": "Branding",
       "year": "2019",
+      "project": "",
+      "projectLink": "",
       "tag": {
         "es": [
           "Aplicación de Noticias"
@@ -472,26 +751,39 @@
         ]
       },
       "label": {
+        "name": "Flittz",
+        "src": "img/logos/flittz-logo.svg",
+        "invertLogo": true,
+        "logoSize": 80,
         "es": {
-          "name": "Flittz",
-          "industry": "Plataforma de análisis de comportamiento de usuarios aplicada a consumo de contenido y medios digitales."
+          "industry": "Plataforma de análisis de comportamiento de usuarios aplicada a consumo de contenido y medios digitales.",
+          "workType": "Branding"
         },
         "en": {
-          "name": "Flittz",
-          "industry": "Behavior analytics platform for understanding how users consume digital content and media."
+          "industry": "Behavior analytics platform for understanding how users consume digital content and media.",
+          "workType": "Branding"
         }
       }
     },
     {
-      "order": 15,
+      "order": 19,
+      "size": "tile-xl",
+      "span": 4,
       "src": "img/logos/bronx-gym-logo.svg",
       "alt": "Bronx Gym",
-      "size": "tile",
-      "span": 4,
       "logoSize": 200,
       "invertLogo": false,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "",
+      "bgPosition": "center",
+      "bgVideo": "",
       "workType": "Branding",
       "year": "2019",
+      "project": "",
+      "projectLink": "",
       "tag": {
         "es": [
           "Fitness"
@@ -499,18 +791,41 @@
         "en": [
           "Fitness"
         ]
+      },
+      "label": {
+        "name": "Bronx Gym",
+        "src": "img/logos/bronx-gym-logo.svg",
+        "invertLogo": false,
+        "logoSize": 80,
+        "es": {
+          "industry": "Fitness",
+          "workType": "Branding"
+        },
+        "en": {
+          "industry": "Fitness",
+          "workType": "Branding"
+        }
       }
     },
     {
-      "order": 16,
+      "order": 20,
+      "size": "tile-xl",
+      "span": 4,
       "src": "img/logos/corvalius-logo.svg",
       "alt": "Corvalius",
-      "size": "tile",
-      "span": 4,
       "logoSize": 150,
       "invertLogo": false,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "",
+      "bgPosition": "center",
+      "bgVideo": "",
       "workType": "Branding",
       "year": "2009",
+      "project": "",
+      "projectLink": "",
       "tag": {
         "es": [
           "Startup Tecnológico"
@@ -518,18 +833,41 @@
         "en": [
           "Tech Startup"
         ]
+      },
+      "label": {
+        "name": "Corvalius",
+        "src": "img/logos/corvalius-logo.svg",
+        "invertLogo": false,
+        "logoSize": 80,
+        "es": {
+          "industry": "Startup Tecnológico",
+          "workType": "Branding"
+        },
+        "en": {
+          "industry": "Tech Startup",
+          "workType": "Branding"
+        }
       }
     },
     {
-      "order": 17,
+      "order": 21,
+      "size": "tile-xl",
+      "span": 4,
       "src": "img/logos/fxprom-logo.svg",
       "alt": "FX Prom",
-      "size": "tile",
-      "span": 4,
       "logoSize": 250,
       "invertLogo": false,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "",
+      "bgPosition": "center",
+      "bgVideo": "",
       "workType": "Branding",
       "year": "2016",
+      "project": "",
+      "projectLink": "",
       "tag": {
         "es": [
           "Tendencias y diseño de moda"
@@ -537,255 +875,41 @@
         "en": [
           "Fashion trends and design"
         ]
-      }
-    },
-    {
-      "order": 18,
-      "src": "img/logos/banegas-day-monograma-logo.svg",
-      "alt": "Banegas Day Monograma",
-      "size": "tile-xl",
-      "span": 4,
-      "logoSize": 175,
-      "invertLogo": true,
-      "multi": "img/logos/banegas-day-logo.svg",
-      "multiLogoSize": 300,
-      "bgImage": "img/backgrounds/banegas.webp",
-      "workType": "Branding",
-      "year": "2025",
-      "tag": {
-        "es": [
-          "Salud",
-          "Medicina Estética"
-        ],
-        "en": [
-          "Health",
-          "Aesthetic Medicine"
-        ]
       },
       "label": {
+        "name": "FX Prom",
+        "src": "img/logos/fxprom-logo.svg",
+        "invertLogo": false,
+        "logoSize": 80,
         "es": {
-          "name": "Banegas Day",
-          "industry": "Jornadas intensivas de formación con disección cadavérica en vivo, charlas y workshops liderados por referentes en medicina estética y cirugía plástica."
+          "industry": "Tendencias y diseño de moda",
+          "workType": "Branding"
         },
         "en": {
-          "name": "Banegas Day",
-          "industry": "High-level medical training event featuring live cadaver dissections, talks, and workshops led by top experts in aesthetic medicine and plastic surgery."
-        }
-      }
-    },
-    {
-      "order": 19,
-      "span": 4,
-      "stack": [
-        {
-          "src": "img/logos/kamea-logo.svg",
-          "alt": "Kamea",
-          "size": "tile",
-          "logoSize": 200,
-          "invertLogo": true,
-          "bgImage": "img/backgrounds/kamea.webp",
-          "workType": "Branding",
-          "year": "2013",
-          "tag": {
-            "es": [
-              "Música",
-              "Banda de Rock Indie"
-            ],
-            "en": [
-              "Music",
-              "Indie Rock Band"
-            ]
-          }
-        },
-        {
-          "src": "img/logos/courtside-logo.svg",
-          "alt": "Courtside Bar",
-          "size": "tile",
-          "logoSize": 220,
-          "invertLogo": false,
-          "bgImage": "",
-          "workType": "Rebranding",
-          "year": "2015",
-          "tag": {
-            "es": [
-              "Gastronomía",
-              "Restaurant"
-            ],
-            "en": [
-              "Gastronomy",
-              "Restaurant"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "order": 20,
-      "span": 4,
-      "stack": [
-        {
-          "src": "img/logos/imd-logo.svg",
-          "alt": "Industrial Model & Design",
-          "size": "tile",
-          "logoSize": 200,
-          "invertLogo": false,
-          "workType": "Branding",
-          "year": "2015",
-          "tag": {
-            "es": [
-              "Diseño Industrial"
-            ],
-            "en": [
-              "Industrial Design"
-            ]
-          }
-        },
-        {
-          "src": "img/logos/iblum-alt-logo.svg",
-          "alt": "iBlum",
-          "size": "tile",
-          "logoSize": 250,
-          "invertLogo": false,
-          "workType": "Branding",
-          "year": "2014",
-          "tag": {
-            "es": [
-              "Startup Tecnológico"
-            ],
-            "en": [
-              "Tech Startup"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "order": 21,
-      "src": "img/logos/up-mid-face-logo.svg",
-      "alt": "Curso Up Mid Face",
-      "size": "tile-xl",
-      "span": 4,
-      "logoSize": 300,
-      "invertLogo": true,
-      "bgImage": "img/backgrounds/upmidface.webp",
-      "workType": "Branding",
-      "year": "2023",
-      "tag": {
-        "es": [
-          "Salud",
-          "Medicina Estética"
-        ],
-        "en": [
-          "Health",
-          "Aesthetic Medicine"
-        ]
-      },
-      "label": {
-        "es": {
-          "name": "Up & Mid Face",
-          "industry": "Programa de formación avanzada en técnicas de rejuvenecimiento facial."
-        },
-        "en": {
-          "name": "Up & Mid Face",
-          "industry": "Advanced training program focused on modern facial rejuvenation techniques."
+          "industry": "Fashion trends and design",
+          "workType": "Branding"
         }
       }
     },
     {
       "order": 22,
-      "span": 4,
-      "src": "img/logos/lafleur-logo.svg",
-      "alt": "Lafleur",
       "size": "tile-xl",
-      "logoSize": 250,
-      "invertLogo": false,
-      "bgImage": "",
-      "workType": "Rebranding",
-      "year": "2026",
-      "tag": {
-        "es": [
-          "Salud",
-          "Óptica"
-        ],
-        "en": [
-          "Health",
-          "Optics"
-        ]
-      }
-    },
-    {
-      "order": 23,
       "span": 4,
-      "stack": [
-        {
-          "src": "img/logos/ambrosia-logo.svg",
-          "alt": "Ambrosia",
-          "size": "tile",
-          "logoSize": 200,
-          "invertLogo": true,
-          "bgImage": "img/backgrounds/ambrosia.webp",
-          "workType": "Branding",
-          "year": "2016",
-          "tag": {
-            "es": [
-              "Gastronomía",
-              "Pastelería Boutique"
-            ],
-            "en": [
-              "Gastronomy",
-              "Boutique Patisserie"
-            ]
-          }
-        },
-        {
-          "src": "img/logos/mena-lombard-logo.svg",
-          "alt": "Mena Lombard",
-          "size": "tile",
-          "logoSize": 250,
-          "invertLogo": false,
-          "workType": "Branding",
-          "year": "2018",
-          "tag": {
-            "es": [
-              "Asesoría y Diseño de Moda"
-            ],
-            "en": [
-              "Fashion Consulting and Design"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "order": 24,
-      "src": "img/logos/iroiro-logo.svg",
-      "alt": "Iro Iro",
-      "size": "tile",
-      "span": 4,
-      "logoSize": 250,
-      "invertLogo": false,
-      "workType": "Rebranding",
-      "year": "2020",
-      "tag": {
-        "es": [
-          "Bazaar Japonés"
-        ],
-        "en": [
-          "Japanese Bazaar"
-        ]
-      }
-    },
-    {
-      "order": 25,
-      "src": "img/logos/lucia-marafuschi-logo.svg",
-      "alt": "Dra. Lucia Marafuschi",
-      "size": "tile",
-      "span": 4,
-      "logoSize": 250,
+      "src": "img/logos/banegas-day-monograma-logo.svg",
+      "alt": "Banegas Day Monograma",
+      "logoSize": 175,
       "invertLogo": true,
-      "bgImage": "img/backgrounds/lucia.webp",
-      "workType": "Rebranding",
-      "year": "2026",
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "img/logos/banegas-day-logo.svg",
+      "multiLogoSize": 300,
+      "bgImage": "img/backgrounds/banegas.webp",
+      "bgPosition": "center",
+      "bgVideo": "",
+      "workType": "Branding",
+      "year": "2025",
+      "project": "",
+      "projectLink": "",
       "tag": {
         "es": [
           "Salud",
@@ -795,19 +919,85 @@
           "Health",
           "Aesthetic Medicine"
         ]
+      },
+      "label": {
+        "name": "Banegas Day",
+        "src": "img/logos/banegas-day-logo.svg",
+        "invertLogo": true,
+        "logoSize": 80,
+        "es": {
+          "industry": "Jornadas intensivas de formación con disección cadavérica en vivo, charlas y workshops liderados por referentes en medicina estética y cirugía plástica.",
+          "workType": "Branding"
+        },
+        "en": {
+          "industry": "High-level medical training event featuring live cadaver dissections, talks, and workshops led by top experts in aesthetic medicine and plastic surgery.",
+          "workType": "Branding"
+        }
       }
     },
     {
-      "order": 26,
-      "src": "img/logos/players-logo.svg",
-      "alt": "Players Sports Grill",
-      "size": "tile",
+      "order": 23,
+      "size": "tile-xl",
       "span": 4,
+      "src": "img/logos/kamea-logo.svg",
+      "alt": "Kamea",
       "logoSize": 200,
+      "invertLogo": true,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "img/backgrounds/kamea.webp",
+      "bgPosition": "center",
+      "bgVideo": "",
+      "workType": "Branding",
+      "year": "2013",
+      "project": "",
+      "projectLink": "",
+      "tag": {
+        "es": [
+          "Música",
+          "Banda de Rock Indie"
+        ],
+        "en": [
+          "Music",
+          "Indie Rock Band"
+        ]
+      },
+      "label": {
+        "name": "Kamea",
+        "src": "img/logos/kamea-logo.svg",
+        "invertLogo": true,
+        "logoSize": 80,
+        "es": {
+          "industry": "Música",
+          "workType": "Branding"
+        },
+        "en": {
+          "industry": "Music",
+          "workType": "Branding"
+        }
+      }
+    },
+    {
+      "order": 24,
+      "size": "tile-xl",
+      "span": 4,
+      "src": "img/logos/courtside-logo.svg",
+      "alt": "Courtside Bar",
+      "logoSize": 220,
       "invertLogo": false,
-      "noFilterDark": true,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "",
+      "bgPosition": "center",
+      "bgVideo": "",
       "workType": "Rebranding",
-      "year": "2014",
+      "year": "2015",
+      "project": "",
+      "projectLink": "",
       "tag": {
         "es": [
           "Gastronomía",
@@ -817,18 +1007,429 @@
           "Gastronomy",
           "Restaurant"
         ]
+      },
+      "label": {
+        "name": "Courtside Bar",
+        "src": "img/logos/courtside-logo.svg",
+        "invertLogo": false,
+        "logoSize": 80,
+        "es": {
+          "industry": "Gastronomía",
+          "workType": "Rebranding"
+        },
+        "en": {
+          "industry": "Gastronomy",
+          "workType": "Rebranding"
+        }
+      }
+    },
+    {
+      "order": 25,
+      "size": "tile-xl",
+      "span": 4,
+      "src": "img/logos/imd-logo.svg",
+      "alt": "Industrial Model & Design",
+      "logoSize": 200,
+      "invertLogo": false,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "",
+      "bgPosition": "center",
+      "bgVideo": "",
+      "workType": "Branding",
+      "year": "2015",
+      "project": "",
+      "projectLink": "",
+      "tag": {
+        "es": [
+          "Diseño Industrial"
+        ],
+        "en": [
+          "Industrial Design"
+        ]
+      },
+      "label": {
+        "name": "Industrial Model & Design",
+        "src": "img/logos/imd-logo.svg",
+        "invertLogo": false,
+        "logoSize": 80,
+        "es": {
+          "industry": "Diseño Industrial",
+          "workType": "Branding"
+        },
+        "en": {
+          "industry": "Industrial Design",
+          "workType": "Branding"
+        }
+      }
+    },
+    {
+      "order": 26,
+      "size": "tile-xl",
+      "span": 4,
+      "src": "img/logos/iblum-alt-logo.svg",
+      "alt": "iBlum",
+      "logoSize": 250,
+      "invertLogo": false,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "",
+      "bgPosition": "center",
+      "bgVideo": "",
+      "workType": "Branding",
+      "year": "2014",
+      "project": "",
+      "projectLink": "",
+      "tag": {
+        "es": [
+          "Startup Tecnológico"
+        ],
+        "en": [
+          "Tech Startup"
+        ]
+      },
+      "label": {
+        "name": "iBlum",
+        "src": "img/logos/iblum-alt-logo.svg",
+        "invertLogo": false,
+        "logoSize": 80,
+        "es": {
+          "industry": "Startup Tecnológico",
+          "workType": "Branding"
+        },
+        "en": {
+          "industry": "Tech Startup",
+          "workType": "Branding"
+        }
       }
     },
     {
       "order": 27,
+      "size": "tile-xl",
+      "span": 4,
+      "src": "img/logos/up-mid-face-logo.svg",
+      "alt": "Curso Up Mid Face",
+      "logoSize": 300,
+      "invertLogo": true,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "img/backgrounds/upmidface.webp",
+      "bgPosition": "center",
+      "bgVideo": "",
+      "workType": "Branding",
+      "year": "2023",
+      "project": "",
+      "projectLink": "",
+      "tag": {
+        "es": [
+          "Salud",
+          "Medicina Estética"
+        ],
+        "en": [
+          "Health",
+          "Aesthetic Medicine"
+        ]
+      },
+      "label": {
+        "name": "Up & Mid Face",
+        "src": "img/logos/up-mid-face-logo.svg",
+        "invertLogo": true,
+        "logoSize": 80,
+        "es": {
+          "industry": "Programa de formación avanzada en técnicas de rejuvenecimiento facial.",
+          "workType": "Branding"
+        },
+        "en": {
+          "industry": "Advanced training program focused on modern facial rejuvenation techniques.",
+          "workType": "Branding"
+        }
+      }
+    },
+    {
+      "order": 28,
+      "size": "tile-xl",
+      "span": 4,
+      "src": "",
+      "alt": "",
+      "logoSize": 250,
+      "invertLogo": false,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "img/new_visuals/lafleur.png",
+      "bgPosition": "center",
+      "bgVideo": "",
+      "workType": "Rebranding",
+      "year": "2026",
+      "project": "",
+      "projectLink": "",
+      "tag": {
+        "es": [
+          "Salud",
+          "Óptica"
+        ],
+        "en": [
+          "Health",
+          "Optics"
+        ]
+      },
+      "label": {
+        "name": "La Fleur",
+        "src": "img/logos/lafleur-logo.svg",
+        "invertLogo": false,
+        "logoSize": 80,
+        "es": {
+          "industry": "Óptica",
+          "workType": "Rebranding"
+        },
+        "en": {
+          "industry": "Optics",
+          "workType": "Rebranding"
+        }
+      }
+    },
+    {
+      "order": 29,
+      "size": "tile-xl",
+      "span": 4,
+      "src": "img/logos/ambrosia-logo.svg",
+      "alt": "Ambrosia",
+      "logoSize": 200,
+      "invertLogo": true,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "img/backgrounds/ambrosia.webp",
+      "bgPosition": "center",
+      "bgVideo": "",
+      "workType": "Branding",
+      "year": "2016",
+      "project": "",
+      "projectLink": "",
+      "tag": {
+        "es": [
+          "Gastronomía",
+          "Pastelería Boutique"
+        ],
+        "en": [
+          "Gastronomy",
+          "Boutique Patisserie"
+        ]
+      },
+      "label": {
+        "name": "Ambrosia",
+        "src": "img/logos/ambrosia-logo.svg",
+        "invertLogo": true,
+        "logoSize": 80,
+        "es": {
+          "industry": "Gastronomía",
+          "workType": "Branding"
+        },
+        "en": {
+          "industry": "Gastronomy",
+          "workType": "Branding"
+        }
+      }
+    },
+    {
+      "order": 30,
+      "size": "tile-xl",
+      "span": 4,
+      "src": "img/logos/mena-lombard-logo.svg",
+      "alt": "Mena Lombard",
+      "logoSize": 250,
+      "invertLogo": false,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "",
+      "bgPosition": "center",
+      "bgVideo": "",
+      "workType": "Branding",
+      "year": "2018",
+      "project": "",
+      "projectLink": "",
+      "tag": {
+        "es": [
+          "Asesoría y Diseño de Moda"
+        ],
+        "en": [
+          "Fashion Consulting and Design"
+        ]
+      },
+      "label": {
+        "name": "Mena Lombard",
+        "src": "img/logos/mena-lombard-logo.svg",
+        "invertLogo": false,
+        "logoSize": 80,
+        "es": {
+          "industry": "Asesoría y Diseño de Moda",
+          "workType": "Branding"
+        },
+        "en": {
+          "industry": "Fashion Consulting and Design",
+          "workType": "Branding"
+        }
+      }
+    },
+    {
+      "order": 31,
+      "size": "tile-xl",
+      "span": 4,
+      "src": "",
+      "alt": "",
+      "logoSize": 250,
+      "invertLogo": false,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "img/new_visuals/iro-iro.png",
+      "bgPosition": "center",
+      "bgVideo": "",
+      "workType": "Rebranding",
+      "year": "2020",
+      "project": "",
+      "projectLink": "",
+      "tag": {
+        "es": [
+          "Bazaar Japonés"
+        ],
+        "en": [
+          "Japanese Bazaar"
+        ]
+      },
+      "label": {
+        "name": "Iro Iro",
+        "src": "img/logos/iroiro-logo.svg",
+        "invertLogo": false,
+        "logoSize": 80,
+        "es": {
+          "industry": "Bazaar Japonés",
+          "workType": "Rebranding"
+        },
+        "en": {
+          "industry": "Japanese Bazaar",
+          "workType": "Rebranding"
+        }
+      }
+    },
+    {
+      "order": 32,
+      "size": "tile-xl",
+      "span": 4,
+      "src": "img/logos/lucia-marafuschi-logo.svg",
+      "alt": "Dra. Lucia Marafuschi",
+      "logoSize": 250,
+      "invertLogo": true,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "img/backgrounds/lucia.webp",
+      "bgPosition": "center",
+      "bgVideo": "",
+      "workType": "Rebranding",
+      "year": "2026",
+      "project": "",
+      "projectLink": "",
+      "tag": {
+        "es": [
+          "Salud",
+          "Medicina Estética"
+        ],
+        "en": [
+          "Health",
+          "Aesthetic Medicine"
+        ]
+      },
+      "label": {
+        "name": "Dra. Lucia Marafuschi",
+        "src": "img/logos/lucia-marafuschi-logo.svg",
+        "invertLogo": true,
+        "logoSize": 80,
+        "es": {
+          "industry": "Medicina Estética",
+          "workType": "Rebranding"
+        },
+        "en": {
+          "industry": "Aesthetic Medicine",
+          "workType": "Rebranding"
+        }
+      }
+    },
+    {
+      "order": 33,
+      "size": "tile-xl",
+      "span": 4,
+      "src": "img/logos/players-logo.svg",
+      "alt": "Players Sports Grill",
+      "logoSize": 200,
+      "invertLogo": false,
+      "darkSrc": "",
+      "noFilterDark": true,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "",
+      "bgPosition": "center",
+      "bgVideo": "",
+      "workType": "Rebranding",
+      "year": "2014",
+      "project": "",
+      "projectLink": "",
+      "tag": {
+        "es": [
+          "Gastronomía",
+          "Restaurant"
+        ],
+        "en": [
+          "Gastronomy",
+          "Restaurant"
+        ]
+      },
+      "label": {
+        "name": "Players Sports Grill",
+        "src": "img/logos/players-logo.svg",
+        "invertLogo": false,
+        "logoSize": 80,
+        "es": {
+          "industry": "Gastronomía",
+          "workType": "Rebranding"
+        },
+        "en": {
+          "industry": "Gastronomy",
+          "workType": "Rebranding"
+        }
+      }
+    },
+    {
+      "order": 34,
+      "size": "tile-xl",
       "span": 4,
       "src": "img/logos/duarte-asociados-logo.svg",
       "alt": "Duarte & Asociados",
-      "size": "tile",
       "logoSize": 250,
       "invertLogo": false,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "",
+      "bgPosition": "center",
+      "bgVideo": "",
       "workType": "Rebranding",
       "year": "2009",
+      "project": "",
+      "projectLink": "",
       "tag": {
         "es": [
           "Estudio Contable"
@@ -836,18 +1437,41 @@
         "en": [
           "Accounting Firm"
         ]
+      },
+      "label": {
+        "name": "Duarte & Asociados",
+        "src": "img/logos/duarte-asociados-logo.svg",
+        "invertLogo": false,
+        "logoSize": 80,
+        "es": {
+          "industry": "Estudio Contable",
+          "workType": "Rebranding"
+        },
+        "en": {
+          "industry": "Accounting Firm",
+          "workType": "Rebranding"
+        }
       }
     },
     {
-      "order": 27,
+      "order": 35,
+      "size": "tile-xl",
+      "span": 4,
       "src": "img/logos/conception-logo.svg",
       "alt": "Conception",
-      "size": "tile",
-      "span": 4,
       "logoSize": 300,
       "invertLogo": false,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "",
+      "bgPosition": "center",
+      "bgVideo": "",
       "workType": "Branding",
       "year": "2019",
+      "project": "",
+      "projectLink": "",
       "tag": {
         "es": [
           "Música",
@@ -857,18 +1481,41 @@
           "Music",
           "Jazz and Funk Band"
         ]
+      },
+      "label": {
+        "name": "Conception",
+        "src": "img/logos/conception-logo.svg",
+        "invertLogo": false,
+        "logoSize": 80,
+        "es": {
+          "industry": "Música",
+          "workType": "Branding"
+        },
+        "en": {
+          "industry": "Music",
+          "workType": "Branding"
+        }
       }
     },
     {
-      "order": 29,
+      "order": 36,
+      "size": "tile-xl",
+      "span": 4,
       "src": "img/logos/juliana-oppici-2-logo.svg",
       "alt": "Juliana Oppici",
-      "size": "tile",
-      "span": 4,
       "logoSize": 300,
       "invertLogo": false,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "",
+      "bgPosition": "center",
+      "bgVideo": "",
       "workType": "Branding",
       "year": "2026",
+      "project": "",
+      "projectLink": "",
       "tag": {
         "es": [
           "Medicina Estética"
@@ -876,19 +1523,41 @@
         "en": [
           "Aesthetic Medicine"
         ]
+      },
+      "label": {
+        "name": "Juliana Oppici",
+        "src": "img/logos/juliana-oppici-2-logo.svg",
+        "invertLogo": false,
+        "logoSize": 80,
+        "es": {
+          "industry": "Medicina Estética",
+          "workType": "Branding"
+        },
+        "en": {
+          "industry": "Aesthetic Medicine",
+          "workType": "Branding"
+        }
       }
     },
     {
-      "order": 29,
+      "order": 37,
+      "size": "tile-xl",
       "span": 4,
       "src": "img/logos/zoom-logo.svg",
       "alt": "ZOom",
-      "size": "tile",
       "logoSize": 300,
       "invertLogo": true,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "",
+      "bgPosition": "center",
       "bgVideo": "img/backgrounds/zoom.mp4",
       "workType": "Branding",
       "year": "0000",
+      "project": "",
+      "projectLink": "",
       "tag": {
         "es": [
           "Estudio de Diseño"
@@ -896,6 +1565,20 @@
         "en": [
           "Design Studio"
         ]
+      },
+      "label": {
+        "name": "ZOom",
+        "src": "img/logos/zoom-logo.svg",
+        "invertLogo": true,
+        "logoSize": 80,
+        "es": {
+          "industry": "Estudio de Diseño",
+          "workType": "Branding"
+        },
+        "en": {
+          "industry": "Design Studio",
+          "workType": "Branding"
+        }
       }
     }
   ],
