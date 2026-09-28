@@ -36,7 +36,7 @@ const translations = {
     brandDevelopmentIntro:
       "Brand development across contexts: <strong>identity, communication, and creative direction</strong> applied to <strong>products, spaces, and experiences</strong>. <br> Systems designed to adapt and perform within their context.",
     productDesignIntro:
-      "    Designing products focused on shaping complex ideas into <strong>intuitive and refined digital experiences</strong>. <span class='d-block mt-4 fw-normal' style='font-size:var(--fs-tile-text)'>Currently in development</span>",
+      "Designing products focused on shaping complex ideas into <strong>intuitive and refined digital experiences</strong>.",
 
     back: "back",
   },
@@ -61,7 +61,7 @@ const translations = {
     brandDevelopmentIntro:
       "Proyectos de marca en acción: <strong>identidad, comunicación y dirección creativa</strong> aplicadas a <strong>productos, espacios y experiencias</strong>. <br> Sistemas que se adaptan y funcionan de acuerdo al contexto.",
     productDesignIntro:
-      "Diseño de producto enfocado en transformar ideas complejas en <strong>experiencias digitales intuitivas y funcionales</strong>. <span class='d-block mt-4 fw-normal' style='font-size:var(--fs-tile-text)'>Actualmente en desarrollo.</span>",
+      "Diseño de producto enfocado en transformar ideas complejas en <strong>experiencias digitales intuitivas y funcionales</strong>.",
 
     back: "volver",
   },

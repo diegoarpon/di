@@ -22,7 +22,7 @@
   <meta property="twitter:description" content="" id="twitter-description" />
   <meta property="twitter:image" content="https://estudiod.site/img/square.webp" id="twitter-image" />
   <link rel="icon" type="image/svg+xml" href="img/square.svg" />
-  <link rel="canonical" href="" id="canonical" />
+  <link rel="canonical" href="https://estudiod.site/" id="canonical" />
   <link rel="alternate" hreflang="es" href="https://estudiod.site/" />
   <link rel="alternate" hreflang="en" href="https://estudiod.site/" />
   <link rel="alternate" hreflang="x-default" href="https://estudiod.site/" />
@@ -120,8 +120,7 @@
               <div class="d-flex flex-column gap-2">
                 <a href="cv_diego_fabbri_arpon_es.pdf" target="_blank" rel="noopener noreferrer"
                   class="contact-link fw-normal" id="cv-link">cv</a>
-                <a href="https://wa.me/+5491134604766?text=Hola%20D!%20Tengo%20una%20consulta" target="_blank"
-                  rel="noopener noreferrer" class="contact-link fw-normal">whatsapp</a>
+                <a href="https://wa.me/+5491134604766?text=Hola%20D!%20Tengo%20una%20consulta" target="_blank" rel="noopener noreferrer" class="contact-link fw-normal">whatsapp</a>
                 <a href="https://www.linkedin.com/in/diegofabbriarpon/" target="_blank" rel="noopener noreferrer"
                   class="contact-link fw-normal">linkedin</a>
               </div>
@@ -206,20 +205,9 @@
     const _footerCategories = ['brand-creation', 'brand-development', 'product-design'];
     const _footerCategory = _footerCategories[Math.floor(Math.random() * _footerCategories.length)];
 
-    window.switchLanguage = function (lang) {
-      currentLang = lang;
-      localStorage.setItem("language", lang);
-      document.querySelectorAll("[data-i18n]").forEach(el => {
-        const text = t(el.getAttribute("data-i18n"));
-        if (text) el.innerHTML = text;
-      });
-      document.querySelectorAll("#lang-en, #lang-es").forEach(b => b.classList.remove("active"));
-      const btn = document.getElementById("lang-" + lang);
-      if (btn) btn.classList.add("active");
-      document.documentElement.lang = lang;
+    window._onSwitchLanguage = function (lang) {
       loadProject();
       updateFooter(_footerCategory, true);
-      updateVersionLabel();
     };
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -269,7 +257,7 @@
 
         const description = project.description?.[currentLang] || project.description?.es || "";
         const descEl = document.getElementById("project-description");
-        descEl.innerHTML = description;
+        descEl.innerHTML = sanitizeHTML(description);
         descEl.classList.toggle("d-none", !description);
         document.getElementById("meta-description").content = description;
         document.getElementById("og-description").content = description;
@@ -357,7 +345,7 @@
               const textEl = document.createElement("div");
               textEl.className = "project-masonry-color-text";
               if (item.textSize) textEl.style.fontSize = item.textSize;
-              textEl.innerHTML = item.text[currentLang] || item.text.es || "";
+              textEl.innerHTML = sanitizeHTML(item.text[currentLang] || item.text.es || "");
               figure.appendChild(textEl);
             }
           } else {

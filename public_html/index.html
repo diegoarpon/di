@@ -134,7 +134,7 @@
                 <div class="d-flex flex-column h-100 pt-5 pb-5">
                     <div class="position-relative logo cursor-pointer" onclick="showContent('brand-creation')"
                         role="button" tabindex="0" aria-label="Ir a Brand Creation"
-                        onkeydown="if(event.key==='Enter')showContent('brand-creation')">
+                        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showContent('brand-creation')}">
                         <div class="guide-h-short"></div>
                         <div class="row">
                             <div class="col-auto position-relative">
@@ -148,20 +148,20 @@
 
                     <!-- Tabs -->
                     <div class="mt-4 mb-2">
-                        <div class="d-flex flex-column gap-2">
+                        <div class="d-flex flex-column gap-2" role="tablist" aria-label="Secciones">
                             <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button active"
                                 onclick="showContent('brand-creation')" data-tab="brand-creation"
-                                data-i18n="brandCreation">
+                                data-i18n="brandCreation" role="tab" aria-selected="true" aria-controls="brand-creation">
                                 brand creation
                             </button>
                             <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button"
                                 onclick="showContent('brand-development')" data-tab="brand-development"
-                                data-i18n="brandDevelopment">
+                                data-i18n="brandDevelopment" role="tab" aria-selected="false" aria-controls="brand-development">
                                 brand development
                             </button>
                             <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button"
                                 onclick="showContent('product-design')" data-tab="product-design"
-                                data-i18n="productDesign">
+                                data-i18n="productDesign" role="tab" aria-selected="false" aria-controls="product-design">
                                 product design
                             </button>
                         </div>
@@ -172,11 +172,8 @@
                         <!-- Contact Links -->
                         <div class="mb-3">
                             <div class="d-flex flex-column gap-2">
-                                <a href="cv_diego_fabbri_arpon_es.pdf" target="_blank" rel="noopener noreferrer"
-                                    class="contact-link fw-normal" id="cv-link">cv</a>
-                                <a href="https://wa.me/+5491134604766?text=Hola%20D!%20Tengo%20una%20consulta"
-                                    target="_blank" rel="noopener noreferrer"
-                                    class="contact-link fw-normal">whatsapp</a>
+                                <a href="cv_diego_fabbri_arpon_es.pdf" target="_blank" rel="noopener noreferrer" class="contact-link fw-normal" id="cv-link">cv</a>
+                                <a href="https://wa.me/+5491134604766?text=Hola%20D!%20Tengo%20una%20consulta" target="_blank" rel="noopener noreferrer" class="contact-link fw-normal">whatsapp</a>
                                 <a href="https://www.linkedin.com/in/diegofabbriarpon/" target="_blank"
                                     rel="noopener noreferrer" class="contact-link fw-normal">linkedin</a>
                             </div>
@@ -207,7 +204,7 @@
                 <div class="d-block mobile-logo pt-5 px-0">
                     <div class="position-relative logo cursor-pointer" onclick="showContent('brand-creation')"
                         role="button" tabindex="0" aria-label="Ir a Brand Creation"
-                        onkeydown="if(event.key==='Enter')showContent('brand-creation')">
+                        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showContent('brand-creation')}">
                         <div class="guide-h-double-100"></div>
                         <div class="row">
                             <div class="col-auto position-relative">
@@ -223,7 +220,7 @@
                 <!-- Tab Content -->
 
                 <!-- ========== BRAND CREATION TAB CONTENT STARTS HERE ========== -->
-                <div id="brand-creation" class="tab-content">
+                <div id="brand-creation" class="tab-content" role="tabpanel" tabindex="0">
                     <div class="tab-intro">
                         <h1 id="intro-text" class="tab-heading fw-light" data-i18n="intro">Hola, soy Diego (D) —
                             diseñador gráfico especializado en branding, web y producto.</h1>
@@ -232,7 +229,7 @@
                 </div>
 
                 <!-- ========== BRAND DEVELOPMENT TAB CONTENT STARTS HERE ========== -->
-                <div id="brand-development" class="tab-content d-none">
+                <div id="brand-development" class="tab-content d-none" role="tabpanel" tabindex="0">
                     <div class="tab-intro">
                         <h1 class="tab-heading fw-light" data-i18n="brandDevelopmentIntro">
                             Comprehensive brand development projects that establish strong
@@ -244,7 +241,7 @@
                 </div>
 
                 <!-- ========== PRODUCT DESIGN TAB CONTENT STARTS HERE ========== -->
-                <div id="product-design" class="tab-content d-none">
+                <div id="product-design" class="tab-content d-none" role="tabpanel" tabindex="0">
                     <div class="tab-intro">
                         <h1 class="tab-heading fw-light" data-i18n="productDesignIntro">
                             User-centered digital product design focused on creating

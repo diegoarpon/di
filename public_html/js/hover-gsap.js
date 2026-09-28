@@ -28,18 +28,23 @@ function createPixelGrid(tile, cols = 14, color = "var(--blackest)", glitch = fa
 }
 
 function initPixelHover(tile) {
-  const overlay = tile.querySelector(".brand-hover-overlay");
   const text = tile.querySelector(".brand-hover-text");
-  if (!overlay || !text) return;
+  if (!text) return;
 
-  gsap.set(overlay, { opacity: 0 });
   gsap.set(text, { opacity: 0 });
 
   let active = false;
 
   function activate() {
     active = true;
-    createPixelGrid(tile, 14);
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const pixelColor = isDark ? 'var(--blackest)' : 'var(--manteca)';
+    const existing = tile.querySelector(".pixel-grid");
+    if (existing) {
+      existing.querySelectorAll('div').forEach(c => c.style.backgroundColor = pixelColor);
+    } else {
+      createPixelGrid(tile, 14, pixelColor);
+    }
     const cells = Array.from(tile.querySelectorAll(".pixel-grid div"));
     gsap.killTweensOf(cells);
     gsap.killTweensOf(text);
@@ -62,10 +67,32 @@ function initPixelHover(tile) {
   if (isDesktop) {
     tile.addEventListener("mouseenter", () => { activate(); tile.classList.add("pixel-active"); });
     tile.addEventListener("mouseleave", () => { deactivate(); tile.classList.remove("pixel-active"); });
+    tile.addEventListener("click", () => {
+      const link = tile.dataset.projectLink;
+      if (link) {
+        const ca = document.querySelector(".content-area");
+        if (ca) ca.classList.add("fading");
+        setTimeout(() => { window.location.href = link; }, 500);
+      }
+    });
+    tile.addEventListener("keydown", e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        tile.click();
+      }
+    });
   } else {
     tile.addEventListener("click", () => {
-      if (active) { deactivate(); tile.classList.remove("pixel-active"); }
-      else {
+      if (active) {
+        const link = tile.dataset.projectLink;
+        if (link) {
+          const ca = document.querySelector(".content-area");
+          if (ca) ca.classList.add("fading");
+          setTimeout(() => { window.location.href = link; }, 500);
+          return;
+        }
+        deactivate(); tile.classList.remove("pixel-active");
+      } else {
         document.querySelectorAll("#brand-creation-grid .tile.pixel-active").forEach(t => {
           if (t !== tile) t.click();
         });

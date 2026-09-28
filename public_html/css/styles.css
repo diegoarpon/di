@@ -96,6 +96,14 @@
   --manteca-dark: var(--blackest-light);
 }
 
+[data-theme="dark"] .brand-hover-text {
+  color: var(--manteca);
+}
+
+[data-theme="dark"] .brand-hover-project-arrow {
+  color: var(--manteca);
+}
+
 .theme-transitioning,
 .theme-transitioning *,
 .theme-transitioning *::before,
@@ -524,8 +532,6 @@ body {
 }
 
 .tile-xl img:not(.logo-sized) {
-  max-width: 90%;
-  max-height: 90%;
   object-fit: contain;
   position: relative;
   z-index: 1;
@@ -1065,7 +1071,6 @@ body {
 .brand-hover-overlay {
   position: absolute;
   inset: 0;
-  background-color: var(--main-color);
   opacity: 0.95;
   clip-path: circle(0% at 0% 0%);
   transition: clip-path 0.9s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1076,7 +1081,7 @@ body {
 .brand-hover-text {
   position: absolute;
   inset: 0;
-  color: var(--manteca);
+  color: var(--blackest);
   font-size: var(--fs-tile-text);
   line-height: 1.25;
   font-weight: 300;
@@ -1086,6 +1091,9 @@ body {
   z-index: var(--z-tile-text);
   padding: 2rem;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .brand-hover-name {
@@ -1133,6 +1141,31 @@ body {
   margin-bottom: 0.75rem;
 }
 
+.brand-hover-label-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.brand-hover-project-arrow {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  font-size: var(--fs-back-arrow);
+  color: var(--blackest);
+  text-decoration: none;
+  line-height: 1;
+  z-index: var(--z-tile-text);
+}
+
+.brand-hover-logo {
+  display: block;
+  max-width: 60%;
+  object-fit: contain;
+  margin-bottom: 2rem;
+}
+
 #brand-creation .tile-xl .brand-hover-text {
   font-size: var(--fs-tile-text);
 }
@@ -1140,13 +1173,6 @@ body {
 #brand-creation .tile:hover .brand-hover-overlay,
 #brand-creation .tile-xl:hover .brand-hover-overlay {
   clip-path: circle(150% at 0% 0%);
-}
-
-/* todos los tiles de brand-creation: hover manejado por GSAP (hover-gsap.js) */
-#brand-creation-grid .tile .brand-hover-overlay,
-#brand-creation-grid .tile:hover .brand-hover-overlay {
-  transition: none;
-  clip-path: unset !important;
 }
 
 #brand-creation-grid .tile .brand-hover-text,
