@@ -67,30 +67,9 @@ function initPixelHover(tile) {
   if (isDesktop) {
     tile.addEventListener("mouseenter", () => { activate(); tile.classList.add("pixel-active"); });
     tile.addEventListener("mouseleave", () => { deactivate(); tile.classList.remove("pixel-active"); });
-    tile.addEventListener("click", () => {
-      const link = tile.dataset.projectLink;
-      if (link) {
-        const ca = document.querySelector(".content-area");
-        if (ca) ca.classList.add("fading");
-        setTimeout(() => { window.location.href = link; }, 500);
-      }
-    });
-    tile.addEventListener("keydown", e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        tile.click();
-      }
-    });
   } else {
     tile.addEventListener("click", () => {
       if (active) {
-        const link = tile.dataset.projectLink;
-        if (link) {
-          const ca = document.querySelector(".content-area");
-          if (ca) ca.classList.add("fading");
-          setTimeout(() => { window.location.href = link; }, 500);
-          return;
-        }
         deactivate(); tile.classList.remove("pixel-active");
       } else {
         document.querySelectorAll("#brand-creation-grid .tile.pixel-active").forEach(t => {
