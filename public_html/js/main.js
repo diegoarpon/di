@@ -231,11 +231,9 @@ function addCol4Panels() {
         text.appendChild(img);
       }
       if (tile.dataset.projectLink) {
-        const arrow = document.createElement('a');
+        const arrow = document.createElement('span');
         arrow.className = 'brand-hover-project-arrow';
-        arrow.href = tile.dataset.projectLink;
         arrow.textContent = '↗';
-        arrow.addEventListener('click', e => e.stopPropagation());
         text.appendChild(arrow);
       }
       tile.appendChild(text);
