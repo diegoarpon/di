@@ -488,6 +488,11 @@ function createBrandTile(tileConfig) {
     if (name) tile.setAttribute('aria-label', `Ver proyecto: ${name}`);
     tile.setAttribute('role', 'button');
     tile.setAttribute('tabindex', '0');
+    tile.addEventListener('click', () => {
+      const ca = document.querySelector('.content-area');
+      if (ca) ca.classList.add('fading');
+      setTimeout(() => { window.location.href = `project.html?p=${encodeURIComponent(tileConfig.project)}`; }, 500);
+    });
   }
 
   if (tileConfig.pixelColor) tile.dataset.pixelColor = tileConfig.pixelColor;
