@@ -5,7 +5,7 @@
       "size": "tile-xl",
       "span": 4,
       "src": "",
-      "alt": "",
+      "alt": "Molde",
       "logoSize": 0,
       "invertLogo": false,
       "darkSrc": "",
@@ -19,13 +19,9 @@
       "year": "2026",
       "project": "lapanaderi",
       "projectLink": "project.html?p=lapanaderi",
-      "tag": {
-        "es": [],
-        "en": []
-      },
       "label": {
-        "name": "Lapanaderi",
-        "src": "img/logos/lapanaderi-solo-logo.svg",
+        "name": "Lapan",
+        "src": "img/logos/flittz-logo.svg",
         "invertLogo": true,
         "logoSize": 80,
         "es": {
@@ -42,10 +38,10 @@
       "order": 2,
       "size": "tile-xl",
       "span": 4,
-      "src": "img/logos/molde-logo.svg",
+      "src": "img/logos/flittz-logo.svg",
       "alt": "Molde",
       "logoSize": 250,
-      "invertLogo": true,
+      "invertLogo": false,
       "darkSrc": "",
       "noFilterDark": false,
       "multi": "",
@@ -57,19 +53,9 @@
       "year": "2026",
       "project": "molde",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "App",
-          "Gastronomía"
-        ],
-        "en": [
-          "App",
-          "Gastronomy"
-        ]
-      },
       "label": {
         "name": "Molde",
-        "src": "img/logos/molde-logo.svg",
+        "src": "",
         "invertLogo": true,
         "logoSize": 80,
         "es": {
@@ -101,16 +87,6 @@
       "year": "2026",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Salud",
-          "Medicina Estética"
-        ],
-        "en": [
-          "Health",
-          "Aesthetic Medicine"
-        ]
-      },
       "label": {
         "name": "SI Salud Integral",
         "src": "img/logos/si-salud-integral-logo.svg",
@@ -145,16 +121,6 @@
       "year": "2025",
       "project": "meta",
       "projectLink": "project.html?p=meta",
-      "tag": {
-        "es": [
-          "Salud",
-          "Medicina Estética"
-        ],
-        "en": [
-          "Health",
-          "Aesthetic Medicine"
-        ]
-      },
       "label": {
         "name": "Meta",
         "src": "img/logos/meta-logo.svg",
@@ -189,16 +155,6 @@
       "year": "2026",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Marketing",
-          "Coaching"
-        ],
-        "en": [
-          "Marketing",
-          "Coaching"
-        ]
-      },
       "label": {
         "name": "El Método",
         "src": "img/logos/metodo-logo.svg",
@@ -226,21 +182,13 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/new_visuals/hit.png",
+      "bgImage": "img/backgrounds/eg.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Branding",
       "year": "2020",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Agencia de Relaciones Públicas"
-        ],
-        "en": [
-          "Public Relations Agency"
-        ]
-      },
       "label": {
         "name": "Hit PR",
         "src": "img/logos/hit-pr-logo.svg",
@@ -275,14 +223,6 @@
       "year": "2014",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Estudio Juridico"
-        ],
-        "en": [
-          "Law Firm"
-        ]
-      },
       "label": {
         "name": "Zlatar Nario",
         "src": "img/logos/zlatar-nario-logo.svg",
@@ -317,14 +257,6 @@
       "year": "2011",
       "project": "nestseekers",
       "projectLink": "project.html?p=nestseekers",
-      "tag": {
-        "es": [
-          "Empresa Inmobiliaria de Lujo"
-        ],
-        "en": [
-          "Luxury Real Estate Company"
-        ]
-      },
       "label": {
         "name": "Nestseekers",
         "src": "img/logos/nestseekers-full-logo.svg",
@@ -359,16 +291,6 @@
       "year": "2025",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Salud",
-          "Dermatologia"
-        ],
-        "en": [
-          "Health",
-          "Dermatology"
-        ]
-      },
       "label": {
         "name": "Ponti Tosi",
         "src": "img/logos/ponti-tosi-logo.svg",
@@ -403,16 +325,6 @@
       "year": "2025",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Música",
-          "Compositora"
-        ],
-        "en": [
-          "Music",
-          "Composer"
-        ]
-      },
       "label": {
         "name": "Lu Maria",
         "src": "img/logos/lu-maria-logo.svg",
@@ -447,14 +359,6 @@
       "year": "2023",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "ONG"
-        ],
-        "en": [
-          "NGO"
-        ]
-      },
       "label": {
         "name": "Art + Climate",
         "src": "img/logos/art-climate-logo.svg",
@@ -489,14 +393,6 @@
       "year": "2023",
       "project": "eg",
       "projectLink": "project.html?p=eg",
-      "tag": {
-        "es": [
-          "Agencia"
-        ],
-        "en": [
-          "Consulting Agency"
-        ]
-      },
       "label": {
         "name": "EG Marketing",
         "src": "img/logos/eg-monograma-logo.svg",
@@ -531,15 +427,6 @@
       "year": "2025",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Salud",
-          "Medicina Estética"
-        ],
-        "en": [
-          "Aesthetic Medicine"
-        ]
-      },
       "label": {
         "name": "Dra. Mariela Reale",
         "src": "img/logos/mariela-reale-logo.svg",
@@ -574,14 +461,6 @@
       "year": "2025",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "App para gestión de formularios"
-        ],
-        "en": [
-          "Form Management App"
-        ]
-      },
       "label": {
         "name": "FormStream",
         "src": "img/logos/formstream-logo.svg",
@@ -616,14 +495,6 @@
       "year": "2013",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Revista Digital"
-        ],
-        "en": [
-          "Digital Magazine"
-        ]
-      },
       "label": {
         "name": "International Food Trader",
         "src": "img/logos/international-food-trader-logo.svg",
@@ -658,14 +529,6 @@
       "year": "2009",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Musica y Entretenimiento"
-        ],
-        "en": [
-          "Music and Entertainment"
-        ]
-      },
       "label": {
         "name": "FaroLatino",
         "src": "img/logos/farolatino-logo.svg",
@@ -700,14 +563,6 @@
       "year": "2012",
       "project": "virtualmind",
       "projectLink": "project.html?p=virtualmind",
-      "tag": {
-        "es": [
-          "Ingeniería de Software"
-        ],
-        "en": [
-          "Product Engineering"
-        ]
-      },
       "label": {
         "name": "Virtualmind",
         "src": "img/logos/virtualmind-full-logo.webp",
@@ -742,14 +597,6 @@
       "year": "2019",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Aplicación de Noticias"
-        ],
-        "en": [
-          "News App"
-        ]
-      },
       "label": {
         "name": "Flittz",
         "src": "img/logos/flittz-logo.svg",
@@ -784,14 +631,6 @@
       "year": "2019",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Fitness"
-        ],
-        "en": [
-          "Fitness"
-        ]
-      },
       "label": {
         "name": "Bronx Gym",
         "src": "img/logos/bronx-gym-logo.svg",
@@ -826,14 +665,6 @@
       "year": "2009",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Startup Tecnológico"
-        ],
-        "en": [
-          "Tech Startup"
-        ]
-      },
       "label": {
         "name": "Corvalius",
         "src": "img/logos/corvalius-logo.svg",
@@ -868,14 +699,6 @@
       "year": "2016",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Tendencias y diseño de moda"
-        ],
-        "en": [
-          "Fashion trends and design"
-        ]
-      },
       "label": {
         "name": "FX Prom",
         "src": "img/logos/fxprom-logo.svg",
@@ -910,16 +733,6 @@
       "year": "2025",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Salud",
-          "Medicina Estética"
-        ],
-        "en": [
-          "Health",
-          "Aesthetic Medicine"
-        ]
-      },
       "label": {
         "name": "Banegas Day",
         "src": "img/logos/banegas-day-logo.svg",
@@ -954,16 +767,6 @@
       "year": "2013",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Música",
-          "Banda de Rock Indie"
-        ],
-        "en": [
-          "Music",
-          "Indie Rock Band"
-        ]
-      },
       "label": {
         "name": "Kamea",
         "src": "img/logos/kamea-logo.svg",
@@ -998,16 +801,6 @@
       "year": "2015",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Gastronomía",
-          "Restaurant"
-        ],
-        "en": [
-          "Gastronomy",
-          "Restaurant"
-        ]
-      },
       "label": {
         "name": "Courtside Bar",
         "src": "img/logos/courtside-logo.svg",
@@ -1042,14 +835,6 @@
       "year": "2015",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Diseño Industrial"
-        ],
-        "en": [
-          "Industrial Design"
-        ]
-      },
       "label": {
         "name": "Industrial Model & Design",
         "src": "img/logos/imd-logo.svg",
@@ -1084,14 +869,6 @@
       "year": "2014",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Startup Tecnológico"
-        ],
-        "en": [
-          "Tech Startup"
-        ]
-      },
       "label": {
         "name": "iBlum",
         "src": "img/logos/iblum-alt-logo.svg",
@@ -1126,16 +903,6 @@
       "year": "2023",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Salud",
-          "Medicina Estética"
-        ],
-        "en": [
-          "Health",
-          "Aesthetic Medicine"
-        ]
-      },
       "label": {
         "name": "Up & Mid Face",
         "src": "img/logos/up-mid-face-logo.svg",
@@ -1170,16 +937,6 @@
       "year": "2026",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Salud",
-          "Óptica"
-        ],
-        "en": [
-          "Health",
-          "Optics"
-        ]
-      },
       "label": {
         "name": "La Fleur",
         "src": "img/logos/lafleur-logo.svg",
@@ -1214,16 +971,6 @@
       "year": "2016",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Gastronomía",
-          "Pastelería Boutique"
-        ],
-        "en": [
-          "Gastronomy",
-          "Boutique Patisserie"
-        ]
-      },
       "label": {
         "name": "Ambrosia",
         "src": "img/logos/ambrosia-logo.svg",
@@ -1258,14 +1005,6 @@
       "year": "2018",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Asesoría y Diseño de Moda"
-        ],
-        "en": [
-          "Fashion Consulting and Design"
-        ]
-      },
       "label": {
         "name": "Mena Lombard",
         "src": "img/logos/mena-lombard-logo.svg",
@@ -1300,14 +1039,6 @@
       "year": "2020",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Bazaar Japonés"
-        ],
-        "en": [
-          "Japanese Bazaar"
-        ]
-      },
       "label": {
         "name": "Iro Iro",
         "src": "img/logos/iroiro-logo.svg",
@@ -1342,16 +1073,6 @@
       "year": "2026",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Salud",
-          "Medicina Estética"
-        ],
-        "en": [
-          "Health",
-          "Aesthetic Medicine"
-        ]
-      },
       "label": {
         "name": "Dra. Lucia Marafuschi",
         "src": "img/logos/lucia-marafuschi-logo.svg",
@@ -1386,16 +1107,6 @@
       "year": "2014",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Gastronomía",
-          "Restaurant"
-        ],
-        "en": [
-          "Gastronomy",
-          "Restaurant"
-        ]
-      },
       "label": {
         "name": "Players Sports Grill",
         "src": "img/logos/players-logo.svg",
@@ -1430,14 +1141,6 @@
       "year": "2009",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Estudio Contable"
-        ],
-        "en": [
-          "Accounting Firm"
-        ]
-      },
       "label": {
         "name": "Duarte & Asociados",
         "src": "img/logos/duarte-asociados-logo.svg",
@@ -1472,16 +1175,6 @@
       "year": "2019",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Música",
-          "Banda de Jazz y Funk"
-        ],
-        "en": [
-          "Music",
-          "Jazz and Funk Band"
-        ]
-      },
       "label": {
         "name": "Conception",
         "src": "img/logos/conception-logo.svg",
@@ -1501,48 +1194,6 @@
       "order": 36,
       "size": "tile-xl",
       "span": 4,
-      "src": "img/logos/juliana-oppici-2-logo.svg",
-      "alt": "Juliana Oppici",
-      "logoSize": 300,
-      "invertLogo": false,
-      "darkSrc": "",
-      "noFilterDark": false,
-      "multi": "",
-      "multiLogoSize": 0,
-      "bgImage": "",
-      "bgPosition": "center",
-      "bgVideo": "",
-      "workType": "Branding",
-      "year": "2026",
-      "project": "",
-      "projectLink": "",
-      "tag": {
-        "es": [
-          "Medicina Estética"
-        ],
-        "en": [
-          "Aesthetic Medicine"
-        ]
-      },
-      "label": {
-        "name": "Juliana Oppici",
-        "src": "img/logos/juliana-oppici-2-logo.svg",
-        "invertLogo": false,
-        "logoSize": 80,
-        "es": {
-          "industry": "Medicina Estética",
-          "workType": "Branding"
-        },
-        "en": {
-          "industry": "Aesthetic Medicine",
-          "workType": "Branding"
-        }
-      }
-    },
-    {
-      "order": 37,
-      "size": "tile-xl",
-      "span": 4,
       "src": "img/logos/zoom-logo.svg",
       "alt": "ZOom",
       "logoSize": 300,
@@ -1558,14 +1209,6 @@
       "year": "0000",
       "project": "",
       "projectLink": "",
-      "tag": {
-        "es": [
-          "Estudio de Diseño"
-        ],
-        "en": [
-          "Design Studio"
-        ]
-      },
       "label": {
         "name": "ZOom",
         "src": "img/logos/zoom-logo.svg",
@@ -1577,6 +1220,40 @@
         },
         "en": {
           "industry": "Design Studio",
+          "workType": "Branding"
+        }
+      }
+    },
+    {
+      "order": 37,
+      "size": "tile-xl",
+      "span": 4,
+      "src": "img/logos/juliana-oppici-2-logo.svg",
+      "alt": "Juliana Oppici",
+      "logoSize": 300,
+      "invertLogo": false,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "",
+      "bgPosition": "center",
+      "bgVideo": "",
+      "workType": "Branding",
+      "year": "2026",
+      "project": "",
+      "projectLink": "",
+      "label": {
+        "name": "Juliana Oppici",
+        "src": "img/logos/juliana-oppici-2-logo.svg",
+        "invertLogo": false,
+        "logoSize": 80,
+        "es": {
+          "industry": "Medicina Estética",
+          "workType": "Branding"
+        },
+        "en": {
+          "industry": "Aesthetic Medicine",
           "workType": "Branding"
         }
       }
