@@ -30,8 +30,8 @@
     scheduleUpdate();
   });
 
-  const SELECTORS = 'a, button, .tile:not(.tile-text), .tile-xl:not(.tile-text), [class*="cursor-pointer"]';
-  const TILE_SELECTORS = '.tile:not(.tile-text), .tile-xl:not(.tile-text)';
+  const SELECTORS = 'a, button, [class*="cursor-pointer"]';
+  const TILE_SELECTORS = '.cursor-pointer.tile:not(.tile-text), .cursor-pointer.tile-xl:not(.tile-text)';
 
   document.addEventListener('mouseover', e => {
     if (e.target.closest(SELECTORS)) {

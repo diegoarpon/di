@@ -33,7 +33,6 @@ function buildBrandCreationItems(logos) {
                     innerClass: t.multi ? "brand-grid-logo-wrap multi-logo" : "brand-grid-logo-wrap",
                     logos: buildLogoArray(t),
                     name: t.alt,
-                    tag: JSON.stringify(t.tag || []),
                     bgImage: t.bgImage || "",
                     ...(t.bgVideo && { bgVideo: t.bgVideo }),
                     ...(t.label && { label: t.label }),
@@ -53,11 +52,10 @@ function buildBrandCreationItems(logos) {
             guides: ["top", "left"],
             logos: buildLogoArray(entry),
             name: entry.alt,
-            tag: JSON.stringify(entry.tag || []),
             pixelColor: entry.pixelColor || entry.gallery?.find(g => g.type === "color")?.bg,
             ...Object.fromEntries(
-                ['label','bgColor','bgImage','bgVideo','project','projectLink','showLabel','title',
-                 'panelImage','panelImageSize','workType','year','hoverColor']
+                ['label','bgColor','bgImage','bgVideo','bgPosition','project','projectLink','showLabel','title',
+                 'panelImage','panelImageSize','workType','year','hoverColor','overlay','overlayOpacity']
                 .filter(k => entry[k] != null)
                 .map(k => [k, entry[k]])
             )

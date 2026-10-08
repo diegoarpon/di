@@ -231,11 +231,12 @@ function addCol4Panels() {
         text.appendChild(img);
       }
       if (tile.dataset.projectLink) {
-        const arrow = document.createElement('a');
-        arrow.className = 'brand-hover-project-arrow';
-        arrow.href = tile.dataset.projectLink;
-        arrow.textContent = '↗';
-        text.appendChild(arrow);
+        const more = document.createElement('a');
+        more.className = 'brand-hover-project-arrow';
+        more.href = tile.dataset.projectLink;
+        more.textContent = currentLang === 'es' ? 'más' : 'more';
+        more.style.cssText = 'font-size: var(--fs-meta-label); text-transform: uppercase; letter-spacing: .08em; color: var(--main-color); font-weight: 500;';
+        text.appendChild(more);
       }
       tile.appendChild(text);
     });
@@ -469,9 +470,13 @@ function createBrandTile(tileConfig) {
     tile.appendChild(video);
     _videoObserver.observe(video);
   }
+  if (tileConfig.overlay) {
+    tile.classList.add('tile-overlay');
+    const op = parseFloat(tileConfig.overlayOpacity);
+    if (!isNaN(op)) tile.style.setProperty('--tile-overlay-opacity', op / 100);
+  }
   if (tileConfig.label) tile.dataset.label = JSON.stringify(tileConfig.label);
   if (tileConfig.name) tile.dataset.name = tileConfig.name;
-  if (tileConfig.tag) tile.dataset.tag = tileConfig.tag;
   if (tileConfig.labelSize) tile.dataset.labelSize = tileConfig.labelSize;
   if (tileConfig.panelImage) tile.dataset.panelImage = tileConfig.panelImage;
   if (tileConfig.panelImageSize) tile.dataset.panelImageSize = tileConfig.panelImageSize;

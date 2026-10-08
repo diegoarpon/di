@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" id="html-root">
 
 <head>
     <script defer src="/_vercel/insights/script.js"></script>
@@ -40,7 +40,8 @@
     <meta name="theme-color" content="#FF7518" />
 
     <script>if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) document.documentElement.classList.add('safari-browser');
-        (function () { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); })();</script>
+        (function () { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); var l = localStorage.getItem('language'); if (l) document.documentElement.lang = l; })();</script>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="preload" href="fonts/WOFF2/FG_FuturistTRIAL-Light.woff2" as="font" type="font/woff2" crossorigin
         fetchpriority="high" />
     <link rel="preload" href="fonts/WOFF2/FG_FuturistTRIAL-Regular.woff2" as="font" type="font/woff2" crossorigin />
@@ -151,17 +152,17 @@
                         <div class="d-flex flex-column gap-2" role="tablist" aria-label="Secciones">
                             <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button active"
                                 onclick="showContent('brand-creation')" data-tab="brand-creation"
-                                data-i18n="brandCreation" role="tab" aria-selected="true" aria-controls="brand-creation">
+                                data-i18n="brandCreation" role="tab" id="tab-btn-brand-creation" aria-selected="true" aria-controls="brand-creation">
                                 brand creation
                             </button>
                             <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button"
                                 onclick="showContent('brand-development')" data-tab="brand-development"
-                                data-i18n="brandDevelopment" role="tab" aria-selected="false" aria-controls="brand-development">
+                                data-i18n="brandDevelopment" role="tab" id="tab-btn-brand-development" aria-selected="false" aria-controls="brand-development">
                                 brand development
                             </button>
                             <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button"
                                 onclick="showContent('product-design')" data-tab="product-design"
-                                data-i18n="productDesign" role="tab" aria-selected="false" aria-controls="product-design">
+                                data-i18n="productDesign" role="tab" id="tab-btn-product-design" aria-selected="false" aria-controls="product-design">
                                 product design
                             </button>
                         </div>
@@ -220,7 +221,7 @@
                 <!-- Tab Content -->
 
                 <!-- ========== BRAND CREATION TAB CONTENT STARTS HERE ========== -->
-                <div id="brand-creation" class="tab-content" role="tabpanel" tabindex="0">
+                <div id="brand-creation" class="tab-content" role="tabpanel" tabindex="0" aria-labelledby="tab-btn-brand-creation">
                     <div class="tab-intro">
                         <h1 id="intro-text" class="tab-heading fw-light" data-i18n="intro">Hola, soy Diego (D) —
                             diseñador gráfico especializado en branding, web y producto.</h1>
@@ -229,7 +230,7 @@
                 </div>
 
                 <!-- ========== BRAND DEVELOPMENT TAB CONTENT STARTS HERE ========== -->
-                <div id="brand-development" class="tab-content d-none" role="tabpanel" tabindex="0">
+                <div id="brand-development" class="tab-content d-none" role="tabpanel" tabindex="0" aria-labelledby="tab-btn-brand-development">
                     <div class="tab-intro">
                         <h1 class="tab-heading fw-light" data-i18n="brandDevelopmentIntro">
                             Comprehensive brand development projects that establish strong
@@ -241,7 +242,7 @@
                 </div>
 
                 <!-- ========== PRODUCT DESIGN TAB CONTENT STARTS HERE ========== -->
-                <div id="product-design" class="tab-content d-none" role="tabpanel" tabindex="0">
+                <div id="product-design" class="tab-content d-none" role="tabpanel" tabindex="0" aria-labelledby="tab-btn-product-design">
                     <div class="tab-intro">
                         <h1 class="tab-heading fw-light" data-i18n="productDesignIntro">
                             User-centered digital product design focused on creating

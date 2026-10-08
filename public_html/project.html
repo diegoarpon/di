@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 
 <head>
   <script defer src="/_vercel/insights/script.js"></script>
@@ -69,7 +69,7 @@
   </style>
   <link href="css/styles.css" rel="stylesheet" />
   <script>if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) document.documentElement.classList.add('safari-browser');
-    (function () { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); })();</script>
+    (function () { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); var l = localStorage.getItem('language'); if (l) document.documentElement.lang = l; })();</script>
   <script src="js/translations.js" defer></script>
 </head>
 
@@ -293,8 +293,7 @@
           gallery.appendChild(vGuide);
           const iframe = document.createElement("iframe");
           iframe.src = "design-kit/index.html";
-          iframe.style.cssText = "width:100%;border:none;display:block;min-height:100vh;";
-          iframe.scrolling = "no";
+          iframe.style.cssText = "width:100%;border:none;display:block;min-height:100vh;overflow:hidden;";
           iframe.onload = () => {
             try {
               iframe.style.height = iframe.contentDocument.body.scrollHeight + "px";
