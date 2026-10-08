@@ -1,0 +1,282 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Brand Development",
+  "type": "object",
+  "required": [
+    "brandDevelopment"
+  ],
+  "properties": {
+    "brandDevelopment": {
+      "type": "array",
+      "description": "Lista de proyectos del grid de brand development",
+      "items": {
+        "$ref": "#/definitions/brandDevItem"
+      }
+    }
+  },
+  "definitions": {
+    "i18nText": {
+      "type": "object",
+      "required": [
+        "es",
+        "en"
+      ],
+      "properties": {
+        "es": {
+          "type": "string",
+          "description": "Versión en español"
+        },
+        "en": {
+          "type": "string",
+          "description": "Versión en inglés"
+        }
+      }
+    },
+    "galleryItem": {
+      "type": "object",
+      "required": [
+        "cols"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "text"
+          ],
+          "description": "Celda de texto con fondo de color. Omitir para celda de imagen"
+        },
+        "src": {
+          "type": "string",
+          "description": "Path a imagen o video. Ej: 'img/visuals/proyecto/imagen.webp' o 'video.mp4'"
+        },
+        "darkSrc": {
+          "type": "string",
+          "description": "Versión alternativa de la imagen para dark mode"
+        },
+        "cols": {
+          "type": "integer",
+          "enum": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "description": "Ancho en el grid de galería: 1=25%, 2=50%, 3=33%, 4=100% (full width)"
+        },
+        "loop": {
+          "type": "boolean",
+          "description": "Solo para videos (.mp4): true = reproducir en loop continuo"
+        },
+        "darkBg": {
+          "type": "boolean",
+          "description": "true = fondo oscuro para la celda (útil para SVGs con fondo transparente)"
+        },
+        "accentBg": {
+          "type": "boolean",
+          "description": "true = fondo con color de acento (--main-color) para la celda"
+        },
+        "caption": {
+          "$ref": "#/definitions/i18nText",
+          "description": "Pie de foto bilingüe, mostrado debajo de la imagen"
+        },
+        "text": {
+          "$ref": "#/definitions/i18nText",
+          "description": "Contenido HTML de la celda de texto (solo cuando type = 'text'). Permite <strong>, <a>, <br>, <img>"
+        },
+        "textSize": {
+          "type": "string",
+          "description": "Tamaño de fuente del texto. Ej: '1.25rem'"
+        },
+        "bg": {
+          "type": "string",
+          "description": "Color de fondo CSS para celdas de texto. Ej: '#1a1a2e' o 'var(--main-color)'"
+        },
+        "logo": {
+          "type": "string",
+          "description": "Path a logo que aparece dentro de la celda de texto"
+        },
+        "logoSize": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Ancho máximo del logo en la celda de texto en px"
+        }
+      }
+    },
+    "brandDevItem": {
+      "type": "object",
+      "required": [
+        "order",
+        "src",
+        "alt",
+        "size",
+        "span",
+        "project",
+        "title",
+        "label"
+      ],
+      "properties": {
+        "order": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Orden de aparición en el grid (1 = primero)"
+        },
+        "src": {
+          "type": "string",
+          "description": "Path al logo del tile. Ej: 'img/logos/nombre-logo.svg'"
+        },
+        "alt": {
+          "type": "string",
+          "description": "Texto alternativo del logo para accesibilidad"
+        },
+        "size": {
+          "type": "string",
+          "enum": [
+            "tile",
+            "tile-xl"
+          ],
+          "description": "Altura del tile: tile = normal, tile-xl = alto"
+        },
+        "span": {
+          "type": "integer",
+          "enum": [
+            4,
+            6,
+            8
+          ],
+          "description": "Ancho en columnas del grid de 12: 4 = mitad (50%), 6 = dos tercios (66%), 8 = completo (100%)"
+        },
+        "logoSize": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Ancho máximo del logo en px"
+        },
+        "invertLogo": {
+          "type": "boolean",
+          "description": "true = aplica filter: brightness(0) al logo. En dark mode se invierte automáticamente a blanco"
+        },
+        "bgColor": {
+          "type": "string",
+          "description": "Color de fondo CSS del tile. Ej: '#1a1a2e'"
+        },
+        "bgImage": {
+          "type": "string",
+          "description": "Path a imagen de fondo del tile. Ej: 'img/backgrounds/nombre-dev.webp'",
+          "enum": [
+            "",
+            "img/backgrounds/ambrosia.webp",
+            "img/backgrounds/banegas.webp",
+            "img/backgrounds/eg-dev.webp",
+            "img/backgrounds/eg.webp",
+            "img/backgrounds/farolatino.webp",
+            "img/backgrounds/flittz.webp",
+            "img/backgrounds/insolito-dev.webp",
+            "img/backgrounds/kamea.webp",
+            "img/backgrounds/lapanaderi-dev.webp",
+            "img/backgrounds/lapanaderi.webp",
+            "img/backgrounds/lucia.webp",
+            "img/backgrounds/lumaria.webp",
+            "img/backgrounds/meta-dev.webp",
+            "img/backgrounds/molde.webp",
+            "img/backgrounds/nestseekers-dev.webp",
+            "img/backgrounds/pontitosi.webp",
+            "img/backgrounds/upmidface.webp",
+            "img/backgrounds/virtualmind.webp",
+            "img/new_visuals/hit.png",
+            "img/new_visuals/iro-iro.png",
+            "img/new_visuals/lafleur.png",
+            "img/new_visuals/lapanaderi.png",
+            "img/new_visuals/nestseekers.png",
+            "img/new_visuals/si-salud-integral.png",
+            "img/new_visuals/zlatar-nario.png"
+          ]
+        },
+        "bgVideo": {
+          "type": "string",
+          "description": "Path a video de fondo (.mp4). Se reproduce en loop, muted, lazy",
+          "enum": [
+            "",
+            "img/backgrounds/meta.mp4",
+            "img/backgrounds/zoom.mp4"
+          ]
+        },
+        "hoverColor": {
+          "type": "string",
+          "description": "Color del efecto hover pixel. Ej: 'var(--main-color)'"
+        },
+        "project": {
+          "type": "string",
+          "description": "ID del proyecto. Activa navegación a project.html?p=ID. Debe coincidir con el ID en brand-creation.json"
+        },
+        "projectName": {
+          "type": "string",
+          "description": "Nombre completo del proyecto, mostrado en el header de project.html"
+        },
+        "title": {
+          "$ref": "#/definitions/i18nText",
+          "description": "Subtítulo del tile mostrado debajo del logo. Ej: 'branding 360', 'dirección creativa'"
+        },
+        "label": {
+          "type": "object",
+          "description": "Textos del overlay interno del tile (nombre e industria)",
+          "required": [
+            "es",
+            "en"
+          ],
+          "properties": {
+            "es": {
+              "type": "object",
+              "description": "Textos en español",
+              "required": [
+                "name",
+                "industry"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Nombre del cliente"
+                },
+                "industry": {
+                  "type": "string",
+                  "description": "Descripción corta del cliente o proyecto"
+                }
+              }
+            },
+            "en": {
+              "type": "object",
+              "description": "Textos en inglés",
+              "required": [
+                "name",
+                "industry"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Client name"
+                },
+                "industry": {
+                  "type": "string",
+                  "description": "Short client or project description"
+                }
+              }
+            }
+          }
+        },
+        "description": {
+          "$ref": "#/definitions/i18nText",
+          "description": "Descripción larga del proyecto, mostrada en el header de project.html. Permite HTML básico (<strong>, <br>)"
+        },
+        "hideProjectMeta": {
+          "type": "boolean",
+          "description": "true = oculta el bloque de metadatos (año, tipo) en project.html"
+        },
+        "gallery": {
+          "type": "array",
+          "description": "Celdas de la galería del proyecto en project.html. Se renderizan en un grid de 12 columnas",
+          "items": {
+            "$ref": "#/definitions/galleryItem"
+          }
+        }
+      }
+    }
+  }
+}

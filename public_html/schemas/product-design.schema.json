@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Product Design",
+  "type": "object",
+  "required": ["productDesign"],
+  "properties": {
+    "productDesign": {
+      "type": "array",
+      "description": "Lista de proyectos del grid de product design",
+      "items": { "$ref": "#/definitions/pdItem" }
+    }
+  },
+  "definitions": {
+    "i18nText": {
+      "type": "object",
+      "required": ["es", "en"],
+      "properties": {
+        "es": { "type": "string", "description": "Versión en español" },
+        "en": { "type": "string", "description": "Versión en inglés" }
+      }
+    },
+    "pdItem": {
+      "type": "object",
+      "required": ["order", "src", "span", "subtitle", "year", "URLFigma"],
+      "properties": {
+        "order":             { "type": "integer", "minimum": 1, "description": "Orden de aparición en el grid (1 = primero)" },
+        "src":               { "type": "string", "description": "Path al logo principal del proyecto. Ej: 'img/visuals/logos/nombre-logo.svg'" },
+        "span":              { "type": "integer", "enum": [4, 6, 8], "description": "Ancho en columnas del grid de 12: 4 = mitad (50%), 6 = dos tercios (66%), 8 = completo (100%)" },
+        "logoSize":          { "type": "number", "minimum": 0, "description": "Ancho máximo del logo en px" },
+        "invertLogo":        { "type": "boolean", "description": "true = aplica filter: brightness(0) al logo. En dark mode se invierte automáticamente a blanco" },
+        "hoverColor":        { "type": "string", "description": "Color del efecto hover pixel. Usar variables CSS del proyecto. Ej: 'var(--mint)', 'var(--teal)', 'var(--gold-yellow)', 'var(--bubblegum)'" },
+        "title":             { "$ref": "#/definitions/i18nText", "description": "Nombre del proyecto, mostrado en el tile. Si se omite, se usa el nombre del logo" },
+        "subtitle":          { "$ref": "#/definitions/i18nText", "description": "Descripción corta del proyecto, mostrada debajo del título en el tile" },
+        "year":              { "type": "string", "pattern": "^[0-9]{4}$", "description": "Año del proyecto. Ej: '2024'" },
+        "URLFigma":          { "type": "string", "format": "uri", "description": "URL completa al prototipo en Figma. Se abre en nueva pestaña al hacer click en el tile" },
+        "secondaryLogo":     { "type": "string", "description": "Path a un segundo logo (ej: logo del cliente). Ej: 'img/logos/nombre-logo.svg'" },
+        "secondaryLogoSize": { "type": "number", "minimum": 0, "description": "Ancho máximo del segundo logo en px" }
+      }
+    }
+  }
+}

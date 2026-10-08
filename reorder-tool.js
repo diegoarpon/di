@@ -132,6 +132,15 @@ async function walkDir(handle, path) {
   }
 }
 
+async function buildImgCatalog(root) {
+  imgCatalog = { backgrounds: [], logos: [], visuals: [], videos: [] };
+  try {
+    const imgDir = await root.getDirectoryHandle('img');
+    await walkDir(imgDir, 'img');
+  } catch(e) { console.warn('No se encontró img/', e); }
+  Object.keys(imgCatalog).forEach(k => imgCatalog[k].sort((a, b) => a.split('/').pop().localeCompare(b.split('/').pop())));
+}
+
 // ── Restore on load ───────────────────────────────────────────────────────────
 
 window.addEventListener('load', async () => {
@@ -187,6 +196,13 @@ async function saveAll() {
 function markDirty() {
   state[activeTab].dirty = true;
   updateSaveBtn();
+  scheduleAutoSave();
+}
+
+let autoSaveTimer = null;
+function scheduleAutoSave() {
+  clearTimeout(autoSaveTimer);
+  autoSaveTimer = setTimeout(saveAll, 1000);
 }
 
 function updateSaveBtn() {
@@ -240,6 +256,8 @@ function makeCard(item, idx, tab) {
   const logoSrc = item.src || '';
   if (bgSrc && !bgSrc.endsWith('.mp4')) {
     bg.style.backgroundImage = 'url(public_html/' + bgSrc + ')';
+  } else if (!bgSrc && item.bgColor) {
+    bg.style.backgroundColor = item.bgColor;
   }
   card.appendChild(bg);
 
@@ -339,14 +357,18 @@ function onDragEnd() {
 
 document.getElementById('panel-close').addEventListener('click', closePanel);
 
+document.getElementById('grid-area').addEventListener('click', e => {
+  if (document.getElementById('editor-panel').classList.contains('open') && !e.target.closest('.card')) closePanel();
+});
+
 function closePanel() {
-  document.getElementById('editor-panel').classList.remove('open');
+  document.getElementById('panel-body').innerHTML = '';
+  document.getElementById('panel-title').textContent = 'Seleccioná un tile para editar';
   document.querySelectorAll('.card').forEach(c => c.classList.remove('selected'));
   selectedIdx = null;
 }
 
 function openPanel(item, idx, tab) {
-  const panel = document.getElementById('editor-panel');
   const title = document.getElementById('panel-title');
   const body = document.getElementById('panel-body');
   title.textContent = getItemName(item) || 'Tile ' + (idx + 1);
@@ -354,7 +376,6 @@ function openPanel(item, idx, tab) {
   if (tab === 'brand-creation') body.appendChild(buildBCForm(item, idx));
   else if (tab === 'brand-development') body.appendChild(buildBDForm(item, idx));
   else body.appendChild(buildPDForm(item, idx));
-  panel.classList.add('open');
 }
 
 function onChange(item, key, value) {
@@ -374,7 +395,18 @@ function updateCardFromItem(item) {
   const nameEl = card.querySelector('.card-name');
   if (nameEl) nameEl.textContent = getItemName(item);
   const bgEl = card.querySelector('.card-bg');
-  if (bgEl) bgEl.style.backgroundImage = item.bgImage ? 'url(public_html/' + item.bgImage + ')' : '';
+  if (bgEl) {
+    if (item.bgImage) {
+      bgEl.style.backgroundImage = 'url(public_html/' + item.bgImage + ')';
+      bgEl.style.backgroundColor = '';
+    } else if (item.bgColor) {
+      bgEl.style.backgroundImage = '';
+      bgEl.style.backgroundColor = item.bgColor;
+    } else {
+      bgEl.style.backgroundImage = '';
+      bgEl.style.backgroundColor = '';
+    }
+  }
   const logoWrap = card.querySelector('.card-logo-wrap');
   if (logoWrap) {
     if (item.src) {
@@ -680,8 +712,32 @@ function buildBCForm(item, idx) {
   ));
 
   frag.appendChild(group('Fondo',
+    textInput(item, 'bgColor', 'BG color', '#1a1a2e', 'Color de fondo cuando no hay bgImage. Acepta hex, rgb() o var(--variable).'),
     imgPicker(item, 'bgImage', 'Background image', bgImgs, false, 'Imagen de fondo del tile.'),
     imgPicker(item, 'bgVideo', 'Background video', imgCatalog.videos, false, 'Video en loop. Reemplaza bgImage si está definido.'),
+    toggle(item, 'overlay', 'Overlay negro', 'Aplica un overlay negro sobre el fondo (imagen, video o color).'),
+    (() => {
+      const inp = document.createElement('input');
+      inp.type = 'range';
+      inp.min = 0; inp.max = 100; inp.step = 1;
+      inp.value = item.overlayOpacity ?? 50;
+      inp.style.width = '100%';
+      const val = document.createElement('span');
+      val.textContent = inp.value + '%';
+      val.style.cssText = 'font-size:11px;color:var(--text-muted);margin-left:8px;';
+      inp.addEventListener('input', () => { val.textContent = inp.value + '%'; onChange(item, 'overlayOpacity', parseInt(inp.value)); });
+      const wrap = document.createElement('div');
+      wrap.className = 'field';
+      const lbl = document.createElement('label');
+      lbl.textContent = 'Overlay opacidad';
+      const row = document.createElement('div');
+      row.style.cssText = 'display:flex;align-items:center;';
+      row.appendChild(inp);
+      row.appendChild(val);
+      wrap.appendChild(lbl);
+      wrap.appendChild(row);
+      return wrap;
+    })(),
     textInput(item, 'bgPosition', 'BG position', 'center', 'Posición CSS del fondo. Ej: center, top, 50% 20%.'),
   ));
 
