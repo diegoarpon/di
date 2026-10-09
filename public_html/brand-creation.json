@@ -571,7 +571,7 @@
       "projectLink": "project.html?p=virtualmind",
       "label": {
         "name": "Virtualmind",
-        "src": "img/logos/virtualmind-white-logo.svg",
+        "src": "img/logos/virtualmind-black-logo.svg",
         "invertLogo": false,
         "logoSize": 80,
         "es": {
@@ -1119,7 +1119,7 @@
       "projectLink": "",
       "label": {
         "name": "Players Sports Grill",
-        "src": "img/logos/players-logo.svg",
+        "src": "img/logos/players-bw-logo.svg",
         "invertLogo": false,
         "logoSize": 80,
         "es": {
