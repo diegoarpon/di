@@ -1,0 +1,308 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Brand Creation",
+  "type": "object",
+  "required": [
+    "tiles"
+  ],
+  "properties": {
+    "tiles": {
+      "type": "array",
+      "description": "Lista de tiles del grid de brand creation",
+      "items": {
+        "$ref": "#/definitions/tile"
+      }
+    }
+  },
+  "definitions": {
+    "i18nText": {
+      "type": "object",
+      "required": [
+        "es",
+        "en"
+      ],
+      "properties": {
+        "es": {
+          "type": "string",
+          "description": "Versión en español"
+        },
+        "en": {
+          "type": "string",
+          "description": "Versión en inglés"
+        }
+      }
+    },
+    "tile": {
+      "type": "object",
+      "required": [
+        "order",
+        "size",
+        "span"
+      ],
+      "properties": {
+        "order": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Orden de aparición en el grid (1 = primero)"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "text"
+          ],
+          "description": "Tile de texto puro. Omitir para tile normal con logo/imagen"
+        },
+        "text": {
+          "$ref": "#/definitions/i18nText",
+          "description": "Contenido del tile de texto (solo cuando type = 'text')"
+        },
+        "textSize": {
+          "type": "string",
+          "description": "Tamaño de fuente del texto. Ej: '1.5rem'"
+        },
+        "size": {
+          "type": "string",
+          "enum": [
+            "tile",
+            "tile-xl"
+          ],
+          "description": "Altura del tile: tile = normal, tile-xl = alto"
+        },
+        "span": {
+          "type": "integer",
+          "enum": [
+            4,
+            6,
+            8
+          ],
+          "description": "Ancho en columnas del grid de 12: 4 = mitad (50%), 6 = dos tercios (66%), 8 = completo (100%)"
+        },
+        "src": {
+          "type": "string",
+          "description": "Path al logo principal. Ej: 'img/logos/nombre-logo.svg'"
+        },
+        "alt": {
+          "type": "string",
+          "description": "Texto alternativo del logo para accesibilidad"
+        },
+        "logoSize": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Ancho máximo del logo en px"
+        },
+        "invertLogo": {
+          "type": "boolean",
+          "description": "true = aplica filter: brightness(0) al logo (para logos negros). En dark mode se invierte automáticamente a blanco"
+        },
+        "darkSrc": {
+          "type": "string",
+          "description": "Path a versión alternativa del logo para dark mode. Ej: 'img/logos/nombre-dark-logo.svg'"
+        },
+        "noFilterDark": {
+          "type": "boolean",
+          "description": "true = evita la inversión automática del logo en dark mode (para logos ya en color)"
+        },
+        "multi": {
+          "type": "string",
+          "description": "Path a un segundo logo (para tiles con dos logos). Ej: 'img/logos/nombre-2-logo.svg'"
+        },
+        "multiLogoSize": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Ancho máximo del segundo logo en px"
+        },
+        "bgColor": {
+          "type": "string",
+          "description": "Color de fondo cuando no hay bgImage. Acepta hex (#1a1a2e), rgb(), rgba() o variable CSS (var(--blackest))"
+        },
+        "bgImage": {
+          "type": "string",
+          "description": "Path a imagen de fondo del tile. Ej: 'img/backgrounds/nombre.webp'",
+          "enum": [
+            "",
+            "img/backgrounds/ambrosia.webp",
+            "img/backgrounds/banegas.webp",
+            "img/backgrounds/eg-dev.webp",
+            "img/backgrounds/eg.webp",
+            "img/backgrounds/farolatino.webp",
+            "img/backgrounds/flittz.webp",
+            "img/backgrounds/insolito-dev.webp",
+            "img/backgrounds/kamea.webp",
+            "img/backgrounds/lapanaderi-dev.webp",
+            "img/backgrounds/lapanaderi.webp",
+            "img/backgrounds/lucia.webp",
+            "img/backgrounds/lumaria.webp",
+            "img/backgrounds/meta-dev.webp",
+            "img/backgrounds/molde.webp",
+            "img/backgrounds/nestseekers-dev.webp",
+            "img/backgrounds/pontitosi.webp",
+            "img/backgrounds/upmidface.webp",
+            "img/backgrounds/virtualmind.webp",
+            "img/new_visuals/hit.png",
+            "img/new_visuals/iro-iro.png",
+            "img/new_visuals/lafleur.png",
+            "img/new_visuals/lapanaderi.png",
+            "img/new_visuals/nestseekers.png",
+            "img/new_visuals/si-salud-integral.png",
+            "img/new_visuals/zlatar-nario.png"
+          ]
+        },
+        "bgPosition": {
+          "type": "string",
+          "enum": [
+            "center",
+            "top",
+            "bottom",
+            "left",
+            "right",
+            "top center",
+            "bottom center"
+          ],
+          "description": "Posición del background-image CSS"
+        },
+        "bgVideo": {
+          "type": "string",
+          "description": "Path a video de fondo (.mp4). Se reproduce en loop, muted, lazy. Ej: 'img/backgrounds/nombre.mp4'",
+          "enum": [
+            "",
+            "img/backgrounds/meta.mp4",
+            "img/backgrounds/zoom.mp4"
+          ]
+        },
+        "overlay": {
+          "type": "boolean",
+          "description": "true = aplica un overlay negro sobre el fondo del tile (imagen, video o color)"
+        },
+        "overlayOpacity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Opacidad del overlay en porcentaje (0-100). Default: 50"
+        },
+        "workType": {
+          "type": "string",
+          "enum": [
+            "Branding",
+            "Rebranding",
+            "Brand Refresh",
+            ""
+          ],
+          "description": "Tipo de trabajo realizado"
+        },
+        "year": {
+          "type": "string",
+          "pattern": "^[0-9]{4}$",
+          "description": "Año del proyecto. Ej: '2024'"
+        },
+        "project": {
+          "type": "string",
+          "description": "ID del proyecto. Activa el click y navega a project.html?p=ID. Debe coincidir con una entrada en brand-development.json"
+        },
+        "projectLink": {
+          "type": "string",
+          "description": "URL directa al proyecto. Muestra la flecha ↗ en el hover overlay. Ej: 'project.html?p=nombre'"
+        },
+        "pixelColor": {
+          "type": "string",
+          "description": "Color del pixel grid en hover. Sobreescribe el default por tema (--manteca en light, --blackest en dark). Ej: '#ff7518' o 'var(--main-color)'"
+        },
+        "hoverColor": {
+          "type": "string",
+          "description": "Color alternativo para el efecto hover. Ej: 'var(--main-color)'"
+        },
+        "tag": {
+          "type": "object",
+          "description": "Etiquetas de categoría del proyecto, mostradas en el hover overlay",
+          "properties": {
+            "es": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Etiquetas en español"
+            },
+            "en": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Etiquetas en inglés"
+            }
+          }
+        },
+        "label": {
+          "type": "object",
+          "description": "Datos del overlay de hover: nombre, logo, industria y tipo de trabajo",
+          "required": [
+            "name",
+            "src",
+            "es",
+            "en"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Nombre visible del cliente en el hover overlay"
+            },
+            "src": {
+              "type": "string",
+              "description": "Path al logo que aparece en el hover overlay"
+            },
+            "invertLogo": {
+              "type": "boolean",
+              "description": "true = invierte el logo del overlay en dark mode"
+            },
+            "logoSize": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Ancho máximo del logo en el overlay en px"
+            },
+            "es": {
+              "type": "object",
+              "description": "Textos del overlay en español",
+              "required": [
+                "industry",
+                "workType"
+              ],
+              "properties": {
+                "industry": {
+                  "type": "string",
+                  "description": "Descripción de la industria o el cliente"
+                },
+                "workType": {
+                  "type": "string",
+                  "description": "Tipo de trabajo realizado"
+                }
+              }
+            },
+            "en": {
+              "type": "object",
+              "description": "Textos del overlay en inglés",
+              "required": [
+                "industry",
+                "workType"
+              ],
+              "properties": {
+                "industry": {
+                  "type": "string",
+                  "description": "Industry or client description"
+                },
+                "workType": {
+                  "type": "string",
+                  "description": "Type of work performed"
+                }
+              }
+            }
+          }
+        },
+        "stack": {
+          "type": "array",
+          "description": "Tile apilado: array de dos tiles que se muestran en una sola columna, uno encima del otro",
+          "items": {
+            "$ref": "#/definitions/tile"
+          }
+        }
+      }
+    }
+  }
+}

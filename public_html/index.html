@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="en" id="html-root">
 
 <head>
     <script defer src="/_vercel/insights/script.js"></script>
@@ -17,14 +17,17 @@
     <meta property="og:title" content="estudio.d | Branding, Visual Identity & Web Design" />
     <meta property="og:description"
         content="Strategic branding and web design by Diego Fabbri Arpon. 20 years shaping brands and visual identities." />
-    <meta property="og:image" content="https://estudiod.site/img/square.webp" />
+    <meta property="og:image" content="https://estudiod.site/img/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
 
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://estudiod.site/" />
     <meta property="twitter:title" content="estudio.d | Branding, Visual Identity & Web Design" />
     <meta property="twitter:description"
         content="Strategic branding and web design by Diego Fabbri Arpon. 20 years shaping brands and visual identities." />
-    <meta property="twitter:image" content="https://estudiod.site/img/square.webp" />
+    <meta property="twitter:image" content="https://estudiod.site/img/og-image.png" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="img/square.svg" />
@@ -32,18 +35,19 @@
     <link rel="alternate" hreflang="es" href="https://estudiod.site/" />
     <link rel="alternate" hreflang="en" href="https://estudiod.site/" />
     <link rel="alternate" hreflang="x-default" href="https://estudiod.site/" />
-    <link rel="apple-touch-icon" sizes="180x180" href="img/square.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="img/square.svg" />
     <link rel="icon" type="image/png" sizes="16x16" href="img/square.svg" />
     <meta name="theme-color" content="#FF7518" />
 
     <script>if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) document.documentElement.classList.add('safari-browser');
-        (function () { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); })();</script>
+        (function () { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); var l = localStorage.getItem('language'); if (l) document.documentElement.lang = l; })();</script>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="preload" href="fonts/WOFF2/FG_FuturistTRIAL-Light.woff2" as="font" type="font/woff2" crossorigin
         fetchpriority="high" />
     <link rel="preload" href="fonts/WOFF2/FG_FuturistTRIAL-Regular.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="fonts/WOFF2/FG_FuturistTRIAL-Medium.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="img/logo-estudio-d.svg" as="image" />
+    <link rel="preload" href="img/logo-estudio-d-alt.svg" as="image" />
     <style>
         @font-face {
             font-family: "FG Futurist";
@@ -84,16 +88,31 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Diego Fabbri Arpon",
-      "alternateName": "estudio.d",
-      "url": "https://estudiod.site",
-      "email": "hola@estudiod.site",
-      "jobTitle": "Brand Designer",
-      "description": "Independent designer with 20 years of experience in branding, visual identity and strategic web design.",
-      "knowsAbout": ["Branding", "Visual Identity", "Web Design", "Product Design", "Typography", "Brand Strategy"],
-      "sameAs": [
-        "https://www.linkedin.com/in/diegofabbriarpon/"
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://estudiod.site/#diego",
+          "name": "Diego Fabbri Arpon",
+          "alternateName": "estudio.d",
+          "url": "https://estudiod.site",
+          "email": "hola@estudiod.site",
+          "jobTitle": "Brand Designer",
+          "description": "Independent designer with 20 years of experience in branding, visual identity and strategic web design.",
+          "knowsAbout": ["Branding", "Visual Identity", "Web Design", "Product Design", "Typography", "Brand Strategy"],
+          "sameAs": ["https://www.linkedin.com/in/diegofabbriarpon/"]
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://estudiod.site/#studio",
+          "name": "estudio.d",
+          "url": "https://estudiod.site",
+          "email": "hola@estudiod.site",
+          "founder": { "@id": "https://estudiod.site/#diego" },
+          "areaServed": "Worldwide",
+          "serviceType": ["Brand Creation", "Brand Development", "Visual Identity", "Web Design", "Product Design"],
+          "priceRange": "$$",
+          "sameAs": ["https://www.linkedin.com/in/diegofabbriarpon/"]
+        }
       ]
     }
     </script>
@@ -117,13 +136,13 @@
                 <div class="d-flex flex-column h-100 pt-5 pb-5">
                     <div class="position-relative logo cursor-pointer" onclick="showContent('brand-creation')"
                         role="button" tabindex="0" aria-label="Ir a Brand Creation"
-                        onkeydown="if(event.key==='Enter')showContent('brand-creation')">
-                        <div class="guide-h-double-100"></div>
+                        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showContent('brand-creation')}">
+                        <div class="guide-h-short"></div>
                         <div class="row">
                             <div class="col-auto position-relative">
-                                <img src="img/logo-estudio-d.svg" alt="estudio d." fetchpriority="high" loading="eager"
-                                    id="logo-sidebar" />
-                                <script>(function () { var i = document.getElementById('logo-sidebar'); if (i && localStorage.getItem('theme') === 'dark') i.src = 'img/logo-estudio-d-dark.svg'; })();</script>
+                                <img src="img/logo-estudio-d-alt.svg" alt="estudio d." fetchpriority="high"
+                                    loading="eager" id="logo-sidebar" />
+                                <script>(function () { var i = document.getElementById('logo-sidebar'); if (i && localStorage.getItem('theme') === 'dark') i.src = 'img/logo-estudio-d-dark-alt.svg'; })();</script>
                                 <div class="guide-v-short"></div>
                             </div>
                         </div>
@@ -131,20 +150,20 @@
 
                     <!-- Tabs -->
                     <div class="mt-4 mb-2">
-                        <div class="d-flex flex-column gap-2">
-                            <button class="btn btn-link text-start p-0 fw-bold sidebar-nav-btn nav-button active"
+                        <div class="d-flex flex-column gap-2" role="tablist" aria-label="Secciones">
+                            <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button active"
                                 onclick="showContent('brand-creation')" data-tab="brand-creation"
-                                data-i18n="brandCreation">
+                                data-i18n="brandCreation" role="tab" id="tab-btn-brand-creation" aria-selected="true" aria-controls="brand-creation">
                                 brand creation
                             </button>
-                            <button class="btn btn-link text-start p-0 fw-bold sidebar-nav-btn nav-button"
+                            <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button"
                                 onclick="showContent('brand-development')" data-tab="brand-development"
-                                data-i18n="brandDevelopment">
+                                data-i18n="brandDevelopment" role="tab" id="tab-btn-brand-development" aria-selected="false" aria-controls="brand-development">
                                 brand development
                             </button>
-                            <button class="btn btn-link text-start p-0 fw-bold sidebar-nav-btn nav-button"
+                            <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button"
                                 onclick="showContent('product-design')" data-tab="product-design"
-                                data-i18n="productDesign">
+                                data-i18n="productDesign" role="tab" id="tab-btn-product-design" aria-selected="false" aria-controls="product-design">
                                 product design
                             </button>
                         </div>
@@ -155,28 +174,25 @@
                         <!-- Contact Links -->
                         <div class="mb-3">
                             <div class="d-flex flex-column gap-2">
-                                <a href="cv_diego_fabbri_arpon_es.pdf" target="_blank" rel="noopener noreferrer"
-                                    class="option fw-bold contact-link" id="cv-link">cv</a>
-                                <a href="https://wa.me/+5491134604766?text=Hola%20D!%20Tengo%20una%20consulta"
-                                    target="_blank" rel="noopener noreferrer"
-                                    class="option fw-bold contact-link">whatsapp</a>
+                                <a href="cv_diego_fabbri_arpon_es.pdf" target="_blank" rel="noopener noreferrer" class="contact-link fw-normal" id="cv-link">cv</a>
+                                <a href="https://wa.me/+5491134604766?text=Hola%20D!%20Tengo%20una%20consulta" target="_blank" rel="noopener noreferrer" class="contact-link fw-normal">whatsapp</a>
                                 <a href="https://www.linkedin.com/in/diegofabbriarpon/" target="_blank"
-                                    rel="noopener noreferrer" class="option fw-bold contact-link">linkedin</a>
+                                    rel="noopener noreferrer" class="contact-link fw-normal">linkedin</a>
                             </div>
                         </div>
 
                         <!-- Language Selector -->
                         <div>
                             <div class="d-flex gap-3">
-                                <button class="option fw-bold lang-selector" onclick="switchLanguage('en')"
+                                <button class="lang-selector fw-normal" onclick="switchLanguage('en')"
                                     id="lang-en">en</button>
-                                <button class="option fw-bold lang-selector" onclick="switchLanguage('es')"
+                                <button class="lang-selector fw-normal" onclick="switchLanguage('es')"
                                     id="lang-es">es</button>
                                 <span class="lang-theme-divider"></span>
-                                <button class="option fw-bold theme-selector" onclick="switchTheme('light')"
+                                <button class="theme-selector fw-normal" onclick="switchTheme('light')"
                                     id="theme-light"><img src="img/circle-regular-full.svg" alt="light"
                                         class="theme-icon"></button>
-                                <button class="option fw-bold theme-selector" onclick="switchTheme('dark')"
+                                <button class="theme-selector fw-normal" onclick="switchTheme('dark')"
                                     id="theme-dark"><img src="img/circle-solid-full.svg" alt="dark"
                                         class="theme-icon"></button>
                             </div>
@@ -190,13 +206,13 @@
                 <div class="d-block mobile-logo pt-5 px-0">
                     <div class="position-relative logo cursor-pointer" onclick="showContent('brand-creation')"
                         role="button" tabindex="0" aria-label="Ir a Brand Creation"
-                        onkeydown="if(event.key==='Enter')showContent('brand-creation')">
+                        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showContent('brand-creation')}">
                         <div class="guide-h-double-100"></div>
                         <div class="row">
                             <div class="col-auto position-relative">
-                                <img src="img/logo-estudio-d.svg" alt="estudio d." fetchpriority="high" loading="eager"
-                                    id="logo-mobile" />
-                                <script>(function () { var i = document.getElementById('logo-mobile'); if (i && localStorage.getItem('theme') === 'dark') i.src = 'img/logo-estudio-d-dark.svg'; })();</script>
+                                <img src="img/logo-estudio-d-alt.svg" alt="estudio d." fetchpriority="high"
+                                    loading="eager" id="logo-mobile" />
+                                <script>(function () { var i = document.getElementById('logo-mobile'); if (i && localStorage.getItem('theme') === 'dark') i.src = 'img/logo-estudio-d-dark-alt.svg'; })();</script>
                                 <div class="guide-v-short"></div>
                             </div>
                         </div>
@@ -206,7 +222,7 @@
                 <!-- Tab Content -->
 
                 <!-- ========== BRAND CREATION TAB CONTENT STARTS HERE ========== -->
-                <div id="brand-creation" class="tab-content d-none">
+                <div id="brand-creation" class="tab-content" role="tabpanel" tabindex="0" aria-labelledby="tab-btn-brand-creation">
                     <div class="tab-intro">
                         <h1 id="intro-text" class="tab-heading fw-light" data-i18n="intro">Hola, soy Diego (D) —
                             diseñador gráfico especializado en branding, web y producto.</h1>
@@ -215,7 +231,7 @@
                 </div>
 
                 <!-- ========== BRAND DEVELOPMENT TAB CONTENT STARTS HERE ========== -->
-                <div id="brand-development" class="tab-content d-none">
+                <div id="brand-development" class="tab-content d-none" role="tabpanel" tabindex="0" aria-labelledby="tab-btn-brand-development">
                     <div class="tab-intro">
                         <h1 class="tab-heading fw-light" data-i18n="brandDevelopmentIntro">
                             Comprehensive brand development projects that establish strong
@@ -227,7 +243,7 @@
                 </div>
 
                 <!-- ========== PRODUCT DESIGN TAB CONTENT STARTS HERE ========== -->
-                <div id="product-design" class="tab-content d-none">
+                <div id="product-design" class="tab-content d-none" role="tabpanel" tabindex="0" aria-labelledby="tab-btn-product-design">
                     <div class="tab-intro">
                         <h1 class="tab-heading fw-light" data-i18n="productDesignIntro">
                             User-centered digital product design focused on creating

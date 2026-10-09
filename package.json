@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "schema": "node scripts/generate-schema-enums.js"
+  },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",
     "sharp": "^0.34.5"

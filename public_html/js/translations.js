@@ -1,6 +1,6 @@
 let currentLang = localStorage.getItem("language") || "en";
 
-const APP_VERSION = "7.1";
+const APP_VERSION = "7.3";
 
 const _MONTHS_ES = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
 const _MONTHS_EN = ["january","february","march","april","may","june","july","august","september","october","november","december"];
@@ -16,8 +16,8 @@ function updateVersionLabel() {
 const translations = {
   en: {
     // Navigation
-    brandCreation: "Brand Creation",
-    brandDevelopment: "Brand Development",
+    brandCreation: "Brand Collection",
+    brandDevelopment: "Featured Projects",
     productDesign: "Product Design",
 
     // Contact
@@ -30,20 +30,20 @@ const translations = {
 
     // Main intro
     intro:
-      "Hi, I’m Diego (D) — a graphic designer specializing in <strong>branding, web, and product design</strong>. I solve communication problems by creating clear, scalable, and consistent visual systems. <br> <strong>Designed for humans, by a human.</strong> <span class='d-block mt-4'> Available for freelance work <span class='intro-arrow'>→</span> <a href='mailto:hola@estudiod.site' class='fw-bold link' target='_blank' rel=''>hola@estudiod.site</a></span>",
+      "Hi, I’m Diego (D) — a graphic designer specializing in <strong>branding, web, and product design</strong>. I solve communication problems by creating clear, scalable, and consistent visual systems. <br> <strong>Designed for humans, by a human.</strong> <span class='d-block mt-4'> Available for freelance work <span class='intro-arrow'>→</span> <a href='mailto:hola@estudiod.site' class='fw-bold link'>hola@estudiod.site</a></span>",
 
     // Tab intros
     brandDevelopmentIntro:
       "Brand development across contexts: <strong>identity, communication, and creative direction</strong> applied to <strong>products, spaces, and experiences</strong>. <br> Systems designed to adapt and perform within their context.",
     productDesignIntro:
-      "    Designing products focused on shaping complex ideas into <strong>intuitive and refined digital experiences</strong>. <span class='d-block mt-4 fw-normal' style='font-size:var(--fs-tile-text)'>Currently in development</span>",
+      "Designing products focused on shaping complex ideas into <strong>intuitive and refined digital experiences</strong>.",
 
     back: "back",
   },
   es: {
     // Navigation
-    brandCreation: "Creación de Marca",
-    brandDevelopment: "Desarrollo de Marca",
+    brandCreation: "Colección de Marcas",
+    brandDevelopment: "Proyectos Destacados",
     productDesign: "Diseño de Producto",
 
     // Contact
@@ -56,12 +56,12 @@ const translations = {
 
     // Main intro
     intro:
-      "Hola, soy Diego (D) — diseñador gráfico especializado en <strong>branding, web y producto</strong>. <br> Resuelvo problemas de comunicación creando sistemas visuales claros, escalables y consistentes. <strong>Diseño humano, para humanos.</strong> <span class='d-block mt-4'> Disponible para trabajo freelance <span class='intro-arrow'>→</span> <a href='mailto:hola@estudiod.site' class='fw-bold link' target='_blank' rel=''>hola@estudiod.site</a></span>",
+      "Hola, soy Diego (D) — diseñador gráfico especializado en <strong>branding, web y producto</strong>. <br> Resuelvo problemas de comunicación creando sistemas visuales claros, escalables y consistentes. <strong>Diseño humano, para humanos.</strong> <span class='d-block mt-4'> Disponible para trabajo freelance <span class='intro-arrow'>→</span> <a href='mailto:hola@estudiod.site' class='fw-bold link'>hola@estudiod.site</a></span>",
     // Tab intros
     brandDevelopmentIntro:
       "Proyectos de marca en acción: <strong>identidad, comunicación y dirección creativa</strong> aplicadas a <strong>productos, espacios y experiencias</strong>. <br> Sistemas que se adaptan y funcionan de acuerdo al contexto.",
     productDesignIntro:
-      "Diseño de producto enfocado en transformar ideas complejas en <strong>experiencias digitales intuitivas y funcionales</strong>. <span class='d-block mt-4 fw-normal' style='font-size:var(--fs-tile-text)'>Actualmente en desarrollo.</span>",
+      "Diseño de producto enfocado en transformar ideas complejas en <strong>experiencias digitales intuitivas y funcionales</strong>.",
 
     back: "volver",
   },
@@ -140,5 +140,7 @@ function updateFooter(category, keepCurrent = false) {
   }
   const data = pool[_lastFooterIndex[category]][currentLang] || pool[_lastFooterIndex[category]].es;
   q.textContent = `\u201c${data.quote}\u201d`;
-  a.innerHTML = `\u2014 ${data.author}`;
+  const _aDoc = new DOMParser().parseFromString(`\u2014 ${data.author}`, 'text/html');
+  a.innerHTML = '';
+  [..._aDoc.body.childNodes].forEach(n => a.appendChild(document.importNode(n, true)));
 }

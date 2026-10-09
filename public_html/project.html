@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 
 <head>
   <script defer src="/_vercel/insights/script.js"></script>
@@ -22,7 +22,7 @@
   <meta property="twitter:description" content="" id="twitter-description" />
   <meta property="twitter:image" content="https://estudiod.site/img/square.webp" id="twitter-image" />
   <link rel="icon" type="image/svg+xml" href="img/square.svg" />
-  <link rel="canonical" href="" id="canonical" />
+  <link rel="canonical" href="https://estudiod.site/" id="canonical" />
   <link rel="alternate" hreflang="es" href="https://estudiod.site/" />
   <link rel="alternate" hreflang="en" href="https://estudiod.site/" />
   <link rel="alternate" hreflang="x-default" href="https://estudiod.site/" />
@@ -30,7 +30,7 @@
     fetchpriority="high" />
   <link rel="preload" href="fonts/WOFF2/FG_FuturistTRIAL-Regular.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="fonts/WOFF2/FG_FuturistTRIAL-Medium.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="img/logo-estudio-d.svg" as="image" />
+  <link rel="preload" href="img/logo-estudio-d-alt.svg" as="image" />
   <meta name="theme-color" content="#FF7518" />
   <style>
     @font-face {
@@ -69,7 +69,7 @@
   </style>
   <link href="css/styles.css" rel="stylesheet" />
   <script>if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) document.documentElement.classList.add('safari-browser');
-    (function () { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); })();</script>
+    (function () { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); var l = localStorage.getItem('language'); if (l) document.documentElement.lang = l; })();</script>
   <script src="js/translations.js" defer></script>
 </head>
 
@@ -91,12 +91,12 @@
         <div class="d-flex flex-column h-100 pt-5 pb-5">
           <div class="position-relative logo cursor-pointer" onclick="fadeNavigate('index.html')" role="button"
             tabindex="0" aria-label="Volver al inicio" onkeydown="if(event.key==='Enter')fadeNavigate('index.html')">
-            <div class="guide-h-double-100"></div>
+            <div class="guide-h-short"></div>
             <div class="row">
               <div class="col-auto position-relative">
-                <img src="img/logo-estudio-d.svg" alt="estudio d." fetchpriority="high" loading="eager"
+                <img src="img/logo-estudio-d-alt.svg" alt="estudio d." fetchpriority="high" loading="eager"
                   id="logo-sidebar" />
-                <script>(function () { var i = document.getElementById('logo-sidebar'); if (i && localStorage.getItem('theme') === 'dark') i.src = 'img/logo-estudio-d-dark.svg'; })();</script>
+                <script>(function () { var i = document.getElementById('logo-sidebar'); if (i && localStorage.getItem('theme') === 'dark') i.src = 'img/logo-estudio-d-dark-alt.svg'; })();</script>
                 <div class="guide-v-short"></div>
               </div>
             </div>
@@ -104,12 +104,12 @@
 
           <div class="mt-4 mb-2">
             <div class="d-flex flex-column gap-2">
-              <button class="btn btn-link text-start p-0 fw-bold sidebar-nav-btn nav-button"
+              <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button"
                 onclick="fadeNavigate('index.html')" data-i18n="brandCreation">brand creation</button>
-              <button class="btn btn-link text-start p-0 fw-bold sidebar-nav-btn nav-button active"
+              <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button active"
                 onclick="fadeNavigate('index.html?tab=brand-development')" data-i18n="brandDevelopment">brand
                 development</button>
-              <button class="btn btn-link text-start p-0 fw-bold sidebar-nav-btn nav-button"
+              <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button"
                 onclick="fadeNavigate('index.html?tab=product-design')" data-i18n="productDesign">product
                 design</button>
             </div>
@@ -119,20 +119,21 @@
             <div class="mb-3">
               <div class="d-flex flex-column gap-2">
                 <a href="cv_diego_fabbri_arpon_es.pdf" target="_blank" rel="noopener noreferrer"
-                  class="option fw-bold contact-link" id="cv-link">cv</a>
-                <a href="https://wa.me/+5491134604766?text=Hola%20D!%20Tengo%20una%20consulta" target="_blank"
-                  rel="noopener noreferrer" class="option fw-bold contact-link">whatsapp</a>
+                  class="contact-link fw-normal" id="cv-link">cv</a>
+                <a href="https://wa.me/+5491134604766?text=Hola%20D!%20Tengo%20una%20consulta" target="_blank" rel="noopener noreferrer" class="contact-link fw-normal">whatsapp</a>
                 <a href="https://www.linkedin.com/in/diegofabbriarpon/" target="_blank" rel="noopener noreferrer"
-                  class="option fw-bold contact-link">linkedin</a>
+                  class="contact-link fw-normal">linkedin</a>
               </div>
             </div>
             <div>
               <div class="d-flex gap-3">
-                <button class="option fw-bold lang-selector" onclick="switchLanguage('en')" id="lang-en">en</button>
-                <button class="option fw-bold lang-selector" onclick="switchLanguage('es')" id="lang-es">es</button>
+                <button class="lang-selector fw-normal" onclick="switchLanguage('en')" id="lang-en">en</button>
+                <button class="lang-selector fw-normal" onclick="switchLanguage('es')" id="lang-es">es</button>
                 <span class="lang-theme-divider"></span>
-                <button class="option fw-bold theme-selector" onclick="switchTheme('light')" id="theme-light"><img src="img/circle-regular-full.svg" alt="light" class="theme-icon"></button>
-                <button class="option fw-bold theme-selector" onclick="switchTheme('dark')" id="theme-dark"><img src="img/circle-solid-full.svg" alt="dark" class="theme-icon"></button>
+                <button class="theme-selector fw-normal" onclick="switchTheme('light')" id="theme-light"><img
+                    src="img/circle-regular-full.svg" alt="light" class="theme-icon"></button>
+                <button class="theme-selector fw-normal" onclick="switchTheme('dark')" id="theme-dark"><img
+                    src="img/circle-solid-full.svg" alt="dark" class="theme-icon"></button>
               </div>
               <div class="mt-4 version-label" id="version-label"></div>
             </div>
@@ -152,9 +153,9 @@
             <div class="guide-h-double-100"></div>
             <div class="row">
               <div class="col-auto position-relative">
-                <img src="img/logo-estudio-d.svg" alt="estudio d." fetchpriority="high" loading="eager"
+                <img src="img/logo-estudio-d-alt.svg" alt="estudio d." fetchpriority="high" loading="eager"
                   id="logo-mobile" />
-                <script>(function () { var i = document.getElementById('logo-mobile'); if (i && localStorage.getItem('theme') === 'dark') i.src = 'img/logo-estudio-d-dark.svg'; })();</script>
+                <script>(function () { var i = document.getElementById('logo-mobile'); if (i && localStorage.getItem('theme') === 'dark') i.src = 'img/logo-estudio-d-dark-alt.svg'; })();</script>
                 <div class="guide-v-short"></div>
               </div>
             </div>
@@ -204,22 +205,12 @@
     const _footerCategories = ['brand-creation', 'brand-development', 'product-design'];
     const _footerCategory = _footerCategories[Math.floor(Math.random() * _footerCategories.length)];
 
+    window._onSwitchLanguage = function (lang) {
+      loadProject();
+      updateFooter(_footerCategory, true);
+    };
+
     document.addEventListener("DOMContentLoaded", () => {
-      window.switchLanguage = function (lang) {
-        currentLang = lang;
-        localStorage.setItem("language", lang);
-        document.querySelectorAll("[data-i18n]").forEach(el => {
-          const text = t(el.getAttribute("data-i18n"));
-          if (text) el.innerHTML = text;
-        });
-        document.querySelectorAll("#lang-en, #lang-es").forEach(b => b.classList.remove("active"));
-        const btn = document.getElementById("lang-" + lang);
-        if (btn) btn.classList.add("active");
-        document.documentElement.lang = lang;
-        loadProject();
-        updateFooter(_footerCategory, true);
-        updateVersionLabel();
-      };
       switchTheme(localStorage.getItem('theme') || 'light');
       switchLanguage(currentLang);
       loadProject();
@@ -266,7 +257,7 @@
 
         const description = project.description?.[currentLang] || project.description?.es || "";
         const descEl = document.getElementById("project-description");
-        descEl.innerHTML = description;
+        descEl.innerHTML = sanitizeHTML(description);
         descEl.classList.toggle("d-none", !description);
         document.getElementById("meta-description").content = description;
         document.getElementById("og-description").content = description;
@@ -302,8 +293,7 @@
           gallery.appendChild(vGuide);
           const iframe = document.createElement("iframe");
           iframe.src = "design-kit/index.html";
-          iframe.style.cssText = "width:100%;border:none;display:block;min-height:100vh;";
-          iframe.scrolling = "no";
+          iframe.style.cssText = "width:100%;border:none;display:block;min-height:100vh;overflow:hidden;";
           iframe.onload = () => {
             try {
               iframe.style.height = iframe.contentDocument.body.scrollHeight + "px";
@@ -354,7 +344,7 @@
               const textEl = document.createElement("div");
               textEl.className = "project-masonry-color-text";
               if (item.textSize) textEl.style.fontSize = item.textSize;
-              textEl.innerHTML = item.text[currentLang] || item.text.es || "";
+              textEl.innerHTML = sanitizeHTML(item.text[currentLang] || item.text.es || "");
               figure.appendChild(textEl);
             }
           } else {
@@ -380,6 +370,11 @@
               if (item.darkBg) {
                 figure.dataset.darkBg = '1';
                 if ((localStorage.getItem('theme') || 'light') === 'dark') figure.style.backgroundColor = 'var(--manteca)';
+              }
+              if (item.accentBg) {
+                figure.dataset.updateBg = '1';
+                const theme = localStorage.getItem('theme') || 'light';
+                figure.style.backgroundColor = theme === 'dark' ? 'var(--manteca)' : 'var(--manteca-dark)';
               }
               const autoAlt = item.src.split('/').pop().replace(/\.[^.]+$/, '').replace(/[-_]/g, ' ');
               media.alt = item.alt || caption || autoAlt;
