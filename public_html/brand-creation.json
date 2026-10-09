@@ -384,7 +384,7 @@
       "order": 12,
       "size": "tile-xl",
       "span": 4,
-      "src": "img/logos/eg-full-logo.svg",
+      "src": "img/logos/eg-monograma-logo.svg",
       "alt": "EG",
       "logoSize": 200,
       "invertLogo": true,
@@ -401,7 +401,7 @@
       "projectLink": "project.html?p=eg",
       "label": {
         "name": "EG Marketing",
-        "src": "img/logos/eg-monograma-logo.svg",
+        "src": "img/logos/eg-full-logo.svg",
         "invertLogo": true,
         "logoSize": 80,
         "es": {
