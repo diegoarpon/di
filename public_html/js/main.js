@@ -235,7 +235,7 @@ function addCol4Panels() {
         more.className = 'brand-hover-project-arrow';
         more.href = tile.dataset.projectLink;
         more.textContent = currentLang === 'es' ? 'más' : 'more';
-        more.style.cssText = 'font-size: var(--fs-meta-label); text-transform: uppercase; letter-spacing: .08em; color: var(--main-color); font-weight: 500;';
+        more.style.cssText = 'font-size: var(--fs-meta-label); text-transform: uppercase; color: var(--main-color); font-weight: 500;';
         text.appendChild(more);
       }
       tile.appendChild(text);
