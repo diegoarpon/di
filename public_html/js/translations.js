@@ -1,6 +1,6 @@
 let currentLang = localStorage.getItem("language") || "en";
 
-const APP_VERSION = "7.2";
+const APP_VERSION = "7.3";
 
 const _MONTHS_ES = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
 const _MONTHS_EN = ["january","february","march","april","may","june","july","august","september","october","november","december"];
