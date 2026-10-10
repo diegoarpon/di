@@ -1238,6 +1238,82 @@
       "order": 37,
       "size": "tile-xl",
       "span": 4,
+      "src": "img/logos/avenue-solutions-logo.svg",
+      "alt": "",
+      "logoSize": 250,
+      "invertLogo": true,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "img/backgrounds/avenue-solutions3.webp",
+      "bgPosition": "center",
+      "bgVideo": "",
+      "workType": "",
+      "year": "2009",
+      "project": "",
+      "projectLink": "",
+      "pixelColor": "",
+      "hoverColor": "",
+      "enabled": true,
+      "label": {
+        "name": "Avenue Solutions",
+        "src": "img/logos/avenue-solutions-logo.svg",
+        "invertLogo": false,
+        "logoSize": 120,
+        "es": {
+          "industry": "IT de Rosario, Argentina",
+          "workType": "Branding"
+        },
+        "en": {
+          "industry": "IT Company from Rosario, Argentina",
+          "workType": "Branding"
+        }
+      },
+      "overlay": true,
+      "overlayOpacity": 30
+    },
+    {
+      "order": 38,
+      "size": "tile-xl",
+      "span": 4,
+      "src": "",
+      "alt": "",
+      "logoSize": 200,
+      "invertLogo": false,
+      "darkSrc": "",
+      "noFilterDark": false,
+      "multi": "",
+      "multiLogoSize": 0,
+      "bgImage": "img/backgrounds/comoyacomo.webp",
+      "bgPosition": "center",
+      "bgVideo": "",
+      "workType": "",
+      "year": "2009",
+      "project": "",
+      "projectLink": "",
+      "pixelColor": "",
+      "hoverColor": "",
+      "enabled": true,
+      "label": {
+        "name": "ComoYaComo",
+        "src": "img/logos/comoyacomo-logo.svg",
+        "invertLogo": false,
+        "logoSize": 80,
+        "es": {
+          "industry": "Gastronomía",
+          "workType": "Delivery App"
+        },
+        "en": {
+          "industry": "Gastronomy",
+          "workType": "Delivery App"
+        }
+      }
+    },
+    {
+      "order": 39,
+      "size": "tile-xl",
+      "span": 4,
       "src": "img/logos/zoom-logo.svg",
       "alt": "ZOom",
       "logoSize": 300,

@@ -12,6 +12,10 @@ let dirHandle = null;
 let imgCatalog = { backgrounds: [], logos: [], visuals: [], videos: [] };
 let dragSrc = null;
 
+const SVG_EYE = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`;
+const SVG_EYE_CLOSED = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>`;
+const SVG_TRASH = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>`;
+
 const FILE_MAP = {
   'brand-creation':    'brand-creation.json',
   'brand-development': 'brand-development.json',
@@ -196,13 +200,6 @@ async function saveAll() {
 function markDirty() {
   state[activeTab].dirty = true;
   updateSaveBtn();
-  scheduleAutoSave();
-}
-
-let autoSaveTimer = null;
-function scheduleAutoSave() {
-  clearTimeout(autoSaveTimer);
-  autoSaveTimer = setTimeout(saveAll, 1000);
 }
 
 function updateSaveBtn() {
@@ -210,7 +207,7 @@ function updateSaveBtn() {
   const anyLoaded = Object.values(state).some(s => s.handle);
   const btn = document.getElementById('btn-save');
   const status = document.getElementById('save-status');
-  btn.disabled = !anyDirty;
+  btn.disabled = !anyLoaded;
   if (!anyLoaded) { status.textContent = ''; status.className = 'save-status'; }
   else if (anyDirty) { status.textContent = '● cambios sin guardar'; status.className = 'save-status unsaved'; }
   else { status.textContent = '✓ guardado'; status.className = 'save-status'; }
@@ -238,6 +235,12 @@ function renderGrid(tab) {
 
   items.forEach((item, i) => grid.appendChild(makeCard(item, i, tab)));
 
+  const addCard = document.createElement('div');
+  addCard.className = 'card card-add';
+  addCard.innerHTML = '<span>+</span>';
+  addCard.addEventListener('click', () => addNewItem(tab));
+  grid.appendChild(addCard);
+
   wrap.innerHTML = '';
   wrap.appendChild(hint);
   wrap.appendChild(grid);
@@ -246,7 +249,9 @@ function renderGrid(tab) {
 function makeCard(item, idx, tab) {
   const card = document.createElement('div');
   card.className = 'card';
+  if (item.enabled === false) card.classList.add('card-disabled');
   card.draggable = true;
+  card.dataset.tab = tab;
   card.dataset.idx = idx;
   if (idx === selectedIdx) card.classList.add('selected');
 
@@ -294,6 +299,45 @@ function makeCard(item, idx, tab) {
   info.appendChild(name);
   info.appendChild(meta);
   card.appendChild(info);
+
+  const actions = document.createElement('div');
+  actions.className = 'card-actions';
+
+  const eyeBtn = document.createElement('button');
+  eyeBtn.className = 'card-action-btn card-eye' + (item.enabled === false ? ' eye-closed' : '');
+  eyeBtn.title = item.enabled === false ? 'No publicado' : 'Publicado';
+  eyeBtn.innerHTML = item.enabled === false ? SVG_EYE_CLOSED : SVG_EYE;
+  eyeBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    const nowEnabled = item.enabled !== false;
+    item.enabled = !nowEnabled;
+    markDirty();
+    eyeBtn.innerHTML = item.enabled ? SVG_EYE : SVG_EYE_CLOSED;
+    eyeBtn.title = item.enabled ? 'Publicado' : 'No publicado';
+    eyeBtn.classList.toggle('eye-closed', !item.enabled);
+    card.classList.toggle('card-disabled', !item.enabled);
+  });
+
+  const trashBtn = document.createElement('button');
+  trashBtn.className = 'card-action-btn card-trash';
+  trashBtn.title = 'Eliminar tile';
+  trashBtn.innerHTML = SVG_TRASH;
+  trashBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    if (!confirm('¿Eliminar este tile?')) return;
+    const t = card.dataset.tab;
+    const i = parseInt(card.dataset.idx);
+    state[t].data[state[t].key].splice(i, 1);
+    if (selectedIdx === i) closePanel();
+    selectedIdx = null;
+    markDirty();
+    renderGrid(t);
+    updateCounts();
+  });
+
+  actions.appendChild(eyeBtn);
+  actions.appendChild(trashBtn);
+  card.appendChild(actions);
 
   card.addEventListener('click', (e) => {
     if (card.classList.contains('dragging')) return;
@@ -478,7 +522,7 @@ function toggle(item, key, label, hint) {
   const inp = document.createElement('input');
   inp.type = 'checkbox';
   inp.checked = !!item[key];
-  inp.addEventListener('change', () => onChange(item, key, inp.checked));
+  inp.addEventListener('change', () => { onChange(item, key, inp.checked); });
   const slider = document.createElement('span');
   slider.className = 'toggle-slider';
   tog.appendChild(inp);
@@ -879,6 +923,50 @@ function buildPDForm(item, idx) {
   frag.appendChild(i18nField(item, 'subtitle', 'Subtítulo'));
 
   return frag;
+}
+
+// ── Add new item ─────────────────────────────────────────────────────────────
+
+function addNewItem(tab) {
+  const s = state[tab];
+  if (!s.data) return;
+  const items = s.data[s.key];
+  const newOrder = items.length + 1;
+
+  const templates = {
+    'brand-creation': {
+      order: newOrder, size: 'tile-xl', span: 4, src: '', alt: '', logoSize: 200,
+      invertLogo: false, darkSrc: '', noFilterDark: false, multi: '', multiLogoSize: 0,
+      bgImage: '', bgPosition: 'center', bgVideo: '', workType: '', year: '',
+      project: '', projectLink: '', pixelColor: '', hoverColor: '', enabled: true,
+      label: { name: '', src: '', invertLogo: false, logoSize: 80,
+        es: { industry: '', workType: '' }, en: { industry: '', workType: '' } }
+    },
+    'brand-development': {
+      order: newOrder, src: '', alt: '', size: 'tile-xl', span: 6, logoSize: 250,
+      invertLogo: false, bgImage: '', hoverColor: 'var(--main-color)',
+      project: '', projectName: '', title: { es: '', en: '' }, enabled: true,
+      label: { es: { name: '', industry: '' }, en: { name: '', industry: '' } },
+      description: { es: '', en: '' }, hideProjectMeta: false, gallery: []
+    },
+    'product-design': {
+      order: newOrder, src: '', span: 6, logoSize: 100, hoverColor: 'var(--mint)',
+      title: { es: '', en: '' }, subtitle: { es: '', en: '' }, enabled: true,
+      year: '', URLFigma: '', secondaryLogo: '', secondaryLogoSize: 60
+    }
+  };
+
+  const newItem = templates[tab];
+  items.push(newItem);
+  markDirty();
+  renderGrid(tab);
+  updateCounts();
+  // abrir panel del nuevo item
+  selectedIdx = items.length - 1;
+  const cards = document.querySelectorAll('#panel-' + tab + ' .card');
+  const lastCard = cards[cards.length - 1];
+  if (lastCard) { lastCard.classList.add('selected'); lastCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
+  openPanel(newItem, selectedIdx, tab);
 }
 
 // ── Toast ─────────────────────────────────────────────────────────────────────
