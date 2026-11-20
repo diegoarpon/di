@@ -109,6 +109,18 @@ h1 span { color: var(--accent); }
   min-height: 0;
 }
 
+/* Split 60/40 para Brand Development (panel 60%) */
+.workspace--split .grid-area {
+  flex: 0 0 40%;
+  min-width: 0;
+  width: auto;
+}
+.workspace--split .editor-panel {
+  flex: 0 0 60%;
+  min-width: 0;
+  width: auto;
+}
+
 /* ── Grid area ── */
 .grid-area {
   flex: 1;
@@ -187,6 +199,12 @@ h1 span { color: var(--accent); }
   background: var(--surface);
 }
 
+/* En modo split, el panel crece al 50% */
+.workspace--split .editor-panel {
+  width: auto;
+  flex: 1;
+}
+
 .panel-header {
   display: flex;
   align-items: center;
@@ -204,9 +222,35 @@ h1 span { color: var(--accent); }
 
 /* ── Form fields ── */
 .field-group { margin-bottom: 24px; }
+.field-group__fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px 24px;
+}
+.field-group__fields--fixed {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+}
 .field-group-title { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
 
 .field { margin-bottom: 12px; }
+.field-group__fields .field { margin-bottom: 0; }
+.field-group__fields--fixed .field { margin-bottom: 0; }
+
+/* Toggle inline row - aligned with input vertical rhythm */
+.toggle-inline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 38px;
+}
+.toggle-inline__label {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 4px;
+}
 .field label { display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 7px; display: flex; align-items: center; gap: 5px; margin-top: 4px; }
 
 .field-help {
@@ -266,9 +310,9 @@ h1 span { color: var(--accent); }
 .field select option { background: var(--surface-2); }
 
 /* Toggle */
-.toggle-row { display: flex; align-items: center; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.toggle-row { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--border); }
 .toggle-row:last-child { border-bottom: none; }
-.toggle-row label { font-size: 13px; color: var(--text); cursor: pointer; display: flex; align-items: center; gap: 5px; }
+.toggle-row label { font-size: 13px; color: var(--text); cursor: pointer; display: flex; align-items: center; gap: 8px; }
 .toggle { position: relative; width: 36px; height: 20px; flex-shrink: 0; }
 .toggle input { opacity: 0; width: 0; height: 0; }
 .toggle-slider { position: absolute; inset: 0; background: var(--surface-3); border: 1px solid var(--border); border-radius: 20px; cursor: pointer; transition: background .2s; }
@@ -315,15 +359,15 @@ h1 span { color: var(--accent); }
 </header>
 
 <nav class="tabs">
-  <button class="tab not-loaded active" data-tab="brand-creation">Brand Creation <span class="count" id="count-bc">—</span></button>
-  <button class="tab not-loaded" data-tab="brand-development">Brand Development <span class="count" id="count-bd">—</span></button>
+  <button class="tab not-loaded active" data-tab="brand-collection">Brand Collection <span class="count" id="count-bc">—</span></button>
+  <button class="tab not-loaded" data-tab="featured-projects">Featured Projects <span class="count" id="count-fp">—</span></button>
   <button class="tab not-loaded" data-tab="product-design">Product Design <span class="count" id="count-pd">—</span></button>
 </nav>
 
 <div class="workspace">
   <div class="grid-area" id="grid-area">
-    <div class="panel-wrap active" id="panel-brand-creation"></div>
-    <div class="panel-wrap" id="panel-brand-development"></div>
+    <div class="panel-wrap active" id="panel-brand-collection"></div>
+    <div class="panel-wrap" id="panel-featured-projects"></div>
     <div class="panel-wrap" id="panel-product-design"></div>
   </div>
   <aside class="editor-panel" id="editor-panel">

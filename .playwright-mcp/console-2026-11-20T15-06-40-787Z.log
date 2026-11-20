@@ -1,0 +1,2 @@
+[      19ms] TypeError: Cannot read properties of null (reading 'addEventListener')
+    at http://localhost:8000/reorder-tool.js?v=12:413:39

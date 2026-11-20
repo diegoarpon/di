@@ -1,0 +1,18 @@
+- generic [active] [ref=f11e1]:
+  - banner [ref=f11e2]:
+    - heading "estudio.d — editor" [level=1] [ref=f11e3]
+    - generic [ref=f11e4]:
+      - button "Abrir carpeta public_html/" [ref=f11e5] [cursor=pointer]
+      - button "Publicar" [ref=f11e6] [cursor=pointer]
+  - navigation [ref=f11e7]:
+    - button "Brand Collection —" [ref=f11e8] [cursor=pointer]:
+      - text: Brand Collection
+      - generic [ref=f11e9]: —
+    - button "Featured Projects —" [ref=f11e10] [cursor=pointer]:
+      - text: Featured Projects
+      - generic [ref=f11e11]: —
+    - button "Product Design —" [ref=f11e12] [cursor=pointer]:
+      - text: Product Design
+      - generic [ref=f11e13]: —
+  - complementary [ref=f11e16]:
+    - generic [ref=f11e17]: Seleccioná un tile para editar

@@ -1,12 +1,12 @@
 // ── State ────────────────────────────────────────────────────────────────────
 
 const state = {
-  'brand-creation':    { handle: null, data: null, dirty: false, key: 'tiles' },
-  'brand-development': { handle: null, data: null, dirty: false, key: 'brandDevelopment' },
-  'product-design':    { handle: null, data: null, dirty: false, key: 'productDesign' },
+  'brand-collection':   { handle: null, data: null, dirty: false, key: 'tiles' },
+  'featured-projects':  { handle: null, data: null, dirty: false, key: 'brandDevelopment' },
+  'product-design':     { handle: null, data: null, dirty: false, key: 'productDesign' },
 };
 
-let activeTab = 'brand-creation';
+let activeTab = 'brand-collection';
 let selectedIdx = null;
 let dirHandle = null;
 let imgCatalog = { backgrounds: [], logos: [], visuals: [], videos: [] };
@@ -17,9 +17,9 @@ const SVG_EYE_CLOSED = `<svg xmlns="http://www.w3.org/2000/svg" width="13" heigh
 const SVG_TRASH = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>`;
 
 const FILE_MAP = {
-  'brand-creation':    'brand-creation.json',
-  'brand-development': 'brand-development.json',
-  'product-design':    'product-design.json',
+  'brand-collection':   'brand-collection.json',
+  'featured-projects':  'featured-projects.json',
+  'product-design':     'product-design.json',
 };
 
 // ── IndexedDB ────────────────────────────────────────────────────────────────
@@ -83,9 +83,6 @@ async function loadAllJSONs(root) {
       state[tab].handle = fileHandle;
       state[tab].data = parsed;
       state[tab].dirty = false;
-      const s = state[tab];
-      const items = parsed[s.key] || [];
-      document.getElementById('count-' + tab.replace('brand-', 'b').replace('product-', 'p').replace('creation','c').replace('development','d').replace('design','d')).textContent = items.length;
       document.querySelector('[data-tab="' + tab + '"]').classList.remove('not-loaded');
     } catch(e) {
       console.warn('No se pudo cargar', filename, e);
@@ -96,7 +93,7 @@ async function loadAllJSONs(root) {
 }
 
 function updateCounts() {
-  const map = { 'brand-creation': 'count-bc', 'brand-development': 'count-bd', 'product-design': 'count-pd' };
+  const map = { 'brand-collection': 'count-bc', 'featured-projects': 'count-fp', 'product-design': 'count-pd' };
   for (const [tab, id] of Object.entries(map)) {
     const s = state[tab];
     const el = document.getElementById(id);
@@ -162,6 +159,12 @@ window.addEventListener('load', async () => {
 
 // ── Tabs ──────────────────────────────────────────────────────────────────────
 
+const workspaceEl = document.querySelector('.workspace');
+
+function setWorkspaceSplit(split) {
+  workspaceEl.classList.toggle('workspace--split', split);
+}
+
 document.querySelectorAll('.tab').forEach(btn => {
   btn.addEventListener('click', () => {
     activeTab = btn.dataset.tab;
@@ -169,11 +172,16 @@ document.querySelectorAll('.tab').forEach(btn => {
     btn.classList.add('active');
     document.querySelectorAll('.panel-wrap').forEach(p => p.classList.remove('active'));
     document.getElementById('panel-' + activeTab).classList.add('active');
+    // Featured Projects: split 60/40 (panel 60%)
+    setWorkspaceSplit(activeTab === 'featured-projects');
     closePanel();
     renderGrid(activeTab);
     updateSaveBtn();
   });
 });
+
+// Aplicar estado inicial según pestaña activa
+setWorkspaceSplit(activeTab === 'featured-projects');
 
 // ── Save ──────────────────────────────────────────────────────────────────────
 
@@ -399,8 +407,6 @@ function onDragEnd() {
 
 // ── Editor Panel ──────────────────────────────────────────────────────────────
 
-document.getElementById('panel-close').addEventListener('click', closePanel);
-
 document.getElementById('grid-area').addEventListener('click', e => {
   if (document.getElementById('editor-panel').classList.contains('open') && !e.target.closest('.card')) closePanel();
 });
@@ -417,8 +423,8 @@ function openPanel(item, idx, tab) {
   const body = document.getElementById('panel-body');
   title.textContent = getItemName(item) || 'Tile ' + (idx + 1);
   body.innerHTML = '';
-  if (tab === 'brand-creation') body.appendChild(buildBCForm(item, idx));
-  else if (tab === 'brand-development') body.appendChild(buildBDForm(item, idx));
+  if (tab === 'brand-collection') body.appendChild(buildBCForm(item, idx));
+  else if (tab === 'featured-projects') body.appendChild(buildBDForm(item, idx));
   else body.appendChild(buildPDForm(item, idx));
 }
 
@@ -503,8 +509,9 @@ function numberInput(item, key, label, hint, changeFn) {
 }
 
 function toggle(item, key, label, hint) {
-  const row = document.createElement('div');
-  row.className = 'toggle-row';
+  const wrap = document.createElement('div');
+  wrap.className = 'field';
+
   const lbl = document.createElement('label');
   lbl.textContent = label;
   if (hint) {
@@ -517,6 +524,11 @@ function toggle(item, key, label, hint) {
     help.appendChild(tip);
     lbl.appendChild(help);
   }
+  wrap.appendChild(lbl);
+
+  const row = document.createElement('div');
+  row.className = 'toggle-inline';
+
   const tog = document.createElement('label');
   tog.className = 'toggle';
   const inp = document.createElement('input');
@@ -527,9 +539,15 @@ function toggle(item, key, label, hint) {
   slider.className = 'toggle-slider';
   tog.appendChild(inp);
   tog.appendChild(slider);
-  row.appendChild(lbl);
   row.appendChild(tog);
-  return row;
+
+  const txt = document.createElement('span');
+  txt.className = 'toggle-inline__label';
+  txt.textContent = label;
+  row.appendChild(txt);
+
+  wrap.appendChild(row);
+  return wrap;
 }
 
 function imgPicker(item, key, label, catalog, rootItem, hint) {
@@ -621,12 +639,15 @@ function i18nField(item, key, label) {
   title.textContent = label;
   wrap.appendChild(title);
   if (!item[key]) item[key] = { es: '', en: '' };
+
+  const fieldsWrap = document.createElement('div');
+  fieldsWrap.className = 'field-group__fields--fixed';
+
   ['es', 'en'].forEach(lang => {
     const inp = document.createElement('input');
     inp.type = 'text';
     inp.value = item[key][lang] || '';
     inp.placeholder = lang.toUpperCase();
-    inp.style.marginBottom = '6px';
     inp.addEventListener('input', () => { item[key][lang] = inp.value; markDirty(); });
     const f = document.createElement('div');
     f.className = 'field';
@@ -634,8 +655,9 @@ function i18nField(item, key, label) {
     lbl.textContent = lang.toUpperCase();
     f.appendChild(lbl);
     f.appendChild(inp);
-    wrap.appendChild(f);
+    fieldsWrap.appendChild(f);
   });
+  wrap.appendChild(fieldsWrap);
   return wrap;
 }
 
@@ -705,9 +727,6 @@ function tagsField(item) {
 function sectionTitle(text) {
   const el = document.createElement('div');
   el.className = 'field-group-title';
-  el.style.marginBottom = '12px';
-  el.style.paddingBottom = '8px';
-  el.style.borderBottom = '1px solid var(--border)';
   el.textContent = text;
   return el;
 }
@@ -715,8 +734,22 @@ function sectionTitle(text) {
 function group(title, ...children) {
   const wrap = document.createElement('div');
   wrap.className = 'field-group';
+  // Supportar opciones: { twoCols: true|'fixed' }
+  // true = responsive, 'fixed' = 2 columnas fijas en todos los breakpoints
+  const opts = children.length && typeof children[children.length - 1] === 'object' && !children[children.length - 1].tagName
+    ? children.pop()
+    : {};
+
   wrap.appendChild(sectionTitle(title));
-  children.forEach(c => c && wrap.appendChild(c));
+
+  if (opts.twoCols) {
+    const fieldsWrap = document.createElement('div');
+    fieldsWrap.className = opts.twoCols === 'fixed' ? 'field-group__fields--fixed' : 'field-group__fields';
+    children.forEach(c => c && fieldsWrap.appendChild(c));
+    wrap.appendChild(fieldsWrap);
+  } else {
+    children.forEach(c => c && wrap.appendChild(c));
+  }
   return wrap;
 }
 
@@ -835,6 +868,7 @@ function buildBDForm(item, idx) {
     textInput(item, 'projectName', 'Project name'),
     textInput(item, 'hoverColor', 'Hover color', 'var(--main-color)'),
     toggle(item, 'hideProjectMeta', 'Ocultar project meta'),
+    { twoCols: true },
   ));
 
   frag.appendChild(group('Tamaño',
@@ -858,34 +892,36 @@ function buildBDForm(item, idx) {
       sel.addEventListener('change', () => onChange(item, 'span', parseInt(sel.value)));
       return field('Span', sel);
     })(),
+    { twoCols: true },
   ));
 
   frag.appendChild(group('Fondo',
     imgPicker(item, 'bgImage', 'Background image', bgImgs),
     textInput(item, 'bgColor', 'BG color', '#000000'),
+    { twoCols: true },
   ));
 
   frag.appendChild(group('Logo',
     imgPicker(item, 'src', 'Logo src', imgCatalog.logos),
     numberInput(item, 'logoSize', 'Logo size (px)'),
     toggle(item, 'invertLogo', 'Invertir logo'),
+    { twoCols: true },
   ));
 
   frag.appendChild(i18nField(item, 'title', 'Título (tipo de trabajo)'));
 
   // Label
   if (!item.label) item.label = { es: { name: '', industry: '' }, en: { name: '', industry: '' } };
-  const labelGroup = document.createElement('div');
-  labelGroup.className = 'field-group';
-  labelGroup.appendChild(sectionTitle('Label'));
-  ['es', 'en'].forEach(lang => {
-    if (!item.label[lang]) item.label[lang] = { name: '', industry: '' };
-    labelGroup.appendChild(textInput(item.label[lang], 'name', 'Nombre (' + lang + ')'));
-    labelGroup.appendChild(textInput(item.label[lang], 'industry', 'Industry (' + lang + ')'));
+  const labelFields = [];
+  // Agrupar por campo: Nombre (es/en juntos), luego Industry (es/en juntos)
+  ['name', 'industry'].forEach(fieldKey => {
+    const fieldLabel = fieldKey === 'name' ? 'Nombre' : 'Industry';
+    ['es', 'en'].forEach(lang => {
+      if (!item.label[lang]) item.label[lang] = { name: '', industry: '' };
+      labelFields.push(textInput(item.label[lang], fieldKey, fieldLabel + ' (' + lang + ')'));
+    });
   });
-  frag.appendChild(labelGroup);
-
-  frag.appendChild(i18nField(item, 'description', 'Descripción'));
+  frag.appendChild(group('Label', ...labelFields, { twoCols: 'fixed' }));
 
   return frag;
 }
@@ -934,7 +970,7 @@ function addNewItem(tab) {
   const newOrder = items.length + 1;
 
   const templates = {
-    'brand-creation': {
+    'brand-collection': {
       order: newOrder, size: 'tile-xl', span: 4, src: '', alt: '', logoSize: 200,
       invertLogo: false, darkSrc: '', noFilterDark: false, multi: '', multiLogoSize: 0,
       bgImage: '', bgPosition: 'center', bgVideo: '', workType: '', year: '',
@@ -942,12 +978,12 @@ function addNewItem(tab) {
       label: { name: '', src: '', invertLogo: false, logoSize: 80,
         es: { industry: '', workType: '' }, en: { industry: '', workType: '' } }
     },
-    'brand-development': {
+    'featured-projects': {
       order: newOrder, src: '', alt: '', size: 'tile-xl', span: 6, logoSize: 250,
       invertLogo: false, bgImage: '', hoverColor: 'var(--main-color)',
       project: '', projectName: '', title: { es: '', en: '' }, enabled: true,
       label: { es: { name: '', industry: '' }, en: { name: '', industry: '' } },
-      description: { es: '', en: '' }, hideProjectMeta: false, gallery: []
+      hideProjectMeta: false, gallery: []
     },
     'product-design': {
       order: newOrder, src: '', span: 6, logoSize: 100, hoverColor: 'var(--mint)',
