@@ -2,7 +2,7 @@ import sharp from 'sharp';
 import fs from 'fs';
 import path from 'path';
 
-const IMG_DIR = path.resolve('./img');
+const IMG_DIR = path.resolve('./public_html/img');
 const REF_BASE = path.resolve('.');
 const QUALITY = 90;
 const MAX_WIDTH = 1920;

@@ -15,6 +15,7 @@ let dragSrc = null;
 const SVG_EYE = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`;
 const SVG_EYE_CLOSED = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>`;
 const SVG_TRASH = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>`;
+const SVG_DRAG = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="5" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="19" r="1"/></svg>`;
 
 const FILE_MAP = {
   'brand-collection':   'brand-creation.json',
@@ -105,14 +106,6 @@ function updateCounts() {
 }
 
 // ── Image catalog ─────────────────────────────────────────────────────────────
-
-async function buildImgCatalog(root) {
-  imgCatalog = { backgrounds: [], logos: [], visuals: [], videos: [] };
-  try {
-    const imgDir = await root.getDirectoryHandle('img');
-    await walkDir(imgDir, 'img');
-  } catch(e) { console.warn('No se encontró img/', e); }
-}
 
 async function walkDir(handle, path) {
   const IMG = new Set(['.webp','.png','.jpg','.jpeg','.svg','.gif']);
@@ -610,8 +603,8 @@ function imgPicker(item, key, label, catalog, rootItem, hint) {
 
   row.appendChild(sel);
   row.appendChild(clearBtn);
-  picker.appendChild(preview);
   picker.appendChild(row);
+  picker.appendChild(preview);
   wrap.appendChild(picker);
   return wrap;
 }
@@ -626,8 +619,6 @@ function updatePreview(el, src) {
   }
   const img = document.createElement('img');
   img.src = 'public_html/' + src;
-  img.style.maxHeight = '70px';
-  img.style.objectFit = 'contain';
   el.appendChild(img);
 }
 
@@ -923,6 +914,9 @@ function buildBDForm(item, idx) {
   });
   frag.appendChild(group('Label', ...labelFields, { twoCols: 'fixed' }));
 
+  // Gallery editor
+  frag.appendChild(buildGalleryEditor(item));
+
   return frag;
 }
 
@@ -959,6 +953,303 @@ function buildPDForm(item, idx) {
   frag.appendChild(i18nField(item, 'subtitle', 'Subtítulo'));
 
   return frag;
+}
+
+// ── Gallery Editor (Featured Projects) ─────────────────────────────────────────
+
+function buildGalleryEditor(item) {
+  const gallery = item.gallery || [];
+
+  const wrap = document.createElement('div');
+  wrap.className = 'field-group';
+
+  const titleRow = document.createElement('div');
+  titleRow.className = 'field-group-title';
+  titleRow.textContent = 'Galería / Detalle del proyecto';
+
+  wrap.appendChild(titleRow);
+
+  const list = document.createElement('div');
+  list.className = 'gallery-list';
+  wrap.appendChild(list);
+
+  function renderGallery() {
+    list.innerHTML = '';
+    gallery.forEach((gItem, idx) => {
+      list.appendChild(renderGalleryItem(item, gItem, idx));
+    });
+    // Add item card (like main tabs)
+    const addCard = document.createElement('div');
+    addCard.className = 'gallery-item-add';
+    addCard.innerHTML = '<span>+</span>';
+    addCard.addEventListener('click', () => addGalleryItem(item));
+    list.appendChild(addCard);
+  }
+
+  function addGalleryItem(parentItem) {
+    const newItem = { type: 'image', src: '', cols: 1, darkBg: false, accentBg: false, textSize: 'medium' };
+    parentItem.gallery = parentItem.gallery || [];
+    parentItem.gallery.push(newItem);
+    markDirty();
+    renderGallery();
+  }
+
+  function deleteGalleryItem(parentItem, idx) {
+    parentItem.gallery.splice(idx, 1);
+    markDirty();
+    renderGallery();
+  }
+
+  function moveGalleryItem(parentItem, fromIdx, toIdx) {
+    const arr = parentItem.gallery;
+    const [moved] = arr.splice(fromIdx, 1);
+    arr.splice(toIdx, 0, moved);
+    markDirty();
+    renderGallery();
+  }
+
+  const typeOptions = [
+    { value: 'image', label: 'Imagen' },
+    { value: 'text', label: 'Texto' }
+  ];
+
+  function getImgOptions() {
+    const opts = [];
+    for (const child of imgCatalog.backgrounds) {
+      opts.push(`<option value="${child}">${child.split('/').pop()}</option>`);
+    }
+    for (const child of imgCatalog.visuals) {
+      opts.push(`<option value="${child}">${child.split('/').pop()}</option>`);
+    }
+    for (const child of imgCatalog.logos) {
+      opts.push(`<option value="${child}">${child.split('/').pop()}</option>`);
+    }
+    return opts.join('');
+  }
+
+  function renderGalleryItem(parentItem, gItem, idx) {
+    if (!gItem.type) gItem.type = 'image';
+    const isText = gItem.type === 'text';
+    const itemEl = document.createElement('div');
+    itemEl.className = `gallery-item${isText ? ' gallery-item--text' : ''}`;
+    itemEl.draggable = true;
+    itemEl.dataset.idx = idx;
+
+    // Drag handle
+    const dragHandle = document.createElement('div');
+    dragHandle.className = 'gallery-drag-handle';
+    dragHandle.innerHTML = SVG_DRAG;
+
+    // Type selector
+    const typeSelect = document.createElement('select');
+    typeSelect.className = 'gallery-item__type field-control';
+    typeOptions.forEach(opt => {
+      const option = document.createElement('option');
+      option.value = opt.value;
+      option.textContent = opt.label;
+      typeSelect.appendChild(option);
+    });
+    typeSelect.value = gItem.type;
+    typeSelect.addEventListener('change', (e) => {
+      const newType = e.target.value;
+      gItem.type = newType;
+      if (newType === 'text') {
+        // Initialize text structure
+        gItem.text = { es: '', en: '' };
+        gItem.textSize = gItem.textSize || 'medium';
+        // Remove image-specific properties
+        delete gItem.src;
+        delete gItem.darkBg;
+        delete gItem.accentBg;
+        delete gItem.darkSrc;
+      } else {
+        // Initialize image structure
+        gItem.src = gItem.src || '';
+        gItem.darkBg = gItem.darkBg || false;
+        gItem.accentBg = gItem.accentBg || false;
+        // Remove text-specific properties
+        delete gItem.text;
+        delete gItem.textSize;
+      }
+      markDirty();
+      renderGallery();
+    });
+
+    // Delete button (X style like panel-close)
+    const deleteBtn = document.createElement('button');
+    deleteBtn.className = 'gallery-item__delete';
+    deleteBtn.textContent = '×';
+    deleteBtn.title = 'Eliminar';
+    deleteBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      deleteGalleryItem(parentItem, idx);
+    });
+
+    // Header
+    const header = document.createElement('div');
+    header.className = 'gallery-item__header';
+
+    const headerLeft = document.createElement('div');
+    headerLeft.className = 'gallery-item__header-left';
+    headerLeft.appendChild(dragHandle);
+    headerLeft.appendChild(typeSelect);
+
+    header.appendChild(headerLeft);
+    header.appendChild(deleteBtn);
+
+    // Fields container
+    const fields = document.createElement('div');
+    fields.className = `gallery-item__fields${isText ? ' gallery-item__fields--text' : ''}`;
+
+    if (isText) {
+      // TEXT item - full width
+      // Ensure text object exists
+      if (!gItem.text) gItem.text = { es: '', en: '' };
+
+      // Cols + Text size on same line (2 columns)
+      const colsSelect = document.createElement('select');
+      colsSelect.className = 'gallery-item__select--cols field-control';
+      colsSelect.addEventListener('change', (e) => { gItem.cols = Number(e.target.value) || 1; markDirty(); });
+      [1,2,3,4].forEach(n => {
+        const opt = document.createElement('option');
+        opt.value = String(n);
+        opt.textContent = `${n} columna${n>1?'s':''}`;
+        colsSelect.appendChild(opt);
+      });
+      colsSelect.value = gItem.cols || 1;
+
+      // Text size selector - rem values
+      const sizeSelect = document.createElement('select');
+      sizeSelect.className = 'field-control';
+      sizeSelect.addEventListener('change', (e) => { gItem.textSize = e.target.value; markDirty(); });
+      ['0.875rem','1rem','1.25rem','1.5rem','2rem'].forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = s;
+        opt.textContent = s;
+        sizeSelect.appendChild(opt);
+      });
+      sizeSelect.value = gItem.textSize || '1rem';
+
+      // Wrapper for 2-column layout
+      const rowWrap = document.createElement('div');
+      rowWrap.style.cssText = 'display:grid;grid-template-columns:1fr 1fr;gap:8px;';
+      rowWrap.appendChild(createField('Columnas', colsSelect));
+      rowWrap.appendChild(createField('Tamaño texto', sizeSelect));
+      fields.appendChild(rowWrap);
+
+      // Text es (full width)
+      fields.appendChild(createField('Texto (es)', document.createElement('textarea'), gItem.text.es || '', 4, (val) => { gItem.text.es = val; }));
+
+      // Text en (full width)
+      fields.appendChild(createField('Texto (en)', document.createElement('textarea'), gItem.text.en || '', 4, (val) => { gItem.text.en = val; }));
+
+    } else {
+      // IMAGE item - 3 columns
+      // Preview (full width, larger) - declare BEFORE event listener
+      const preview = document.createElement('div');
+      preview.className = 'gallery-item__preview';
+      preview.innerHTML = gItem.src ? `<img src="${gItem.src}" alt="">` : 'Sin imagen';
+
+      // Src selector (full width)
+      const srcSelect = document.createElement('select');
+      srcSelect.className = 'gallery-item__select--full field-control';
+      srcSelect.innerHTML = `<option value="">— Seleccionar —</option>` + getImgOptions();
+      srcSelect.value = gItem.src || '';
+      srcSelect.addEventListener('change', (e) => {
+        gItem.src = e.target.value || '';
+        preview.innerHTML = gItem.src ? `<img src="${gItem.src}" alt="">` : 'Sin imagen';
+        markDirty();
+      });
+      fields.appendChild(createField('Imagen (src)', srcSelect));
+
+      fields.appendChild(preview);
+
+      // Cols selector (full width)
+      const colsSelect = document.createElement('select');
+      colsSelect.className = 'gallery-item__select--cols gallery-item__select--full field-control';
+      colsSelect.addEventListener('change', (e) => { gItem.cols = Number(e.target.value) || 1; markDirty(); });
+      [1,2,3,4].forEach(n => {
+        const opt = document.createElement('option');
+        opt.value = String(n);
+        opt.textContent = `${n} columna${n>1?'s':''}`;
+        colsSelect.appendChild(opt);
+      });
+      colsSelect.value = gItem.cols || 1;
+      fields.appendChild(createField('Columnas', colsSelect));
+
+      // Flags (darkBg / accentBg) - checkboxes reusing styles
+      const flags = document.createElement('div');
+      flags.className = 'gallery-item__flags';
+
+      const darkFlag = createCheckboxFlag('Fondo oscuro', gItem.darkBg || false, (checked) => { gItem.darkBg = checked; markDirty(); });
+      const accentFlag = createCheckboxFlag('Fondo acento', gItem.accentBg || false, (checked) => { gItem.accentBg = checked; markDirty(); });
+
+      flags.appendChild(darkFlag);
+      flags.appendChild(accentFlag);
+      fields.appendChild(flags);
+    }
+
+    itemEl.appendChild(header);
+    itemEl.appendChild(fields);
+
+    // Drag handlers
+    itemEl.addEventListener('dragstart', (e) => {
+      e.dataTransfer.setData('text/plain', JSON.stringify({ type: 'gallery', idx }));
+      itemEl.classList.add('dragging');
+    });
+    itemEl.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      itemEl.classList.add('drag-over');
+    });
+    itemEl.addEventListener('dragleave', (e) => {
+      itemEl.classList.remove('drag-over');
+    });
+    itemEl.addEventListener('drop', (e) => {
+      e.preventDefault();
+      const data = JSON.parse(e.dataTransfer.getData('text/plain'));
+      if (data.type === 'gallery' && data.idx !== idx) {
+        moveGalleryItem(parentItem, data.idx, idx);
+      }
+    });
+    itemEl.addEventListener('dragend', (e) => {
+      itemEl.classList.remove('dragging', 'drag-over');
+    });
+
+    return itemEl;
+  }
+
+  function createField(label, input, value, rows, onChange) {
+    const wrap = document.createElement('div');
+    wrap.className = 'field';
+    if (input.classList.contains('gallery-item__select--full')) {
+      wrap.classList.add('field--full');
+    }
+    const lbl = document.createElement('label');
+    lbl.textContent = label;
+    wrap.appendChild(lbl);
+    if (input.tagName === 'TEXTAREA') {
+      input.value = value || '';
+      input.rows = rows || 4;
+      input.addEventListener('input', () => { onChange?.(input.value); markDirty(); });
+    }
+    wrap.appendChild(input);
+    return wrap;
+  }
+
+  function createCheckboxFlag(label, checked, onChange) {
+    const wrap = document.createElement('label');
+    wrap.className = 'gallery-item__flag';
+    const input = document.createElement('input');
+    input.type = 'checkbox';
+    input.checked = checked;
+    input.addEventListener('change', (e) => onChange(e.target.checked));
+    wrap.appendChild(input);
+    wrap.appendChild(document.createTextNode(label));
+    return wrap;
+  }
+
+  renderGallery();
+  return wrap;
 }
 
 // ── Add new item ─────────────────────────────────────────────────────────────
