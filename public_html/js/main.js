@@ -589,10 +589,38 @@ function renderProductDesignGrid(items) {
           tile.dataset.hoverColor = item.hoverColor;
           tile.style.setProperty("--tile-hover-color", item.hoverColor);
         }
-        if (item.URLFigma) {
+
+        // Add click handler for project navigation (like brand-development)
+        if (item.project) {
+          tile.dataset.project = item.project;
           tile.classList.add("cursor-pointer");
+          const labelData = item.label;
+          const name = labelData?.name || item.projectName || item.title?.[currentLang] || item.title?.es || '';
+          if (name) tile.setAttribute('aria-label', `Ver proyecto: ${name}`);
+          tile.setAttribute('role', 'button');
+          tile.setAttribute('tabindex', '0');
+          tile.addEventListener('click', (e) => {
+            // Don't navigate if clicking on a link inside
+            if (e.target.closest('a')) return;
+            const ca = document.querySelector('.content-area');
+            if (ca) ca.classList.add('fading');
+            setTimeout(() => { window.location.href = `project.html?p=${encodeURIComponent(item.project)}`; }, 500);
+          });
+          tile.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              tile.click();
+            }
+          });
+        }
+
+        // Figma URL click (opens in new tab)
+        if (item.URLFigma) {
           const safeUrl = _safeSrc(item.URLFigma) || (item.URLFigma?.startsWith('https://') ? item.URLFigma : '');
-          if (safeUrl) tile.addEventListener("click", () => window.open(safeUrl, "_blank", "noopener,noreferrer"));
+          if (safeUrl) {
+            // Add Figma link as a separate element or handle separately
+            // For now, the project click takes precedence
+          }
         }
 
         const title = item.title?.[currentLang] || item.title?.es || "";

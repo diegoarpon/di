@@ -1,7 +1,35 @@
 {
   "productDesign": [
     {
+      "order": 1,
+      "project": "formstream",
+      "projectName": "FormStream",
+      "src": "img/visuals/logos/qu-logo.svg",
+      "span": 6,
+      "logoSize": 100,
+      "invertLogo": false,
+      "hoverColor": "var(--gold-yellow)",
+      "secondaryLogo": "img/logos/formstream-logo.svg",
+      "secondaryLogoSize": 300,
+      "title": {
+        "es": "QuikForms App",
+        "en": "QuikForms App"
+      },
+      "subtitle": {
+        "es": "Desktop App para completar formularios digitales",
+        "en": "Desktop application for completing digital forms"
+      },
+      "label": {
+        "es": { "name": "FormStream", "industry": "Desktop App para formularios digitales" },
+        "en": { "name": "FormStream", "industry": "Desktop application for digital forms" }
+      },
+      "year": "2025",
+      "URLFigma": "https://www.figma.com/design/8gpqQroeswlZra2kLw7evO/Quik--FormStream?node-id=38-157&t=s1ah8ZcMwjgkOMFx-1"
+    },
+    {
       "order": 2,
+      "project": "quikforms-app",
+      "projectName": "QuikForms App",
       "src": "img/visuals/logos/qu-logo.svg",
       "span": 6,
       "logoSize": 100,
@@ -15,11 +43,17 @@
         "es": "Desktop App para gestión de formularios digitales",
         "en": "Desktop application for managing digital forms"
       },
+      "label": {
+        "es": { "name": "QuikForms App", "industry": "Desktop App para gestión de formularios" },
+        "en": { "name": "QuikForms App", "industry": "Desktop application for form management" }
+      },
       "year": "2024",
       "URLFigma": "https://www.figma.com/design/qClxhCM5sw3a75jYehioIn/QuikForms-App?node-id=21-19580&t=PFL086G37rhbAMeF-1"
     },
     {
       "order": 3,
+      "project": "quikforms-manager",
+      "projectName": "QuikForms Manager",
       "src": "img/visuals/logos/qu-logo.svg",
       "span": 6,
       "logoSize": 100,
@@ -30,30 +64,20 @@
         "en": "QuikForms Manager App"
       },
       "subtitle": {
-        "es": "Desktop App para gestión y creación de formularios digitales ",
+        "es": "Desktop App para gestión y creación de formularios digitales",
         "en": "Desktop application for managing and creating digital forms"
+      },
+      "label": {
+        "es": { "name": "QuikForms Manager", "industry": "Desktop App para creación de formularios" },
+        "en": { "name": "QuikForms Manager", "industry": "Desktop application for form creation" }
       },
       "year": "2025",
       "URLFigma": "https://www.figma.com/design/pkIpiIWosa9jQbFkCNPm5W/QuikForms-Manager-App?node-id=26-1602&t=D1X8a7p1GVJkbgIJ-1"
     },
     {
-      "order": 1,
-      "src": "img/visuals/logos/qu-logo.svg",
-      "span": 6,
-      "logoSize": 100,
-      "invertLogo": false,
-      "hoverColor": "var(--gold-yellow)",
-      "secondaryLogo": "img/logos/formstream-logo.svg",
-      "secondaryLogoSize": 300,
-      "subtitle": {
-        "es": "Desktop App para completar formularios digitales",
-        "en": "Desktop application for completing digital forms"
-      },
-      "year": "2025",
-      "URLFigma": "https://www.figma.com/design/8gpqQroeswlZra2kLw7evO/Quik--FormStream?node-id=38-157&t=s1ah8ZcMwjgkOMFx-1"
-    },
-    {
       "order": 4,
+      "project": "trio-rewards",
+      "projectName": "Trio Rewards",
       "src": "img/visuals/logos/trio-logo.svg",
       "span": 6,
       "logoSize": 75,
@@ -66,6 +90,10 @@
       "subtitle": {
         "es": "Plataforma de marketing comunitario para restaurantes locales",
         "en": "Community marketing platform for local restaurants"
+      },
+      "label": {
+        "es": { "name": "Trio Rewards", "industry": "Plataforma de marketing para restaurantes" },
+        "en": { "name": "Trio Rewards", "industry": "Community marketing platform for restaurants" }
       },
       "year": "2022",
       "URLFigma": "https://www.figma.com/design/jr3UsYmqRr1rrr1emx0PzP/Trio-Rewards?node-id=3-46&t=7soMSf3GiQ17KmIx-1"

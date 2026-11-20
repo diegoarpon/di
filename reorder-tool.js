@@ -165,8 +165,8 @@ document.querySelectorAll('.tab').forEach(btn => {
     btn.classList.add('active');
     document.querySelectorAll('.panel-wrap').forEach(p => p.classList.remove('active'));
     document.getElementById('panel-' + activeTab).classList.add('active');
-    // Featured Projects: split 60/40 (panel 60%)
-    setWorkspaceSplit(activeTab === 'featured-projects');
+    // Featured Projects & Product Design: split 60/40 (panel 60%)
+    setWorkspaceSplit(activeTab === 'featured-projects' || activeTab === 'product-design');
     closePanel();
     renderGrid(activeTab);
     updateSaveBtn();
@@ -174,7 +174,7 @@ document.querySelectorAll('.tab').forEach(btn => {
 });
 
 // Aplicar estado inicial según pestaña activa
-setWorkspaceSplit(activeTab === 'featured-projects');
+setWorkspaceSplit(activeTab === 'featured-projects' || activeTab === 'product-design');
 
 // ── Save ──────────────────────────────────────────────────────────────────────
 
@@ -924,11 +924,30 @@ function buildBDForm(item, idx) {
 
 function buildPDForm(item, idx) {
   const frag = document.createDocumentFragment();
+  const bgImgs = [...imgCatalog.backgrounds, ...imgCatalog.videos];
 
   frag.appendChild(group('General',
+    textInput(item, 'alt', 'Alt text'),
+    textInput(item, 'project', 'Project ID'),
+    textInput(item, 'projectName', 'Project name'),
     textInput(item, 'year', 'Año'),
-    textInput(item, 'hoverColor', 'Hover color', 'var(--mint)'),
+    textInput(item, 'hoverColor', 'Hover color', 'var(--gold-yellow)'),
     textInput(item, 'URLFigma', 'URL Figma'),
+    toggle(item, 'hideProjectMeta', 'Ocultar project meta'),
+    { twoCols: true },
+  ));
+
+  frag.appendChild(group('Tamaño',
+    (() => {
+      const sel = document.createElement('select');
+      ['tile-xl', 'tile'].forEach(v => {
+        const o = document.createElement('option');
+        o.value = v; o.textContent = v; o.selected = item.size === v;
+        sel.appendChild(o);
+      });
+      sel.addEventListener('change', () => onChange(item, 'size', sel.value));
+      return field('Size', sel);
+    })(),
     (() => {
       const sel = document.createElement('select');
       [4, 6, 8].forEach(v => {
@@ -939,6 +958,13 @@ function buildPDForm(item, idx) {
       sel.addEventListener('change', () => onChange(item, 'span', parseInt(sel.value)));
       return field('Span', sel);
     })(),
+    { twoCols: true },
+  ));
+
+  frag.appendChild(group('Fondo',
+    imgPicker(item, 'bgImage', 'Background image', bgImgs),
+    textInput(item, 'bgColor', 'BG color', '#000000'),
+    { twoCols: true },
   ));
 
   frag.appendChild(group('Logo',
@@ -947,10 +973,14 @@ function buildPDForm(item, idx) {
     toggle(item, 'invertLogo', 'Invertir logo'),
     imgPicker(item, 'secondaryLogo', 'Logo secundario', imgCatalog.logos),
     numberInput(item, 'secondaryLogoSize', 'Logo secundario size (px)'),
+    { twoCols: true },
   ));
 
   frag.appendChild(i18nField(item, 'title', 'Título'));
   frag.appendChild(i18nField(item, 'subtitle', 'Subtítulo'));
+
+  // Gallery editor
+  frag.appendChild(buildGalleryEditor(item));
 
   return frag;
 }

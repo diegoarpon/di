@@ -222,11 +222,26 @@
 
     function loadProject() {
       if (!projectId) { window.location.href = "index.html?tab=brand-development"; return; }
-      const doRender = (data) => {
-        const project = data.brandDevelopment.find(p => p.project === projectId);
+
+      // Fetch both brand-development and product-design JSON with no-cache
+      const fetchOpts = { cache: 'no-cache' };
+      Promise.all([
+        fetch("brand-development.json", fetchOpts).then(r => r.json()),
+        fetch("product-design.json", fetchOpts).then(r => r.json())
+      ]).then(([bdData, pdData]) => {
+        // Search in brandDevelopment first
+        let project = (bdData.brandDevelopment || []).find(p => p.project === projectId);
+        let section = 'brandDevelopment';
+
+        // If not found, search in productDesign
+        if (!project) {
+          project = (pdData.productDesign || []).find(p => p.project === projectId);
+          section = 'productDesign';
+        }
+
         if (!project) { window.location.href = "index.html?tab=brand-development"; return; }
 
-        _projectData = data;
+        _projectData = { brandDevelopment: bdData.brandDevelopment, productDesign: pdData.productDesign };
         const label = project.label?.[currentLang] || project.label?.es;
         const projectName = project.projectName || label.name;
         document.title = `${projectName} — estudio.d`;
@@ -409,10 +424,7 @@
           loader.addEventListener("transitionend", () => loader.remove(), { once: true });
         }
         document.querySelector(".content-area").classList.remove("fading");
-
-      };
-      if (_projectData) { doRender(_projectData); return; }
-      fetch("brand-development.json").then(r => r.json()).then(doRender);
+      });
     }
   </script>
 </body>
