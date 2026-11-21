@@ -105,12 +105,12 @@
           <div class="mt-4 mb-2">
             <div class="d-flex flex-column gap-2">
               <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button"
-                onclick="fadeNavigate('index.html')" data-i18n="brandCreation">brand creation</button>
-              <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button active"
-                onclick="fadeNavigate('index.html?tab=brand-development')" data-i18n="brandDevelopment">brand
+                onclick="fadeNavigate('index.html')" data-i18n="brandCreation" data-tab="brand-creation">brand creation</button>
+              <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button"
+                onclick="fadeNavigate('index.html?tab=brand-development')" data-i18n="brandDevelopment" data-tab="brand-development">brand
                 development</button>
               <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button"
-                onclick="fadeNavigate('index.html?tab=product-design')" data-i18n="productDesign">product
+                onclick="fadeNavigate('index.html?tab=product-design')" data-i18n="productDesign" data-tab="product-design">product
                 design</button>
             </div>
           </div>
@@ -165,8 +165,7 @@
         <div class="project-header">
           <div class="d-flex align-items-baseline justify-content-between">
             <h1 class="tab-heading project-title mb-3" id="project-name"></h1>
-            <a class="project-back" href="#"
-              onclick="event.preventDefault(); fadeNavigate('index.html?tab=brand-development')">
+            <a class="project-back" href="#" id="project-back-link">
               <div class="project-back-inner">
                 <div class="project-back-arrow-large">←</div>
                 <span class="project-back-label" data-i18n="back">volver</span>
@@ -241,6 +240,22 @@
 
         if (!project) { window.location.href = "index.html?tab=brand-development"; return; }
 
+        // Update sidebar active tab based on project section
+        const sidebarTabMap = { brandDevelopment: 'brand-development', productDesign: 'product-design' };
+        const activeTab = sidebarTabMap[section] || 'brand-development';
+        document.querySelectorAll('#sidebar .sidebar-nav-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.tab === activeTab);
+          btn.setAttribute('aria-selected', btn.dataset.tab === activeTab ? 'true' : 'false');
+        });
+
+        // Set back link based on section
+        const backLinkMap = { brandDevelopment: 'brand-development', productDesign: 'product-design' };
+        const backTab = backLinkMap[section] || 'brand-development';
+        document.getElementById('project-back-link').onclick = () => {
+          event.preventDefault();
+          fadeNavigate(`index.html?tab=${backTab}`);
+        };
+
         _projectData = { brandDevelopment: bdData.brandDevelopment, productDesign: pdData.productDesign };
         const label = project.label?.[currentLang] || project.label?.es;
         const projectName = project.projectName || label.name;
@@ -258,22 +273,23 @@
         document.getElementById("twitter-image").content = ogImage;
         document.documentElement.lang = currentLang;
 
-        const metaEl = document.getElementById("project-meta");
         const title = project.title?.[currentLang] || project.title?.es || "";
         const industry = label?.industry || "";
         const titleCap = title ? title.charAt(0).toUpperCase() + title.slice(1) : "";
         const industryLow = industry ? industry.charAt(0).toLowerCase() + industry.slice(1) : "";
         const metaText = project.hideProjectMeta ? "" : (titleCap && industryLow ? `${titleCap} ${industryLow}` : titleCap || industry);
-        metaEl.textContent = metaText;
-        metaEl.classList.toggle("d-none", !metaText);
-
-        const gallery = document.getElementById("project-gallery");
-        gallery.innerHTML = "";
 
         const description = project.description?.[currentLang] || project.description?.es || "";
         const descEl = document.getElementById("project-description");
         descEl.innerHTML = sanitizeHTML(description);
         descEl.classList.toggle("d-none", !description);
+
+        const metaEl = document.getElementById("project-meta");
+        metaEl.textContent = metaText;
+        metaEl.classList.toggle("d-none", !metaText);
+
+        const gallery = document.getElementById("project-gallery");
+        gallery.innerHTML = "";
         document.getElementById("meta-description").content = description;
         document.getElementById("og-description").content = description;
         document.getElementById("twitter-description").content = description;

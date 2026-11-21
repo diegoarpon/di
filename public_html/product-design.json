@@ -4,99 +4,431 @@
       "order": 1,
       "project": "formstream",
       "projectName": "FormStream",
-      "src": "img/visuals/logos/qu-logo.svg",
-      "span": 6,
-      "logoSize": 100,
-      "invertLogo": false,
-      "hoverColor": "var(--gold-yellow)",
-      "secondaryLogo": "img/logos/formstream-logo.svg",
-      "secondaryLogoSize": 300,
-      "title": {
-        "es": "QuikForms App",
-        "en": "QuikForms App"
-      },
+      "slug": "formstream",
+      "title": "FormStream",
+      "category": "Desktop Application",
+      "year": "2025",
       "subtitle": {
         "es": "Desktop App para completar formularios digitales",
         "en": "Desktop application for completing digital forms"
       },
-      "label": {
-        "es": { "name": "FormStream", "industry": "Desktop App para formularios digitales" },
-        "en": { "name": "FormStream", "industry": "Desktop application for digital forms" }
+      "summary": {
+        "es": "FormStream transforma la completación de formularios complejos en una experiencia guiada y fluida, combinando divulgación progresiva, autocompletado inteligente y navegación jerárquica.",
+        "en": "FormStream transforms complex form completion into a guided, fluid experience, combining progressive disclosure, smart autocomplete, and hierarchical navigation."
       },
-      "year": "2025",
-      "URLFigma": "https://www.figma.com/design/8gpqQroeswlZra2kLw7evO/Quik--FormStream?node-id=38-157&t=s1ah8ZcMwjgkOMFx-1"
+      "roles": ["Product Design", "UX Research", "Design System"],
+      "team": {
+        "es": "Diseñador de producto principal",
+        "en": "Lead Product Designer"
+      },
+      "duration": {
+        "es": "6 meses",
+        "en": "6 months"
+      },
+      "heroImage": "img/projects/formstream/hero.webp",
+      "challenge": {
+        "es": "Los formularios digitales son ubicuos pero a menudo frustrantes. Los usuarios enfrentan diseños densos, validaciones poco claras y flujos de trabajo rígidos que no se adaptan a casos de uso reales. FormStream necesitaba transformar la completación de formularios de una tarea tediosa en una experiencia guiada y fluida, sin sacrificar la potencia y flexibilidad que requieren los formularios complejos.",
+        "en": "Digital forms are ubiquitous but often frustrating. Users face dense layouts, unclear validation, and rigid workflows that don't adapt to real-world use cases. FormStream needed to transform form completion from a chore into a guided, fluid experience — without sacrificing the power and flexibility that complex forms require."
+      },
+      "objectives": [
+        {
+          "title": { "es": "Reducir carga cognitiva", "en": "Reduce Cognitive Load" },
+          "description": { "es": "Dividir formularios complejos en pasos progresivos reduce la abrumación y aumenta las tasas de completación.", "en": "Breaking complex forms into progressive steps reduces overwhelm and increases completion rates." }
+        },
+        {
+          "title": { "es": "Guía contextual", "en": "Contextual Guidance" },
+          "description": { "es": "Ayuda en línea, valores por defecto inteligentes y validación en tiempo real guían al usuario sin interrumpir su flujo.", "en": "Inline help, smart defaults, and real-time validation guide users without interrupting their flow." }
+        },
+        {
+          "title": { "es": "Flujos flexibles", "en": "Flexible Workflows" },
+          "description": { "es": "Lógica de ramificación y campos condicionales adaptan el formulario a la situación específica de cada usuario.", "en": "Branching logic and conditional fields adapt the form to each user's specific situation." }
+        }
+      ],
+      "decisions": [
+        {
+          "title": { "es": "Navegación persistente", "en": "Persistent Navigation" },
+          "description": { "es": "Una barra lateral muestra la jerarquía completa del formulario con la sección actual resaltada. Los grupos colapsables permiten enfocarse en la tarea actual sin perder contexto. Las migas de pan en la parte superior proporcionan una ruta alternativa para saltos rápidos entre secciones distantes.", "en": "A persistent sidebar shows the complete form hierarchy with the current section highlighted. Collapsible groups let users focus on their current task without losing context. Breadcrumbs at the top provide an alternative path for quick jumps between distant sections. Both patterns work in tandem — the sidebar for spatial awareness, breadcrumbs for direct access." },
+          "composition": "A",
+          "image": "img/projects/formstream/navigation-sidebar.webp",
+          "caption": { "es": "Sidebar persistente con jerarquía de formulario", "en": "Persistent sidebar with form hierarchy" }
+        },
+        {
+          "title": { "es": "Modo Guía", "en": "Guidance Mode" },
+          "description": { "es": "El Modo Guía transforma el formulario en un asistente paso a paso. Cada campo recibe atención enfocada con ayuda contextual, retroalimentación de validación e indicación clara de progreso. Los usuarios pueden salir del Modo Guía en cualquier momento para volver a la vista completa del formulario.", "en": "Guidance Mode transforms the form into a step-by-step wizard. Each field gets focused attention with contextual help, validation feedback, and clear progress indication. Users can exit Guidance Mode at any time to return to the full form view." },
+          "composition": "C",
+          "imageA": "img/projects/formstream/guidance-empty.webp",
+          "imageB": "img/projects/formstream/guidance-active.webp",
+          "captionA": { "es": "Estado vacío — campo enfocado con ayuda en línea", "en": "Empty state — focused field with inline help" },
+          "captionB": { "es": "Estado activo — validación en tiempo real y progreso", "en": "Active state — real-time validation and progress" }
+        },
+        {
+          "title": { "es": "Autocompletado inteligente", "en": "Smart Autocomplete" },
+          "description": { "es": "El autocompletado aprende del historial del usuario y patrones organizacionales. Las sugerencias se ordenan por relevancia — entradas recientes, favoritos del equipo y formatos validados aparecen primero. La navegación por teclado permite a usuarios avanzados volar a través de campos repetitivos. El sistema también detecta formatos comunes (emails, teléfonos, fechas) y aplica máscaras de entrada apropiadas automáticamente.", "en": "Autocomplete learns from user history and organizational patterns. Suggestions are ranked by relevance — recent entries, team favorites, and validated formats appear first. Keyboard navigation lets power users fly through repetitive fields. The system also detects common formats (emails, phones, dates) and applies appropriate input masks automatically." },
+          "composition": "B",
+          "image": "img/projects/formstream/autocomplete.webp",
+          "caption": { "es": "Sugerencias de autocompletado en acción", "en": "Autocomplete suggestions in action" }
+        }
+      ],
+      "walkthrough": [
+        {
+          "number": "01",
+          "title": { "es": "Landing del formulario", "en": "Form Landing" },
+          "description": { "es": "Punto de entrada limpio con resumen del formulario, tiempo estimado y documentos requeridos.", "en": "Clean entry point with form summary, estimated time, and required documents." },
+          "image": "img/projects/formstream/01-form-landing.webp",
+          "caption": { "es": "Landing del formulario con resumen y tiempo estimado", "en": "Form landing with summary and estimated time" }
+        },
+        {
+          "number": "02",
+          "title": { "es": "Completado guiado", "en": "Guided Completion" },
+          "description": { "es": "Flujo paso a paso con ayuda contextual, auto-guardado y validación en línea.", "en": "Step-by-step flow with contextual help, auto-save, and inline validation." },
+          "image": "img/projects/formstream/02-guided-completion.webp",
+          "caption": { "es": "Completado guiado con ayuda contextual", "en": "Guided completion with contextual help" }
+        },
+        {
+          "number": "03",
+          "title": { "es": "Revisar y enviar", "en": "Review & Submit" },
+          "description": { "es": "Vista de resumen con seguimiento de cambios, campos requeridos faltantes destacados y confirmación.", "en": "Summary view with change tracking, missing required fields highlighted, and confirmation." },
+          "image": "img/projects/formstream/03-review-submit.webp",
+          "caption": { "es": "Revisión final con seguimiento de cambios", "en": "Final review with change tracking" }
+        }
+      ],
+      "outcome": {
+        "es": "FormStream demuestra que la complejidad no requiere complicación. Al invertir en divulgación progresiva, inteligencia contextual y respeto por la agencia del usuario, incluso los formularios más exigentes pueden sentirse sin esfuerzo. Los patrones establecidos aquí — Modo Guía, autocompletado inteligente, navegación jerárquica — se están aplicando ahora en toda la plataforma QuikForms.",
+        "en": "FormStream demonstrates that complexity doesn't require complication. By investing in progressive disclosure, contextual intelligence, and respect for user agency, even the most demanding forms can feel effortless. The patterns established here — Guidance Mode, smart autocomplete, hierarchical navigation — are now being applied across the QuikForms platform."
+      },
+      "nextProject": {
+        "slug": "quikforms-manager",
+        "title": { "es": "QuikForms Manager", "en": "QuikForms Manager" }
+      },
+      "URLFigma": "https://www.figma.com/design/8gpqQroeswlZra2kLw7evO/Quik--FormStream?node-id=38-157&t=s1ah8ZcMwjgkOMFx-1",
+      "hoverColor": "var(--gold-yellow)",
+      "src": "img/visuals/logos/qu-logo.svg",
+      "logoSize": 100,
+      "invertLogo": false,
+      "span": 6,
+      "secondaryLogo": "img/logos/formstream-logo.svg",
+      "secondaryLogoSize": 300,
+      "enabled": true
     },
     {
       "order": 2,
       "project": "quikforms-app",
       "projectName": "QuikForms App",
-      "src": "img/visuals/logos/qu-logo.svg",
-      "span": 6,
-      "logoSize": 100,
-      "invertLogo": false,
-      "hoverColor": "var(--mint)",
-      "title": {
-        "es": "QuikForms App",
-        "en": "QuikForms App"
-      },
+      "slug": "quikforms-app",
+      "title": "QuikForms App",
+      "category": "Desktop Application",
+      "year": "2024",
       "subtitle": {
         "es": "Desktop App para gestión de formularios digitales",
         "en": "Desktop application for managing digital forms"
       },
-      "label": {
-        "es": { "name": "QuikForms App", "industry": "Desktop App para gestión de formularios" },
-        "en": { "name": "QuikForms App", "industry": "Desktop application for form management" }
+      "summary": {
+        "es": "QuikForms App es una solución de escritorio para la gestión completa de formularios digitales. Ofrece herramientas para crear, editar, distribuir y analizar formularios con una experiencia de usuario fluida y sin fricción.",
+        "en": "QuikForms App is a desktop solution for complete digital form management. It provides tools to create, edit, distribute, and analyze forms with a smooth, frictionless user experience."
       },
-      "year": "2024",
-      "URLFigma": "https://www.figma.com/design/qClxhCM5sw3a75jYehioIn/QuikForms-App?node-id=21-19580&t=PFL086G37rhbAMeF-1"
+      "roles": ["Product Design", "UX Research", "Design System"],
+      "team": {
+        "es": "Diseñador de producto principal",
+        "en": "Lead Product Designer"
+      },
+      "duration": {
+        "es": "8 meses",
+        "en": "8 months"
+      },
+      "heroImage": "img/projects/quikforms-app/hero.webp",
+      "challenge": {
+        "es": "Las herramientas existentes de formularios obligaban a elegir entre simplicidad y potencia. Los creadores de formularios necesitaban una interfaz accesible para usuarios no técnicos, pero con la profundidad para manejar lógica condicional compleja, validaciones personalizadas y flujos de trabajo multi-paso. El desafío era diseñar un editor visual que no requiriera código pero que no limitara la expresividad.",
+        "en": "Existing form tools forced a choice between simplicity and power. Form creators needed an accessible interface for non-technical users, but with the depth to handle complex conditional logic, custom validations, and multi-step workflows. The challenge was designing a visual editor that required no code but didn't limit expressiveness."
+      },
+      "objectives": [
+        {
+          "title": { "es": "Editor visual sin código", "en": "No-Code Visual Editor" },
+          "description": { "es": "Interfaz de arrastrar y soltar para construir formularios complejos sin escribir una línea de código.", "en": "Drag-and-drop interface to build complex forms without writing a single line of code." }
+        },
+        {
+          "title": { "es": "Lógica condicional visual", "en": "Visual Conditional Logic" },
+          "description": { "es": "Representar ramificaciones y dependencias entre campos de forma comprensible para cualquiera.", "en": "Represent branching and field dependencies in a way anyone can understand." }
+        },
+        {
+          "title": { "es": "Vista previa en tiempo real", "en": "Live Preview" },
+          "description": { "es": "Ver exactamente cómo se verá y comportará el formulario para el usuario final mientras se edita.", "en": "See exactly how the form will look and behave for the end user while editing." }
+        }
+      ],
+      "decisions": [
+        {
+          "title": { "es": "Canvas de edición dual", "en": "Dual Editing Canvas" },
+          "description": { "es": "Dos paneles sincronizados: un editor visual de arrastrar y soltar a la izquierda y una vista previa en vivo a la derecha. Los cambios en cualquiera se reflejan instantáneamente en el otro. Esto elimina el ciclo de editar-guardar-vista-previa y permite iterar a velocidad de pensamiento.", "en": "Two synchronized panels: a visual drag-and-drop editor on the left and a live preview on the right. Changes in either reflect instantly in the other. This eliminates the edit-save-preview cycle and enables iteration at the speed of thought." },
+          "composition": "A",
+          "image": "img/projects/quikforms-app/dual-canvas.webp",
+          "caption": { "es": "Editor visual y vista previa sincronizados", "en": "Synchronized visual editor and live preview" }
+        },
+        {
+          "title": { "es": "Constructor de lógica visual", "en": "Visual Logic Builder" },
+          "description": { "es": "La lógica condicional se representa como un diagrama de flujo interactivo. Cada regla es un nodo conectado por líneas que muestran el flujo lógico. Los usuarios pueden agregar condiciones (si campo X es Y), acciones (mostrar/ocultar/requerir campo Z) y ver el impacto inmediato en la vista previa.", "en": "Conditional logic is represented as an interactive flowchart. Each rule is a node connected by lines showing the logical flow. Users can add conditions (if field X is Y), actions (show/hide/require field Z), and see immediate impact in the preview." },
+          "composition": "B",
+          "image": "img/projects/quikforms-app/logic-builder.webp",
+          "caption": { "es": "Constructor de lógica condicional visual", "en": "Visual conditional logic builder" }
+        },
+        {
+          "title": { "es": "Biblioteca de componentes", "en": "Component Library" },
+          "description": { "es": "Una biblioteca de 40+ componentes de formulario predefinidos (entradas, selectores, cargadores de archivos, firmas, matrices, etc.) organizados por categoría. Cada componente expone solo las propiedades relevantes, ocultando complejidad innecesaria. Los equipos pueden crear y compartir sus propios componentes personalizados.", "en": "A library of 40+ pre-built form components (inputs, pickers, file uploads, signatures, matrices, etc.) organized by category. Each component exposes only relevant properties, hiding unnecessary complexity. Teams can create and share their own custom components." },
+          "composition": "D",
+          "image": "img/projects/quikforms-app/component-library.webp",
+          "caption": { "es": "Biblioteca de componentes de formulario", "en": "Form component library" }
+        }
+      ],
+      "walkthrough": [
+        {
+          "number": "01",
+          "title": { "es": "Crear nuevo formulario", "en": "Create New Form" },
+          "description": { "es": "Asistente para definir título, descripción, configuraciones base y plantilla inicial.", "en": "Wizard to define title, description, base settings, and starting template." },
+          "image": "img/projects/quikforms-app/01-create-form.webp",
+          "caption": { "es": "Asistente de creación de formulario", "en": "Form creation wizard" }
+        },
+        {
+          "number": "02",
+          "title": { "es": "Diseñar con arrastrar y soltar", "en": "Design with Drag & Drop" },
+          "description": { "es": "Construir el formulario arrastrando componentes al canvas, configurando propiedades en el panel lateral.", "en": "Build the form by dragging components to the canvas, configuring properties in the side panel." },
+          "image": "img/projects/quikforms-app/02-design.webp",
+          "caption": { "es": "Diseño visual del formulario", "en": "Visual form design" }
+        },
+        {
+          "number": "03",
+          "title": { "es": "Configurar lógica y publicar", "en": "Configure Logic & Publish" },
+          "description": { "es": "Agregar reglas condicionales, probar en vista previa, publicar y compartir enlace o embeber.", "en": "Add conditional rules, test in preview, publish, and share link or embed." },
+          "image": "img/projects/quikforms-app/03-logic-publish.webp",
+          "caption": { "es": "Configuración de lógica y publicación", "en": "Logic configuration and publishing" }
+        }
+      ],
+      "outcome": {
+        "es": "QuikForms App redujo el tiempo de creación de formularios complejos de días a horas. Equipos no técnicos ahora construyen y mantienen sus propios formularios sin depender de desarrollo. La arquitectura de componentes permite consistencia visual y funcional a través de toda la organización, mientras que el constructor de lógica visual democratiza flujos de trabajo avanzados.",
+        "en": "QuikForms App reduced complex form creation time from days to hours. Non-technical teams now build and maintain their own forms without engineering dependencies. The component architecture enables visual and functional consistency across the organization, while the visual logic builder democratizes advanced workflows."
+      },
+      "nextProject": {
+        "slug": "quikforms-manager",
+        "title": { "es": "QuikForms Manager", "en": "QuikForms Manager" }
+      },
+      "URLFigma": "https://www.figma.com/design/qClxhCM5sw3a75jYehioIn/QuikForms-App?node-id=21-19580&t=PFL086G37rhbAMeF-1",
+      "hoverColor": "var(--mint)",
+      "src": "img/visuals/logos/qu-logo.svg",
+      "logoSize": 100,
+      "invertLogo": false,
+      "span": 6,
+      "enabled": true
     },
     {
       "order": 3,
       "project": "quikforms-manager",
       "projectName": "QuikForms Manager",
-      "src": "img/visuals/logos/qu-logo.svg",
-      "span": 6,
-      "logoSize": 100,
-      "invertLogo": false,
-      "hoverColor": "var(--teal)",
-      "title": {
-        "es": "QuikForms Manager App",
-        "en": "QuikForms Manager App"
-      },
+      "slug": "quikforms-manager",
+      "title": "QuikForms Manager",
+      "category": "Desktop Application",
+      "year": "2025",
       "subtitle": {
         "es": "Desktop App para gestión y creación de formularios digitales",
         "en": "Desktop application for managing and creating digital forms"
       },
-      "label": {
-        "es": { "name": "QuikForms Manager", "industry": "Desktop App para creación de formularios" },
-        "en": { "name": "QuikForms Manager", "industry": "Desktop application for form creation" }
+      "summary": {
+        "es": "QuikForms Manager es la herramienta administrativa para la plataforma QuikForms. Permite a los administradores configurar plantillas, gestionar usuarios, definir permisos y monitorizar el uso de formularios en toda la organización.",
+        "en": "QuikForms Manager is the administrative tool for the QuikForms platform. It allows administrators to configure templates, manage users, define permissions, and monitor form usage across the organization."
       },
-      "year": "2025",
-      "URLFigma": "https://www.figma.com/design/pkIpiIWosa9jQbFkCNPm5W/QuikForms-Manager-App?node-id=26-1602&t=D1X8a7p1GVJkbgIJ-1"
+      "roles": ["Product Design", "UX Research", "Design System", "Information Architecture"],
+      "team": {
+        "es": "Diseñador de producto principal",
+        "en": "Lead Product Designer"
+      },
+      "duration": {
+        "es": "10 meses",
+        "en": "10 months"
+      },
+      "heroImage": "img/projects/quikforms-manager/hero.webp",
+      "challenge": {
+        "es": "Los administradores de plataformas de formularios enfrentan una tensión constante: necesitan visibilidad total y control granular, pero la cantidad de datos (miles de formularios, usuarios, envíos) hace que los dashboards tradicionales sean abrumadores. El desafío era diseñar una consola de administración que escalara visual y cognitivamente, permitiendo tanto vistas de alto nivel como inspección profunda sin fricción.",
+        "en": "Form platform administrators face constant tension: they need total visibility and granular control, but the volume of data (thousands of forms, users, submissions) makes traditional dashboards overwhelming. The challenge was designing an admin console that scales visually and cognitively, enabling both high-level views and deep inspection without friction."
+      },
+      "objectives": [
+        {
+          "title": { "es": "Visibilidad escalable", "en": "Scalable Visibility" },
+          "description": { "es": "Dashboard que funciona igual de bien con 10 formularios que con 10,000.", "en": "Dashboard that works equally well with 10 forms or 10,000." }
+        },
+        {
+          "title": { "es": "Gestión de permisos granular", "en": "Granular Permissions" },
+          "description": { "es": "Modelo de permisos flexible que se adapta a estructuras organizacionales complejas.", "en": "Flexible permission model adapting to complex organizational structures." }
+        },
+        {
+          "title": { "es": "Insights accionables", "en": "Actionable Insights" },
+          "description": { "es": "Métricas que llevan a decisiones, no solo visualizaciones decorativas.", "en": "Metrics that lead to decisions, not just decorative visualizations." }
+        }
+      ],
+      "decisions": [
+        {
+          "title": { "es": "Dashboard modular", "en": "Modular Dashboard" },
+          "description": { "es": "El dashboard se compone de widgets configurables que los administradores pueden reorganizar, redimensionar y filtrar. Cada widget expone un aspecto del sistema: formularios activos, envíos recientes, salud de la plataforma, uso de almacenamiento. Los widgets se conectan a la misma API de datos, asegurando consistencia.", "en": "The dashboard consists of configurable widgets that admins can rearrange, resize, and filter. Each widget exposes a system aspect: active forms, recent submissions, platform health, storage usage. Widgets connect to the same data API, ensuring consistency." },
+          "composition": "A",
+          "image": "img/projects/quikforms-manager/01-admin-dashboard.webp",
+          "caption": { "es": "Dashboard de administración modular", "en": "Modular admin dashboard" }
+        },
+        {
+          "title": { "es": "Editor de plantillas versionado", "en": "Versioned Template Editor" },
+          "description": { "es": "Las plantillas son ciudadanos de primera clase con control de versiones, ramificación y fusión. Los administradores pueden crear una plantilla base, derivar variantes para departamentos específicos y fusionar mejoras de vuelta a la base. El historial de cambios muestra quién cambió qué y cuándo, con capacidad de rollback en un click.", "en": "Templates are first-class citizens with version control, branching, and merging. Admins can create a base template, derive variants for specific departments, and merge improvements back to base. Change history shows who changed what and when, with one-click rollback." },
+          "composition": "B",
+          "image": "img/projects/quikforms-manager/02-template-editor.webp",
+          "caption": { "es": "Editor de plantillas con control de versiones", "en": "Version-controlled template editor" }
+        },
+        {
+          "title": { "es": "Gestión de usuarios y roles", "en": "User & Role Management" },
+          "description": { "es": "Un modelo de permisos basado en roles (RBAC) con herencia. Los roles se definen a nivel de organización, espacio de trabajo y formulario individual. La matriz de permisos muestra de un vistazo quién puede hacer qué. La invitación masiva y la sincronización con proveedores de identidad (SAML/OIDC) reducen la carga administrativa.", "en": "A role-based permission model (RBAC) with inheritance. Roles are defined at organization, workspace, and individual form levels. The permission matrix shows at a glance who can do what. Bulk invitation and identity provider sync (SAML/OIDC) reduce administrative overhead." },
+          "composition": "C",
+          "imageA": "img/projects/quikforms-manager/03-user-management.webp",
+          "imageB": "img/projects/quikforms-manager/03-permission-matrix.webp",
+          "captionA": { "es": "Gestión de usuarios y roles", "en": "User and role management" },
+          "captionB": { "es": "Matriz de permisos", "en": "Permission matrix" }
+        }
+      ],
+      "walkthrough": [
+        {
+          "number": "01",
+          "title": { "es": "Dashboard ejecutivo", "en": "Executive Dashboard" },
+          "description": { "es": "Vista de alto nivel con KPIs de adopción, salud de formularios y alertas.", "en": "High-level view with adoption KPIs, form health, and alerts." },
+          "image": "img/projects/quikforms-manager/01-executive-dashboard.webp",
+          "caption": { "es": "Dashboard ejecutivo con KPIs", "en": "Executive dashboard with KPIs" }
+        },
+        {
+          "number": "02",
+          "title": { "es": "Gestionar plantillas", "en": "Manage Templates" },
+          "description": { "es": "Crear, versionar, ramificar y fusionar plantillas con historial completo.", "en": "Create, version, branch, and merge templates with full history." },
+          "image": "img/projects/quikforms-manager/02-manage-templates.webp",
+          "caption": { "es": "Gestión de plantillas versionadas", "en": "Versioned template management" }
+        },
+        {
+          "number": "03",
+          "title": { "es": "Configurar permisos", "en": "Configure Permissions" },
+          "description": { "es": "Definir roles, asignar permisos y sincronizar con proveedores de identidad.", "en": "Define roles, assign permissions, and sync with identity providers." },
+          "image": "img/projects/quikforms-manager/03-configure-permissions.webp",
+          "caption": { "es": "Configuración de roles y permisos", "en": "Role and permission configuration" }
+        }
+      ],
+      "outcome": {
+        "es": "QuikForms Manager permitió a organizaciones de 500+ usuarios administrar miles de formularios con un equipo de 2-3 administradores. El dashboard modular redujo el tiempo de detección de problemas de horas a minutos. El control de versiones de plantillas eliminó conflictos entre departamentos. El modelo RBAC con herencia soportó estructuras organizacionales complejas sin configuración manual por formulario.",
+        "en": "QuikForms Manager enabled 500+ user organizations to administer thousands of forms with a 2-3 person admin team. The modular dashboard reduced issue detection time from hours to minutes. Template version control eliminated cross-department conflicts. The inheritance-based RBAC model supported complex org structures without per-form manual configuration."
+      },
+      "nextProject": {
+        "slug": "trio-rewards",
+        "title": { "es": "Trio Rewards", "en": "Trio Rewards" }
+      },
+      "URLFigma": "https://www.figma.com/design/pkIpiIWosa9jQbFkCNPm5W/QuikForms-Manager-App?node-id=26-1602&t=D1X8a7p1GVJkbgIJ-1",
+      "hoverColor": "var(--teal)",
+      "src": "img/visuals/logos/qu-logo.svg",
+      "logoSize": 100,
+      "invertLogo": false,
+      "span": 6,
+      "enabled": true
     },
     {
       "order": 4,
       "project": "trio-rewards",
       "projectName": "Trio Rewards",
-      "src": "img/visuals/logos/trio-logo.svg",
-      "span": 6,
-      "logoSize": 75,
-      "invertLogo": false,
-      "hoverColor": "var(--bubblegum)",
-      "title": {
-        "es": "Trio Rewards App",
-        "en": "Trio Rewards App"
-      },
+      "slug": "trio-rewards",
+      "title": "Trio Rewards",
+      "category": "Community Marketing Platform",
+      "year": "2022",
       "subtitle": {
         "es": "Plataforma de marketing comunitario para restaurantes locales",
         "en": "Community marketing platform for local restaurants"
       },
-      "label": {
-        "es": { "name": "Trio Rewards", "industry": "Plataforma de marketing para restaurantes" },
-        "en": { "name": "Trio Rewards", "industry": "Community marketing platform for restaurants" }
+      "summary": {
+        "es": "Trio Rewards es una plataforma de marketing comunitario que conecta restaurantes locales con sus clientes a través de un sistema de recompensas gamificado. Los usuarios ganan puntos por visitar restaurantes y canjearlos por beneficios exclusivos.",
+        "en": "Trio Rewards is a community marketing platform connecting local restaurants with customers through a gamified rewards system. Users earn points by visiting restaurants and redeem them for exclusive perks."
       },
-      "year": "2022",
-      "URLFigma": "https://www.figma.com/design/jr3UsYmqRr1rrr1emx0PzP/Trio-Rewards?node-id=3-46&t=7soMSf3GiQ17KmIx-1"
+      "roles": ["Product Design", "UX Research", "Brand Design", "Mobile App Design"],
+      "team": {
+        "es": "Diseñador de producto principal",
+        "en": "Lead Product Designer"
+      },
+      "duration": {
+        "es": "12 meses",
+        "en": "12 months"
+      },
+      "heroImage": "img/projects/trio-rewards/hero.webp",
+      "challenge": {
+        "es": "Los restaurantes locales pierden clientes frente a grandes cadenas con programas de fidelidad sofisticados. Los clientes quieren recompensas pero no quieren gestionar múltiples apps ni tarjetas físicas. Los restaurantes necesitan una forma simple de crear ofertas, entender a sus clientes y medir ROI sin conocimientos técnicos. El desafío era diseñar una plataforma de dos lados (restaurantes + comensales) que fuera simple para ambos pero potente bajo el capó.",
+        "en": "Local restaurants lose customers to large chains with sophisticated loyalty programs. Customers want rewards but don't want to manage multiple apps or physical cards. Restaurants need a simple way to create offers, understand their customers, and measure ROI without technical expertise. The challenge was designing a two-sided platform (restaurants + diners) that was simple for both but powerful under the hood."
+      },
+      "objectives": [
+        {
+          "title": { "es": "Experiencia unificada", "en": "Unified Experience" },
+          "description": { "es": "Una sola app para descubrir restaurantes, ganar puntos y canjear recompensas.", "en": "Single app to discover restaurants, earn points, and redeem rewards." }
+        },
+        {
+          "title": { "es": "Panel simple para restaurantes", "en": "Simple Restaurant Dashboard" },
+          "description": { "es": "Crear ofertas, ver analíticas y gestionar recompensas en minutos, sin configuración técnica.", "en": "Create offers, view analytics, and manage rewards in minutes, no technical setup." }
+        },
+        {
+          "title": { "es": "Gamificación ligera", "en": "Lightweight Gamification" },
+          "description": { "es": "Mecánicas de juego que fomentan la repetición sin sentirse manipuladoras.", "en": "Game mechanics that encourage repeat visits without feeling manipulative." }
+        }
+      ],
+      "decisions": [
+        {
+          "title": { "es": "Descubrimiento basado en mapa", "en": "Map-Based Discovery" },
+          "description": { "es": "La pantalla principal muestra un mapa interactivo con restaurantes cercanos, cada uno con su oferta activa visible. Filtros por tipo de cocina, distancia y tipo de recompensa. El mapa se actualiza en tiempo real según la ubicación del usuario. Esto reemplaza la lista genérica con un descubrimiento espacial que refleja cómo la gente realmente elige dónde comer.", "en": "The home screen shows an interactive map with nearby restaurants, each displaying their active offer. Filters by cuisine, distance, and reward type. The map updates in real-time based on user location. This replaces the generic list with spatial discovery that reflects how people actually choose where to eat." },
+          "composition": "A",
+          "image": "img/projects/trio-rewards/01-map-discovery.webp",
+          "caption": { "es": "Descubrimiento de restaurantes basado en mapa", "en": "Map-based restaurant discovery" }
+        },
+        {
+          "title": { "es": "Sistema de puntos unificado", "en": "Unified Points System" },
+          "description": { "es": "Una sola moneda de puntos (Trio Points) funciona en todos los restaurantes participantes. Los puntos se ganan automáticamente al pagar con la app vinculada o escaneando un código QR. No hay tarjetas físicas, no hay check-ins manuales. Los puntos nunca expiran y se pueden canjear por cualquier recompensa en cualquier restaurante de la red.", "en": "A single points currency (Trio Points) works across all participating restaurants. Points are earned automatically when paying with the linked app or scanning a QR code. No physical cards, no manual check-ins. Points never expire and can be redeemed for any reward at any restaurant in the network." },
+          "composition": "B",
+          "image": "img/projects/trio-rewards/02-points-system.webp",
+          "caption": { "es": "Sistema unificado de puntos y recompensas", "en": "Unified points and rewards system" }
+        },
+        {
+          "title": { "es": "Panel de restaurante: ofertas e insights", "en": "Restaurant Dashboard: Offers & Insights" },
+          "description": { "es": "Los restaurantes crean ofertas en 3 pasos: elegir tipo (puntos extra, descuento, item gratis), definir condiciones (días, horarios, mínimo de gasto), publicar. El dashboard muestra métricas clave: visitantes nuevos vs. recurrentes, gasto medio, ROI por oferta, horas pico. Insights automáticos sugieren ajustes: \"Tu oferta de martes tiene 3x más redención que la de miércoles\".", "en": "Restaurants create offers in 3 steps: choose type (bonus points, discount, free item), set conditions (days, hours, minimum spend), publish. Dashboard shows key metrics: new vs. returning visitors, average spend, ROI per offer, peak hours. Automated insights suggest adjustments: \"Your Tuesday offer has 3x more redemptions than Wednesday\"." },
+          "composition": "D",
+          "image": "img/projects/trio-rewards/03-restaurant-dashboard.webp",
+          "caption": { "es": "Panel de restaurante con ofertas e insights", "en": "Restaurant dashboard with offers and insights" }
+        }
+      ],
+      "walkthrough": [
+        {
+          "number": "01",
+          "title": { "es": "Descubrir y ganar", "en": "Discover & Earn" },
+          "description": { "es": "Abrir el mapa, ver ofertas cercanas, ir al restaurante, pagar y ganar puntos automáticamente.", "en": "Open map, see nearby offers, visit restaurant, pay, and earn points automatically." },
+          "image": "img/projects/trio-rewards/01-discover-earn.webp",
+          "caption": { "es": "Descubrir restaurantes y ganar puntos", "en": "Discover restaurants and earn points" }
+        },
+        {
+          "number": "02",
+          "title": { "es": "Canjear recompensas", "en": "Redeem Rewards" },
+          "description": { "es": "Explorar catálogo de recompensas, elegir una, confirmar canje y disfrutar el beneficio.", "en": "Browse rewards catalog, choose one, confirm redemption, and enjoy the perk." },
+          "image": "img/projects/trio-rewards/02-redeem.webp",
+          "caption": { "es": "Catálogo de recompensas y canje", "en": "Rewards catalog and redemption" }
+        },
+        {
+          "number": "03",
+          "title": { "es": "Panel de restaurante", "en": "Restaurant Panel" },
+          "description": { "es": "Crear ofertas, ver métricas en tiempo real, recibir insights automáticos y ajustar estrategia.", "en": "Create offers, view real-time metrics, receive automated insights, and adjust strategy." },
+          "image": "img/projects/trio-rewards/03-restaurant-panel.webp",
+          "caption": { "es": "Panel de gestión para restaurantes", "en": "Restaurant management panel" }
+        }
+      ],
+      "outcome": {
+        "es": "Trio Rewards conectó 200+ restaurantes locales con 50,000+ comensales en su primer año. Los restaurantes vieron un incremento promedio del 23% en visitas recurrentes. La mecánica de puntos unificada eliminó la fatiga de apps múltiples. Los insights automáticos redujeron el tiempo de análisis de restaurantes de horas a minutos. La plataforma demostró que la gamificación ética y el diseño centrado en ambos lados del mercado pueden crear valor sostenible para negocios locales.",
+        "en": "Trio Rewards connected 200+ local restaurants with 50,000+ diners in its first year. Restaurants saw an average 23% increase in repeat visits. The unified points mechanic eliminated multi-app fatigue. Automated insights reduced restaurant analysis time from hours to minutes. The platform proved that ethical gamification and two-sided market design can create sustainable value for local businesses."
+      },
+      "nextProject": {
+        "slug": "formstream",
+        "title": { "es": "FormStream", "en": "FormStream" }
+      },
+      "URLFigma": "https://www.figma.com/design/jr3UsYmqRr1rrr1emx0PzP/Trio-Rewards?node-id=3-46&t=7soMSf3GiQ17KmIx-1",
+      "hoverColor": "var(--bubblegum)",
+      "src": "img/visuals/logos/trio-logo.svg",
+      "logoSize": 75,
+      "invertLogo": false,
+      "span": 6,
+      "enabled": true
     }
   ],
   "tiles": [],

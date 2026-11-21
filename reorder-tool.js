@@ -925,19 +925,65 @@ function buildBDForm(item, idx) {
 function buildPDForm(item, idx) {
   const frag = document.createDocumentFragment();
   const bgImgs = [...imgCatalog.backgrounds, ...imgCatalog.videos];
+  const allImgs = [...imgCatalog.backgrounds, ...imgCatalog.visuals, ...imgCatalog.logos];
 
+  // Ensure arrays exist
+  if (!item.objectives) item.objectives = [];
+  if (!item.decisions) item.decisions = [];
+  if (!item.walkthrough) item.walkthrough = [];
+  if (!item.nextProject) item.nextProject = { slug: '', title: { es: '', en: '' } };
+  if (!item.roles) item.roles = ['Product Design'];
+
+  // General fields
   frag.appendChild(group('General',
-    textInput(item, 'alt', 'Alt text'),
-    textInput(item, 'project', 'Project ID'),
-    textInput(item, 'projectName', 'Project name'),
-    textInput(item, 'year', 'Año'),
+    textInput(item, 'project', 'Project ID (slug)', 'formstream', 'Identificador único para la URL'),
+    textInput(item, 'projectName', 'Project Name', 'FormStream', 'Nombre visible'),
+    textInput(item, 'slug', 'Slug', 'formstream', 'Slug para navegación (nextProject)'),
+    textInput(item, 'title', 'Title', 'FormStream', 'Título del caso de estudio'),
+    textInput(item, 'category', 'Category', 'Desktop Application', 'Categoría: Desktop Application, Mobile App, etc.'),
+    textInput(item, 'year', 'Year', '2025'),
     textInput(item, 'hoverColor', 'Hover color', 'var(--gold-yellow)'),
     textInput(item, 'URLFigma', 'URL Figma'),
-    toggle(item, 'hideProjectMeta', 'Ocultar project meta'),
     { twoCols: true },
   ));
 
-  frag.appendChild(group('Tamaño',
+  // I18n fields
+  frag.appendChild(i18nField(item, 'subtitle', 'Subtítulo'));
+  frag.appendChild(i18nField(item, 'summary', 'Resumen'));
+  frag.appendChild(i18nField(item, 'challenge', 'Desafío'));
+  frag.appendChild(i18nField(item, 'outcome', 'Resultado'));
+
+  // Team & Duration (i18n)
+  frag.appendChild(i18nField(item, 'team', 'Equipo / Rol'));
+  frag.appendChild(i18nField(item, 'duration', 'Duración'));
+
+  // Roles (simple array for now)
+  frag.appendChild(group('Roles',
+    (() => {
+      const wrap = document.createElement('div');
+      wrap.className = 'field';
+      const lbl = document.createElement('label');
+      lbl.textContent = 'Roles (separados por comas)';
+      const inp = document.createElement('input');
+      inp.type = 'text';
+      inp.value = (item.roles || []).join(', ');
+      inp.addEventListener('input', () => {
+        item.roles = inp.value.split(',').map(s => s.trim()).filter(Boolean);
+        markDirty();
+      });
+      wrap.appendChild(lbl);
+      wrap.appendChild(inp);
+      return wrap;
+    })(),
+  ));
+
+  // Hero Image
+  frag.appendChild(group('Hero Image',
+    imgPicker(item, 'heroImage', 'Hero Image', allImgs, false, 'Imagen principal del caso de estudio'),
+  ));
+
+  // Size & Logo (tile settings for listing)
+  frag.appendChild(group('Tile Settings',
     (() => {
       const sel = document.createElement('select');
       ['tile-xl', 'tile'].forEach(v => {
@@ -958,16 +1004,6 @@ function buildPDForm(item, idx) {
       sel.addEventListener('change', () => onChange(item, 'span', parseInt(sel.value)));
       return field('Span', sel);
     })(),
-    { twoCols: true },
-  ));
-
-  frag.appendChild(group('Fondo',
-    imgPicker(item, 'bgImage', 'Background image', bgImgs),
-    textInput(item, 'bgColor', 'BG color', '#000000'),
-    { twoCols: true },
-  ));
-
-  frag.appendChild(group('Logo',
     imgPicker(item, 'src', 'Logo src', imgCatalog.logos),
     numberInput(item, 'logoSize', 'Logo size (px)'),
     toggle(item, 'invertLogo', 'Invertir logo'),
@@ -976,13 +1012,592 @@ function buildPDForm(item, idx) {
     { twoCols: true },
   ));
 
-  frag.appendChild(i18nField(item, 'title', 'Título'));
-  frag.appendChild(i18nField(item, 'subtitle', 'Subtítulo'));
+  // Label for hover overlay
+  if (!item.label) item.label = { es: { name: '', industry: '' }, en: { name: '', industry: '' } };
+  const labelFields = [];
+  ['name', 'industry'].forEach(fieldKey => {
+    const fieldLabel = fieldKey === 'name' ? 'Nombre' : 'Industry';
+    ['es', 'en'].forEach(lang => {
+      if (!item.label[lang]) item.label[lang] = { name: '', industry: '' };
+      labelFields.push(textInput(item.label[lang], fieldKey, fieldLabel + ' (' + lang + ')'));
+    });
+  });
+  frag.appendChild(group('Label (Hover Overlay)', ...labelFields, { twoCols: 'fixed' }));
 
-  // Gallery editor
-  frag.appendChild(buildGalleryEditor(item));
+  // Objectives Editor
+  frag.appendChild(buildObjectivesEditor(item));
+
+  // Decisions Editor
+  frag.appendChild(buildDecisionsEditor(item, allImgs));
+
+  // Walkthrough Editor
+  frag.appendChild(buildWalkthroughEditor(item, allImgs));
+
+  // Next Project
+  frag.appendChild(group('Next Project',
+    textInput(item.nextProject, 'slug', 'Next Project Slug', 'quikforms-app'),
+    i18nField(item.nextProject, 'title', 'Next Project Title'),
+  ));
 
   return frag;
+}
+
+// ── Objectives Editor ─────────────────────────────────────────────────────────
+
+function buildObjectivesEditor(item) {
+  const wrap = document.createElement('div');
+  wrap.className = 'field-group';
+
+  const titleRow = document.createElement('div');
+  titleRow.className = 'field-group-title';
+  titleRow.textContent = 'Objectives (Objetivos)';
+  wrap.appendChild(titleRow);
+
+  const list = document.createElement('div');
+  list.className = 'gallery-list';
+  wrap.appendChild(list);
+
+  function render() {
+    list.innerHTML = '';
+    (item.objectives || []).forEach((obj, idx) => {
+      list.appendChild(renderObjective(obj, idx));
+    });
+    // Add button
+    const addBtn = document.createElement('div');
+    addBtn.className = 'gallery-item-add';
+    addBtn.innerHTML = '<span>+ Add Objective</span>';
+    addBtn.addEventListener('click', () => {
+      item.objectives.push({ title: { es: '', en: '' }, description: { es: '', en: '' } });
+      markDirty();
+      render();
+    });
+    list.appendChild(addBtn);
+  }
+
+  function renderObjective(obj, idx) {
+    const el = document.createElement('div');
+    el.className = 'gallery-item';
+    el.draggable = true;
+    el.dataset.idx = idx;
+
+    const dragHandle = document.createElement('div');
+    dragHandle.className = 'gallery-drag-handle';
+    dragHandle.innerHTML = SVG_DRAG;
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.className = 'gallery-item__delete';
+    deleteBtn.textContent = '×';
+    deleteBtn.title = 'Eliminar';
+    deleteBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      item.objectives.splice(idx, 1);
+      markDirty();
+      render();
+    });
+
+    const header = document.createElement('div');
+    header.className = 'gallery-item__header';
+    const headerLeft = document.createElement('div');
+    headerLeft.className = 'gallery-item__header-left';
+    headerLeft.appendChild(dragHandle);
+    header.appendChild(headerLeft);
+    header.appendChild(deleteBtn);
+
+    const fields = document.createElement('div');
+    fields.className = 'gallery-item__fields';
+
+    // Title (i18n)
+    if (!obj.title) obj.title = { es: '', en: '' };
+    ['es', 'en'].forEach(lang => {
+      const inp = document.createElement('input');
+      inp.type = 'text';
+      inp.value = obj.title[lang] || '';
+      inp.placeholder = `Title (${lang.toUpperCase()})`;
+      inp.addEventListener('input', () => { obj.title[lang] = inp.value; markDirty(); });
+      const f = document.createElement('div');
+      f.className = 'field';
+      const lbl = document.createElement('label');
+      lbl.textContent = `Title (${lang.toUpperCase()})`;
+      f.appendChild(lbl);
+      f.appendChild(inp);
+      fields.appendChild(f);
+    });
+
+    // Description (i18n)
+    if (!obj.description) obj.description = { es: '', en: '' };
+    ['es', 'en'].forEach(lang => {
+      const ta = document.createElement('textarea');
+      ta.value = obj.description[lang] || '';
+      ta.placeholder = `Description (${lang.toUpperCase()})`;
+      ta.rows = 2;
+      ta.addEventListener('input', () => { obj.description[lang] = ta.value; markDirty(); });
+      const f = document.createElement('div');
+      f.className = 'field field--full';
+      const lbl = document.createElement('label');
+      lbl.textContent = `Description (${lang.toUpperCase()})`;
+      f.appendChild(lbl);
+      f.appendChild(ta);
+      fields.appendChild(f);
+    });
+
+    el.appendChild(header);
+    el.appendChild(fields);
+
+    // Drag handlers
+    el.addEventListener('dragstart', (e) => {
+      e.dataTransfer.setData('text/plain', JSON.stringify({ type: 'objective', idx }));
+      el.classList.add('dragging');
+    });
+    el.addEventListener('dragover', (e) => { e.preventDefault(); el.classList.add('drag-over'); });
+    el.addEventListener('dragleave', () => el.classList.remove('drag-over'));
+    el.addEventListener('drop', (e) => {
+      e.preventDefault();
+      const data = JSON.parse(e.dataTransfer.getData('text/plain'));
+      if (data.type === 'objective' && data.idx !== idx) {
+        const arr = item.objectives;
+        const [moved] = arr.splice(data.idx, 1);
+        arr.splice(idx, 0, moved);
+        markDirty();
+        render();
+      }
+    });
+    el.addEventListener('dragend', () => el.classList.remove('dragging', 'drag-over'));
+
+    return el;
+  }
+
+  render();
+  return wrap;
+}
+
+// ── Decisions Editor ──────────────────────────────────────────────────────────
+
+function buildDecisionsEditor(item, allImgs) {
+  const wrap = document.createElement('div');
+  wrap.className = 'field-group';
+
+  const titleRow = document.createElement('div');
+  titleRow.className = 'field-group-title';
+  titleRow.textContent = 'Design Decisions (Decisiones de Diseño)';
+  wrap.appendChild(titleRow);
+
+  const list = document.createElement('div');
+  list.className = 'gallery-list';
+  wrap.appendChild(list);
+
+  const compositions = [
+    { value: 'A', label: 'A: Text left + Image right' },
+    { value: 'B', label: 'B: Image left + Text right' },
+    { value: 'C', label: 'C: Two images comparison' },
+    { value: 'D', label: 'D: Full-width image' }
+  ];
+
+  function render() {
+    list.innerHTML = '';
+    (item.decisions || []).forEach((dec, idx) => {
+      list.appendChild(renderDecision(dec, idx));
+    });
+    // Add button
+    const addBtn = document.createElement('div');
+    addBtn.className = 'gallery-item-add';
+    addBtn.innerHTML = '<span>+ Add Decision</span>';
+    addBtn.addEventListener('click', () => {
+      item.decisions.push({
+        title: { es: '', en: '' },
+        description: { es: '', en: '' },
+        composition: 'A',
+        image: '',
+        caption: { es: '', en: '' },
+        imageA: '',
+        imageB: '',
+        captionA: { es: '', en: '' },
+        captionB: { es: '', en: '' }
+      });
+      markDirty();
+      render();
+    });
+    list.appendChild(addBtn);
+  }
+
+  function renderDecision(dec, idx) {
+    const el = document.createElement('div');
+    el.className = 'gallery-item';
+    el.draggable = true;
+    el.dataset.idx = idx;
+
+    const dragHandle = document.createElement('div');
+    dragHandle.className = 'gallery-drag-handle';
+    dragHandle.innerHTML = SVG_DRAG;
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.className = 'gallery-item__delete';
+    deleteBtn.textContent = '×';
+    deleteBtn.title = 'Eliminar';
+    deleteBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      item.decisions.splice(idx, 1);
+      markDirty();
+      render();
+    });
+
+    const header = document.createElement('div');
+    header.className = 'gallery-item__header';
+    const headerLeft = document.createElement('div');
+    headerLeft.className = 'gallery-item__header-left';
+    headerLeft.appendChild(dragHandle);
+
+    // Composition selector
+    const compSelect = document.createElement('select');
+    compSelect.className = 'gallery-item__type field-control';
+    compositions.forEach(c => {
+      const opt = document.createElement('option');
+      opt.value = c.value; opt.textContent = c.label;
+      if (dec.composition === c.value) opt.selected = true;
+      compSelect.appendChild(opt);
+    });
+    compSelect.addEventListener('change', (e) => {
+      dec.composition = e.target.value;
+      markDirty();
+      render();
+    });
+    headerLeft.appendChild(compSelect);
+    header.appendChild(headerLeft);
+    header.appendChild(deleteBtn);
+
+    const fields = document.createElement('div');
+    fields.className = 'gallery-item__fields';
+
+    // Title & Description (i18n)
+    if (!dec.title) dec.title = { es: '', en: '' };
+    if (!dec.description) dec.description = { es: '', en: '' };
+    ['es', 'en'].forEach(lang => {
+      const inp = document.createElement('input');
+      inp.type = 'text';
+      inp.value = dec.title[lang] || '';
+      inp.placeholder = `Title (${lang.toUpperCase()})`;
+      inp.addEventListener('input', () => { dec.title[lang] = inp.value; markDirty(); });
+      const f = document.createElement('div');
+      f.className = 'field';
+      const lbl = document.createElement('label');
+      lbl.textContent = `Title (${lang.toUpperCase()})`;
+      f.appendChild(lbl);
+      f.appendChild(inp);
+      fields.appendChild(f);
+    });
+    ['es', 'en'].forEach(lang => {
+      const ta = document.createElement('textarea');
+      ta.value = dec.description[lang] || '';
+      ta.placeholder = `Description (${lang.toUpperCase()})`;
+      ta.rows = 3;
+      ta.addEventListener('input', () => { dec.description[lang] = ta.value; markDirty(); });
+      const f = document.createElement('div');
+      f.className = 'field field--full';
+      const lbl = document.createElement('label');
+      lbl.textContent = `Description (${lang.toUpperCase()})`;
+      f.appendChild(lbl);
+      f.appendChild(ta);
+      fields.appendChild(f);
+    });
+
+    // Image fields based on composition
+    const comp = dec.composition || 'A';
+
+    if (comp === 'A' || comp === 'B' || comp === 'D') {
+      // Single image
+      if (!dec.caption) dec.caption = { es: '', en: '' };
+      const imgPickerWrap = createImgPickerField(dec, 'image', 'Image', allImgs);
+      fields.appendChild(imgPickerWrap);
+      ['es', 'en'].forEach(lang => {
+        const inp = document.createElement('input');
+        inp.type = 'text';
+        inp.value = dec.caption[lang] || '';
+        inp.placeholder = `Caption (${lang.toUpperCase()})`;
+        inp.addEventListener('input', () => { dec.caption[lang] = inp.value; markDirty(); });
+        const f = document.createElement('div');
+        f.className = 'field';
+        const lbl = document.createElement('label');
+        lbl.textContent = `Caption (${lang.toUpperCase()})`;
+        f.appendChild(lbl);
+        f.appendChild(inp);
+        fields.appendChild(f);
+      });
+    } else if (comp === 'C') {
+      // Two images
+      if (!dec.captionA) dec.captionA = { es: '', en: '' };
+      if (!dec.captionB) dec.captionB = { es: '', en: '' };
+      fields.appendChild(createImgPickerField(dec, 'imageA', 'Image A (Left)', allImgs));
+      ['es', 'en'].forEach(lang => {
+        const inp = document.createElement('input');
+        inp.type = 'text';
+        inp.value = dec.captionA[lang] || '';
+        inp.placeholder = `Caption A (${lang.toUpperCase()})`;
+        inp.addEventListener('input', () => { dec.captionA[lang] = inp.value; markDirty(); });
+        const f = document.createElement('div');
+        f.className = 'field';
+        const lbl = document.createElement('label');
+        lbl.textContent = `Caption A (${lang.toUpperCase()})`;
+        f.appendChild(lbl);
+        f.appendChild(inp);
+        fields.appendChild(f);
+      });
+      fields.appendChild(createImgPickerField(dec, 'imageB', 'Image B (Right)', allImgs));
+      ['es', 'en'].forEach(lang => {
+        const inp = document.createElement('input');
+        inp.type = 'text';
+        inp.value = dec.captionB[lang] || '';
+        inp.placeholder = `Caption B (${lang.toUpperCase()})`;
+        inp.addEventListener('input', () => { dec.captionB[lang] = inp.value; markDirty(); });
+        const f = document.createElement('div');
+        f.className = 'field';
+        const lbl = document.createElement('label');
+        lbl.textContent = `Caption B (${lang.toUpperCase()})`;
+        f.appendChild(lbl);
+        f.appendChild(inp);
+        fields.appendChild(f);
+      });
+    }
+
+    el.appendChild(header);
+    el.appendChild(fields);
+
+    // Drag handlers
+    el.addEventListener('dragstart', (e) => {
+      e.dataTransfer.setData('text/plain', JSON.stringify({ type: 'decision', idx }));
+      el.classList.add('dragging');
+    });
+    el.addEventListener('dragover', (e) => { e.preventDefault(); el.classList.add('drag-over'); });
+    el.addEventListener('dragleave', () => el.classList.remove('drag-over'));
+    el.addEventListener('drop', (e) => {
+      e.preventDefault();
+      const data = JSON.parse(e.dataTransfer.getData('text/plain'));
+      if (data.type === 'decision' && data.idx !== idx) {
+        const arr = item.decisions;
+        const [moved] = arr.splice(data.idx, 1);
+        arr.splice(idx, 0, moved);
+        markDirty();
+        render();
+      }
+    });
+    el.addEventListener('dragend', () => el.classList.remove('dragging', 'drag-over'));
+
+    return el;
+  }
+
+  function createImgPickerField(parent, key, label, catalog) {
+    const wrap = document.createElement('div');
+    wrap.className = 'field field--full';
+    const lbl = document.createElement('label');
+    lbl.textContent = label;
+    wrap.appendChild(lbl);
+
+    const sel = document.createElement('select');
+    sel.className = 'field-control';
+    const emptyOpt = document.createElement('option');
+    emptyOpt.value = ''; emptyOpt.textContent = '— ninguna —';
+    sel.appendChild(emptyOpt);
+    catalog.forEach(path => {
+      const opt = document.createElement('option');
+      opt.value = path; opt.textContent = path.split('/').pop();
+      if (parent[key] === path) opt.selected = true;
+      sel.appendChild(opt);
+    });
+    sel.addEventListener('change', () => {
+      parent[key] = sel.value;
+      markDirty();
+    });
+    wrap.appendChild(sel);
+    return wrap;
+  }
+
+  render();
+  return wrap;
+}
+
+// ── Walkthrough Editor ────────────────────────────────────────────────────────
+
+function buildWalkthroughEditor(item, allImgs) {
+  const wrap = document.createElement('div');
+  wrap.className = 'field-group';
+
+  const titleRow = document.createElement('div');
+  titleRow.className = 'field-group-title';
+  titleRow.textContent = 'Walkthrough (Recorrido - Pantallas)';
+  wrap.appendChild(titleRow);
+
+  const list = document.createElement('div');
+  list.className = 'gallery-list';
+  wrap.appendChild(list);
+
+  function render() {
+    list.innerHTML = '';
+    (item.walkthrough || []).forEach((screen, idx) => {
+      list.appendChild(renderScreen(screen, idx));
+    });
+    // Add button
+    const addBtn = document.createElement('div');
+    addBtn.className = 'gallery-item-add';
+    addBtn.innerHTML = '<span>+ Add Screen</span>';
+    addBtn.addEventListener('click', () => {
+      item.walkthrough.push({
+        number: String((item.walkthrough.length + 1)).padStart(2, '0'),
+        title: { es: '', en: '' },
+        description: { es: '', en: '' },
+        image: '',
+        caption: { es: '', en: '' }
+      });
+      markDirty();
+      render();
+    });
+    list.appendChild(addBtn);
+  }
+
+  function renderScreen(screen, idx) {
+    const el = document.createElement('div');
+    el.className = 'gallery-item';
+    el.draggable = true;
+    el.dataset.idx = idx;
+
+    const dragHandle = document.createElement('div');
+    dragHandle.className = 'gallery-drag-handle';
+    dragHandle.innerHTML = SVG_DRAG;
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.className = 'gallery-item__delete';
+    deleteBtn.textContent = '×';
+    deleteBtn.title = 'Eliminar';
+    deleteBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      item.walkthrough.splice(idx, 1);
+      // Renumber
+      item.walkthrough.forEach((s, i) => { s.number = String(i + 1).padStart(2, '0'); });
+      markDirty();
+      render();
+    });
+
+    const header = document.createElement('div');
+    header.className = 'gallery-item__header';
+    const headerLeft = document.createElement('div');
+    headerLeft.className = 'gallery-item__header-left';
+    headerLeft.appendChild(dragHandle);
+    // Screen number
+    const numInp = document.createElement('input');
+    numInp.type = 'text';
+    numInp.value = screen.number || '01';
+    numInp.style.width = '60px';
+    numInp.addEventListener('input', () => { screen.number = numInp.value; markDirty(); });
+    headerLeft.appendChild(numInp);
+    header.appendChild(headerLeft);
+    header.appendChild(deleteBtn);
+
+    const fields = document.createElement('div');
+    fields.className = 'gallery-item__fields';
+
+    // Title & Description (i18n)
+    if (!screen.title) screen.title = { es: '', en: '' };
+    if (!screen.description) screen.description = { es: '', en: '' };
+    ['es', 'en'].forEach(lang => {
+      const inp = document.createElement('input');
+      inp.type = 'text';
+      inp.value = screen.title[lang] || '';
+      inp.placeholder = `Title (${lang.toUpperCase()})`;
+      inp.addEventListener('input', () => { screen.title[lang] = inp.value; markDirty(); });
+      const f = document.createElement('div');
+      f.className = 'field';
+      const lbl = document.createElement('label');
+      lbl.textContent = `Title (${lang.toUpperCase()})`;
+      f.appendChild(lbl);
+      f.appendChild(inp);
+      fields.appendChild(f);
+    });
+    ['es', 'en'].forEach(lang => {
+      const ta = document.createElement('textarea');
+      ta.value = screen.description[lang] || '';
+      ta.placeholder = `Description (${lang.toUpperCase()})`;
+      ta.rows = 2;
+      ta.addEventListener('input', () => { screen.description[lang] = ta.value; markDirty(); });
+      const f = document.createElement('div');
+      f.className = 'field field--full';
+      const lbl = document.createElement('label');
+      lbl.textContent = `Description (${lang.toUpperCase()})`;
+      f.appendChild(lbl);
+      f.appendChild(ta);
+      fields.appendChild(f);
+    });
+
+    // Image
+    if (!screen.caption) screen.caption = { es: '', en: '' };
+    fields.appendChild(createImgPickerField(screen, 'image', 'Screen Image', allImgs));
+    ['es', 'en'].forEach(lang => {
+      const inp = document.createElement('input');
+      inp.type = 'text';
+      inp.value = screen.caption[lang] || '';
+      inp.placeholder = `Caption (${lang.toUpperCase()})`;
+      inp.addEventListener('input', () => { screen.caption[lang] = inp.value; markDirty(); });
+      const f = document.createElement('div');
+      f.className = 'field';
+      const lbl = document.createElement('label');
+      lbl.textContent = `Caption (${lang.toUpperCase()})`;
+      f.appendChild(lbl);
+      f.appendChild(inp);
+      fields.appendChild(f);
+    });
+
+    el.appendChild(header);
+    el.appendChild(fields);
+
+    // Drag handlers
+    el.addEventListener('dragstart', (e) => {
+      e.dataTransfer.setData('text/plain', JSON.stringify({ type: 'walkthrough', idx }));
+      el.classList.add('dragging');
+    });
+    el.addEventListener('dragover', (e) => { e.preventDefault(); el.classList.add('drag-over'); });
+    el.addEventListener('dragleave', () => el.classList.remove('drag-over'));
+    el.addEventListener('drop', (e) => {
+      e.preventDefault();
+      const data = JSON.parse(e.dataTransfer.getData('text/plain'));
+      if (data.type === 'walkthrough' && data.idx !== idx) {
+        const arr = item.walkthrough;
+        const [moved] = arr.splice(data.idx, 1);
+        arr.splice(idx, 0, moved);
+        // Renumber
+        arr.forEach((s, i) => { s.number = String(i + 1).padStart(2, '0'); });
+        markDirty();
+        render();
+      }
+    });
+    el.addEventListener('dragend', () => el.classList.remove('dragging', 'drag-over'));
+
+    return el;
+  }
+
+  function createImgPickerField(parent, key, label, catalog) {
+    const wrap = document.createElement('div');
+    wrap.className = 'field field--full';
+    const lbl = document.createElement('label');
+    lbl.textContent = label;
+    wrap.appendChild(lbl);
+
+    const sel = document.createElement('select');
+    sel.className = 'field-control';
+    const emptyOpt = document.createElement('option');
+    emptyOpt.value = ''; emptyOpt.textContent = '— ninguna —';
+    sel.appendChild(emptyOpt);
+    catalog.forEach(path => {
+      const opt = document.createElement('option');
+      opt.value = path; opt.textContent = path.split('/').pop();
+      if (parent[key] === path) opt.selected = true;
+      sel.appendChild(opt);
+    });
+    sel.addEventListener('change', () => {
+      parent[key] = sel.value;
+      markDirty();
+    });
+    wrap.appendChild(sel);
+    return wrap;
+  }
+
+  render();
+  return wrap;
 }
 
 // ── Gallery Editor (Featured Projects) ─────────────────────────────────────────
@@ -1178,7 +1793,7 @@ function buildGalleryEditor(item) {
       // Preview (full width, larger) - declare BEFORE event listener
       const preview = document.createElement('div');
       preview.className = 'gallery-item__preview';
-      preview.innerHTML = gItem.src ? `<img src="${gItem.src}" alt="">` : 'Sin imagen';
+      preview.innerHTML = gItem.src ? `<img src="public_html/${gItem.src}" alt="">` : 'Sin imagen';
 
       // Src selector (full width)
       const srcSelect = document.createElement('select');
@@ -1187,7 +1802,7 @@ function buildGalleryEditor(item) {
       srcSelect.value = gItem.src || '';
       srcSelect.addEventListener('change', (e) => {
         gItem.src = e.target.value || '';
-        preview.innerHTML = gItem.src ? `<img src="${gItem.src}" alt="">` : 'Sin imagen';
+        preview.innerHTML = gItem.src ? `<img src="public_html/${gItem.src}" alt="">` : 'Sin imagen';
         markDirty();
       });
       fields.appendChild(createField('Imagen (src)', srcSelect));
@@ -1308,8 +1923,18 @@ function addNewItem(tab) {
     },
     'product-design': {
       order: newOrder, src: '', span: 6, logoSize: 100, hoverColor: 'var(--mint)',
-      title: { es: '', en: '' }, subtitle: { es: '', en: '' }, enabled: true,
-      year: '', URLFigma: '', secondaryLogo: '', secondaryLogoSize: 60
+      projectName: '', slug: '', title: '', category: 'Desktop Application', year: '',
+      subtitle: { es: '', en: '' }, summary: { es: '', en: '' },
+      roles: ['Product Design'], team: { es: '', en: '' }, duration: { es: '', en: '' },
+      heroImage: '',
+      challenge: { es: '', en: '' },
+      objectives: [],
+      decisions: [],
+      walkthrough: [],
+      outcome: { es: '', en: '' },
+      nextProject: { slug: '', title: { es: '', en: '' } },
+      URLFigma: '', secondaryLogo: '', secondaryLogoSize: 60,
+      enabled: true
     }
   };
 

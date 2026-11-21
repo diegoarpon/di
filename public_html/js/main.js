@@ -272,6 +272,12 @@ function showContent(category, isInitial) {
         renderBrandCreationGrid(brandCreationItems);
         requestAnimationFrame(() => addCol4Panels());
       }
+    } else if (category === "product-design" && typeof brandPdItems !== "undefined" && brandPdItems.length) {
+      const grid = document.getElementById("product-design-grid");
+      if (grid && !grid.hasChildNodes()) {
+        renderProductDesignGrid(brandPdItems);
+        if (typeof window.initGsapHovers === "function") window.initGsapHovers();
+      }
     }
     contentArea.scrollTop = 0;
     document.body.scrollTop = 0;

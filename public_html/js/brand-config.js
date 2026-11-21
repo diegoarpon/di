@@ -86,7 +86,7 @@ Promise.all([
     }
     if (document.getElementById("product-design-grid") && pdData.productDesign) {
         brandPdItems = [...pdData.productDesign].sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
-        renderProductDesignGrid(brandPdItems);
+        // renderProductDesignGrid will be called from main.js after it loads
     }
     if (typeof window.initGsapHovers === "function") window.initGsapHovers();
     if (typeof window.signalDataReady === "function") window.signalDataReady();

@@ -1,0 +1,843 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>FormStream — estudio.d</title>
+  <meta name="description" content="FormStream is a desktop application designed to simplify the completion and management of digital forms. With an intuitive interface and optimized workflows, it enables users to process complex forms efficiently." id="meta-description" />
+  <meta name="author" content="Diego Fabbri Arpon" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://estudiod.site/project-formstream.html" id="og-url" />
+  <meta property="og:site_name" content="estudio.d" />
+  <meta property="og:title" content="FormStream — estudio.d" id="og-title" />
+  <meta property="og:description" content="FormStream is a desktop application designed to simplify the completion and management of digital forms." id="og-description" />
+  <meta property="og:image" content="https://estudiod.site/img/projects/formstream/01-dashboard.webp" id="og-image" />
+
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://estudiod.site/project-formstream.html" id="twitter-url" />
+  <meta property="twitter:title" content="FormStream — estudio.d" id="twitter-title" />
+  <meta property="twitter:description" content="FormStream is a desktop application designed to simplify the completion and management of digital forms." id="twitter-description" />
+  <meta property="twitter:image" content="https://estudiod.site/img/projects/formstream/01-dashboard.webp" id="twitter-image" />
+  <link rel="icon" type="image/svg+xml" href="img/square.svg" />
+  <link rel="canonical" href="https://estudiod.site/project-formstream.html" id="canonical" />
+  <link rel="alternate" hreflang="es" href="https://estudiod.site/project-formstream.html" />
+  <link rel="alternate" hreflang="en" href="https://estudiod.site/project-formstream.html" />
+  <link rel="alternate" hreflang="x-default" href="https://estudiod.site/project-formstream.html" />
+  <link rel="preload" href="fonts/WOFF2/FG_FuturistTRIAL-Light.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high" />
+  <link rel="preload" href="fonts/WOFF2/FG_FuturistTRIAL-Regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/WOFF2/FG_FuturistTRIAL-Medium.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="img/logo-estudio-d-alt.svg" as="image" />
+  <meta name="theme-color" content="#FF7518" />
+  <style>
+    @font-face {
+      font-family: "FG Futurist";
+      src: url("fonts/WOFF2/FG_FuturistTRIAL-Light.woff2") format("woff2");
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap
+    }
+
+    @font-face {
+      font-family: "FG Futurist";
+      src: url("fonts/WOFF2/FG_FuturistTRIAL-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap
+    }
+
+    @font-face {
+      font-family: "FG Futurist";
+      src: url("fonts/WOFF2/FG_FuturistTRIAL-Medium.woff2") format("woff2");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap
+    }
+  </style>
+  <style>
+    @media (hover: hover) and (pointer: fine) {
+
+      *,
+      *::before,
+      *::after {
+        cursor: none !important;
+      }
+    }
+  </style>
+  <link href="css/styles.css" rel="stylesheet" />
+  <script>if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) document.documentElement.classList.add('safari-browser');
+    (function () { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); var l = localStorage.getItem('language'); if (l) document.documentElement.lang = l; })();</script>
+  <script src="js/translations.js" defer></script>
+</head>
+
+<body>
+  <div class="overlay" id="menu-overlay"></div>
+
+  <div class="d-block mobile-menu-toggle-container">
+    <button class="mobile-menu-toggle" onclick="toggleSidebar()" aria-label="Abrir menú" aria-expanded="false"
+      aria-controls="sidebar">
+      <span></span><span class="dot-hide"></span><span></span><span class="dot-hide"></span><span></span><span
+        class="dot-hide"></span><span></span><span class="dot-hide"></span><span></span>
+    </button>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-auto sidebar-container" id="sidebar">
+        <div class="d-flex flex-column h-100 pt-5 pb-5">
+          <div class="position-relative logo cursor-pointer" onclick="fadeNavigate('index.html')" role="button"
+            tabindex="0" aria-label="Volver al inicio" onkeydown="if(event.key==='Enter')fadeNavigate('index.html')">
+            <div class="guide-h-short"></div>
+            <div class="row">
+              <div class="col-auto position-relative">
+                <img src="img/logo-estudio-d-alt.svg" alt="estudio d." fetchpriority="high" loading="eager"
+                  id="logo-sidebar" />
+                <script>(function () { var i = document.getElementById('logo-sidebar'); if (i && localStorage.getItem('theme') === 'dark') i.src = 'img/logo-estudio-d-dark-alt.svg'; })();</script>
+                <div class="guide-v-short"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 mb-2">
+            <div class="d-flex flex-column gap-2">
+              <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button"
+                onclick="fadeNavigate('index.html')" data-i18n="brandCreation" data-tab="brand-creation">brand creation</button>
+              <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button"
+                onclick="fadeNavigate('index.html?tab=brand-development')" data-i18n="brandDevelopment" data-tab="brand-development">brand
+                development</button>
+              <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button active"
+                onclick="fadeNavigate('index.html?tab=product-design')" data-i18n="productDesign" data-tab="product-design">product
+                design</button>
+            </div>
+          </div>
+
+          <div class="mt-auto">
+            <div class="mb-3">
+              <div class="d-flex flex-column gap-2">
+                <a href="cv_diego_fabbri_arpon_es.pdf" target="_blank" rel="noopener noreferrer"
+                  class="contact-link fw-normal" id="cv-link">cv</a>
+                <a href="https://wa.me/+5491134604766?text=Hola%20D!%20Tengo%20una%20consulta" target="_blank" rel="noopener noreferrer" class="contact-link fw-normal">whatsapp</a>
+                <a href="https://www.linkedin.com/in/diegofabbriarpon/" target="_blank" rel="noopener noreferrer"
+                  class="contact-link fw-normal">linkedin</a>
+              </div>
+            </div>
+            <div>
+              <div class="d-flex gap-3">
+                <button class="lang-selector fw-normal active" onclick="switchLanguage('en')" id="lang-en">en</button>
+                <button class="lang-selector fw-normal" onclick="switchLanguage('es')" id="lang-es">es</button>
+                <span class="lang-theme-divider"></span>
+                <button class="theme-selector fw-normal" onclick="switchTheme('light')" id="theme-light"><img
+                    src="img/circle-regular-full.svg" alt="light" class="theme-icon"></button>
+                <button class="theme-selector fw-normal" onclick="switchTheme('dark')" id="theme-dark"><img
+                    src="img/circle-solid-full.svg" alt="dark" class="theme-icon"></button>
+              </div>
+              <div class="mt-4 version-label" id="version-label"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main class="col content-area px-3 fading">
+
+        <div class="project-loader" id="project-loader">
+          <div class="project-loader-dot"></div>
+        </div>
+
+        <div class="d-block mobile-logo pt-5 px-0">
+          <div class="position-relative logo cursor-pointer" onclick="fadeNavigate('index.html')" role="button"
+            tabindex="0" aria-label="Volver al inicio" onkeydown="if(event.key==='Enter')fadeNavigate('index.html')">
+            <div class="guide-h-double-100"></div>
+            <div class="row">
+              <div class="col-auto position-relative">
+                <img src="img/logo-estudio-d-alt.svg" alt="estudio d." fetchpriority="high" loading="eager"
+                  id="logo-mobile" />
+                <script>(function () { var i = document.getElementById('logo-mobile'); if (i && localStorage.getItem('theme') === 'dark') i.src = 'img/logo-estudio-d-dark-alt.svg'; })();</script>
+                <div class="guide-v-short"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CASE STUDY CONTENT -->
+        <article class="case-study" id="case-study">
+
+          <!-- 1. PRESENTACIÓN -->
+          <section class="cs-section cs-presentation" aria-labelledby="cs-presentation-title">
+            <div class="cs-grid">
+              <div class="cs-col cs-col-8 cs-col-md-12">
+                <h1 id="cs-presentation-title" class="cs-heading cs-heading--main" data-content="presentation.title"></h1>
+                <p class="cs-body cs-body--lead" data-content="presentation.lead"></p>
+              </div>
+              <div class="cs-col cs-col-4 cs-col-md-12">
+                <dl class="cs-meta" data-content="presentation.meta"></dl>
+              </div>
+            </div>
+            <figure class="cs-figure cs-figure--full" data-content="presentation.heroImage">
+              <div class="cs-placeholder" aria-hidden="true">Hero screenshot — main dashboard</div>
+              <figcaption class="cs-caption" data-content="presentation.heroCaption"></figcaption>
+            </figure>
+          </section>
+
+          <hr class="cs-divider" aria-hidden="true" />
+
+          <!-- 2. DESAFÍO -->
+          <section class="cs-section cs-challenge" aria-labelledby="cs-challenge-title">
+            <div class="cs-grid">
+              <div class="cs-col cs-col-4 cs-col-md-12">
+                <h2 id="cs-challenge-title" class="cs-heading cs-heading--section" data-content="challenge.title"></h2>
+              </div>
+              <div class="cs-col cs-col-8 cs-col-md-12">
+                <p class="cs-body" data-content="challenge.description"></p>
+              </div>
+            </div>
+            <div class="cs-grid cs-concepts" data-content="challenge.concepts">
+              <article class="cs-col cs-col-4 cs-col-md-12 cs-concept">
+                <h3 class="cs-heading cs-heading--concept" data-content="challenge.concepts[0].title"></h3>
+                <p class="cs-body cs-body--small" data-content="challenge.concepts[0].description"></p>
+              </article>
+              <article class="cs-col cs-col-4 cs-col-md-12 cs-concept">
+                <h3 class="cs-heading cs-heading--concept" data-content="challenge.concepts[1].title"></h3>
+                <p class="cs-body cs-body--small" data-content="challenge.concepts[1].description"></p>
+              </article>
+              <article class="cs-col cs-col-4 cs-col-md-12 cs-concept">
+                <h3 class="cs-heading cs-heading--concept" data-content="challenge.concepts[2].title"></h3>
+                <p class="cs-body cs-body--small" data-content="challenge.concepts[2].description"></p>
+              </article>
+            </div>
+          </section>
+
+          <hr class="cs-divider" aria-hidden="true" />
+
+          <!-- 3. NAVEGACIÓN -->
+          <section class="cs-section cs-navigation" aria-labelledby="cs-navigation-title">
+            <div class="cs-grid">
+              <div class="cs-col cs-col-4 cs-col-md-12">
+                <h2 id="cs-navigation-title" class="cs-heading cs-heading--section" data-content="navigation.title"></h2>
+                <p class="cs-body" data-content="navigation.description"></p>
+              </div>
+              <div class="cs-col cs-col-8 cs-col-md-12">
+                <figure class="cs-figure" data-content="navigation.image">
+                  <div class="cs-placeholder" aria-hidden="true">Navigation screen — sidebar & header</div>
+                  <figcaption class="cs-caption" data-content="navigation.caption"></figcaption>
+                </figure>
+              </div>
+            </div>
+          </section>
+
+          <hr class="cs-divider" aria-hidden="true" />
+
+          <!-- 4. GUIDANCE MODE -->
+          <section class="cs-section cs-guidance" aria-labelledby="cs-guidance-title">
+            <div class="cs-grid">
+              <div class="cs-col cs-col-12">
+                <h2 id="cs-guidance-title" class="cs-heading cs-heading--section" data-content="guidance.title"></h2>
+                <p class="cs-body cs-body--lead" data-content="guidance.description"></p>
+              </div>
+            </div>
+            <div class="cs-grid cs-comparison" data-content="guidance.comparison">
+              <figure class="cs-col cs-col-6 cs-col-md-12 cs-figure" data-content="guidance.comparison[0]">
+                <div class="cs-placeholder" aria-hidden="true">Guidance mode — empty state</div>
+                <figcaption class="cs-caption">
+                  <span class="cs-caption-label" data-content="guidance.comparison[0].label"></span>
+                  <span data-content="guidance.comparison[0].caption"></span>
+                </figcaption>
+              </figure>
+              <figure class="cs-col cs-col-6 cs-col-md-12 cs-figure" data-content="guidance.comparison[1]">
+                <div class="cs-placeholder" aria-hidden="true">Guidance mode — active state</div>
+                <figcaption class="cs-caption">
+                  <span class="cs-caption-label" data-content="guidance.comparison[1].label"></span>
+                  <span data-content="guidance.comparison[1].caption"></span>
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <hr class="cs-divider" aria-hidden="true" />
+
+          <!-- 5. AUTOCOMPLETADO -->
+          <section class="cs-section cs-autocomplete" aria-labelledby="cs-autocomplete-title">
+            <div class="cs-grid">
+              <div class="cs-col cs-col-8 cs-col-md-12">
+                <figure class="cs-figure" data-content="autocomplete.image">
+                  <div class="cs-placeholder" aria-hidden="true">Autocomplete — field suggestions dropdown</div>
+                  <figcaption class="cs-caption" data-content="autocomplete.caption"></figcaption>
+                </figure>
+              </div>
+              <div class="cs-col cs-col-4 cs-col-md-12">
+                <h2 id="cs-autocomplete-title" class="cs-heading cs-heading--section" data-content="autocomplete.title"></h2>
+                <p class="cs-body" data-content="autocomplete.description"></p>
+              </div>
+            </div>
+          </section>
+
+          <hr class="cs-divider" aria-hidden="true" />
+
+          <!-- 6. EXPERIENCIA COMPLETA -->
+          <section class="cs-section cs-full-experience" aria-labelledby="cs-full-experience-title">
+            <div class="cs-grid">
+              <div class="cs-col cs-col-12">
+                <h2 id="cs-full-experience-title" class="cs-heading cs-heading--section" data-content="fullExperience.title"></h2>
+                <p class="cs-body cs-body--lead" data-content="fullExperience.description"></p>
+              </div>
+            </div>
+            <div class="cs-grid cs-screens" data-content="fullExperience.screens">
+              <figure class="cs-col cs-col-4 cs-col-md-12 cs-figure cs-screen" data-content="fullExperience.screens[0]">
+                <div class="cs-screen-number" aria-hidden="true" data-content="fullExperience.screens[0].number">01</div>
+                <div class="cs-placeholder" aria-hidden="true">Screen 1 — Form list</div>
+                <figcaption class="cs-caption">
+                  <span class="cs-caption-label" data-content="fullExperience.screens[0].label"></span>
+                  <span data-content="fullExperience.screens[0].caption"></span>
+                </figcaption>
+              </figure>
+              <figure class="cs-col cs-col-4 cs-col-md-12 cs-figure cs-screen" data-content="fullExperience.screens[1]">
+                <div class="cs-screen-number" aria-hidden="true" data-content="fullExperience.screens[1].number">02</div>
+                <div class="cs-placeholder" aria-hidden="true">Screen 2 — Form completion</div>
+                <figcaption class="cs-caption">
+                  <span class="cs-caption-label" data-content="fullExperience.screens[1].label"></span>
+                  <span data-content="fullExperience.screens[1].caption"></span>
+                </figcaption>
+              </figure>
+              <figure class="cs-col cs-col-4 cs-col-md-12 cs-figure cs-screen" data-content="fullExperience.screens[2]">
+                <div class="cs-screen-number" aria-hidden="true" data-content="fullExperience.screens[2].number">03</div>
+                <div class="cs-placeholder" aria-hidden="true">Screen 3 — Confirmation & next steps</div>
+                <figcaption class="cs-caption">
+                  <span class="cs-caption-label" data-content="fullExperience.screens[2].label"></span>
+                  <span data-content="fullExperience.screens[2].caption"></span>
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <hr class="cs-divider" aria-hidden="true" />
+
+          <!-- 7. CIERRE -->
+          <section class="cs-section cs-closure" aria-labelledby="cs-closure-title">
+            <div class="cs-grid">
+              <div class="cs-col cs-col-8 cs-col-md-12">
+                <h2 id="cs-closure-title" class="cs-heading cs-heading--section" data-content="closure.title"></h2>
+                <p class="cs-body cs-body--lead" data-content="closure.synthesis"></p>
+              </div>
+              <div class="cs-col cs-col-4 cs-col-md-12">
+                <a href="#" class="cs-next-project" data-content="closure.nextProject">
+                  <span class="cs-next-label" data-i18n="nextProject">Next project</span>
+                  <span class="cs-next-title" data-content="closure.nextProject.title"></span>
+                  <span class="cs-next-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </div>
+          </section>
+
+        </article>
+
+        <footer class="container text-center my-5">
+          <div class="py-5">
+            <blockquote class="fw-bold" id="footer-quote"></blockquote>
+            <div id="footer-author"></div>
+          </div>
+        </footer>
+      </main>
+
+    </div>
+  </div>
+
+
+  <script src="js/main.js" defer></script>
+  <script src="js/cursor.js" defer></script>
+  <script>
+    function fadeNavigate(url) {
+      document.querySelector('.content-area').classList.add('fading');
+      setTimeout(() => { window.location.href = url; }, 500);
+    }
+
+    const currentLang = localStorage.getItem('language') || 'en';
+    const currentTheme = localStorage.getItem('theme') || 'light';
+
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    document.documentElement.lang = currentLang;
+
+    // CASE STUDY CONTENT - FormStream
+    const caseStudyContent = {
+      en: {
+        presentation: {
+          title: "FormStream",
+          lead: "A desktop application that transforms how teams complete and manage digital forms. By combining intelligent field detection, real-time validation, and a guidance mode that walks users through complex forms step by step, FormStream reduces completion time by 60% and eliminates submission errors.",
+          meta: [
+            { label: "Role", value: "Product Design Lead" },
+            { label: "Platform", value: "macOS / Windows (Electron)" },
+            { label: "Year", value: "2025" },
+            { label: "Tools", value: "Figma, FigJam, Principle, VS Code" }
+          ],
+          heroImage: "img/projects/formstream/01-dashboard.webp",
+          heroCaption: "Main dashboard — form list with status indicators and quick actions"
+        },
+        challenge: {
+          title: "The Challenge",
+          description: "Enterprise teams deal with hundreds of form types — onboarding, compliance, procurement, IT requests — each with unique validation rules, conditional logic, and approval chains. Existing tools either oversimplify (missing critical logic) or overwhelm (exposing every field at once). Users abandon forms mid-way, submit incomplete data, or route to wrong approvers.",
+          concepts: [
+            {
+              title: "Cognitive Load",
+              description: "Long forms with 50+ fields create decision paralysis. Users don't know which fields are required, optional, or conditional until they reach them."
+            },
+            {
+              title: "Validation Latency",
+              description: "Server-side validation returns errors only after submission. Users lose context, scroll back, fix, re-submit — a cycle that breaks flow and trust."
+            },
+            {
+              title: "Routing Ambiguity",
+              description: "Complex approval chains mean users guess the next approver. Wrong routing adds days of delay and creates compliance risk."
+            }
+          ]
+        },
+        navigation: {
+          title: "Navigation & Information Architecture",
+          description: "We reorganized the IA around three pillars: Forms (browse, search, filter), In Progress (drafts, assigned, review), and History (submitted, approved, rejected). A persistent left rail provides primary navigation; a contextual right panel surfaces form-specific actions — duplicate, template, export — without cluttering the main view.",
+          image: "img/projects/formstream/02-form-builder.webp",
+          caption: "Navigation structure — left rail, form list, and contextual action panel"
+        },
+        guidance: {
+          title: "Guidance Mode",
+          description: "Guidance Mode is the core differentiator. It transforms any form into a step-by-step conversation, showing one logical section at a time, explaining why each field matters, and validating inline. Users can exit guidance anytime to see the full form — flexibility for power users, hand-holding for everyone else.",
+          comparison: [
+            {
+              label: "Empty State",
+              caption: "Clean entry point — only the first required section visible. Progressive disclosure prevents overwhelm.",
+              image: "img/projects/formstream/guidance-empty.webp"
+            },
+            {
+              label: "Active Guidance",
+              caption: "Inline help text, real-time validation, and a persistent progress indicator. Users always know where they are.",
+              image: "img/projects/formstream/guidance-active.webp"
+            }
+          ]
+        },
+        autocomplete: {
+          title: "Smart Autocomplete",
+          description: "Field-level autocomplete learns from org-wide submissions. When a user starts typing a vendor name, cost center, or employee ID, suggestions appear ranked by frequency and recency. Admins can seed suggestions from ERP/HRIS imports. Reduces keystrokes by ~40% on repetitive fields.",
+          image: "img/projects/formstream/03-preview.webp",
+          caption: "Autocomplete dropdown — ranked suggestions with recent-used indicators"
+        },
+        fullExperience: {
+          title: "End-to-End Experience",
+          description: "Three screens capture the complete journey: discover a form, complete it with guidance, confirm and track.",
+          screens: [
+            {
+              number: "01",
+              label: "Discover",
+              caption: "Form library with smart filters — by department, status, frequency. One click opens in Guidance Mode.",
+              image: "img/projects/formstream/01-dashboard.webp"
+            },
+            {
+              number: "02",
+              label: "Complete",
+              caption: "Guidance Mode walks through sections. Inline validation catches errors before submission. Progress bar shows completion.",
+              image: "img/projects/formstream/02-form-builder.webp"
+            },
+            {
+              number: "03",
+              label: "Confirm",
+              caption: "Summary review with change highlights. One-click submit routes to correct approver automatically. Tracking link copied to clipboard.",
+              image: "img/projects/formstream/03-preview.webp"
+            }
+          ]
+        },
+        closure: {
+          title: "Outcome",
+          synthesis: "FormStream launched to 2,400 users across 4 departments. Form completion time dropped from 12 min to 4.8 min average. Submission error rate fell from 23% to 2%. The guidance pattern is now being adapted for the mobile companion app and the admin template builder.",
+          nextProject: {
+            title: "QuikForms Manager →",
+            url: "project.html?p=quikforms-manager"
+          }
+        }
+      },
+      es: {
+        presentation: {
+          title: "FormStream",
+          lead: "Una aplicación de escritorio que transforma la forma en que los equipos completan y gestionan formularios digitales. Al combinar detección inteligente de campos, validación en tiempo real y un modo guiado que acompaña al usuario paso a paso en formularios complejos, FormStream reduce el tiempo de completado en un 60% y elimina los errores de envío.",
+          meta: [
+            { label: "Rol", value: "Product Design Lead" },
+            { label: "Plataforma", value: "macOS / Windows (Electron)" },
+            { label: "Año", value: "2025" },
+            { label: "Herramientas", value: "Figma, FigJam, Principle, VS Code" }
+          ],
+          heroImage: "img/projects/formstream/01-dashboard.webp",
+          heroCaption: "Dashboard principal — lista de formularios con indicadores de estado y acciones rápidas"
+        },
+        challenge: {
+          title: "El Desafío",
+          description: "Los equipos empresariales manejan cientos de tipos de formularios — onboarding, cumplimiento, compras, solicitudes TI — cada uno con reglas de validación únicas, lógica condicional y cadenas de aprobación. Las herramientas existentes o simplifican demasiado (perdiendo lógica crítica) o abruman (exponiendo todos los campos a la vez). Los usuarios abandonan formularios a medio camino, envían datos incompletos o derivan al aprobador incorrecto.",
+          concepts: [
+            {
+              title: "Carga Cognitiva",
+              description: "Formularios largos con 50+ campos crean parálisis de decisión. Los usuarios no saben qué campos son obligatorios, opcionales o condicionales hasta llegar a ellos."
+            },
+            {
+              title: "Latencia de Validación",
+              description: "La validación del lado del servidor devuelve errores solo tras el envío. El usuario pierde el contexto, vuelve atrás, corrige, reenvía — un ciclo que rompe el flujo y la confianza."
+            },
+            {
+              title: "Ambigüedad en el Enrutamiento",
+              description: "Cadenas de aprobación complejas hacen que los usuarios adivinen el siguiente aprobador. Un enrutamiento incorrecto añade días de retraso y crea riesgo de cumplimiento."
+            }
+          ]
+        },
+        navigation: {
+          title: "Navegación y Arquitectura de Información",
+          description: "Reorganizamos la IA en torno a tres pilares: Formularios (explorar, buscar, filtrar), En Progreso (borradores, asignados, revisión) e Historial (enviados, aprobados, rechazados). Un riel izquierdo persistente provee navegación principal; un panel contextual derecho muestra acciones específicas del formulario — duplicar, plantilla, exportar — sin saturar la vista principal.",
+          image: "img/projects/formstream/02-form-builder.webp",
+          caption: "Estructura de navegación — riel izquierdo, lista de formularios y panel de acciones contextual"
+        },
+        guidance: {
+          title: "Modo Guiado",
+          description: "El Modo Guiado es el diferencial clave. Transforma cualquier formulario en una conversación paso a paso, mostrando una sección lógica a la vez, explicando por qué importa cada campo y validando en línea. El usuario puede salir del modo guiado en cualquier momento para ver el formulario completo — flexibilidad para usuarios avanzados, acompañamiento para todos los demás.",
+          comparison: [
+            {
+              label: "Estado Vacío",
+              caption: "Punto de entrada limpio — solo la primera sección requerida visible. Divulgación progresiva evita la sobrecarga.",
+              image: "img/projects/formstream/guidance-empty.webp"
+            },
+            {
+              label: "Guiado Activo",
+              caption: "Texto de ayuda en línea, validación en tiempo real y un indicador de progreso persistente. El usuario siempre sabe dónde está.",
+              image: "img/projects/formstream/guidance-active.webp"
+            }
+          ]
+        },
+        autocomplete: {
+          title: "Autocompletado Inteligente",
+          description: "El autocompletado a nivel de campo aprende de los envíos de toda la organización. Cuando el usuario empieza a escribir un nombre de proveedor, centro de costos o ID de empleado, aparecen sugerencias ordenadas por frecuencia y recencia. Los administradores pueden sembrar sugerencias desde importaciones de ERP/RRHH. Reduce pulsaciones en ~40% en campos repetitivos.",
+          image: "img/projects/formstream/03-preview.webp",
+          caption: "Desplegable de autocompletado — sugerencias rankeadas con indicadores de uso reciente"
+        },
+        fullExperience: {
+          title: "Experiencia de Extremo a Extremo",
+          description: "Tres pantallas capturan el viaje completo: descubrir un formulario, completarlo con guía, confirmar y dar seguimiento.",
+          screens: [
+            {
+              number: "01",
+              label: "Descubrir",
+              caption: "Biblioteca de formularios con filtros inteligentes — por departamento, estado, frecuencia. Un clic abre en Modo Guiado.",
+              image: "img/projects/formstream/01-dashboard.webp"
+            },
+            {
+              number: "02",
+              label: "Completar",
+              caption: "El Modo Guiado recorre las secciones. Validación en línea atrapa errores antes del envío. Barra de progreso muestra el avance.",
+              image: "img/projects/formstream/02-form-builder.webp"
+            },
+            {
+              number: "03",
+              label: "Confirmar",
+              caption: "Resumen de revisión con cambios destacados. Envío en un clic deriva al aprobador correcto automáticamente. Enlace de seguimiento copiado al portapapeles.",
+              image: "img/projects/formstream/03-preview.webp"
+            }
+          ]
+        },
+        closure: {
+          title: "Resultado",
+          synthesis: "FormStream se lanzó a 2.400 usuarios en 4 departamentos. El tiempo de completado bajó de 12 min a 4.8 min promedio. La tasa de error de envío cayó del 23% al 2%. El patrón de guiado se está adaptando ahora para la app móvil complementaria y el constructor de plantillas de administrador.",
+          nextProject: {
+            title: "QuikForms Manager →",
+            url: "project.html?p=quikforms-manager"
+          }
+        }
+      }
+    };
+
+    // Render case study content
+    function renderCaseStudy() {
+      const content = caseStudyContent[currentLang] || caseStudyContent.en;
+
+      // Helper to set text content
+      function setText(selector, text) {
+        const el = document.querySelector(selector);
+        if (el) el.textContent = text;
+      }
+
+      // Helper to set HTML content
+      function setHTML(selector, html) {
+        const el = document.querySelector(selector);
+        if (el) el.innerHTML = html;
+      }
+
+      // Helper to set attribute
+      function setAttr(selector, attr, value) {
+        const el = document.querySelector(selector);
+        if (el) el.setAttribute(attr, value);
+      }
+
+      // 1. PRESENTACIÓN
+      setText('#cs-presentation-title', content.presentation.title);
+      setText('.cs-presentation .cs-body--lead', content.presentation.lead);
+
+      // Meta list
+      const metaContainer = document.querySelector('.cs-presentation .cs-meta');
+      if (metaContainer) {
+        metaContainer.innerHTML = content.presentation.meta.map(m =>
+          `<dt>${m.label}</dt><dd>${m.value}</dd>`
+        ).join('');
+      }
+
+      // Hero image
+      const heroFigure = document.querySelector('.cs-presentation .cs-figure--full');
+      if (heroFigure) {
+        heroFigure.innerHTML = `
+          <img src="${content.presentation.heroImage}" alt="${content.presentation.heroCaption}" loading="eager" />
+          <figcaption class="cs-caption">${content.presentation.heroCaption}</figcaption>
+        `;
+      }
+
+      // 2. DESAFÍO
+      setText('#cs-challenge-title', content.challenge.title);
+      setText('.cs-challenge .cs-body', content.challenge.description);
+
+      const conceptsContainer = document.querySelector('.cs-concepts');
+      if (conceptsContainer) {
+        conceptsContainer.innerHTML = content.challenge.concepts.map(c => `
+          <article class="cs-col cs-col-4 cs-col-md-12 cs-concept">
+            <h3 class="cs-heading cs-heading--concept">${c.title}</h3>
+            <p class="cs-body cs-body--small">${c.description}</p>
+          </article>
+        `).join('');
+      }
+
+      // 3. NAVEGACIÓN
+      setText('#cs-navigation-title', content.navigation.title);
+      setText('.cs-navigation .cs-body', content.navigation.description);
+
+      const navFigure = document.querySelector('.cs-navigation .cs-figure');
+      if (navFigure) {
+        navFigure.innerHTML = `
+          <img src="${content.navigation.image}" alt="${content.navigation.caption}" loading="lazy" />
+          <figcaption class="cs-caption">${content.navigation.caption}</figcaption>
+        `;
+      }
+
+      // 4. GUIDANCE MODE
+      setText('#cs-guidance-title', content.guidance.title);
+      setText('.cs-guidance .cs-body--lead', content.guidance.description);
+
+      const comparisonContainer = document.querySelector('.cs-comparison');
+      if (comparisonContainer) {
+        comparisonContainer.innerHTML = content.guidance.comparison.map(c => `
+          <figure class="cs-col cs-col-6 cs-col-md-12 cs-figure">
+            <img src="${c.image}" alt="${c.caption}" loading="lazy" />
+            <figcaption class="cs-caption">
+              <span class="cs-caption-label">${c.label}</span>
+              ${c.caption}
+            </figcaption>
+          </figure>
+        `).join('');
+      }
+
+      // 5. AUTOCOMPLETADO
+      setText('#cs-autocomplete-title', content.autocomplete.title);
+      setText('.cs-autocomplete .cs-body', content.autocomplete.description);
+
+      const acFigure = document.querySelector('.cs-autocomplete .cs-figure');
+      if (acFigure) {
+        acFigure.innerHTML = `
+          <img src="${content.autocomplete.image}" alt="${content.autocomplete.caption}" loading="lazy" />
+          <figcaption class="cs-caption">${content.autocomplete.caption}</figcaption>
+        `;
+      }
+
+      // 6. EXPERIENCIA COMPLETA
+      setText('#cs-full-experience-title', content.fullExperience.title);
+      setText('.cs-full-experience .cs-body--lead', content.fullExperience.description);
+
+      const screensContainer = document.querySelector('.cs-screens');
+      if (screensContainer) {
+        screensContainer.innerHTML = content.fullExperience.screens.map(s => `
+          <figure class="cs-col cs-col-4 cs-col-md-12 cs-figure cs-screen">
+            <div class="cs-screen-number" aria-hidden="true">${s.number}</div>
+            <img src="${s.image}" alt="${s.caption}" loading="lazy" />
+            <figcaption class="cs-caption">
+              <span class="cs-caption-label">${s.label}</span>
+              ${s.caption}
+            </figcaption>
+          </figure>
+        `).join('');
+      }
+
+      // 7. CIERRE
+      setText('#cs-closure-title', content.closure.title);
+      setText('.cs-closure .cs-body--lead', content.closure.synthesis);
+
+      const nextLink = document.querySelector('.cs-next-project');
+      if (nextLink) {
+        nextLink.href = content.closure.nextProject.url;
+        nextLink.innerHTML = `
+          <span class="cs-next-label" data-i18n="nextProject">Next project</span>
+          <span class="cs-next-title">${content.closure.nextProject.title}</span>
+          <span class="cs-next-arrow" aria-hidden="true">→</span>
+        `;
+      }
+
+      // Update meta tags
+      document.title = `${content.presentation.title} — estudio.d`;
+      document.getElementById('meta-description').content = content.presentation.lead;
+      document.getElementById('og-title').content = `${content.presentation.title} — estudio.d`;
+      document.getElementById('og-description').content = content.presentation.lead;
+      document.getElementById('og-image').content = `https://estudiod.site/${content.presentation.heroImage}`;
+      document.getElementById('twitter-title').content = `${content.presentation.title} — estudio.d`;
+      document.getElementById('twitter-description').content = content.presentation.lead;
+      document.getElementById('twitter-image').content = `https://estudiod.site/${content.presentation.heroImage}`;
+      document.getElementById('canonical').href = `https://estudiod.site/project-formstream.html`;
+      document.getElementById('og-url').content = `https://estudiod.site/project-formstream.html`;
+      document.getElementById('twitter-url').content = `https://estudiod.site/project-formstream.html`;
+
+      // JSON-LD
+      const existingLd = document.getElementById("project-ld");
+      if (existingLd) existingLd.remove();
+      const ld = document.createElement("script");
+      ld.type = "application/ld+json";
+      ld.id = "project-ld";
+      ld.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": content.presentation.title,
+        "description": content.presentation.lead,
+        "url": `https://estudiod.site/project-formstream.html`,
+        "image": `https://estudiod.site/${content.presentation.heroImage}`,
+        "creator": { "@type": "Person", "name": "Diego Fabbri Arpon", "url": "https://estudiod.site" }
+      });
+      document.head.appendChild(ld);
+
+      // Hide loader
+      const loader = document.getElementById("project-loader");
+      if (loader) {
+        loader.classList.add("dismiss");
+        loader.addEventListener("transitionend", () => loader.remove(), { once: true });
+      }
+      document.querySelector(".content-area").classList.remove("fading");
+    }
+
+    // Language switch handler
+    window._onSwitchLanguage = function (lang) {
+      renderCaseStudy();
+      // Update footer
+      const _footerCategories = ['brand-creation', 'brand-development', 'product-design'];
+      const _footerCategory = _footerCategories[Math.floor(Math.random() * _footerCategories.length)];
+      updateFooter(_footerCategory, true);
+    };
+
+    // Initialize
+    document.addEventListener("DOMContentLoaded", () => {
+      switchTheme(currentTheme);
+      switchLanguage(currentLang);
+      renderCaseStudy();
+      const _footerCategories = ['brand-creation', 'brand-development', 'product-design'];
+      const _footerCategory = _footerCategories[Math.floor(Math.random() * _footerCategories.length)];
+      updateFooter(_footerCategory);
+    });
+
+    // Footer functions (from main.js)
+    const _footerQuotes = {
+      'brand-creation': {
+        es: { quote: 'Una marca no es lo que tú dices que es. Es lo que ellos dicen que es.', author: 'Marty Neumeier' },
+        en: { quote: 'A brand is not what you say it is. It\'s what they say it is.', author: 'Marty Neumeier' }
+      },
+      'brand-development': {
+        es: { quote: 'El diseño es el embajador silencioso de tu marca.', author: 'Paul Rand' },
+        en: { quote: 'Design is the silent ambassador of your brand.', author: 'Paul Rand' }
+      },
+      'product-design': {
+        es: { quote: 'El diseño no es solo cómo se ve o se siente. El diseño es cómo funciona.', author: 'Steve Jobs' },
+        en: { quote: 'Design is not just what it looks like and feels like. Design is how it works.', author: 'Steve Jobs' }
+      }
+    };
+
+    function updateFooter(category, forceLangSwitch = false) {
+      const quoteEl = document.getElementById('footer-quote');
+      const authorEl = document.getElementById('footer-author');
+      if (!quoteEl || !authorEl) return;
+      const quotes = _footerQuotes[category] || _footerQuotes['product-design'];
+      const q = quotes[currentLang] || quotes.en;
+      quoteEl.textContent = q.quote;
+      authorEl.textContent = `— ${q.author}`;
+    }
+
+    function switchTheme(theme) {
+      const html = document.documentElement;
+      const isDark = theme === 'dark';
+      html.classList.add('theme-transitioning');
+      html.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+
+      document.querySelectorAll('#theme-light, #theme-dark').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('theme-' + theme)?.classList.add('active');
+
+      const lightImg = document.querySelector('#theme-light img');
+      const darkImg = document.querySelector('#theme-dark img');
+      if (lightImg && darkImg) {
+        lightImg.src = isDark ? 'img/circle-solid-full.svg' : 'img/circle-regular-full.svg';
+        darkImg.src = isDark ? 'img/circle-regular-full.svg' : 'img/circle-solid-full.svg';
+      }
+
+      document.querySelectorAll('img[src*="logo-estudio-d"]').forEach(img => {
+        img.src = isDark ? 'img/logo-estudio-d-dark-alt.svg' : 'img/logo-estudio-d-alt.svg';
+      });
+
+      setTimeout(() => html.classList.remove('theme-transitioning'), 300);
+    }
+
+    // Translations (simplified - using the existing translations.js would be better)
+    const translations = {
+      en: {
+        brandCreation: 'brand creation',
+        brandDevelopment: 'brand development',
+        productDesign: 'product design',
+        back: 'back',
+        nextProject: 'Next project'
+      },
+      es: {
+        brandCreation: 'creación de marca',
+        brandDevelopment: 'desarrollo de marca',
+        productDesign: 'diseño de producto',
+        back: 'volver',
+        nextProject: 'Siguiente proyecto'
+      }
+    };
+
+    let currentLang = localStorage.getItem('language') || 'en';
+
+    function switchLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem("language", lang);
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        const text = translations[lang]?.[key] || translations.en[key];
+        if (text) el.textContent = text;
+      });
+
+      const cvLink = document.getElementById("cv-link");
+      if (cvLink) cvLink.href = lang === "en" ? "cv_diego_fabbri_arpon_en_2026.pdf" : "cv_diego_fabbri_arpon_es_2026.pdf";
+
+      document.querySelectorAll("#lang-en, #lang-es").forEach((btn) => btn.classList.remove("active"));
+      const btn = document.getElementById("lang-" + lang);
+      if (btn) btn.classList.add("active");
+
+      document.documentElement.lang = lang;
+    }
+
+    // Mobile sidebar toggle
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      const toggle = document.querySelector(".mobile-menu-toggle");
+      const overlay = document.getElementById("menu-overlay");
+
+      sidebar.classList.toggle("open");
+      const isOpen = sidebar.classList.contains("open");
+      toggle.classList.toggle("open", isOpen);
+      toggle.setAttribute("aria-expanded", isOpen);
+      overlay.classList.toggle("active", isOpen);
+      document.body.style.overflow = isOpen ? "hidden" : "";
+    }
+  </script>
+</body>
+
+</html>
