@@ -1125,6 +1125,16 @@ body {
   text-transform: uppercase;
 }
 
+/* Year badge on product design tiles — top-right corner */
+.pd-tile-year {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: var(--fs-meta-label);
+  font-weight: 400;
+  z-index: var(--z-tile-text);
+}
+
 .brand-hover-tags,
 .brand-hover-industry {
   display: block;
