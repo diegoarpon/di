@@ -841,7 +841,7 @@ function buildBCForm(item, idx) {
   labelGroup.appendChild(textInput(item.label, 'name', 'Nombre', '', 'Nombre visible en el overlay de hover.'));
   labelGroup.appendChild(imgPicker(item.label, 'src', 'Logo', imgCatalog.logos, true, 'Logo que aparece en el overlay de hover.'));
   labelGroup.appendChild(numberInput(item.label, 'logoSize', 'Logo size', 'Tamaño del logo en el overlay de hover.'));
-  labelGroup.appendChild(toggle(item.label, 'invertLogo', 'Invertir logo'));
+  labelGroup.appendChild(toggle(item.label, 'invertLogo', 'Invertir logo', 'Aplica filter: brightness(0) al logo, convirtiéndolo en negro.'));
   if (!item.label.es) item.label.es = { industry: '', workType: '' };
   if (!item.label.en) item.label.en = { industry: '', workType: '' };
   ['es', 'en'].forEach(lang => {
@@ -886,7 +886,7 @@ function buildBDForm(item, idx) {
         sel.appendChild(o);
       });
       sel.addEventListener('change', () => onChange(item, 'size', sel.value));
-      return field('Size', sel);
+      return field('Size', sel, 'Altura del tile. tile-xl es más alto.');
     })(),
     (() => {
       const sel = document.createElement('select');
@@ -896,21 +896,21 @@ function buildBDForm(item, idx) {
         sel.appendChild(o);
       });
       sel.addEventListener('change', () => onChange(item, 'span', parseInt(sel.value)));
-      return field('Span', sel);
+      return field('Span', sel, 'Ancho en columnas. 4 = mitad, 6 = dos tercios, 8 = completo.');
     })(),
     { twoCols: true },
   ));
 
   frag.appendChild(group('Fondo',
-    imgPicker(item, 'bgImage', 'Background image', bgImgs),
-    textInput(item, 'bgColor', 'BG color', '#000000'),
+    imgPicker(item, 'bgImage', 'Background image', bgImgs, false, 'Imagen de fondo del tile.'),
+    textInput(item, 'bgColor', 'BG color', '#000000', 'Color de fondo del tile. Acepta hex, rgb() o var(--variable).'),
     { twoCols: true },
   ));
 
   frag.appendChild(group('Logo',
-    imgPicker(item, 'src', 'Logo src', imgCatalog.logos),
-    numberInput(item, 'logoSize', 'Logo size (px)'),
-    toggle(item, 'invertLogo', 'Invertir logo'),
+    imgPicker(item, 'src', 'Logo src', imgCatalog.logos, false, 'Logo principal del tile.'),
+    numberInput(item, 'logoSize', 'Logo size (px)', 'Ancho máximo del logo en píxeles.'),
+    toggle(item, 'invertLogo', 'Invertir logo', 'Aplica filter: brightness(0) al logo, convirtiéndolo en negro.'),
     { twoCols: true },
   ));
 
@@ -924,7 +924,10 @@ function buildBDForm(item, idx) {
     const fieldLabel = fieldKey === 'name' ? 'Nombre' : 'Industry';
     ['es', 'en'].forEach(lang => {
       if (!item.label[lang]) item.label[lang] = { name: '', industry: '' };
-      labelFields.push(textInput(item.label[lang], fieldKey, fieldLabel + ' (' + lang + ')'));
+      const hint = fieldKey === 'name'
+        ? 'Nombre del proyecto. Aparece en el detalle.'
+        : 'Industria del proyecto. Aparece en el detalle.';
+      labelFields.push(textInput(item.label[lang], fieldKey, fieldLabel + ' (' + lang + ')', '', hint));
     });
   });
   frag.appendChild(group('Label', ...labelFields, { twoCols: 'fixed' }));
@@ -970,7 +973,7 @@ function buildPDForm(item, idx) {
         sel.appendChild(o);
       });
       sel.addEventListener('change', () => onChange(item, 'size', sel.value));
-      return field('Size', sel);
+      return field('Size', sel, 'Altura del tile. tile-xl es más alto.');
     })(),
     (() => {
       const sel = document.createElement('select');
@@ -980,27 +983,27 @@ function buildPDForm(item, idx) {
         sel.appendChild(o);
       });
       sel.addEventListener('change', () => onChange(item, 'span', parseInt(sel.value)));
-      return field('Span', sel);
+      return field('Span', sel, 'Ancho en columnas. 4 = mitad, 6 = dos tercios, 8 = completo.');
     })(),
     { twoCols: true },
   ));
 
   frag.appendChild(group('Fondo',
-    imgPicker(item, 'bgImage', 'Background image', bgImgs),
-    textInput(item, 'bgColor', 'BG color', '#000000'),
+    imgPicker(item, 'bgImage', 'Background image', bgImgs, false, 'Imagen de fondo del tile.'),
+    textInput(item, 'bgColor', 'BG color', '#000000', 'Color de fondo del tile. Acepta hex, rgb() o var(--variable).'),
     { twoCols: true },
   ));
 
   frag.appendChild(group('Logo principal',
-    imgPicker(item, 'src', 'Logo src', imgCatalog.logos),
-    numberInput(item, 'logoSize', 'Logo size (px)'),
-    toggle(item, 'invertLogo', 'Invertir logo'),
+    imgPicker(item, 'src', 'Logo src', imgCatalog.logos, false, 'Logo principal del tile.'),
+    numberInput(item, 'logoSize', 'Logo size (px)', 'Ancho máximo del logo en píxeles.'),
+    toggle(item, 'invertLogo', 'Invertir logo', 'Aplica filter: brightness(0) al logo, convirtiéndolo en negro.'),
     { twoCols: true },
   ));
 
   frag.appendChild(group('Logo secundario',
-    imgPicker(item, 'secondaryLogo', 'Logo secundario', imgCatalog.logos),
-    numberInput(item, 'secondaryLogoSize', 'Logo secundario size (px)'),
+    imgPicker(item, 'secondaryLogo', 'Logo secundario', imgCatalog.logos, false, 'Segundo logo para tiles con dos marcas.'),
+    numberInput(item, 'secondaryLogoSize', 'Logo secundario size (px)', 'Ancho máximo del segundo logo.'),
     { twoCols: true },
   ));
 
