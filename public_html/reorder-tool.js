@@ -1033,6 +1033,20 @@ function buildPDForm(item, idx) {
     { twoCols: 'fixed' },
   ));
 
+  frag.appendChild(group('Desafío / Challenge',
+    (() => {
+      if (typeof item.challenge === 'string') item.challenge = { es: item.challenge, en: item.challenge || '' };
+      if (!item.challenge) item.challenge = { es: '', en: '' };
+      if (typeof item.designQuestion === 'string') item.designQuestion = { es: item.designQuestion, en: item.designQuestion || '' };
+      if (!item.designQuestion) item.designQuestion = { es: '', en: '' };
+    })(),
+    textInput(item.challenge, 'es', 'Desafío (ES)', '', 'Descripción del desafío en español.'),
+    textInput(item.challenge, 'en', 'Challenge (EN)', '', 'Challenge description in English.'),
+    textInput(item.designQuestion, 'es', 'Pregunta de diseño (ES)', '', 'Pregunta de diseño en español.'),
+    textInput(item.designQuestion, 'en', 'Design Question (EN)', '', 'Design question in English.'),
+    { twoCols: 'fixed' },
+  ));
+
   return frag;
 }
 
