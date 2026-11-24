@@ -253,8 +253,8 @@
 
         if (!project) { window.location.href = "index.html?tab=featured-projects"; return; }
 
-        // Render the FormStream case study once project data is available
-        if (projectId === "formstream" && typeof window.renderFormStreamCaseStudy === "function") {
+        // Render the product design case study once project data is available
+        if (section === "productDesign" && typeof window.renderFormStreamCaseStudy === "function") {
           window.renderFormStreamCaseStudy(project);
         }
 
@@ -456,9 +456,9 @@
           }
         });
 
-        // Case study block for FormStream
+        // Case study block for product design projects
         // Rendered once project data is available (project is only in scope inside loadProject).
-        if (projectId === "formstream") {
+        if (section === "productDesign") {
           window.renderFormStreamCaseStudy = function (p) {
             document.querySelectorAll('.case-study').forEach(cs => cs.remove());
             const get = (key, fallback) => {

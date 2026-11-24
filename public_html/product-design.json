@@ -218,7 +218,7 @@
             "en": "Two synchronized panels: a visual drag-and-drop editor on the left and a live preview on the right. Changes in either reflect instantly in the other. This eliminates the edit-save-preview cycle and enables iteration at the speed of thought."
           },
           "composition": "A",
-          "image": "img/projects/quikforms-app/dual-canvas.webp",
+          "image": "img/backgrounds/avenue-solutions3.webp",
           "caption": {
             "es": "Editor visual y vista previa sincronizados",
             "en": "Synchronized visual editor and live preview"
@@ -335,7 +335,66 @@
           "industry": ""
         }
       },
-      "alt": "QuikForms App"
+      "alt": "QuikForms App",
+      "snapshotTitle": {
+        "es": "Resumen del proyecto",
+        "en": "Project Snapshot"
+      },
+      "heroCaption": {
+        "es": "Pantalla principal del producto",
+        "en": "Main product screen"
+      },
+      "client": "Quik!",
+      "teamMembers": "QA + DEV Team",
+      "scope": {
+        "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      "timeline": "Lorem ipsum",
+      "challengeTitle": {
+        "es": "Desafío",
+        "en": "Challenge"
+      },
+      "designQuestionTitle": {
+        "es": "Pregunta de diseño",
+        "en": "Design Question"
+      },
+      "designQuestion": {
+        "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      },
+      "productDirectionTitle": {
+        "es": "Dirección del producto",
+        "en": "Product Direction"
+      },
+      "productDirection": {
+        "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.",
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam."
+      },
+      "decisionsTitle": {
+        "es": "Decisiones de diseño",
+        "en": "Design Decisions"
+      },
+      "deliveryTitle": {
+        "es": "Entrega",
+        "en": "Delivery"
+      },
+      "delivery": {
+        "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor.",
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor."
+      },
+      "outcomeTitle": {
+        "es": "Resultado",
+        "en": "Outcome"
+      },
+      "introduction": {
+        "es": "",
+        "en": ""
+      },
+      "decisionsIntro": {
+        "es": "",
+        "en": ""
+      }
     },
     {
       "order": 3,
@@ -537,7 +596,58 @@
           "industry": ""
         }
       },
-      "alt": "QuikForms Manager"
+      "alt": "QuikForms Manager",
+      "snapshotTitle": {
+        "es": "Resumen del proyecto",
+        "en": "Project Snapshot"
+      },
+      "heroCaption": {
+        "es": "Pantalla principal del producto",
+        "en": "Main product screen"
+      },
+      "client": "Quik!",
+      "teamMembers": "QA + DEV Team",
+      "scope": {
+        "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      "timeline": "Lorem ipsum",
+      "challengeTitle": {
+        "es": "Desafío",
+        "en": "Challenge"
+      },
+      "designQuestionTitle": {
+        "es": "Pregunta de diseño",
+        "en": "Design Question"
+      },
+      "designQuestion": {
+        "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      },
+      "productDirectionTitle": {
+        "es": "Dirección del producto",
+        "en": "Product Direction"
+      },
+      "productDirection": {
+        "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.",
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam."
+      },
+      "decisionsTitle": {
+        "es": "Decisiones de diseño",
+        "en": "Design Decisions"
+      },
+      "deliveryTitle": {
+        "es": "Entrega",
+        "en": "Delivery"
+      },
+      "delivery": {
+        "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor.",
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor."
+      },
+      "outcomeTitle": {
+        "es": "Resultado",
+        "en": "Outcome"
+      }
     },
     {
       "order": 4,
@@ -734,7 +844,58 @@
           "industry": ""
         }
       },
-      "alt": "Trio"
+      "alt": "Trio",
+      "snapshotTitle": {
+        "es": "Resumen del proyecto",
+        "en": "Project Snapshot"
+      },
+      "heroCaption": {
+        "es": "Pantalla principal del producto",
+        "en": "Main product screen"
+      },
+      "client": "Quik!",
+      "teamMembers": "QA + DEV Team",
+      "scope": {
+        "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      "timeline": "Lorem ipsum",
+      "challengeTitle": {
+        "es": "Desafío",
+        "en": "Challenge"
+      },
+      "designQuestionTitle": {
+        "es": "Pregunta de diseño",
+        "en": "Design Question"
+      },
+      "designQuestion": {
+        "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      },
+      "productDirectionTitle": {
+        "es": "Dirección del producto",
+        "en": "Product Direction"
+      },
+      "productDirection": {
+        "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.",
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam."
+      },
+      "decisionsTitle": {
+        "es": "Decisiones de diseño",
+        "en": "Design Decisions"
+      },
+      "deliveryTitle": {
+        "es": "Entrega",
+        "en": "Delivery"
+      },
+      "delivery": {
+        "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor.",
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor."
+      },
+      "outcomeTitle": {
+        "es": "Resultado",
+        "en": "Outcome"
+      }
     }
   ],
   "tiles": [],
