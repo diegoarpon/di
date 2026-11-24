@@ -752,6 +752,15 @@ function buildBCForm(item, idx) {
     textInput(item, 'projectLink', 'Project link', '', 'URL directa. Activa la flecha ↗ en el hover overlay.'),
   ));
 
+  // Bajada / subtítulo (i18n)
+  if (typeof item.subtitle === 'string') item.subtitle = { es: item.subtitle, en: item.subtitle || '' };
+  if (!item.subtitle) item.subtitle = { es: '', en: '' };
+  frag.appendChild(group('Bajada',
+    textInput(item.subtitle, 'es', 'Español', '', 'Bajada / subtítulo en español. Aparece debajo del nombre del proyecto.'),
+    textInput(item.subtitle, 'en', 'Inglés', '', 'Bajada / subtítulo en inglés. Aparece debajo del nombre del proyecto.'),
+    { twoCols: 'fixed' },
+  ));
+
   frag.appendChild(group('Tamaño',
     (() => {
       const sel = document.createElement('select');
@@ -858,6 +867,15 @@ function buildBDForm(item, idx) {
     { twoCols: true },
   ));
 
+  // Bajada / subtítulo (i18n)
+  if (typeof item.subtitle === 'string') item.subtitle = { es: item.subtitle, en: item.subtitle || '' };
+  if (!item.subtitle) item.subtitle = { es: '', en: '' };
+  frag.appendChild(group('Bajada',
+    textInput(item.subtitle, 'es', 'Español', '', 'Bajada / subtítulo en español. Aparece debajo del nombre del proyecto.'),
+    textInput(item.subtitle, 'en', 'Inglés', '', 'Bajada / subtítulo en inglés. Aparece debajo del nombre del proyecto.'),
+    { twoCols: 'fixed' },
+  ));
+
   frag.appendChild(group('Tamaño',
     (() => {
       const sel = document.createElement('select');
@@ -931,6 +949,15 @@ function buildPDForm(item, idx) {
     textInput(item, 'URLFigma', 'URL Figma'),
     toggle(item, 'hideProjectMeta', 'Ocultar project meta'),
     { twoCols: true },
+  ));
+
+  // Bajada / subtítulo (i18n)
+  if (typeof item.subtitle === 'string') item.subtitle = { es: item.subtitle, en: item.subtitle || '' };
+  if (!item.subtitle) item.subtitle = { es: '', en: '' };
+  frag.appendChild(group('Bajada',
+    textInput(item.subtitle, 'es', 'Español', '', 'Bajada / subtítulo en español. Aparece debajo del nombre del proyecto.'),
+    textInput(item.subtitle, 'en', 'Inglés', '', 'Bajada / subtítulo en inglés. Aparece debajo del nombre del proyecto.'),
+    { twoCols: 'fixed' },
   ));
 
   frag.appendChild(group('Tamaño',
