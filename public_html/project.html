@@ -492,7 +492,7 @@
         <p class="cs-hero-subtitle">${get("subtitle", "Enterprise Form Experience Platform")}</p>
         <p class="cs-hero-desc">${get("introduction", "")}</p>
         <div class="cs-screen-panel cs-screen-panel--hero">
-          <img src="https://placehold.co/800x600?text=Hero+Screen" alt="Hero placeholder" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
+          ${get("heroImage") ? `<img src="${get("heroImage")}" alt="${get("heroCaption", "Hero screen")}" style="max-width:100%;height:auto;display:block;margin:0 auto;" />` : ''}
         </div>
       </div>
 

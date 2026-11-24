@@ -12,7 +12,10 @@
         "es": "Enterprise Form Experience Platform",
         "en": "Enterprise Form Experience Platform"
       },
-      "introduction": "FormStream improves the form experience for enterprise staff by making complex workflows easier to complete through guided navigation, clear field states, and less repetitive data entry.",
+      "introduction": {
+        "es": "FormStream improves the form experience for enterprise staff by making complex workflows easier to complete through guided navigation, clear field states, and less repetitive data entry.",
+        "en": "FormStream improves the form experience for enterprise staff by making complex workflows easier to complete through guided navigation, clear field states, and less repetitive data entry."
+      },
       "challengeTitle": "Challenge",
       "challenge": "Enterprise forms can involve multiple sections, required information, validation rules, and repeated data entry. The challenge was to make these workflows easier to navigate while helping staff understand what needs attention and how much work remains.",
       "designQuestion": "How might we guide staff through complex forms while keeping required information, progress, and next steps clear?",
@@ -51,7 +54,7 @@
       "client": "Quik!",
       "scope": "Product definition, flows, UX/UI, interaction design, design system, front-end",
       "timeline": "3 months",
-      "heroImage": "img/projects/formstream/hero.webp",
+      "heroImage": "img/backgrounds/lapanaderi-dev.webp",
       "heroCaption": "FormStream • Enterprise form experience — Screen placeholder",
       "URLFigma": "https://www.figma.com/design/8gpqQroeswlZra2kLw7evO/Quik--FormStream?node-id=38-157&t=s1ah8ZcMwjgkOMFx-1",
       "src": "img/visuals/logos/qu-logo.svg",
@@ -72,7 +75,8 @@
           "industry": ""
         }
       },
-      "alt": "Formstream"
+      "alt": "Formstream",
+      "bgImage": ""
     },
     {
       "order": 2,
