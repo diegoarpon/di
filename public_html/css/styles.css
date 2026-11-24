@@ -1902,8 +1902,6 @@ footer>div {
 /* Screen placeholder panels (equalized: SCREEN 0X top-left, PLACEHOLDER top-right) */
 .cs-screen-panel {
   position: relative;
-  background: rgba(23, 31, 37, 0.06);
-  border: 1px solid rgba(23, 31, 37, 0.24);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1912,17 +1910,12 @@ footer>div {
   overflow: hidden;
 }
 
-.cs-screen-panel--hero {
-  min-height: 440px;
-  padding: 24px 28px;
-}
+.cs-screen-panel--hero {}
 
 .cs-screen-panel--decision {
   width: 100%;
-  height: 340px;
   min-height: auto;
   min-width: auto;
-  padding: 24px 28px;
   box-sizing: border-box;
 }
 
