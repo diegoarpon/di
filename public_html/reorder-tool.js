@@ -261,7 +261,7 @@ function makeCard(item, idx, tab) {
   const bgSrc = item.bgImage || '';
   const logoSrc = item.src || '';
   if (bgSrc && !bgSrc.endsWith('.mp4')) {
-    bg.style.backgroundImage = 'url(public_html/' + bgSrc + ')';
+    bg.style.backgroundImage = 'url(' + bgSrc + ')';
   } else if (!bgSrc && item.bgColor) {
     bg.style.backgroundColor = item.bgColor;
   }
@@ -279,7 +279,7 @@ function makeCard(item, idx, tab) {
   logoWrap.style.cssText = 'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2;padding:16px;';
   if (!logoSrc) logoWrap.style.display = 'none';
   const logoImg = document.createElement('img');
-  logoImg.src = logoSrc ? 'public_html/' + logoSrc : '';
+  logoImg.src = logoSrc ? logoSrc : '';
   logoImg.style.cssText = 'max-width:80%;max-height:50%;object-fit:contain;filter:brightness(0) invert(1);opacity:.9;';
   logoWrap.appendChild(logoImg);
   card.appendChild(logoWrap);
@@ -440,7 +440,7 @@ function updateCardFromItem(item) {
   const bgEl = card.querySelector('.card-bg');
   if (bgEl) {
     if (item.bgImage) {
-      bgEl.style.backgroundImage = 'url(public_html/' + item.bgImage + ')';
+      bgEl.style.backgroundImage = 'url(' + item.bgImage + ')';
       bgEl.style.backgroundColor = '';
     } else if (item.bgColor) {
       bgEl.style.backgroundImage = '';
@@ -455,7 +455,7 @@ function updateCardFromItem(item) {
     if (item.src) {
       logoWrap.style.display = 'flex';
       const img = logoWrap.querySelector('img');
-      if (img) img.src = 'public_html/' + item.src;
+      if (img) img.src = item.src;
     } else {
       logoWrap.style.display = 'none';
     }
@@ -615,7 +615,7 @@ function updatePreview(el, src) {
     return;
   }
   const img = document.createElement('img');
-  img.src = 'public_html/' + src;
+  img.src = src;
   el.appendChild(img);
 }
 
@@ -1059,6 +1059,26 @@ function buildPDForm(item, idx) {
 
   frag.appendChild(buildDecisionsEditor(item));
 
+  frag.appendChild(group('Delivery',
+    (() => {
+      if (typeof item.delivery === 'string') item.delivery = { es: item.delivery, en: '' };
+      if (!item.delivery) item.delivery = { es: '', en: '' };
+    })(),
+    textInput(item.delivery, 'es', 'Español', '', 'Texto de entrega en español.'),
+    textInput(item.delivery, 'en', 'Inglés', '', 'Delivery text in English.'),
+    { twoCols: 'fixed' }
+  ));
+
+  frag.appendChild(group('Outcome',
+    (() => {
+      if (typeof item.outcome === 'string') item.outcome = { es: item.outcome, en: '' };
+      if (!item.outcome) item.outcome = { es: '', en: '' };
+    })(),
+    textInput(item.outcome, 'es', 'Español', '', 'Resultado del proyecto en español.'),
+    textInput(item.outcome, 'en', 'Inglés', '', 'Outcome in English.'),
+    { twoCols: 'fixed' }
+  ));
+
   return frag;
 }
 
@@ -1080,12 +1100,13 @@ function buildDecisionsEditor(item) {
   })();
   const introWrap = document.createElement('div');
   introWrap.className = 'field-group__fields--fixed';
+  introWrap.style.marginBottom = '24px';
   introWrap.appendChild(createField('Descripción (ES)', createTextInput(item.decisionsIntro, 'es', ''), item.decisionsIntro.es));
   introWrap.appendChild(createField('Description (EN)', createTextInput(item.decisionsIntro, 'en', ''), item.decisionsIntro.en));
   wrap.appendChild(introWrap);
 
   const list = document.createElement('div');
-  list.className = 'decision-list';
+  list.className = 'gallery-list gallery-list--2cols';
   wrap.appendChild(list);
 
   function renderDecisions() {
@@ -1094,14 +1115,14 @@ function buildDecisionsEditor(item) {
       list.appendChild(renderDecisionItem(item, d, idx));
     });
     const addCard = document.createElement('div');
-    addCard.className = 'decision-item-add';
+    addCard.className = 'gallery-item-add';
     addCard.innerHTML = '<span>+</span>';
     addCard.addEventListener('click', () => addDecisionItem(item));
     list.appendChild(addCard);
   }
 
   function addDecisionItem(parentItem) {
-    const newItem = { title: '', description: '', image: '' };
+    const newItem = { title: { es: '', en: '' }, description: { es: '', en: '' }, image: '' };
     parentItem.decisions = parentItem.decisions || [];
     parentItem.decisions.push(newItem);
     markDirty();
@@ -1156,21 +1177,39 @@ function buildDecisionsEditor(item) {
   }
 
   function renderDecisionItem(parentItem, d, idx) {
-    if (!d.title) d.title = '';
-    if (!d.description) d.description = '';
+    if (typeof d.title === 'string') d.title = { es: d.title, en: '' };
+    if (!d.title || typeof d.title !== 'object') d.title = { es: '', en: '' };
+    if (!d.title.es) d.title.es = '';
+    if (!d.title.en) d.title.en = '';
+
+    if (typeof d.description === 'string') d.description = { es: d.description, en: '' };
+    if (!d.description || typeof d.description !== 'object') d.description = { es: '', en: '' };
+    if (!d.description.es) d.description.es = '';
+    if (!d.description.en) d.description.en = '';
+
     if (!d.image) d.image = '';
 
+    function decisionFieldCell(labelText, input) {
+      const cell = document.createElement('div');
+      cell.style.cssText = 'flex:1; min-width:0;';
+      const lab = document.createElement('label');
+      lab.textContent = labelText;
+      cell.appendChild(lab);
+      cell.appendChild(input);
+      return cell;
+    }
+
     const itemEl = document.createElement('div');
-    itemEl.className = 'decision-item';
+    itemEl.className = 'gallery-item';
     itemEl.draggable = true;
     itemEl.dataset.idx = idx;
 
     const dragHandle = document.createElement('div');
-    dragHandle.className = 'decision-drag-handle';
+    dragHandle.className = 'gallery-drag-handle';
     dragHandle.innerHTML = SVG_DRAG;
 
     const deleteBtn = document.createElement('button');
-    deleteBtn.className = 'decision-item__delete';
+    deleteBtn.className = 'gallery-item__delete';
     deleteBtn.textContent = '×';
     deleteBtn.title = 'Eliminar';
     deleteBtn.addEventListener('click', (e) => {
@@ -1179,38 +1218,79 @@ function buildDecisionsEditor(item) {
     });
 
     const header = document.createElement('div');
-    header.className = 'decision-item__header';
+    header.className = 'gallery-item__header';
     const headerLeft = document.createElement('div');
-    headerLeft.className = 'decision-item__header-left';
+    headerLeft.className = 'gallery-item__header-left';
     headerLeft.appendChild(dragHandle);
     header.appendChild(headerLeft);
     header.appendChild(deleteBtn);
 
+    const preview = document.createElement('div');
+    preview.style.cssText = 'width:100%; max-height:100px; border-radius:6px; border:1px solid var(--border); background:var(--surface-2); overflow:hidden; display:' + (d.image ? 'block' : 'none') + '; margin-bottom:8px;';
+    const previewImg = document.createElement('img');
+    previewImg.style.cssText = 'width:100%; height:100%; object-fit:cover; display:block;';
+    previewImg.alt = '';
+    previewImg.onerror = () => { preview.style.display = 'none'; };
+    preview.appendChild(previewImg);
+    function updatePreview() {
+      if (d.image) {
+        previewImg.src = d.image;
+        preview.style.display = 'block';
+      } else {
+        preview.style.display = 'none';
+      }
+    }
+
     const fields = document.createElement('div');
-    fields.className = 'decision-item__fields';
-
-    const titleInput = document.createElement('input');
-    titleInput.type = 'text';
-    titleInput.value = d.title;
-    titleInput.placeholder = 'Título de la decisión';
-    titleInput.addEventListener('input', (e) => { d.title = e.target.value; markDirty(); });
-    fields.appendChild(createField('Título', titleInput));
-
-    const descInput = document.createElement('textarea');
-    descInput.value = d.description;
-    descInput.rows = 3;
-    descInput.placeholder = 'Descripción';
-    descInput.addEventListener('input', (e) => { d.description = e.target.value; markDirty(); });
-    fields.appendChild(createField('Texto', descInput));
+    fields.className = 'gallery-item__fields gallery-item__fields--text';
 
     const imgSelect = document.createElement('select');
     imgSelect.className = 'field-control';
     imgSelect.innerHTML = '<option value="">— Seleccionar —</option>' + getImgOptions();
     imgSelect.value = d.image || '';
-    imgSelect.addEventListener('change', (e) => { d.image = e.target.value || ''; markDirty(); });
+    imgSelect.addEventListener('change', (e) => { d.image = e.target.value || ''; markDirty(); updatePreview(); });
     fields.appendChild(createField('Imagen', imgSelect));
 
+    const titleEsInput = document.createElement('input');
+    titleEsInput.type = 'text';
+    titleEsInput.value = d.title.es;
+    titleEsInput.placeholder = 'Título de la decisión';
+    titleEsInput.addEventListener('input', (e) => { d.title.es = e.target.value; markDirty(); });
+
+    const titleEnInput = document.createElement('input');
+    titleEnInput.type = 'text';
+    titleEnInput.value = d.title.en;
+    titleEnInput.placeholder = 'Título de la decisión';
+    titleEnInput.addEventListener('input', (e) => { d.title.en = e.target.value; markDirty(); });
+
+    const titleRow = document.createElement('div');
+    titleRow.className = 'field';
+    titleRow.style.cssText = 'display:flex; gap:8px;';
+    titleRow.appendChild(decisionFieldCell('Título (ES)', titleEsInput));
+    titleRow.appendChild(decisionFieldCell('Título (EN)', titleEnInput));
+    fields.appendChild(titleRow);
+
+    const textoEsInput = document.createElement('textarea');
+    textoEsInput.value = d.description.es;
+    textoEsInput.rows = 3;
+    textoEsInput.placeholder = 'Descripción';
+    textoEsInput.addEventListener('input', (e) => { d.description.es = e.target.value; markDirty(); });
+
+    const textoEnInput = document.createElement('textarea');
+    textoEnInput.value = d.description.en;
+    textoEnInput.rows = 3;
+    textoEnInput.placeholder = 'Descripción';
+    textoEnInput.addEventListener('input', (e) => { d.description.en = e.target.value; markDirty(); });
+
+    const textoRow = document.createElement('div');
+    textoRow.className = 'field';
+    textoRow.style.cssText = 'display:flex; gap:8px;';
+    textoRow.appendChild(decisionFieldCell('Texto (ES)', textoEsInput));
+    textoRow.appendChild(decisionFieldCell('Texto (EN)', textoEnInput));
+    fields.appendChild(textoRow);
+
     itemEl.appendChild(header);
+    itemEl.appendChild(preview);
     itemEl.appendChild(fields);
 
     itemEl.addEventListener('dragstart', (e) => {
@@ -1234,6 +1314,8 @@ function buildDecisionsEditor(item) {
     itemEl.addEventListener('dragend', (e) => {
       itemEl.classList.remove('dragging', 'drag-over');
     });
+
+    updatePreview();
 
     return itemEl;
   }

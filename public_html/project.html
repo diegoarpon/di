@@ -468,22 +468,28 @@
               }
               return v !== undefined && v !== null ? v : fallback;
             };
-            const decisionsHtml = (p.decisions || []).map((d) => `
+            const decisionsHtml = (p.decisions || []).map((d) => {
+              const decTitle = (d.title && typeof d.title === "object")
+                ? (d.title[currentLang] || d.title.es || d.title)
+                : (d.title || "");
+              const decDesc = (d.description && typeof d.description === "object")
+                ? (d.description[currentLang] || d.description.es || d.description)
+                : (d.description || "");
+              return `
       <div class="cs-decision-item">
         <div class="cs-section-marker cs-marker--outlined"></div>
         <div class="cs-decision-row">
           <div class="cs-decision-text">
-            <h3 class="cs-decision-title">${d.title}</h3>
-            <p class="cs-decision-desc">${d.description}</p>
+            <h3 class="cs-decision-title">${decTitle}</h3>
+            <p class="cs-decision-desc">${decDesc}</p>
           </div>
           <div class="cs-decision-screen">
-            <div class="cs-screen-panel cs-screen-panel--decision">
-              <img src="https://placehold.co/600x400?text=Decision+Screen" alt="Decision placeholder" style="width:100%;height:auto;display:block;margin:0 auto;" />
-            </div>
+            ${d.image ? `<img src="${d.image}" alt="${d.caption || decTitle || 'Pantalla de decisión'}" loading="lazy" />` : ''}
           </div>
         </div>
       </div>
-    `).join('');
+    `;
+            }).join('');
             const cs = document.createElement("section");
             cs.className = "case-study cs-case-study";
             cs.innerHTML = `
