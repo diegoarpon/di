@@ -1018,6 +1018,21 @@ function buildPDForm(item, idx) {
     { twoCols: 'fixed' },
   ));
 
+  frag.appendChild(group('Project Snapshot',
+    (() => {
+      if (typeof item.scope === 'string') item.scope = { es: item.scope, en: item.scope || '' };
+      if (!item.scope) item.scope = { es: '', en: '' };
+    })(),
+    imgPicker(item, 'src', 'Logo del cliente', imgCatalog.logos, false, 'Logo del cliente que se muestra en Project Snapshot.'),
+    textInput(item, 'team', 'Role', '', 'Rol en el proyecto.'),
+    textInput(item, 'teamMembers', 'Team', '', 'Equipo de trabajo.'),
+    textInput(item, 'timeline', 'Timeline', '', 'Duración del proyecto.'),
+    textInput(item.scope, 'es', 'Work (ES)', '', 'Descripción del trabajo en español.'),
+    textInput(item.scope, 'en', 'Work (EN)', '', 'Work description in English.'),
+    textInput(item, 'URLFigma', 'URL Figma', '', 'Enlace al archivo de Figma.'),
+    { twoCols: 'fixed' },
+  ));
+
   return frag;
 }
 
