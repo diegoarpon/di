@@ -1057,7 +1057,189 @@ function buildPDForm(item, idx) {
     { twoCols: 'fixed' },
   ));
 
+  frag.appendChild(buildDecisionsEditor(item));
+
   return frag;
+}
+
+// ── Design Decisions Editor (Product Design) ───────────────────────────────────
+function buildDecisionsEditor(item) {
+  const decisions = item.decisions || [];
+
+  const wrap = document.createElement('div');
+  wrap.className = 'field-group';
+
+  const titleRow = document.createElement('div');
+  titleRow.className = 'field-group-title';
+  titleRow.textContent = 'Design Decisions';
+  wrap.appendChild(titleRow);
+
+  // Campo de texto general de la sección (vacío por ahora)
+  (() => {
+    if (!item.decisionsIntro) item.decisionsIntro = { es: '', en: '' };
+  })();
+  const introWrap = document.createElement('div');
+  introWrap.className = 'field-group__fields--fixed';
+  introWrap.appendChild(createField('Descripción (ES)', createTextInput(item.decisionsIntro, 'es', ''), item.decisionsIntro.es));
+  introWrap.appendChild(createField('Description (EN)', createTextInput(item.decisionsIntro, 'en', ''), item.decisionsIntro.en));
+  wrap.appendChild(introWrap);
+
+  const list = document.createElement('div');
+  list.className = 'decision-list';
+  wrap.appendChild(list);
+
+  function renderDecisions() {
+    list.innerHTML = '';
+    decisions.forEach((d, idx) => {
+      list.appendChild(renderDecisionItem(item, d, idx));
+    });
+    const addCard = document.createElement('div');
+    addCard.className = 'decision-item-add';
+    addCard.innerHTML = '<span>+</span>';
+    addCard.addEventListener('click', () => addDecisionItem(item));
+    list.appendChild(addCard);
+  }
+
+  function addDecisionItem(parentItem) {
+    const newItem = { title: '', description: '', image: '' };
+    parentItem.decisions = parentItem.decisions || [];
+    parentItem.decisions.push(newItem);
+    markDirty();
+    renderDecisions();
+  }
+
+  function deleteDecisionItem(parentItem, idx) {
+    parentItem.decisions.splice(idx, 1);
+    markDirty();
+    renderDecisions();
+  }
+
+  function moveDecisionItem(parentItem, fromIdx, toIdx) {
+    const arr = parentItem.decisions;
+    const [moved] = arr.splice(fromIdx, 1);
+    arr.splice(toIdx, 0, moved);
+    markDirty();
+    renderDecisions();
+  }
+
+  function getImgOptions() {
+    const opts = [];
+    for (const child of imgCatalog.backgrounds) {
+      opts.push(`<option value="${child}">${child.split('/').pop()}</option>`);
+    }
+    for (const child of imgCatalog.visuals) {
+      opts.push(`<option value="${child}">${child.split('/').pop()}</option>`);
+    }
+    for (const child of imgCatalog.logos) {
+      opts.push(`<option value="${child}">${child.split('/').pop()}</option>`);
+    }
+    return opts.join('');
+  }
+
+  function createField(label, input) {
+    const wrap = document.createElement('div');
+    wrap.className = 'field';
+    const lbl = document.createElement('label');
+    lbl.textContent = label;
+    wrap.appendChild(lbl);
+    wrap.appendChild(input);
+    return wrap;
+  }
+
+  function createTextInput(obj, key, placeholder) {
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.value = obj[key] || '';
+    input.placeholder = placeholder;
+    input.addEventListener('input', (e) => { obj[key] = e.target.value; markDirty(); });
+    return input;
+  }
+
+  function renderDecisionItem(parentItem, d, idx) {
+    if (!d.title) d.title = '';
+    if (!d.description) d.description = '';
+    if (!d.image) d.image = '';
+
+    const itemEl = document.createElement('div');
+    itemEl.className = 'decision-item';
+    itemEl.draggable = true;
+    itemEl.dataset.idx = idx;
+
+    const dragHandle = document.createElement('div');
+    dragHandle.className = 'decision-drag-handle';
+    dragHandle.innerHTML = SVG_DRAG;
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.className = 'decision-item__delete';
+    deleteBtn.textContent = '×';
+    deleteBtn.title = 'Eliminar';
+    deleteBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      deleteDecisionItem(parentItem, idx);
+    });
+
+    const header = document.createElement('div');
+    header.className = 'decision-item__header';
+    const headerLeft = document.createElement('div');
+    headerLeft.className = 'decision-item__header-left';
+    headerLeft.appendChild(dragHandle);
+    header.appendChild(headerLeft);
+    header.appendChild(deleteBtn);
+
+    const fields = document.createElement('div');
+    fields.className = 'decision-item__fields';
+
+    const titleInput = document.createElement('input');
+    titleInput.type = 'text';
+    titleInput.value = d.title;
+    titleInput.placeholder = 'Título de la decisión';
+    titleInput.addEventListener('input', (e) => { d.title = e.target.value; markDirty(); });
+    fields.appendChild(createField('Título', titleInput));
+
+    const descInput = document.createElement('textarea');
+    descInput.value = d.description;
+    descInput.rows = 3;
+    descInput.placeholder = 'Descripción';
+    descInput.addEventListener('input', (e) => { d.description = e.target.value; markDirty(); });
+    fields.appendChild(createField('Texto', descInput));
+
+    const imgSelect = document.createElement('select');
+    imgSelect.className = 'field-control';
+    imgSelect.innerHTML = '<option value="">— Seleccionar —</option>' + getImgOptions();
+    imgSelect.value = d.image || '';
+    imgSelect.addEventListener('change', (e) => { d.image = e.target.value || ''; markDirty(); });
+    fields.appendChild(createField('Imagen', imgSelect));
+
+    itemEl.appendChild(header);
+    itemEl.appendChild(fields);
+
+    itemEl.addEventListener('dragstart', (e) => {
+      e.dataTransfer.setData('text/plain', JSON.stringify({ type: 'decisions', idx }));
+      itemEl.classList.add('dragging');
+    });
+    itemEl.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      itemEl.classList.add('drag-over');
+    });
+    itemEl.addEventListener('dragleave', (e) => {
+      itemEl.classList.remove('drag-over');
+    });
+    itemEl.addEventListener('drop', (e) => {
+      e.preventDefault();
+      const data = JSON.parse(e.dataTransfer.getData('text/plain'));
+      if (data.type === 'decisions' && data.idx !== idx) {
+        moveDecisionItem(parentItem, data.idx, idx);
+      }
+    });
+    itemEl.addEventListener('dragend', (e) => {
+      itemEl.classList.remove('dragging', 'drag-over');
+    });
+
+    return itemEl;
+  }
+
+  renderDecisions();
+  return wrap;
 }
 
 // ── Gallery Editor (Featured Projects) ─────────────────────────────────────────
