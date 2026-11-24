@@ -1014,6 +1014,7 @@ function buildPDForm(item, idx) {
     })(),
     textInput(item.introduction, 'es', 'Español', '', 'Texto introductorio en español. Aparece debajo del subtítulo en la pantalla hero.'),
     textInput(item.introduction, 'en', 'Inglés', '', 'Introductory text in English. Appears below the subtitle on the hero screen.'),
+    imgPicker(item, 'heroImage', 'Hero image', bgImgs, false, 'Imagen principal de la pantalla hero del proyecto.'),
     { twoCols: 'fixed' },
   ));
 
