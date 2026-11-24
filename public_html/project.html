@@ -214,12 +214,6 @@
     const params = new URLSearchParams(window.location.search);
     const projectId = params.get("p");
 
-    // FormStream case study has no project bar / back arrow (matches Figma reference).
-    if (projectId === "formstream") {
-      const ph = document.querySelector(".project-header");
-      if (ph) ph.classList.add("project-header--hidden");
-    }
-
     const _footerCategories = ['brand-creation', 'brand-development', 'product-design'];
     const _footerCategory = _footerCategories[Math.floor(Math.random() * _footerCategories.length)];
 
