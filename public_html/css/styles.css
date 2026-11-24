@@ -1004,6 +1004,11 @@ body {
   padding-bottom: 3rem;
 }
 
+/* Hide the horizontal project bar + back arrow for the FormStream case study only */
+.project-header--hidden {
+  display: none !important;
+}
+
 .project-back {
   display: inline-flex;
   align-items: center;
@@ -1249,6 +1254,16 @@ body {
     opacity: 1;
     color: var(--whitest);
   }
+}
+
+#product-design-grid .pd-tile-year {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: var(--fs-meta-label);
+  font-weight: 400 !important;
+  color: var(--text);
+  z-index: var(--z-tile-text);
 }
 
 .brand-grid {
@@ -1688,12 +1703,358 @@ footer>div {
    CASE STUDY — FormStream
    ============================================= */
 
-.case-study {
-  padding-top: 2.75rem;
-  padding-bottom: 4rem;
+/* ---- Container: narrow reading column, shared left edge ---- */
+.cs-case-study {
+  position: relative;
+  max-width: 1456px;
+  margin: 0 auto;
+  padding: 48px 0 64px 0;
 }
 
-/* Grid system for case study */
+/* All sections share one left edge (narrow reading column). */
+.cs-case-study .cs-section {
+  position: relative;
+  box-sizing: border-box;
+  max-width: 75%;
+  /* 112px left clear + 990px reading column */
+  padding-left: 2rem;
+  /* common content left edge, clears the rail */
+  margin-bottom: 3rem;
+}
+
+.cs-case-study .cs-section.ps-0 {
+  padding-left: 0 !important;
+}
+
+/* Design Decisions extends further right than the reading column, but keeps the shared left edge */
+.cs-case-study .cs-decision-section {
+  max-width: none;
+  width: 100%;
+}
+
+/* Hero section: narrow reading column, no timeline rail beside it */
+.cs-hero-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-left: 0 !important;
+}
+
+/* Vertical rail line: Project Snapshot marker center → Outcome marker center */
+.cs-rail-area {
+  position: relative;
+}
+
+.cs-rail-line {
+  position: absolute;
+  left: 0;
+  width: 2px;
+  background: var(--main-color);
+  /* Vertical extent is set by JS after render: center of the Project Snapshot
+     marker → center of the Outcome marker (no protrusion, no show-through). */
+}
+
+/* Markers centered on the rail line */
+.cs-case-study .cs-section-marker {
+  position: absolute;
+  left: 0.05rem;
+  top: 0.2rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  border: 2px solid var(--main-color);
+  transform: translateX(-50%);
+  z-index: 2;
+  background: var(--main-color);
+}
+
+.cs-case-study .cs-marker--outlined {
+  background: var(--bg);
+  top: 0.4rem;
+}
+
+/* Design decision items: each spans full grid width, with outlined marker on the rail */
+.cs-decision-item {
+  position: relative;
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.cs-decision-item .cs-section-marker {
+  position: absolute;
+  left: -1.95rem;
+  top: 1.25rem;
+  transform: translateX(-50%);
+}
+
+.cs-decision-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  min-width: 0;
+  flex: 1;
+}
+
+/* ===== Typography — Figma frame "Desktop - modelo 1" (node 24:553) ===== */
+.cs-hero-title {
+  font-family: var(--default-font);
+  font-weight: 500;
+  font-size: 44px;
+  letter-spacing: -1.5px;
+  line-height: 1.05;
+  margin: 0 0 1rem;
+  color: var(--text);
+}
+
+.cs-hero-subtitle {
+  font-family: var(--default-font);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.4;
+  margin: 0 0 1rem;
+  color: var(--text);
+}
+
+.cs-hero-desc {
+  font-family: var(--default-font);
+  font-weight: 300;
+  font-size: 20px;
+  letter-spacing: -0.2px;
+  line-height: 1.4;
+  margin: 0 0 1.5rem;
+  color: var(--text);
+}
+
+/* Section headings — FormStudy override (20px SemiBold, tracking 0.6px, uppercase) */
+.cs-case-study .cs-heading--section {
+  font-family: var(--default-font);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin: 0 0 1rem;
+  color: var(--text);
+}
+
+/* Body lead — FormStudy override (20px Regular, leading 1.4) */
+.cs-case-study .cs-body--lead {
+  font-family: var(--default-font);
+  font-weight: 300;
+  font-size: 1.25em;
+  line-height: 1.4;
+  margin: 0 0 2rem;
+  color: var(--text);
+}
+
+/* Design Question */
+.cs-dq-label {
+  font-family: var(--default-font);
+  font-weight: 300;
+  font-size: 1rem;
+  letter-spacing: 0.48px;
+  text-transform: uppercase;
+  color: var(--main-color);
+  margin: 0;
+}
+
+.cs-dq-text {
+  font-family: var(--default-font);
+  font-weight: 300;
+  font-size: 2rem;
+  letter-spacing: -0.88px;
+  line-height: 1.2;
+  color: var(--main-color);
+  margin: 0;
+}
+
+/* Design Decisions */
+.cs-decision-title {
+  font-family: var(--default-font);
+  font-weight: 500;
+  font-size: 2rem;
+  letter-spacing: -0.88px;
+  line-height: 1.1;
+  margin: 0 0 0.75rem;
+  color: var(--text);
+}
+
+.cs-decision-desc {
+  font-family: var(--default-font);
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--text);
+  margin: 0;
+}
+
+.cs-decision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  margin-top: 1.5rem;
+}
+
+.cs-decision-screen {
+  display: block;
+}
+
+/* Screen placeholder panels (equalized: SCREEN 0X top-left, PLACEHOLDER top-right) */
+.cs-screen-panel {
+  position: relative;
+  background: rgba(23, 31, 37, 0.06);
+  border: 1px solid rgba(23, 31, 37, 0.24);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.cs-screen-panel--hero {
+  min-height: 440px;
+  padding: 24px 28px;
+}
+
+.cs-screen-panel--decision {
+  width: 100%;
+  height: 340px;
+  min-height: auto;
+  min-width: auto;
+  padding: 24px 28px;
+  box-sizing: border-box;
+}
+
+.cs-screen-caption-row {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.cs-screen-num {
+  font-family: var(--default-font);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.48px;
+  color: var(--text);
+}
+
+.cs-screen-place {
+  font-family: var(--default-font);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--text);
+  text-align: right;
+}
+
+.cs-screen-body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.cs-screen-title {
+  font-family: var(--default-font);
+  font-weight: 300;
+  font-size: 26px;
+  line-height: 1.4;
+  margin: 0;
+  color: var(--text);
+}
+
+.cs-screen-sub {
+  font-family: var(--default-font);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0;
+  color: var(--text);
+}
+
+/* Project Snapshot: two columns (left = client/logo/role/team, right = work/timeline/link) */
+.cs-snapshot {
+  margin-bottom: 4rem;
+}
+
+.cs-snapshot-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.cs-snapshot-col {
+  min-width: 0;
+}
+
+.cs-snapshot-label {
+  font-family: var(--default-font);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.48px;
+  text-transform: uppercase;
+  color: var(--text);
+  margin: 0 0 0.25rem;
+  display: block;
+}
+
+.cs-snapshot-value {
+  font-family: var(--default-font);
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--text);
+  margin: 0 0 1rem;
+  display: block;
+}
+
+.cs-snapshot-company {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.cs-snapshot-company img {
+  width: 120px;
+  height: 45px;
+  object-fit: contain;
+  display: block;
+}
+
+.cs-snapshot-link {
+  color: var(--main-color);
+  text-decoration: none;
+  font-family: var(--default-font);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.cs-snapshot-link:hover {
+  text-decoration: underline;
+}
+
+/* Hide Next Project only within FormStream case study */
+.cs-case-study .cs-next-project {
+  display: none;
+}
+
+/* ===== Shared case study utilities (unchanged so other pages are unaffected) ===== */
 .cs-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -1705,18 +2066,53 @@ footer>div {
   min-width: 0;
 }
 
-.cs-col-1 { grid-column: span 1; }
-.cs-col-2 { grid-column: span 2; }
-.cs-col-3 { grid-column: span 3; }
-.cs-col-4 { grid-column: span 4; }
-.cs-col-5 { grid-column: span 5; }
-.cs-col-6 { grid-column: span 6; }
-.cs-col-7 { grid-column: span 7; }
-.cs-col-8 { grid-column: span 8; }
-.cs-col-9 { grid-column: span 9; }
-.cs-col-10 { grid-column: span 10; }
-.cs-col-11 { grid-column: span 11; }
-.cs-col-12 { grid-column: span 12; }
+.cs-col-1 {
+  grid-column: span 1;
+}
+
+.cs-col-2 {
+  grid-column: span 2;
+}
+
+.cs-col-3 {
+  grid-column: span 3;
+}
+
+.cs-col-4 {
+  grid-column: span 4;
+}
+
+.cs-col-5 {
+  grid-column: span 5;
+}
+
+.cs-col-6 {
+  grid-column: span 6;
+}
+
+.cs-col-7 {
+  grid-column: span 7;
+}
+
+.cs-col-8 {
+  grid-column: span 8;
+}
+
+.cs-col-9 {
+  grid-column: span 9;
+}
+
+.cs-col-10 {
+  grid-column: span 10;
+}
+
+.cs-col-11 {
+  grid-column: span 11;
+}
+
+.cs-col-12 {
+  grid-column: span 12;
+}
 
 @media (max-width: 767px) {
   .cs-col {
@@ -1728,12 +2124,15 @@ footer>div {
   .cs-col-md-12 {
     grid-column: span 12 !important;
   }
+
   .cs-col-md-6 {
     grid-column: span 6 !important;
   }
+
   .cs-col-md-4 {
     grid-column: span 4 !important;
   }
+
   .cs-col-md-3 {
     grid-column: span 3 !important;
   }
@@ -1748,7 +2147,6 @@ footer>div {
   margin-bottom: 0;
 }
 
-/* Dividers */
 .cs-divider {
   border: none;
   border-top: 1px solid var(--graphite);
@@ -1998,6 +2396,18 @@ footer>div {
   transform: translateX(0.5rem);
 }
 
+.cs-next-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-next-subtitle {
+  font-size: var(--fs-meta-label);
+  font-weight: 300;
+  opacity: 0.6;
+  margin-top: 0.125rem;
+}
+
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .cs-heading--main {
@@ -2027,11 +2437,6 @@ footer>div {
 }
 
 @media (max-width: 767px) {
-  .case-study {
-    padding-top: 2rem;
-    padding-bottom: 3rem;
-  }
-
   .cs-grid {
     gap: 1rem;
   }
@@ -2088,24 +2493,6 @@ footer>div {
     margin-bottom: 0.5rem;
     opacity: 0.6;
   }
-
-  .cs-next-project {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
-    border-top: 1px solid var(--graphite);
-    padding-top: 1.5rem;
-    margin-top: 1rem;
-  }
-
-  .cs-next-project:hover {
-    gap: 0.25rem;
-  }
-
-  .cs-next-arrow {
-    display: none;
-  }
 }
 
 /* Dark mode adjustments */
@@ -2133,6 +2520,65 @@ footer>div {
   color: var(--main-color);
 }
 
+/* ===== FormStudy responsive overrides ===== */
+@media (max-width: 767px) {
+  .cs-case-study .cs-section {
+    padding-left: 56px;
+    max-width: none;
+  }
+
+  .cs-rail-line {
+    left: 28px;
+  }
+
+  .cs-case-study .cs-section-marker {
+    left: 28px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .cs-snapshot-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .cs-screen-panel--hero {
+    min-height: 300px;
+  }
+
+  .cs-screen-panel--decision {
+    width: auto;
+    height: auto;
+    min-height: 220px;
+    min-width: auto;
+  }
+
+  .cs-decision-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .cs-hero-title {
+    font-size: 32px;
+  }
+
+  .cs-hero-subtitle {
+    font-size: 24px;
+  }
+
+  .cs-hero-desc {
+    font-size: 17px;
+  }
+
+  .cs-dq-text {
+    font-size: 32px;
+  }
+
+  .cs-decision-title {
+    font-size: 32px;
+  }
+}
+
 /* ========================================================================
    Product Design Case Study — Reusable Template Design System
    ======================================================================== */
@@ -2140,14 +2586,22 @@ footer>div {
 /* ─── Design Tokens ─────────────────────────────────────────────────── */
 :root {
   /* Spacing Scale */
-  --space-xs: 0.25rem;   /* 4px */
-  --space-sm: 0.5rem;    /* 8px */
-  --space-md: 1rem;      /* 16px */
-  --space-lg: 1.5rem;    /* 24px */
-  --space-xl: 2rem;      /* 32px */
-  --space-2xl: 3rem;     /* 48px */
-  --space-3xl: 4rem;     /* 64px */
-  --space-4xl: 6rem;     /* 96px */
+  --space-xs: 0.25rem;
+  /* 4px */
+  --space-sm: 0.5rem;
+  /* 8px */
+  --space-md: 1rem;
+  /* 16px */
+  --space-lg: 1.5rem;
+  /* 24px */
+  --space-xl: 2rem;
+  /* 32px */
+  --space-2xl: 3rem;
+  /* 48px */
+  --space-3xl: 4rem;
+  /* 64px */
+  --space-4xl: 6rem;
+  /* 96px */
 
   /* Typography Scale */
   --fs-h1: clamp(2.5rem, 5vw, 4rem);
@@ -2185,27 +2639,92 @@ footer>div {
 }
 
 /* ─── Layout Container ──────────────────────────────────────────────── */
-.cs-next-label { margin-top: 0.5rem; }
+.cs-next-label {
+  margin-top: 0.5rem;
+}
 
 /* Responsive: mobile (<768px) */
 @media (max-width: 767px) {
-  .case-study-gallery { gap: 1rem; }
-  .cs-flex-row { margin-left: 0; margin-right: 0; }
-  .cs-flex-col { width: 100% !important; padding-left: 0 !important; padding-right: 0 !important; }
-  .cs-section-separator { margin: 2rem 0 !important; }
-  .case-study-section { margin-bottom: 4rem !important; }
-  .cs-pres-left { padding-right: 0; margin-bottom: 2rem; }
-  .cs-pres-right { padding-left: 0; border-left: none; border-top: 1px solid var(--graphite); padding-top: 1.5rem; }
-  .cs-nav-left { padding-right: 0; margin-bottom: 2rem; }
-  .cs-guidance-detail { padding-right: 0; margin-bottom: 2rem; }
-  .cs-guidance-detail + .cs-guidance-detail { padding-left: 0; border-left: none; border-top: 1px solid var(--graphite); padding-top: 1.5rem; }
-  .cs-autocomplete-right { padding-left: 0; border-left: none; border-top: 1px solid var(--graphite); padding-top: 1.5rem; }
-  .cs-closing-left { padding-right: 0; margin-bottom: 2rem; }
-  .cs-closing-right { padding-left: 0; border-left: none; border-top: 1px solid var(--graphite); padding-top: 1.5rem; text-align: left !important; }
-  .cs-closing-right .cs-next-link { justify-content: flex-start; }
+  .case-study-gallery {
+    gap: 1rem;
+  }
+
+  .cs-flex-row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .cs-flex-col {
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .cs-section-separator {
+    margin: 2rem 0 !important;
+  }
+
+  .case-study-section {
+    margin-bottom: 4rem !important;
+  }
+
+  .cs-pres-left {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .cs-pres-right {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid var(--graphite);
+    padding-top: 1.5rem;
+  }
+
+  .cs-nav-left {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .cs-guidance-detail {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .cs-guidance-detail+.cs-guidance-detail {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid var(--graphite);
+    padding-top: 1.5rem;
+  }
+
+  .cs-autocomplete-right {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid var(--graphite);
+    padding-top: 1.5rem;
+  }
+
+  .cs-closing-left {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .cs-closing-right {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid var(--graphite);
+    padding-top: 1.5rem;
+    text-align: left !important;
+  }
+
+  .cs-closing-right .cs-next-link {
+    justify-content: flex-start;
+  }
 }
 
 /* Responsive: tablet (768-1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .case-study-section { margin-bottom: 5rem !important; }
+  .case-study-section {
+    margin-bottom: 5rem !important;
+  }
 }

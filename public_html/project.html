@@ -30,6 +30,7 @@
     fetchpriority="high" />
   <link rel="preload" href="fonts/WOFF2/FG_FuturistTRIAL-Regular.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="fonts/WOFF2/FG_FuturistTRIAL-Medium.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/WOFF2/FG_FuturistTRIAL-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="img/logo-estudio-d-alt.svg" as="image" />
   <meta name="theme-color" content="#FF7518" />
   <style>
@@ -53,6 +54,14 @@
       font-family: "FG Futurist";
       src: url("fonts/WOFF2/FG_FuturistTRIAL-Medium.woff2") format("woff2");
       font-weight: 500;
+      font-style: normal;
+      font-display: swap
+    }
+
+    @font-face {
+      font-family: "FG Futurist";
+      src: url("fonts/WOFF2/FG_FuturistTRIAL-SemiBold.woff2") format("woff2");
+      font-weight: 600;
       font-style: normal;
       font-display: swap
     }
@@ -105,12 +114,15 @@
           <div class="mt-4 mb-2">
             <div class="d-flex flex-column gap-2">
               <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button"
-                onclick="fadeNavigate('index.html')" data-i18n="brandCreation" data-tab="brand-creation">brand creation</button>
+                onclick="fadeNavigate('index.html')" data-i18n="brandCreation" data-tab="brand-creation">brand
+                creation</button>
               <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button"
-                onclick="fadeNavigate('index.html?tab=brand-development')" data-i18n="brandDevelopment" data-tab="brand-development">brand
+                onclick="fadeNavigate('index.html?tab=brand-development')" data-i18n="brandDevelopment"
+                data-tab="brand-development">brand
                 development</button>
               <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button"
-                onclick="fadeNavigate('index.html?tab=product-design')" data-i18n="productDesign" data-tab="product-design">product
+                onclick="fadeNavigate('index.html?tab=product-design')" data-i18n="productDesign"
+                data-tab="product-design">product
                 design</button>
             </div>
           </div>
@@ -120,7 +132,8 @@
               <div class="d-flex flex-column gap-2">
                 <a href="cv_diego_fabbri_arpon_es.pdf" target="_blank" rel="noopener noreferrer"
                   class="contact-link fw-normal" id="cv-link">cv</a>
-                <a href="https://wa.me/+5491134604766?text=Hola%20D!%20Tengo%20una%20consulta" target="_blank" rel="noopener noreferrer" class="contact-link fw-normal">whatsapp</a>
+                <a href="https://wa.me/+5491134604766?text=Hola%20D!%20Tengo%20una%20consulta" target="_blank"
+                  rel="noopener noreferrer" class="contact-link fw-normal">whatsapp</a>
                 <a href="https://www.linkedin.com/in/diegofabbriarpon/" target="_blank" rel="noopener noreferrer"
                   class="contact-link fw-normal">linkedin</a>
               </div>
@@ -176,7 +189,7 @@
           <p id="project-description" class="fw-light project-description"></p>
         </div>
 
-        <div id="project-gallery" class="project-gallery mb-5"></div>
+        <div id="project-gallery" class="project-gallery"></div>
 
         <footer class="container text-center my-5">
           <div class="py-5">
@@ -200,6 +213,12 @@
 
     const params = new URLSearchParams(window.location.search);
     const projectId = params.get("p");
+
+    // FormStream case study has no project bar / back arrow (matches Figma reference).
+    if (projectId === "formstream") {
+      const ph = document.querySelector(".project-header");
+      if (ph) ph.classList.add("project-header--hidden");
+    }
 
     const _footerCategories = ['brand-creation', 'brand-development', 'product-design'];
     const _footerCategory = _footerCategories[Math.floor(Math.random() * _footerCategories.length)];
@@ -239,6 +258,11 @@
         }
 
         if (!project) { window.location.href = "index.html?tab=brand-development"; return; }
+
+        // Render the FormStream case study once project data is available
+        if (projectId === "formstream" && typeof window.renderFormStreamCaseStudy === "function") {
+          window.renderFormStreamCaseStudy(project);
+        }
 
         // Update sidebar active tab based on project section
         const sidebarTabMap = { brandDevelopment: 'brand-development', productDesign: 'product-design' };
@@ -289,7 +313,7 @@
         metaEl.classList.toggle("d-none", !metaText);
 
         const gallery = document.getElementById("project-gallery");
-        gallery.innerHTML = "";
+        if (gallery) gallery.innerHTML = "";
         document.getElementById("meta-description").content = description;
         document.getElementById("og-description").content = description;
         document.getElementById("twitter-description").content = description;
@@ -433,6 +457,185 @@
             col3Count = 0;
           }
         });
+
+        // Case study block for FormStream
+        // Rendered once project data is available (project is only in scope inside loadProject).
+        if (projectId === "formstream") {
+          window.renderFormStreamCaseStudy = function (p) {
+            document.querySelectorAll('.case-study').forEach(cs => cs.remove());
+            const get = (key, fallback) => {
+              const v = p[key];
+              if (v && typeof v === "object" && !Array.isArray(v)) {
+                return v[currentLang] || v.es || fallback;
+              }
+              return v !== undefined && v !== null ? v : fallback;
+            };
+            const decisionsHtml = (p.decisions || []).map((d) => `
+      <div class="cs-decision-item">
+        <div class="cs-section-marker cs-marker--outlined"></div>
+        <div class="cs-decision-row">
+          <div class="cs-decision-text">
+            <h3 class="cs-decision-title">${d.title}</h3>
+            <p class="cs-decision-desc">${d.description}</p>
+          </div>
+          <div class="cs-decision-screen">
+            <div class="cs-screen-panel cs-screen-panel--decision">
+              <div class="cs-screen-caption-row">
+                <span class="cs-screen-num">SCREEN ${d.screenNum}</span>
+                <span class="cs-screen-place">PLACEHOLDER</span>
+              </div>
+              <div class="cs-screen-body">
+                <p class="cs-screen-title">${d.caption}</p>
+                <p class="cs-screen-sub">Screen placeholder</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `).join('');
+            const cs = document.createElement("section");
+            cs.className = "case-study cs-case-study";
+            cs.innerHTML = `
+      <!-- Hero / Screen 01: narrow reading column, shared left edge, no rail -->
+      <div class="cs-section cs-hero-section">
+        <h1 class="cs-hero-title">${get("projectName", "FormStream")}</h1>
+        <p class="cs-hero-subtitle">${get("subtitle", "Enterprise Form Experience Platform")}</p>
+        <p class="cs-hero-desc">${get("introduction", "")}</p>
+        <div class="cs-screen-panel cs-screen-panel--hero">
+          <div class="cs-screen-caption-row">
+            <span class="cs-screen-num">SCREEN 01</span>
+            <span class="cs-screen-place">PLACEHOLDER</span>
+          </div>
+          <div class="cs-screen-body">
+            <p class="cs-screen-title">${get("projectName", "FormStream")} · Enterprise form experience</p>
+            <p class="cs-screen-sub">Screen placeholder</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vertical rail: Project Snapshot marker center → Outcome marker center -->
+      <div class="cs-rail-area">
+        <div class="cs-rail-line"></div>
+
+        <!-- Project Snapshot: no line, no circle -->
+
+        <div class="cs-section ps-0">
+          <h2 class="cs-heading--section">Project Snapshot</h2>
+          <div class="cs-snapshot-grid">
+            <div class="cs-snapshot-col">
+              <div class="cs-snapshot-item">
+                <span class="cs-snapshot-label">Client</span>
+                <div class="cs-snapshot-company">
+                  <img src="${get("src", "")}" alt="${get("client", "Quik!")} logo" width="120" height="45" loading="lazy">
+                </div>
+              </div>
+              <div class="cs-snapshot-item">
+                <span class="cs-snapshot-label">Role</span>
+                <span class="cs-snapshot-value">${get("team", "Product Designer / UX-UI Designer")}</span>
+              </div>
+              <div class="cs-snapshot-item">
+                <span class="cs-snapshot-label">Team</span>
+                <span class="cs-snapshot-value">${get("teamMembers", "QA + DEV Team")}</span>
+              </div>
+            </div>
+            <div class="cs-snapshot-col">
+              <div class="cs-snapshot-item">
+                <span class="cs-snapshot-label">Work</span>
+                <span class="cs-snapshot-value">${get("scope", "")}</span>
+              </div>
+              <div class="cs-snapshot-item">
+                <span class="cs-snapshot-label">Timeline</span>
+                <span class="cs-snapshot-value">${get("timeline", "3 months")}</span>
+              </div>
+              <div class="cs-snapshot-item">
+                <span class="cs-snapshot-label">Link</span>
+                <a href="${get("URLFigma", "")}" class="cs-snapshot-link" target="_blank" rel="noopener">↗ Figma</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Challenge -->
+
+        <div class="cs-section ps-2">
+          <div class="cs-section-marker cs-marker--filled"></div>
+          <h2 class="cs-heading--section">${get("challengeTitle", "Challenge")}</h2>
+          <p class="cs-body--lead">${get("challenge", "")}</p>
+        </div>
+
+        <!-- Design Question -->
+
+        <div class="cs-section ps-2">
+          <div class="cs-section-marker cs-marker--outlined"></div>
+          <div class="cs-dq">
+            <p class="cs-dq-label">Design Question</p>
+            <p class="cs-dq-text">${get("designQuestion", "")}</p>
+          </div>
+        </div>
+
+        <!-- Product Direction -->
+        
+        <div class="cs-section ps-2">
+          <div class="cs-section-marker cs-marker--filled"></div>
+          <h2 class="cs-heading--section">${get("productDirectionTitle", "Product Direction")}</h2>
+          <p class="cs-body--lead">${get("productDirection", "")}</p>
+        </div>
+
+        <!-- Design Decisions: one section marker, shared grid (text left | screens 02-04 right) -->
+        
+        <div class="cs-section cs-decision-section ps-3">
+          <div class="cs-section-marker cs-marker--filled"></div>
+          <h2 class="cs-heading--section">${get("decisionsTitle", "Design Decisions")}</h2>
+          <div class="cs-decision-grid">
+            ${decisionsHtml}
+          </div>
+        </div>
+
+        <!-- Delivery -->
+        
+        <div class="cs-section ps-2">
+          <div class="cs-section-marker cs-marker--filled"></div>
+          <h2 class="cs-heading--section">${get("deliveryTitle", "Delivery")}</h2>
+          <p class="cs-body--lead">${get("delivery", "")}</p>
+        </div>
+
+        <!-- Outcome -->
+        
+        <div class="cs-section ps-2">
+          <div class="cs-section-marker cs-marker--filled"></div>
+          <h2 class="cs-heading--section">${get("outcomeTitle", "Outcome")}</h2>
+          <p class="cs-body--lead">${get("outcome", "")}</p>
+        </div>
+      </div>
+    `;
+            const gallery = document.getElementById("project-gallery");
+            gallery.parentNode.insertBefore(cs, gallery.nextSibling);
+
+            // Rail line: center of first marker (Project Snapshot) → center of last marker (Outcome).
+            // No protrusion at either end; line sits behind markers (filled cover it, hollow show page bg inside).
+            (function positionRailLine() {
+              const railArea = cs.querySelector('.cs-rail-area');
+              const railLine = cs.querySelector('.cs-rail-line');
+              const markers = cs.querySelectorAll('.cs-section-marker');
+              if (!railArea || !railLine || markers.length < 2) return;
+              const first = markers[0];
+              const last = markers[markers.length - 1];
+              const update = () => {
+                const r = railArea.getBoundingClientRect();
+                const f = first.getBoundingClientRect();
+                const l = last.getBoundingClientRect();
+                const start = f.top + f.height / 2 - r.top;
+                const end = l.top + l.height / 2 - r.top;
+                railLine.style.top = start + 'px';
+                railLine.style.bottom = (r.height - end) + 'px';
+              };
+              update();
+              window.addEventListener('resize', update);
+            })();
+          };
+        }
+
+
 
         const loader = document.getElementById("project-loader");
         if (loader) {

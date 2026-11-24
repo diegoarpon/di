@@ -505,20 +505,6 @@ function toggle(item, key, label, hint) {
   const wrap = document.createElement('div');
   wrap.className = 'field';
 
-  const lbl = document.createElement('label');
-  lbl.textContent = label;
-  if (hint) {
-    const help = document.createElement('span');
-    help.className = 'field-help';
-    help.textContent = '?';
-    const tip = document.createElement('span');
-    tip.className = 'tooltip';
-    tip.textContent = hint;
-    help.appendChild(tip);
-    lbl.appendChild(help);
-  }
-  wrap.appendChild(lbl);
-
   const row = document.createElement('div');
   row.className = 'toggle-inline';
 
@@ -534,10 +520,20 @@ function toggle(item, key, label, hint) {
   tog.appendChild(slider);
   row.appendChild(tog);
 
-  const txt = document.createElement('span');
-  txt.className = 'toggle-inline__label';
-  txt.textContent = label;
-  row.appendChild(txt);
+  const lbl = document.createElement('span');
+  lbl.className = 'toggle-inline__label';
+  lbl.textContent = label;
+  if (hint) {
+    const help = document.createElement('span');
+    help.className = 'field-help';
+    help.textContent = '?';
+    const tip = document.createElement('span');
+    tip.className = 'tooltip';
+    tip.textContent = hint;
+    help.appendChild(tip);
+    lbl.appendChild(help);
+  }
+  row.appendChild(lbl);
 
   wrap.appendChild(row);
   return wrap;
@@ -967,10 +963,14 @@ function buildPDForm(item, idx) {
     { twoCols: true },
   ));
 
-  frag.appendChild(group('Logo',
+  frag.appendChild(group('Logo principal',
     imgPicker(item, 'src', 'Logo src', imgCatalog.logos),
     numberInput(item, 'logoSize', 'Logo size (px)'),
     toggle(item, 'invertLogo', 'Invertir logo'),
+    { twoCols: true },
+  ));
+
+  frag.appendChild(group('Logo secundario',
     imgPicker(item, 'secondaryLogo', 'Logo secundario', imgCatalog.logos),
     numberInput(item, 'secondaryLogoSize', 'Logo secundario size (px)'),
     { twoCols: true },

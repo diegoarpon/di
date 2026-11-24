@@ -629,7 +629,8 @@ function renderProductDesignGrid(items) {
           }
         }
 
-        const title = item.title?.[currentLang] || item.title?.es || "";
+        const titleRaw = item.title;
+        const title = item.secondaryLogo ? "" : (typeof titleRaw === "string" ? titleRaw : (titleRaw?.[currentLang] || titleRaw?.es || ""));
         const subtitle = item.subtitle?.[currentLang] || item.subtitle?.es || "";
         const metaText = [subtitle, item.tool].filter(Boolean).join(" / ");
         const logos = [{ src: item.src, loading: "lazy", alt: item.src, logoSize: item.logoSize }];
