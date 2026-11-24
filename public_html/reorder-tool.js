@@ -531,6 +531,7 @@ function toggle(item, key, label, hint) {
     tip.className = 'tooltip';
     tip.textContent = hint;
     help.appendChild(tip);
+    lbl.appendChild(document.createTextNode(' '));
     lbl.appendChild(help);
   }
   row.appendChild(lbl);
@@ -859,11 +860,11 @@ function buildBDForm(item, idx) {
   const bgImgs = [...imgCatalog.backgrounds, ...imgCatalog.videos];
 
   frag.appendChild(group('General',
-    textInput(item, 'alt', 'Alt text'),
-    textInput(item, 'project', 'Project ID'),
-    textInput(item, 'projectName', 'Project name'),
-    textInput(item, 'hoverColor', 'Hover color', 'var(--main-color)'),
-    toggle(item, 'hideProjectMeta', 'Ocultar project meta'),
+    textInput(item, 'alt', 'Alt text', '', 'Texto alternativo del logo. Usado por lectores de pantalla.'),
+    textInput(item, 'project', 'Project ID', '', 'ID del proyecto. Se usa para navegar a project.html?p=ID.'),
+    textInput(item, 'projectName', 'Project name', '', 'Nombre del proyecto. Se muestra en el detalle del proyecto.'),
+    textInput(item, 'hoverColor', 'Hover color', 'var(--main-color)', 'Color CSS para el efecto hover del tile. Ej: var(--main-color)'),
+    toggle(item, 'hideProjectMeta', 'Ocultar project meta', 'Oculta la metainformación del proyecto en la página de detalle.'),
     { twoCols: true },
   ));
 
@@ -941,13 +942,13 @@ function buildPDForm(item, idx) {
   const bgImgs = [...imgCatalog.backgrounds, ...imgCatalog.videos];
 
   frag.appendChild(group('General',
-    textInput(item, 'alt', 'Alt text'),
-    textInput(item, 'project', 'Project ID'),
-    textInput(item, 'projectName', 'Project name'),
-    textInput(item, 'year', 'Año'),
-    textInput(item, 'hoverColor', 'Hover color', 'var(--gold-yellow)'),
-    textInput(item, 'URLFigma', 'URL Figma'),
-    toggle(item, 'hideProjectMeta', 'Ocultar project meta'),
+    textInput(item, 'alt', 'Alt text', '', 'Texto alternativo del logo. Usado por lectores de pantalla.'),
+    textInput(item, 'project', 'Project ID', '', 'ID del proyecto. Se usa para navegar a project.html?p=ID.'),
+    textInput(item, 'projectName', 'Project name', '', 'Nombre del proyecto. Se muestra en el detalle del proyecto.'),
+    textInput(item, 'year', 'Año', '', 'Año del proyecto. Aparece en el tile y en el overlay de hover.'),
+    textInput(item, 'hoverColor', 'Hover color', 'var(--gold-yellow)', 'Color CSS para el efecto hover del tile. Ej: var(--gold-yellow)'),
+    textInput(item, 'URLFigma', 'URL Figma', '', 'URL del archivo de Figma del proyecto.'),
+    toggle(item, 'hideProjectMeta', 'Ocultar project meta', 'Oculta la metainformación del proyecto en la página de detalle.'),
     { twoCols: true },
   ));
 
@@ -1002,23 +1003,6 @@ function buildPDForm(item, idx) {
     numberInput(item, 'secondaryLogoSize', 'Logo secundario size (px)'),
     { twoCols: true },
   ));
-
-  frag.appendChild(i18nField(item, 'title', 'Título (tipo de trabajo)'));
-
-  // Label - same structure as Featured Projects: Nombre (es/en), Industry (es/en)
-  if (!item.label) item.label = { es: { name: '', industry: '' }, en: { name: '', industry: '' } };
-  const labelFields = [];
-  ['name', 'industry'].forEach(fieldKey => {
-    const fieldLabel = fieldKey === 'name' ? 'Nombre' : 'Industry';
-    ['es', 'en'].forEach(lang => {
-      if (!item.label[lang]) item.label[lang] = { name: '', industry: '' };
-      labelFields.push(textInput(item.label[lang], fieldKey, fieldLabel + ' (' + lang + ')'));
-    });
-  });
-  frag.appendChild(group('Label', ...labelFields, { twoCols: 'fixed' }));
-
-  // Gallery editor
-  frag.appendChild(buildGalleryEditor(item));
 
   return frag;
 }

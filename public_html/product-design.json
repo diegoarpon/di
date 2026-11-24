@@ -8,7 +8,10 @@
       "title": "FormStream",
       "category": "Desktop Application",
       "year": "2025",
-      "subtitle": "Enterprise Form Experience Platform",
+      "subtitle": {
+        "es": "Enterprise Form Experience Platform",
+        "en": "Enterprise Form Experience Platform"
+      },
       "introduction": "FormStream improves the form experience for enterprise staff by making complex workflows easier to complete through guided navigation, clear field states, and less repetitive data entry.",
       "challengeTitle": "Challenge",
       "challenge": "Enterprise forms can involve multiple sections, required information, validation rules, and repeated data entry. The challenge was to make these workflows easier to navigate while helping staff understand what needs attention and how much work remains.",
@@ -58,7 +61,18 @@
       "secondaryLogo": "img/logos/formstream-logo.svg",
       "secondaryLogoSize": 300,
       "hoverColor": "var(--gold-yellow)",
-      "enabled": true
+      "enabled": true,
+      "label": {
+        "es": {
+          "name": "",
+          "industry": ""
+        },
+        "en": {
+          "name": "",
+          "industry": ""
+        }
+      },
+      "alt": "Formstream"
     },
     {
       "order": 2,
@@ -243,7 +257,18 @@
       "logoSize": 100,
       "invertLogo": false,
       "span": 6,
-      "enabled": true
+      "enabled": true,
+      "label": {
+        "es": {
+          "name": "",
+          "industry": ""
+        },
+        "en": {
+          "name": "",
+          "industry": ""
+        }
+      },
+      "alt": "QuikForms App"
     },
     {
       "order": 3,
@@ -434,7 +459,18 @@
       "logoSize": 100,
       "invertLogo": false,
       "span": 6,
-      "enabled": true
+      "enabled": true,
+      "label": {
+        "es": {
+          "name": "",
+          "industry": ""
+        },
+        "en": {
+          "name": "",
+          "industry": ""
+        }
+      },
+      "alt": "QuikForms Manager"
     },
     {
       "order": 4,
@@ -620,7 +656,18 @@
       "logoSize": 75,
       "invertLogo": false,
       "span": 6,
-      "enabled": true
+      "enabled": true,
+      "label": {
+        "es": {
+          "name": "",
+          "industry": ""
+        },
+        "en": {
+          "name": "",
+          "industry": ""
+        }
+      },
+      "alt": "Trio"
     }
   ],
   "tiles": [],
