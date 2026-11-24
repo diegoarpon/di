@@ -48,7 +48,7 @@
   --fs-h1-mobile: clamp(1.5rem, 5vw, 2.5rem);
   /* h1 en mobile, override del anterior */
   --fs-heading-tile: clamp(1.75rem, 3vw, 3rem);
-  /* h2 dentro de tiles brand development */
+  /* h2 dentro de tiles featured projects */
   --fs-hover-name: clamp(1.25rem, 2vw, 1.65rem);
   /* h2 nombre de marca en hover overlay */
 
@@ -813,7 +813,7 @@ body {
     margin-right: 1rem;
   }
 
-  #brand-creation-grid .tile:hover .logo-sized {
+  #brand-collection-grid .tile:hover .logo-sized {
     transform: scale(1.05);
     transition: transform 0.2s var(--ease-out);
   }
@@ -1060,9 +1060,9 @@ body {
   z-index: var(--z-toggle);
 }
 
-/* Brand Creation hover */
-#brand-creation .tile,
-#brand-creation .tile-xl {
+/* Brand Collection hover */
+#brand-collection .tile,
+#brand-collection .tile-xl {
   border-radius: 0;
   /* border: 1px solid var(--graphite); */
   position: relative;
@@ -1073,8 +1073,8 @@ body {
 
 #product-design-grid .tile,
 #product-design-grid .tile-xl,
-#brand-development-grid .tile,
-#brand-development-grid .tile-xl {
+#featured-projects-grid .tile,
+#featured-projects-grid .tile-xl {
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -1180,17 +1180,17 @@ body {
   margin-bottom: 2rem;
 }
 
-#brand-creation .tile-xl .brand-hover-text {
+#brand-collection .tile-xl .brand-hover-text {
   font-size: var(--fs-tile-text);
 }
 
-#brand-creation .tile:hover .brand-hover-overlay,
-#brand-creation .tile-xl:hover .brand-hover-overlay {
+#brand-collection .tile:hover .brand-hover-overlay,
+#brand-collection .tile-xl:hover .brand-hover-overlay {
   clip-path: circle(150% at 0% 0%);
 }
 
-#brand-creation-grid .tile .brand-hover-text,
-#brand-creation-grid .tile:hover .brand-hover-text {
+#brand-collection-grid .tile .brand-hover-text,
+#brand-collection-grid .tile:hover .brand-hover-text {
   transition: none !important;
   opacity: unset;
 }
@@ -1203,14 +1203,14 @@ body {
   transition: transform 0.2s var(--ease-out), filter 0.3s ease;
 }
 
-#brand-development-grid .tile,
-#brand-development-grid .tile-xl {
+#featured-projects-grid .tile,
+#featured-projects-grid .tile-xl {
   align-items: stretch;
   justify-content: stretch;
 }
 
-#brand-development-grid .tile img,
-#brand-development-grid .tile-xl img {
+#featured-projects-grid .tile img,
+#featured-projects-grid .tile-xl img {
   position: relative;
   z-index: var(--z-tile-text);
 }
@@ -1232,8 +1232,8 @@ body {
   opacity: 0.6;
 }
 
-#brand-development-grid .tile:hover .brand-dev-arrow,
-#brand-development-grid .tile-xl:hover .brand-dev-arrow {
+#featured-projects-grid .tile:hover .brand-dev-arrow,
+#featured-projects-grid .tile-xl:hover .brand-dev-arrow {
   opacity: 1;
   color: var(--whitest);
 }
@@ -1254,7 +1254,7 @@ body {
     opacity: 1;
   }
 
-  #brand-development-grid .brand-dev-arrow {
+  #featured-projects-grid .brand-dev-arrow {
     opacity: 1;
     color: var(--whitest);
   }
@@ -1580,14 +1580,14 @@ body {
   overflow: hidden;
 }
 
-#brand-development-grid h2,
-#brand-development-grid .d-flex.gap-2 {
+#featured-projects-grid h2,
+#featured-projects-grid .d-flex.gap-2 {
   color: var(--whitest);
   position: relative;
   z-index: var(--z-tile-text);
 }
 
-#brand-development-grid h2 {
+#featured-projects-grid h2 {
   font-size: var(--fs-heading-tile);
 }
 
@@ -1807,9 +1807,10 @@ footer>div {
 
 .cs-hero-subtitle {
   font-family: var(--default-font);
-  font-weight: 400;
-  font-size: 30px;
+  font-weight: 500;
+  font-size: 1rem;
   line-height: 1.4;
+  text-transform: uppercase;
   margin: 0 0 1rem;
   color: var(--text);
 }

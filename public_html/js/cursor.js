@@ -37,7 +37,7 @@
     if (e.target.closest(SELECTORS)) {
       rotation = 45;
       const tile = e.target.closest(TILE_SELECTORS);
-      if (tile?.closest('#brand-creation-grid')) {
+      if (tile?.closest('#brand-collection-grid')) {
         dot.style.color = 'var(--main-color)';
       } else if (tile) {
         dot.style.color = 'var(--whitest)';

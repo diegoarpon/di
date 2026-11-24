@@ -104,10 +104,12 @@
           <div class="mt-4 mb-2">
             <div class="d-flex flex-column gap-2">
               <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button"
-                onclick="fadeNavigate('index.html')" data-i18n="brandCreation" data-tab="brand-creation">brand creation</button>
+                onclick="fadeNavigate('index.html?tab=brand-collection')" data-i18n="brandCollection" data-tab="brand-collection">brand
+                collection</button>
               <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button"
-                onclick="fadeNavigate('index.html?tab=brand-development')" data-i18n="brandDevelopment" data-tab="brand-development">brand
-                development</button>
+                onclick="fadeNavigate('index.html?tab=featured-projects')" data-i18n="featuredProjects"
+                data-tab="featured-projects">featured
+                projects</button>
               <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button active"
                 onclick="fadeNavigate('index.html?tab=product-design')" data-i18n="productDesign" data-tab="product-design">product
                 design</button>
@@ -719,7 +721,7 @@
     window._onSwitchLanguage = function (lang) {
       renderCaseStudy();
       // Update footer
-      const _footerCategories = ['brand-creation', 'brand-development', 'product-design'];
+      const _footerCategories = ['brand-collection', 'featured-projects', 'product-design'];
       const _footerCategory = _footerCategories[Math.floor(Math.random() * _footerCategories.length)];
       updateFooter(_footerCategory, true);
     };
@@ -729,18 +731,18 @@
       switchTheme(currentTheme);
       switchLanguage(currentLang);
       renderCaseStudy();
-      const _footerCategories = ['brand-creation', 'brand-development', 'product-design'];
+      const _footerCategories = ['brand-collection', 'featured-projects', 'product-design'];
       const _footerCategory = _footerCategories[Math.floor(Math.random() * _footerCategories.length)];
       updateFooter(_footerCategory);
     });
 
     // Footer functions (from main.js)
     const _footerQuotes = {
-      'brand-creation': {
+      'brand-collection': {
         es: { quote: 'Una marca no es lo que tú dices que es. Es lo que ellos dicen que es.', author: 'Marty Neumeier' },
         en: { quote: 'A brand is not what you say it is. It\'s what they say it is.', author: 'Marty Neumeier' }
       },
-      'brand-development': {
+      'featured-projects': {
         es: { quote: 'El diseño es el embajador silencioso de tu marca.', author: 'Paul Rand' },
         en: { quote: 'Design is the silent ambassador of your brand.', author: 'Paul Rand' }
       },
@@ -787,15 +789,15 @@
     // Translations (simplified - using the existing translations.js would be better)
     const translations = {
       en: {
-        brandCreation: 'brand creation',
-        brandDevelopment: 'brand development',
+        brandCollection: 'brand collection',
+        featuredProjects: 'featured projects',
         productDesign: 'product design',
         back: 'back',
         nextProject: 'Next project'
       },
       es: {
-        brandCreation: 'creación de marca',
-        brandDevelopment: 'desarrollo de marca',
+        brandCollection: 'colección de marcas',
+        featuredProjects: 'proyectos destacados',
         productDesign: 'diseño de producto',
         back: 'volver',
         nextProject: 'Siguiente proyecto'

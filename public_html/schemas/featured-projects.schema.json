@@ -1,16 +1,16 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Brand Development",
+  "title": "Featured Projects",
   "type": "object",
   "required": [
-    "brandDevelopment"
+    "featuredProjects"
   ],
   "properties": {
-    "brandDevelopment": {
+    "featuredProjects": {
       "type": "array",
-      "description": "Lista de proyectos del grid de brand development",
+      "description": "Lista de proyectos del grid de featured projects",
       "items": {
-        "$ref": "#/definitions/brandDevItem"
+        "$ref": "#/definitions/featuredProjectItem"
       }
     }
   },
@@ -102,7 +102,7 @@
         }
       }
     },
-    "brandDevItem": {
+    "featuredProjectItem": {
       "type": "object",
       "required": [
         "order",
@@ -205,7 +205,7 @@
         },
         "project": {
           "type": "string",
-          "description": "ID del proyecto. Activa navegación a project.html?p=ID. Debe coincidir con el ID en brand-creation.json"
+          "description": "ID del proyecto. Activa navegación a project.html?p=ID. Debe coincidir con el ID en brand-collection.json"
         },
         "projectName": {
           "type": "string",

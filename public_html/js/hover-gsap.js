@@ -72,7 +72,7 @@ function initPixelHover(tile) {
       if (active) {
         deactivate(); tile.classList.remove("pixel-active");
       } else {
-        document.querySelectorAll("#brand-creation-grid .tile.pixel-active").forEach(t => {
+        document.querySelectorAll("#brand-collection-grid .tile.pixel-active").forEach(t => {
           if (t !== tile) t.click();
         });
         activate(); tile.classList.add("pixel-active");
@@ -175,12 +175,12 @@ function initPixelHoverSimple(tile, locked) {
 }
 
 function initGsapHovers() {
-  const grid = document.getElementById("brand-creation-grid");
+  const grid = document.getElementById("brand-collection-grid");
   if (grid) grid.querySelectorAll(".tile:not(.tile-text)").forEach(initPixelHover);
 
   const isMobile = window.innerWidth <= 1024;
 
-  const devGrid = document.getElementById("brand-development-grid");
+  const devGrid = document.getElementById("featured-projects-grid");
   if (devGrid) devGrid.querySelectorAll(".tile:not(.tile-text), .tile-xl:not(.tile-text)").forEach(t => { if (!isMobile) initPixelHoverVariant(t, "dissolve"); });
 
   const pdGrid = document.getElementById("product-design-grid");

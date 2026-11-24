@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Brand Creation",
+  "title": "Brand Collection",
   "type": "object",
   "required": [
     "tiles"
@@ -8,7 +8,7 @@
   "properties": {
     "tiles": {
       "type": "array",
-      "description": "Lista de tiles del grid de brand creation",
+      "description": "Lista de tiles del grid de brand collection",
       "items": {
         "$ref": "#/definitions/tile"
       }
@@ -196,7 +196,7 @@
         },
         "project": {
           "type": "string",
-          "description": "ID del proyecto. Activa el click y navega a project.html?p=ID. Debe coincidir con una entrada en brand-development.json"
+          "description": "ID del proyecto. Activa el click y navega a project.html?p=ID. Debe coincidir con una entrada en featured-projects.json"
         },
         "projectLink": {
           "type": "string",

@@ -1,8 +1,8 @@
 /**
- * BRAND CREATION GRID — carga desde JSONs separados por sección
+ * BRAND COLLECTION GRID — carga desde JSONs separados por sección
  */
 
-function buildBrandCreationItems(logos) {
+function buildBrandCollectionItems(logos) {
     function buildLogoArray(entry) {
         const logo = { src: entry.src, darkSrc: entry.darkSrc, loading: 'lazy', alt: entry.alt, logoSize: entry.logoSize, invertLogo: entry.invertLogo, noFilterDark: entry.noFilterDark };
         const arr = [logo];
@@ -63,25 +63,25 @@ function buildBrandCreationItems(logos) {
     });
 }
 
-let brandCreationItems = [];
-let brandDevItems = [];
+let brandCollectionItems = [];
+let featuredProjectsItems = [];
 let brandPdItems = [];
 
 Promise.all([
-    fetch("brand-creation.json").then(r => r.json()),
-    fetch("brand-development.json").then(r => r.json()),
+    fetch("brand-collection.json").then(r => r.json()),
+    fetch("featured-projects.json").then(r => r.json()),
     fetch("product-design.json").then(r => r.json())
 ]).then(([creationData, devData, pdData]) => {
     const sorted = [...creationData.tiles].sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
-    brandCreationItems = buildBrandCreationItems(sorted);
-    if (document.getElementById("brand-creation-grid")) {
-        renderBrandCreationGrid(brandCreationItems);
+    brandCollectionItems = buildBrandCollectionItems(sorted);
+    if (document.getElementById("brand-collection-grid")) {
+        renderBrandCollectionGrid(brandCollectionItems);
         requestAnimationFrame(() => addCol4Panels());
     }
-    if (document.getElementById("brand-development-grid") && devData.brandDevelopment) {
-        const sortedDev = [...devData.brandDevelopment].sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
-        brandDevItems = buildBrandCreationItems(sortedDev.map(e => ({ ...e, showLabel: true })));
-        renderBrandCreationGrid(brandDevItems, "brand-development-grid");
+    if (document.getElementById("featured-projects-grid") && devData.featuredProjects) {
+        const sortedDev = [...devData.featuredProjects].sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+        featuredProjectsItems = buildBrandCollectionItems(sortedDev.map(e => ({ ...e, showLabel: true })));
+        renderBrandCollectionGrid(featuredProjectsItems, "featured-projects-grid");
         if (typeof window.initGsapHovers === "function") window.initGsapHovers();
     }
     if (document.getElementById("product-design-grid") && pdData.productDesign) {
@@ -92,7 +92,7 @@ Promise.all([
     if (typeof window.signalDataReady === "function") window.signalDataReady();
 }).catch(err => {
     console.error("Error loading project data:", err);
-    ['brand-creation-grid', 'brand-development-grid', 'product-design-grid'].forEach(id => {
+    ['brand-collection-grid', 'featured-projects-grid', 'product-design-grid'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.innerHTML = '<p style="padding:2rem;opacity:0.5">Error al cargar los proyectos. Recargá la página.</p>';
     });

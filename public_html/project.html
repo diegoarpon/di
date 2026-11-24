@@ -114,12 +114,12 @@
           <div class="mt-4 mb-2">
             <div class="d-flex flex-column gap-2">
               <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button"
-                onclick="fadeNavigate('index.html')" data-i18n="brandCreation" data-tab="brand-creation">brand
-                creation</button>
+                onclick="fadeNavigate('index.html?tab=brand-collection')" data-i18n="brandCollection" data-tab="brand-collection">brand
+                collection</button>
               <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button"
-                onclick="fadeNavigate('index.html?tab=brand-development')" data-i18n="brandDevelopment"
-                data-tab="brand-development">brand
-                development</button>
+                onclick="fadeNavigate('index.html?tab=featured-projects')" data-i18n="featuredProjects"
+                data-tab="featured-projects">featured
+                projects</button>
               <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button"
                 onclick="fadeNavigate('index.html?tab=product-design')" data-i18n="productDesign"
                 data-tab="product-design">product
@@ -214,7 +214,7 @@
     const params = new URLSearchParams(window.location.search);
     const projectId = params.get("p");
 
-    const _footerCategories = ['brand-creation', 'brand-development', 'product-design'];
+    const _footerCategories = ['brand-collection', 'featured-projects', 'product-design'];
     const _footerCategory = _footerCategories[Math.floor(Math.random() * _footerCategories.length)];
 
     window._onSwitchLanguage = function (lang) {
@@ -233,17 +233,17 @@
     let _projectData = null;
 
     function loadProject() {
-      if (!projectId) { window.location.href = "index.html?tab=brand-development"; return; }
+      if (!projectId) { window.location.href = "index.html?tab=featured-projects"; return; }
 
-      // Fetch both brand-development and product-design JSON with no-cache
+      // Fetch both featured-projects and product-design JSON with no-cache
       const fetchOpts = { cache: 'no-cache' };
       Promise.all([
-        fetch("brand-development.json", fetchOpts).then(r => r.json()),
+        fetch("featured-projects.json", fetchOpts).then(r => r.json()),
         fetch("product-design.json", fetchOpts).then(r => r.json())
       ]).then(([bdData, pdData]) => {
-        // Search in brandDevelopment first
-        let project = (bdData.brandDevelopment || []).find(p => p.project === projectId);
-        let section = 'brandDevelopment';
+        // Search in featuredProjects first
+        let project = (bdData.featuredProjects || []).find(p => p.project === projectId);
+        let section = 'featuredProjects';
 
         // If not found, search in productDesign
         if (!project) {
@@ -251,7 +251,7 @@
           section = 'productDesign';
         }
 
-        if (!project) { window.location.href = "index.html?tab=brand-development"; return; }
+        if (!project) { window.location.href = "index.html?tab=featured-projects"; return; }
 
         // Render the FormStream case study once project data is available
         if (projectId === "formstream" && typeof window.renderFormStreamCaseStudy === "function") {
@@ -259,8 +259,8 @@
         }
 
         // Update sidebar active tab based on project section
-        const sidebarTabMap = { brandDevelopment: 'brand-development', productDesign: 'product-design' };
-        const activeTab = sidebarTabMap[section] || 'brand-development';
+        const sidebarTabMap = { featuredProjects: 'featured-projects', productDesign: 'product-design' };
+        const activeTab = sidebarTabMap[section] || 'featured-projects';
         document.querySelectorAll('#sidebar .sidebar-nav-btn').forEach(btn => {
           btn.classList.toggle('active', btn.dataset.tab === activeTab);
           btn.setAttribute('aria-selected', btn.dataset.tab === activeTab ? 'true' : 'false');
@@ -271,14 +271,14 @@
         if (ph) ph.classList.toggle("project-header--product-design", section === "productDesign");
 
         // Set back link based on section
-        const backLinkMap = { brandDevelopment: 'brand-development', productDesign: 'product-design' };
-        const backTab = backLinkMap[section] || 'brand-development';
+        const backLinkMap = { featuredProjects: 'featured-projects', productDesign: 'product-design' };
+        const backTab = backLinkMap[section] || 'featured-projects';
         document.getElementById('project-back-link').onclick = () => {
           event.preventDefault();
           fadeNavigate(`index.html?tab=${backTab}`);
         };
 
-        _projectData = { brandDevelopment: bdData.brandDevelopment, productDesign: pdData.productDesign };
+        _projectData = { featuredProjects: bdData.featuredProjects, productDesign: pdData.productDesign };
         const label = project.label?.[currentLang] || project.label?.es;
         const projectName = project.projectName || label.name;
         document.title = `${projectName} — estudio.d`;

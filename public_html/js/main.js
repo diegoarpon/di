@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.persisted) {
       const contentArea = document.querySelector(".content-area");
       if (contentArea) contentArea.classList.remove("fading");
-      const grid = document.getElementById("brand-creation-grid");
+      const grid = document.getElementById("brand-collection-grid");
       if (!grid || !grid.hasChildNodes()) window.location.reload();
       if (window.matchMedia('(pointer: fine)').matches) {
         document.documentElement.style.cursor = 'none';
@@ -72,10 +72,10 @@ document.addEventListener("DOMContentLoaded", function () {
   window.switchLanguage(currentLang);
   window.switchTheme(currentTheme);
 
-  const hasGridTabs = document.getElementById("brand-creation");
+  const hasGridTabs = document.getElementById("brand-collection");
   if (hasGridTabs) {
     const urlTab = new URLSearchParams(window.location.search).get("tab");
-    showContent(urlTab || "brand-creation", true);
+    showContent(urlTab || "brand-collection", true);
   }
 });
 
@@ -94,7 +94,7 @@ window.switchTheme = function (theme) {
   document.querySelectorAll('.brand-hover-logo').forEach(logo => {
     logo.style.filter = isDark ? 'brightness(0) invert(1)' : (logo.dataset.invertLogo === '1' ? 'brightness(0)' : '');
   });
-  document.querySelectorAll('#brand-creation-grid .pixel-grid div').forEach(cell => {
+  document.querySelectorAll('#brand-collection-grid .pixel-grid div').forEach(cell => {
     cell.style.backgroundColor = isDark ? 'var(--blackest)' : 'var(--manteca)';
   });
   document.querySelectorAll('[data-update-bg]').forEach(el => {
@@ -131,13 +131,13 @@ window.switchLanguage = function (lang) {
   if (typeof window._onSwitchLanguage === "function") {
     window._onSwitchLanguage(lang);
   } else {
-    const activeTab = localStorage.getItem('activeTab') || 'brand-creation';
+    const activeTab = localStorage.getItem('activeTab') || 'brand-collection';
     updateFooter(activeTab, true);
-    if (activeTab === 'brand-creation' && typeof brandCreationItems !== "undefined" && brandCreationItems.length) {
-      renderBrandCreationGrid(brandCreationItems);
+    if (activeTab === 'brand-collection' && typeof brandCollectionItems !== "undefined" && brandCollectionItems.length) {
+      renderBrandCollectionGrid(brandCollectionItems);
       requestAnimationFrame(() => addCol4Panels());
-    } else if (activeTab === 'brand-development' && typeof brandDevItems !== "undefined" && brandDevItems.length) {
-      renderBrandCreationGrid(brandDevItems, "brand-development-grid");
+    } else if (activeTab === 'featured-projects' && typeof featuredProjectsItems !== "undefined" && featuredProjectsItems.length) {
+      renderBrandCollectionGrid(featuredProjectsItems, "featured-projects-grid");
       if (typeof window.initGsapHovers === "function") window.initGsapHovers();
     } else if (activeTab === 'product-design' && typeof brandPdItems !== "undefined" && brandPdItems.length) {
       renderProductDesignGrid(brandPdItems);
@@ -163,7 +163,7 @@ function _makeSpan(className, text) {
 
 function addCol4Panels() {
   document
-    .querySelectorAll("#brand-creation .tile:not(.tile-text), #brand-creation .tile-xl:not(.tile-text)")
+    .querySelectorAll("#brand-collection .tile:not(.tile-text), #brand-collection .tile-xl:not(.tile-text)")
     .forEach((tile) => {
       const wasActive = tile.classList.contains("pixel-active");
       tile.querySelectorAll(".brand-hover-text, .pixel-grid").forEach((el) => el.remove());
@@ -244,8 +244,8 @@ function addCol4Panels() {
   if (typeof window.initGsapHovers === "function") window.initGsapHovers();
 }
 function showContent(category, isInitial) {
-  const validTabs = ["brand-creation", "brand-development", "product-design"];
-  if (!validTabs.includes(category)) category = "brand-creation";
+  const validTabs = ["brand-collection", "featured-projects", "product-design"];
+  if (!validTabs.includes(category)) category = "brand-collection";
 
   const currentTab = localStorage.getItem("activeTab");
   localStorage.setItem("activeTab", category);
@@ -266,10 +266,10 @@ function showContent(category, isInitial) {
       tab.classList.toggle("d-block", tab.id === category);
       tab.classList.toggle("d-none", tab.id !== category);
     });
-    if (category === "brand-creation" && typeof brandCreationItems !== "undefined" && brandCreationItems.length) {
-      const grid = document.getElementById("brand-creation-grid");
+    if (category === "brand-collection" && typeof brandCollectionItems !== "undefined" && brandCollectionItems.length) {
+      const grid = document.getElementById("brand-collection-grid");
       if (grid && !grid.hasChildNodes()) {
-        renderBrandCreationGrid(brandCreationItems);
+        renderBrandCollectionGrid(brandCollectionItems);
         requestAnimationFrame(() => addCol4Panels());
       }
     } else if (category === "product-design" && typeof brandPdItems !== "undefined" && brandPdItems.length) {
@@ -596,7 +596,7 @@ function renderProductDesignGrid(items) {
           tile.style.setProperty("--tile-hover-color", item.hoverColor);
         }
 
-        // Add click handler for project navigation (like brand-development)
+        // Add click handler for project navigation (like featured-projects)
         if (item.project) {
           tile.dataset.project = item.project;
           tile.classList.add("cursor-pointer");
@@ -658,7 +658,7 @@ function applyDarkSrcSwap() {
   });
 }
 
-function renderBrandCreationGrid(items, containerId = "brand-creation-grid") {
+function renderBrandCollectionGrid(items, containerId = "brand-collection-grid") {
     const container = document.getElementById(containerId);
     if (!container) return;
     container.innerHTML = "";

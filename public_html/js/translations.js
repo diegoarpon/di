@@ -16,8 +16,8 @@ function updateVersionLabel() {
 const translations = {
   en: {
     // Navigation
-    brandCreation: "Brand Collection",
-    brandDevelopment: "Featured Projects",
+    brandCollection: "Brand Collection",
+    featuredProjects: "Featured Projects",
     productDesign: "Product Design",
 
     // Contact
@@ -33,8 +33,8 @@ const translations = {
       "Hi, I’m Diego (D) — a graphic designer specializing in <strong>branding, web, and product design</strong>. I solve communication problems by creating clear, scalable, and consistent visual systems. <br> <strong>Designed for humans, by a human.</strong> <span class='d-block mt-4'> Available for freelance work <span class='intro-arrow'>→</span> <a href='mailto:hola@estudiod.site' class='fw-bold link'>hola@estudiod.site</a></span>",
 
     // Tab intros
-    brandDevelopmentIntro:
-      "Brand development across contexts: <strong>identity, communication, and creative direction</strong> applied to <strong>products, spaces, and experiences</strong>. <br> Systems designed to adapt and perform within their context.",
+    featuredProjectsIntro:
+      "Featured projects across contexts: <strong>identity, communication, and creative direction</strong> applied to <strong>products, spaces, and experiences</strong>. <br> Systems designed to adapt and perform within their context.",
     productDesignIntro:
       "Designing products focused on shaping complex ideas into <strong>intuitive and refined digital experiences</strong>.",
 
@@ -42,8 +42,8 @@ const translations = {
   },
   es: {
     // Navigation
-    brandCreation: "Colección de Marcas",
-    brandDevelopment: "Proyectos Destacados",
+    brandCollection: "Colección de Marcas",
+    featuredProjects: "Proyectos Destacados",
     productDesign: "Diseño de Producto",
 
     // Contact
@@ -58,7 +58,7 @@ const translations = {
     intro:
       "Hola, soy Diego (D) — diseñador gráfico especializado en <strong>branding, web y producto</strong>. <br> Resuelvo problemas de comunicación creando sistemas visuales claros, escalables y consistentes. <strong>Diseño humano, para humanos.</strong> <span class='d-block mt-4'> Disponible para trabajo freelance <span class='intro-arrow'>→</span> <a href='mailto:hola@estudiod.site' class='fw-bold link'>hola@estudiod.site</a></span>",
     // Tab intros
-    brandDevelopmentIntro:
+    featuredProjectsIntro:
       "Proyectos de marca en acción: <strong>identidad, comunicación y dirección creativa</strong> aplicadas a <strong>productos, espacios y experiencias</strong>. <br> Sistemas que se adaptan y funcionan de acuerdo al contexto.",
     productDesignIntro:
       "Diseño de producto enfocado en transformar ideas complejas en <strong>experiencias digitales intuitivas y funcionales</strong>.",
@@ -83,7 +83,7 @@ function t(key) {
 
 
 const _footerQuotes = {
-  'brand-creation': [
+  'brand-collection': [
     {
       es: { quote: 'La creatividad no es improvisación sin método.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' },
       en: { quote: 'Creativity is not improvisation without method.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' }
@@ -97,7 +97,7 @@ const _footerQuotes = {
       en: { quote: 'Good design communicates.', author: 'Paul Rand, <em>A Designer\'s Art</em>, 1985' }
     }
   ],
-  'brand-development': [
+  'featured-projects': [
     {
       es: { quote: 'La simplicidad es el resultado de un largo trabajo.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' },
       en: { quote: 'Simplicity is the result of a long process of work.', author: 'Bruno Munari, <em>Da cosa nasce cosa</em>, 1981' }
