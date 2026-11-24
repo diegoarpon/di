@@ -1185,7 +1185,7 @@ function buildDecisionsEditor(item, allImgs) {
   wrap.appendChild(titleRow);
 
   const list = document.createElement('div');
-  list.className = 'gallery-list';
+  list.className = 'gallery-list gallery-list--2cols';
   wrap.appendChild(list);
 
   const compositions = [

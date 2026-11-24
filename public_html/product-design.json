@@ -17,42 +17,78 @@
         "en": "FormStream improves the form experience for enterprise staff by making complex workflows easier to complete through guided navigation, clear field states, and less repetitive data entry."
       },
       "challengeTitle": "Challenge",
-      "challenge": "Enterprise forms can involve multiple sections, required information, validation rules, and repeated data entry. The challenge was to make these workflows easier to navigate while helping staff understand what needs attention and how much work remains.",
-      "designQuestion": "How might we guide staff through complex forms while keeping required information, progress, and next steps clear?",
+      "challenge": {
+        "es": "Enterprise forms can involve multiple sections, required information, validation rules, and repeated data entry. The challenge was to make these workflows easier to navigate while helping staff understand what needs attention and how much work remains.",
+        "en": "Enterprise forms can involve multiple sections, required information, validation rules, and repeated data entry. The challenge was to make these workflows easier to navigate while helping staff understand what needs attention and how much work remains."
+      },
+      "designQuestion": {
+        "es": "How might we guide staff through complex forms while keeping required information, progress, and next steps clear?",
+        "en": "How might we guide staff through complex forms while keeping required information, progress, and next steps clear?"
+      },
       "productDirectionTitle": "Product Direction",
-      "productDirection": "Structure form completion around three connected needs: navigate a long form, understand each field's state, and keep moving without repeating data unnecessarily.",
+      "productDirection": {
+        "es": "Structure form completion around three connected needs: navigate a long form, understand each field's state, and keep moving without repeating data unnecessarily.",
+        "en": "Structure form completion around three connected needs: navigate a long form, understand each field's state, and keep moving without repeating data unnecessarily."
+      },
       "decisionsTitle": "Design Decisions",
       "decisions": [
         {
-          "title": "Make long forms easier to navigate",
-          "description": "Section-based navigation gives staff a clear sense of where they are in a form and what remains.",
-          "image": "img/projects/formstream/02-dynamic-states.webp",
+          "title": {
+            "es": "Make long forms easier to navigate",
+            "en": ""
+          },
+          "description": {
+            "es": "Section-based navigation gives staff a clear sense of where they are in a form and what remains.",
+            "en": ""
+          },
+          "image": "img/visuals/eg/eg_logo_evolution.svg",
           "caption": "Section Based Navigation · Real-time progress",
           "screenNum": "02"
         },
         {
-          "title": "Guide users at the point of action",
-          "description": "Guidance Mode and dynamic field states clarify which information is incomplete, active, required, or completed.",
-          "image": "img/projects/formstream/03-guidance-mode.webp",
+          "title": {
+            "es": "Guide users at the point of action",
+            "en": ""
+          },
+          "description": {
+            "es": "Guidance Mode and dynamic field states clarify which information is incomplete, active, required, or completed.",
+            "en": ""
+          },
+          "image": "img/visuals/lapanaderi/lapanaderi-rebranding.svg",
           "caption": "Guidance Mode · Required / Incomplete fields",
           "screenNum": "03"
         },
         {
-          "title": "Support repeatable form workflows",
-          "description": "Auto-fill uses previously recorded information. Package management and progress tracking support workflows that involve multiple forms or steps.",
-          "image": "img/projects/formstream/04-section-navigation.webp",
+          "title": {
+            "es": "Support repeatable form workflows",
+            "en": ""
+          },
+          "description": {
+            "es": "Auto-fill uses previously recorded information. Package management and progress tracking support workflows that involve multiple forms or steps.",
+            "en": ""
+          },
+          "image": "img/backgrounds/nestseekers-dev.webp",
           "caption": "Section navigation · Saved-data auto-fill",
           "screenNum": "04"
         }
       ],
       "deliveryTitle": "Delivery",
-      "delivery": "I defined the product and its flows, designed the UX and UI, and carried the work through front-end implementation alongside QA and development.",
+      "delivery": {
+        "es": "I defined the product and its flows, designed the UX and UI, and carried the work through front-end implementation alongside QA and development.",
+        "en": ""
+      },
       "outcomeTitle": "Outcome",
-      "outcome": "The project delivered a guided form experience combining section navigation, field-level guidance, auto-fill, package management, and progress tracking. The design reached beta.",
+      "outcome": {
+        "es": "The project delivered a guided form experience combining section navigation, field-level guidance, auto-fill, package management, and progress tracking. The design reached beta.",
+        "en": ""
+      },
       "team": "Product Designer / UX-UI Designer",
       "teamMembers": "QA + DEV Team",
       "client": "Quik!",
-      "scope": "Product definition, flows, UX/UI, interaction design, design system, front-end",
+      "scope": {
+        "es": "Product definition, flows, UX/UI, interaction design, design system, front-end",
+        "en": "Product definition, flows, UX/UI, interaction design, design system, front-end"
+      },
       "timeline": "3 months",
       "heroImage": "img/backgrounds/lapanaderi-dev.webp",
       "heroCaption": "FormStream • Enterprise form experience — Screen placeholder",
@@ -76,7 +112,11 @@
         }
       },
       "alt": "Formstream",
-      "bgImage": ""
+      "bgImage": "",
+      "decisionsIntro": {
+        "es": "",
+        "en": ""
+      }
     },
     {
       "order": 2,
