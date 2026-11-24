@@ -1008,7 +1008,13 @@ function buildPDForm(item, idx) {
   ));
 
   frag.appendChild(group('Detalle del proyecto',
-    textInput(item, 'introduction', 'Texto introductorio', '', 'Texto introductorio que aparece debajo del subtítulo en la pantalla hero del detalle del proyecto.'),
+    (() => {
+      if (typeof item.introduction === 'string') item.introduction = { es: item.introduction, en: item.introduction || '' };
+      if (!item.introduction) item.introduction = { es: '', en: '' };
+    })(),
+    textInput(item.introduction, 'es', 'Español', '', 'Texto introductorio en español. Aparece debajo del subtítulo en la pantalla hero.'),
+    textInput(item.introduction, 'en', 'Inglés', '', 'Introductory text in English. Appears below the subtitle on the hero screen.'),
+    { twoCols: 'fixed' },
   ));
 
   return frag;
