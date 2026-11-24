@@ -1007,6 +1007,10 @@ function buildPDForm(item, idx) {
     { twoCols: true },
   ));
 
+  frag.appendChild(group('Detalle del proyecto',
+    textInput(item, 'introduction', 'Texto introductorio', '', 'Texto introductorio que aparece debajo del subtítulo en la pantalla hero del detalle del proyecto.'),
+  ));
+
   return frag;
 }
 
