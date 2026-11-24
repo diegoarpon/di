@@ -631,7 +631,8 @@ function renderProductDesignGrid(items) {
 
         const titleRaw = item.title;
         const title = item.secondaryLogo ? "" : (typeof titleRaw === "string" ? titleRaw : (titleRaw?.[currentLang] || titleRaw?.es || ""));
-        const subtitle = item.subtitle?.[currentLang] || item.subtitle?.es || "";
+        const subtitleRaw = item.subtitle;
+        const subtitle = typeof subtitleRaw === "string" ? subtitleRaw : (subtitleRaw?.[currentLang] || subtitleRaw?.es || "");
         const metaText = [subtitle, item.tool].filter(Boolean).join(" / ");
         const logos = [{ src: item.src, loading: "lazy", alt: item.src, logoSize: item.logoSize }];
         const bottomLogos = item.secondaryLogo ? [{ src: item.secondaryLogo, className: "mb-3", loading: "lazy", alt: "", logoSize: item.secondaryLogoSize }] : null;
