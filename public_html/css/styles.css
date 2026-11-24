@@ -1715,7 +1715,7 @@ footer>div {
 .cs-case-study .cs-section {
   position: relative;
   box-sizing: border-box;
-  max-width: 75%;
+  max-width: 60%;
   /* 112px left clear + 990px reading column */
   padding-left: 2rem;
   /* common content left edge, clears the rail */
@@ -1785,7 +1785,7 @@ footer>div {
 .cs-decision-item .cs-section-marker {
   position: absolute;
   left: -1.95rem;
-  top: 1.25rem;
+  top: 0.85rem;
   transform: translateX(-50%);
 }
 
@@ -1857,7 +1857,7 @@ footer>div {
   letter-spacing: 0.48px;
   text-transform: uppercase;
   color: var(--main-color);
-  margin: 0;
+  margin: 0 0 1rem;
 }
 
 .cs-dq-text {
