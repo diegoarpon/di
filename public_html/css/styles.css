@@ -1001,6 +1001,10 @@ body {
 
 .project-header {
   padding-top: 2.75rem;
+  padding-bottom: 3rem;
+}
+
+.project-header--product-design {
   padding-bottom: 0;
 }
 

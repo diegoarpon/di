@@ -266,6 +266,10 @@
           btn.setAttribute('aria-selected', btn.dataset.tab === activeTab ? 'true' : 'false');
         });
 
+        // Product design projects: remove bottom padding from project header
+        const ph = document.querySelector(".project-header");
+        if (ph) ph.classList.toggle("project-header--product-design", section === "productDesign");
+
         // Set back link based on section
         const backLinkMap = { brandDevelopment: 'brand-development', productDesign: 'product-design' };
         const backTab = backLinkMap[section] || 'brand-development';
@@ -492,7 +496,6 @@
             cs.innerHTML = `
       <!-- Hero / Screen 01: narrow reading column, shared left edge, no rail -->
       <div class="cs-section cs-hero-section">
-        <h1 class="cs-hero-title">${get("projectName", "FormStream")}</h1>
         <p class="cs-hero-subtitle">${get("subtitle", "Enterprise Form Experience Platform")}</p>
         <p class="cs-hero-desc">${get("introduction", "")}</p>
         <div class="cs-screen-panel cs-screen-panel--hero">
