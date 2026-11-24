@@ -1001,7 +1001,7 @@ body {
 
 .project-header {
   padding-top: 2.75rem;
-  padding-bottom: 3rem;
+  padding-bottom: 0;
 }
 
 /* Hide the horizontal project bar + back arrow for the FormStream case study only */
@@ -1702,14 +1702,6 @@ footer>div {
 /* =============================================
    CASE STUDY — FormStream
    ============================================= */
-
-/* ---- Container: narrow reading column, shared left edge ---- */
-.cs-case-study {
-  position: relative;
-  max-width: 1456px;
-  margin: 0 auto;
-  padding: 48px 0 64px 0;
-}
 
 /* All sections share one left edge (narrow reading column). */
 .cs-case-study .cs-section {
