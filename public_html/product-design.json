@@ -16,7 +16,14 @@
         "es": "FormStream improves the form experience for enterprise staff by making complex workflows easier to complete through guided navigation, clear field states, and less repetitive data entry.",
         "en": "FormStream improves the form experience for enterprise staff by making complex workflows easier to complete through guided navigation, clear field states, and less repetitive data entry."
       },
-      "challengeTitle": "Challenge",
+      "snapshotTitle": {
+        "es": "Resumen del proyecto",
+        "en": "Project Snapshot"
+      },
+      "challengeTitle": {
+        "es": "Desafío",
+        "en": "Challenge"
+      },
       "challenge": {
         "es": "Enterprise forms can involve multiple sections, required information, validation rules, and repeated data entry. The challenge was to make these workflows easier to navigate while helping staff understand what needs attention and how much work remains.",
         "en": "Enterprise forms can involve multiple sections, required information, validation rules, and repeated data entry. The challenge was to make these workflows easier to navigate while helping staff understand what needs attention and how much work remains."
@@ -25,12 +32,22 @@
         "es": "How might we guide staff through complex forms while keeping required information, progress, and next steps clear?",
         "en": "How might we guide staff through complex forms while keeping required information, progress, and next steps clear?"
       },
-      "productDirectionTitle": "Product Direction",
+      "designQuestionTitle": {
+        "es": "Pregunta de diseño",
+        "en": "Design Question"
+      },
+      "productDirectionTitle": {
+        "es": "Dirección del producto",
+        "en": "Product Direction"
+      },
       "productDirection": {
         "es": "Structure form completion around three connected needs: navigate a long form, understand each field's state, and keep moving without repeating data unnecessarily.",
         "en": "Structure form completion around three connected needs: navigate a long form, understand each field's state, and keep moving without repeating data unnecessarily."
       },
-      "decisionsTitle": "Design Decisions",
+      "decisionsTitle": {
+        "es": "Decisiones de diseño",
+        "en": "Design Decisions"
+      },
       "decisions": [
         {
           "title": {
@@ -72,12 +89,18 @@
           "screenNum": "04"
         }
       ],
-      "deliveryTitle": "Delivery",
+      "deliveryTitle": {
+        "es": "Entrega",
+        "en": "Delivery"
+      },
       "delivery": {
         "es": "I defined the product and its flows, designed the UX and UI, and carried the work through front-end implementation alongside QA and development.",
         "en": ""
       },
-      "outcomeTitle": "Outcome",
+      "outcomeTitle": {
+        "es": "Resultado",
+        "en": "Outcome"
+      },
       "outcome": {
         "es": "The project delivered a guided form experience combining section navigation, field-level guidance, auto-fill, package management, and progress tracking. The design reached beta.",
         "en": ""
