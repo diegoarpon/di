@@ -1049,13 +1049,9 @@ function buildPDForm(item, idx) {
 
   frag.appendChild(group('Product Direction',
     (() => {
-      if (typeof item.productDirectionTitle === 'string') item.productDirectionTitle = { es: item.productDirectionTitle, en: item.productDirectionTitle || '' };
-      if (!item.productDirectionTitle) item.productDirectionTitle = { es: '', en: '' };
       if (typeof item.productDirection === 'string') item.productDirection = { es: item.productDirection, en: item.productDirection || '' };
       if (!item.productDirection) item.productDirection = { es: '', en: '' };
     })(),
-    textInput(item.productDirectionTitle, 'es', 'Título sección (ES)', '', 'Título de la sección Product Direction en español.'),
-    textInput(item.productDirectionTitle, 'en', 'Section title (EN)', '', 'Section title in English.'),
     textInput(item.productDirection, 'es', 'Product Direction (ES)', '', 'Dirección del producto en español.'),
     textInput(item.productDirection, 'en', 'Product Direction (EN)', '', 'Product direction in English.'),
     { twoCols: 'fixed' },
