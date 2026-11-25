@@ -9,11 +9,11 @@
       "category": "Desktop Application",
       "year": "2025",
       "subtitle": {
-        "es": "Enterprise Form Experience Platform",
+        "es": "Plataforma de formularios para empresas",
         "en": "Enterprise Form Experience Platform"
       },
       "introduction": {
-        "es": "FormStream improves the form experience for enterprise staff by making complex workflows easier to complete through guided navigation, clear field states, and less repetitive data entry.",
+        "es": "FormStream ayuda a los equipos a completar formularios complejos con navegación guiada, estados de campo claros y menos carga repetida de datos.",
         "en": "FormStream improves the form experience for enterprise staff by making complex workflows easier to complete through guided navigation, clear field states, and less repetitive data entry."
       },
       "snapshotTitle": {
@@ -25,11 +25,11 @@
         "en": "Challenge"
       },
       "challenge": {
-        "es": "Enterprise forms can involve multiple sections, required information, validation rules, and repeated data entry. The challenge was to make these workflows easier to navigate while helping staff understand what needs attention and how much work remains.",
+        "es": "Los formularios empresariales pueden tener varias secciones, campos obligatorios y reglas de validación, y exigir que se carguen los mismos datos más de una vez. El desafío era facilitar el recorrido y ayudar a los equipos a entender qué requería atención y cuánto faltaba para terminar.",
         "en": "Enterprise forms can involve multiple sections, required information, validation rules, and repeated data entry. The challenge was to make these workflows easier to navigate while helping staff understand what needs attention and how much work remains."
       },
       "designQuestion": {
-        "es": "How might we guide staff through complex forms while keeping required information, progress, and next steps clear?",
+        "es": "¿Cómo podemos guiar a los equipos al completar formularios complejos y mostrar con claridad qué datos son obligatorios, cuánto avanzaron y cuál es el siguiente paso?",
         "en": "How might we guide staff through complex forms while keeping required information, progress, and next steps clear?"
       },
       "designQuestionTitle": {
@@ -41,7 +41,7 @@
         "en": "Product Direction"
       },
       "productDirection": {
-        "es": "Structure form completion around three connected needs: navigate a long form, understand each field's state, and keep moving without repeating data unnecessarily.",
+        "es": "El diseño se organizó en torno a tres necesidades: recorrer formularios extensos, entender el estado de cada campo y avanzar sin volver a cargar los mismos datos.",
         "en": "Structure form completion around three connected needs: navigate a long form, understand each field's state, and keep moving without repeating data unnecessarily."
       },
       "decisionsTitle": {
@@ -51,41 +51,41 @@
       "decisions": [
         {
           "title": {
-            "es": "Make long forms easier to navigate",
+            "es": "Facilitar la navegación en formularios extensos",
             "en": ""
           },
           "description": {
-            "es": "Section-based navigation gives staff a clear sense of where they are in a form and what remains.",
+            "es": "La navegación por secciones permite saber en qué parte del formulario estás y cuánto falta para completarlo.",
             "en": ""
           },
-          "image": "img/featured/eg/eg_logo_evolution.svg",
-          "caption": "Section Based Navigation · Real-time progress",
+          "image": "img/product/formstream/FormStream-screen-1.png",
+          "caption": "Navegación por secciones · Progreso en tiempo real",
           "screenNum": "02"
         },
         {
           "title": {
-            "es": "Guide users at the point of action",
+            "es": "Dar orientación justo donde hace falta",
             "en": ""
           },
           "description": {
-            "es": "Guidance Mode and dynamic field states clarify which information is incomplete, active, required, or completed.",
+            "es": "El modo guiado y los estados dinámicos permiten distinguir qué campos están incompletos, cuáles son obligatorios, cuál está activo y cuáles ya se completaron.",
             "en": ""
           },
-          "image": "img/featured/lapanaderi/lapanaderi-rebranding.svg",
-          "caption": "Guidance Mode · Required / Incomplete fields",
+          "image": "img/product/formstream/FormStream-screen-1.png",
+          "caption": "Modo guiado · Campos obligatorios / incompletos",
           "screenNum": "03"
         },
         {
           "title": {
-            "es": "Support repeatable form workflows",
+            "es": "Simplificar las tareas recurrentes con formularios",
             "en": ""
           },
           "description": {
-            "es": "Auto-fill uses previously recorded information. Package management and progress tracking support workflows that involve multiple forms or steps.",
+            "es": "El autocompletado reutiliza datos ya registrados. La gestión de paquetes y el seguimiento del avance ayudan a organizar tareas que requieren varios formularios o pasos.",
             "en": ""
           },
-          "image": "img/brands/backgrounds/nestseekers-dev.webp",
-          "caption": "Section navigation · Saved-data auto-fill",
+          "image": "img/product/formstream/FormStream-screen-1.png",
+          "caption": "Navegación por secciones · Autocompletado de datos guardados",
           "screenNum": "04"
         }
       ],
@@ -94,7 +94,7 @@
         "en": "Delivery"
       },
       "delivery": {
-        "es": "I defined the product and its flows, designed the UX and UI, and carried the work through front-end implementation alongside QA and development.",
+        "es": "Definí el producto y sus flujos, diseñé la experiencia y la interfaz, y llevé el diseño a la implementación frontend junto con los equipos de QA y desarrollo.",
         "en": ""
       },
       "outcomeTitle": {
@@ -102,18 +102,18 @@
         "en": "Outcome"
       },
       "outcome": {
-        "es": "The project delivered a guided form experience combining section navigation, field-level guidance, auto-fill, package management, and progress tracking. The design reached beta.",
+        "es": "FormStream llegó a fase beta con un flujo guiado que integra navegación por secciones, orientación en cada campo, autocompletado, gestión de paquetes y seguimiento del avance.",
         "en": ""
       },
-      "team": "Product Designer / UX-UI Designer",
-      "teamMembers": "QA + DEV Team",
+      "team": { "es": "Diseñador de producto / Diseñador UX/UI", "en": "Product Designer / UX-UI Designer" },
+      "teamMembers": { "es": "QA y desarrollo", "en": "QA and development" },
       "client": "Quik!",
       "scope": {
-        "es": "Product definition, flows, UX/UI, interaction design, design system, front-end",
+        "es": "Definición de producto, flujos de usuario, UX/UI, diseño de interacción, sistema de diseño y desarrollo frontend.",
         "en": "Product definition, flows, UX/UI, interaction design, design system, front-end"
       },
-      "timeline": "3 months",
-      "heroImage": "img/brands/backgrounds/lapanaderi-dev.webp",
+      "timeline": { "es": "4 meses", "en": "4 months" },
+      "heroImage": "img/product/formstream/FormStream-screen-1.png",
       "heroCaption": "FormStream • Enterprise form experience — Screen placeholder",
       "URLFigma": "https://www.figma.com/design/8gpqQroeswlZra2kLw7evO/Quik--FormStream?node-id=38-157&t=s1ah8ZcMwjgkOMFx-1",
       "src": "img/product/logos/qu-logo.svg",
