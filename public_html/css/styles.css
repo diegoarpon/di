@@ -444,6 +444,18 @@ body {
   pointer-events: none;
 }
 
+.guide-h-double-product {
+  border-top: 1px solid var(--graphite);
+  border-bottom: 1px solid var(--graphite);
+  width: 75vw;
+  height: 100%;
+  position: absolute;
+  left: 15%;
+  top: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
 .guide-v-double-100 {
   border-right: 1px solid var(--graphite);
   border-left: 1px solid var(--graphite);

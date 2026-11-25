@@ -485,7 +485,7 @@
             <p class="cs-decision-desc">${decDesc}</p>
           </div>
           <div class="cs-decision-screen position-relative">
-            ${d.image ? `<div class="guide-h-double-100" aria-hidden="true"></div><div class="guide-v-double-100" aria-hidden="true"></div><img src="${d.image}" alt="${d.caption || decTitle || 'Pantalla de decisión'}" loading="lazy" />` : ''}
+            ${d.image ? `<div class="guide-h-double-product" aria-hidden="true"></div><div class="guide-v-double-100" aria-hidden="true"></div><img src="${d.image}" alt="${d.caption || decTitle || 'Pantalla de decisión'}" loading="lazy" />` : ''}
           </div>
         </div>
       </div>
@@ -499,7 +499,7 @@
         <p class="cs-hero-subtitle">${get("subtitle", "Enterprise Form Experience Platform")}</p>
         <p class="cs-hero-desc">${get("introduction", "")}</p>
         <div class="cs-screen-panel cs-screen-panel--hero">
-          ${get("heroImage") ? `<div class="guide-h-double-100" aria-hidden="true"></div><div class="guide-v-double-100" aria-hidden="true"></div><img src="${get("heroImage")}" alt="${get("heroCaption", "Hero screen")}" style="max-width:100%;height:auto;display:block;margin:0 auto;" />` : ''}
+          ${get("heroImage") ? `<div class="guide-h-double-product" aria-hidden="true"></div><div class="guide-v-double-100" aria-hidden="true"></div><img src="${get("heroImage")}" alt="${get("heroCaption", "Hero screen")}" style="max-width:100%;height:auto;display:block;margin:0 auto;" />` : ''}
         </div>
       </div>
 
