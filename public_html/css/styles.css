@@ -2536,27 +2536,31 @@ footer>div {
 /* ===== FormStudy responsive overrides ===== */
 @media (max-width: 767px) {
   .cs-case-study .cs-section {
-    padding-left: 56px;
+    padding-left: 1rem;
     max-width: none;
   }
 
   .cs-rail-line {
-    left: 28px;
+    /*left: 28px;*/
   }
 
   .cs-case-study .cs-section-marker {
-    left: 28px;
+    /*left: 28px;
     width: 12px;
-    height: 12px;
+    height: 12px;*/
+  }
+
+  .cs-decision-item .cs-section-marker {
+    left: -0.95rem;
   }
 
   .cs-snapshot-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 0;
   }
 
   .cs-screen-panel--hero {
-    min-height: 300px;
+    min-height: auto;
   }
 
   .cs-screen-panel--decision {
@@ -2569,6 +2573,12 @@ footer>div {
   .cs-decision-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  .cs-decision-row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+
   }
 
   .cs-hero-title {
