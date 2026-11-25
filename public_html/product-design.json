@@ -110,7 +110,7 @@
         "en": "Product Designer / UX-UI Designer"
       },
       "teamMembers": {
-        "es": "QA y desarrollo",
+        "es": "Especialista en QA y desarrollador",
         "en": "QA specialist and developer"
       },
       "client": "Quik!",
@@ -119,7 +119,7 @@
         "en": "Product definition, user flows, UX, UI, and front-end implementation"
       },
       "timeline": {
-        "es": "4 meses",
+        "es": "8 semanas · DATO PROVISORIO",
         "en": "8 weeks · MOCK"
       },
       "heroImage": "img/product/formstream/FormStream-screen-1.png",
@@ -172,16 +172,16 @@
         "Design System"
       ],
       "team": {
-        "es": "Diseñador de producto principal",
+        "es": "Diseñador de producto / Diseñador UX/UI",
         "en": "Product Designer / UX/UI Designer"
       },
       "duration": {
-        "es": "8 meses",
+        "es": "8 semanas · DATO PROVISORIO",
         "en": "8 months"
       },
       "heroImage": "img/projects/quikforms-app/hero.webp",
       "challenge": {
-        "es": "Las herramientas existentes de formularios obligaban a elegir entre simplicidad y potencia. Los creadores de formularios necesitaban una interfaz accesible para usuarios no técnicos, pero con la profundidad para manejar lógica condicional compleja, validaciones personalizadas y flujos de trabajo multi-paso. El desafío era diseñar un editor visual que no requiriera código pero que no limitara la expresividad.",
+        "es": "A medida que la plataforma crecía, el alta de usuarios, la administración de cuentas, las integraciones, las aprobaciones y los flujos de formularios se volvían más difíciles de gestionar por separado. El desafío era crear una experiencia unificada que cubriera esas necesidades, mantuviera la claridad y pudiera seguir creciendo.",
         "en": "As the platform grew, onboarding, account administration, integrations, approvals, and form workflows became harder to manage across separate operational tasks. The challenge was to create a unified experience that could support those needs while staying clear and scalable."
       },
       "objectives": [
@@ -219,11 +219,11 @@
       "decisions": [
         {
           "title": {
-            "es": "Canvas de edición dual",
+            "es": "Guiar el registro paso a paso",
             "en": "Turn sign-up into a guided sequence"
           },
           "description": {
-            "es": "Dos paneles sincronizados: un editor visual de arrastrar y soltar a la izquierda y una vista previa en vivo a la derecha. Los cambios en cualquiera se reflejan instantáneamente en el otro. Esto elimina el ciclo de editar-guardar-vista-previa y permite iterar a velocidad de pensamiento.",
+            "es": "El flujo divide la creación de la cuenta en etapas, desde la carga de los datos del perfil hasta la confirmación de que el registro se completó.",
             "en": "The onboarding flow breaks account creation into steps, including profile information and a completion state."
           },
           "composition": "A",
@@ -235,11 +235,11 @@
         },
         {
           "title": {
-            "es": "Constructor de lógica visual",
+            "es": "Crear un espacio de trabajo compartido",
             "en": "Give users a shared operational workspace"
           },
           "description": {
-            "es": "La lógica condicional se representa como un diagrama de flujo interactivo. Cada regla es un nodo conectado por líneas que muestran el flujo lógico. Los usuarios pueden agregar condiciones (si campo X es Y), acciones (mostrar/ocultar/requerir campo Z) y ver el impacto inmediato en la vista previa.",
+            "es": "Un panel central y una navegación consistente reúnen las principales tareas de gestión de clientes y formularios en un solo lugar.",
             "en": "A centralized dashboard and consistent navigation bring core client and form workflows into one product experience."
           },
           "composition": "B",
@@ -251,11 +251,11 @@
         },
         {
           "title": {
-            "es": "Biblioteca de componentes",
+            "es": "Conectar la configuración con la operación diaria",
             "en": "Keep configuration and operations connected"
           },
           "description": {
-            "es": "Una biblioteca de 40+ componentes de formulario predefinidos (entradas, selectores, cargadores de archivos, firmas, matrices, etc.) organizados por categoría. Cada componente expone solo las propiedades relevantes, ocultando complejidad innecesaria. Los equipos pueden crear y compartir sus propios componentes personalizados.",
+            "es": "La administración de cuentas, las suscripciones, las integraciones, los ajustes, las aprobaciones y la publicación se organizan en módulos conectados entre sí.",
             "en": "Account administration, subscriptions, integrations, settings, approvals, and publishing are treated as connected modules rather than unrelated tasks."
           },
           "composition": "D",
@@ -317,7 +317,7 @@
         }
       ],
       "outcome": {
-        "es": "QuikForms App redujo el tiempo de creación de formularios complejos de días a horas. Equipos no técnicos ahora construyen y mantienen sus propios formularios sin depender de desarrollo. La arquitectura de componentes permite consistencia visual y funcional a través de toda la organización, mientras que el constructor de lógica visual democratiza flujos de trabajo avanzados.",
+        "es": "El proyecto dio lugar a una plataforma centralizada y modular para gestionar clientes, formularios, integraciones y cuentas.",
         "en": "The project delivered a centralized, modular platform for client workflows, forms, integrations, and account operations."
       },
       "nextProject": {
@@ -355,15 +355,15 @@
       },
       "client": "Quik!",
       "teamMembers": {
-        "es": "QA + DEV Team",
+        "es": "Colaboradores de distintas áreas",
         "en": "Cross-functional collaborators"
       },
       "scope": {
-        "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "es": "Definición de producto, flujos de usuario, UX, UI e implementación frontend.",
         "en": "Product definition, user flows, UX, UI, and front-end implementation"
       },
       "timeline": {
-        "es": "Lorem ipsum",
+        "es": "8 semanas · DATO PROVISORIO",
         "en": "8 weeks · MOCK"
       },
       "challengeTitle": {
@@ -375,7 +375,7 @@
         "en": "Design Question"
       },
       "designQuestion": {
-        "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "es": "¿Cómo pueden los equipos pasar de configurar cuentas a gestionar clientes y trabajar con formularios sin perder el contexto?",
         "en": "How might teams move between account setup, client workflows, and form operations without losing context?"
       },
       "productDirectionTitle": {
@@ -383,7 +383,7 @@
         "en": "Product Direction"
       },
       "productDirection": {
-        "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.",
+        "es": "Conectar el alta de usuarios, la configuración de cuentas y la gestión de formularios dentro de una estructura de producto consistente.",
         "en": "Connect onboarding, account setup, and form-related operations within a consistent product structure."
       },
       "decisionsTitle": {
@@ -395,7 +395,7 @@
         "en": "Delivery"
       },
       "delivery": {
-        "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor.",
+        "es": "Definí la estructura del producto y los flujos de usuario, diseñé la experiencia y la interfaz, y llevé el trabajo hasta la implementación frontend en colaboración con distintas áreas.",
         "en": "I defined the product structure and user flows, designed the UX and UI, and carried the work through front-end implementation with cross-functional collaborators."
       },
       "outcomeTitle": {
@@ -403,7 +403,7 @@
         "en": "Outcome"
       },
       "introduction": {
-        "es": "",
+        "es": "QuikForms App reúne procesos vinculados a clientes, formularios digitales, integraciones y tareas operativas en una plataforma empresarial centralizada.",
         "en": ""
       },
       "decisionsIntro": {
@@ -434,16 +434,16 @@
         "Information Architecture"
       ],
       "team": {
-        "es": "Diseñador de producto principal",
+        "es": "Diseñador de producto / Diseñador UX/UI",
         "en": "Product Designer / UX/UI Designer"
       },
       "duration": {
-        "es": "10 meses",
+        "es": "8 semanas · DATO PROVISORIO",
         "en": "10 months"
       },
       "heroImage": "img/projects/quikforms-manager/hero.webp",
       "challenge": {
-        "es": "Los administradores de plataformas de formularios enfrentan una tensión constante: necesitan visibilidad total y control granular, pero la cantidad de datos (miles de formularios, usuarios, envíos) hace que los dashboards tradicionales sean abrumadores. El desafío era diseñar una consola de administración que escalara visual y cognitivamente, permitiendo tanto vistas de alto nivel como inspección profunda sin fricción.",
+        "es": "Las bibliotecas de formularios tienen que admitir cambios frecuentes que involucran a varios equipos y etapas de aprobación. Quienes las administran necesitan encontrar el formulario correcto, actualizarlo y saber en qué etapa de revisión está cada uno.",
         "en": "Form libraries need to support frequent changes across teams and approval stages. Administrators need to locate the right form, make updates, and understand where each item stands in the review process."
       },
       "objectives": [
@@ -481,11 +481,11 @@
       "decisions": [
         {
           "title": {
-            "es": "Dashboard modular",
+            "es": "Partir de la biblioteca de formularios",
             "en": "Start from the form library"
           },
           "description": {
-            "es": "El dashboard se compone de widgets configurables que los administradores pueden reorganizar, redimensionar y filtrar. Cada widget expone un aspecto del sistema: formularios activos, envíos recientes, salud de la plataforma, uso de almacenamiento. Los widgets se conectan a la misma API de datos, asegurando consistencia.",
+            "es": "Los flujos para agregar, buscar y actualizar ofrecen acceso directo a la gestión de formularios en la biblioteca compartida.",
             "en": "Add, search, and update flows give administrators a direct path to manage forms within the shared library."
           },
           "composition": "A",
@@ -497,11 +497,11 @@
         },
         {
           "title": {
-            "es": "Editor de plantillas versionado",
+            "es": "Aplicar cambios en lote",
             "en": "Handle related changes in batches"
           },
           "description": {
-            "es": "Las plantillas son ciudadanos de primera clase con control de versiones, ramificación y fusión. Los administradores pueden crear una plantilla base, derivar variantes para departamentos específicos y fusionar mejoras de vuelta a la base. El historial de cambios muestra quién cambió qué y cuándo, con capacidad de rollback en un click.",
+            "es": "La selección y edición en lote permiten actualizar varios formularios sin repetir la misma acción uno por uno.",
             "en": "Bulk selection and editing support updates across multiple forms without repeating the same action item by item."
           },
           "composition": "B",
@@ -513,11 +513,11 @@
         },
         {
           "title": {
-            "es": "Gestión de usuarios y roles",
+            "es": "Conectar la aprobación con la publicación",
             "en": "Connect approval to publishing"
           },
           "description": {
-            "es": "Un modelo de permisos basado en roles (RBAC) con herencia. Los roles se definen a nivel de organización, espacio de trabajo y formulario individual. La matriz de permisos muestra de un vistazo quién puede hacer qué. La invitación masiva y la sincronización con proveedores de identidad (SAML/OIDC) reducen la carga administrativa.",
+            "es": "El área de aprobaciones permite revisar, crear y actualizar solicitudes de aprobación. La publicación y la firma electrónica dan continuidad al proceso de administración.",
             "en": "The approvals area supports reviewing, creating, and updating approval work. Publishing and e-sign flows continue the administration lifecycle."
           },
           "composition": "C",
@@ -585,7 +585,7 @@
         }
       ],
       "outcome": {
-        "es": "QuikForms Manager permitió a organizaciones de 500+ usuarios administrar miles de formularios con un equipo de 2-3 administradores. El dashboard modular redujo el tiempo de detección de problemas de horas a minutos. El control de versiones de plantillas eliminó conflictos entre departamentos. El modelo RBAC con herencia soportó estructuras organizacionales complejas sin configuración manual por formulario.",
+        "es": "El proyecto dio lugar a un espacio de administración centralizado para agregar, encontrar, actualizar, aprobar y publicar formularios.",
         "en": "The project delivered a centralized administration experience for adding, finding, updating, approving, and publishing forms."
       },
       "nextProject": {
@@ -623,15 +623,15 @@
       },
       "client": "Quik!",
       "teamMembers": {
-        "es": "QA + DEV Team",
+        "es": "Colaboradores de distintas áreas",
         "en": "Cross-functional collaborators"
       },
       "scope": {
-        "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "es": "Definición de producto, flujos de usuario, UX, UI e implementación frontend.",
         "en": "Product definition, user flows, UX, UI, and front-end implementation"
       },
       "timeline": {
-        "es": "Lorem ipsum",
+        "es": "8 semanas · DATO PROVISORIO",
         "en": "8 weeks · MOCK"
       },
       "challengeTitle": {
@@ -643,7 +643,7 @@
         "en": "Design Question"
       },
       "designQuestion": {
-        "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "es": "¿Cómo pueden los equipos gestionar los cambios en los formularios desde que se solicitan hasta que se aprueban y publican, con visibilidad sobre cada etapa?",
         "en": "How might teams manage form changes from intake through approval and publishing while keeping each stage visible?"
       },
       "productDirectionTitle": {
@@ -651,7 +651,7 @@
         "en": "Product Direction"
       },
       "productDirection": {
-        "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.",
+        "es": "Organizar la administración de formularios de principio a fin: agregar o encontrar un formulario, actualizarlo, revisar el cambio y avanzar hacia su publicación.",
         "en": "Organize form administration as a lifecycle: add or find a form, update it, review the change, and move it toward publishing."
       },
       "decisionsTitle": {
@@ -663,7 +663,7 @@
         "en": "Delivery"
       },
       "delivery": {
-        "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor.",
+        "es": "Definí la estructura del producto y sus flujos de trabajo, diseñé la experiencia y la interfaz, y llevé el trabajo hasta la implementación frontend en colaboración con distintas áreas.",
         "en": "I defined the product structure and workflows, designed the UX and UI, and carried the work through front-end implementation with cross-functional collaborators."
       },
       "outcomeTitle": {
@@ -671,7 +671,7 @@
         "en": "Outcome"
       },
       "introduction": {
-        "es": "",
+        "es": "QuikForms Manager App organiza la actualización, revisión, aprobación y publicación de formularios en un espacio de administración compartido.",
         "en": ""
       },
       "decisionsIntro": {
@@ -702,16 +702,16 @@
         "Mobile App Design"
       ],
       "team": {
-        "es": "Diseñador de producto principal",
+        "es": "Diseñador de producto / Diseñador UX/UI",
         "en": "Product Designer / UX/UI Designer"
       },
       "duration": {
-        "es": "12 meses",
+        "es": "8 semanas · DATO PROVISORIO",
         "en": "12 months"
       },
       "heroImage": "img/projects/trio-rewards/hero.webp",
       "challenge": {
-        "es": "Los restaurantes locales pierden clientes frente a grandes cadenas con programas de fidelidad sofisticados. Los clientes quieren recompensas pero no quieren gestionar múltiples apps ni tarjetas físicas. Los restaurantes necesitan una forma simple de crear ofertas, entender a sus clientes y medir ROI sin conocimientos técnicos. El desafío era diseñar una plataforma de dos lados (restaurantes + comensales) que fuera simple para ambos pero potente bajo el capó.",
+        "es": "Encontrar un comercio local, hacer una compra y consultar las recompensas pueden ser pasos separados. El desafío era conectar esos momentos en una experiencia móvil que permitiera seguir con claridad el estado del pago y la actividad de las recompensas.",
         "en": "People may discover a local business, make a purchase, and check their rewards across separate steps. The challenge was to connect these moments in a mobile experience that made the transaction and reward activity easier to follow."
       },
       "objectives": [
@@ -749,11 +749,11 @@
       "decisions": [
         {
           "title": {
-            "es": "Descubrimiento basado en mapa",
+            "es": "Facilitar el descubrimiento de comercios locales",
             "en": "Make local businesses discoverable"
           },
           "description": {
-            "es": "La pantalla principal muestra un mapa interactivo con restaurantes cercanos, cada uno con su oferta activa visible. Filtros por tipo de cocina, distancia y tipo de recompensa. El mapa se actualiza en tiempo real según la ubicación del usuario. Esto reemplaza la lista genérica con un descubrimiento espacial que refleja cómo la gente realmente elige dónde comer.",
+            "es": "La vista de exploración y el mapa permiten encontrar comercios cercanos y avanzar hacia una compra.",
             "en": "Explore and map views help users browse nearby businesses and move toward a purchase."
           },
           "composition": "A",
@@ -765,11 +765,11 @@
         },
         {
           "title": {
-            "es": "Sistema de puntos unificado",
+            "es": "Hacer más claro el proceso de pago",
             "en": "Make the payment journey legible"
           },
           "description": {
-            "es": "Una sola moneda de puntos (Trio Points) funciona en todos los restaurantes participantes. Los puntos se ganan automáticamente al pagar con la app vinculada o escaneando un código QR. No hay tarjetas físicas, no hay check-ins manuales. Los puntos nunca expiran y se pueden canjear por cualquier recompensa en cualquier restaurante de la red.",
+            "es": "Los estados de pago, cobro, confirmación y error ayudan a entender qué está pasando en cada paso del pago.",
             "en": "Payment, charge, confirmation, and error states help users follow what is happening during checkout."
           },
           "composition": "B",
@@ -781,11 +781,11 @@
         },
         {
           "title": {
-            "es": "Panel de restaurante: ofertas e insights",
+            "es": "Extender las recompensas más allá de una compra",
             "en": "Extend rewards beyond a single purchase"
           },
           "description": {
-            "es": "Los restaurantes crean ofertas en 3 pasos: elegir tipo (puntos extra, descuento, item gratis), definir condiciones (días, horarios, mínimo de gasto), publicar. El dashboard muestra métricas clave: visitantes nuevos vs. recurrentes, gasto medio, ROI por oferta, horas pico. Insights automáticos sugieren ajustes: \"Tu oferta de martes tiene 3x más redención que la de miércoles\".",
+            "es": "La billetera, la actividad de recompensas, las notificaciones, las invitaciones y el historial de pagos dan continuidad a la experiencia después de pagar.",
             "en": "Wallet, reward activity, notifications, referrals, and payment history support continued use after checkout."
           },
           "composition": "D",
@@ -847,7 +847,7 @@
         }
       ],
       "outcome": {
-        "es": "Trio Rewards conectó 200+ restaurantes locales con 50,000+ comensales en su primer año. Los restaurantes vieron un incremento promedio del 23% en visitas recurrentes. La mecánica de puntos unificada eliminó la fatiga de apps múltiples. Los insights automáticos redujeron el tiempo de análisis de restaurantes de horas a minutos. La plataforma demostró que la gamificación ética y el diseño centrado en ambos lados del mercado pueden crear valor sostenible para negocios locales.",
+        "es": "El proyecto dio lugar a una experiencia móvil que conecta el descubrimiento de comercios locales, los pagos y las recompensas desde el registro hasta después de la compra, con funciones de pago y gestión de cuenta.",
         "en": "The project delivered a mobile experience connecting local discovery, payments, and rewards across onboarding, checkout, account, and post-purchase features."
       },
       "nextProject": {
@@ -885,15 +885,15 @@
       },
       "client": "Quik!",
       "teamMembers": {
-        "es": "QA + DEV Team",
+        "es": "Colaboradores de distintas áreas",
         "en": "Cross-functional collaborators"
       },
       "scope": {
-        "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "es": "Definición de producto, flujos de usuario, UX, UI e implementación frontend.",
         "en": "Product definition, user flows, UX, UI, and front-end implementation"
       },
       "timeline": {
-        "es": "Lorem ipsum",
+        "es": "8 semanas · DATO PROVISORIO",
         "en": "8 weeks · MOCK"
       },
       "challengeTitle": {
@@ -905,7 +905,7 @@
         "en": "Design Question"
       },
       "designQuestion": {
-        "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "es": "¿Cómo podemos conectar la búsqueda de comercios locales, el pago y las recompensas en un mismo recorrido móvil?",
         "en": "How might we connect local discovery, payment, and rewards in one mobile journey?"
       },
       "productDirectionTitle": {
@@ -913,7 +913,7 @@
         "en": "Product Direction"
       },
       "productDirection": {
-        "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.",
+        "es": "Conectar el recorrido del cliente desde que encuentra un comercio local hasta que completa la compra y consulta sus recompensas y la actividad de su cuenta.",
         "en": "Connect the customer journey from finding a local business to completing a purchase and keeping track of rewards and account activity."
       },
       "decisionsTitle": {
@@ -925,7 +925,7 @@
         "en": "Delivery"
       },
       "delivery": {
-        "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor.",
+        "es": "Definí la experiencia del producto y los flujos de usuario, diseñé la UX y la UI, y llevé el trabajo hasta la implementación frontend en colaboración con distintas áreas.",
         "en": "I defined the product experience and user flows, designed the UX and UI, and carried the work through front-end implementation with cross-functional collaborators."
       },
       "outcomeTitle": {
