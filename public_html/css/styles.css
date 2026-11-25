@@ -415,7 +415,7 @@ body {
 
 @media (min-width: 1920px) {
   .container-fluid {
-    max-width: 1920px;
+    max-width: 120rem;
     margin-left: 0;
   }
 }
@@ -425,7 +425,7 @@ body {
 }
 
 .logo img {
-  height: 40px;
+  height: 2.5rem;
   width: auto;
   display: block;
   bottom: -1px;
@@ -901,7 +901,7 @@ body {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.3);
   }
 
   .content-area {
@@ -923,7 +923,7 @@ body {
   color: var(--text) !important;
   text-decoration: none;
   font-size: var(--fs-nav);
-  letter-spacing: -1px;
+  letter-spacing: -0.0625rem;
 }
 
 .contact-link {
@@ -983,7 +983,7 @@ body {
 
 @media (max-width: 767px) {
   .theme-icon {
-    margin-bottom: -3px;
+    margin-bottom: -0.1875rem;
   }
 }
 
@@ -1014,7 +1014,7 @@ body {
   line-height: 1.2;
   margin: 0 0 1rem;
   font-weight: 500;
-  letter-spacing: -1px;
+  letter-spacing: -0.0625rem;
 }
 
 .project-back-arrow {
@@ -1767,7 +1767,7 @@ footer>div {
 .cs-rail-line {
   position: absolute;
   left: 0;
-  width: 2px;
+  width: 0.125rem;
   background: var(--main-color);
   /* Vertical extent is set by JS after render: center of the Project Snapshot
      marker → center of the Outcome marker (no protrusion, no show-through). */
@@ -1811,7 +1811,7 @@ footer>div {
 .cs-decision-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  gap: 3rem;
   align-items: start;
   min-width: 0;
   flex: 1;
@@ -1821,8 +1821,8 @@ footer>div {
 .cs-hero-title {
   font-family: var(--default-font);
   font-weight: 500;
-  font-size: 44px;
-  letter-spacing: -1.5px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.0938rem;
   line-height: 1.05;
   margin: 0 0 1rem;
   color: var(--text);
@@ -1831,7 +1831,7 @@ footer>div {
 .cs-hero-subtitle {
   font-family: var(--default-font);
   font-weight: 500;
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
   line-height: 1.4;
   text-transform: uppercase;
   margin: 0 0 1rem;
@@ -1841,8 +1841,8 @@ footer>div {
 .cs-hero-desc {
   font-family: var(--default-font);
   font-weight: 300;
-  font-size: 20px;
-  letter-spacing: -0.2px;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  letter-spacing: -0.0125rem;
   line-height: 1.4;
   margin: 0 0 1.5rem;
   color: var(--text);
@@ -1852,8 +1852,8 @@ footer>div {
 .cs-case-study .cs-heading--section {
   font-family: var(--default-font);
   font-weight: 600;
-  font-size: 1rem;
-  letter-spacing: 0.6px;
+  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+  letter-spacing: 0.0375rem;
   text-transform: uppercase;
   margin: 0 0 1rem;
   color: var(--text);
@@ -1863,7 +1863,7 @@ footer>div {
 .cs-case-study .cs-body--lead {
   font-family: var(--default-font);
   font-weight: 300;
-  font-size: 1.25em;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
   line-height: 1.4;
   margin: 0 0 2rem;
   color: var(--text);
@@ -1873,8 +1873,8 @@ footer>div {
 .cs-dq-label {
   font-family: var(--default-font);
   font-weight: 300;
-  font-size: 1rem;
-  letter-spacing: 0.48px;
+  font-size: clamp(0.875rem, 1vw, 1rem);
+  letter-spacing: 0.03rem;
   text-transform: uppercase;
   color: var(--main-color);
   margin: 0 0 1rem;
@@ -1883,8 +1883,8 @@ footer>div {
 .cs-dq-text {
   font-family: var(--default-font);
   font-weight: 300;
-  font-size: 2rem;
-  letter-spacing: -0.88px;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  letter-spacing: -0.055rem;
   line-height: 1.2;
   color: var(--main-color);
   margin: 0;
@@ -1894,8 +1894,8 @@ footer>div {
 .cs-decision-title {
   font-family: var(--default-font);
   font-weight: 500;
-  font-size: 2rem;
-  letter-spacing: -0.88px;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  letter-spacing: -0.055rem;
   line-height: 1.1;
   margin: 0 0 0.75rem;
   color: var(--text);
@@ -1904,7 +1904,7 @@ footer>div {
 .cs-decision-desc {
   font-family: var(--default-font);
   font-weight: 300;
-  font-size: 20px;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
   line-height: 1.4;
   color: var(--text);
   margin: 0;
@@ -1913,7 +1913,7 @@ footer>div {
 .cs-decision-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  gap: 3rem;
   align-items: start;
   margin-top: 1.5rem;
 }
@@ -1957,15 +1957,15 @@ footer>div {
 .cs-screen-num {
   font-family: var(--default-font);
   font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 0.48px;
+  font-size: 1rem;
+  letter-spacing: 0.03rem;
   color: var(--text);
 }
 
 .cs-screen-place {
   font-family: var(--default-font);
   font-weight: 400;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--text);
   text-align: right;
 }
@@ -1976,13 +1976,13 @@ footer>div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .cs-screen-title {
   font-family: var(--default-font);
   font-weight: 300;
-  font-size: 26px;
+  font-size: 1.625rem;
   line-height: 1.4;
   margin: 0;
   color: var(--text);
@@ -1991,7 +1991,7 @@ footer>div {
 .cs-screen-sub {
   font-family: var(--default-font);
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.4;
   margin: 0;
   color: var(--text);
@@ -2017,7 +2017,7 @@ footer>div {
   font-family: var(--default-font);
   font-weight: 600;
   font-size: 0.75rem;
-  letter-spacing: 0.48px;
+  letter-spacing: 0.03rem;
   text-transform: uppercase;
   color: var(--text);
   margin: 0 0 0.25rem;
@@ -2043,8 +2043,8 @@ footer>div {
 }
 
 .cs-snapshot-company img {
-  width: 120px;
-  height: 45px;
+  width: 7.5rem;
+  height: 2.8125rem;
   object-fit: contain;
   display: block;
 }
@@ -2054,7 +2054,7 @@ footer>div {
   text-decoration: none;
   font-family: var(--default-font);
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.4;
 }
 
@@ -2172,7 +2172,7 @@ footer>div {
   font-family: var(--default-font);
   font-weight: 500;
   line-height: 1.2;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.0312rem;
   margin: 0 0 1rem;
   color: var(--text);
 }
@@ -2180,7 +2180,7 @@ footer>div {
 .cs-heading--main {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 300;
-  letter-spacing: -1.5px;
+  letter-spacing: -0.0938rem;
   line-height: 1.1;
   margin-bottom: 1.5rem;
 }
@@ -2188,7 +2188,7 @@ footer>div {
 .cs-heading--section {
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   font-weight: 500;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.0312rem;
 }
 
 .cs-heading--concept {
@@ -2230,7 +2230,7 @@ footer>div {
   font-size: var(--fs-meta-label);
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.0312rem;
   color: var(--text);
   opacity: 0.5;
   margin: 0;
@@ -2286,7 +2286,7 @@ footer>div {
   font-weight: 500;
   text-transform: uppercase;
   font-size: 0.7em;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.0312rem;
   margin-right: 0.5rem;
   opacity: 0.5;
 }
@@ -2389,7 +2389,7 @@ footer>div {
   font-size: var(--fs-meta-label);
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.0312rem;
   opacity: 0.5;
 }
 
@@ -2566,7 +2566,7 @@ footer>div {
   .cs-screen-panel--decision {
     width: auto;
     height: auto;
-    min-height: 220px;
+    min-height: 13.75rem;
     min-width: auto;
   }
 
@@ -2582,23 +2582,23 @@ footer>div {
   }
 
   .cs-hero-title {
-    font-size: 32px;
+    font-size: 2rem;
   }
 
   .cs-hero-subtitle {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 
   .cs-hero-desc {
-    font-size: 17px;
+    font-size: 1.0625rem;
   }
 
   .cs-dq-text {
-    font-size: 32px;
+    font-size: 2rem;
   }
 
   .cs-decision-title {
-    font-size: 32px;
+    font-size: 2rem;
   }
 }
 
