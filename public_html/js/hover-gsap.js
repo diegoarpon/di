@@ -88,7 +88,7 @@ function initPixelHoverVariant(tile, variant) {
     brandColor: { cols: 14, color: "var(--main-color)", from: "random", dur: 0.03,  each: 0.001,  outEach: 0.0003 },
     sweep:      { cols: 20, color: "var(--main-color)", from: "start",  dur: 0.02,  each: 0.0008, outEach: 0.0002 },
     burst:      { cols: 8,  color: "var(--main-color)", from: "center", dur: 0.04,  each: 0.008,  outEach: 0.004  },
-    glitch:     { cols: 18, color: "var(--main-color)", from: "random", dur: 0.015, each: 0.0006, outEach: 0.0002, isGlitch: true, bgImage: "img/visuals/meta/meta-bg-opa.svg" },
+    glitch:     { cols: 18, color: "var(--main-color)", from: "random", dur: 0.015, each: 0.0006, outEach: 0.0002, isGlitch: true, bgImage: "img/featured/meta/meta-bg-opa.svg" },
     dissolve:   { cols: 16, color: "var(--blackest)", from: "random", dur: 0.15,  each: 0.002,  outEach: 0.001, ease: "power1.out" },
   };
   const v = { ...variants[variant] || variants.brandColor };

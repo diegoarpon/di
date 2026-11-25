@@ -9,7 +9,7 @@ const state = {
 let activeTab = 'brand-collection';
 let selectedIdx = null;
 let dirHandle = null;
-let imgCatalog = { backgrounds: [], logos: [], visuals: [], videos: [] };
+let imgCatalog = { backgrounds: [], logos: [], visuals: [], videos: [], productDesign: [] };
 let dragSrc = null;
 
 const SVG_EYE = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`;
@@ -118,8 +118,9 @@ async function walkDir(handle, path) {
       const full = path + '/' + name;
       if (VID.has(ext)) { imgCatalog.videos.push(full); }
       else if (IMG.has(ext)) {
-        if (path.includes('/backgrounds') || path.includes('/new_visuals')) imgCatalog.backgrounds.push(full);
-        else if (path.includes('/logos')) imgCatalog.logos.push(full);
+        if (path.includes('/brands/backgrounds')) imgCatalog.backgrounds.push(full);
+        else if (path.includes('/brands/logos')) imgCatalog.logos.push(full);
+        else if (path.includes('/product')) imgCatalog.productDesign.push(full);
         else imgCatalog.visuals.push(full);
       }
     }
@@ -127,7 +128,7 @@ async function walkDir(handle, path) {
 }
 
 async function buildImgCatalog(root) {
-  imgCatalog = { backgrounds: [], logos: [], visuals: [], videos: [] };
+  imgCatalog = { backgrounds: [], logos: [], visuals: [], videos: [], productDesign: [] };
   try {
     const imgDir = await root.getDirectoryHandle('img');
     await walkDir(imgDir, 'img');
@@ -745,7 +746,7 @@ function group(title, ...children) {
 
 function buildBCForm(item, idx) {
   const frag = document.createDocumentFragment();
-  const bgImgs = [...imgCatalog.backgrounds, ...imgCatalog.videos];
+  const bgImgs = [...imgCatalog.backgrounds, ...imgCatalog.videos].sort((a, b) => a.split('/').pop().localeCompare(b.split('/').pop()));
 
   frag.appendChild(group('General',
     textInput(item, 'year', 'Año', '', 'Año del proyecto. Aparece en el hover overlay.', onChangeRoot),
@@ -857,7 +858,7 @@ function buildBCForm(item, idx) {
 
 function buildBDForm(item, idx) {
   const frag = document.createDocumentFragment();
-  const bgImgs = [...imgCatalog.backgrounds, ...imgCatalog.videos];
+  const bgImgs = [...imgCatalog.backgrounds, ...imgCatalog.videos].sort((a, b) => a.split('/').pop().localeCompare(b.split('/').pop()));
 
   frag.appendChild(group('General',
     textInput(item, 'alt', 'Alt text', '', 'Texto alternativo del logo. Usado por lectores de pantalla.'),
@@ -942,7 +943,7 @@ function buildBDForm(item, idx) {
 
 function buildPDForm(item, idx) {
   const frag = document.createDocumentFragment();
-  const bgImgs = [...imgCatalog.backgrounds, ...imgCatalog.videos];
+  const bgImgs = [...imgCatalog.productDesign, ...imgCatalog.videos].sort((a, b) => a.split('/').pop().localeCompare(b.split('/').pop()));
 
   frag.appendChild(group('General',
     textInput(item, 'alt', 'Alt text', '', 'Texto alternativo del logo. Usado por lectores de pantalla.'),
@@ -1145,13 +1146,7 @@ function buildDecisionsEditor(item) {
 
   function getImgOptions() {
     const opts = [];
-    for (const child of imgCatalog.backgrounds) {
-      opts.push(`<option value="${child}">${child.split('/').pop()}</option>`);
-    }
-    for (const child of imgCatalog.visuals) {
-      opts.push(`<option value="${child}">${child.split('/').pop()}</option>`);
-    }
-    for (const child of imgCatalog.logos) {
+    for (const child of imgCatalog.productDesign) {
       opts.push(`<option value="${child}">${child.split('/').pop()}</option>`);
     }
     return opts.join('');
@@ -1384,14 +1379,12 @@ function buildGalleryEditor(item) {
 
   function getImgOptions() {
     const opts = [];
-    for (const child of imgCatalog.backgrounds) {
-      opts.push(`<option value="${child}">${child.split('/').pop()}</option>`);
-    }
+    const project = item.project || '';
+    const prefix = project ? `img/featured/${project}/` : '';
     for (const child of imgCatalog.visuals) {
-      opts.push(`<option value="${child}">${child.split('/').pop()}</option>`);
-    }
-    for (const child of imgCatalog.logos) {
-      opts.push(`<option value="${child}">${child.split('/').pop()}</option>`);
+      if (!prefix || child.startsWith(prefix)) {
+        opts.push(`<option value="${child}">${child.split('/').pop()}</option>`);
+      }
     }
     return opts.join('');
   }

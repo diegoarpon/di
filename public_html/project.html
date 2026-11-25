@@ -114,7 +114,8 @@
           <div class="mt-4 mb-2">
             <div class="d-flex flex-column gap-2">
               <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button"
-                onclick="fadeNavigate('index.html?tab=brand-collection')" data-i18n="brandCollection" data-tab="brand-collection">brand
+                onclick="fadeNavigate('index.html?tab=brand-collection')" data-i18n="brandCollection"
+                data-tab="brand-collection">brand
                 collection</button>
               <button class="btn btn-link text-start p-0 fw-normal sidebar-nav-btn nav-button"
                 onclick="fadeNavigate('index.html?tab=featured-projects')" data-i18n="featuredProjects"
@@ -513,29 +514,26 @@
           <div class="cs-snapshot-grid">
             <div class="cs-snapshot-col">
               <div class="cs-snapshot-item">
-                <span class="cs-snapshot-label">Client</span>
-                <div class="cs-snapshot-company">
-                  <img src="${get("src", "")}" alt="${get("client", "Quik!")} logo" width="120" height="45" loading="lazy">
-                </div>
-              </div>
-              <div class="cs-snapshot-item">
                 <span class="cs-snapshot-label">Role</span>
                 <span class="cs-snapshot-value">${get("team", "Product Designer / UX-UI Designer")}</span>
               </div>
               <div class="cs-snapshot-item">
-                <span class="cs-snapshot-label">Team</span>
-                <span class="cs-snapshot-value">${get("teamMembers", "QA + DEV Team")}</span>
+                <span class="cs-snapshot-label">Scope</span>
+                <span class="cs-snapshot-value">${get("scope", "")}</span>
               </div>
+              
             </div>
             <div class="cs-snapshot-col">
               <div class="cs-snapshot-item">
-                <span class="cs-snapshot-label">Work</span>
-                <span class="cs-snapshot-value">${get("scope", "")}</span>
+                <span class="cs-snapshot-label">Team</span>
+                <span class="cs-snapshot-value">${get("teamMembers", "QA + DEV Team")}</span>
               </div>
               <div class="cs-snapshot-item">
                 <span class="cs-snapshot-label">Timeline</span>
                 <span class="cs-snapshot-value">${get("timeline", "3 months")}</span>
               </div>
+            </div>
+            <div class="cs-snapshot-col">
               <div class="cs-snapshot-item">
                 <span class="cs-snapshot-label">Link</span>
                 <a href="${get("URLFigma", "")}" class="cs-snapshot-link" target="_blank" rel="noopener">↗ Figma</a>

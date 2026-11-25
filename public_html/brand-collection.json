@@ -12,7 +12,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/new_visuals/lapanaderi.webp",
+      "bgImage": "img/brands/backgrounds/lapanaderi.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "",
@@ -21,7 +21,7 @@
       "projectLink": "project.html?p=lapanaderi",
       "label": {
         "name": "Lapanaderi",
-        "src": "img/logos/lapanaderi-solo-logo.svg",
+        "src": "img/brands/logos/lapanaderi-solo-logo.svg",
         "invertLogo": true,
         "logoSize": 80,
         "es": {
@@ -46,7 +46,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/molde-animate.gif",
+      "bgImage": "img/brands/backgrounds/molde-animate.gif",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Branding",
@@ -55,7 +55,7 @@
       "projectLink": "",
       "label": {
         "name": "Molde",
-        "src": "img/logos/molde-logo.svg",
+        "src": "img/brands/logos/molde-logo.svg",
         "invertLogo": true,
         "logoSize": 80,
         "es": {
@@ -72,7 +72,7 @@
       "order": 3,
       "size": "tile-xl",
       "span": 4,
-      "src": "img/logos/meta-logo.svg",
+      "src": "img/brands/logos/meta-logo.svg",
       "alt": "Meta",
       "logoSize": 500,
       "invertLogo": true,
@@ -82,14 +82,14 @@
       "multiLogoSize": 0,
       "bgImage": "",
       "bgPosition": "center",
-      "bgVideo": "img/backgrounds/meta.mp4",
+      "bgVideo": "img/brands/backgrounds/meta.mp4",
       "workType": "Branding",
       "year": "2025",
       "project": "meta",
       "projectLink": "project.html?p=meta",
       "label": {
         "name": "Meta",
-        "src": "img/logos/meta-logo.svg",
+        "src": "img/brands/logos/meta-logo.svg",
         "invertLogo": true,
         "logoSize": 80,
         "es": {
@@ -114,7 +114,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/si-salud-integral.webp",
+      "bgImage": "img/brands/backgrounds/si-salud-integral.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Branding",
@@ -123,7 +123,7 @@
       "projectLink": "",
       "label": {
         "name": "SI Salud Integral",
-        "src": "img/logos/si-salud-integral-logo.svg",
+        "src": "img/brands/logos/si-salud-integral-logo.svg",
         "invertLogo": true,
         "logoSize": 80,
         "es": {
@@ -136,7 +136,11 @@
         }
       },
       "overlay": false,
-      "overlayOpacity": 62
+      "overlayOpacity": 62,
+      "subtitle": {
+        "es": "",
+        "en": ""
+      }
     },
     {
       "order": 5,
@@ -150,7 +154,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/el-metodo.webp",
+      "bgImage": "img/brands/backgrounds/el-metodo.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Branding",
@@ -159,7 +163,7 @@
       "projectLink": "",
       "label": {
         "name": "El Método",
-        "src": "img/logos/metodo-logo.svg",
+        "src": "img/brands/logos/metodo-logo.svg",
         "invertLogo": false,
         "logoSize": 80,
         "es": {
@@ -185,7 +189,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/new_visuals/hit2.webp",
+      "bgImage": "img/brands/backgrounds/hit2.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Branding",
@@ -194,7 +198,7 @@
       "projectLink": "",
       "label": {
         "name": "Hit PR",
-        "src": "img/logos/hit-pr-logo.svg",
+        "src": "img/brands/logos/hit-pr-logo.svg",
         "invertLogo": false,
         "logoSize": 80,
         "es": {
@@ -219,7 +223,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/zn.webp",
+      "bgImage": "img/brands/backgrounds/zn.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Branding",
@@ -228,7 +232,7 @@
       "projectLink": "",
       "label": {
         "name": "Zlatar Nario",
-        "src": "img/logos/zlatar-nario-logo.svg",
+        "src": "img/brands/logos/zlatar-nario-logo.svg",
         "invertLogo": false,
         "logoSize": 80,
         "es": {
@@ -245,7 +249,7 @@
       "order": 8,
       "size": "tile-xl",
       "span": 4,
-      "src": "img/logos/nestseekers-full-logo.svg",
+      "src": "img/brands/logos/nestseekers-full-logo.svg",
       "alt": "",
       "logoSize": 300,
       "invertLogo": true,
@@ -255,14 +259,14 @@
       "multiLogoSize": 0,
       "bgImage": "",
       "bgPosition": "center",
-      "bgVideo": "img/backgrounds/nestseekers5.mp4",
+      "bgVideo": "img/brands/backgrounds/nestseekers5.mp4",
       "workType": "Rebranding",
       "year": "2011",
       "project": "nestseekers",
       "projectLink": "project.html?p=nestseekers",
       "label": {
         "name": "Nestseekers",
-        "src": "img/logos/nestseekers-full-logo.svg",
+        "src": "img/brands/logos/nestseekers-full-logo.svg",
         "invertLogo": false,
         "logoSize": 80,
         "es": {
@@ -281,7 +285,7 @@
       "order": 9,
       "size": "tile-xl",
       "span": 4,
-      "src": "img/logos/ponti-tosi-logo.svg",
+      "src": "img/brands/logos/ponti-tosi-logo.svg",
       "alt": "Ponti Tosi",
       "logoSize": 200,
       "invertLogo": true,
@@ -289,7 +293,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/pontitosi.webp",
+      "bgImage": "img/brands/backgrounds/pontitosi.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Branding",
@@ -298,7 +302,7 @@
       "projectLink": "",
       "label": {
         "name": "Ponti Tosi",
-        "src": "img/logos/ponti-tosi-logo.svg",
+        "src": "img/brands/logos/ponti-tosi-logo.svg",
         "invertLogo": true,
         "logoSize": 80,
         "es": {
@@ -315,7 +319,7 @@
       "order": 10,
       "size": "tile-xl",
       "span": 4,
-      "src": "img/logos/lu-maria-logo.svg",
+      "src": "img/brands/logos/lu-maria-logo.svg",
       "alt": "Lu Maria",
       "logoSize": 200,
       "invertLogo": true,
@@ -323,7 +327,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/lumaria.webp",
+      "bgImage": "img/brands/backgrounds/lumaria.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Branding",
@@ -332,7 +336,7 @@
       "projectLink": "",
       "label": {
         "name": "Lu Maria",
-        "src": "img/logos/lu-maria-logo.svg",
+        "src": "img/brands/logos/lu-maria-logo.svg",
         "invertLogo": true,
         "logoSize": 80,
         "es": {
@@ -349,11 +353,11 @@
       "order": 11,
       "size": "tile-xl",
       "span": 4,
-      "src": "img/logos/art-climate-dark-logo.svg",
+      "src": "img/brands/logos/art-climate-dark-logo.svg",
       "alt": "Art + Climate",
       "logoSize": 200,
       "invertLogo": false,
-      "darkSrc": "img/logos/art-climate-dark-logo.svg",
+      "darkSrc": "img/brands/logos/art-climate-dark-logo.svg",
       "noFilterDark": true,
       "multi": "",
       "multiLogoSize": 0,
@@ -366,7 +370,7 @@
       "projectLink": "",
       "label": {
         "name": "Art + Climate",
-        "src": "img/logos/art-climate-logo.svg",
+        "src": "img/brands/logos/art-climate-logo.svg",
         "invertLogo": false,
         "logoSize": 80,
         "es": {
@@ -384,7 +388,7 @@
       "order": 12,
       "size": "tile-xl",
       "span": 4,
-      "src": "img/logos/eg-monograma-logo.svg",
+      "src": "img/brands/logos/eg-monograma-logo.svg",
       "alt": "EG",
       "logoSize": 200,
       "invertLogo": true,
@@ -392,7 +396,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/eg.webp",
+      "bgImage": "img/brands/backgrounds/eg.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Rebranding",
@@ -401,7 +405,7 @@
       "projectLink": "project.html?p=eg",
       "label": {
         "name": "EG Marketing",
-        "src": "img/logos/eg-full-logo.svg",
+        "src": "img/brands/logos/eg-full-logo.svg",
         "invertLogo": true,
         "logoSize": 80,
         "es": {
@@ -426,7 +430,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/mariela-reale.webp",
+      "bgImage": "img/brands/backgrounds/mariela-reale.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Branding",
@@ -435,7 +439,7 @@
       "projectLink": "",
       "label": {
         "name": "Dra. Mariela Reale",
-        "src": "img/logos/mariela-reale-logo.svg",
+        "src": "img/brands/logos/mariela-reale-logo.svg",
         "invertLogo": false,
         "logoSize": 80,
         "es": {
@@ -452,7 +456,7 @@
       "order": 14,
       "size": "tile-xl",
       "span": 4,
-      "src": "img/logos/formstream-logo.svg",
+      "src": "img/brands/logos/formstream-logo.svg",
       "alt": "FormStream",
       "logoSize": 300,
       "invertLogo": true,
@@ -460,7 +464,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/formstream.webp",
+      "bgImage": "img/brands/backgrounds/formstream.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Branding",
@@ -469,7 +473,7 @@
       "projectLink": "",
       "label": {
         "name": "FormStream",
-        "src": "img/logos/formstream-logo.svg",
+        "src": "img/brands/logos/formstream-logo.svg",
         "invertLogo": false,
         "logoSize": 80,
         "es": {
@@ -486,7 +490,7 @@
       "order": 15,
       "size": "tile-xl",
       "span": 4,
-      "src": "img/logos/international-food-trader-logo.svg",
+      "src": "img/brands/logos/international-food-trader-logo.svg",
       "alt": "International Food Trader",
       "logoSize": 250,
       "invertLogo": true,
@@ -494,7 +498,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/ift5.webp",
+      "bgImage": "img/brands/backgrounds/ift5.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Branding",
@@ -503,7 +507,7 @@
       "projectLink": "",
       "label": {
         "name": "International Food Trader",
-        "src": "img/logos/international-food-trader-logo.svg",
+        "src": "img/brands/logos/international-food-trader-logo.svg",
         "invertLogo": false,
         "logoSize": 80,
         "es": {
@@ -520,15 +524,15 @@
       "order": 16,
       "size": "tile-xl",
       "span": 4,
-      "src": "img/logos/farolatino-icon-logo.svg",
+      "src": "img/brands/logos/farolatino-icon-logo.svg",
       "alt": "FaroLatino",
       "logoSize": 175,
       "invertLogo": true,
       "darkSrc": "",
       "noFilterDark": false,
-      "multi": "img/logos/farolatino-logo.svg",
+      "multi": "img/brands/logos/farolatino-logo.svg",
       "multiLogoSize": 250,
-      "bgImage": "img/backgrounds/farolatino.webp",
+      "bgImage": "img/brands/backgrounds/farolatino.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "ReBranding",
@@ -537,7 +541,7 @@
       "projectLink": "",
       "label": {
         "name": "FaroLatino",
-        "src": "img/logos/farolatino-logo.svg",
+        "src": "img/brands/logos/farolatino-logo.svg",
         "invertLogo": true,
         "logoSize": 80,
         "es": {
@@ -562,7 +566,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/virtualmind.gif",
+      "bgImage": "img/brands/backgrounds/virtualmind.gif",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Rebranding",
@@ -571,7 +575,7 @@
       "projectLink": "project.html?p=virtualmind",
       "label": {
         "name": "Virtualmind",
-        "src": "img/logos/virtualmind-black-logo.svg",
+        "src": "img/brands/logos/virtualmind-black-logo.svg",
         "invertLogo": false,
         "logoSize": 80,
         "es": {
@@ -589,15 +593,15 @@
       "order": 18,
       "size": "tile-xl",
       "span": 4,
-      "src": "img/logos/flittz-icon-logo.svg",
+      "src": "img/brands/logos/flittz-icon-logo.svg",
       "alt": "Flittz",
       "logoSize": 175,
       "invertLogo": true,
       "darkSrc": "",
       "noFilterDark": false,
-      "multi": "img/logos/flittz-logo.svg",
+      "multi": "img/brands/logos/flittz-logo.svg",
       "multiLogoSize": 155,
-      "bgImage": "img/backgrounds/flittz.webp",
+      "bgImage": "img/brands/backgrounds/flittz.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Branding",
@@ -606,7 +610,7 @@
       "projectLink": "",
       "label": {
         "name": "Flittz",
-        "src": "img/logos/flittz-logo.svg",
+        "src": "img/brands/logos/flittz-logo.svg",
         "invertLogo": true,
         "logoSize": 80,
         "es": {
@@ -631,7 +635,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/bronx-gym.webp",
+      "bgImage": "img/brands/backgrounds/bronx-gym.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Branding",
@@ -640,7 +644,7 @@
       "projectLink": "",
       "label": {
         "name": "Bronx Gym",
-        "src": "img/logos/bronx-gym-logo.svg",
+        "src": "img/brands/logos/bronx-gym-logo.svg",
         "invertLogo": false,
         "logoSize": 80,
         "es": {
@@ -657,7 +661,7 @@
       "order": 20,
       "size": "tile-xl",
       "span": 4,
-      "src": "img/logos/corvalius-logo.svg",
+      "src": "img/brands/logos/corvalius-logo.svg",
       "alt": "Corvalius",
       "logoSize": 250,
       "invertLogo": true,
@@ -665,7 +669,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/corvalius.webp",
+      "bgImage": "img/brands/backgrounds/corvalius.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Branding",
@@ -674,7 +678,7 @@
       "projectLink": "",
       "label": {
         "name": "Corvalius",
-        "src": "img/logos/corvalius-logo.svg",
+        "src": "img/brands/logos/corvalius-logo.svg",
         "invertLogo": false,
         "logoSize": 80,
         "es": {
@@ -700,7 +704,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/fxprom2.webp",
+      "bgImage": "img/brands/backgrounds/fxprom2.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Branding",
@@ -709,7 +713,7 @@
       "projectLink": "",
       "label": {
         "name": "FX Prom",
-        "src": "img/logos/fxprom-logo.svg",
+        "src": "img/brands/logos/fxprom-logo.svg",
         "invertLogo": false,
         "logoSize": 80,
         "es": {
@@ -726,15 +730,15 @@
       "order": 22,
       "size": "tile-xl",
       "span": 4,
-      "src": "img/logos/banegas-day-monograma-logo.svg",
+      "src": "img/brands/logos/banegas-day-monograma-logo.svg",
       "alt": "Banegas Day Monograma",
       "logoSize": 175,
       "invertLogo": true,
       "darkSrc": "",
       "noFilterDark": false,
-      "multi": "img/logos/banegas-day-logo.svg",
+      "multi": "img/brands/logos/banegas-day-logo.svg",
       "multiLogoSize": 300,
-      "bgImage": "img/backgrounds/banegas.webp",
+      "bgImage": "img/brands/backgrounds/banegas.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Branding",
@@ -743,7 +747,7 @@
       "projectLink": "",
       "label": {
         "name": "Banegas Day",
-        "src": "img/logos/banegas-day-logo.svg",
+        "src": "img/brands/logos/banegas-day-logo.svg",
         "invertLogo": true,
         "logoSize": 80,
         "es": {
@@ -760,7 +764,7 @@
       "order": 23,
       "size": "tile-xl",
       "span": 4,
-      "src": "img/logos/kamea-logo.svg",
+      "src": "img/brands/logos/kamea-logo.svg",
       "alt": "Kamea",
       "logoSize": 200,
       "invertLogo": true,
@@ -768,7 +772,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/kamea.webp",
+      "bgImage": "img/brands/backgrounds/kamea.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Branding",
@@ -777,7 +781,7 @@
       "projectLink": "",
       "label": {
         "name": "Kamea",
-        "src": "img/logos/kamea-logo.svg",
+        "src": "img/brands/logos/kamea-logo.svg",
         "invertLogo": true,
         "logoSize": 80,
         "es": {
@@ -802,7 +806,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/courtside.webp",
+      "bgImage": "img/brands/backgrounds/courtside.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Rebranding",
@@ -811,7 +815,7 @@
       "projectLink": "",
       "label": {
         "name": "Courtside Bar",
-        "src": "img/logos/courtside-logo.svg",
+        "src": "img/brands/logos/courtside-logo.svg",
         "invertLogo": false,
         "logoSize": 80,
         "es": {
@@ -836,7 +840,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/imd.webp",
+      "bgImage": "img/brands/backgrounds/imd.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Branding",
@@ -845,7 +849,7 @@
       "projectLink": "",
       "label": {
         "name": "Industrial Model & Design",
-        "src": "img/logos/imd-logo.svg",
+        "src": "img/brands/logos/imd-logo.svg",
         "invertLogo": false,
         "logoSize": 80,
         "es": {
@@ -870,7 +874,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/iblum.webp",
+      "bgImage": "img/brands/backgrounds/iblum.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Branding",
@@ -879,7 +883,7 @@
       "projectLink": "",
       "label": {
         "name": "iBlum",
-        "src": "img/logos/iblum-alt-logo.svg",
+        "src": "img/brands/logos/iblum-alt-logo.svg",
         "invertLogo": false,
         "logoSize": 80,
         "es": {
@@ -896,7 +900,7 @@
       "order": 27,
       "size": "tile-xl",
       "span": 4,
-      "src": "img/logos/up-mid-face-logo.svg",
+      "src": "img/brands/logos/up-mid-face-logo.svg",
       "alt": "Curso Up Mid Face",
       "logoSize": 300,
       "invertLogo": true,
@@ -904,7 +908,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/upmidface.webp",
+      "bgImage": "img/brands/backgrounds/upmidface.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Branding",
@@ -913,7 +917,7 @@
       "projectLink": "",
       "label": {
         "name": "Up & Mid Face",
-        "src": "img/logos/up-mid-face-logo.svg",
+        "src": "img/brands/logos/up-mid-face-logo.svg",
         "invertLogo": true,
         "logoSize": 80,
         "es": {
@@ -938,7 +942,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/lafleur.webp",
+      "bgImage": "img/brands/backgrounds/lafleur.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Rebranding",
@@ -947,7 +951,7 @@
       "projectLink": "",
       "label": {
         "name": "La Fleur",
-        "src": "img/logos/lafleur-logo.svg",
+        "src": "img/brands/logos/lafleur-logo.svg",
         "invertLogo": false,
         "logoSize": 80,
         "es": {
@@ -958,13 +962,17 @@
           "industry": "Optics",
           "workType": "Rebranding"
         }
+      },
+      "subtitle": {
+        "es": "",
+        "en": ""
       }
     },
     {
       "order": 29,
       "size": "tile-xl",
       "span": 4,
-      "src": "img/logos/ambrosia-logo.svg",
+      "src": "img/brands/logos/ambrosia-logo.svg",
       "alt": "Ambrosia",
       "logoSize": 200,
       "invertLogo": true,
@@ -972,7 +980,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/ambrosia.webp",
+      "bgImage": "img/brands/backgrounds/ambrosia.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Branding",
@@ -981,7 +989,7 @@
       "projectLink": "",
       "label": {
         "name": "Ambrosia",
-        "src": "img/logos/ambrosia-logo.svg",
+        "src": "img/brands/logos/ambrosia-logo.svg",
         "invertLogo": true,
         "logoSize": 80,
         "es": {
@@ -998,7 +1006,7 @@
       "order": 30,
       "size": "tile-xl",
       "span": 4,
-      "src": "img/logos/mena-lombard-logo.svg",
+      "src": "img/brands/logos/mena-lombard-logo.svg",
       "alt": "Mena Lombard",
       "logoSize": 250,
       "invertLogo": true,
@@ -1006,7 +1014,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/new_visuals/mena-lombard.webp",
+      "bgImage": "img/brands/backgrounds/mena-lombard.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Branding",
@@ -1015,7 +1023,7 @@
       "projectLink": "",
       "label": {
         "name": "Mena Lombard",
-        "src": "img/logos/mena-lombard-logo.svg",
+        "src": "img/brands/logos/mena-lombard-logo.svg",
         "invertLogo": false,
         "logoSize": 80,
         "es": {
@@ -1040,7 +1048,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/iroiro4.webp",
+      "bgImage": "img/brands/backgrounds/iroiro4.webp",
       "bgPosition": "500px",
       "bgVideo": "",
       "workType": "Rebranding",
@@ -1049,7 +1057,7 @@
       "projectLink": "",
       "label": {
         "name": "Iro Iro",
-        "src": "img/logos/iroiro-logo.svg",
+        "src": "img/brands/logos/iroiro-logo.svg",
         "invertLogo": false,
         "logoSize": 80,
         "es": {
@@ -1066,7 +1074,7 @@
       "order": 32,
       "size": "tile-xl",
       "span": 4,
-      "src": "img/logos/lucia-marafuschi-logo.svg",
+      "src": "img/brands/logos/lucia-marafuschi-logo.svg",
       "alt": "Dra. Lucia Marafuschi",
       "logoSize": 250,
       "invertLogo": true,
@@ -1074,7 +1082,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/lucia-marafuschi.webp",
+      "bgImage": "img/brands/backgrounds/lucia-marafuschi.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Rebranding",
@@ -1083,7 +1091,7 @@
       "projectLink": "",
       "label": {
         "name": "Dra. Lucia Marafuschi",
-        "src": "img/logos/lucia-marafuschi-logo.svg",
+        "src": "img/brands/logos/lucia-marafuschi-logo.svg",
         "invertLogo": true,
         "logoSize": 80,
         "es": {
@@ -1110,7 +1118,7 @@
       "noFilterDark": true,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/players3.webp",
+      "bgImage": "img/brands/backgrounds/players3.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Rebranding",
@@ -1119,7 +1127,7 @@
       "projectLink": "",
       "label": {
         "name": "Players Sports Grill",
-        "src": "img/logos/players-bw-logo.svg",
+        "src": "img/brands/logos/players-bw-logo.svg",
         "invertLogo": false,
         "logoSize": 80,
         "es": {
@@ -1144,7 +1152,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/duarte.webp",
+      "bgImage": "img/brands/backgrounds/duarte.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Rebranding",
@@ -1153,7 +1161,7 @@
       "projectLink": "",
       "label": {
         "name": "Duarte & Asociados",
-        "src": "img/logos/duarte-asociados-logo.svg",
+        "src": "img/brands/logos/duarte-asociados-logo.svg",
         "invertLogo": false,
         "logoSize": 80,
         "es": {
@@ -1178,7 +1186,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/conception.webp",
+      "bgImage": "img/brands/backgrounds/conception.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Branding",
@@ -1187,7 +1195,7 @@
       "projectLink": "",
       "label": {
         "name": "Conception",
-        "src": "img/logos/conception-logo.svg",
+        "src": "img/brands/logos/conception-logo.svg",
         "invertLogo": false,
         "logoSize": 80,
         "es": {
@@ -1212,7 +1220,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/oppici2.webp",
+      "bgImage": "img/brands/backgrounds/oppici2.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "Branding",
@@ -1221,7 +1229,7 @@
       "projectLink": "",
       "label": {
         "name": "Juliana Oppici",
-        "src": "img/logos/juliana-oppici-2-logo.svg",
+        "src": "img/brands/logos/juliana-oppici-2-logo.svg",
         "invertLogo": false,
         "logoSize": 80,
         "es": {
@@ -1238,7 +1246,7 @@
       "order": 37,
       "size": "tile-xl",
       "span": 4,
-      "src": "img/logos/avenue-solutions-logo.svg",
+      "src": "img/brands/logos/avenue-solutions-logo.svg",
       "alt": "",
       "logoSize": 250,
       "invertLogo": true,
@@ -1246,7 +1254,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/avenue-solutions3.webp",
+      "bgImage": "img/brands/backgrounds/avenue-solutions3.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "",
@@ -1258,7 +1266,7 @@
       "enabled": true,
       "label": {
         "name": "Avenue Solutions",
-        "src": "img/logos/avenue-solutions-logo.svg",
+        "src": "img/brands/logos/avenue-solutions-logo.svg",
         "invertLogo": false,
         "logoSize": 120,
         "es": {
@@ -1285,7 +1293,7 @@
       "noFilterDark": false,
       "multi": "",
       "multiLogoSize": 0,
-      "bgImage": "img/backgrounds/comoyacomo.webp",
+      "bgImage": "img/brands/backgrounds/comoyacomo.webp",
       "bgPosition": "center",
       "bgVideo": "",
       "workType": "",
@@ -1297,7 +1305,7 @@
       "enabled": true,
       "label": {
         "name": "ComoYaComo",
-        "src": "img/logos/comoyacomo-logo.svg",
+        "src": "img/brands/logos/comoyacomo-logo.svg",
         "invertLogo": false,
         "logoSize": 80,
         "es": {
@@ -1314,7 +1322,7 @@
       "order": 39,
       "size": "tile-xl",
       "span": 4,
-      "src": "img/logos/zoom-logo.svg",
+      "src": "img/brands/logos/zoom-logo.svg",
       "alt": "ZOom",
       "logoSize": 300,
       "invertLogo": true,
@@ -1324,14 +1332,14 @@
       "multiLogoSize": 0,
       "bgImage": "",
       "bgPosition": "center",
-      "bgVideo": "img/backgrounds/zoom.mp4",
+      "bgVideo": "img/brands/backgrounds/zoom.mp4",
       "workType": "Branding",
       "year": "0000",
       "project": "",
       "projectLink": "",
       "label": {
         "name": "ZOom",
-        "src": "img/logos/zoom-logo.svg",
+        "src": "img/brands/logos/zoom-logo.svg",
         "invertLogo": true,
         "logoSize": 80,
         "es": {

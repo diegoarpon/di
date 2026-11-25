@@ -699,7 +699,7 @@ body {
 }
 
 .sidebar-nav-btn.active {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .sidebar-nav-btn.active::after {
@@ -1981,8 +1981,8 @@ footer>div {
 
 .cs-snapshot-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 5rem;
   align-items: start;
 }
 

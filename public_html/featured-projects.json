@@ -2,14 +2,14 @@
   "featuredProjects": [
     {
       "order": 1,
-      "src": "img/logos/eg-full-logo.svg",
+      "src": "img/brands/logos/eg-full-logo.svg",
       "alt": "EG",
       "size": "tile-xl",
       "span": 6,
       "logoSize": 250,
       "invertLogo": true,
       "bgColor": "",
-      "bgImage": "img/backgrounds/eg-dev.webp",
+      "bgImage": "img/brands/backgrounds/eg-dev.webp",
       "hoverColor": "var(--main-color)",
       "project": "eg",
       "projectName": "EG Marketing",
@@ -33,17 +33,17 @@
       },
       "gallery": [
         {
-          "src": "img/visuals/eg/upmid-1.webp",
+          "src": "img/featured/eg/upmid-1.webp",
           "cols": 3,
           "type": "image"
         },
         {
-          "src": "img/visuals/eg/ceci-1.webp",
+          "src": "img/featured/eg/ceci-1.webp",
           "cols": 3,
           "type": "image"
         },
         {
-          "src": "img/visuals/eg/marisa-1.webp",
+          "src": "img/featured/eg/marisa-1.webp",
           "cols": 3,
           "type": "image"
         },
@@ -57,22 +57,22 @@
           }
         },
         {
-          "src": "img/visuals/eg/eg-web-mobile-1.webp",
+          "src": "img/featured/eg/eg-web-mobile-1.webp",
           "cols": 1,
           "type": "image"
         },
         {
-          "src": "img/visuals/eg/eg-web-mobile-3.webp",
+          "src": "img/featured/eg/eg-web-mobile-3.webp",
           "cols": 1,
           "type": "image"
         },
         {
-          "src": "img/visuals/eg/eg-web-mobile-2.webp",
+          "src": "img/featured/eg/eg-web-mobile-2.webp",
           "cols": 1,
           "type": "image"
         },
         {
-          "src": "img/visuals/eg/eg_logo_evolution.svg",
+          "src": "img/featured/eg/eg_logo_evolution.svg",
           "darkBg": true,
           "cols": 4,
           "accentBg": true,
@@ -88,47 +88,47 @@
           }
         },
         {
-          "src": "img/visuals/eg/eg-brand-refresh-01.webp",
+          "src": "img/featured/eg/eg-brand-refresh-01.webp",
           "cols": 1,
           "type": "image"
         },
         {
-          "src": "img/visuals/eg/eg-brand-refresh-02.webp",
+          "src": "img/featured/eg/eg-brand-refresh-02.webp",
           "cols": 1,
           "type": "image"
         },
         {
-          "src": "img/visuals/eg/eg-brand-refresh-03.webp",
+          "src": "img/featured/eg/eg-brand-refresh-03.webp",
           "cols": 1,
           "type": "image"
         },
         {
-          "src": "img/visuals/eg/eg-brand-refresh-04.webp",
+          "src": "img/featured/eg/eg-brand-refresh-04.webp",
           "cols": 1,
           "type": "image"
         },
         {
-          "src": "img/visuals/eg/eg-brand-refresh-05.webp",
+          "src": "img/featured/eg/eg-brand-refresh-05.webp",
           "cols": 1,
           "type": "image"
         },
         {
-          "src": "img/visuals/eg/eg-brand-refresh-06.webp",
+          "src": "img/featured/eg/eg-brand-refresh-06.webp",
           "cols": 1,
           "type": "image"
         },
         {
-          "src": "img/visuals/eg/eg-brand-refresh-07.webp",
+          "src": "img/featured/eg/eg-brand-refresh-07.webp",
           "cols": 1,
           "type": "image"
         },
         {
-          "src": "img/visuals/eg/eg-brand-refresh-08.webp",
+          "src": "img/featured/eg/eg-brand-refresh-08.webp",
           "cols": 1,
           "type": "image"
         },
         {
-          "src": "img/visuals/eg/cuaderno-eg.webp",
+          "src": "img/featured/eg/cuaderno-eg.webp",
           "cols": 4,
           "type": "image"
         },
@@ -142,22 +142,22 @@
           }
         },
         {
-          "src": "img/visuals/eg/ponti-2.webp",
+          "src": "img/featured/eg/ponti-2.webp",
           "cols": 1,
           "type": "image"
         },
         {
-          "src": "img/visuals/eg/ponti-1.webp",
+          "src": "img/featured/eg/ponti-1.webp",
           "cols": 1,
           "type": "image"
         },
         {
-          "src": "img/visuals/eg/ponti-3.webp",
+          "src": "img/featured/eg/ponti-3.webp",
           "cols": 2,
           "type": "image"
         },
         {
-          "src": "img/visuals/eg/ponti-4.webp",
+          "src": "img/featured/eg/ponti-4.webp",
           "cols": 2,
           "type": "image"
         }
@@ -165,14 +165,14 @@
     },
     {
       "order": 2,
-      "src": "img/logos/meta-logo.svg",
+      "src": "img/brands/logos/meta-logo.svg",
       "alt": "Meta",
       "size": "tile-xl",
       "span": 6,
       "logoSize": 250,
       "invertLogo": true,
       "bgColor": "",
-      "bgImage": "img/backgrounds/meta-dev.webp",
+      "bgImage": "img/brands/backgrounds/meta-dev.webp",
       "bgVideo": "",
       "hoverColor": "var(--main-color)",
       "project": "meta",
@@ -197,70 +197,70 @@
       },
       "gallery": [
         {
-          "src": "img/visuals/meta/meta-banner-screen.webp",
+          "src": "img/featured/meta/meta-banner-screen.webp",
           "cols": 4,
           "type": "image"
         },
         {
-          "src": "img/visuals/meta/meta-congreso-salon.webp",
+          "src": "img/featured/meta/meta-congreso-salon.webp",
           "cols": 3,
           "type": "image"
         },
         {
-          "src": "img/visuals/meta/meta-congreso-welcome.webp",
+          "src": "img/featured/meta/meta-congreso-welcome.webp",
           "cols": 3,
           "type": "image"
         },
         {
-          "src": "img/visuals/meta/meta-congreso-people.webp",
+          "src": "img/featured/meta/meta-congreso-people.webp",
           "cols": 3,
           "type": "image"
         },
         {
-          "src": "img/visuals/meta/meta-congreso-people-outside.webp",
+          "src": "img/featured/meta/meta-congreso-people-outside.webp",
           "cols": 3,
           "type": "image"
         },
         {
-          "src": "img/visuals/meta/meta-congreso-reception.webp",
+          "src": "img/featured/meta/meta-congreso-reception.webp",
           "cols": 3,
           "type": "image"
         },
         {
-          "src": "img/visuals/meta/meta-congreso-photobooth.webp",
+          "src": "img/featured/meta/meta-congreso-photobooth.webp",
           "cols": 3,
           "type": "image"
         },
         {
-          "src": "img/visuals/meta/meta_evolution.svg",
+          "src": "img/featured/meta/meta_evolution.svg",
           "darkBg": true,
           "cols": 4,
           "accentBg": true,
           "type": "image"
         },
         {
-          "src": "img/visuals/meta/meta-corporeo.webp",
+          "src": "img/featured/meta/meta-corporeo.webp",
           "cols": 3,
           "type": "image"
         },
         {
-          "src": "img/visuals/meta/meta-icon-plans.svg",
-          "darkSrc": "img/visuals/meta/meta-icon-plans-dark.svg",
+          "src": "img/featured/meta/meta-icon-plans.svg",
+          "darkSrc": "img/featured/meta/meta-icon-plans-dark.svg",
           "cols": 3,
           "type": "image"
         },
         {
-          "src": "img/visuals/meta/meta-icon-uruguay.svg",
+          "src": "img/featured/meta/meta-icon-uruguay.svg",
           "cols": 3,
           "type": "image"
         },
         {
-          "src": "img/visuals/meta/meta-brochure-pitch-sponsors.webp",
+          "src": "img/featured/meta/meta-brochure-pitch-sponsors.webp",
           "cols": 2,
           "type": "image"
         },
         {
-          "src": "img/visuals/meta/meta-brochure-pitch.webp",
+          "src": "img/featured/meta/meta-brochure-pitch.webp",
           "cols": 2,
           "type": "image"
         },
@@ -274,17 +274,17 @@
           }
         },
         {
-          "src": "img/visuals/meta/meta-credenciales.webp",
+          "src": "img/featured/meta/meta-credenciales.webp",
           "cols": 3,
           "type": "image"
         },
         {
-          "src": "img/visuals/meta/meta-congreso-mercandising.webp",
+          "src": "img/featured/meta/meta-congreso-mercandising.webp",
           "cols": 3,
           "type": "image"
         },
         {
-          "src": "img/visuals/meta/meta-credenciales-sponsor-green.webp",
+          "src": "img/featured/meta/meta-credenciales-sponsor-green.webp",
           "cols": 3,
           "type": "image"
         },
@@ -298,7 +298,7 @@
           }
         },
         {
-          "src": "img/visuals/meta/metaweb.mp4",
+          "src": "img/featured/meta/metaweb.mp4",
           "cols": 2,
           "loop": true,
           "type": "image"
@@ -307,14 +307,14 @@
     },
     {
       "order": 3,
-      "src": "img/logos/nestseekers-full-logo.svg",
+      "src": "img/brands/logos/nestseekers-full-logo.svg",
       "alt": "Nestseekers",
       "size": "tile-xl",
       "span": 6,
       "logoSize": 250,
       "invertLogo": true,
       "bgColor": "",
-      "bgImage": "img/backgrounds/nestseekers-dev.webp",
+      "bgImage": "img/brands/backgrounds/nestseekers-dev.webp",
       "hoverColor": "var(--main-color)",
       "project": "nestseekers",
       "projectName": "Nestseekers",
@@ -338,15 +338,15 @@
       },
       "gallery": [
         {
-          "src": "img/visuals/nestseekers/99john-ads-condominium-bike.webp",
+          "src": "img/featured/nestseekers/99john-ads-condominium-bike.webp",
           "cols": 3
         },
         {
-          "src": "img/visuals/nestseekers/99john-ads-condominium-shop.webp",
+          "src": "img/featured/nestseekers/99john-ads-condominium-shop.webp",
           "cols": 3
         },
         {
-          "src": "img/visuals/nestseekers/99john-ads-condominium-couple.webp",
+          "src": "img/featured/nestseekers/99john-ads-condominium-couple.webp",
           "cols": 3
         },
         {
@@ -358,21 +358,21 @@
           }
         },
         {
-          "src": "img/visuals/nestseekers/ok-1.webp",
+          "src": "img/featured/nestseekers/ok-1.webp",
           "cols": 2
         },
         {
-          "src": "img/visuals/nestseekers/ok-2.webp",
+          "src": "img/featured/nestseekers/ok-2.webp",
           "cols": 2
         },
         {
-          "src": "img/visuals/nestseekers/nest_seekers_logo_evolution.svg",
+          "src": "img/featured/nestseekers/nest_seekers_logo_evolution.svg",
           "darkBg": true,
           "cols": 4,
           "accentBg": true
         },
         {
-          "src": "img/visuals/nestseekers/relieve.webp",
+          "src": "img/featured/nestseekers/relieve.webp",
           "cols": 4
         },
         {
@@ -384,15 +384,15 @@
           }
         },
         {
-          "src": "img/visuals/nestseekers/mess-2.webp",
+          "src": "img/featured/nestseekers/mess-2.webp",
           "cols": 2
         },
         {
-          "src": "img/visuals/nestseekers/mess-1.webp",
+          "src": "img/featured/nestseekers/mess-1.webp",
           "cols": 2
         },
         {
-          "src": "img/visuals/nestseekers/nest_seekers_showsheet.webp",
+          "src": "img/featured/nestseekers/nest_seekers_showsheet.webp",
           "darkBg": true,
           "accentBg": true,
           "cols": 4
@@ -401,14 +401,14 @@
     },
     {
       "order": 4,
-      "src": "img/visuals/logos/insolito-logo.svg",
+      "src": "img/product/logos/insolito-logo.svg",
       "alt": "Insólito",
       "size": "tile-xl",
       "span": 6,
       "logoSize": 200,
       "invertLogo": true,
       "bgColor": "",
-      "bgImage": "img/backgrounds/insolito-dev.webp",
+      "bgImage": "img/brands/backgrounds/insolito-dev.webp",
       "hoverColor": "var(--main-color)",
       "project": "insolito",
       "projectName": "insólito café de especialidad",
@@ -433,63 +433,63 @@
       },
       "gallery": [
         {
-          "src": "img/visuals/insolito/insolit-story-especiales-medialuna.webp",
+          "src": "img/featured/insolito/insolit-story-especiales-medialuna.webp",
           "cols": 1
         },
         {
-          "src": "img/visuals/insolito/insolit-story-especiales-edit.webp",
+          "src": "img/featured/insolito/insolit-story-especiales-edit.webp",
           "cols": 1
         },
         {
-          "src": "img/visuals/insolito/insolit-story-especiales-pan-leche.webp",
+          "src": "img/featured/insolito/insolit-story-especiales-pan-leche.webp",
           "cols": 1
         },
         {
-          "src": "img/visuals/insolito/insolit-story-especiales-luna.webp",
+          "src": "img/featured/insolito/insolit-story-especiales-luna.webp",
           "cols": 1
         },
         {
-          "src": "img/visuals/insolito/insolito-autumn-poster-medialunas.webp",
+          "src": "img/featured/insolito/insolito-autumn-poster-medialunas.webp",
           "cols": 3
         },
         {
-          "src": "img/visuals/insolito/insolito-autumn-poster-croissant-medialuna.webp",
+          "src": "img/featured/insolito/insolito-autumn-poster-croissant-medialuna.webp",
           "cols": 3
         },
         {
-          "src": "img/visuals/insolito/insolito-autumn-poster-soup.webp",
+          "src": "img/featured/insolito/insolito-autumn-poster-soup.webp",
           "cols": 3
         },
         {
-          "src": "img/visuals/insolito/1.webp",
+          "src": "img/featured/insolito/1.webp",
           "cols": 2
         },
         {
-          "src": "img/visuals/insolito/2.webp",
+          "src": "img/featured/insolito/2.webp",
           "cols": 2
         },
         {
-          "src": "img/visuals/insolito/insolito-ig-kuki-1.webp",
+          "src": "img/featured/insolito/insolito-ig-kuki-1.webp",
           "cols": 1
         },
         {
-          "src": "img/visuals/insolito/insolito-ig-kuki-2.webp",
+          "src": "img/featured/insolito/insolito-ig-kuki-2.webp",
           "cols": 1
         },
         {
-          "src": "img/visuals/insolito/insolito-ig-painauchocolat-2.webp",
+          "src": "img/featured/insolito/insolito-ig-painauchocolat-2.webp",
           "cols": 1
         },
         {
-          "src": "img/visuals/insolito/insolito-ig-painauchocolat-1.webp",
+          "src": "img/featured/insolito/insolito-ig-painauchocolat-1.webp",
           "cols": 1
         },
         {
-          "src": "img/visuals/insolito/steeeel.webp",
+          "src": "img/featured/insolito/steeeel.webp",
           "cols": 2
         },
         {
-          "src": "img/visuals/insolito/insolito-street-sign.webp",
+          "src": "img/featured/insolito/insolito-street-sign.webp",
           "cols": 2
         },
         {
@@ -502,27 +502,27 @@
           }
         },
         {
-          "src": "img/visuals/insolito/insolito-leutthe-poster.webp",
+          "src": "img/featured/insolito/insolito-leutthe-poster.webp",
           "cols": 3
         },
         {
-          "src": "img/visuals/insolito/insolito-leutthe-poster-alternative.webp",
+          "src": "img/featured/insolito/insolito-leutthe-poster-alternative.webp",
           "cols": 3
         },
         {
-          "src": "img/visuals/insolito/insolito-blur-2.webp",
+          "src": "img/featured/insolito/insolito-blur-2.webp",
           "cols": 1
         },
         {
-          "src": "img/visuals/insolito/insolito-blur-3.webp",
+          "src": "img/featured/insolito/insolito-blur-3.webp",
           "cols": 1
         },
         {
-          "src": "img/visuals/insolito/insolito-blur-1.webp",
+          "src": "img/featured/insolito/insolito-blur-1.webp",
           "cols": 1
         },
         {
-          "src": "img/visuals/insolito/insolito-leutthe-stickers.webp",
+          "src": "img/featured/insolito/insolito-leutthe-stickers.webp",
           "cols": 1
         },
         {
@@ -535,29 +535,29 @@
           }
         },
         {
-          "src": "img/visuals/insolito/insolito-sessions-spring.webp",
+          "src": "img/featured/insolito/insolito-sessions-spring.webp",
           "cols": 1
         },
         {
-          "src": "img/visuals/insolito/inolito-integra-coffee-rave.webp",
+          "src": "img/featured/insolito/inolito-integra-coffee-rave.webp",
           "cols": 1
         },
         {
-          "src": "img/visuals/insolito/insolito-cava.webp",
+          "src": "img/featured/insolito/insolito-cava.webp",
           "cols": 1
         }
       ]
     },
     {
       "order": 5,
-      "src": "img/logos/virtualmind-logo.svg",
+      "src": "img/brands/logos/virtualmind-logo.svg",
       "alt": "Virtualmind",
       "size": "tile-xl",
       "span": 6,
       "logoSize": 250,
       "invertLogo": true,
       "bgColor": "",
-      "bgImage": "img/backgrounds/virtualmind.webp",
+      "bgImage": "img/brands/backgrounds/virtualmind.webp",
       "hoverColor": "var(--main-color)",
       "project": "virtualmind",
       "projectName": "Virtualmind",
@@ -582,14 +582,14 @@
     },
     {
       "order": 6,
-      "src": "img/logos/lapanaderi-solo-logo.svg",
+      "src": "img/brands/logos/lapanaderi-solo-logo.svg",
       "alt": "Lapanaderi",
       "size": "tile-xl",
       "span": 6,
       "logoSize": 200,
       "invertLogo": true,
       "bgColor": "",
-      "bgImage": "img/backgrounds/lapanaderi-dev.webp",
+      "bgImage": "img/brands/backgrounds/lapanaderi-dev.webp",
       "hoverColor": "var(--main-color)",
       "project": "lapanaderi",
       "projectName": "Lapanaderi",
@@ -614,45 +614,45 @@
       },
       "gallery": [
         {
-          "src": "img/visuals/lapanaderi/lapanaderi-branding-01.webp",
+          "src": "img/featured/lapanaderi/lapanaderi-branding-01.webp",
           "cols": 3
         },
         {
-          "src": "img/visuals/lapanaderi/lapanaderi-branding-02.webp",
+          "src": "img/featured/lapanaderi/lapanaderi-branding-02.webp",
           "cols": 3
         },
         {
-          "src": "img/visuals/lapanaderi/lapanaderi-branding-03.webp",
+          "src": "img/featured/lapanaderi/lapanaderi-branding-03.webp",
           "cols": 3
         },
         {
-          "src": "img/visuals/lapanaderi/lapanaderi-branding-04.webp",
+          "src": "img/featured/lapanaderi/lapanaderi-branding-04.webp",
           "cols": 3
         },
         {
-          "src": "img/visuals/lapanaderi/lapanaderi-branding-06.webp",
+          "src": "img/featured/lapanaderi/lapanaderi-branding-06.webp",
           "cols": 3
         },
         {
-          "src": "img/visuals/lapanaderi/lapanaderi-branding-05.webp",
+          "src": "img/featured/lapanaderi/lapanaderi-branding-05.webp",
           "cols": 3
         },
         {
-          "src": "img/visuals/lapanaderi/lapanaderi-rebranding.svg",
+          "src": "img/featured/lapanaderi/lapanaderi-rebranding.svg",
           "darkBg": true,
           "cols": 4,
           "accentBg": true
         },
         {
-          "src": "img/visuals/lapanaderi/lapanaderi-facturas-cooler.webp",
+          "src": "img/featured/lapanaderi/lapanaderi-facturas-cooler.webp",
           "cols": 1
         },
         {
-          "src": "img/visuals/lapanaderi/lapanaderi-facturas-platos.webp",
+          "src": "img/featured/lapanaderi/lapanaderi-facturas-platos.webp",
           "cols": 1
         },
         {
-          "src": "img/visuals/lapanaderi/lapanaderi-trifold.webp",
+          "src": "img/featured/lapanaderi/lapanaderi-trifold.webp",
           "cols": 2
         }
       ]

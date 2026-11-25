@@ -58,7 +58,7 @@
             "es": "Section-based navigation gives staff a clear sense of where they are in a form and what remains.",
             "en": ""
           },
-          "image": "img/visuals/eg/eg_logo_evolution.svg",
+          "image": "img/featured/eg/eg_logo_evolution.svg",
           "caption": "Section Based Navigation · Real-time progress",
           "screenNum": "02"
         },
@@ -71,7 +71,7 @@
             "es": "Guidance Mode and dynamic field states clarify which information is incomplete, active, required, or completed.",
             "en": ""
           },
-          "image": "img/visuals/lapanaderi/lapanaderi-rebranding.svg",
+          "image": "img/featured/lapanaderi/lapanaderi-rebranding.svg",
           "caption": "Guidance Mode · Required / Incomplete fields",
           "screenNum": "03"
         },
@@ -84,7 +84,7 @@
             "es": "Auto-fill uses previously recorded information. Package management and progress tracking support workflows that involve multiple forms or steps.",
             "en": ""
           },
-          "image": "img/backgrounds/nestseekers-dev.webp",
+          "image": "img/brands/backgrounds/nestseekers-dev.webp",
           "caption": "Section navigation · Saved-data auto-fill",
           "screenNum": "04"
         }
@@ -113,14 +113,14 @@
         "en": "Product definition, flows, UX/UI, interaction design, design system, front-end"
       },
       "timeline": "3 months",
-      "heroImage": "img/backgrounds/lapanaderi-dev.webp",
+      "heroImage": "img/brands/backgrounds/lapanaderi-dev.webp",
       "heroCaption": "FormStream • Enterprise form experience — Screen placeholder",
       "URLFigma": "https://www.figma.com/design/8gpqQroeswlZra2kLw7evO/Quik--FormStream?node-id=38-157&t=s1ah8ZcMwjgkOMFx-1",
-      "src": "img/visuals/logos/qu-logo.svg",
+      "src": "img/product/logos/qu-logo.svg",
       "logoSize": 100,
       "invertLogo": false,
       "span": 6,
-      "secondaryLogo": "img/logos/formstream-logo.svg",
+      "secondaryLogo": "img/brands/logos/formstream-logo.svg",
       "secondaryLogoSize": 300,
       "hoverColor": "var(--gold-yellow)",
       "enabled": true,
@@ -218,7 +218,7 @@
             "en": "Two synchronized panels: a visual drag-and-drop editor on the left and a live preview on the right. Changes in either reflect instantly in the other. This eliminates the edit-save-preview cycle and enables iteration at the speed of thought."
           },
           "composition": "A",
-          "image": "img/backgrounds/avenue-solutions3.webp",
+          "image": "img/brands/backgrounds/avenue-solutions3.webp",
           "caption": {
             "es": "Editor visual y vista previa sincronizados",
             "en": "Synchronized visual editor and live preview"
@@ -320,7 +320,7 @@
       },
       "URLFigma": "https://www.figma.com/design/qClxhCM5sw3a75jYehioIn/QuikForms-App?node-id=21-19580&t=PFL086G37rhbAMeF-1",
       "hoverColor": "var(--mint)",
-      "src": "img/visuals/logos/qu-logo.svg",
+      "src": "img/product/logos/qu-logo.svg",
       "logoSize": 100,
       "invertLogo": false,
       "span": 6,
@@ -581,7 +581,7 @@
       },
       "URLFigma": "https://www.figma.com/design/pkIpiIWosa9jQbFkCNPm5W/QuikForms-Manager-App?node-id=26-1602&t=D1X8a7p1GVJkbgIJ-1",
       "hoverColor": "var(--teal)",
-      "src": "img/visuals/logos/qu-logo.svg",
+      "src": "img/product/logos/qu-logo.svg",
       "logoSize": 100,
       "invertLogo": false,
       "span": 6,
@@ -829,7 +829,7 @@
       },
       "URLFigma": "https://www.figma.com/design/jr3UsYmqRr1rrr1emx0PzP/Trio-Rewards?node-id=3-46&t=7soMSf3GiQ17KmIx-1",
       "hoverColor": "var(--bubblegum)",
-      "src": "img/visuals/logos/trio-logo.svg",
+      "src": "img/product/logos/trio-logo.svg",
       "logoSize": 75,
       "invertLogo": false,
       "span": 6,

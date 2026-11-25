@@ -371,7 +371,7 @@ function createDevInner(logos, title, metaText, arrowText, bottomLogos, showTool
   if (showTool) {
     arrow.textContent = arrowText;
     const toolImg = document.createElement('img');
-    toolImg.src = 'img/visuals/logos/figma-logo.svg';
+    toolImg.src = 'img/product/logos/figma-logo.svg';
     toolImg.className = 'brand-dev-tool-icon';
     toolImg.alt = 'Figma';
     toolImg.loading = 'lazy';

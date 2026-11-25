@@ -47,7 +47,7 @@
         },
         "src": {
           "type": "string",
-          "description": "Path a imagen o video. Ej: 'img/visuals/proyecto/imagen.webp' o 'video.mp4'"
+          "description": "Path a imagen o video. Ej: 'img/featured/proyecto/imagen.webp' o 'video.mp4'"
         },
         "darkSrc": {
           "type": "string",
@@ -122,7 +122,7 @@
         },
         "src": {
           "type": "string",
-          "description": "Path al logo del tile. Ej: 'img/logos/nombre-logo.svg'"
+          "description": "Path al logo del tile. Ej: 'img/brands/logos/nombre-logo.svg'"
         },
         "alt": {
           "type": "string",
@@ -160,34 +160,34 @@
         },
         "bgImage": {
           "type": "string",
-          "description": "Path a imagen de fondo del tile. Ej: 'img/backgrounds/nombre-dev.webp'",
+          "description": "Path a imagen de fondo del tile. Ej: 'img/brands/backgrounds/nombre-dev.webp'",
           "enum": [
             "",
-            "img/backgrounds/ambrosia.webp",
-            "img/backgrounds/banegas.webp",
-            "img/backgrounds/eg-dev.webp",
-            "img/backgrounds/eg.webp",
-            "img/backgrounds/farolatino.webp",
-            "img/backgrounds/flittz.webp",
-            "img/backgrounds/insolito-dev.webp",
-            "img/backgrounds/kamea.webp",
-            "img/backgrounds/lapanaderi-dev.webp",
-            "img/backgrounds/lapanaderi.webp",
-            "img/backgrounds/lucia.webp",
-            "img/backgrounds/lumaria.webp",
-            "img/backgrounds/meta-dev.webp",
-            "img/backgrounds/molde.webp",
-            "img/backgrounds/nestseekers-dev.webp",
-            "img/backgrounds/pontitosi.webp",
-            "img/backgrounds/upmidface.webp",
-            "img/backgrounds/virtualmind.webp",
-            "img/new_visuals/hit.webp",
-            "img/new_visuals/iro-iro.webp",
-            "img/new_visuals/lafleur.webp",
-            "img/new_visuals/lapanaderi.webp",
-            "img/new_visuals/nestseekers.webp",
-            "img/new_visuals/si-salud-integral.webp",
-            "img/new_visuals/zlatar-nario.webp"
+            "img/brands/backgrounds/ambrosia.webp",
+            "img/brands/backgrounds/banegas.webp",
+            "img/brands/backgrounds/eg-dev.webp",
+            "img/brands/backgrounds/eg.webp",
+            "img/brands/backgrounds/farolatino.webp",
+            "img/brands/backgrounds/flittz.webp",
+            "img/brands/backgrounds/insolito-dev.webp",
+            "img/brands/backgrounds/kamea.webp",
+            "img/brands/backgrounds/lapanaderi-dev.webp",
+            "img/brands/backgrounds/lapanaderi.webp",
+            "img/brands/backgrounds/lucia.webp",
+            "img/brands/backgrounds/lumaria.webp",
+            "img/brands/backgrounds/meta-dev.webp",
+            "img/brands/backgrounds/molde.webp",
+            "img/brands/backgrounds/nestseekers-dev.webp",
+            "img/brands/backgrounds/pontitosi.webp",
+            "img/brands/backgrounds/upmidface.webp",
+            "img/brands/backgrounds/virtualmind.webp",
+            "img/brands/backgrounds/hit.webp",
+            "img/brands/backgrounds/iro-iro.webp",
+            "img/brands/backgrounds/lafleur.webp",
+            "img/brands/backgrounds/lapanaderi.webp",
+            "img/brands/backgrounds/nestseekers.webp",
+            "img/brands/backgrounds/si-salud-integral.webp",
+            "img/brands/backgrounds/zlatar-nario.webp"
           ]
         },
         "bgVideo": {
@@ -195,8 +195,8 @@
           "description": "Path a video de fondo (.mp4). Se reproduce en loop, muted, lazy",
           "enum": [
             "",
-            "img/backgrounds/meta.mp4",
-            "img/backgrounds/zoom.mp4"
+            "img/brands/backgrounds/meta.mp4",
+            "img/brands/backgrounds/zoom.mp4"
           ]
         },
         "hoverColor": {
