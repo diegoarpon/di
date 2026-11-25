@@ -136,6 +136,13 @@ async function buildImgCatalog(root) {
   Object.keys(imgCatalog).forEach(k => imgCatalog[k].sort((a, b) => a.split('/').pop().localeCompare(b.split('/').pop())));
 }
 
+function imgsForProject(projectId) {
+  if (!projectId) return imgCatalog.productDesign;
+  const prefix = 'img/product/' + projectId + '/';
+  const filtered = imgCatalog.productDesign.filter(img => img.startsWith(prefix));
+  return filtered.length > 0 ? filtered : imgCatalog.productDesign;
+}
+
 // ── Restore on load ───────────────────────────────────────────────────────────
 
 window.addEventListener('load', async () => {
@@ -943,7 +950,8 @@ function buildBDForm(item, idx) {
 
 function buildPDForm(item, idx) {
   const frag = document.createDocumentFragment();
-  const bgImgs = [...imgCatalog.productDesign, ...imgCatalog.videos].sort((a, b) => a.split('/').pop().localeCompare(b.split('/').pop()));
+  const projectImgs = imgsForProject(item.project);
+  const bgImgs = [...projectImgs, ...imgCatalog.videos].sort((a, b) => a.split('/').pop().localeCompare(b.split('/').pop()));
 
   frag.appendChild(group('General',
     textInput(item, 'alt', 'Alt text', '', 'Texto alternativo del logo. Usado por lectores de pantalla.'),
@@ -1146,7 +1154,8 @@ function buildDecisionsEditor(item) {
 
   function getImgOptions() {
     const opts = [];
-    for (const child of imgCatalog.productDesign) {
+    const imgs = imgsForProject(item.project);
+    for (const child of imgs) {
       opts.push(`<option value="${child}">${child.split('/').pop()}</option>`);
     }
     return opts.join('');
