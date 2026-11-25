@@ -131,8 +131,8 @@
 }
 
 /* =============================================
-   Bootstrap replacement — utilidades nativas
-   ============================================= */
+
+
 
 /* Normalize — reemplaza reboot de Bootstrap */
 *,
@@ -406,16 +406,16 @@ body {
   overflow-x: hidden;
   height: 100%;
   font-family: var(--default-font);
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.5;
   background-color: var(--bg);
   color: var(--text);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 120rem) {
   .container-fluid {
-    max-width: 1920px;
+    max-width: 120rem;
     margin-left: 0;
   }
 }
@@ -425,16 +425,16 @@ body {
 }
 
 .logo img {
-  height: 40px;
+  height: 2.5rem;
   width: auto;
   display: block;
-  bottom: -1px;
+  bottom: -0.0625rem;
   position: relative;
 }
 
 .guide-h-double-100 {
-  border-top: 1px solid var(--graphite);
-  border-bottom: 1px solid var(--graphite);
+  border-top: 0.0625rem solid var(--graphite);
+  border-bottom: 0.0625rem solid var(--graphite);
   width: 200vw;
   height: 100%;
   position: absolute;
@@ -445,9 +445,9 @@ body {
 }
 
 .guide-h-double-product {
-  border-top: 1px solid var(--graphite);
-  border-bottom: 1px solid var(--graphite);
-  width: 50vw;
+  border-top: 0.0625rem solid var(--graphite);
+  border-bottom: 0.0625rem solid var(--graphite);
+  width: 110%;
   height: 100%;
   position: absolute;
   left: -5%;
@@ -457,8 +457,8 @@ body {
 }
 
 .guide-v-double-100 {
-  border-right: 1px solid var(--graphite);
-  border-left: 1px solid var(--graphite);
+  border-right: 0.0625rem solid var(--graphite);
+  border-left: 0.0625rem solid var(--graphite);
   height: 60vh;
   width: 100%;
   position: absolute;
@@ -468,8 +468,8 @@ body {
 }
 
 .guide-v-double-product {
-  border-right: 1px solid var(--graphite);
-  border-left: 1px solid var(--graphite);
+  border-right: 0.0625rem solid var(--graphite);
+  border-left: 0.0625rem solid var(--graphite);
   height: 110%;
   width: 100%;
   position: absolute;
@@ -479,8 +479,8 @@ body {
 }
 
 .guide-v-short {
-  border-right: 1px solid var(--graphite);
-  border-left: 1px solid var(--graphite);
+  border-right: 0.0625rem solid var(--graphite);
+  border-left: 0.0625rem solid var(--graphite);
   height: 200%;
   width: calc(100% - 0rem);
   position: absolute;
@@ -489,13 +489,13 @@ body {
 }
 
 .guide-h-short {
-  border-top: 1px solid var(--graphite);
-  border-bottom: 1px solid var(--graphite);
+  border-top: 0.0625rem solid var(--graphite);
+  border-bottom: 0.0625rem solid var(--graphite);
   height: calc(100% - 0rem);
   width: 80%;
   position: absolute;
   left: -10%;
-  top: 1px;
+  top: 0.0625rem;
   z-index: var(--z-overlay);
 }
 
@@ -602,8 +602,8 @@ body {
   position: fixed;
   inset: 0;
   background-color: var(--black-50);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(0.25rem);
+  -webkit-backdrop-filter: blur(0.25rem);
   z-index: var(--z-overlay);
   opacity: 0;
   visibility: hidden;
@@ -634,7 +634,7 @@ body {
 }
 
 /* Mobile Styles */
-@media (max-width: 767px) {
+@media (max-width: 47.9375rem) {
   .mobile-menu-toggle-container {
     top: 1.25rem;
   }
@@ -805,10 +805,10 @@ body {
   /* border-right: 1px solid var(--graphite); */
   overflow: hidden;
   transition: background-color 0.3s ease;
-  margin-right: -1px;
+  margin-right: -0.0625rem;
 }
 
-@media (min-width: 1366px) {
+@media (min-width: 85.375rem) {
 
   .mobile-menu-toggle-container,
   .mobile-logo {
@@ -826,7 +826,7 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    width: 1px;
+    width: 0.0625rem;
     height: 100%;
     /* background: var(--graphite); */
   }
@@ -842,7 +842,7 @@ body {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 48rem) and (max-width: 64rem) {
 
   .nav-button,
   .contact-link,
@@ -870,7 +870,7 @@ body {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 64rem) {
 
   .lang-selector::after,
   .theme-selector::after {
@@ -878,7 +878,7 @@ body {
   }
 }
 
-@media (max-width: 1365px) {
+@media (max-width: 85.3125rem) {
   .sidebar-container {
     position: fixed;
     top: 0;
@@ -901,7 +901,7 @@ body {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.3);
   }
 
   .content-area {
@@ -923,7 +923,7 @@ body {
   color: var(--text) !important;
   text-decoration: none;
   font-size: var(--fs-nav);
-  letter-spacing: -1px;
+  letter-spacing: -0.0625rem;
 }
 
 .contact-link {
@@ -969,7 +969,7 @@ body {
 
 .lang-theme-divider {
   display: inline-block;
-  width: 1px;
+  width: 0.0625rem;
   background: var(--graphite);
   align-self: stretch;
   margin: 0 0.5rem;
@@ -981,9 +981,9 @@ body {
   vertical-align: middle;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 47.9375rem) {
   .theme-icon {
-    margin-bottom: -3px;
+    margin-bottom: -0.1875rem;
   }
 }
 
@@ -1014,7 +1014,7 @@ body {
   line-height: 1.2;
   margin: 0 0 1rem;
   font-weight: 500;
-  letter-spacing: -1px;
+  letter-spacing: -0.0625rem;
 }
 
 .project-back-arrow {
@@ -1078,7 +1078,7 @@ body {
 
 .mobile-menu-toggle-container {
   position: fixed;
-  top: 3.375rem;
+  top: 3.25rem;
   right: 1rem;
   z-index: var(--z-toggle);
 }
@@ -1272,7 +1272,7 @@ body {
   opacity: 1;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 64rem) {
   #product-design-grid .brand-dev-arrow {
     opacity: 1;
   }
@@ -1355,13 +1355,13 @@ body {
   object-fit: contain;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 36rem) {
   .brand-grid-logo-wrap.responsive-padding {
     padding: 3rem;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 48rem) and (max-width: 64rem) {
   .brand-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.25rem;
@@ -1380,7 +1380,7 @@ body {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 47.9375rem) {
   .brand-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -1488,15 +1488,15 @@ body {
 }
 
 .project-gallery-item .guide-h-double-100 {
-  top: -1px;
-  bottom: -1px;
+  top: -0.0625rem;
+  bottom: -0.0625rem;
   height: auto;
   z-index: 0;
 }
 
 .project-gallery-item .guide-v-double-100 {
-  left: -1px;
-  right: -1px;
+  left: -0.0625rem;
+  right: -0.0625rem;
   width: auto;
   z-index: 0;
 }
@@ -1514,7 +1514,7 @@ body {
   width: calc(100% - 2rem);
   margin: 1rem;
   border-radius: 0.75rem;
-  border: 10px solid var(--black-100);
+  border: 0.625rem solid var(--black-100);
   box-sizing: border-box;
 }
 
@@ -1527,7 +1527,7 @@ body {
   z-index: 1;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 47.9375rem) {
   .project-gallery {
     grid-template-columns: 1fr;
   }
@@ -1544,7 +1544,7 @@ body {
   display: none;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 48rem) and (max-width: 64rem) {
   .project-gallery {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1694,7 +1694,7 @@ body {
   font-size: var(--fs-heading);
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 75rem) {
   .display-5 {
     font-size: var(--fs-heading-tile);
   }
@@ -1727,8 +1727,8 @@ footer>div {
 }
 
 /* =============================================
-   CASE STUDY — FormStream
-   ============================================= */
+
+
 
 /* All sections share one left edge (narrow reading column). */
 .cs-case-study .cs-section {
@@ -1767,10 +1767,10 @@ footer>div {
 .cs-rail-line {
   position: absolute;
   left: 0;
-  width: 2px;
+  width: 0.125rem;
   background: var(--main-color);
   /* Vertical extent is set by JS after render: center of the Project Snapshot
-     marker → center of the Outcome marker (no protrusion, no show-through). */
+
 }
 
 /* Markers centered on the rail line */
@@ -1781,7 +1781,7 @@ footer>div {
   width: 0.75rem;
   height: 0.75rem;
   border-radius: 50%;
-  border: 2px solid var(--main-color);
+  border: 0.125rem solid var(--main-color);
   transform: translateX(-50%);
   z-index: 2;
   background: var(--main-color);
@@ -1811,7 +1811,7 @@ footer>div {
 .cs-decision-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  gap: 3rem;
   align-items: start;
   min-width: 0;
   flex: 1;
@@ -1821,8 +1821,8 @@ footer>div {
 .cs-hero-title {
   font-family: var(--default-font);
   font-weight: 500;
-  font-size: 44px;
-  letter-spacing: -1.5px;
+  font-size: 2.75rem;
+  letter-spacing: -0.0938rem;
   line-height: 1.05;
   margin: 0 0 1rem;
   color: var(--text);
@@ -1841,8 +1841,8 @@ footer>div {
 .cs-hero-desc {
   font-family: var(--default-font);
   font-weight: 300;
-  font-size: 20px;
-  letter-spacing: -0.2px;
+  font-size: 1.25rem;
+  letter-spacing: -0.0125rem;
   line-height: 1.4;
   margin: 0 0 1.5rem;
   color: var(--text);
@@ -1853,7 +1853,7 @@ footer>div {
   font-family: var(--default-font);
   font-weight: 600;
   font-size: 1rem;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.0375rem;
   text-transform: uppercase;
   margin: 0 0 1rem;
   color: var(--text);
@@ -1874,7 +1874,7 @@ footer>div {
   font-family: var(--default-font);
   font-weight: 300;
   font-size: 1rem;
-  letter-spacing: 0.48px;
+  letter-spacing: 0.03rem;
   text-transform: uppercase;
   color: var(--main-color);
   margin: 0 0 1rem;
@@ -1884,7 +1884,7 @@ footer>div {
   font-family: var(--default-font);
   font-weight: 300;
   font-size: 2rem;
-  letter-spacing: -0.88px;
+  letter-spacing: -0.055rem;
   line-height: 1.2;
   color: var(--main-color);
   margin: 0;
@@ -1895,7 +1895,7 @@ footer>div {
   font-family: var(--default-font);
   font-weight: 500;
   font-size: 2rem;
-  letter-spacing: -0.88px;
+  letter-spacing: -0.055rem;
   line-height: 1.1;
   margin: 0 0 0.75rem;
   color: var(--text);
@@ -1904,7 +1904,7 @@ footer>div {
 .cs-decision-desc {
   font-family: var(--default-font);
   font-weight: 300;
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 1.4;
   color: var(--text);
   margin: 0;
@@ -1913,7 +1913,7 @@ footer>div {
 .cs-decision-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  gap: 3rem;
   align-items: start;
   margin-top: 1.5rem;
 }
@@ -1957,15 +1957,15 @@ footer>div {
 .cs-screen-num {
   font-family: var(--default-font);
   font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 0.48px;
+  font-size: 1rem;
+  letter-spacing: 0.03rem;
   color: var(--text);
 }
 
 .cs-screen-place {
   font-family: var(--default-font);
   font-weight: 400;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--text);
   text-align: right;
 }
@@ -1976,13 +1976,13 @@ footer>div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .cs-screen-title {
   font-family: var(--default-font);
   font-weight: 300;
-  font-size: 26px;
+  font-size: 1.625rem;
   line-height: 1.4;
   margin: 0;
   color: var(--text);
@@ -1991,7 +1991,7 @@ footer>div {
 .cs-screen-sub {
   font-family: var(--default-font);
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.4;
   margin: 0;
   color: var(--text);
@@ -2017,7 +2017,7 @@ footer>div {
   font-family: var(--default-font);
   font-weight: 600;
   font-size: 0.75rem;
-  letter-spacing: 0.48px;
+  letter-spacing: 0.03rem;
   text-transform: uppercase;
   color: var(--text);
   margin: 0 0 0.25rem;
@@ -2043,8 +2043,8 @@ footer>div {
 }
 
 .cs-snapshot-company img {
-  width: 120px;
-  height: 45px;
+  width: 7.5rem;
+  height: 2.8125rem;
   object-fit: contain;
   display: block;
 }
@@ -2054,7 +2054,7 @@ footer>div {
   text-decoration: none;
   font-family: var(--default-font);
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.4;
 }
 
@@ -2127,13 +2127,13 @@ footer>div {
   grid-column: span 12;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 47.9375rem) {
   .cs-col {
     grid-column: span 12 !important;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 48rem) and (max-width: 64rem) {
   .cs-col-md-12 {
     grid-column: span 12 !important;
   }
@@ -2162,7 +2162,7 @@ footer>div {
 
 .cs-divider {
   border: none;
-  border-top: 1px solid var(--graphite);
+  border-top: 0.0625rem solid var(--graphite);
   margin: 3rem 0;
   width: 100%;
 }
@@ -2172,7 +2172,7 @@ footer>div {
   font-family: var(--default-font);
   font-weight: 500;
   line-height: 1.2;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.0312rem;
   margin: 0 0 1rem;
   color: var(--text);
 }
@@ -2180,7 +2180,7 @@ footer>div {
 .cs-heading--main {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 300;
-  letter-spacing: -1.5px;
+  letter-spacing: -0.0938rem;
   line-height: 1.1;
   margin-bottom: 1.5rem;
 }
@@ -2188,7 +2188,7 @@ footer>div {
 .cs-heading--section {
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   font-weight: 500;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.0312rem;
 }
 
 .cs-heading--concept {
@@ -2230,7 +2230,7 @@ footer>div {
   font-size: var(--fs-meta-label);
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.0312rem;
   color: var(--text);
   opacity: 0.5;
   margin: 0;
@@ -2248,7 +2248,7 @@ footer>div {
   margin: 0;
   position: relative;
   background: var(--bg);
-  border: 1px solid var(--graphite);
+  border: 0.0625rem solid var(--graphite);
   overflow: hidden;
 }
 
@@ -2276,7 +2276,7 @@ footer>div {
   font-weight: 300;
   padding: 0.75rem 1rem;
   background: var(--bg);
-  border-top: 1px solid var(--graphite);
+  border-top: 0.0625rem solid var(--graphite);
   color: var(--text);
   opacity: 0.7;
 }
@@ -2286,7 +2286,7 @@ footer>div {
   font-weight: 500;
   text-transform: uppercase;
   font-size: 0.7em;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.0312rem;
   margin-right: 0.5rem;
   opacity: 0.5;
 }
@@ -2316,7 +2316,7 @@ footer>div {
 .cs-concept {
   padding: 1.5rem;
   background: var(--bg);
-  border: 1px solid var(--graphite);
+  border: 0.0625rem solid var(--graphite);
   transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
@@ -2376,7 +2376,7 @@ footer>div {
   font-size: var(--fs-tile-text);
   font-weight: 300;
   padding: 1rem 0;
-  border-top: 1px solid var(--graphite);
+  border-top: 0.0625rem solid var(--graphite);
   transition: color 0.2s ease, gap 0.2s ease;
 }
 
@@ -2389,7 +2389,7 @@ footer>div {
   font-size: var(--fs-meta-label);
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.0312rem;
   opacity: 0.5;
 }
 
@@ -2422,7 +2422,7 @@ footer>div {
 }
 
 /* Responsive adjustments */
-@media (max-width: 1024px) {
+@media (max-width: 64rem) {
   .cs-heading--main {
     font-size: clamp(2rem, 6vw, 3rem);
   }
@@ -2449,7 +2449,7 @@ footer>div {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 47.9375rem) {
   .cs-grid {
     gap: 1rem;
   }
@@ -2492,7 +2492,7 @@ footer>div {
     background: var(--bg);
     color: var(--text);
     padding: 1rem;
-    border-top: 1px solid var(--graphite);
+    border-top: 0.0625rem solid var(--graphite);
   }
 
   .cs-screen .cs-caption-label {
@@ -2534,7 +2534,7 @@ footer>div {
 }
 
 /* ===== FormStudy responsive overrides ===== */
-@media (max-width: 767px) {
+@media (max-width: 47.9375rem) {
   .cs-case-study .cs-section {
     padding-left: 1rem;
     max-width: none;
@@ -2546,8 +2546,8 @@ footer>div {
 
   .cs-case-study .cs-section-marker {
     /*left: 28px;
-    width: 12px;
-    height: 12px;*/
+
+
   }
 
   .cs-decision-item .cs-section-marker {
@@ -2566,7 +2566,7 @@ footer>div {
   .cs-screen-panel--decision {
     width: auto;
     height: auto;
-    min-height: 220px;
+    min-height: 13.75rem;
     min-width: auto;
   }
 
@@ -2582,29 +2582,29 @@ footer>div {
   }
 
   .cs-hero-title {
-    font-size: 32px;
+    font-size: 2rem;
   }
 
   .cs-hero-subtitle {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 
   .cs-hero-desc {
-    font-size: 17px;
+    font-size: 1.0625rem;
   }
 
   .cs-dq-text {
-    font-size: 32px;
+    font-size: 2rem;
   }
 
   .cs-decision-title {
-    font-size: 32px;
+    font-size: 2rem;
   }
 }
 
 /* ========================================================================
-   Product Design Case Study — Reusable Template Design System
-   ======================================================================== */
+
+
 
 /* ─── Design Tokens ─────────────────────────────────────────────────── */
 :root {
@@ -2667,7 +2667,7 @@ footer>div {
 }
 
 /* Responsive: mobile (<768px) */
-@media (max-width: 767px) {
+@media (max-width: 47.9375rem) {
   .case-study-gallery {
     gap: 1rem;
   }
@@ -2699,7 +2699,7 @@ footer>div {
   .cs-pres-right {
     padding-left: 0;
     border-left: none;
-    border-top: 1px solid var(--graphite);
+    border-top: 0.0625rem solid var(--graphite);
     padding-top: 1.5rem;
   }
 
@@ -2716,14 +2716,14 @@ footer>div {
   .cs-guidance-detail+.cs-guidance-detail {
     padding-left: 0;
     border-left: none;
-    border-top: 1px solid var(--graphite);
+    border-top: 0.0625rem solid var(--graphite);
     padding-top: 1.5rem;
   }
 
   .cs-autocomplete-right {
     padding-left: 0;
     border-left: none;
-    border-top: 1px solid var(--graphite);
+    border-top: 0.0625rem solid var(--graphite);
     padding-top: 1.5rem;
   }
 
@@ -2735,7 +2735,7 @@ footer>div {
   .cs-closing-right {
     padding-left: 0;
     border-left: none;
-    border-top: 1px solid var(--graphite);
+    border-top: 0.0625rem solid var(--graphite);
     padding-top: 1.5rem;
     text-align: left !important;
   }
@@ -2746,7 +2746,7 @@ footer>div {
 }
 
 /* Responsive: tablet (768-1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 48rem) and (max-width: 64rem) {
   .case-study-section {
     margin-bottom: 5rem !important;
   }
