@@ -931,6 +931,14 @@
       "outcomeTitle": {
         "es": "Resultado",
         "en": "Outcome"
+      },
+      "introduction": {
+        "es": "Trio Rewards reúne la búsqueda de comercios locales, los pagos móviles y las funciones de fidelización en una sola experiencia para clientes.",
+        "en": "Trio Rewards connects local business discovery, mobile payments, and loyalty features in one consumer-facing experience."
+      },
+      "decisionsIntro": {
+        "es": "",
+        "en": ""
       }
     }
   ],
